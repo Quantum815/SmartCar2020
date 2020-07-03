@@ -1,0 +1,1670 @@
+	; Module start
+	.compiler_version	"TASKING VX-toolset for TriCore: C compiler v6.3r1 Build 19041558 SN 99294086"
+	.compiler_invocation	"ctc --dep-file=Libraries\\seekfree_peripheral\\.SEEKFREE_RDA5807.o.d --fp-model=c,f,l,n,r,S,T,z -D__CPU__=tc26x -D__CPU_TC26X__ --core=tc1.6.x --iso=99 -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264 -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\CODE -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Build -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Impl -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Lib -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Lib\\DataHandling -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Lib\\InternalMux -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_PinMap -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Asc -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Lin -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Spi -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Std -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6 -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\Icu -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\PwmBc -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\PwmHl -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\Std -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\Timer -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\TimerWithTrigger -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\TPwm -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cif -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cif\\Cam -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cif\\Std -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\CStart -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Irq -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Std -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Trap -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dma -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dma\\Dma -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dma\\Std -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc\\Dsadc -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc\\Rdc -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc\\Std -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dts -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dts\\Dts -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dts\\Std -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Emem -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Emem\\Std -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eray -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eray\\Eray -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eray\\Std -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eth -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eth\\Phy_Pef7071 -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eth\\Std -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fce -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fce\\Crc -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fce\\Std -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fft -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fft\\Fft -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fft\\Std -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Flash -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Flash\\Std -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gpt12 -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gpt12\\IncrEnc -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gpt12\\Std -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom\\Pwm -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom\\PwmHl -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom\\Timer -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Std -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tim -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tim\\In -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom\\Pwm -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom\\PwmHl -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom\\Timer -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Trig -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Hssl -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Hssl\\Hssl -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Hssl\\Std -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\I2c -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\I2c\\I2c -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\I2c\\Std -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Iom -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Iom\\Driver -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Iom\\Std -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Msc -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Msc\\Msc -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Msc\\Std -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Mtu -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Mtu\\Std -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Multican -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Multican\\Can -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Multican\\Std -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Port -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Port\\Io -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Port\\Std -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5 -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5\\Psi5 -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5\\Std -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5s -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5s\\Psi5s -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5s\\Std -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi\\SpiMaster -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi\\SpiSlave -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi\\Std -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Scu -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Scu\\Std -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Sent -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Sent\\Sent -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Sent\\Std -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Smu -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Smu\\Std -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Src -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Src\\Std -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Stm -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Stm\\Std -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Stm\\Timer -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Vadc -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Vadc\\Adc -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Vadc\\Std -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\Infra -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\Infra\\Platform -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\Infra\\Platform\\Tricore -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\Infra\\Platform\\Tricore\\Compilers -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\Infra\\Sfr -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\Infra\\Sfr\\TC26B -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\Infra\\Sfr\\TC26B\\_Reg -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\Service -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\Service\\CpuGeneric -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\seekfree_libraries -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\seekfree_libraries\\common -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\seekfree_peripheral -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\USER -g2 -wW557 --make-target=Libraries\\seekfree_peripheral\\SEEKFREE_RDA5807.o -t4 --language=-gcc,-volatile,+strings,-kanji --default-near-size=0 -O0 --default-a1-size=0 --default-a0-size=0 --source --align=0 --switch=auto --error-limit=42 -o Libraries\\seekfree_peripheral\\SEEKFREE_RDA5807.src ..\\Libraries\\seekfree_peripheral\\SEEKFREE_RDA5807.c"
+	.compiler_name		"ctc"
+	;source	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_RDA5807.c'
+
+	
+$TC16X
+	
+	.sdecl	'.text.SEEKFREE_RDA5807.rad5807m_simiic_write',code,cluster('rad5807m_simiic_write')
+	.sect	'.text.SEEKFREE_RDA5807.rad5807m_simiic_write'
+	.align	2
+	
+	.global	rad5807m_simiic_write
+
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	     1  /*********************************************************************************************************************
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	     2   * COPYRIGHT NOTICE
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	     3   * Copyright (c) 2020,逐飞科技
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	     4   * All rights reserved.
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	     5   * 技术讨论QQ群：三群：824575535
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	     6   *
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	     7   * 以下所有内容版权均属逐飞科技所有，未经允许不得用于商业用途，
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	     8   * 欢迎各位使用并传播本程序，修改内容时必须保留逐飞科技的版权声明。
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	     9   *
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    10   * @file       		MPU6050
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    11   * @company	   		成都逐飞科技有限公司
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    12   * @author     		逐飞科技(QQ3184284598)
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    13   * @version    		查看doc内version文件 版本说明
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    14   * @Software 		tasking v6.3r1
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    15   * @Target core		TC264D
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    16   * @Taobao   		https://seekfree.taobao.com/
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    17   * @date       		2020-3-23
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    18   * @note
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    19  					接线定义：
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    20  					------------------------------------
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    21  						软件IIC
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    22                          SCL                 查看SEEKFREE_IIC文件内的SEEKFREE_SCL宏定义
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    23  						SDA                 查看SEEKFREE_IIC文件内的SEEKFREE_SDA宏定义
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    24  
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    25                          硬件IIC
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    26                          SCL                 查看init_mpu6050_hardware函数内IIC初始化时所带参数
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    27  						SDA                 查看init_mpu6050_hardware函数内IIC初始化时所带参数
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    28  					------------------------------------
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    29  					注意事项：RDA5807的SCL与SDA都需要串联1K电阻然后在与单片机连接，否则可能无法通信
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    30   ********************************************************************************************************************/
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    31  
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    32  
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    33  
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    34  #include "SEEKFREE_IIC.h"
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    35  #include "zf_stm_systick.h"
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    36  #include "SEEKFREE_RDA5807.h"
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    37  
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    38  
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    39  #define ack 1      //主应答
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    40  #define no_ack 0   //从应答
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    41  
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    42  
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    43  #define FM_ADDRESS	0x20>>1
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    44  
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    45  uint8 rda5807_config_reg[] = {
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    46      0xc1, 0x03,                             // Register 0x2
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    47      0x00, 0x00,                             // Register 0x3
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    48      0x0a, 0x00,        	                    // Register 0x4
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    49      0x88, 0x0f,                             // Register 0x5
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    50      0x00, 0x00,                             // Register 0x6
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    51      0x42, 0x02,                             // Register 0x7
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    52  };
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    53  
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    54  //-------------------------------------------------------------------------------------------------------------------
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    55  //  @brief      rda5807模拟IIC读取多字节数据
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    56  //  @param      dev_add			设备地址(低七位地址)
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    57  //  @param      data[]			数据保存的地址指针
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    58  //  @param      num				读取字节数量
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    59  //  @return     void
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    60  //  @since      v1.0
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    61  //  Sample usage:
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    62  //-------------------------------------------------------------------------------------------------------------------
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    63  void rad5807m_simiic_write(uint8 dev_add, uint8 data[], uint8 num)
+; Function rad5807m_simiic_write
+.L10:
+rad5807m_simiic_write:	.type	func
+	mov	d15,d4
+.L101:
+	mov.aa	a15,a4
+.L103:
+	mov	d8,d5
+.L104:
+
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    64  {
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    65     	uint8 i;
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    66  	simiic_start();
+	call	simiic_start
+.L100:
+
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    67      send_ch( (dev_add<<1) | 0x00);   		//发送器件地址加写位
+	sha	d15,#1
+.L102:
+	extr.u	d4,d15,#0,#8
+	call	send_ch
+.L201:
+
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    68  
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    69  	for(i=0;i<num;i++)
+	mov	d15,#0
+.L105:
+	j	.L2
+.L3:
+
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    70  		send_ch(data[i]);   				 //发送需要写入的数据
+	addsc.a	a2,a15,d15,#0
+	ld.bu	d4,[a2]
+	call	send_ch
+.L202:
+	add	d15,#1
+.L106:
+	extr.u	d15,d15,#0,#8
+.L2:
+	jlt.u	d15,d8,.L3
+.L203:
+
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    71  
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    72  	simiic_stop();
+	call	simiic_stop
+.L204:
+
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    73  }
+	ret
+.L86:
+	
+__rad5807m_simiic_write_function_end:
+	.size	rad5807m_simiic_write,__rad5807m_simiic_write_function_end-rad5807m_simiic_write
+.L58:
+	; End of function
+	
+	.sdecl	'.text.SEEKFREE_RDA5807.rda5807m_simiic_read',code,cluster('rda5807m_simiic_read')
+	.sect	'.text.SEEKFREE_RDA5807.rda5807m_simiic_read'
+	.align	2
+	
+	.global	rda5807m_simiic_read
+
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    74  
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    75  
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    76  //-------------------------------------------------------------------------------------------------------------------
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    77  //  @brief      模拟IIC读取多字节数据
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    78  //  @param      dev_add			设备地址(低七位地址)
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    79  //  @param      dat_add			数据保存的地址指针
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    80  //  @param      num				读取字节数量
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    81  //  @return     uint8			返回寄存器的数据
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    82  //  @since      v1.0
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    83  //  Sample usage:
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    84  //-------------------------------------------------------------------------------------------------------------------
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    85  void rda5807m_simiic_read(uint8 dev_add,uint8 *dat_add,uint8 num)
+; Function rda5807m_simiic_read
+.L12:
+rda5807m_simiic_read:	.type	func
+	mov	d8,d4
+.L108:
+	mov.aa	a15,a4
+.L110:
+	mov	d15,d5
+.L111:
+
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    86  {
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    87      simiic_start();
+	call	simiic_start
+.L107:
+
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    88  
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    89  	send_ch( (dev_add<<1) | 0x01);  //发送器件地址加读位
+	sha	d8,#1
+.L109:
+	or	d0,d8,#1
+	extr.u	d4,d0,#0,#8
+	call	send_ch
+.L209:
+
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    90      while(--num)
+	j	.L4
+.L5:
+
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    91      {
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    92          *dat_add = read_ch(ack); //读取数据
+	mov	d4,#1
+	call	read_ch
+.L210:
+	st.b	[a15],d2
+.L211:
+
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    93          dat_add++;
+	add.a	a15,#1
+.L4:
+	add	d15,#-1
+.L112:
+	extr.u	d15,d15,#0,#8
+.L113:
+	jne	d15,#0,.L5
+.L212:
+
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    94  
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    95      }
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    96      *dat_add = read_ch(no_ack); //读取数据
+	mov	d4,#0
+	call	read_ch
+.L213:
+	st.b	[a15],d2
+.L214:
+
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    97  
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    98  	simiic_stop();
+	call	simiic_stop
+.L215:
+
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	    99  }
+	ret
+.L93:
+	
+__rda5807m_simiic_read_function_end:
+	.size	rda5807m_simiic_read,__rda5807m_simiic_read_function_end-rda5807m_simiic_read
+.L63:
+	; End of function
+	
+	.sdecl	'.text.SEEKFREE_RDA5807.rda5807_channel_config',code,cluster('rda5807_channel_config')
+	.sect	'.text.SEEKFREE_RDA5807.rda5807_channel_config'
+	.align	2
+	
+	.global	rda5807_channel_config
+
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   100  
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   101  
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   102  //-------------------------------------------------------------------------------------------------------------------
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   103  //  @brief      频率寄存器配置（内部使用，用户无需关心）
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   104  //  @param      channel         	频率寄存器值
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   105  //  @return     void
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   106  //  @since      v1.0
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   107  //  Sample usage:
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   108  //-------------------------------------------------------------------------------------------------------------------
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   109  void rda5807_channel_config(uint16 reg_chn)
+; Function rda5807_channel_config
+.L14:
+rda5807_channel_config:	.type	func
+
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   110  {
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   111  	rda5807_config_reg[0] = 0xc0;
+	movh.a	a15,#@his(rda5807_config_reg)
+	lea	a15,[a15]@los(rda5807_config_reg)
+.L183:
+	mov	d15,#192
+.L184:
+	st.b	[a15],d15
+.L185:
+
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   112  	rda5807_config_reg[1] = 0x01;
+	movh.a	a15,#@his(rda5807_config_reg)
+	lea	a15,[a15]@los(rda5807_config_reg)
+.L186:
+	mov	d15,#1
+.L187:
+	st.b	[a15]1,d15
+.L188:
+
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   113  	rda5807_config_reg[2] = (uint8)(reg_chn >> 2);
+	movh.a	a15,#@his(rda5807_config_reg)
+	lea	a15,[a15]@los(rda5807_config_reg)
+.L189:
+	sha	d15,d4,#-2
+.L190:
+	st.b	[a15]2,d15
+.L191:
+
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   114  	rda5807_config_reg[3] = (uint8)(((reg_chn & 0x3) << 6) | 0x18);
+	movh.a	a15,#@his(rda5807_config_reg)
+	lea	a15,[a15]@los(rda5807_config_reg)
+.L192:
+	and	d15,d4,#3
+.L193:
+	sha	d15,#6
+.L194:
+	or	d15,#24
+.L195:
+	st.b	[a15]3,d15
+.L196:
+
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   115  }
+	ret
+.L84:
+	
+__rda5807_channel_config_function_end:
+	.size	rda5807_channel_config,__rda5807_channel_config_function_end-rda5807_channel_config
+.L53:
+	; End of function
+	
+	.sdecl	'.text.SEEKFREE_RDA5807.rda5807_set_channel',code,cluster('rda5807_set_channel')
+	.sect	'.text.SEEKFREE_RDA5807.rda5807_set_channel'
+	.align	2
+	
+	.global	rda5807_set_channel
+
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   116  
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   117  
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   118  //-------------------------------------------------------------------------------------------------------------------
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   119  //  @brief      rda5807设置频率	（内部使用，用户无需关心）
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   120  //  @param      freq         频率值
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   121  //  @return     void
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   122  //  @since      v1.0
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   123  //  Sample usage:
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   124  //-------------------------------------------------------------------------------------------------------------------
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   125  void rda5807_set_channel(float freq)
+; Function rda5807_set_channel
+.L16:
+rda5807_set_channel:	.type	func
+
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   126  {
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   127  	uint16 reg_chn=0;
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   128  	reg_chn = (int)((freq - 76.0) * 10.0 + 0.5);
+	movh	d15,#17048
+.L171:
+	sub.f	d15,d4,d15
+.L172:
+	movh	d0,#16672
+.L173:
+	movh	d1,#16128
+.L174:
+	madd.f	d15,d1,d15,d0
+.L175:
+	ftoiz	d15,d15
+	extr.u	d4,d15,#0,#16
+.L114:
+
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   129      rda5807_channel_config(reg_chn);
+	call	rda5807_channel_config
+.L115:
+
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   130      rad5807m_simiic_write(FM_ADDRESS,rda5807_config_reg, 4);
+	mov	d4,#16
+.L176:
+	movh.a	a4,#@his(rda5807_config_reg)
+	lea	a4,[a4]@los(rda5807_config_reg)
+.L177:
+	mov	d5,#4
+	call	rad5807m_simiic_write
+.L178:
+
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   131  }
+	ret
+.L80:
+	
+__rda5807_set_channel_function_end:
+	.size	rda5807_set_channel,__rda5807_set_channel_function_end-rda5807_set_channel
+.L48:
+	; End of function
+	
+	.sdecl	'.text.SEEKFREE_RDA5807.rda5807_set_idle',code,cluster('rda5807_set_idle')
+	.sect	'.text.SEEKFREE_RDA5807.rda5807_set_idle'
+	.align	2
+	
+	.global	rda5807_set_idle
+
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   132  
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   133  
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   134  //-------------------------------------------------------------------------------------------------------------------
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   135  //  @brief      rda5807设置为空闲模式
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   136  //  @param      NULL
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   137  //  @return     void
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   138  //  @since      v1.0
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   139  //  Sample usage:
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   140  //-------------------------------------------------------------------------------------------------------------------
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   141  void rda5807_set_idle(void)
+; Function rda5807_set_idle
+.L18:
+rda5807_set_idle:	.type	func
+
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   142  {
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   143  	rda5807_config_reg[1] &= ~(1<<0);//Power Up Disabled.
+	movh.a	a15,#@his(rda5807_config_reg)
+	lea	a15,[a15]@los(rda5807_config_reg)
+	movh.a	a2,#@his(rda5807_config_reg)
+	lea	a2,[a2]@los(rda5807_config_reg)
+.L161:
+	ld.bu	d15,[a2]1
+.L162:
+	insert	d15,d15,#0,#0,#1
+	st.b	[a15]1,d15
+.L163:
+
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   144  	rad5807m_simiic_write(FM_ADDRESS,rda5807_config_reg, 4);
+	mov	d4,#16
+.L164:
+	movh.a	a4,#@his(rda5807_config_reg)
+	lea	a4,[a4]@los(rda5807_config_reg)
+.L165:
+	mov	d5,#4
+	call	rad5807m_simiic_write
+.L166:
+
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   145  }
+	ret
+.L79:
+	
+__rda5807_set_idle_function_end:
+	.size	rda5807_set_idle,__rda5807_set_idle_function_end-rda5807_set_idle
+.L43:
+	; End of function
+	
+	.sdecl	'.text.SEEKFREE_RDA5807.rda5807_set_transimt',code,cluster('rda5807_set_transimt')
+	.sect	'.text.SEEKFREE_RDA5807.rda5807_set_transimt'
+	.align	2
+	
+	.global	rda5807_set_transimt
+
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   146  
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   147  
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   148  //-------------------------------------------------------------------------------------------------------------------
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   149  //  @brief      rda5807设置为工作模式
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   150  //  @param      NULL
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   151  //  @return     void
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   152  //  @since      v1.0
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   153  //  Sample usage:
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   154  //-------------------------------------------------------------------------------------------------------------------
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   155  void rda5807_set_transimt(void)
+; Function rda5807_set_transimt
+.L20:
+rda5807_set_transimt:	.type	func
+
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   156  {
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   157  	rda5807_config_reg[1] |= 1<<0;//Power Up Enable.
+	movh.a	a15,#@his(rda5807_config_reg)
+	lea	a15,[a15]@los(rda5807_config_reg)
+	movh.a	a2,#@his(rda5807_config_reg)
+	lea	a2,[a2]@los(rda5807_config_reg)
+.L151:
+	ld.bu	d15,[a2]1
+.L152:
+	or	d15,#1
+	st.b	[a15]1,d15
+.L153:
+
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   158  	rad5807m_simiic_write(FM_ADDRESS,rda5807_config_reg, 4);
+	mov	d4,#16
+.L154:
+	movh.a	a4,#@his(rda5807_config_reg)
+	lea	a4,[a4]@los(rda5807_config_reg)
+.L155:
+	mov	d5,#4
+	call	rad5807m_simiic_write
+.L156:
+
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   159  }
+	ret
+.L78:
+	
+__rda5807_set_transimt_function_end:
+	.size	rda5807_set_transimt,__rda5807_set_transimt_function_end-rda5807_set_transimt
+.L38:
+	; End of function
+	
+	.sdecl	'.text.SEEKFREE_RDA5807.rda5807_read_id',code,cluster('rda5807_read_id')
+	.sect	'.text.SEEKFREE_RDA5807.rda5807_read_id'
+	.align	2
+	
+	.global	rda5807_read_id
+
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   160  
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   161  
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   162  
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   163  
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   164  
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   165  
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   166  uint8  rda5807_read_reg[10];
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   167  //-------------------------------------------------------------------------------------------------------------------
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   168  //  @brief      rda5807读取ID（内部使用，用户无需关心）
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   169  //  @param      NULL
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   170  //  @return     void
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   171  //  @since      v1.0
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   172  //  Sample usage:
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   173  //-------------------------------------------------------------------------------------------------------------------
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   174  void rda5807_read_id(void)
+; Function rda5807_read_id
+.L22:
+rda5807_read_id:	.type	func
+
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   175  {
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   176  	rda5807m_simiic_read(FM_ADDRESS,rda5807_read_reg,10);
+	mov	d4,#16
+.L220:
+	movh.a	a4,#@his(rda5807_read_reg)
+	lea	a4,[a4]@los(rda5807_read_reg)
+.L221:
+	mov	d5,#10
+	call	rda5807m_simiic_read
+.L222:
+
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   177  }
+	ret
+.L97:
+	
+__rda5807_read_id_function_end:
+	.size	rda5807_read_id,__rda5807_read_id_function_end-rda5807_read_id
+.L68:
+	; End of function
+	
+	.sdecl	'.text.SEEKFREE_RDA5807.rda5807_init',code,cluster('rda5807_init')
+	.sect	'.text.SEEKFREE_RDA5807.rda5807_init'
+	.align	2
+	
+	.global	rda5807_init
+
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   178  
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   179  
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   180  
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   181  //-------------------------------------------------------------------------------------------------------------------
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   182  //  @brief      rda5807初始化
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   183  //  @param      NULL
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   184  //  @return     void
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   185  //  @since      v1.0
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   186  //  Sample usage:
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   187  //-------------------------------------------------------------------------------------------------------------------
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   188  void rda5807_init(float freq)
+; Function rda5807_init
+.L24:
+rda5807_init:	.type	func
+	sub.a	a10,#8
+.L116:
+	mov	d8,d4
+.L118:
+
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   189  {
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   190  	uint8 dat[2] = {0x00,0x02};
+	movh.a	a15,#@his(.1.ini)
+	lea	a15,[a15]@los(.1.ini)
+	lea	a15,[a15]0
+.L129:
+	lea	a2,[a10]0
+	mov.a	a4,#1
+.L6:
+	ld.bu	d15,[a15+]
+	st.b	[a2+],d15
+	loop	a4,.L6
+.L130:
+
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   191  
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   192  
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   193  	//iic初始化
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   194  	simiic_init();
+	call	simiic_init
+.L117:
+
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   195  	simiic_delay_set(100);//设置模拟IIC延时，因为默认速率较高
+	mov	d4,#100
+	call	simiic_delay_set
+.L131:
+
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   196  	//复位
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   197  	rad5807m_simiic_write(FM_ADDRESS,dat,2);
+	mov	d4,#16
+.L132:
+	lea	a4,[a10]0
+.L133:
+	mov	d5,#2
+	call	rad5807m_simiic_write
+.L134:
+
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   198  
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   199  	systick_delay_ms(STM0, 50);
+	mov	d4,#0
+	mov.u	d5,#61568
+	addih	d5,d5,#762
+	call	systick_delay
+.L135:
+
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   200  
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   201  	while(rda5807_read_reg[8] != 0x58)
+	j	.L7
+.L8:
+
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   202  	{
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   203  		//读取寄存器，自检。
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   204  		rda5807m_simiic_read(FM_ADDRESS,rda5807_read_reg,10);
+	mov	d4,#16
+.L136:
+	movh.a	a4,#@his(rda5807_read_reg)
+	lea	a4,[a4]@los(rda5807_read_reg)
+.L137:
+	mov	d5,#10
+	call	rda5807m_simiic_read
+.L138:
+
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   205  		systick_delay_ms(STM0, 50);
+	mov	d4,#0
+	mov.u	d5,#61568
+	addih	d5,d5,#762
+	call	systick_delay
+.L7:
+	movh.a	a15,#@his(rda5807_read_reg)
+	lea	a15,[a15]@los(rda5807_read_reg)
+.L139:
+	ld.bu	d15,[a15]8
+.L140:
+	mov	d0,#88
+.L141:
+	jne	d15,d0,.L8
+.L142:
+
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   206  		//如果一直卡在这里，查看SCL和SDA是否连接好。
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   207  		//需要设置SEEKFREE_IIC.h文件中的SIMIIC_DELAY_TIME值大于60
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   208  	}
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   209  
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   210  	//启动
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   211  	rad5807m_simiic_write(FM_ADDRESS,rda5807_config_reg,sizeof(rda5807_config_reg));
+	mov	d4,#16
+.L143:
+	movh.a	a4,#@his(rda5807_config_reg)
+	lea	a4,[a4]@los(rda5807_config_reg)
+.L144:
+	mov	d5,#12
+	call	rad5807m_simiic_write
+.L145:
+
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   212  	//频率设置
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   213  	rda5807_set_channel(freq);
+	mov	d4,d8
+.L119:
+	call	rda5807_set_channel
+.L120:
+
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   214  
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   215  	simiic_delay_set(SIMIIC_DELAY_TIME);//还原模拟IIC默认速率
+	mov	d4,#20
+	call	simiic_delay_set
+.L146:
+
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   216  }
+	ret
+.L73:
+	
+__rda5807_init_function_end:
+	.size	rda5807_init,__rda5807_init_function_end-rda5807_init
+.L33:
+	; End of function
+	
+	.sdecl	'.data.SEEKFREE_RDA5807.rda5807_config_reg',data,cluster('rda5807_config_reg')
+	.sect	'.data.SEEKFREE_RDA5807.rda5807_config_reg'
+	.global	rda5807_config_reg
+rda5807_config_reg:	.type	object
+	.size	rda5807_config_reg,12
+	.byte	193,3
+	.space	2
+	.byte	10
+	.space	1
+	.byte	136,15
+	.space	2
+	.byte	66,2
+	.sdecl	'.bss.SEEKFREE_RDA5807.rda5807_read_reg',data,cluster('rda5807_read_reg')
+	.sect	'.bss.SEEKFREE_RDA5807.rda5807_read_reg'
+	.global	rda5807_read_reg
+rda5807_read_reg:	.type	object
+	.size	rda5807_read_reg,10
+	.space	10
+	.sdecl	'.rodata.SEEKFREE_RDA5807..1.ini',data,rom
+	.sect	'.rodata.SEEKFREE_RDA5807..1.ini'
+.1.ini:	.type	object
+	.size	.1.ini,2
+	.space	1
+	.byte	2
+	.calls	'rad5807m_simiic_write','simiic_start'
+	.calls	'rad5807m_simiic_write','send_ch'
+	.calls	'rad5807m_simiic_write','simiic_stop'
+	.calls	'rda5807m_simiic_read','simiic_start'
+	.calls	'rda5807m_simiic_read','send_ch'
+	.calls	'rda5807m_simiic_read','read_ch'
+	.calls	'rda5807m_simiic_read','simiic_stop'
+	.calls	'rda5807_set_channel','rda5807_channel_config'
+	.calls	'rda5807_set_channel','rad5807m_simiic_write'
+	.calls	'rda5807_set_idle','rad5807m_simiic_write'
+	.calls	'rda5807_set_transimt','rad5807m_simiic_write'
+	.calls	'rda5807_read_id','rda5807m_simiic_read'
+	.calls	'rda5807_init','simiic_init'
+	.calls	'rda5807_init','simiic_delay_set'
+	.calls	'rda5807_init','rad5807m_simiic_write'
+	.calls	'rda5807_init','systick_delay'
+	.calls	'rda5807_init','rda5807m_simiic_read'
+	.calls	'rda5807_init','rda5807_set_channel'
+	.calls	'rad5807m_simiic_write','',0
+	.calls	'rda5807m_simiic_read','',0
+	.calls	'rda5807_channel_config','',0
+	.calls	'rda5807_set_channel','',0
+	.calls	'rda5807_set_idle','',0
+	.calls	'rda5807_set_transimt','',0
+	.calls	'rda5807_read_id','',0
+	.extern	simiic_delay_set
+	.extern	simiic_start
+	.extern	simiic_stop
+	.extern	send_ch
+	.extern	read_ch
+	.extern	simiic_init
+	.extern	systick_delay
+	.calls	'rda5807_init','',8
+	.sdecl	'.debug_info',debug
+	.sect	'.debug_info'
+.L26:
+	.word	874
+	.half	3
+	.word	.L27
+	.byte	4
+.L25:
+	.byte	1
+	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_RDA5807.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Debug\\',0,12,1
+	.word	.L28
+	.byte	2
+	.byte	'int',0,4,5,3
+	.word	170
+	.byte	4
+	.byte	'__c11_atomic_thread_fence',0,1,1,1,1,5
+	.word	177
+	.byte	0,2
+	.byte	'unsigned int',0,4,7,6
+	.word	219
+	.byte	7
+	.word	219
+	.byte	8
+	.byte	'__cmpswapw',0
+	.word	235
+	.byte	1,1,1,1,9
+	.byte	'p',0
+	.word	240
+	.byte	9
+	.byte	'value',0
+	.word	219
+	.byte	9
+	.byte	'compare',0
+	.word	219
+	.byte	0
+.L82:
+	.byte	2
+	.byte	'unsigned short int',0,2,7,10
+	.byte	'simiic_delay_set',0,1,52,7,1,1,1,1,11
+	.byte	'time',0,1,52,31
+	.word	297
+	.byte	0,12
+	.byte	'simiic_start',0,1,53,7,1,1,1,1,12
+	.byte	'simiic_stop',0,1,54,7,1,1,1,1
+.L87:
+	.byte	2
+	.byte	'unsigned char',0,1,8,10
+	.byte	'send_ch',0,1,56,7,1,1,1,1,11
+	.byte	'c',0,1,56,21
+	.word	399
+	.byte	0,13
+	.byte	'read_ch',0,1,57,7
+	.word	399
+	.byte	1,1,1,1,11
+	.byte	'ack',0,1,57,21
+	.word	399
+	.byte	0,12
+	.byte	'simiic_init',0,1,61,7,1,1,1,1,14,2,27,9,1,15
+	.byte	'STM0',0,0,15
+	.byte	'STM1',0,1,0,2
+	.byte	'unsigned long int',0,4,7,10
+	.byte	'systick_delay',0,2,34,6,1,1,1,1,11
+	.byte	'stmn',0,2,34,30
+	.word	496
+	.byte	11
+	.byte	'time',0,2,34,43
+	.word	516
+	.byte	0
+.L74:
+	.byte	2
+	.byte	'float',0,4,4
+.L76:
+	.byte	16,2
+	.word	399
+	.byte	17,1,0
+.L89:
+	.byte	7
+	.word	399
+	.byte	18
+	.byte	'__size_t',0,3,1,1
+	.word	219
+	.byte	19,1,7
+	.word	626
+	.byte	18
+	.byte	'__codeptr',0,3,1,1
+	.word	628
+	.byte	18
+	.byte	'uint8',0,4,105,29
+	.word	399
+	.byte	18
+	.byte	'uint16',0,4,109,29
+	.word	297
+	.byte	18
+	.byte	'uint32',0,4,113,29
+	.word	516
+	.byte	2
+	.byte	'unsigned long long int',0,8,7,18
+	.byte	'uint64',0,4,118,29
+	.word	695
+	.byte	2
+	.byte	'char',0,1,6,18
+	.byte	'int8',0,5,33,29
+	.word	736
+	.byte	2
+	.byte	'short int',0,2,5,18
+	.byte	'int16',0,5,34,29
+	.word	757
+	.byte	2
+	.byte	'long int',0,4,5,18
+	.byte	'int32',0,5,35,29
+	.word	784
+	.byte	2
+	.byte	'long long int',0,8,5,18
+	.byte	'int64',0,5,36,29
+	.word	810
+	.byte	18
+	.byte	'STMN_enum',0,2,31,2
+	.word	496
+.L98:
+	.byte	16,12
+	.word	399
+	.byte	17,11,0
+.L99:
+	.byte	16,10
+	.word	399
+	.byte	17,9,0,0
+	.sdecl	'.debug_abbrev',debug
+	.sect	'.debug_abbrev'
+.L27:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,16,6,0,0,2,36,0,3,8,11,15,62,15,0,0,3,38,0,73,19,0,0,4,46,1,3,8,54
+	.byte	15,39,12,63,12,60,12,0,0,5,5,0,73,19,0,0,6,53,0,73,19,0,0,7,15,0,73,19,0,0,8,46,1,3,8,73,19,54,15,39,12
+	.byte	63,12,60,12,0,0,9,5,0,3,8,73,19,0,0,10,46,1,3,8,58,15,59,15,57,15,54,15,39,12,63,12,60,12,0,0,11,5,0,3
+	.byte	8,58,15,59,15,57,15,73,19,0,0,12,46,0,3,8,58,15,59,15,57,15,54,15,39,12,63,12,60,12,0,0,13,46,1,3,8,58
+	.byte	15,59,15,57,15,73,19,54,15,39,12,63,12,60,12,0,0,14,4,1,58,15,59,15,57,15,11,15,0,0,15,40,0,3,8,28,13
+	.byte	0,0,16,1,1,11,15,73,19,0,0,17,33,0,47,15,0,0,18,22,0,3,8,58,15,59,15,57,15,73,19,0,0,19,21,0,54,15,0,0
+	.byte	0
+	.sdecl	'.debug_line',debug
+	.sect	'.debug_line'
+.L28:
+	.word	.L122-.L121
+.L121:
+	.half	3
+	.word	.L124-.L123
+.L123:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'D:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\seekfree_libraries',0
+	.byte	'D:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Std',0
+	.byte	'D:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\seekfree_libraries\\common',0,0
+	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_IIC.h',0,0,0,0
+	.byte	'zf_stm_systick.h',0,1,0,0
+	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_RDA5807.c',0,0,0,0
+	.byte	'PLATFORM_TYPES.H',0,2,0,0
+	.byte	'common.h',0,3,0,0,0
+.L124:
+.L122:
+	.sdecl	'.debug_info',debug,cluster('rda5807_init')
+	.sect	'.debug_info'
+.L29:
+	.word	255
+	.half	3
+	.word	.L30
+	.byte	4,1
+	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_RDA5807.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Debug\\',0,12,1
+	.word	.L32,.L31
+	.byte	2
+	.word	.L25
+	.byte	3
+	.byte	'rda5807_init',0,1,188,1,6,1,1,1
+	.word	.L24,.L73,.L23
+	.byte	4
+	.byte	'freq',0,1,188,1,25
+	.word	.L74,.L75
+	.byte	5
+	.word	.L24,.L73
+	.byte	6
+	.byte	'dat',0,1,190,1,8
+	.word	.L76,.L77
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('rda5807_init')
+	.sect	'.debug_abbrev'
+.L30:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3
+	.byte	8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('rda5807_init')
+	.sect	'.debug_line'
+.L31:
+	.word	.L126-.L125
+.L125:
+	.half	3
+	.word	.L128-.L127
+.L127:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_RDA5807.c',0,0,0,0,0
+.L128:
+	.byte	5,6,7,0,5,2
+	.word	.L24
+	.byte	3,187,1,1,5,17,9
+	.half	.L118-.L24
+	.byte	3,2,1,5,15,9
+	.half	.L129-.L118
+	.byte	1,5,13,9
+	.half	.L130-.L129
+	.byte	3,4,1,5,19,9
+	.half	.L117-.L130
+	.byte	3,1,1,5,24,9
+	.half	.L131-.L117
+	.byte	3,2,1,5,35,9
+	.half	.L132-.L131
+	.byte	1,5,39,9
+	.half	.L133-.L132
+	.byte	1,5,2,9
+	.half	.L134-.L133
+	.byte	3,2,1,5,35,9
+	.half	.L135-.L134
+	.byte	3,2,1,5,24,9
+	.half	.L8-.L135
+	.byte	3,3,1,5,35,9
+	.half	.L136-.L8
+	.byte	1,5,52,9
+	.half	.L137-.L136
+	.byte	1,5,3,9
+	.half	.L138-.L137
+	.byte	3,1,1,5,8,9
+	.half	.L7-.L138
+	.byte	3,124,1,5,24,9
+	.half	.L139-.L7
+	.byte	1,5,31,9
+	.half	.L140-.L139
+	.byte	1,5,35,9
+	.half	.L141-.L140
+	.byte	1,5,24,7,9
+	.half	.L142-.L141
+	.byte	3,10,1,5,35,9
+	.half	.L143-.L142
+	.byte	1,5,54,9
+	.half	.L144-.L143
+	.byte	1,5,22,9
+	.half	.L145-.L144
+	.byte	3,2,1,5,19,9
+	.half	.L120-.L145
+	.byte	3,2,1,5,1,9
+	.half	.L146-.L120
+	.byte	3,1,1,7,9
+	.half	.L33-.L146
+	.byte	0,1,1
+.L126:
+	.sdecl	'.debug_ranges',debug,cluster('rda5807_init')
+	.sect	'.debug_ranges'
+.L32:
+	.word	-1,.L24,0,.L33-.L24,0,0
+	.sdecl	'.debug_info',debug,cluster('rda5807_set_transimt')
+	.sect	'.debug_info'
+.L34:
+	.word	227
+	.half	3
+	.word	.L35
+	.byte	4,1
+	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_RDA5807.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Debug\\',0,12,1
+	.word	.L37,.L36
+	.byte	2
+	.word	.L25
+	.byte	3
+	.byte	'rda5807_set_transimt',0,1,155,1,6,1,1,1
+	.word	.L20,.L78,.L19
+	.byte	4
+	.word	.L20,.L78
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('rda5807_set_transimt')
+	.sect	'.debug_abbrev'
+.L35:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('rda5807_set_transimt')
+	.sect	'.debug_line'
+.L36:
+	.word	.L148-.L147
+.L147:
+	.half	3
+	.word	.L150-.L149
+.L149:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_RDA5807.c',0,0,0,0,0
+.L150:
+	.byte	5,2,7,0,5,2
+	.word	.L20
+	.byte	3,156,1,1,5,20,9
+	.half	.L151-.L20
+	.byte	1,5,24,9
+	.half	.L152-.L151
+	.byte	1,9
+	.half	.L153-.L152
+	.byte	3,1,1,5,35,9
+	.half	.L154-.L153
+	.byte	1,5,55,9
+	.half	.L155-.L154
+	.byte	1,5,1,9
+	.half	.L156-.L155
+	.byte	3,1,1,7,9
+	.half	.L38-.L156
+	.byte	0,1,1
+.L148:
+	.sdecl	'.debug_ranges',debug,cluster('rda5807_set_transimt')
+	.sect	'.debug_ranges'
+.L37:
+	.word	-1,.L20,0,.L38-.L20,0,0
+	.sdecl	'.debug_info',debug,cluster('rda5807_set_idle')
+	.sect	'.debug_info'
+.L39:
+	.word	223
+	.half	3
+	.word	.L40
+	.byte	4,1
+	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_RDA5807.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Debug\\',0,12,1
+	.word	.L42,.L41
+	.byte	2
+	.word	.L25
+	.byte	3
+	.byte	'rda5807_set_idle',0,1,141,1,6,1,1,1
+	.word	.L18,.L79,.L17
+	.byte	4
+	.word	.L18,.L79
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('rda5807_set_idle')
+	.sect	'.debug_abbrev'
+.L40:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('rda5807_set_idle')
+	.sect	'.debug_line'
+.L41:
+	.word	.L158-.L157
+.L157:
+	.half	3
+	.word	.L160-.L159
+.L159:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_RDA5807.c',0,0,0,0,0
+.L160:
+	.byte	5,2,7,0,5,2
+	.word	.L18
+	.byte	3,142,1,1,5,20,9
+	.half	.L161-.L18
+	.byte	1,5,24,9
+	.half	.L162-.L161
+	.byte	1,9
+	.half	.L163-.L162
+	.byte	3,1,1,5,35,9
+	.half	.L164-.L163
+	.byte	1,5,55,9
+	.half	.L165-.L164
+	.byte	1,5,1,9
+	.half	.L166-.L165
+	.byte	3,1,1,7,9
+	.half	.L43-.L166
+	.byte	0,1,1
+.L158:
+	.sdecl	'.debug_ranges',debug,cluster('rda5807_set_idle')
+	.sect	'.debug_ranges'
+.L42:
+	.word	-1,.L18,0,.L43-.L18,0,0
+	.sdecl	'.debug_info',debug,cluster('rda5807_set_channel')
+	.sect	'.debug_info'
+.L44:
+	.word	263
+	.half	3
+	.word	.L45
+	.byte	4,1
+	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_RDA5807.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Debug\\',0,12,1
+	.word	.L47,.L46
+	.byte	2
+	.word	.L25
+	.byte	3
+	.byte	'rda5807_set_channel',0,1,125,6,1,1,1
+	.word	.L16,.L80,.L15
+	.byte	4
+	.byte	'freq',0,1,125,32
+	.word	.L74,.L81
+	.byte	5
+	.word	.L16,.L80
+	.byte	6
+	.byte	'reg_chn',0,1,127,9
+	.word	.L82,.L83
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('rda5807_set_channel')
+	.sect	'.debug_abbrev'
+.L45:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3
+	.byte	8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('rda5807_set_channel')
+	.sect	'.debug_line'
+.L46:
+	.word	.L168-.L167
+.L167:
+	.half	3
+	.word	.L170-.L169
+.L169:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_RDA5807.c',0,0,0,0,0
+.L170:
+	.byte	5,26,7,0,5,2
+	.word	.L16
+	.byte	3,255,0,1,5,24,9
+	.half	.L171-.L16
+	.byte	1,5,34,9
+	.half	.L172-.L171
+	.byte	1,5,41,9
+	.half	.L173-.L172
+	.byte	1,5,39,9
+	.half	.L174-.L173
+	.byte	1,5,12,9
+	.half	.L175-.L174
+	.byte	1,5,28,9
+	.half	.L114-.L175
+	.byte	3,1,1,5,27,9
+	.half	.L115-.L114
+	.byte	3,1,1,5,38,9
+	.half	.L176-.L115
+	.byte	1,5,58,9
+	.half	.L177-.L176
+	.byte	1,5,1,9
+	.half	.L178-.L177
+	.byte	3,1,1,7,9
+	.half	.L48-.L178
+	.byte	0,1,1
+.L168:
+	.sdecl	'.debug_ranges',debug,cluster('rda5807_set_channel')
+	.sect	'.debug_ranges'
+.L47:
+	.word	-1,.L16,0,.L48-.L16,0,0
+	.sdecl	'.debug_info',debug,cluster('rda5807_channel_config')
+	.sect	'.debug_info'
+.L49:
+	.word	248
+	.half	3
+	.word	.L50
+	.byte	4,1
+	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_RDA5807.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Debug\\',0,12,1
+	.word	.L52,.L51
+	.byte	2
+	.word	.L25
+	.byte	3
+	.byte	'rda5807_channel_config',0,1,109,6,1,1,1
+	.word	.L14,.L84,.L13
+	.byte	4
+	.byte	'reg_chn',0,1,109,36
+	.word	.L82,.L85
+	.byte	5
+	.word	.L14,.L84
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('rda5807_channel_config')
+	.sect	'.debug_abbrev'
+.L50:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('rda5807_channel_config')
+	.sect	'.debug_line'
+.L51:
+	.word	.L180-.L179
+.L179:
+	.half	3
+	.word	.L182-.L181
+.L181:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_RDA5807.c',0,0,0,0,0
+.L182:
+	.byte	5,2,7,0,5,2
+	.word	.L14
+	.byte	3,238,0,1,5,26,9
+	.half	.L183-.L14
+	.byte	1,5,24,9
+	.half	.L184-.L183
+	.byte	1,5,2,9
+	.half	.L185-.L184
+	.byte	3,1,1,5,26,9
+	.half	.L186-.L185
+	.byte	1,5,24,9
+	.half	.L187-.L186
+	.byte	1,5,2,9
+	.half	.L188-.L187
+	.byte	3,1,1,5,42,9
+	.half	.L189-.L188
+	.byte	1,5,24,9
+	.half	.L190-.L189
+	.byte	1,5,2,9
+	.half	.L191-.L190
+	.byte	3,1,1,5,44,9
+	.half	.L192-.L191
+	.byte	1,5,51,9
+	.half	.L193-.L192
+	.byte	1,5,57,9
+	.half	.L194-.L193
+	.byte	1,5,24,9
+	.half	.L195-.L194
+	.byte	1,5,1,9
+	.half	.L196-.L195
+	.byte	3,1,1,7,9
+	.half	.L53-.L196
+	.byte	0,1,1
+.L180:
+	.sdecl	'.debug_ranges',debug,cluster('rda5807_channel_config')
+	.sect	'.debug_ranges'
+.L52:
+	.word	-1,.L14,0,.L53-.L14,0,0
+	.sdecl	'.debug_info',debug,cluster('rad5807m_simiic_write')
+	.sect	'.debug_info'
+.L54:
+	.word	295
+	.half	3
+	.word	.L55
+	.byte	4,1
+	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_RDA5807.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Debug\\',0,12,1
+	.word	.L57,.L56
+	.byte	2
+	.word	.L25
+	.byte	3
+	.byte	'rad5807m_simiic_write',0,1,63,6,1,1,1
+	.word	.L10,.L86,.L9
+	.byte	4
+	.byte	'dev_add',0,1,63,34
+	.word	.L87,.L88
+	.byte	4
+	.byte	'data',0,1,63,49
+	.word	.L89,.L90
+	.byte	4
+	.byte	'num',0,1,63,63
+	.word	.L87,.L91
+	.byte	5
+	.word	.L10,.L86
+	.byte	6
+	.byte	'i',0,1,65,11
+	.word	.L87,.L92
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('rad5807m_simiic_write')
+	.sect	'.debug_abbrev'
+.L55:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3
+	.byte	8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('rad5807m_simiic_write')
+	.sect	'.debug_line'
+.L56:
+	.word	.L198-.L197
+.L197:
+	.half	3
+	.word	.L200-.L199
+.L199:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_RDA5807.c',0,0,0,0,0
+.L200:
+	.byte	5,6,7,0,5,2
+	.word	.L10
+	.byte	3,62,1,5,14,9
+	.half	.L104-.L10
+	.byte	3,3,1,5,22,9
+	.half	.L100-.L104
+	.byte	3,1,1,5,27,9
+	.half	.L102-.L100
+	.byte	1,5,7,9
+	.half	.L201-.L102
+	.byte	3,2,1,5,15,9
+	.half	.L105-.L201
+	.byte	1,9
+	.half	.L3-.L105
+	.byte	3,1,1,5,17,9
+	.half	.L202-.L3
+	.byte	3,127,1,5,15,9
+	.half	.L2-.L202
+	.byte	1,5,13,7,9
+	.half	.L203-.L2
+	.byte	3,3,1,5,1,9
+	.half	.L204-.L203
+	.byte	3,1,1,7,9
+	.half	.L58-.L204
+	.byte	0,1,1
+.L198:
+	.sdecl	'.debug_ranges',debug,cluster('rad5807m_simiic_write')
+	.sect	'.debug_ranges'
+.L57:
+	.word	-1,.L10,0,.L58-.L10,0,0
+	.sdecl	'.debug_info',debug,cluster('rda5807m_simiic_read')
+	.sect	'.debug_info'
+.L59:
+	.word	282
+	.half	3
+	.word	.L60
+	.byte	4,1
+	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_RDA5807.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Debug\\',0,12,1
+	.word	.L62,.L61
+	.byte	2
+	.word	.L25
+	.byte	3
+	.byte	'rda5807m_simiic_read',0,1,85,6,1,1,1
+	.word	.L12,.L93,.L11
+	.byte	4
+	.byte	'dev_add',0,1,85,33
+	.word	.L87,.L94
+	.byte	4
+	.byte	'dat_add',0,1,85,48
+	.word	.L89,.L95
+	.byte	4
+	.byte	'num',0,1,85,62
+	.word	.L87,.L96
+	.byte	5
+	.word	.L12,.L93
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('rda5807m_simiic_read')
+	.sect	'.debug_abbrev'
+.L60:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('rda5807m_simiic_read')
+	.sect	'.debug_line'
+.L61:
+	.word	.L206-.L205
+.L205:
+	.half	3
+	.word	.L208-.L207
+.L207:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_RDA5807.c',0,0,0,0,0
+.L208:
+	.byte	5,6,7,0,5,2
+	.word	.L12
+	.byte	3,212,0,1,5,17,9
+	.half	.L111-.L12
+	.byte	3,2,1,5,19,9
+	.half	.L107-.L111
+	.byte	3,2,1,5,24,9
+	.half	.L109-.L107
+	.byte	1,5,16,9
+	.half	.L209-.L109
+	.byte	3,1,1,5,28,9
+	.half	.L5-.L209
+	.byte	3,2,1,5,18,9
+	.half	.L210-.L5
+	.byte	1,5,16,9
+	.half	.L211-.L210
+	.byte	3,1,1,5,11,9
+	.half	.L4-.L211
+	.byte	3,125,1,5,16,9
+	.half	.L113-.L4
+	.byte	1,5,24,7,9
+	.half	.L212-.L113
+	.byte	3,6,1,5,14,9
+	.half	.L213-.L212
+	.byte	1,5,13,9
+	.half	.L214-.L213
+	.byte	3,2,1,5,1,9
+	.half	.L215-.L214
+	.byte	3,1,1,7,9
+	.half	.L63-.L215
+	.byte	0,1,1
+.L206:
+	.sdecl	'.debug_ranges',debug,cluster('rda5807m_simiic_read')
+	.sect	'.debug_ranges'
+.L62:
+	.word	-1,.L12,0,.L63-.L12,0,0
+	.sdecl	'.debug_info',debug,cluster('rda5807_read_id')
+	.sect	'.debug_info'
+.L64:
+	.word	222
+	.half	3
+	.word	.L65
+	.byte	4,1
+	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_RDA5807.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Debug\\',0,12,1
+	.word	.L67,.L66
+	.byte	2
+	.word	.L25
+	.byte	3
+	.byte	'rda5807_read_id',0,1,174,1,6,1,1,1
+	.word	.L22,.L97,.L21
+	.byte	4
+	.word	.L22,.L97
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('rda5807_read_id')
+	.sect	'.debug_abbrev'
+.L65:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('rda5807_read_id')
+	.sect	'.debug_line'
+.L66:
+	.word	.L217-.L216
+.L216:
+	.half	3
+	.word	.L219-.L218
+.L218:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_RDA5807.c',0,0,0,0,0
+.L219:
+	.byte	5,23,7,0,5,2
+	.word	.L22
+	.byte	3,175,1,1,5,34,9
+	.half	.L220-.L22
+	.byte	1,5,51,9
+	.half	.L221-.L220
+	.byte	1,5,1,9
+	.half	.L222-.L221
+	.byte	3,1,1,7,9
+	.half	.L68-.L222
+	.byte	0,1,1
+.L217:
+	.sdecl	'.debug_ranges',debug,cluster('rda5807_read_id')
+	.sect	'.debug_ranges'
+.L67:
+	.word	-1,.L22,0,.L68-.L22,0,0
+	.sdecl	'.debug_info',debug,cluster('rda5807_config_reg')
+	.sect	'.debug_info'
+.L69:
+	.word	202
+	.half	3
+	.word	.L70
+	.byte	4,1
+	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_RDA5807.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Debug\\',0,12,1,2
+	.word	.L25
+	.byte	3
+	.byte	'rda5807_config_reg',0,3,45,7
+	.word	.L98
+	.byte	1,5,3
+	.word	rda5807_config_reg
+	.byte	0
+	.sdecl	'.debug_abbrev',debug,cluster('rda5807_config_reg')
+	.sect	'.debug_abbrev'
+.L70:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
+	.byte	0,0,0
+	.sdecl	'.debug_info',debug,cluster('rda5807_read_reg')
+	.sect	'.debug_info'
+.L71:
+	.word	201
+	.half	3
+	.word	.L72
+	.byte	4,1
+	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_RDA5807.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Debug\\',0,12,1,2
+	.word	.L25
+	.byte	3
+	.byte	'rda5807_read_reg',0,3,166,1,8
+	.word	.L99
+	.byte	1,5,3
+	.word	rda5807_read_reg
+	.byte	0
+	.sdecl	'.debug_abbrev',debug,cluster('rda5807_read_reg')
+	.sect	'.debug_abbrev'
+.L72:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
+	.byte	0,0,0
+	.sdecl	'.debug_loc',debug,cluster('rad5807m_simiic_write')
+	.sect	'.debug_loc'
+.L90:
+	.word	-1,.L10,0,.L100-.L10
+	.half	1
+	.byte	100
+	.word	.L103-.L10,.L86-.L10
+	.half	1
+	.byte	111
+	.word	0,0
+.L88:
+	.word	-1,.L10,0,.L100-.L10
+	.half	1
+	.byte	84
+	.word	.L101-.L10,.L102-.L10
+	.half	1
+	.byte	95
+	.word	0,0
+.L92:
+	.word	-1,.L10,.L105-.L10,.L106-.L10
+	.half	1
+	.byte	95
+	.word	.L2-.L10,.L86-.L10
+	.half	1
+	.byte	95
+	.word	0,0
+.L91:
+	.word	-1,.L10,0,.L100-.L10
+	.half	1
+	.byte	85
+	.word	.L104-.L10,.L86-.L10
+	.half	1
+	.byte	88
+	.word	0,0
+.L9:
+	.word	-1,.L10,0,.L86-.L10
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('rda5807_channel_config')
+	.sect	'.debug_loc'
+.L13:
+	.word	-1,.L14,0,.L84-.L14
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L85:
+	.word	-1,.L14,0,.L84-.L14
+	.half	1
+	.byte	84
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('rda5807_init')
+	.sect	'.debug_loc'
+.L77:
+	.word	-1,.L24,0,.L73-.L24
+	.half	2
+	.byte	145,120
+	.word	0,0
+.L75:
+	.word	-1,.L24,0,.L117-.L24
+	.half	1
+	.byte	84
+	.word	.L118-.L24,.L73-.L24
+	.half	1
+	.byte	88
+	.word	.L119-.L24,.L120-.L24
+	.half	1
+	.byte	84
+	.word	0,0
+.L23:
+	.word	-1,.L24,0,.L116-.L24
+	.half	2
+	.byte	138,0
+	.word	.L116-.L24,.L73-.L24
+	.half	2
+	.byte	138,8
+	.word	.L73-.L24,.L73-.L24
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('rda5807_read_id')
+	.sect	'.debug_loc'
+.L21:
+	.word	-1,.L22,0,.L97-.L22
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('rda5807_set_channel')
+	.sect	'.debug_loc'
+.L81:
+	.word	-1,.L16,0,.L114-.L16
+	.half	1
+	.byte	84
+	.word	0,0
+.L15:
+	.word	-1,.L16,0,.L80-.L16
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L83:
+	.word	-1,.L16,.L114-.L16,.L115-.L16
+	.half	1
+	.byte	84
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('rda5807_set_idle')
+	.sect	'.debug_loc'
+.L17:
+	.word	-1,.L18,0,.L79-.L18
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('rda5807_set_transimt')
+	.sect	'.debug_loc'
+.L19:
+	.word	-1,.L20,0,.L78-.L20
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('rda5807m_simiic_read')
+	.sect	'.debug_loc'
+.L95:
+	.word	-1,.L12,0,.L107-.L12
+	.half	1
+	.byte	100
+	.word	.L110-.L12,.L93-.L12
+	.half	1
+	.byte	111
+	.word	0,0
+.L94:
+	.word	-1,.L12,0,.L107-.L12
+	.half	1
+	.byte	84
+	.word	.L108-.L12,.L109-.L12
+	.half	1
+	.byte	88
+	.word	0,0
+.L96:
+	.word	-1,.L12,0,.L107-.L12
+	.half	1
+	.byte	85
+	.word	.L111-.L12,.L112-.L12
+	.half	1
+	.byte	95
+	.word	.L113-.L12,.L93-.L12
+	.half	1
+	.byte	95
+	.word	0,0
+.L11:
+	.word	-1,.L12,0,.L93-.L12
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_frame',debug
+	.sect	'.debug_frame'
+.L223:
+	.word	48
+	.word	-1
+	.byte	3,0,2,1,27,12,26,0,8,27,8,26,8,28,8,29,8,30,8,31,8,34,8,35,8,32,8,33,8,16,8,17,8,24,8,25,8,36,8,37,8,38
+	.byte	8,39
+	.sdecl	'.debug_frame',debug,cluster('rad5807m_simiic_write')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L223,.L10,.L86-.L10
+	.sdecl	'.debug_frame',debug,cluster('rda5807m_simiic_read')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L223,.L12,.L93-.L12
+	.sdecl	'.debug_frame',debug,cluster('rda5807_channel_config')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L223,.L14,.L84-.L14
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('rda5807_set_channel')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L223,.L16,.L80-.L16
+	.sdecl	'.debug_frame',debug,cluster('rda5807_set_idle')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L223,.L18,.L79-.L18
+	.sdecl	'.debug_frame',debug,cluster('rda5807_set_transimt')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L223,.L20,.L78-.L20
+	.sdecl	'.debug_frame',debug,cluster('rda5807_read_id')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L223,.L22,.L97-.L22
+	.sdecl	'.debug_frame',debug,cluster('rda5807_init')
+	.sect	'.debug_frame'
+	.word	36
+	.word	.L223,.L24,.L73-.L24
+	.byte	4
+	.word	(.L116-.L24)/2
+	.byte	19,8,22,26,3,19,138,8,4
+	.word	(.L73-.L116)/2
+	.byte	19,0,8,26,0,0
+
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   217  
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   218  
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   219  
+; ..\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.c	   220  
+
+	; Module end

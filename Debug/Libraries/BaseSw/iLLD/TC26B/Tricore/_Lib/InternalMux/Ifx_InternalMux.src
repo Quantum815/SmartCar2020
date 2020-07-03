@@ -1,0 +1,508 @@
+	; Module start
+	.compiler_version	"TASKING VX-toolset for TriCore: C compiler v6.3r1 Build 19041558 SN 99294086"
+	.compiler_invocation	"ctc --dep-file=Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Lib\\InternalMux\\.Ifx_InternalMux.o.d --fp-model=c,f,l,n,r,S,T,z -D__CPU__=tc26x -D__CPU_TC26X__ --core=tc1.6.x --iso=99 -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264 -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\CODE -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Build -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Impl -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Lib -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Lib\\DataHandling -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Lib\\InternalMux -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_PinMap -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Asc -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Lin -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Spi -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Std -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6 -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\Icu -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\PwmBc -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\PwmHl -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\Std -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\Timer -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\TimerWithTrigger -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\TPwm -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cif -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cif\\Cam -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cif\\Std -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\CStart -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Irq -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Std -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Trap -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dma -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dma\\Dma -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dma\\Std -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc\\Dsadc -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc\\Rdc -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc\\Std -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dts -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dts\\Dts -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dts\\Std -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Emem -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Emem\\Std -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eray -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eray\\Eray -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eray\\Std -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eth -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eth\\Phy_Pef7071 -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eth\\Std -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fce -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fce\\Crc -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fce\\Std -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fft -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fft\\Fft -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fft\\Std -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Flash -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Flash\\Std -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gpt12 -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gpt12\\IncrEnc -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gpt12\\Std -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom\\Pwm -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom\\PwmHl -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom\\Timer -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Std -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tim -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tim\\In -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom\\Pwm -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom\\PwmHl -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom\\Timer -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Trig -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Hssl -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Hssl\\Hssl -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Hssl\\Std -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\I2c -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\I2c\\I2c -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\I2c\\Std -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Iom -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Iom\\Driver -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Iom\\Std -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Msc -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Msc\\Msc -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Msc\\Std -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Mtu -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Mtu\\Std -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Multican -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Multican\\Can -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Multican\\Std -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Port -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Port\\Io -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Port\\Std -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5 -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5\\Psi5 -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5\\Std -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5s -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5s\\Psi5s -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5s\\Std -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi\\SpiMaster -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi\\SpiSlave -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi\\Std -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Scu -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Scu\\Std -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Sent -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Sent\\Sent -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Sent\\Std -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Smu -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Smu\\Std -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Src -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Src\\Std -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Stm -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Stm\\Std -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Stm\\Timer -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Vadc -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Vadc\\Adc -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Vadc\\Std -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\Infra -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\Infra\\Platform -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\Infra\\Platform\\Tricore -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\Infra\\Platform\\Tricore\\Compilers -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\Infra\\Sfr -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\Infra\\Sfr\\TC26B -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\Infra\\Sfr\\TC26B\\_Reg -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\Service -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\Service\\CpuGeneric -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\seekfree_libraries -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\seekfree_libraries\\common -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\seekfree_peripheral -ID:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\USER -g2 -wW557 --make-target=Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Lib\\InternalMux\\Ifx_InternalMux.o -t4 --language=-gcc,-volatile,+strings,-kanji --default-near-size=0 -O0 --default-a1-size=0 --default-a0-size=0 --source --align=0 --switch=auto --error-limit=42 -o Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Lib\\InternalMux\\Ifx_InternalMux.src ..\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Lib\\InternalMux\\Ifx_InternalMux.c"
+	.compiler_name		"ctc"
+	;source	'..\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Lib\\InternalMux\\Ifx_InternalMux.c'
+
+	
+$TC16X
+	
+	.sdecl	'.text.Ifx_InternalMux.Ifx_InternalMux_init',code,cluster('Ifx_InternalMux_init')
+	.sect	'.text.Ifx_InternalMux.Ifx_InternalMux_init'
+	.align	2
+	
+	.global	Ifx_InternalMux_init
+
+; ..\Libraries\BaseSw\iLLD\TC26B\Tricore\_Lib\InternalMux\Ifx_InternalMux.c	     1  /**
+; ..\Libraries\BaseSw\iLLD\TC26B\Tricore\_Lib\InternalMux\Ifx_InternalMux.c	     2   * \file Ifx_InternalMux.c
+; ..\Libraries\BaseSw\iLLD\TC26B\Tricore\_Lib\InternalMux\Ifx_InternalMux.c	     3   * \brief Mux configuration functions
+; ..\Libraries\BaseSw\iLLD\TC26B\Tricore\_Lib\InternalMux\Ifx_InternalMux.c	     4   *
+; ..\Libraries\BaseSw\iLLD\TC26B\Tricore\_Lib\InternalMux\Ifx_InternalMux.c	     5   * \version iLLD_1_0_1_11_0
+; ..\Libraries\BaseSw\iLLD\TC26B\Tricore\_Lib\InternalMux\Ifx_InternalMux.c	     6   * \copyright Copyright (c) 2019 Infineon Technologies AG. All rights reserved.
+; ..\Libraries\BaseSw\iLLD\TC26B\Tricore\_Lib\InternalMux\Ifx_InternalMux.c	     7   *
+; ..\Libraries\BaseSw\iLLD\TC26B\Tricore\_Lib\InternalMux\Ifx_InternalMux.c	     8   *
+; ..\Libraries\BaseSw\iLLD\TC26B\Tricore\_Lib\InternalMux\Ifx_InternalMux.c	     9   *                                 IMPORTANT NOTICE
+; ..\Libraries\BaseSw\iLLD\TC26B\Tricore\_Lib\InternalMux\Ifx_InternalMux.c	    10   *
+; ..\Libraries\BaseSw\iLLD\TC26B\Tricore\_Lib\InternalMux\Ifx_InternalMux.c	    11   *
+; ..\Libraries\BaseSw\iLLD\TC26B\Tricore\_Lib\InternalMux\Ifx_InternalMux.c	    12   * Use of this file is subject to the terms of use agreed between (i) you or 
+; ..\Libraries\BaseSw\iLLD\TC26B\Tricore\_Lib\InternalMux\Ifx_InternalMux.c	    13   * the company in which ordinary course of business you are acting and (ii) 
+; ..\Libraries\BaseSw\iLLD\TC26B\Tricore\_Lib\InternalMux\Ifx_InternalMux.c	    14   * Infineon Technologies AG or its licensees. If and as long as no such 
+; ..\Libraries\BaseSw\iLLD\TC26B\Tricore\_Lib\InternalMux\Ifx_InternalMux.c	    15   * terms of use are agreed, use of this file is subject to following:
+; ..\Libraries\BaseSw\iLLD\TC26B\Tricore\_Lib\InternalMux\Ifx_InternalMux.c	    16  
+; ..\Libraries\BaseSw\iLLD\TC26B\Tricore\_Lib\InternalMux\Ifx_InternalMux.c	    17  
+; ..\Libraries\BaseSw\iLLD\TC26B\Tricore\_Lib\InternalMux\Ifx_InternalMux.c	    18   * Boost Software License - Version 1.0 - August 17th, 2003
+; ..\Libraries\BaseSw\iLLD\TC26B\Tricore\_Lib\InternalMux\Ifx_InternalMux.c	    19  
+; ..\Libraries\BaseSw\iLLD\TC26B\Tricore\_Lib\InternalMux\Ifx_InternalMux.c	    20   * Permission is hereby granted, free of charge, to any person or 
+; ..\Libraries\BaseSw\iLLD\TC26B\Tricore\_Lib\InternalMux\Ifx_InternalMux.c	    21   * organization obtaining a copy of the software and accompanying 
+; ..\Libraries\BaseSw\iLLD\TC26B\Tricore\_Lib\InternalMux\Ifx_InternalMux.c	    22   * documentation covered by this license (the "Software") to use, reproduce,
+; ..\Libraries\BaseSw\iLLD\TC26B\Tricore\_Lib\InternalMux\Ifx_InternalMux.c	    23   * display, distribute, execute, and transmit the Software, and to prepare
+; ..\Libraries\BaseSw\iLLD\TC26B\Tricore\_Lib\InternalMux\Ifx_InternalMux.c	    24   * derivative works of the Software, and to permit third-parties to whom the 
+; ..\Libraries\BaseSw\iLLD\TC26B\Tricore\_Lib\InternalMux\Ifx_InternalMux.c	    25   * Software is furnished to do so, all subject to the following:
+; ..\Libraries\BaseSw\iLLD\TC26B\Tricore\_Lib\InternalMux\Ifx_InternalMux.c	    26  
+; ..\Libraries\BaseSw\iLLD\TC26B\Tricore\_Lib\InternalMux\Ifx_InternalMux.c	    27   * The copyright notices in the Software and this entire statement, including
+; ..\Libraries\BaseSw\iLLD\TC26B\Tricore\_Lib\InternalMux\Ifx_InternalMux.c	    28   * the above license grant, this restriction and the following disclaimer, must
+; ..\Libraries\BaseSw\iLLD\TC26B\Tricore\_Lib\InternalMux\Ifx_InternalMux.c	    29   * be included in all copies of the Software, in whole or in part, and all
+; ..\Libraries\BaseSw\iLLD\TC26B\Tricore\_Lib\InternalMux\Ifx_InternalMux.c	    30   * derivative works of the Software, unless such copies or derivative works are
+; ..\Libraries\BaseSw\iLLD\TC26B\Tricore\_Lib\InternalMux\Ifx_InternalMux.c	    31   * solely in the form of machine-executable object code generated by a source
+; ..\Libraries\BaseSw\iLLD\TC26B\Tricore\_Lib\InternalMux\Ifx_InternalMux.c	    32   * language processor.
+; ..\Libraries\BaseSw\iLLD\TC26B\Tricore\_Lib\InternalMux\Ifx_InternalMux.c	    33  
+; ..\Libraries\BaseSw\iLLD\TC26B\Tricore\_Lib\InternalMux\Ifx_InternalMux.c	    34   * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR 
+; ..\Libraries\BaseSw\iLLD\TC26B\Tricore\_Lib\InternalMux\Ifx_InternalMux.c	    35   * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+; ..\Libraries\BaseSw\iLLD\TC26B\Tricore\_Lib\InternalMux\Ifx_InternalMux.c	    36   * FITNESS FOR A PARTICULAR PURPOSE, TITLE AND NON-INFRINGEMENT. IN NO EVENT
+; ..\Libraries\BaseSw\iLLD\TC26B\Tricore\_Lib\InternalMux\Ifx_InternalMux.c	    37   * SHALL THE COPYRIGHT HOLDERS OR ANYONE DISTRIBUTING THE SOFTWARE BE LIABLE 
+; ..\Libraries\BaseSw\iLLD\TC26B\Tricore\_Lib\InternalMux\Ifx_InternalMux.c	    38   * FOR ANY DAMAGES OR OTHER LIABILITY, WHETHER IN CONTRACT, TORT OR OTHERWISE,
+; ..\Libraries\BaseSw\iLLD\TC26B\Tricore\_Lib\InternalMux\Ifx_InternalMux.c	    39   * ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+; ..\Libraries\BaseSw\iLLD\TC26B\Tricore\_Lib\InternalMux\Ifx_InternalMux.c	    40   * DEALINGS IN THE SOFTWARE.
+; ..\Libraries\BaseSw\iLLD\TC26B\Tricore\_Lib\InternalMux\Ifx_InternalMux.c	    41  
+; ..\Libraries\BaseSw\iLLD\TC26B\Tricore\_Lib\InternalMux\Ifx_InternalMux.c	    42   *
+; ..\Libraries\BaseSw\iLLD\TC26B\Tricore\_Lib\InternalMux\Ifx_InternalMux.c	    43   */
+; ..\Libraries\BaseSw\iLLD\TC26B\Tricore\_Lib\InternalMux\Ifx_InternalMux.c	    44  
+; ..\Libraries\BaseSw\iLLD\TC26B\Tricore\_Lib\InternalMux\Ifx_InternalMux.c	    45  /******************************************************************************/
+; ..\Libraries\BaseSw\iLLD\TC26B\Tricore\_Lib\InternalMux\Ifx_InternalMux.c	    46  /*----------------------------------Includes----------------------------------*/
+; ..\Libraries\BaseSw\iLLD\TC26B\Tricore\_Lib\InternalMux\Ifx_InternalMux.c	    47  /******************************************************************************/
+; ..\Libraries\BaseSw\iLLD\TC26B\Tricore\_Lib\InternalMux\Ifx_InternalMux.c	    48  
+; ..\Libraries\BaseSw\iLLD\TC26B\Tricore\_Lib\InternalMux\Ifx_InternalMux.c	    49  #include "Ifx_InternalMux.h"
+; ..\Libraries\BaseSw\iLLD\TC26B\Tricore\_Lib\InternalMux\Ifx_InternalMux.c	    50  #include "Cpu/Std/IfxCpu_Intrinsics.h"
+; ..\Libraries\BaseSw\iLLD\TC26B\Tricore\_Lib\InternalMux\Ifx_InternalMux.c	    51  
+; ..\Libraries\BaseSw\iLLD\TC26B\Tricore\_Lib\InternalMux\Ifx_InternalMux.c	    52  /******************************************************************************/
+; ..\Libraries\BaseSw\iLLD\TC26B\Tricore\_Lib\InternalMux\Ifx_InternalMux.c	    53  /*-------------------------Function Implementations---------------------------*/
+; ..\Libraries\BaseSw\iLLD\TC26B\Tricore\_Lib\InternalMux\Ifx_InternalMux.c	    54  /******************************************************************************/
+; ..\Libraries\BaseSw\iLLD\TC26B\Tricore\_Lib\InternalMux\Ifx_InternalMux.c	    55  
+; ..\Libraries\BaseSw\iLLD\TC26B\Tricore\_Lib\InternalMux\Ifx_InternalMux.c	    56  void Ifx_InternalMux_init(const Ifx_InternalMux_Config *cfg)
+; Function Ifx_InternalMux_init
+.L6:
+Ifx_InternalMux_init:	.type	func
+	sub.a	a10,#16
+.L33:
+
+; ..\Libraries\BaseSw\iLLD\TC26B\Tricore\_Lib\InternalMux\Ifx_InternalMux.c	    57  {
+; ..\Libraries\BaseSw\iLLD\TC26B\Tricore\_Lib\InternalMux\Ifx_InternalMux.c	    58      uint32 i;
+; ..\Libraries\BaseSw\iLLD\TC26B\Tricore\_Lib\InternalMux\Ifx_InternalMux.c	    59  
+; ..\Libraries\BaseSw\iLLD\TC26B\Tricore\_Lib\InternalMux\Ifx_InternalMux.c	    60      for (i = 0; i < cfg->size; i++)
+	mov	d0,#0
+.L34:
+	j	.L2
+.L3:
+
+; ..\Libraries\BaseSw\iLLD\TC26B\Tricore\_Lib\InternalMux\Ifx_InternalMux.c	    61      {
+; ..\Libraries\BaseSw\iLLD\TC26B\Tricore\_Lib\InternalMux\Ifx_InternalMux.c	    62          Ifx_InternalMux_MuxConfig muxCfg = cfg->muxConfig[i];
+	mul	d15,d0,#12
+.L43:
+	ld.a	a15,[a4]4
+.L44:
+	addsc.a	a15,a15,d15,#0
+	lea	a15,[a15]0
+.L45:
+	lea	a2,[a10]0
+	mov.a	a5,#2
+.L4:
+	ld.w	d15,[a15+]
+	st.w	[a2+],d15
+	loop	a5,.L4
+.L46:
+
+; ..\Libraries\BaseSw\iLLD\TC26B\Tricore\_Lib\InternalMux\Ifx_InternalMux.c	    63  
+; ..\Libraries\BaseSw\iLLD\TC26B\Tricore\_Lib\InternalMux\Ifx_InternalMux.c	    64          /*Load modify store operation done to insert the value to the register bit field*/
+; ..\Libraries\BaseSw\iLLD\TC26B\Tricore\_Lib\InternalMux\Ifx_InternalMux.c	    65          __ldmst((volatile void *)(muxCfg.regAddr), muxCfg.mask, muxCfg.value);
+	ld.a	a15,[a10]
+	ld.w	d15,[a10]4
+	ld.w	d1,[a10]8
+.L25:
+
+; D:\Desktop\2020smartcar\PROJECT\SmartCar2020TR264\Libraries\BaseSw\iLLD\TC26B\Tricore\Cpu\Std\IfxCpu_IntrinsicsTasking.h	   271      __asm("\tmov d3, %1 \n"      (inlined)
+	
+		mov d3, d15 
+	mov d2, d1 
+	ldmst [a15],e2
+	
+.L21:
+	add	d0,#1
+.L2:
+	ld.w	d15,[a4]
+.L47:
+	jlt.u	d0,d15,.L3
+.L48:
+
+; ..\Libraries\BaseSw\iLLD\TC26B\Tricore\_Lib\InternalMux\Ifx_InternalMux.c	    66      }
+; ..\Libraries\BaseSw\iLLD\TC26B\Tricore\_Lib\InternalMux\Ifx_InternalMux.c	    67  }
+	ret
+.L16:
+	
+__Ifx_InternalMux_init_function_end:
+	.size	Ifx_InternalMux_init,__Ifx_InternalMux_init_function_end-Ifx_InternalMux_init
+.L15:
+	; End of function
+	
+	.calls	'Ifx_InternalMux_init','',16
+	.sdecl	'.debug_info',debug
+	.sect	'.debug_info'
+.L8:
+	.word	1210
+	.half	3
+	.word	.L9
+	.byte	4
+.L7:
+	.byte	1
+	.byte	'..\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Lib\\InternalMux\\Ifx_InternalMux.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Debug\\',0,12,1
+	.word	.L10
+	.byte	2,1,1,3
+	.word	192
+	.byte	4
+	.byte	'Ifx__jump_and_link',0,3,1,61,17,1,1,5
+	.byte	'fun',0,1,61,43
+	.word	195
+	.byte	6,0,7
+	.byte	'void',0,8
+	.word	240
+	.byte	3
+	.word	246
+.L19:
+	.byte	9
+	.byte	'unsigned long int',0,4,7
+.L24:
+	.byte	4
+	.byte	'Ifx__ldmstAsm',0,3,1,141,2,17,1,1
+.L26:
+	.byte	5
+	.byte	'addr',0,1,141,2,46
+	.word	251
+.L28:
+	.byte	5
+	.byte	'mask',0,1,141,2,59
+	.word	256
+.L30:
+	.byte	5
+	.byte	'data',0,1,141,2,72
+	.word	256
+.L32:
+	.byte	6,0,9
+	.byte	'__fract',0,4,128,1,9
+	.byte	'float',0,4,4,10
+	.byte	'Ifx__float_to_fract',0,3,1,152,2,18
+	.word	343
+	.byte	1,1,5
+	.byte	'a',0,1,152,2,44
+	.word	355
+	.byte	6,0,9
+	.byte	'unsigned long long int',0,8,7,3
+	.word	240
+	.byte	10
+	.byte	'__ld64',0,3,2,135,1,19
+	.word	409
+	.byte	1,1,5
+	.byte	'addr',0,2,135,1,32
+	.word	435
+	.byte	6,0,4
+	.byte	'__st64',0,3,2,143,1,17,1,1,5
+	.byte	'addr',0,2,143,1,30
+	.word	435
+	.byte	5
+	.byte	'value',0,2,143,1,43
+	.word	409
+	.byte	6,0,9
+	.byte	'int',0,4,5,11
+	.word	521
+	.byte	12
+	.byte	'__c11_atomic_thread_fence',0,1,1,1,1,13
+	.word	528
+	.byte	0,9
+	.byte	'unsigned int',0,4,7,8
+	.word	570
+	.byte	3
+	.word	570
+	.byte	14
+	.byte	'__cmpswapw',0
+	.word	586
+	.byte	1,1,1,1,15
+	.byte	'p',0
+	.word	591
+	.byte	15
+	.byte	'value',0
+	.word	570
+	.byte	15
+	.byte	'compare',0
+	.word	570
+	.byte	0
+.L22:
+	.byte	16,3,65,9,12,17
+	.byte	'regAddr',0
+	.word	251
+	.byte	4,2,35,0,17
+	.byte	'mask',0
+	.word	256
+	.byte	4,2,35,4,17
+	.byte	'value',0
+	.word	256
+	.byte	4,2,35,8,0,3
+	.word	648
+	.byte	16,3,75,9,8,17
+	.byte	'size',0
+	.word	256
+	.byte	4,2,35,0,17
+	.byte	'muxConfig',0
+	.word	700
+	.byte	4,2,35,4,0,11
+	.word	705
+.L17:
+	.byte	3
+	.word	744
+	.byte	18
+	.word	200
+	.byte	19
+	.word	226
+	.byte	6,0,18
+	.word	277
+	.byte	19
+	.word	299
+	.byte	19
+	.word	313
+	.byte	19
+	.word	327
+	.byte	6,0,18
+	.word	364
+	.byte	19
+	.word	396
+	.byte	6,0,18
+	.word	440
+	.byte	19
+	.word	459
+	.byte	6,0,18
+	.word	475
+	.byte	19
+	.word	490
+	.byte	19
+	.word	504
+	.byte	6,0,9
+	.byte	'short int',0,2,5,20
+	.byte	'__wchar_t',0,4,1,1
+	.word	829
+	.byte	20
+	.byte	'__size_t',0,4,1,1
+	.word	570
+	.byte	20
+	.byte	'__ptrdiff_t',0,4,1,1
+	.word	521
+	.byte	21,1,3
+	.word	897
+	.byte	20
+	.byte	'__codeptr',0,4,1,1
+	.word	899
+	.byte	9
+	.byte	'unsigned char',0,1,8,20
+	.byte	'uint8',0,5,105,29
+	.word	922
+	.byte	9
+	.byte	'unsigned short int',0,2,7,20
+	.byte	'uint16',0,5,109,29
+	.word	953
+	.byte	20
+	.byte	'uint32',0,5,113,29
+	.word	256
+	.byte	20
+	.byte	'uint64',0,5,118,29
+	.word	409
+	.byte	20
+	.byte	'sint16',0,5,126,29
+	.word	829
+	.byte	9
+	.byte	'long int',0,4,5,20
+	.byte	'sint32',0,5,131,1,29
+	.word	1035
+	.byte	9
+	.byte	'long long int',0,8,5,20
+	.byte	'sint64',0,5,138,1,29
+	.word	1063
+	.byte	20
+	.byte	'float32',0,5,167,1,29
+	.word	355
+	.byte	20
+	.byte	'pvoid',0,6,57,28
+	.word	435
+	.byte	20
+	.byte	'Ifx_TickTime',0,6,79,28
+	.word	1063
+	.byte	20
+	.byte	'Ifx_InternalMux_MuxConfig',0,3,70,3
+	.word	648
+	.byte	20
+	.byte	'Ifx_InternalMux_Config',0,3,79,2
+	.word	705
+	.byte	0
+	.sdecl	'.debug_abbrev',debug
+	.sect	'.debug_abbrev'
+.L9:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,16,6,0,0,2,21,0,54,15,39,12,0,0,3,15,0,73,19,0,0,4,46,1,3,8,32,13
+	.byte	58,15,59,15,57,15,54,15,39,12,0,0,5,5,0,3,8,58,15,59,15,57,15,73,19,0,0,6,11,0,0,0,7,59,0,3,8,0,0,8,53
+	.byte	0,73,19,0,0,9,36,0,3,8,11,15,62,15,0,0,10,46,1,3,8,32,13,58,15,59,15,57,15,73,19,54,15,39,12,0,0,11,38
+	.byte	0,73,19,0,0,12,46,1,3,8,54,15,39,12,63,12,60,12,0,0,13,5,0,73,19,0,0,14,46,1,3,8,73,19,54,15,39,12,63
+	.byte	12,60,12,0,0,15,5,0,3,8,73,19,0,0,16,19,1,58,15,59,15,57,15,11,15,0,0,17,13,0,3,8,73,19,11,15,56,9,0,0
+	.byte	18,46,1,49,19,0,0,19,5,0,49,19,0,0,20,22,0,3,8,58,15,59,15,57,15,73,19,0,0,21,21,0,54,15,0,0,0
+	.sdecl	'.debug_line',debug
+	.sect	'.debug_line'
+.L10:
+	.word	.L36-.L35
+.L35:
+	.half	3
+	.word	.L38-.L37
+.L37:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'D:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Std',0
+	.byte	0
+	.byte	'IfxCpu_IntrinsicsTasking.h',0,1,0,0
+	.byte	'IfxCpu_Intrinsics.h',0,1,0,0
+	.byte	'..\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Lib\\InternalMux\\Ifx_InternalMux.h',0,0,0,0
+	.byte	'..\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Lib\\InternalMux\\Ifx_InternalMux.c',0,0,0,0
+	.byte	'Platform_Types.h',0,1,0,0
+	.byte	'Ifx_Types.h',0,1,0,0,0
+.L38:
+.L36:
+	.sdecl	'.debug_info',debug,cluster('Ifx_InternalMux_init')
+	.sect	'.debug_info'
+.L11:
+	.word	362
+	.half	3
+	.word	.L12
+	.byte	4,1
+	.byte	'..\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Lib\\InternalMux\\Ifx_InternalMux.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Debug\\',0,12,1
+	.word	.L14,.L13
+	.byte	2
+	.word	.L7
+	.byte	3
+	.byte	'Ifx_InternalMux_init',0,1,56,6,1,1,1
+	.word	.L6,.L16,.L5
+	.byte	4
+	.byte	'cfg',0,1,56,57
+	.word	.L17,.L18
+	.byte	5
+	.word	.L6,.L16
+	.byte	6
+	.byte	'i',0,1,58,12
+	.word	.L19,.L20
+	.byte	5
+	.word	.L3,.L21
+	.byte	6
+	.byte	'muxCfg',0,1,62,35
+	.word	.L22,.L23
+	.byte	7
+	.word	.L24,.L25,.L21
+	.byte	8
+	.word	.L26,.L27
+	.byte	8
+	.word	.L28,.L29
+	.byte	8
+	.word	.L30,.L31
+	.byte	9
+	.word	.L32,.L25,.L21
+	.byte	0,0,0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('Ifx_InternalMux_init')
+	.sect	'.debug_abbrev'
+.L12:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3
+	.byte	8,58,15,59,15,57,15,73,16,2,6,0,0,7,29,1,49,16,17,1,18,1,0,0,8,5,0,49,16,2,6,0,0,9,11,0,49,16,17,1,18
+	.byte	1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('Ifx_InternalMux_init')
+	.sect	'.debug_line'
+.L13:
+	.word	.L40-.L39
+.L39:
+	.half	3
+	.word	.L42-.L41
+.L41:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'D:\\Desktop\\2020smartcar\\PROJECT\\SmartCar2020TR264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Std',0
+	.byte	0
+	.byte	'..\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Lib\\InternalMux\\Ifx_InternalMux.c',0,0,0,0
+	.byte	'IfxCpu_IntrinsicsTasking.h',0,1,0,0,0
+.L42:
+	.byte	5,6,7,0,5,2
+	.word	.L6
+	.byte	3,55,1,5,12,9
+	.half	.L33-.L6
+	.byte	3,4,1,5,30,9
+	.half	.L34-.L33
+	.byte	1,5,58,9
+	.half	.L3-.L34
+	.byte	3,2,1,5,47,9
+	.half	.L43-.L3
+	.byte	1,5,58,9
+	.half	.L44-.L43
+	.byte	1,5,42,9
+	.half	.L45-.L44
+	.byte	1,5,9,9
+	.half	.L46-.L45
+	.byte	3,3,1,4,2,5,5,9
+	.half	.L25-.L46
+	.byte	3,206,1,1,4,1,5,33,9
+	.half	.L21-.L25
+	.byte	3,173,126,1,5,24,9
+	.half	.L2-.L21
+	.byte	1,5,30,9
+	.half	.L47-.L2
+	.byte	1,5,1,7,9
+	.half	.L48-.L47
+	.byte	3,7,1,7,9
+	.half	.L15-.L48
+	.byte	0,1,1
+.L40:
+	.sdecl	'.debug_ranges',debug,cluster('Ifx_InternalMux_init')
+	.sect	'.debug_ranges'
+.L14:
+	.word	-1,.L6,0,.L15-.L6,0,0
+	.sdecl	'.debug_loc',debug,cluster('Ifx_InternalMux_init')
+	.sect	'.debug_loc'
+.L5:
+	.word	-1,.L6,0,.L33-.L6
+	.half	2
+	.byte	138,0
+	.word	.L33-.L6,.L16-.L6
+	.half	2
+	.byte	138,16
+	.word	.L16-.L6,.L16-.L6
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L27:
+	.word	0,0
+.L18:
+	.word	-1,.L6,0,.L16-.L6
+	.half	1
+	.byte	100
+	.word	0,0
+.L31:
+	.word	0,0
+.L20:
+	.word	-1,.L6,.L34-.L6,.L16-.L6
+	.half	5
+	.byte	144,32,157,32,0
+	.word	0,0
+.L29:
+	.word	0,0
+.L23:
+	.word	-1,.L6,0,.L16-.L6
+	.half	2
+	.byte	145,112
+	.word	0,0
+	.sdecl	'.debug_frame',debug
+	.sect	'.debug_frame'
+.L49:
+	.word	48
+	.word	-1
+	.byte	3,0,2,1,27,12,26,0,8,27,8,26,8,28,8,29,8,30,8,31,8,34,8,35,8,32,8,33,8,16,8,17,8,24,8,25,8,36,8,37,8,38
+	.byte	8,39
+	.sdecl	'.debug_frame',debug,cluster('Ifx_InternalMux_init')
+	.sect	'.debug_frame'
+	.word	40
+	.word	.L49,.L6,.L16-.L6
+	.byte	8,19,8,22,8,23,4
+	.word	(.L33-.L6)/2
+	.byte	19,16,22,26,3,19,138,16,4
+	.word	(.L16-.L33)/2
+	.byte	19,0,8,26
+
+
+	; Module end
