@@ -47,7 +47,7 @@ void RunStop(void);
 
 void FSMRegist(FSM* fsm, FSMTable *fsmtable);
 void FSMStateTransfer(FSM *fsm, int state);
-void FSMEventAction(FSM *fsm, int event);
+void FSMEventHandle(FSM *fsm, int event);
 void LogicThing(void);
 int ReturnFSMState(FSM *fsm);
 

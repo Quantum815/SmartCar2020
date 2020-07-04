@@ -9,6 +9,9 @@
 #define CODE_INC_USER_INIT_H_
 
 #include "headfile.h"
+#define MainProcessTime 5
+#define CPU0TestTime 500
+
 void UserInit(void);
 
 #endif /* CODE_INC_USER_INIT_H_ */

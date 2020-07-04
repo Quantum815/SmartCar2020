@@ -334,3 +334,5 @@ CODE\Src\User_Camera_Init.o :	"E:\ProgramData\GithubRepositories\SmartCar2020TC2
 "E:\ProgramData\GithubRepositories\SmartCar2020TC264\CODE\Inc\User_Encoder.h" :
 CODE\Src\User_Camera_Init.o :	"E:\ProgramData\GithubRepositories\SmartCar2020TC264\CODE\Inc\User_Motor.h"
 "E:\ProgramData\GithubRepositories\SmartCar2020TC264\CODE\Inc\User_Motor.h" :
+CODE\Src\User_Camera_Init.o :	"E:\ProgramData\GithubRepositories\SmartCar2020TC264\CODE\Inc\User_Gyro_I2C.h"
+"E:\ProgramData\GithubRepositories\SmartCar2020TC264\CODE\Inc\User_Gyro_I2C.h" :

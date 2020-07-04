@@ -33,18 +33,18 @@ EncoderInit:	.type	func
 ; ..\CODE\Src\User_Encoder.c	    14  {
 ; ..\CODE\Src\User_Encoder.c	    15  	gpt12_init(GPT12_T2, GPT12_T2INB_P33_7, GPT12_T2EUDB_P33_6);
 	mov	d4,#0
-.L64:
+.L67:
 	mov	d5,#1
-.L65:
+.L68:
 	mov	d6,#3
 	call	gpt12_init
-.L66:
+.L69:
 
 ; ..\CODE\Src\User_Encoder.c	    16  	gpt12_init(GPT12_T6, GPT12_T6INA_P20_3, GPT12_T6EUDA_P20_0);
 	mov	d4,#4
-.L67:
+.L70:
 	mov	d5,#17
-.L68:
+.L71:
 	mov	d6,#19
 	j	gpt12_init
 .L40:
@@ -70,85 +70,65 @@ CountDistance:	.type	func
 ; ..\CODE\Src\User_Encoder.c	    20  {
 ; ..\CODE\Src\User_Encoder.c	    21  	int16 encoder0, encoder1;
 ; ..\CODE\Src\User_Encoder.c	    22  	double CurLdistance, CurRdistance;
-; ..\CODE\Src\User_Encoder.c	    23  	static double TotalLdistance, TotalRdistance;
-; ..\CODE\Src\User_Encoder.c	    24  
-; ..\CODE\Src\User_Encoder.c	    25  	encoder0 = gpt12_get(GPT12_T2);
+; ..\CODE\Src\User_Encoder.c	    23  
+; ..\CODE\Src\User_Encoder.c	    24  	encoder0 = gpt12_get(GPT12_T2);
 	mov	d4,#0
-	call	gpt12_get
-.L49:
-	mov	d15,d2
-.L51:
-
-; ..\CODE\Src\User_Encoder.c	    26  	encoder1 = gpt12_get(GPT12_T6);
-	mov	d4,#4
 	call	gpt12_get
 .L50:
-
-; ..\CODE\Src\User_Encoder.c	    27  
-; ..\CODE\Src\User_Encoder.c	    28  	CurLdistance = ((double)encoder0/1024)*((WHEEL_DIAMETER*3.1415)/1000);
-; ..\CODE\Src\User_Encoder.c	    29  	CurRdistance = ((double)encoder1/1024)*((WHEEL_DIAMETER*3.1415)/1000);
-; ..\CODE\Src\User_Encoder.c	    30  	CurDistance = (CurLdistance + CurRdistance) / 2;
-	itof	d15,d15
-	movh.a	a15,#@his(CurDistance)
+	mov	d15,d2
 .L52:
 
-; ..\CODE\Src\User_Encoder.c	    31  
-; ..\CODE\Src\User_Encoder.c	    32  	TotalLdistance += CurLdistance;
-; ..\CODE\Src\User_Encoder.c	    33  	TotalRdistance += CurLdistance;
-	movh	d1,#14976
-	movh.a	a2,#@his(_999002_TotalRdistance)
-.L73:
-	mul.f	d15,d15,d1
-.L74:
-	mov	d0,#29330
-.L75:
-	itof	d2,d2
-.L53:
-	addih	d0,d0,#15943
-.L76:
-	mul.f	d15,d15,d0
-.L54:
-	mul.f	d1,d2,d1
-.L77:
-	movh	d3,#16128
-.L78:
-	madd.f	d0,d15,d1,d0
-.L79:
+; ..\CODE\Src\User_Encoder.c	    25  	encoder1 = gpt12_get(GPT12_T6);
+	mov	d4,#4
+	call	gpt12_get
+.L51:
 
-; ..\CODE\Src\User_Encoder.c	    34  	TotalDistance = (TotalLdistance + TotalRdistance) / 2;
-; ..\CODE\Src\User_Encoder.c	    35  
-; ..\CODE\Src\User_Encoder.c	    36  	gpt12_clear(GPT12_T2);
+; ..\CODE\Src\User_Encoder.c	    26  
+; ..\CODE\Src\User_Encoder.c	    27  	CurLdistance = ((double)encoder0/1024)*((WHEEL_DIAMETER*3.1415)/1000);
+; ..\CODE\Src\User_Encoder.c	    28  	CurRdistance = ((double)encoder1/1024)*((WHEEL_DIAMETER*3.1415)/1000);
+; ..\CODE\Src\User_Encoder.c	    29  	CurDistance = (CurLdistance + CurRdistance) / 2;
+	itof	d15,d15
+	movh.a	a15,#@his(CurDistance)
+.L53:
+	itof	d2,d2
+.L54:
+	movh	d1,#14976
+.L76:
+	mul.f	d15,d15,d1
+.L77:
+	mul.f	d1,d2,d1
+.L78:
+	mov	d0,#29330
+	addih	d0,d0,#15943
+.L79:
+	mul.f	d15,d15,d0
+.L55:
+	mul.f	d0,d1,d0
+.L57:
+
+; ..\CODE\Src\User_Encoder.c	    30  	TotalDistance += CurDistance;
+; ..\CODE\Src\User_Encoder.c	    31  
+; ..\CODE\Src\User_Encoder.c	    32  	gpt12_clear(GPT12_T2);
 	mov	d4,#0
 .L80:
-	mul.f	d0,d0,d3
-	st.w	[a15]@los(CurDistance),d0
+	add.f	d15,d15,d0
+.L56:
+	movh	d0,#16128
+.L58:
+	mul.f	d15,d15,d0
+	st.w	[a15]@los(CurDistance),d15
 .L81:
-	movh.a	a15,#@his(_999001_TotalLdistance)
-	lea	a15,[a15]@los(_999001_TotalLdistance)
-	ld.w	d0,[a15]
+	movh.a	a15,#@his(TotalDistance)
+	ld.w	d0,[a15]@los(TotalDistance)
 .L82:
-	add.f	d0,d0,d15
-	st.w	[a15],d0
+	add.f	d15,d0,d15
+	st.w	[a15]@los(TotalDistance),d15
 .L83:
-	ld.w	d0,[a2]@los(_999002_TotalRdistance)
-.L84:
-	add.f	d15,d0,d15
-	st.w	[a2]@los(_999002_TotalRdistance),d15
-.L55:
-	movh.a	a2,#@his(TotalDistance)
-.L85:
-	ld.w	d0,[a15]
-.L86:
-	add.f	d15,d0,d15
-.L87:
-	mul.f	d15,d15,d3
-	st.w	[a2]@los(TotalDistance),d15
-.L88:
 	call	gpt12_clear
-.L89:
+.L84:
 
-; ..\CODE\Src\User_Encoder.c	    37  	//printf("%lf\r\n",Ldistance);  //测试
-; ..\CODE\Src\User_Encoder.c	    38  	gpt12_clear(GPT12_T6);
+; ..\CODE\Src\User_Encoder.c	    33  	//printf("%lf\r\n",Ldistance);  //测试
+; ..\CODE\Src\User_Encoder.c	    34  	gpt12_clear(GPT12_T6);
 	mov	d4,#4
 	j	gpt12_clear
 .L41:
@@ -164,22 +144,22 @@ __CountDistance_function_end:
 	
 	.global	GetDistance
 
-; ..\CODE\Src\User_Encoder.c	    39  }
-; ..\CODE\Src\User_Encoder.c	    40  
-; ..\CODE\Src\User_Encoder.c	    41  double GetDistance(void)
+; ..\CODE\Src\User_Encoder.c	    35  }
+; ..\CODE\Src\User_Encoder.c	    36  
+; ..\CODE\Src\User_Encoder.c	    37  double GetDistance(void)
 ; Function GetDistance
 .L9:
 GetDistance:	.type	func
 
-; ..\CODE\Src\User_Encoder.c	    42  {
-; ..\CODE\Src\User_Encoder.c	    43  	return TotalDistance;
+; ..\CODE\Src\User_Encoder.c	    38  {
+; ..\CODE\Src\User_Encoder.c	    39  	return TotalDistance;
 	movh.a	a15,#@his(TotalDistance)
 	ld.w	d2,[a15]@los(TotalDistance)
-.L94:
+.L89:
 
-; ..\CODE\Src\User_Encoder.c	    44  }
+; ..\CODE\Src\User_Encoder.c	    40  }
 	ret
-.L47:
+.L48:
 	
 __GetDistance_function_end:
 	.size	GetDistance,__GetDistance_function_end-GetDistance
@@ -192,25 +172,25 @@ __GetDistance_function_end:
 	
 	.global	GetSpeed
 
-; ..\CODE\Src\User_Encoder.c	    45  
-; ..\CODE\Src\User_Encoder.c	    46  double GetSpeed(void)  //主进程20ms   似乎存在问题
+; ..\CODE\Src\User_Encoder.c	    41  
+; ..\CODE\Src\User_Encoder.c	    42  double GetSpeed(void)  //主进程20ms   似乎存在问题
 ; Function GetSpeed
 .L11:
 GetSpeed:	.type	func
 
-; ..\CODE\Src\User_Encoder.c	    47  {
-; ..\CODE\Src\User_Encoder.c	    48  	return (CurDistance/0.02);
+; ..\CODE\Src\User_Encoder.c	    43  {
+; ..\CODE\Src\User_Encoder.c	    44  	return (CurDistance/0.02);
 	mov.u	d0,#55050
 	movh.a	a15,#@his(CurDistance)
-.L99:
+.L94:
 	addih	d0,d0,#15523
 	ld.w	d15,[a15]@los(CurDistance)
-.L100:
+.L95:
 
-; ..\CODE\Src\User_Encoder.c	    49  }
+; ..\CODE\Src\User_Encoder.c	    45  }
 	div.f	d2,d15,d0
 	ret
-.L48:
+.L49:
 	
 __GetSpeed_function_end:
 	.size	GetSpeed,__GetSpeed_function_end-GetSpeed
@@ -230,18 +210,6 @@ CurDistance:	.type	object
 	.align	2
 TotalDistance:	.type	object
 	.size	TotalDistance,4
-	.space	4
-	.sdecl	'.bss.User_Encoder._999001_TotalLdistance',data,cluster('_999001_TotalLdistance')
-	.sect	'.bss.User_Encoder._999001_TotalLdistance'
-	.align	2
-_999001_TotalLdistance:	.type	object
-	.size	_999001_TotalLdistance,4
-	.space	4
-	.sdecl	'.bss.User_Encoder._999002_TotalRdistance',data,cluster('_999002_TotalRdistance')
-	.sect	'.bss.User_Encoder._999002_TotalRdistance'
-	.align	2
-_999002_TotalRdistance:	.type	object
-	.size	_999002_TotalRdistance,4
 	.space	4
 	.calls	'EncoderInit','gpt12_init'
 	.calls	'CountDistance','gpt12_get'
@@ -34647,11 +34615,11 @@ _999002_TotalRdistance:	.type	object
 	.sdecl	'.debug_line',debug
 	.sect	'.debug_line'
 .L15:
-	.word	.L57-.L56
-.L56:
+	.word	.L60-.L59
+.L59:
 	.half	3
-	.word	.L59-.L58
-.L58:
+	.word	.L62-.L61
+.L61:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Std',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Scu\\Std',0
@@ -34723,8 +34691,8 @@ _999002_TotalRdistance:	.type	object
 	.byte	'IfxDma_regdef.h',0,3,0,0
 	.byte	'IfxDma.h',0,18,0,0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\CODE\\Inc\\User_FSM.h',0,0,0,0,0
-.L59:
-.L57:
+.L62:
+.L60:
 	.sdecl	'.debug_info',debug,cluster('EncoderInit')
 	.sect	'.debug_info'
 .L16:
@@ -34752,30 +34720,30 @@ _999002_TotalRdistance:	.type	object
 	.sdecl	'.debug_line',debug,cluster('EncoderInit')
 	.sect	'.debug_line'
 .L18:
-	.word	.L61-.L60
-.L60:
+	.word	.L64-.L63
+.L63:
 	.half	3
-	.word	.L63-.L62
-.L62:
+	.word	.L66-.L65
+.L65:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\CODE\\Src\\User_Encoder.c',0,0,0,0,0
-.L63:
+.L66:
 	.byte	5,13,7,0,5,2
 	.word	.L5
 	.byte	3,14,1,5,23,9
-	.half	.L64-.L5
-	.byte	1,5,42,9
-	.half	.L65-.L64
-	.byte	1,5,13,9
-	.half	.L66-.L65
-	.byte	3,1,1,5,23,9
-	.half	.L67-.L66
+	.half	.L67-.L5
 	.byte	1,5,42,9
 	.half	.L68-.L67
+	.byte	1,5,13,9
+	.half	.L69-.L68
+	.byte	3,1,1,5,23,9
+	.half	.L70-.L69
+	.byte	1,5,42,9
+	.half	.L71-.L70
 	.byte	1,5,1,9
-	.half	.L20-.L68
+	.half	.L20-.L71
 	.byte	3,1,0,1,1
-.L61:
+.L64:
 	.sdecl	'.debug_ranges',debug,cluster('EncoderInit')
 	.sect	'.debug_ranges'
 .L19:
@@ -34783,7 +34751,7 @@ _999002_TotalRdistance:	.type	object
 	.sdecl	'.debug_info',debug,cluster('CountDistance')
 	.sect	'.debug_info'
 .L21:
-	.word	322
+	.word	289
 	.half	3
 	.word	.L22
 	.byte	4,1
@@ -34807,88 +34775,68 @@ _999002_TotalRdistance:	.type	object
 	.byte	5
 	.byte	'CurLdistance',0,1,22,9
 	.word	.L45,.L46
-	.byte	6
-	.byte	'TotalLdistance',0,1,23,16
-	.word	.L45
-	.byte	5,3
-	.word	_999001_TotalLdistance
-	.byte	6
-	.byte	'TotalRdistance',0,1,23,32
-	.word	.L45
-	.byte	5,3
-	.word	_999002_TotalRdistance
+	.byte	5
+	.byte	'CurRdistance',0,1,22,23
+	.word	.L45,.L47
 	.byte	0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('CountDistance')
 	.sect	'.debug_abbrev'
 .L22:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
-	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,1,17,1,18,1,0,0,5,52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,6,52,0
-	.byte	3,8,58,15,59,15,57,15,73,16,2,9,0,0,0
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,1,17,1,18,1,0,0,5,52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
 	.sdecl	'.debug_line',debug,cluster('CountDistance')
 	.sect	'.debug_line'
 .L23:
-	.word	.L70-.L69
-.L69:
+	.word	.L73-.L72
+.L72:
 	.half	3
-	.word	.L72-.L71
-.L71:
+	.word	.L75-.L74
+.L74:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\CODE\\Src\\User_Encoder.c',0,0,0,0,0
-.L72:
+.L75:
 	.byte	5,23,7,0,5,2
 	.word	.L7
-	.byte	3,24,1,5,11,9
-	.half	.L49-.L7
+	.byte	3,23,1,5,11,9
+	.half	.L50-.L7
 	.byte	1,5,23,9
-	.half	.L51-.L49
-	.byte	3,1,1,5,18,9
-	.half	.L50-.L51
-	.byte	3,2,1,5,2,3,2,1,5,35,9
 	.half	.L52-.L50
-	.byte	3,126,1,5,2,3,5,1,5,18,9
-	.half	.L73-.L52
-	.byte	3,123,1,5,65,9
-	.half	.L74-.L73
-	.byte	1,5,18,9
-	.half	.L75-.L74
+	.byte	3,1,1,5,18,9
+	.half	.L51-.L52
+	.byte	3,2,1,5,2,3,2,1,5,18,9
+	.half	.L53-.L51
+	.byte	3,127,1,5,35,9
+	.half	.L54-.L53
+	.byte	3,127,1,5,18,9
+	.half	.L76-.L54
+	.byte	1,9
+	.half	.L77-.L76
 	.byte	3,1,1,5,65,9
-	.half	.L53-.L75
-	.byte	3,127,1,5,40,9
-	.half	.L76-.L53
-	.byte	1,5,18,9
-	.half	.L54-.L76
-	.byte	3,1,1,5,48,9
-	.half	.L77-.L54
-	.byte	3,1,1,5,30,9
 	.half	.L78-.L77
-	.byte	1,5,14,9
+	.byte	3,127,1,5,40,9
 	.half	.L79-.L78
-	.byte	3,6,1,5,30,9
-	.half	.L80-.L79
-	.byte	3,122,1,5,14,1,5,2,9
-	.half	.L81-.L80
-	.byte	3,2,1,5,17,9
+	.byte	1,9
+	.half	.L55-.L79
+	.byte	3,1,1,5,14,9
+	.half	.L57-.L55
+	.byte	3,4,1,5,30,9
+	.half	.L80-.L57
+	.byte	3,125,1,5,48,9
+	.half	.L56-.L80
+	.byte	1,5,30,9
+	.half	.L58-.L56
+	.byte	1,5,14,1,5,2,9
+	.half	.L81-.L58
+	.byte	3,1,1,5,16,9
 	.half	.L82-.L81
-	.byte	1,5,2,9
-	.half	.L83-.L82
-	.byte	3,1,1,5,17,9
-	.half	.L84-.L83
-	.byte	1,5,2,9
-	.half	.L55-.L84
-	.byte	3,1,1,5,19,9
-	.half	.L85-.L55
-	.byte	1,5,34,9
-	.half	.L86-.L85
-	.byte	1,5,16,9
-	.half	.L87-.L86
 	.byte	1,5,14,9
-	.half	.L88-.L87
+	.half	.L83-.L82
 	.byte	3,2,1,9
-	.half	.L89-.L88
+	.half	.L84-.L83
 	.byte	3,2,1,5,1,9
-	.half	.L25-.L89
+	.half	.L25-.L84
 	.byte	3,1,0,1,1
-.L70:
+.L73:
 	.sdecl	'.debug_ranges',debug,cluster('CountDistance')
 	.sect	'.debug_ranges'
 .L24:
@@ -34907,12 +34855,12 @@ _999002_TotalRdistance:	.type	object
 	.byte	2
 	.word	.L12
 	.byte	3
-	.byte	'GetDistance',0,1,41,8
+	.byte	'GetDistance',0,1,37,8
 	.word	.L45
 	.byte	1,1,1
-	.word	.L9,.L47,.L8
+	.word	.L9,.L48,.L8
 	.byte	4
-	.word	.L9,.L47
+	.word	.L9,.L48
 	.byte	0,0
 	.sdecl	'.debug_abbrev',debug,cluster('GetDistance')
 	.sect	'.debug_abbrev'
@@ -34922,22 +34870,22 @@ _999002_TotalRdistance:	.type	object
 	.sdecl	'.debug_line',debug,cluster('GetDistance')
 	.sect	'.debug_line'
 .L28:
-	.word	.L91-.L90
-.L90:
+	.word	.L86-.L85
+.L85:
 	.half	3
-	.word	.L93-.L92
-.L92:
+	.word	.L88-.L87
+.L87:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\CODE\\Src\\User_Encoder.c',0,0,0,0,0
-.L93:
+.L88:
 	.byte	5,9,7,0,5,2
 	.word	.L9
-	.byte	3,42,1,5,1,9
-	.half	.L94-.L9
+	.byte	3,38,1,5,1,9
+	.half	.L89-.L9
 	.byte	3,1,1,7,9
-	.half	.L30-.L94
+	.half	.L30-.L89
 	.byte	0,1,1
-.L91:
+.L86:
 	.sdecl	'.debug_ranges',debug,cluster('GetDistance')
 	.sect	'.debug_ranges'
 .L29:
@@ -34956,12 +34904,12 @@ _999002_TotalRdistance:	.type	object
 	.byte	2
 	.word	.L12
 	.byte	3
-	.byte	'GetSpeed',0,1,46,8
+	.byte	'GetSpeed',0,1,42,8
 	.word	.L45
 	.byte	1,1,1
-	.word	.L11,.L48,.L10
+	.word	.L11,.L49,.L10
 	.byte	4
-	.word	.L11,.L48
+	.word	.L11,.L49
 	.byte	0,0
 	.sdecl	'.debug_abbrev',debug,cluster('GetSpeed')
 	.sect	'.debug_abbrev'
@@ -34971,24 +34919,24 @@ _999002_TotalRdistance:	.type	object
 	.sdecl	'.debug_line',debug,cluster('GetSpeed')
 	.sect	'.debug_line'
 .L33:
-	.word	.L96-.L95
-.L95:
+	.word	.L91-.L90
+.L90:
 	.half	3
-	.word	.L98-.L97
-.L97:
+	.word	.L93-.L92
+.L92:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\CODE\\Src\\User_Encoder.c',0,0,0,0,0
-.L98:
+.L93:
 	.byte	5,22,7,0,5,2
 	.word	.L11
-	.byte	3,47,1,5,10,1,5,22,9
-	.half	.L99-.L11
+	.byte	3,43,1,5,10,1,5,22,9
+	.half	.L94-.L11
 	.byte	1,5,10,1,5,21,9
-	.half	.L100-.L99
+	.half	.L95-.L94
 	.byte	1,5,1,3,1,1,7,9
-	.half	.L35-.L100
+	.half	.L35-.L95
 	.byte	0,1,1
-.L96:
+.L91:
 	.sdecl	'.debug_ranges',debug,cluster('GetSpeed')
 	.sect	'.debug_ranges'
 .L34:
@@ -35045,20 +34993,25 @@ _999002_TotalRdistance:	.type	object
 	.byte	138,0
 	.word	0,0
 .L46:
-	.word	-1,.L7,.L54-.L7,.L55-.L7
+	.word	-1,.L7,.L55-.L7,.L56-.L7
 	.half	1
 	.byte	95
 	.word	0,0
+.L47:
+	.word	-1,.L7,.L57-.L7,.L58-.L7
+	.half	5
+	.byte	144,32,157,32,0
+	.word	0,0
 .L43:
-	.word	-1,.L7,.L49-.L7,.L50-.L7
+	.word	-1,.L7,.L50-.L7,.L51-.L7
 	.half	1
 	.byte	82
-	.word	.L51-.L7,.L52-.L7
+	.word	.L52-.L7,.L53-.L7
 	.half	1
 	.byte	95
 	.word	0,0
 .L44:
-	.word	-1,.L7,.L50-.L7,.L53-.L7
+	.word	-1,.L7,.L51-.L7,.L54-.L7
 	.half	1
 	.byte	82
 	.word	0,0
@@ -35072,20 +35025,20 @@ _999002_TotalRdistance:	.type	object
 	.sdecl	'.debug_loc',debug,cluster('GetDistance')
 	.sect	'.debug_loc'
 .L8:
-	.word	-1,.L9,0,.L47-.L9
+	.word	-1,.L9,0,.L48-.L9
 	.half	2
 	.byte	138,0
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('GetSpeed')
 	.sect	'.debug_loc'
 .L10:
-	.word	-1,.L11,0,.L48-.L11
+	.word	-1,.L11,0,.L49-.L11
 	.half	2
 	.byte	138,0
 	.word	0,0
 	.sdecl	'.debug_frame',debug
 	.sect	'.debug_frame'
-.L101:
+.L96:
 	.word	48
 	.word	-1
 	.byte	3,0,2,1,27,12,26,0,8,27,8,26,8,28,8,29,8,30,8,31,8,34,8,35,8,32,8,33,8,16,8,17,8,24,8,25,8,36,8,37,8,38
@@ -35093,20 +35046,20 @@ _999002_TotalRdistance:	.type	object
 	.sdecl	'.debug_frame',debug,cluster('EncoderInit')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L101,.L5,.L40-.L5
+	.word	.L96,.L5,.L40-.L5
 	.sdecl	'.debug_frame',debug,cluster('CountDistance')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L101,.L7,.L41-.L7
+	.word	.L96,.L7,.L41-.L7
 	.sdecl	'.debug_frame',debug,cluster('GetDistance')
 	.sect	'.debug_frame'
 	.word	24
-	.word	.L101,.L9,.L47-.L9
+	.word	.L96,.L9,.L48-.L9
 	.byte	8,18,8,19,8,20,8,21,8,22,8,23
 	.sdecl	'.debug_frame',debug,cluster('GetSpeed')
 	.sect	'.debug_frame'
 	.word	24
-	.word	.L101,.L11,.L48-.L11
+	.word	.L96,.L11,.L49-.L11
 	.byte	8,18,8,19,8,20,8,21,8,22,8,23
 
 

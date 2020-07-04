@@ -13,9 +13,13 @@ void UserCameraInit(void)
 	mt9v03x_init();   //初始化摄像头
 	#endif
 
-	//pit_interrupt_ms(CCU6_0, PIT_CH1, 20);//摄像头进程20ms，注释
-	gpio_init(P21_4, GPO, 1, PUSHPULL);//LED初始化CPU1
-	pit_interrupt_ms(CCU6_1, PIT_CH1, 500);//LED判断CPU1是否卡死500ms
+	//LED判断CPU1是否卡死
+	gpio_init(P21_4, GPO, 1, PUSHPULL);
+	pit_interrupt_ms(CCU6_1, PIT_CH1, CPU1TestTime);
+
+	//摄像头进程
+	pit_interrupt_ms(CCU6_0, PIT_CH1, CameraProcessTime);
+
 
 	//scc8660_csi_init(); //自动曝光on TC264不支持
 }

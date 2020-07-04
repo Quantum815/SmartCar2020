@@ -6,6 +6,10 @@ SmartCar2020TC264.elf : .\CODE\Src\User_Encoder.o
 .\CODE\Src\User_Encoder.o :
 SmartCar2020TC264.elf : .\CODE\Src\User_FSM.o
 .\CODE\Src\User_FSM.o :
+SmartCar2020TC264.elf : .\CODE\Src\User_Gyro_I2C.o
+.\CODE\Src\User_Gyro_I2C.o :
+SmartCar2020TC264.elf : .\CODE\Src\User_ImageProcess.o
+.\CODE\Src\User_ImageProcess.o :
 SmartCar2020TC264.elf : .\CODE\Src\User_Init.o
 .\CODE\Src\User_Init.o :
 SmartCar2020TC264.elf : .\CODE\Src\User_Motor.o

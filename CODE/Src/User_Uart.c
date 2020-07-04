@@ -9,6 +9,6 @@
 
 void DebugUARTInit()
 {
-	uart_init(UART_3, 921600, UART3_TX_P15_6, UART3_RX_P15_7);
+	uart_init(UART_3, 115200, UART3_TX_P15_6, UART3_RX_P15_7);
 }
 

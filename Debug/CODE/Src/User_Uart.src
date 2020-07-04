@@ -28,11 +28,11 @@ $TC16X
 DebugUARTInit:	.type	func
 
 ; ..\CODE\Src\User_Uart.c	    11  {
-; ..\CODE\Src\User_Uart.c	    12  	uart_init(UART_3, 921600, UART3_TX_P15_6, UART3_RX_P15_7);
+; ..\CODE\Src\User_Uart.c	    12  	uart_init(UART_3, 115200, UART3_TX_P15_6, UART3_RX_P15_7);
 	mov	d4,#3
 .L22:
-	mov	d5,#4096
-	addih	d5,d5,#14
+	mov.u	d5,#49664
+	addih	d5,d5,#1
 .L23:
 	mov	d6,#36
 .L24:

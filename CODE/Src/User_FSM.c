@@ -49,7 +49,7 @@ void FSMStateTransfer(FSM* fsm, int state)
     fsm->CurState = state;
 }
 
-void FSMEventAction(FSM *fsm, int event)
+void FSMEventHandle(FSM *fsm, int event)
 {
 	FSMTable *fsmTable = fsm->FsmTable;
     int curState = fsm->CurState;
@@ -59,7 +59,7 @@ void FSMEventAction(FSM *fsm, int event)
     int flag = 0;
     int i;
 
-    /*获取当前动作函数*/
+    //获取当前动作函数
     for (i=0; i<size; i++)
     {
         //当且仅当当前状态下来个指定的事件，我才执行它
@@ -85,7 +85,7 @@ void LogicThing(void)
     FSMRegist(&CarFSM, CarTable);
     CarFSM.CurState = Stop;
     CarFSM.Size = sizeof(CarTable) / sizeof(FSMTable);
-    FSMEventAction(&CarFSM, RUNSTART);
+    FSMEventHandle(&CarFSM, RUNSTART);
 }
 
 int ReturnFSMState(FSM *fsm)

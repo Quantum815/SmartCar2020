@@ -28,31 +28,32 @@ $TC16X
 UserInit:	.type	func
 
 ; ..\CODE\Src\User_Init.c	    11  {
-; ..\CODE\Src\User_Init.c	    12  	pit_interrupt_ms(CCU6_0, PIT_CH0, 20);//主进程20ms
-	mov	d4,#0
-	mov	d5,d4
-	mov	d6,#20000
-	call	pit_init
-.L22:
-
-; ..\CODE\Src\User_Init.c	    13  	//adc_init(ADC_1,ADC1_CH3_B14,ADC_8BIT);
-; ..\CODE\Src\User_Init.c	    14  	//DebugUARTInit();
-; ..\CODE\Src\User_Init.c	    15  	gpio_init(P20_9, GPO, 0, PUSHPULL);//LED初始化CPU0
+; ..\CODE\Src\User_Init.c	    12  	//LED判断CPU0是否卡死
+; ..\CODE\Src\User_Init.c	    13  	gpio_init(P20_9, GPO, 0, PUSHPULL);
 	mov	d4,#649
-.L23:
+.L22:
 	mov	d5,#1
-.L24:
+.L23:
 	mov	d6,#0
-.L25:
+.L24:
 	mov	d7,#3
 	call	gpio_init
-.L26:
+.L25:
 
-; ..\CODE\Src\User_Init.c	    16  	pit_interrupt_ms(CCU6_1, PIT_CH0, 500);//LED判断CPU0是否卡死500ms
+; ..\CODE\Src\User_Init.c	    14  	pit_interrupt_ms(CCU6_1, PIT_CH0, CPU0TestTime);
 	mov	d4,#1
 	mov	d5,#0
 	mov	d6,#15625
 	sh	d6,#5
+	call	pit_init
+.L26:
+
+; ..\CODE\Src\User_Init.c	    15  
+; ..\CODE\Src\User_Init.c	    16  	//主进程
+; ..\CODE\Src\User_Init.c	    17  	pit_interrupt_ms(CCU6_0, PIT_CH0, MainProcessTime);
+	mov	d4,#0
+	mov	d5,d4
+	mov	d6,#5000
 	j	pit_init
 .L13:
 	
@@ -61,8 +62,8 @@ __UserInit_function_end:
 .L12:
 	; End of function
 	
-	.calls	'UserInit','pit_init'
 	.calls	'UserInit','gpio_init'
+	.calls	'UserInit','pit_init'
 	.extern	gpio_init
 	.extern	pit_init
 	.calls	'UserInit','',0
@@ -34776,21 +34777,21 @@ __UserInit_function_end:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\CODE\\Src\\User_Init.c',0,0,0,0,0
 .L21:
-	.byte	5,2,7,0,5,2
+	.byte	5,12,7,0,5,2
 	.word	.L3
-	.byte	3,11,1,5,12,9
+	.byte	3,12,1,5,19,9
 	.half	.L22-.L3
-	.byte	3,3,1,5,19,9
-	.half	.L23-.L22
 	.byte	1,5,24,9
-	.half	.L24-.L23
+	.half	.L23-.L22
 	.byte	1,5,27,9
-	.half	.L25-.L24
+	.half	.L24-.L23
 	.byte	1,5,2,9
+	.half	.L25-.L24
+	.byte	3,1,1,9
 	.half	.L26-.L25
-	.byte	3,1,1,5,1,9
+	.byte	3,3,1,5,1,9
 	.half	.L12-.L26
-	.byte	3,1,0,1,1
+	.byte	3,9,0,1,1
 .L19:
 	.sdecl	'.debug_ranges',debug,cluster('UserInit')
 	.sect	'.debug_ranges'
@@ -34815,8 +34816,16 @@ __UserInit_function_end:
 	.word	12
 	.word	.L27,.L3,.L13-.L3
 
-; ..\CODE\Src\User_Init.c	    17  }
 ; ..\CODE\Src\User_Init.c	    18  
-; ..\CODE\Src\User_Init.c	    19  
+; ..\CODE\Src\User_Init.c	    19  	//各类资源与外设
+; ..\CODE\Src\User_Init.c	    20  	//adc_init(ADC_1,ADC1_CH3_B14,ADC_8BIT);  //需要修改
+; ..\CODE\Src\User_Init.c	    21  
+; ..\CODE\Src\User_Init.c	    22  	//DebugUARTInit();
+; ..\CODE\Src\User_Init.c	    23  	//EncoderInit();
+; ..\CODE\Src\User_Init.c	    24  	//ServoMotorInit();
+; ..\CODE\Src\User_Init.c	    25  	//MotorInit();
+; ..\CODE\Src\User_Init.c	    26  }
+; ..\CODE\Src\User_Init.c	    27  
+; ..\CODE\Src\User_Init.c	    28  
 
 	; Module end

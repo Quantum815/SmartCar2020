@@ -66,8 +66,6 @@
 #include "SEEKFREE_RDA5807.h"
 
 //------自定义头文件
-//#define USECARMERA
-#define WHEEL_DIAMETER 62
 #include "..\CODE\Inc\User_Init.h"
 #include "..\CODE\Inc\User_Camera_Init.h"
 #include "..\CODE\Inc\User_DebugCode.h"
@@ -75,6 +73,7 @@
 #include "..\CODE\Inc\User_FSM.h"
 #include "..\CODE\Inc\User_Encoder.h"
 #include "..\CODE\Inc\User_Motor.h"
+#include "..\CODE\Inc\User_Gyro_I2C.h"
 
 #endif
 

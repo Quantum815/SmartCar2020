@@ -9,6 +9,7 @@
 #define CODE_INC_USER_MOTOR_H_
 
 #include "headfile.h"
+#define WHEEL_DIAMETER 62
 
 enum Motor_State
 {
