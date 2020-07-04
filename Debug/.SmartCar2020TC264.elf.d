@@ -1,11 +1,15 @@
 SmartCar2020TC264.elf : .\CODE\Src\User_Camera_Init.o
 .\CODE\Src\User_Camera_Init.o :
+SmartCar2020TC264.elf : .\CODE\Src\User_DebugCode.o
+.\CODE\Src\User_DebugCode.o :
 SmartCar2020TC264.elf : .\CODE\Src\User_Encoder.o
 .\CODE\Src\User_Encoder.o :
 SmartCar2020TC264.elf : .\CODE\Src\User_FSM.o
 .\CODE\Src\User_FSM.o :
 SmartCar2020TC264.elf : .\CODE\Src\User_Init.o
 .\CODE\Src\User_Init.o :
+SmartCar2020TC264.elf : .\CODE\Src\User_Motor.o
+.\CODE\Src\User_Motor.o :
 SmartCar2020TC264.elf : .\CODE\Src\User_Uart.o
 .\CODE\Src\User_Uart.o :
 SmartCar2020TC264.elf : .\Libraries\BaseSw\Infra\Platform\Tricore\Compilers\CompilerDcc.o
@@ -396,8 +400,6 @@ SmartCar2020TC264.elf : .\USER\Cpu1_Main.o
 .\USER\Cpu1_Main.o :
 SmartCar2020TC264.elf : .\USER\isr.o
 .\USER\isr.o :
-SmartCar2020TC264.elf : "D:\Desktop\2020smartcar\PROJECT\SmartCar2020TR264\Lcf_Tasking_Tricore_Tc.lsl"
-"D:\Desktop\2020smartcar\PROJECT\SmartCar2020TR264\Lcf_Tasking_Tricore_Tc.lsl" :
 SmartCar2020TC264.elf : "D:\Program Files\TASKING\TriCore v6.3r1\ctc\include.lsl\inttab0.lsl"
 "D:\Program Files\TASKING\TriCore v6.3r1\ctc\include.lsl\inttab0.lsl" :
 SmartCar2020TC264.elf : "D:\Program Files\TASKING\TriCore v6.3r1\ctc\include.lsl\tc1v1_6_x.lsl"
@@ -410,3 +412,5 @@ SmartCar2020TC264.elf : "D:\Program Files\TASKING\TriCore v6.3r1\ctc\lib\tc16x\l
 "D:\Program Files\TASKING\TriCore v6.3r1\ctc\lib\tc16x\libfp_fpu.a" :
 SmartCar2020TC264.elf : "D:\Program Files\TASKING\TriCore v6.3r1\ctc\lib\tc16x\librt.a"
 "D:\Program Files\TASKING\TriCore v6.3r1\ctc\lib\tc16x\librt.a" :
+SmartCar2020TC264.elf : "E:\ProgramData\GithubRepositories\SmartCar2020TC264\Lcf_Tasking_Tricore_Tc.lsl"
+"E:\ProgramData\GithubRepositories\SmartCar2020TC264\Lcf_Tasking_Tricore_Tc.lsl" :

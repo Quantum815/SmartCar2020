@@ -1,11 +1,11 @@
 Libraries\seekfree_peripheral\SEEKFREE_MPU6050.o :	..\Libraries\seekfree_peripheral\SEEKFREE_MPU6050.c
 ..\Libraries\seekfree_peripheral\SEEKFREE_MPU6050.c :
-Libraries\seekfree_peripheral\SEEKFREE_MPU6050.o :	"D:\Desktop\2020smartcar\PROJECT\SmartCar2020TR264\Libraries\seekfree_libraries\zf_stm_systick.h"
-"D:\Desktop\2020smartcar\PROJECT\SmartCar2020TR264\Libraries\seekfree_libraries\zf_stm_systick.h" :
-Libraries\seekfree_peripheral\SEEKFREE_MPU6050.o :	"D:\Desktop\2020smartcar\PROJECT\SmartCar2020TR264\Libraries\seekfree_libraries\common\common.h"
-"D:\Desktop\2020smartcar\PROJECT\SmartCar2020TR264\Libraries\seekfree_libraries\common\common.h" :
-Libraries\seekfree_peripheral\SEEKFREE_MPU6050.o :	"D:\Desktop\2020smartcar\PROJECT\SmartCar2020TR264\Libraries\BaseSw\iLLD\TC26B\Tricore\Cpu\Std\PLATFORM_TYPES.H"
-"D:\Desktop\2020smartcar\PROJECT\SmartCar2020TR264\Libraries\BaseSw\iLLD\TC26B\Tricore\Cpu\Std\PLATFORM_TYPES.H" :
+Libraries\seekfree_peripheral\SEEKFREE_MPU6050.o :	"E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\seekfree_libraries\zf_stm_systick.h"
+"E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\seekfree_libraries\zf_stm_systick.h" :
+Libraries\seekfree_peripheral\SEEKFREE_MPU6050.o :	"E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\seekfree_libraries\common\common.h"
+"E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\seekfree_libraries\common\common.h" :
+Libraries\seekfree_peripheral\SEEKFREE_MPU6050.o :	"E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Cpu\Std\PLATFORM_TYPES.H"
+"E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Cpu\Std\PLATFORM_TYPES.H" :
 Libraries\seekfree_peripheral\SEEKFREE_MPU6050.o :	"D:\Program Files\TASKING\TriCore v6.3r1\ctc\include\math.h"
 "D:\Program Files\TASKING\TriCore v6.3r1\ctc\include\math.h" :
 Libraries\seekfree_peripheral\SEEKFREE_MPU6050.o :	"D:\Program Files\TASKING\TriCore v6.3r1\ctc\include\typeinfo.h"

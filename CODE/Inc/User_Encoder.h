@@ -11,7 +11,7 @@
 #include "headfile.h"
 
 void EncoderInit(void);
-void CurDistance(void);
+void CountDistance(void);
 double GetDistance(void);
 double GetSpeed(void);
 

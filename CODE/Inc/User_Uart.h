@@ -10,9 +10,6 @@
 
 #include "headfile.h"
 
-extern uint8 uartBuff;
-
 void DebugUARTInit();
-
 
 #endif /* CODE_INC_USER_UART_H_ */

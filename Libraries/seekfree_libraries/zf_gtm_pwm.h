@@ -23,10 +23,10 @@
 #include "common.h"
 #include "ifxGtm_PinMap.h"
 
-#define GTM_ATOM0_PWM_DUTY_MAX     10000                 //GTM_ATOM0 PWM最大占空比  最大占空比越大占空比的步进值越小
-#define GTM_ATOM1_PWM_DUTY_MAX     10000                 //GTM_ATOM1 PWM最大占空比  最大占空比越大占空比的步进值越小
-#define GTM_ATOM2_PWM_DUTY_MAX     10000                 //GTM_ATOM2 PWM最大占空比  最大占空比越大占空比的步进值越小
-#define GTM_ATOM3_PWM_DUTY_MAX     10000                 //GTM_ATOM3 PWM最大占空比  最大占空比越大占空比的步进值越小
+#define GTM_ATOM0_PWM_DUTY_MAX     50000                 //GTM_ATOM0 PWM最大占空比  最大占空比越大占空比的步进值越小
+#define GTM_ATOM1_PWM_DUTY_MAX     50000                 //GTM_ATOM1 PWM最大占空比  最大占空比越大占空比的步进值越小
+#define GTM_ATOM2_PWM_DUTY_MAX     50000                 //GTM_ATOM2 PWM最大占空比  最大占空比越大占空比的步进值越小
+#define GTM_ATOM3_PWM_DUTY_MAX     50000                 //GTM_ATOM3 PWM最大占空比  最大占空比越大占空比的步进值越小
 
 
 //此枚举定义不允许用户修改
