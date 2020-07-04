@@ -1,6 +1,6 @@
 	; Module start
 	.compiler_version	"TASKING VX-toolset for TriCore: C compiler v6.3r1 Build 19041558 SN 99294086"
-	.compiler_invocation	"ctc --dep-file=Libraries\\seekfree_libraries\\.zf_eru.o.d --fp-model=c,f,l,n,r,S,T,z -D__CPU__=tc26x -D__CPU_TC26X__ --core=tc1.6.x --iso=99 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\CODE -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Build -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Impl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Lib -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Lib\\DataHandling -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Lib\\InternalMux -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_PinMap -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Asc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Lin -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Spi -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\Icu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\PwmBc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\PwmHl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\TimerWithTrigger -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\TPwm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cif -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cif\\Cam -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cif\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\CStart -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Irq -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Trap -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dma -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dma\\Dma -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dma\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc\\Dsadc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc\\Rdc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dts -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dts\\Dts -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dts\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Emem -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Emem\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eray -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eray\\Eray -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eray\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eth -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eth\\Phy_Pef7071 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eth\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fce -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fce\\Crc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fce\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fft -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fft\\Fft -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fft\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Flash -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Flash\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gpt12 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gpt12\\IncrEnc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gpt12\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom\\Pwm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom\\PwmHl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tim -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tim\\In -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom\\Pwm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom\\PwmHl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Trig -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Hssl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Hssl\\Hssl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Hssl\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\I2c -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\I2c\\I2c -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\I2c\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Iom -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Iom\\Driver -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Iom\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Msc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Msc\\Msc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Msc\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Mtu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Mtu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Multican -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Multican\\Can -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Multican\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Port -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Port\\Io -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Port\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5\\Psi5 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5s -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5s\\Psi5s -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5s\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi\\SpiMaster -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi\\SpiSlave -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Scu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Scu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Sent -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Sent\\Sent -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Sent\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Smu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Smu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Src -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Src\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Stm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Stm\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Stm\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Vadc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Vadc\\Adc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Vadc\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Platform -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Platform\\Tricore -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Platform\\Tricore\\Compilers -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Sfr -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Sfr\\TC26B -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Sfr\\TC26B\\_Reg -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Service -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Service\\CpuGeneric -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\seekfree_libraries -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\seekfree_libraries\\common -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\seekfree_peripheral -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\USER -g2 -wW557 --make-target=Libraries\\seekfree_libraries\\zf_eru.o -t4 --language=-gcc,-volatile,+strings,-kanji --default-near-size=0 -O0 --default-a1-size=0 --default-a0-size=0 --source --align=0 --switch=auto --error-limit=42 -o Libraries\\seekfree_libraries\\zf_eru.src ..\\Libraries\\seekfree_libraries\\zf_eru.c"
+	.compiler_invocation	"ctc --dep-file=Libraries\\seekfree_libraries\\.zf_eru.o.d --fp-model=c,f,l,n,r,S,T,z -D__CPU__=tc26x -D__CPU_TC26X__ --core=tc1.6.x --iso=99 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\CODE -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Build -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Impl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Lib -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Lib\\DataHandling -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Lib\\InternalMux -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_PinMap -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Asc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Lin -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Spi -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\Icu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\PwmBc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\PwmHl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\TimerWithTrigger -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\TPwm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cif -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cif\\Cam -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cif\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\CStart -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Irq -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Trap -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dma -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dma\\Dma -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dma\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc\\Dsadc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc\\Rdc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dts -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dts\\Dts -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dts\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Emem -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Emem\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eray -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eray\\Eray -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eray\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eth -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eth\\Phy_Pef7071 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eth\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fce -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fce\\Crc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fce\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fft -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fft\\Fft -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fft\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Flash -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Flash\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gpt12 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gpt12\\IncrEnc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gpt12\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom\\Pwm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom\\PwmHl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tim -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tim\\In -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom\\Pwm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom\\PwmHl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Trig -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Hssl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Hssl\\Hssl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Hssl\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\I2c -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\I2c\\I2c -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\I2c\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Iom -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Iom\\Driver -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Iom\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Msc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Msc\\Msc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Msc\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Mtu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Mtu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Multican -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Multican\\Can -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Multican\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Port -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Port\\Io -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Port\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5\\Psi5 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5s -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5s\\Psi5s -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5s\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi\\SpiMaster -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi\\SpiSlave -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Scu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Scu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Sent -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Sent\\Sent -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Sent\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Smu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Smu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Src -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Src\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Stm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Stm\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Stm\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Vadc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Vadc\\Adc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Vadc\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Platform -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Platform\\Tricore -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Platform\\Tricore\\Compilers -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Sfr -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Sfr\\TC26B -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Sfr\\TC26B\\_Reg -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Service -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Service\\CpuGeneric -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\seekfree_libraries -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\seekfree_libraries\\common -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\seekfree_peripheral -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\USER -g2 -wW557 --make-target=Libraries\\seekfree_libraries\\zf_eru.o -t4 --language=-gcc,-volatile,+strings,-kanji --default-near-size=0 -O2 --default-a1-size=0 --default-a0-size=0 --source --align=0 --compact-max-size=200 --switch=auto --error-limit=42 -o Libraries\\seekfree_libraries\\zf_eru.src ..\\Libraries\\seekfree_libraries\\zf_eru.c"
 	.compiler_name		"ctc"
 	;source	'..\\Libraries\\seekfree_libraries\\zf_eru.c'
 
@@ -45,234 +45,204 @@ $TC16X
 ; ..\Libraries\seekfree_libraries\zf_eru.c	    30  
 ; ..\Libraries\seekfree_libraries\zf_eru.c	    31  IfxScu_Req_In* eru_mux(ERU_PIN_enum eru_pin)
 ; Function eru_mux
-.L63:
+.L55:
 eru_mux:	.type	func
 
 ; ..\Libraries\seekfree_libraries\zf_eru.c	    32  {
 ; ..\Libraries\seekfree_libraries\zf_eru.c	    33  	switch(eru_pin)
 ; ..\Libraries\seekfree_libraries\zf_eru.c	    34  	{
 ; ..\Libraries\seekfree_libraries\zf_eru.c	    35  		case ERU_CH0_REQ4_P10_7:   return &IfxScu_REQ4_P10_7_IN;
-	mov	d15,#0
-	jeq	d15,d4,.L2
-.L297:
+	jeq	d4,#0,.L2
+.L242:
 
 ; ..\Libraries\seekfree_libraries\zf_eru.c	    36  		case ERU_CH0_REQ0_P15_4:   return &IfxScu_REQ0_P15_4_IN;
-	mov	d15,#1
-	jeq	d15,d4,.L3
-.L298:
+	jeq	d4,#1,.L3
+.L243:
 
 ; ..\Libraries\seekfree_libraries\zf_eru.c	    37  
 ; ..\Libraries\seekfree_libraries\zf_eru.c	    38  		case ERU_CH1_REQ5_P10_8:   return &IfxScu_REQ5_P10_8_IN;
-	mov	d15,#3
-	jeq	d15,d4,.L4
-.L299:
+	jeq	d4,#3,.L4
+.L244:
 
 ; ..\Libraries\seekfree_libraries\zf_eru.c	    39  		case ERU_CH1_REQ10_P14_3:  return &IfxScu_REQ10_P14_3_IN;
-	mov	d15,#4
-	jeq	d15,d4,.L5
-.L300:
+	jeq	d4,#4,.L5
+.L245:
 
 ; ..\Libraries\seekfree_libraries\zf_eru.c	    40  
 ; ..\Libraries\seekfree_libraries\zf_eru.c	    41  		case ERU_CH2_REQ7_P00_4:   return &IfxScu_REQ7_P00_4_IN;
-	mov	d15,#6
-	jeq	d15,d4,.L6
-.L301:
+	jeq	d4,#6,.L6
+.L246:
 
 ; ..\Libraries\seekfree_libraries\zf_eru.c	    42  		case ERU_CH2_REQ14_P02_1:  return &IfxScu_REQ14_P02_1_IN;
-	mov	d15,#7
-	jeq	d15,d4,.L7
-.L302:
+	jeq	d4,#7,.L7
+.L247:
 
 ; ..\Libraries\seekfree_libraries\zf_eru.c	    43  		case ERU_CH2_REQ2_P10_2:   return &IfxScu_REQ2_P10_2_IN;
 	mov	d15,#8
 	jeq	d15,d4,.L8
-.L303:
+.L248:
 
 ; ..\Libraries\seekfree_libraries\zf_eru.c	    44  
 ; ..\Libraries\seekfree_libraries\zf_eru.c	    45  		case ERU_CH3_REQ6_P02_0:   return &IfxScu_REQ6_P02_0_IN;
 	mov	d15,#9
 	jeq	d15,d4,.L9
-.L304:
+.L249:
 
 ; ..\Libraries\seekfree_libraries\zf_eru.c	    46  		case ERU_CH3_REQ3_P10_3:   return &IfxScu_REQ3_P10_3_IN;
 	mov	d15,#10
 	jeq	d15,d4,.L10
-.L305:
+.L250:
 
 ; ..\Libraries\seekfree_libraries\zf_eru.c	    47  		case ERU_CH3_REQ15_P14_1:  return &IfxScu_REQ15_P14_1_IN;
 	mov	d15,#11
 	jeq	d15,d4,.L11
-.L306:
+.L251:
 
 ; ..\Libraries\seekfree_libraries\zf_eru.c	    48  
 ; ..\Libraries\seekfree_libraries\zf_eru.c	    49  		case ERU_CH4_REQ13_P15_5:  return &IfxScu_REQ13_P15_5_IN;
 	mov	d15,#12
 	jeq	d15,d4,.L12
-.L307:
+.L252:
 
 ; ..\Libraries\seekfree_libraries\zf_eru.c	    50  		case ERU_CH4_REQ8_P33_7:   return &IfxScu_REQ8_P33_7_IN;
 	mov	d15,#13
 	jeq	d15,d4,.L13
-.L308:
+.L253:
 
 ; ..\Libraries\seekfree_libraries\zf_eru.c	    51  
 ; ..\Libraries\seekfree_libraries\zf_eru.c	    52  		case ERU_CH5_REQ1_P15_8:   return &IfxScu_REQ1_P15_8_IN;
 	mov	d15,#15
 	jeq	d15,d4,.L14
-.L309:
+.L254:
 
 ; ..\Libraries\seekfree_libraries\zf_eru.c	    53  
 ; ..\Libraries\seekfree_libraries\zf_eru.c	    54  		case ERU_CH6_REQ12_P11_10: return &IfxScu_REQ12_P11_10_IN;
 	mov	d15,#18
 	jeq	d15,d4,.L15
-.L310:
+.L255:
 
 ; ..\Libraries\seekfree_libraries\zf_eru.c	    55  		case ERU_CH6_REQ9_P20_0:   return &IfxScu_REQ9_P20_0_IN;
 	mov	d15,#19
 	jeq	d15,d4,.L16
-.L311:
+.L256:
 
 ; ..\Libraries\seekfree_libraries\zf_eru.c	    56  
 ; ..\Libraries\seekfree_libraries\zf_eru.c	    57  		case ERU_CH7_REQ16_P15_1:  return &IfxScu_REQ16_P15_1_IN;
 	mov	d15,#21
 	jeq	d15,d4,.L17
-.L312:
+.L257:
 
 ; ..\Libraries\seekfree_libraries\zf_eru.c	    58  		case ERU_CH7_REQ11_P20_9:  return &IfxScu_REQ11_P20_9_IN;
 	mov	d15,#22
 	jeq	d15,d4,.L18
-	j	.L19
-.L2:
-	movh.a	a2,#@his(IfxScu_REQ4_P10_7_IN)
-	lea	a2,[a2]@los(IfxScu_REQ4_P10_7_IN)
-.L313:
-	j	.L20
-.L3:
-	movh.a	a2,#@his(IfxScu_REQ0_P15_4_IN)
-	lea	a2,[a2]@los(IfxScu_REQ0_P15_4_IN)
-.L314:
-	j	.L21
-.L4:
-	movh.a	a2,#@his(IfxScu_REQ5_P10_8_IN)
-	lea	a2,[a2]@los(IfxScu_REQ5_P10_8_IN)
-.L315:
-	j	.L22
-.L5:
-	movh.a	a2,#@his(IfxScu_REQ10_P14_3_IN)
-	lea	a2,[a2]@los(IfxScu_REQ10_P14_3_IN)
-.L316:
-	j	.L23
-.L6:
-	movh.a	a2,#@his(IfxScu_REQ7_P00_4_IN)
-	lea	a2,[a2]@los(IfxScu_REQ7_P00_4_IN)
-.L317:
-	j	.L24
-.L7:
-	movh.a	a2,#@his(IfxScu_REQ14_P02_1_IN)
-	lea	a2,[a2]@los(IfxScu_REQ14_P02_1_IN)
-.L318:
-	j	.L25
-.L8:
-	movh.a	a2,#@his(IfxScu_REQ2_P10_2_IN)
-	lea	a2,[a2]@los(IfxScu_REQ2_P10_2_IN)
-.L319:
-	j	.L26
-.L9:
-	movh.a	a2,#@his(IfxScu_REQ6_P02_0_IN)
-	lea	a2,[a2]@los(IfxScu_REQ6_P02_0_IN)
-.L320:
-	j	.L27
-.L10:
-	movh.a	a2,#@his(IfxScu_REQ3_P10_3_IN)
-	lea	a2,[a2]@los(IfxScu_REQ3_P10_3_IN)
-.L321:
-	j	.L28
-.L11:
-	movh.a	a2,#@his(IfxScu_REQ15_P14_1_IN)
-	lea	a2,[a2]@los(IfxScu_REQ15_P14_1_IN)
-.L322:
-	j	.L29
-.L12:
-	movh.a	a2,#@his(IfxScu_REQ13_P15_5_IN)
-	lea	a2,[a2]@los(IfxScu_REQ13_P15_5_IN)
-.L323:
-	j	.L30
-.L13:
-	movh.a	a2,#@his(IfxScu_REQ8_P33_7_IN)
-	lea	a2,[a2]@los(IfxScu_REQ8_P33_7_IN)
-.L324:
-	j	.L31
-.L14:
-	movh.a	a2,#@his(IfxScu_REQ1_P15_8_IN)
-	lea	a2,[a2]@los(IfxScu_REQ1_P15_8_IN)
-.L325:
-	j	.L32
-.L15:
-	movh.a	a2,#@his(IfxScu_REQ12_P11_10_IN)
-	lea	a2,[a2]@los(IfxScu_REQ12_P11_10_IN)
-.L326:
-	j	.L33
-.L16:
-	movh.a	a2,#@his(IfxScu_REQ9_P20_0_IN)
-	lea	a2,[a2]@los(IfxScu_REQ9_P20_0_IN)
-.L327:
-	j	.L34
-.L17:
-	movh.a	a2,#@his(IfxScu_REQ16_P15_1_IN)
-	lea	a2,[a2]@los(IfxScu_REQ16_P15_1_IN)
-.L328:
-	j	.L35
-.L18:
-	movh.a	a2,#@his(IfxScu_REQ11_P20_9_IN)
-	lea	a2,[a2]@los(IfxScu_REQ11_P20_9_IN)
-.L329:
-	j	.L36
+.L258:
 
 ; ..\Libraries\seekfree_libraries\zf_eru.c	    59  
 ; ..\Libraries\seekfree_libraries\zf_eru.c	    60  		default: ZF_ASSERT(FALSE); return NULL;
-.L19:
-	mov	d15,#0
-	jeq	d15,#0,.L37
-	j	.L38
-.L37:
 	movh.a	a4,#@his(.1.str)
 	lea	a4,[a4]@los(.1.str)
 	mov	d4,#60
-.L192:
 	movh.a	a5,#@his(_999001___func__)
+.L186:
 	lea	a5,[a5]@los(_999001___func__)
 	call	assert
-.L38:
+.L259:
 	mov.a	a2,#0
-.L330:
-	j	.L39
+.L260:
 
 ; ..\Libraries\seekfree_libraries\zf_eru.c	    61  	}
 ; ..\Libraries\seekfree_libraries\zf_eru.c	    62  }
-.L39:
-.L36:
-.L35:
-.L34:
-.L33:
-.L32:
-.L31:
-.L30:
-.L29:
-.L28:
-.L27:
-.L26:
-.L25:
-.L24:
-.L23:
-.L22:
-.L21:
-.L20:
 	ret
-.L189:
+.L2:
+	movh.a	a2,#@his(IfxScu_REQ4_P10_7_IN)
+	lea	a2,[a2]@los(IfxScu_REQ4_P10_7_IN)
+.L261:
+	ret
+.L3:
+	movh.a	a2,#@his(IfxScu_REQ0_P15_4_IN)
+	lea	a2,[a2]@los(IfxScu_REQ0_P15_4_IN)
+.L262:
+	ret
+.L4:
+	movh.a	a2,#@his(IfxScu_REQ5_P10_8_IN)
+	lea	a2,[a2]@los(IfxScu_REQ5_P10_8_IN)
+.L263:
+	ret
+.L5:
+	movh.a	a2,#@his(IfxScu_REQ10_P14_3_IN)
+	lea	a2,[a2]@los(IfxScu_REQ10_P14_3_IN)
+.L264:
+	ret
+.L6:
+	movh.a	a2,#@his(IfxScu_REQ7_P00_4_IN)
+	lea	a2,[a2]@los(IfxScu_REQ7_P00_4_IN)
+.L265:
+	ret
+.L7:
+	movh.a	a2,#@his(IfxScu_REQ14_P02_1_IN)
+	lea	a2,[a2]@los(IfxScu_REQ14_P02_1_IN)
+.L266:
+	ret
+.L8:
+	movh.a	a2,#@his(IfxScu_REQ2_P10_2_IN)
+	lea	a2,[a2]@los(IfxScu_REQ2_P10_2_IN)
+.L267:
+	ret
+.L9:
+	movh.a	a2,#@his(IfxScu_REQ6_P02_0_IN)
+	lea	a2,[a2]@los(IfxScu_REQ6_P02_0_IN)
+.L268:
+	ret
+.L10:
+	movh.a	a2,#@his(IfxScu_REQ3_P10_3_IN)
+	lea	a2,[a2]@los(IfxScu_REQ3_P10_3_IN)
+.L269:
+	ret
+.L11:
+	movh.a	a2,#@his(IfxScu_REQ15_P14_1_IN)
+	lea	a2,[a2]@los(IfxScu_REQ15_P14_1_IN)
+.L270:
+	ret
+.L12:
+	movh.a	a2,#@his(IfxScu_REQ13_P15_5_IN)
+	lea	a2,[a2]@los(IfxScu_REQ13_P15_5_IN)
+.L271:
+	ret
+.L13:
+	movh.a	a2,#@his(IfxScu_REQ8_P33_7_IN)
+	lea	a2,[a2]@los(IfxScu_REQ8_P33_7_IN)
+.L272:
+	ret
+.L14:
+	movh.a	a2,#@his(IfxScu_REQ1_P15_8_IN)
+	lea	a2,[a2]@los(IfxScu_REQ1_P15_8_IN)
+.L273:
+	ret
+.L15:
+	movh.a	a2,#@his(IfxScu_REQ12_P11_10_IN)
+	lea	a2,[a2]@los(IfxScu_REQ12_P11_10_IN)
+.L274:
+	ret
+.L16:
+	movh.a	a2,#@his(IfxScu_REQ9_P20_0_IN)
+	lea	a2,[a2]@los(IfxScu_REQ9_P20_0_IN)
+.L275:
+	ret
+.L17:
+	movh.a	a2,#@his(IfxScu_REQ16_P15_1_IN)
+	lea	a2,[a2]@los(IfxScu_REQ16_P15_1_IN)
+.L276:
+	ret
+.L18:
+	movh.a	a2,#@his(IfxScu_REQ11_P20_9_IN)
+	lea	a2,[a2]@los(IfxScu_REQ11_P20_9_IN)
+.L277:
+	ret
+.L183:
 	
 __eru_mux_function_end:
 	.size	eru_mux,__eru_mux_function_end-eru_mux
-.L93:
+.L87:
 	; End of function
 	
 	.sdecl	'.text.zf_eru.eru_init',code,cluster('eru_init')
@@ -291,12 +261,12 @@ __eru_mux_function_end:
 ; ..\Libraries\seekfree_libraries\zf_eru.c	    70  //-------------------------------------------------------------------------------------------------------------------
 ; ..\Libraries\seekfree_libraries\zf_eru.c	    71  void eru_init(ERU_PIN_enum eru_pin, TRIGGER_enum trigger)
 ; Function eru_init
-.L65:
+.L57:
 eru_init:	.type	func
-	sub.a	a10,#8
-.L193:
-	mov	e10,d5,d4
-.L105:
+	mov	d8,d4
+.L188:
+	mov	d15,d5
+.L102:
 
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Cpu\Std\IfxCpu.h	     1  /**
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Cpu\Std\IfxCpu.h	     2   * \file IfxCpu.h
@@ -953,19 +923,13 @@ eru_init:	.type	func
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Cpu\Std\IfxCpu.h	   653      Ifx_CPU_ICR reg;
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Cpu\Std\IfxCpu.h	   654      reg.U = __mfcr(CPU_ICR);
 	mfcr	d0,#65068
-.L195:
+.L190:
 
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Cpu\Std\IfxCpu.h	   655      return reg.B.IE != 0;
 	extr.u	d0,d0,#15,#1
-.L196:
-	ne	d14,d0,#0
-.L197:
-
-; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Cpu\Std\IfxCpu.h	   655      return reg.B.IE != 0;      (inlined)
-	j	.L40
-
-; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Cpu\Std\IfxCpu.h	   656  }      (inlined)
-.L40:
+.L191:
+	ne	d9,d0,#0
+.L108:
 
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Cpu\Std\IfxCpu.h	   656  }
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Cpu\Std\IfxCpu.h	   657  
@@ -976,23 +940,11 @@ eru_init:	.type	func
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Cpu\Std\IfxCpu.h	   662      enabled = IfxCpu_areInterruptsEnabled();
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Cpu\Std\IfxCpu.h	   663      __disable();
 	disable
-.L263:
+.L205:
 
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Cpu\Std\IfxCpu.h	   664      __nop();
 	nop
-.L264:
-
-; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Cpu\Std\IfxCpu.h	   665      return enabled;      (inlined)
-	j	.L41
-
-; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Cpu\Std\IfxCpu.h	   666  }      (inlined)
-.L41:
-
-; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\Service\CpuGeneric\SysSe\Bsp\Bsp.h	   110      return IfxCpu_disableInterrupts();      (inlined)
-	j	.L42
-
-; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\Service\CpuGeneric\SysSe\Bsp\Bsp.h	   111  }      (inlined)
-.L42:
+.L103:
 
 ; ..\Libraries\seekfree_libraries\zf_eru.c	    72   *reqPin;
 ; ..\Libraries\seekfree_libraries\zf_eru.c	    73  
@@ -1000,17 +952,10 @@ eru_init:	.type	func
 ; ..\Libraries\seekfree_libraries\zf_eru.c	    75  
 ; ..\Libraries\seekfree_libraries\zf_eru.c	    76      IfxScuEru_initReqPin(reqPin, IfxPort_InputMode_pullUp);
 ; ..\Libraries\seekfree_libraries\zf_eru.c	    77  
-	mov	d4,d10
-.L198:
 	call	eru_mux
-.L194:
+.L187:
 	mov.aa	a15,a2
-.L199:
-
-; ..\Libraries\seekfree_libraries\zf_eru.c	    78      IfxScuEru_InputChannel inputChannel = (IfxScuEru_InputChannel)reqPin->channelId;
-; ..\Libraries\seekfree_libraries\zf_eru.c	    79  
-	mov	d5,#16
-.L115:
+.L113:
 
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Scu\Std\IfxScuEru.h	     1  /**
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Scu\Std\IfxScuEru.h	     2   * \file IfxScuEru.h
@@ -1365,9 +1310,9 @@ eru_init:	.type	func
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Scu\Std\IfxScuEru.h	   351  {
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Scu\Std\IfxScuEru.h	   352      IfxPort_setPinModeInput(req->pin.port, req->pin.pinIndex, inputMode);
 	ld.a	a4,[a15]8
-.L265:
+.L206:
 	ld.bu	d4,[a15]12
-.L123:
+.L207:
 
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Port\Std\IfxPort.h	     1  /**
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Port\Std\IfxPort.h	     2   * \file IfxPort.h
@@ -1951,267 +1896,198 @@ eru_init:	.type	func
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Port\Std\IfxPort.h	   580  IFX_INLINE void IfxPort_setPinModeInput(Ifx_P *port, uint8 pinIndex, IfxPort_InputMode mode)
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Port\Std\IfxPort.h	   581  {
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Port\Std\IfxPort.h	   582      IfxPort_setPinMode(port, pinIndex, (IfxPort_Mode)mode);
+	mov	d5,#16
 	call	IfxPort_setPinMode
-.L124:
+.L121:
 
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Scu\Std\IfxScuEru.h	   353  de);
 	ld.bu	d4,[a15]4
-.L266:
-	ld.bu	d5,[a15]16
-.L267:
-	call	IfxScuEru_selectExternalInput
-.L116:
-
-; ..\Libraries\seekfree_libraries\zf_eru.c	    80  Mode_pullUp);
-; ..\Libraries\seekfree_libraries\zf_eru.c	    81  
-	ld.bu	d15,[a15]4
-.L201:
-	st.w	[a10],d15
-.L203:
-
-; ..\Libraries\seekfree_libraries\zf_eru.c	    82      IfxScuEru_InputChannel inputChannel = (IfxScuEru_InputChannel)reqPin->channelId;
-; ..\Libraries\seekfree_libraries\zf_eru.c	    83  
-	mov	d15,#3
-.L202:
-	div	e12,d10,d15
-.L204:
-
-; ..\Libraries\seekfree_libraries\zf_eru.c	    84      IfxScuEru_InputNodePointer triggerSelect = (IfxScuEru_InputNodePointer)(eru_pin/3);
-	mov	d15,#3
-.L205:
-	div	e8,d10,d15
-.L206:
-
-; ..\Libraries\seekfree_libraries\zf_eru.c	    85      IfxScuEru_OutputChannel    outputChannel = (IfxScuEru_OutputChannel)(eru_pin/3);
-; ..\Libraries\seekfree_libraries\zf_eru.c	    86  
-; ..\Libraries\seekfree_libraries\zf_eru.c	    87      switch(trigger)
-; ..\Libraries\seekfree_libraries\zf_eru.c	    88      {
-	mov	d15,#0
-.L207:
-	jeq	d15,d11,.L43
 .L208:
-
-; ..\Libraries\seekfree_libraries\zf_eru.c	    89      	case RISING:
-; ..\Libraries\seekfree_libraries\zf_eru.c	    90      	{
-; ..\Libraries\seekfree_libraries\zf_eru.c	    91      		IfxScuEru_disableFallingEdgeDetection(inputChannel);
-; ..\Libraries\seekfree_libraries\zf_eru.c	    92      		IfxScuEru_enableRisingEdgeDetection(inputChannel);
-; ..\Libraries\seekfree_libraries\zf_eru.c	    93      	}break;
-; ..\Libraries\seekfree_libraries\zf_eru.c	    94  
-	mov	d15,#1
+	ld.bu	d5,[a15]16
 .L209:
-	jeq	d15,d11,.L44
+	call	IfxScuEru_selectExternalInput
+.L114:
+
+; ..\Libraries\seekfree_libraries\zf_eru.c	    78  In *reqPin;
+; ..\Libraries\seekfree_libraries\zf_eru.c	    79  
+; ..\Libraries\seekfree_libraries\zf_eru.c	    80  	reqPin = eru_mux(eru_pin);
+; ..\Libraries\seekfree_libraries\zf_eru.c	    81  
+; ..\Libraries\seekfree_libraries\zf_eru.c	    82      IfxScuEru_initReqPin(reqPin, IfxPort_InputMode_pullUp);
+; ..\Libraries\seekfree_libraries\zf_eru.c	    83  
+	mov	d0,#3
+	ld.bu	d12,[a15]4
+.L192:
+	div.u	e10,d8,d0
 .L210:
 
-; ..\Libraries\seekfree_libraries\zf_eru.c	    95      	case FALLING:
-; ..\Libraries\seekfree_libraries\zf_eru.c	    96      	{
-; ..\Libraries\seekfree_libraries\zf_eru.c	    97      		IfxScuEru_enableFallingEdgeDetection(inputChannel);
-; ..\Libraries\seekfree_libraries\zf_eru.c	    98      		IfxScuEru_disableRisingEdgeDetection(inputChannel);
-; ..\Libraries\seekfree_libraries\zf_eru.c	    99      	}break;
-; ..\Libraries\seekfree_libraries\zf_eru.c	   100  
-	mov	d15,#2
+; ..\Libraries\seekfree_libraries\zf_eru.c	    84      IfxScuEru_InputChannel inputChannel = (IfxScuEru_InputChannel)reqPin->channelId;
+; ..\Libraries\seekfree_libraries\zf_eru.c	    85  
+; ..\Libraries\seekfree_libraries\zf_eru.c	    86      IfxScuEru_InputNodePointer triggerSelect = (IfxScuEru_InputNodePointer)(eru_pin/3);
+; ..\Libraries\seekfree_libraries\zf_eru.c	    87      IfxScuEru_OutputChannel    outputChannel = (IfxScuEru_OutputChannel)(eru_pin/3);
+; ..\Libraries\seekfree_libraries\zf_eru.c	    88  
+	jeq	d15,#0,.L38
 .L211:
-	jeq	d15,d11,.L45
+
+; ..\Libraries\seekfree_libraries\zf_eru.c	    89      switch(trigger)
+; ..\Libraries\seekfree_libraries\zf_eru.c	    90      {
+; ..\Libraries\seekfree_libraries\zf_eru.c	    91      	case RISING:
+; ..\Libraries\seekfree_libraries\zf_eru.c	    92      	{
+; ..\Libraries\seekfree_libraries\zf_eru.c	    93      		IfxScuEru_disableFallingEdgeDetection(inputChannel);
+; ..\Libraries\seekfree_libraries\zf_eru.c	    94      		IfxScuEru_enableRisingEdgeDetection(inputChannel);
+	jeq	d15,#1,.L39
 .L212:
-	j	.L46
-.L43:
-	ld.w	d4,[a10]
+
+; ..\Libraries\seekfree_libraries\zf_eru.c	    95      	}break;
+; ..\Libraries\seekfree_libraries\zf_eru.c	    96  
+; ..\Libraries\seekfree_libraries\zf_eru.c	    97      	case FALLING:
+; ..\Libraries\seekfree_libraries\zf_eru.c	    98      	{
+; ..\Libraries\seekfree_libraries\zf_eru.c	    99      		IfxScuEru_enableFallingEdgeDetection(inputChannel);
+; ..\Libraries\seekfree_libraries\zf_eru.c	   100      		IfxScuEru_disableRisingEdgeDetection(inputChannel);
+	jeq	d15,#2,.L40
 .L213:
+	j	.L41
+.L38:
+	mov	d4,d12
 	call	IfxScuEru_disableFallingEdgeDetection
 .L214:
-	ld.w	d4,[a10]
+	j	.L42
+.L39:
+	mov	d4,d12
+	call	IfxScuEru_enableFallingEdgeDetection
 .L215:
-	call	IfxScuEru_enableRisingEdgeDetection
-.L216:
-	j	.L47
-.L44:
-	ld.w	d4,[a10]
-.L217:
-	call	IfxScuEru_enableFallingEdgeDetection
-.L218:
-	ld.w	d4,[a10]
-.L219:
+	mov	d4,d12
 	call	IfxScuEru_disableRisingEdgeDetection
-.L220:
-	j	.L48
-.L45:
+.L216:
+	j	.L43
+.L40:
 
-; ..\Libraries\seekfree_libraries\zf_eru.c	   101      	case BOTH:
-; ..\Libraries\seekfree_libraries\zf_eru.c	   102      	{
-	ld.w	d4,[a10]
-.L221:
+; ..\Libraries\seekfree_libraries\zf_eru.c	   101      	}break;
+; ..\Libraries\seekfree_libraries\zf_eru.c	   102  
+	mov	d4,d12
 	call	IfxScuEru_enableFallingEdgeDetection
-.L222:
 
-; ..\Libraries\seekfree_libraries\zf_eru.c	   103      		IfxScuEru_enableFallingEdgeDetection(inputChannel);
-	ld.w	d4,[a10]
-.L223:
+; ..\Libraries\seekfree_libraries\zf_eru.c	   103      	case BOTH:
+; ..\Libraries\seekfree_libraries\zf_eru.c	   104      	{
+; ..\Libraries\seekfree_libraries\zf_eru.c	   105      		IfxScuEru_enableFallingEdgeDetection(inputChannel);
+; ..\Libraries\seekfree_libraries\zf_eru.c	   106      		IfxScuEru_enableRisingEdgeDetection(inputChannel);
+; ..\Libraries\seekfree_libraries\zf_eru.c	   107      	}break;
+; ..\Libraries\seekfree_libraries\zf_eru.c	   108  
+; ..\Libraries\seekfree_libraries\zf_eru.c	   109      	default: ZF_ASSERT(FALSE);
+.L42:
+	mov	d4,d12
 	call	IfxScuEru_enableRisingEdgeDetection
-.L224:
-
-; ..\Libraries\seekfree_libraries\zf_eru.c	   104      		IfxScuEru_enableRisingEdgeDetection(inputChannel);
-	j	.L49
-
-; ..\Libraries\seekfree_libraries\zf_eru.c	   105      	}break;
-; ..\Libraries\seekfree_libraries\zf_eru.c	   106  
-.L46:
-	mov	d15,#0
-	jeq	d15,#0,.L50
-	j	.L51
-.L50:
+.L217:
+	j	.L44
+.L41:
 	movh.a	a4,#@his(.1.str)
 	lea	a4,[a4]@los(.1.str)
-	mov	d15,#106
+	mov	d4,#106
 	movh.a	a5,#@his(_999002___func__)
 	lea	a5,[a5]@los(_999002___func__)
-	mov	d4,d15
 	call	assert
-.L51:
-
-; ..\Libraries\seekfree_libraries\zf_eru.c	   107      	default: ZF_ASSERT(FALSE);
-; ..\Libraries\seekfree_libraries\zf_eru.c	   108      }
-; ..\Libraries\seekfree_libraries\zf_eru.c	   109  
-.L49:
-.L48:
-.L47:
-	ld.w	d4,[a10]
-.L225:
+.L44:
+.L43:
+	mov	d4,d12
 	call	IfxScuEru_enableTriggerPulse
-.L226:
+.L218:
 
-; ..\Libraries\seekfree_libraries\zf_eru.c	   110      IfxScuEru_enableTriggerPulse(inputChannel);
-	ld.w	d4,[a10]
-.L227:
-	mov	d5,d12
-.L229:
+; ..\Libraries\seekfree_libraries\zf_eru.c	   110      }
+	mov	e4,d10,d12
 	call	IfxScuEru_connectTrigger
-.L228:
+.L219:
 
-; ..\Libraries\seekfree_libraries\zf_eru.c	   111      IfxScuEru_connectTrigger(inputChannel, triggerSelect);
-; ..\Libraries\seekfree_libraries\zf_eru.c	   112  
+; ..\Libraries\seekfree_libraries\zf_eru.c	   111  
+; ..\Libraries\seekfree_libraries\zf_eru.c	   112      IfxScuEru_enableTriggerPulse(inputChannel);
 	mov	d6,#1
-	mov	d4,d8
-.L230:
-	ld.w	d5,[a10]
-.L232:
+	mov	e4,d12,d10
 	call	IfxScuEru_setFlagPatternDetection
-.L231:
+.L220:
 
-; ..\Libraries\seekfree_libraries\zf_eru.c	   113      IfxScuEru_setFlagPatternDetection(outputChannel, inputChannel, TRUE);
-	mov	d4,d8
-.L233:
+; ..\Libraries\seekfree_libraries\zf_eru.c	   113      IfxScuEru_connectTrigger(inputChannel, triggerSelect);
+	mov	d4,d10
 	call	IfxScuEru_enablePatternDetectionTrigger
-.L234:
+.L221:
 
-; ..\Libraries\seekfree_libraries\zf_eru.c	   114      IfxScuEru_enablePatternDetectionTrigger(outputChannel);
+; ..\Libraries\seekfree_libraries\zf_eru.c	   114  
 	mov	d5,#1
-	mov	d4,d8
-.L235:
+	mov	d4,d10
 	call	IfxScuEru_setInterruptGatingPattern
-.L138:
+.L135:
 
-; ..\Libraries\seekfree_libraries\zf_eru.c	   115      IfxScuEru_setInterruptGatingPattern(outputChannel, IfxScuEru_InterruptGatingPattern_alwaysActive);
-; ..\Libraries\seekfree_libraries\zf_eru.c	   116  
-; ..\Libraries\seekfree_libraries\zf_eru.c	   117  
-	mov	d15,#4
-.L268:
-	div	e0,d8,d15
-.L269:
-	mul	d15,d1,#4
-	mov.a	a15,d15
-.L200:
-	movh.a	a3,#61444
-	add.a	a3,a15
-	lea	a15,[a3]-29484
-.L236:
+; ..\Libraries\seekfree_libraries\zf_eru.c	   115      IfxScuEru_setFlagPatternDetection(outputChannel, inputChannel, TRUE);
+; ..\Libraries\seekfree_libraries\zf_eru.c	   116      IfxScuEru_enablePatternDetectionTrigger(outputChannel);
+; ..\Libraries\seekfree_libraries\zf_eru.c	   117      IfxScuEru_setInterruptGatingPattern(outputChannel, IfxScuEru_InterruptGatingPattern_alwaysActive);
+	and	d15,d10,#3
+	movh.a	a15,#61444
+.L189:
+	lea	a15,[a15]@los(0xf0038cd4)
+.L222:
+	addsc.a	a15,a15,d15,#2
+.L193:
 
-; ..\Libraries\seekfree_libraries\zf_eru.c	   118  	volatile Ifx_SRC_SRCR *src = &MODULE_SRC.SCU.SCU.ERU[(int)outputChannel % 4];
-; ..\Libraries\seekfree_libraries\zf_eru.c	   119  	IfxSrc_Tos eru_service;
-; ..\Libraries\seekfree_libraries\zf_eru.c	   120  	uint8 eru_priority;
-	mov	d15,#3
-.L237:
-	div	e0,d10,d15
-.L238:
-	mov	d15,#4
-.L270:
-	div	e0,d0,d15
-.L271:
+; ..\Libraries\seekfree_libraries\zf_eru.c	   118  
+; ..\Libraries\seekfree_libraries\zf_eru.c	   119  
+; ..\Libraries\seekfree_libraries\zf_eru.c	   120  	volatile Ifx_SRC_SRCR *src = &MODULE_SRC.SCU.SCU.ERU[(int)outputChannel % 4];
+; ..\Libraries\seekfree_libraries\zf_eru.c	   121  	IfxSrc_Tos eru_service;
+; ..\Libraries\seekfree_libraries\zf_eru.c	   122  	uint8 eru_priority;
+	jeq	d15,#0,.L45
+.L223:
 
-; ..\Libraries\seekfree_libraries\zf_eru.c	   121   	switch((eru_pin/3)%4)
-; ..\Libraries\seekfree_libraries\zf_eru.c	   122   	{
-	mov	d15,#0
-	jeq	d15,d1,.L52
-.L272:
+; ..\Libraries\seekfree_libraries\zf_eru.c	   123   	switch((eru_pin/3)%4)
+; ..\Libraries\seekfree_libraries\zf_eru.c	   124   	{
+; ..\Libraries\seekfree_libraries\zf_eru.c	   125  		case 0:
+; ..\Libraries\seekfree_libraries\zf_eru.c	   126  		{
+; ..\Libraries\seekfree_libraries\zf_eru.c	   127  			eru_service  = (IfxSrc_Tos)ERU_CH0_CH4_INT_SERVICE;
+; ..\Libraries\seekfree_libraries\zf_eru.c	   128  			eru_priority = ERU_CH0_CH4_INT_PRIO;
+	jeq	d15,#1,.L46
+.L224:
 
-; ..\Libraries\seekfree_libraries\zf_eru.c	   123  		case 0:
-; ..\Libraries\seekfree_libraries\zf_eru.c	   124  		{
-; ..\Libraries\seekfree_libraries\zf_eru.c	   125  			eru_service  = (IfxSrc_Tos)ERU_CH0_CH4_INT_SERVICE;
-; ..\Libraries\seekfree_libraries\zf_eru.c	   126  			eru_priority = ERU_CH0_CH4_INT_PRIO;
-; ..\Libraries\seekfree_libraries\zf_eru.c	   127  		}break;
-; ..\Libraries\seekfree_libraries\zf_eru.c	   128  
-	mov	d15,#1
-	jeq	d15,d1,.L53
-.L273:
+; ..\Libraries\seekfree_libraries\zf_eru.c	   129  		}break;
+; ..\Libraries\seekfree_libraries\zf_eru.c	   130  
+; ..\Libraries\seekfree_libraries\zf_eru.c	   131  		case 1:
+; ..\Libraries\seekfree_libraries\zf_eru.c	   132  		{
+; ..\Libraries\seekfree_libraries\zf_eru.c	   133  			eru_service  = (IfxSrc_Tos)ERU_CH1_CH5_INT_SERVICE;
+; ..\Libraries\seekfree_libraries\zf_eru.c	   134  			eru_priority = ERU_CH1_CH5_INT_PRIO;
+	jeq	d15,#2,.L47
+.L225:
 
-; ..\Libraries\seekfree_libraries\zf_eru.c	   129  		case 1:
-; ..\Libraries\seekfree_libraries\zf_eru.c	   130  		{
-; ..\Libraries\seekfree_libraries\zf_eru.c	   131  			eru_service  = (IfxSrc_Tos)ERU_CH1_CH5_INT_SERVICE;
-; ..\Libraries\seekfree_libraries\zf_eru.c	   132  			eru_priority = ERU_CH1_CH5_INT_PRIO;
-; ..\Libraries\seekfree_libraries\zf_eru.c	   133  		}break;
-; ..\Libraries\seekfree_libraries\zf_eru.c	   134  
-	mov	d15,#2
-	jeq	d15,d1,.L54
-.L274:
-
-; ..\Libraries\seekfree_libraries\zf_eru.c	   135  		case 2:
-; ..\Libraries\seekfree_libraries\zf_eru.c	   136  		{
-; ..\Libraries\seekfree_libraries\zf_eru.c	   137  			eru_service  = (IfxSrc_Tos)ERU_CH2_CH6_INT_SERVICE;
-; ..\Libraries\seekfree_libraries\zf_eru.c	   138  			eru_priority = ERU_CH2_CH6_INT_PRIO;
-; ..\Libraries\seekfree_libraries\zf_eru.c	   139  		}break;
-; ..\Libraries\seekfree_libraries\zf_eru.c	   140  
-	mov	d15,#3
-	jeq	d15,d1,.L55
-	j	.L56
-.L52:
-	mov	d0,#0
-.L239:
+; ..\Libraries\seekfree_libraries\zf_eru.c	   135  		}break;
+; ..\Libraries\seekfree_libraries\zf_eru.c	   136  
+; ..\Libraries\seekfree_libraries\zf_eru.c	   137  		case 2:
+; ..\Libraries\seekfree_libraries\zf_eru.c	   138  		{
+; ..\Libraries\seekfree_libraries\zf_eru.c	   139  			eru_service  = (IfxSrc_Tos)ERU_CH2_CH6_INT_SERVICE;
+; ..\Libraries\seekfree_libraries\zf_eru.c	   140  			eru_priority = ERU_CH2_CH6_INT_PRIO;
+	jeq	d15,#3,.L48
+.L226:
+	j	.L49
+.L45:
 	mov	d15,#40
-.L240:
-	j	.L57
-.L53:
-	mov	d0,#0
-.L241:
+	j	.L50
+.L46:
 	mov	d15,#41
-.L242:
-	j	.L58
-.L54:
+	j	.L51
+.L47:
 	mov	d0,#3
-.L243:
+.L194:
 	mov	d15,#5
-.L244:
-	j	.L59
-.L55:
+	j	.L52
+.L48:
 
-; ..\Libraries\seekfree_libraries\zf_eru.c	   141  		case 3:
-; ..\Libraries\seekfree_libraries\zf_eru.c	   142  		{
-	mov	d0,#0
-.L245:
-
-; ..\Libraries\seekfree_libraries\zf_eru.c	   143  			eru_service  = (IfxSrc_Tos)ERU_CH3_CH7_INT_SERVICE;
+; ..\Libraries\seekfree_libraries\zf_eru.c	   141  		}break;
+; ..\Libraries\seekfree_libraries\zf_eru.c	   142  
+; ..\Libraries\seekfree_libraries\zf_eru.c	   143  		case 3:
 	mov	d15,#43
-.L246:
 
-; ..\Libraries\seekfree_libraries\zf_eru.c	   144  			eru_priority = ERU_CH3_CH7_INT_PRIO;
-	j	.L60
-.L56:
-
-; ..\Libraries\seekfree_libraries\zf_eru.c	   145  		}break;
-; ..\Libraries\seekfree_libraries\zf_eru.c	   146  
-; ..\Libraries\seekfree_libraries\zf_eru.c	   147   	}
-; ..\Libraries\seekfree_libraries\zf_eru.c	   148  #pragma warning 507
-.L60:
-.L59:
-.L58:
-.L57:
+; ..\Libraries\seekfree_libraries\zf_eru.c	   144  		{
+; ..\Libraries\seekfree_libraries\zf_eru.c	   145  			eru_service  = (IfxSrc_Tos)ERU_CH3_CH7_INT_SERVICE;
+; ..\Libraries\seekfree_libraries\zf_eru.c	   146  			eru_priority = ERU_CH3_CH7_INT_PRIO;
+; ..\Libraries\seekfree_libraries\zf_eru.c	   147  		}break;
+; ..\Libraries\seekfree_libraries\zf_eru.c	   148  
+.L50:
+.L51:
+	mov	d0,#0
+.L52:
+.L49:
 
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	     1  /**
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	     2   * \file IfxSrc.h
@@ -2489,41 +2365,29 @@ eru_init:	.type	func
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   274  IFX_INLINE void IfxSrc_init(volatile Ifx_SRC_SRCR *src, IfxSrc_Tos typOfService, Ifx_Priority priority)
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   275  {
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   276      src->B.SRPN = priority;
-	ld.bu	d1,[a15]
-.L247:
-	insert	d15,d1,d15,#0,#8
-.L248:
 	st.b	[a15],d15
-.L275:
+.L195:
 
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   277      src->B.TOS  = typOfService;
 	ld.bu	d15,[a15]1
-.L249:
+.L196:
 	insert	d15,d15,d0,#3,#2
-.L250:
 	st.b	[a15]1,d15
-.L154:
+.L152:
 	ld.bu	d15,[a15]3
-.L276:
+.L227:
 	or	d15,#2
 	st.b	[a15]3,d15
-.L145:
+.L143:
 	ld.bu	d15,[a15]1
-.L277:
+.L228:
 	or	d15,#4
 	st.b	[a15]1,d15
-.L159:
-
-; ..\Libraries\seekfree_libraries\zf_eru.c	   149  
-; ..\Libraries\seekfree_libraries\zf_eru.c	   150  		}break;
-; ..\Libraries\seekfree_libraries\zf_eru.c	   151  
-; ..\Libraries\seekfree_libraries\zf_eru.c	   152   	}
-	mov	d15,d14
-.L164:
+.L157:
 
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Cpu\Std\IfxCpu.h	   938      if (enabled != FALSE)      (inlined)
-	jeq	d15,#0,.L61
-.L278:
+	jeq	d9,#0,.L53
+.L229:
 
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Cpu\Std\IfxCpu.h	     1  /**
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Cpu\Std\IfxCpu.h	     2   * \file IfxCpu.h
@@ -3468,15 +3332,19 @@ eru_init:	.type	func
 	enable
 
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Cpu\Std\IfxCpu.h	   938      if (enabled != FALSE)      (inlined)
-.L61:
+.L53:
 
-; ..\Libraries\seekfree_libraries\zf_eru.c	   153  ERU_CH3_CH7_INT_PRIO;
+; ..\Libraries\seekfree_libraries\zf_eru.c	   149  ty = ERU_CH3_CH7_INT_PRIO;
+; ..\Libraries\seekfree_libraries\zf_eru.c	   150  		}break;
+; ..\Libraries\seekfree_libraries\zf_eru.c	   151  
+; ..\Libraries\seekfree_libraries\zf_eru.c	   152   	}
+; ..\Libraries\seekfree_libraries\zf_eru.c	   153  #pragma warning 507
 	ret
-.L94:
+.L93:
 	
 __eru_init_function_end:
 	.size	eru_init,__eru_init_function_end-eru_init
-.L78:
+.L72:
 	; End of function
 	
 	.sdecl	'.text.zf_eru.eru_enable_interrupt',code,cluster('eru_enable_interrupt')
@@ -3485,38 +3353,327 @@ __eru_init_function_end:
 	
 	.global	eru_enable_interrupt
 
-; ..\Libraries\seekfree_libraries\zf_eru.c	   154  		}break;
-; ..\Libraries\seekfree_libraries\zf_eru.c	   155  
-; ..\Libraries\seekfree_libraries\zf_eru.c	   156   	}
-; ..\Libraries\seekfree_libraries\zf_eru.c	   157  #pragma warning 507
-; ..\Libraries\seekfree_libraries\zf_eru.c	   158   	IfxSrc_init(src, eru_service, eru_priority);
-; ..\Libraries\seekfree_libraries\zf_eru.c	   159  #pragma warning default
-; ..\Libraries\seekfree_libraries\zf_eru.c	   160   	IfxSrc_enable(src);
+; ..\Libraries\seekfree_libraries\zf_eru.c	   154   	IfxSrc_init(src, eru_service, eru_priority);
+; ..\Libraries\seekfree_libraries\zf_eru.c	   155  #pragma warning default
+; ..\Libraries\seekfree_libraries\zf_eru.c	   156   	IfxSrc_enable(src);
+; ..\Libraries\seekfree_libraries\zf_eru.c	   157  
+; ..\Libraries\seekfree_libraries\zf_eru.c	   158      restoreInterrupts(interrupt_state);
+; ..\Libraries\seekfree_libraries\zf_eru.c	   159  }
+; ..\Libraries\seekfree_libraries\zf_eru.c	   160  
 ; ..\Libraries\seekfree_libraries\zf_eru.c	   161  
-; ..\Libraries\seekfree_libraries\zf_eru.c	   162      restoreInterrupts(interrupt_state);
+; ..\Libraries\seekfree_libraries\zf_eru.c	   162  //-------------------------------------------------------------------------------------------------------------------
 ; Function eru_enable_interrupt
-.L67:
+.L59:
 eru_enable_interrupt:	.type	func
 
-; ..\Libraries\seekfree_libraries\zf_eru.c	   163  }
-; ..\Libraries\seekfree_libraries\zf_eru.c	   164  
-	mov	d15,#3
-.L283:
-	div	e0,d4,d15
-.L251:
+; ..\Libraries\seekfree_libraries\zf_eru.c	   163  //  @brief      开启eru中断
+; ..\Libraries\seekfree_libraries\zf_eru.c	   164  //  @param      eru_pin         设置eru通道及引脚
+; ..\Libraries\seekfree_libraries\zf_eru.c	   165  //	@return		void
+; ..\Libraries\seekfree_libraries\zf_eru.c	   166  //  Sample usage:				eru_enable_interrupt(ERU_CH0_REQ0_P15_4);
+	fcall	.cocofun_2
+.L172:
 
-; ..\Libraries\seekfree_libraries\zf_eru.c	   165  
-; ..\Libraries\seekfree_libraries\zf_eru.c	   166  //-------------------------------------------------------------------------------------------------------------------
-	mov	d15,#4
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	     1  /**
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	     2   * \file IfxSrc.h
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	     3   * \brief SRC  basic functionality
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	     4   * \ingroup IfxLld_Src
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	     5   *
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	     6   * \version iLLD_1_0_1_11_0
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	     7   * \copyright Copyright (c) 2019 Infineon Technologies AG. All rights reserved.
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	     8   *
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	     9   *
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    10   *                                 IMPORTANT NOTICE
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    11   *
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    12   *
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    13   * Use of this file is subject to the terms of use agreed between (i) you or 
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    14   * the company in which ordinary course of business you are acting and (ii) 
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    15   * Infineon Technologies AG or its licensees. If and as long as no such 
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    16   * terms of use are agreed, use of this file is subject to following:
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    17  
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    18  
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    19   * Boost Software License - Version 1.0 - August 17th, 2003
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    20  
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    21   * Permission is hereby granted, free of charge, to any person or 
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    22   * organization obtaining a copy of the software and accompanying 
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    23   * documentation covered by this license (the "Software") to use, reproduce,
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    24   * display, distribute, execute, and transmit the Software, and to prepare
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    25   * derivative works of the Software, and to permit third-parties to whom the 
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    26   * Software is furnished to do so, all subject to the following:
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    27  
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    28   * The copyright notices in the Software and this entire statement, including
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    29   * the above license grant, this restriction and the following disclaimer, must
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    30   * be included in all copies of the Software, in whole or in part, and all
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    31   * derivative works of the Software, unless such copies or derivative works are
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    32   * solely in the form of machine-executable object code generated by a source
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    33   * language processor.
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    34  
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    35   * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR 
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    36   * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    37   * FITNESS FOR A PARTICULAR PURPOSE, TITLE AND NON-INFRINGEMENT. IN NO EVENT
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    38   * SHALL THE COPYRIGHT HOLDERS OR ANYONE DISTRIBUTING THE SOFTWARE BE LIABLE 
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    39   * FOR ANY DAMAGES OR OTHER LIABILITY, WHETHER IN CONTRACT, TORT OR OTHERWISE,
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    40   * ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    41   * DEALINGS IN THE SOFTWARE.
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    42  
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    43   *
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    44   * \defgroup IfxLld_Src SRC
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    45   * \addtogroup IfxLld_Src
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    46   * \{
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    47   * \defgroup IfxLld_Src_Usage How to use Service Request Mechanism?
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    48   * \addtogroup IfxLld_Src_Usage
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    49   * \{
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    50   *
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    51   * For Aurix controller peripherals that can generate service requests is connected to one
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    52   * or more Service Request Nodes (SRNs) in the central Interrupt Router(IR) module. Refer to Controller User Manual for more details\n
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    53   *
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    54   * IfxSrc driver provides the APIs to configure and control service requests. Refer \ref IfxLld_Src_Usage for
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    55   * details of these APIs.
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    56   *
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    57   *
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    58   * \section Ifx_Src_UsageInit Initialize the Service Request Node
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    59   *
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    60   * Service request node is initialized to configure the following,\n
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    61   * 1) Route the interrupt trigger to service provider, which are:\n
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    62   *  __a. One of the available CPUs or\n
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    63   *  __b. DMA controller\n
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    64   *
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    65   * 2) Priority of CPU Interrupt or DMA Trigger.
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    66   *
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    67   * For Interrupt or DMA to be correctly triggered, following steps are to be done in the user code:
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    68   *
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    69   * \subsection Ifx_Src_UsageInitStep1 Step1: Configure the Node
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    70   *
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    71   * User must configure the service request node in the application / driver files.
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    72   *
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    73   * \subsection Ifx_Src_UsageInitStep2 Step2: Enable the Trigger
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    74   *
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    75   * Enable the service request node to connect the trigger event from the hardware to service provider.
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    76   *
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    77   * Example:
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    78   * Following example show the configuration for STM0 Service request 0 trigger configured to trigger
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    79   * CPU1 with the priority specified by IFX_INTPRIO_STM0 (from the example at IfxCpu_Irq)
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    80   *
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    81   * \code
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    82   * //file: myApplication.c
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    83   *
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    84   * #include "Ifx_IntPrioDef.h" // to get the priority numbers
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    85   *
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    86   * void myDriverInitFunction(void)
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    87   * {
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    88   *    // driver init code
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    89   *
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    90   *    // Step1: Call the function to route the trigger from for SRC_STM0_SR0 to CPU1
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    91   *    // and priority specified at Ifx_IntPrioDef.h globally
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    92   *  IfxSrc_init(&MODULE_SRC.STM.STM[0].SR0, IfxSrc_Tos_cpu1, IFX_INTPRIO_STM0);
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    93   *
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    94   *    // Step2: Enable the service request node
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    95   *  IfxSrc_init(&MODULE_SRC.STM.STM[0].SR0);
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    96   * }
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    97   * \endcode
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    98   *
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	    99   * \}
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   100   * \}
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   101   *
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   102   * \defgroup IfxLld_Src_Std_Service_Request Service Request Functions
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   103   * \ingroup IfxLld_Src_Std
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   104   * \defgroup IfxLld_Src_Std_Module Module Functions
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   105   * \ingroup IfxLld_Src_Std
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   106   */
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   107  
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   108  #ifndef IFXSRC_H
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   109  #define IFXSRC_H 1
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   110  
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   111  /******************************************************************************/
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   112  /*----------------------------------Includes----------------------------------*/
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   113  /******************************************************************************/
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   114  
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   115  #include "_Impl/IfxSrc_cfg.h"
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   116  #include "Cpu/Std/IfxCpu_Intrinsics.h"
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   117  #include "IfxSrc_reg.h"
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   118  /** \addtogroup IfxLld_Src_Std_Service_Request
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   119   * \{ */
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   120  
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   121  /******************************************************************************/
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   122  /*-------------------------Inline Function Prototypes-------------------------*/
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   123  /******************************************************************************/
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   124  
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   125  /** \brief Resets the overrun flag of the Service Request.
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   126   * \param src pointer to the Service Request Control register which the overrun flag should be cleared.
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   127   * \return None
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   128   *
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   129   * Usage example: see \ref IfxSrc_init
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   130   *
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   131   */
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   132  IFX_INLINE void IfxSrc_clearOverrun(volatile Ifx_SRC_SRCR *src);
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   133  
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   134  /** \brief Resets a specific interrupt service by software.
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   135   * \param src pointer to the Service Request Control register which the request should be cleared.
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   136   * \return None
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   137   *
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   138   * Usage example: see \ref IfxSrc_init
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   139   *
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   140   */
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   141  IFX_INLINE void IfxSrc_clearRequest(volatile Ifx_SRC_SRCR *src);
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   142  
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   143  /** \brief Gets the current overrun status.
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   144   * \param src pointer to the Service Request Control register for which the overrun status should be returned.
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   145   * \return current service request control overrun status.
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   146   *
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   147   * Usage example: see \ref IfxSrc_init
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   148   *
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   149   */
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   150  IFX_INLINE boolean IfxSrc_isOverrun(volatile Ifx_SRC_SRCR *src);
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   151  
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   152  /** \brief Gets the current request status.
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   153   * \param src pointer to the Service Request Control register for which the request status should be returned.
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   154   * \return current service request control request status.
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   155   *
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   156   * Usage example: see \ref IfxSrc_init
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   157   *
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   158   */
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   159  IFX_INLINE boolean IfxSrc_isRequested(volatile Ifx_SRC_SRCR *src);
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   160  
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   161  /** \brief Requests a specific interrupt service by software
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   162   * \param src pointer to the Service Request Control register which the interrupt has to be requested.
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   163   * \return None
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   164   *
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   165   * Usage example: see \ref IfxSrc_init
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   166   *
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   167   */
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   168  IFX_INLINE void IfxSrc_setRequest(volatile Ifx_SRC_SRCR *src);
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   169  
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   170  /** \} */
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   171  
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   172  /** \addtogroup IfxLld_Src_Std_Module
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   173   * \{ */
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   174  
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   175  /******************************************************************************/
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   176  /*-------------------------Inline Function Prototypes-------------------------*/
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   177  /******************************************************************************/
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   178  
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   179  /** \brief DeInitializes the service request control register.
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   180   * \param src pointer to the Service Request Control register which should be deinitialised.
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   181   * \return None
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   182   *
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   183   * Usage example: see \ref IfxSrc_init
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   184   *
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   185   */
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   186  IFX_INLINE void IfxSrc_deinit(volatile Ifx_SRC_SRCR *src);
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   187  
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   188  /** \brief Disables a specific interrupt service request.
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   189   * \param src pointer to the Service Request Control register for which the interrupt has to be disabled.
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   190   * \return None
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   191   *
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   192   * Usage example: see \ref IfxSrc_init
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   193   *
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   194   */
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   195  IFX_INLINE void IfxSrc_disable(volatile Ifx_SRC_SRCR *src);
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   196  
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   197  /** \brief Enables a specific interrupt service request.
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   198   * \param src pointer to the Service Request Control register for which the interrupt has to be enabled.
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   199   * \return None
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   200   *
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   201   * Usage example: see \ref IfxSrc_init
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   202   *
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   203   */
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   204  IFX_INLINE void IfxSrc_enable(volatile Ifx_SRC_SRCR *src);
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   205  
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   206  /** \brief Initializes the service request control register.
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   207   * \param src pointer to the Service Request Control register which should be initialised.
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   208   * \param typOfService type of interrupt service provider.
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   209   * \param priority Interrupt priority.
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   210   * \return None
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   211   *
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   212   * Get the peripheral service control register which request need to be serviced and assign this service to any of service providers.
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   213   * \code
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   214   * //define the interrupt priority
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   215   * #define IFXASCLIN0_TX_INTPRIO 2
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   216   * //get the service request
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   217   * volatile Ifx_SRC_SRCR *src = IfxAsclin_getSrcPointerRx( &MODULE_ASCLIN0 );
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   218   * //initlaise the service request
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   219   * IfxSrc_init( src, IfxSrc_Tos_cpu0, IFXASCLIN0_TX_INTPRIO );
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   220   * // enable the service
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   221   * IfxSrc_enable( src );
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   222   * //check for service request flags and clear if they occur
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   223   * if ( IfxSrc_isRequested( src ) == TRUE )
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   224   * {
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   225   *    IfxSrc_clearRequest( src );
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   226   * }
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   227   * if ( IfxSrc_isOverrun( src ) == TRUE )
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   228   * {
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   229   *      IfxSrc_clearOverrun( src );
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   230   * }
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   231   * // Atlast deinitialise the service control
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   232   * IfxSrc_deinit( src );
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   233   * \endcode
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   234   *
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   235   */
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   236  IFX_INLINE void IfxSrc_init(volatile Ifx_SRC_SRCR *src, IfxSrc_Tos typOfService, Ifx_Priority priority);
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   237  
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   238  /** \} */
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   239  
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   240  /******************************************************************************/
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   241  /*---------------------Inline Function Implementations------------------------*/
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   242  /******************************************************************************/
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   243  
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   244  IFX_INLINE void IfxSrc_clearOverrun(volatile Ifx_SRC_SRCR *src)
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   245  {
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   246      src->B.IOVCLR = 1;
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   247  }
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   248  
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   249  
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   250  IFX_INLINE void IfxSrc_clearRequest(volatile Ifx_SRC_SRCR *src)
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   251  {
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   252      src->B.CLRR = 1;
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   253  }
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   254  
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   255  
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   256  IFX_INLINE void IfxSrc_deinit(volatile Ifx_SRC_SRCR *src)
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   257  {
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   258      src->U = 0;
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   259  }
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   260  
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   261  
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   262  IFX_INLINE void IfxSrc_disable(volatile Ifx_SRC_SRCR *src)
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   263  {
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   264      src->B.SRE = 0;
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   265  }
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   266  
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   267  
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   268  IFX_INLINE void IfxSrc_enable(volatile Ifx_SRC_SRCR *src)
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   269  {
+; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   270      src->B.SRE = 1;
+	or	d15,#4
+	st.b	[a15]1,d15
+.L173:
+
+; ..\Libraries\seekfree_libraries\zf_eru.c	   167  t(ERU_CH0_REQ0_P15_4);
+; ..\Libraries\seekfree_libraries\zf_eru.c	   168  //-------------------------------------------------------------------------------------------------------------------
+	ret
+.L169:
+	
+__eru_enable_interrupt_function_end:
+	.size	eru_enable_interrupt,__eru_enable_interrupt_function_end-eru_enable_interrupt
+.L77:
+	; End of function
+	
+	.sdecl	'.text.zf_eru..cocofun_2',code,cluster('.cocofun_2')
+	.sect	'.text.zf_eru..cocofun_2'
+	.align	2
+; Function .cocofun_2
+.L61:
+.cocofun_2:	.type	func
+; Function body .cocofun_2, coco_iter:0
+	mov	d15,#3
+	movh.a	a15,#61444
+.L282:
+	div.u	e0,d4,d15
+	lea	a15,[a15]@los(0xf0038cd4)
+.L283:
+	and	d15,d0,#3
 .L284:
-	div	e0,d0,d15
-.L252:
-	mul	d15,d1,#4
-	mov.a	a15,d15
-	movh.a	a3,#61444
-	add.a	a3,a15
-	lea	a15,[a3]-29484
-.L176:
+	addsc.a	a15,a15,d15,#2
+.L285:
 
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	     1  /**
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	     2   * \file IfxSrc.h
@@ -3789,58 +3946,34 @@ eru_enable_interrupt:	.type	func
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   269  {
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   270      src->B.SRE = 1;
 	ld.bu	d15,[a15]1
-.L285:
-	or	d15,#4
-	st.b	[a15]1,d15
-.L177:
-
-; ..\Libraries\seekfree_libraries\zf_eru.c	   167  --------------------------
-; ..\Libraries\seekfree_libraries\zf_eru.c	   168  //  @brief      开启eru中断
-	ret
-.L172:
-	
-__eru_enable_interrupt_function_end:
-	.size	eru_enable_interrupt,__eru_enable_interrupt_function_end-eru_enable_interrupt
-.L83:
+.L286:
+	fret
+.L92:
 	; End of function
-	
 	.sdecl	'.text.zf_eru.eru_disable_interrupt',code,cluster('eru_disable_interrupt')
 	.sect	'.text.zf_eru.eru_disable_interrupt'
 	.align	2
 	
 	.global	eru_disable_interrupt
 
-; ..\Libraries\seekfree_libraries\zf_eru.c	   169  //  @param      eru_pin         设置eru通道及引脚
-; ..\Libraries\seekfree_libraries\zf_eru.c	   170  //	@return		void
-; ..\Libraries\seekfree_libraries\zf_eru.c	   171  //  Sample usage:				eru_enable_interrupt(ERU_CH0_REQ0_P15_4);
-; ..\Libraries\seekfree_libraries\zf_eru.c	   172  //-------------------------------------------------------------------------------------------------------------------
-; ..\Libraries\seekfree_libraries\zf_eru.c	   173  void eru_enable_interrupt(ERU_PIN_enum eru_pin)
-; ..\Libraries\seekfree_libraries\zf_eru.c	   174  {
-; ..\Libraries\seekfree_libraries\zf_eru.c	   175  	IfxScuEru_OutputChannel    outputChannel = (IfxScuEru_OutputChannel)(eru_pin/3);
-; ..\Libraries\seekfree_libraries\zf_eru.c	   176  
+; ..\Libraries\seekfree_libraries\zf_eru.c	   169  ---------------------
+; ..\Libraries\seekfree_libraries\zf_eru.c	   170  void eru_enable_interrupt(ERU_PIN_enum eru_pin)
+; ..\Libraries\seekfree_libraries\zf_eru.c	   171  {
+; ..\Libraries\seekfree_libraries\zf_eru.c	   172  	IfxScuEru_OutputChannel    outputChannel = (IfxScuEru_OutputChannel)(eru_pin/3);
+; ..\Libraries\seekfree_libraries\zf_eru.c	   173  
+; ..\Libraries\seekfree_libraries\zf_eru.c	   174  	volatile Ifx_SRC_SRCR *src = &MODULE_SRC.SCU.SCU.ERU[(int)outputChannel % 4];
+; ..\Libraries\seekfree_libraries\zf_eru.c	   175  	IfxSrc_enable(src);
+; ..\Libraries\seekfree_libraries\zf_eru.c	   176  }
 ; Function eru_disable_interrupt
-.L69:
+.L63:
 eru_disable_interrupt:	.type	func
 
-; ..\Libraries\seekfree_libraries\zf_eru.c	   177  	volatile Ifx_SRC_SRCR *src = &MODULE_SRC.SCU.SCU.ERU[(int)outputChannel % 4];
-; ..\Libraries\seekfree_libraries\zf_eru.c	   178  	IfxSrc_enable(src);
-	mov	d15,#3
-.L290:
-	div	e0,d4,d15
-.L253:
-
-; ..\Libraries\seekfree_libraries\zf_eru.c	   179  }
-; ..\Libraries\seekfree_libraries\zf_eru.c	   180  
-	mov	d15,#4
-.L291:
-	div	e0,d0,d15
-.L254:
-	mul	d15,d1,#4
-	mov.a	a15,d15
-	movh.a	a3,#61444
-	add.a	a3,a15
-	lea	a15,[a3]-29484
-.L184:
+; ..\Libraries\seekfree_libraries\zf_eru.c	   177  
+; ..\Libraries\seekfree_libraries\zf_eru.c	   178  //-------------------------------------------------------------------------------------------------------------------
+; ..\Libraries\seekfree_libraries\zf_eru.c	   179  //  @brief      关闭eru中断
+; ..\Libraries\seekfree_libraries\zf_eru.c	   180  //  @param      eru_pin         设置eru通道及引脚
+	fcall	.cocofun_2
+.L178:
 
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	     1  /**
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	     2   * \file IfxSrc.h
@@ -4106,20 +4239,18 @@ eru_disable_interrupt:	.type	func
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   262  IFX_INLINE void IfxSrc_disable(volatile Ifx_SRC_SRCR *src)
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   263  {
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Src\Std\IfxSrc.h	   264      src->B.SRE = 0;
-	ld.bu	d15,[a15]1
-.L292:
 	insert	d15,d15,#0,#2,#1
 	st.b	[a15]1,d15
-.L185:
-
-; ..\Libraries\seekfree_libraries\zf_eru.c	   181  able(src);
-; ..\Libraries\seekfree_libraries\zf_eru.c	   182  }
-	ret
 .L179:
+
+; ..\Libraries\seekfree_libraries\zf_eru.c	   181  通道及引脚
+; ..\Libraries\seekfree_libraries\zf_eru.c	   182  //	@return		void
+	ret
+.L175:
 	
 __eru_disable_interrupt_function_end:
 	.size	eru_disable_interrupt,__eru_disable_interrupt_function_end-eru_disable_interrupt
-.L88:
+.L82:
 	; End of function
 	
 	.sdecl	'.rodata.zf_eru..1.str',data,rom
@@ -4156,18 +4287,21 @@ _999002___func__:	.type	object
 	.calls	'eru_init','IfxPort_setPinMode'
 	.calls	'eru_init','IfxScuEru_selectExternalInput'
 	.calls	'eru_init','IfxScuEru_disableFallingEdgeDetection'
-	.calls	'eru_init','IfxScuEru_enableRisingEdgeDetection'
 	.calls	'eru_init','IfxScuEru_enableFallingEdgeDetection'
 	.calls	'eru_init','IfxScuEru_disableRisingEdgeDetection'
+	.calls	'eru_init','IfxScuEru_enableRisingEdgeDetection'
 	.calls	'eru_init','assert'
 	.calls	'eru_init','IfxScuEru_enableTriggerPulse'
 	.calls	'eru_init','IfxScuEru_connectTrigger'
 	.calls	'eru_init','IfxScuEru_setFlagPatternDetection'
 	.calls	'eru_init','IfxScuEru_enablePatternDetectionTrigger'
 	.calls	'eru_init','IfxScuEru_setInterruptGatingPattern'
+	.calls	'eru_enable_interrupt','.cocofun_2'
+	.calls	'eru_disable_interrupt','.cocofun_2'
 	.calls	'eru_mux','',0
-	.calls	'eru_init','',8
+	.calls	'eru_init','',0
 	.calls	'eru_enable_interrupt','',0
+	.calls	'.cocofun_2','',0
 	.extern	IfxPort_setPinMode
 	.extern	IfxScu_REQ0_P15_4_IN
 	.extern	IfxScu_REQ10_P14_3_IN
@@ -4200,17 +4334,17 @@ _999002___func__:	.type	object
 	.calls	'eru_disable_interrupt','',0
 	.sdecl	'.debug_info',debug
 	.sect	'.debug_info'
-.L71:
+.L65:
 	.word	86196
 	.half	3
-	.word	.L72
+	.word	.L66
 	.byte	4
-.L70:
+.L64:
 	.byte	1
 	.byte	'..\\Libraries\\seekfree_libraries\\zf_eru.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L73
+	.word	.L67
 	.byte	2,1,1,3
 	.word	161
 	.byte	4
@@ -4246,7 +4380,7 @@ _999002___func__:	.type	object
 	.byte	6,0,7
 	.byte	'unsigned int',0,4,7,7
 	.byte	'int',0,4,5
-.L99:
+.L140:
 	.byte	7
 	.byte	'unsigned char',0,1,8,10
 	.byte	'_Ifx_SRC_SRCR_Bits',0,4,45,16,4,11
@@ -4305,58 +4439,58 @@ _999002___func__:	.type	object
 	.word	465
 	.byte	4,2,35,0,0,14
 	.word	755
-.L139:
+.L136:
 	.byte	3
 	.word	794
-.L153:
+.L151:
 	.byte	4
 	.byte	'IfxSrc_clearRequest',0,3,3,250,1,17,1,1
-.L155:
+.L153:
 	.byte	5
 	.byte	'src',0,3,250,1,60
 	.word	799
-.L157:
+.L155:
 	.byte	6,0
-.L183:
+.L177:
 	.byte	4
 	.byte	'IfxSrc_disable',0,3,3,134,2,17,1,1
-.L186:
+.L180:
 	.byte	5
 	.byte	'src',0,3,134,2,55
 	.word	799
-.L188:
+.L182:
 	.byte	6,0
-.L158:
+.L156:
 	.byte	4
 	.byte	'IfxSrc_enable',0,3,3,140,2,17,1,1
-.L160:
+.L158:
 	.byte	5
 	.byte	'src',0,3,140,2,54
 	.word	799
-.L162:
+.L160:
 	.byte	6,0
-.L141:
+.L138:
 	.byte	15,5,69,9,1,16
 	.byte	'IfxSrc_Tos_cpu0',0,0,16
 	.byte	'IfxSrc_Tos_cpu1',0,1,16
 	.byte	'IfxSrc_Tos_dma',0,3,0,7
 	.byte	'unsigned short int',0,2,7
-.L144:
+.L142:
 	.byte	4
 	.byte	'IfxSrc_init',0,3,3,146,2,17,1,1
-.L146:
+.L144:
 	.byte	5
 	.byte	'src',0,3,146,2,52
 	.word	799
-.L148:
+.L146:
 	.byte	5
 	.byte	'typOfService',0,3,146,2,68
 	.word	922
-.L150:
+.L148:
 	.byte	5
 	.byte	'priority',0,3,146,2,95
 	.word	981
-.L152:
+.L150:
 	.byte	17,6,0,0,7
 	.byte	'unsigned int',0,4,7,10
 	.byte	'_Ifx_SCU_WDTCPU_CON0_Bits',0,7,241,8,16,4,11
@@ -5848,22 +5982,22 @@ _999002___func__:	.type	object
 	.byte	'IfxPort_InputMode_noPullDevice',0,0,16
 	.byte	'IfxPort_InputMode_pullDown',0,8,16
 	.byte	'IfxPort_InputMode_pullUp',0,16,0
-.L122:
+.L120:
 	.byte	4
 	.byte	'IfxPort_setPinModeInput',0,3,8,196,4,17,1,1
-.L125:
+.L122:
 	.byte	5
 	.byte	'port',0,8,196,4,48
 	.word	9758
-.L127:
+.L124:
 	.byte	5
 	.byte	'pinIndex',0,8,196,4,60
 	.word	448
-.L129:
+.L126:
 	.byte	5
 	.byte	'mode',0,8,196,4,88
 	.word	9763
-.L131:
+.L128:
 	.byte	6,0,15,8,172,1,9,4,16
 	.byte	'IfxPort_State_notChanged',0,0,16
 	.byte	'IfxPort_State_high',0,1,16
@@ -5888,30 +6022,30 @@ _999002___func__:	.type	object
 	.byte	'IfxCpu_getCoreIndex',0,3,11,141,6,31
 	.word	10189
 	.byte	1,1,6,0
-.L110:
+.L107:
 	.byte	8
 	.byte	'IfxCpu_areInterruptsEnabled',0,3,11,139,5,20
 	.word	448
 	.byte	1,1
-.L111:
+.L109:
 	.byte	6,0
-.L107:
+.L105:
 	.byte	8
 	.byte	'IfxCpu_disableInterrupts',0,3,11,147,5,20
 	.word	448
 	.byte	1,1
-.L108:
+.L106:
 	.byte	17,6,0,0,4
 	.byte	'IfxCpu_enableInterrupts',0,3,11,157,5,17,1,1,6,0,4
 	.byte	'IfxCpu_forceDisableInterrupts',0,3,11,225,5,17,1,1,6,0
-.L168:
+.L165:
 	.byte	4
 	.byte	'IfxCpu_restoreInterrupts',0,3,11,168,7,17,1,1
-.L169:
+.L166:
 	.byte	5
 	.byte	'enabled',0,11,168,7,50
 	.word	448
-.L171:
+.L168:
 	.byte	6,0,7
 	.byte	'unsigned long int',0,4,7,8
 	.byte	'IfxCpu_getPerformanceCounter',0,3,11,161,6,19
@@ -6513,21 +6647,21 @@ _999002___func__:	.type	object
 	.byte	'stm',0,13,190,4,44
 	.word	14172
 	.byte	6,0
-.L104:
+.L101:
 	.byte	8
 	.byte	'disableInterrupts',0,3,15,108,20
 	.word	448
 	.byte	1,1
-.L106:
+.L104:
 	.byte	17,6,0,0
-.L163:
+.L161:
 	.byte	4
 	.byte	'restoreInterrupts',0,3,15,142,1,17,1,1
-.L165:
+.L162:
 	.byte	5
 	.byte	'enabled',0,15,142,1,43
 	.word	448
-.L167:
+.L164:
 	.byte	17,6,0,0,7
 	.byte	'long long int',0,8,5,8
 	.byte	'getDeadLine',0,3,15,164,2,25
@@ -9886,21 +10020,21 @@ _999002___func__:	.type	object
 	.word	35723
 	.byte	1,2,35,16,0,21
 	.word	35842
-.L101:
+.L98:
 	.byte	3
 	.word	35912
-.L114:
+.L112:
 	.byte	4
 	.byte	'IfxScuEru_initReqPin',0,3,16,222,2,17,1,1
-.L117:
+.L115:
 	.byte	5
 	.byte	'req',0,16,222,2,53
 	.word	35917
-.L119:
+.L117:
 	.byte	5
 	.byte	'inputMode',0,16,222,2,76
 	.word	9763
-.L121:
+.L119:
 	.byte	17,6,0,0,21
 	.word	441
 	.byte	22
@@ -10274,7 +10408,7 @@ _999002___func__:	.type	object
 	.byte	30
 	.word	9966
 	.byte	0,6,0,0
-.L132:
+.L129:
 	.byte	15,16,92,9,1,16
 	.byte	'IfxScuEru_InputChannel_0',0,0,16
 	.byte	'IfxScuEru_InputChannel_1',0,1,16
@@ -10311,7 +10445,7 @@ _999002___func__:	.type	object
 	.byte	'inputChannel',0,16,231,1,76
 	.word	37816
 	.byte	0
-.L134:
+.L131:
 	.byte	15,16,107,9,1,16
 	.byte	'IfxScuEru_InputNodePointer_0',0,0,16
 	.byte	'IfxScuEru_InputNodePointer_1',0,1,16
@@ -10332,7 +10466,7 @@ _999002___func__:	.type	object
 	.byte	'inputChannel',0,16,154,2,69
 	.word	37816
 	.byte	0
-.L136:
+.L133:
 	.byte	15,16,132,1,9,1,16
 	.byte	'IfxScuEru_OutputChannel_0',0,0,16
 	.byte	'IfxScuEru_OutputChannel_1',0,1,16
@@ -10388,7 +10522,7 @@ _999002___func__:	.type	object
 	.word	39636
 	.byte	3
 	.word	39733
-.L95:
+.L94:
 	.byte	15,20,34,9,1,16
 	.byte	'ERU_CH0_REQ4_P10_7',0,0,16
 	.byte	'ERU_CH0_REQ0_P15_4',0,1,16
@@ -10407,14 +10541,14 @@ _999002___func__:	.type	object
 	.byte	'ERU_CH6_REQ9_P20_0',0,19,16
 	.byte	'ERU_CH7_REQ16_P15_1',0,21,16
 	.byte	'ERU_CH7_REQ11_P20_9',0,22,0
-.L97:
+.L96:
 	.byte	15,20,27,9,1,16
 	.byte	'RISING',0,0,16
 	.byte	'FALLING',0,1,16
 	.byte	'BOTH',0,2,0,18,9
 	.word	39636
 	.byte	19,8,0
-.L103:
+.L100:
 	.byte	21
 	.word	40146
 	.byte	10
@@ -10434,7 +10568,7 @@ _999002___func__:	.type	object
 	.byte	'reserved_26',0,4
 	.word	1080
 	.byte	6,0,2,35,0,0
-.L112:
+.L110:
 	.byte	12,21,223,7,9,4,13
 	.byte	'U',0
 	.word	425
@@ -10447,7 +10581,7 @@ _999002___func__:	.type	object
 	.byte	4,2,35,0,0,18,8
 	.word	39636
 	.byte	19,7,0
-.L191:
+.L185:
 	.byte	21
 	.word	40317
 	.byte	7
@@ -16744,7 +16878,7 @@ _999002___func__:	.type	object
 	.byte	0
 	.sdecl	'.debug_abbrev',debug
 	.sect	'.debug_abbrev'
-.L72:
+.L66:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,16,6,0,0,2,21,0,54,15,39,12,0,0,3,15,0,73,19,0,0,4,46,1,3,8,32,13
 	.byte	58,15,59,15,57,15,54,15,39,12,0,0,5,5,0,3,8,58,15,59,15,57,15,73,19,0,0,6,11,0,0,0,7,36,0,3,8,11,15,62
 	.byte	15,0,0,8,46,1,3,8,32,13,58,15,59,15,57,15,73,19,54,15,39,12,0,0,9,59,0,3,8,0,0,10,19,1,3,8,58,15,59,15
@@ -16758,12 +16892,12 @@ _999002___func__:	.type	object
 	.byte	12,60,12,0,0,0
 	.sdecl	'.debug_line',debug
 	.sect	'.debug_line'
-.L73:
-	.word	.L256-.L255
-.L255:
+.L67:
+	.word	.L198-.L197
+.L197:
 	.half	3
-	.word	.L258-.L257
-.L257:
+	.word	.L200-.L199
+.L199:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Std',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Src\\Std',0
@@ -16801,151 +16935,145 @@ _999002___func__:	.type	object
 	.byte	'IfxScu_cfg.h',0,4,0,0
 	.byte	'IfxFlash_regdef.h',0,3,0,0
 	.byte	'common.h',0,9,0,0,0
-.L258:
-.L256:
+.L200:
+.L198:
 	.sdecl	'.debug_info',debug,cluster('eru_init')
 	.sect	'.debug_info'
-.L74:
-	.word	900
+.L68:
+	.word	851
 	.half	3
-	.word	.L75
+	.word	.L69
 	.byte	4,1
 	.byte	'..\\Libraries\\seekfree_libraries\\zf_eru.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L77,.L76
+	.word	.L71,.L70
 	.byte	2
-	.word	.L70
+	.word	.L64
 	.byte	3
 	.byte	'eru_init',0,1,71,6,1,1,1
-	.word	.L65,.L94,.L64
+	.word	.L57,.L93,.L56
 	.byte	4
 	.byte	'eru_pin',0,1,71,28
-	.word	.L95,.L96
+	.word	.L94,.L95
 	.byte	4
 	.byte	'trigger',0,1,71,50
-	.word	.L97,.L98
+	.word	.L96,.L97
 	.byte	5
-	.word	.L65,.L94
-	.byte	6
-	.byte	'interrupt_state',0,1,73,13
-	.word	.L99,.L100
+	.word	.L57,.L93
 	.byte	6
 	.byte	'reqPin',0,1,75,20
-	.word	.L101,.L102
+	.word	.L98,.L99
 	.byte	7
 	.byte	'__func__',0,1,106,15
-	.word	.L103
+	.word	.L100
 	.byte	5,3
 	.word	_999002___func__
 	.byte	8
-	.word	.L104,.L105,.L42
+	.word	.L101,.L102,.L103
 	.byte	9
-	.word	.L106,.L105,.L42
+	.word	.L104,.L102,.L103
 	.byte	8
-	.word	.L107,.L105,.L41
+	.word	.L105,.L102,.L103
 	.byte	9
-	.word	.L108,.L105,.L41
-	.byte	6
-	.byte	'enabled',0,2,149,5,13
-	.word	.L99,.L109
+	.word	.L106,.L102,.L103
 	.byte	8
-	.word	.L110,.L105,.L40
+	.word	.L107,.L102,.L108
 	.byte	9
-	.word	.L111,.L105,.L40
+	.word	.L109,.L102,.L108
 	.byte	6
 	.byte	'reg',0,2,141,5,17
-	.word	.L112,.L113
+	.word	.L110,.L111
 	.byte	0,0,0,0,0,0,8
-	.word	.L114,.L115,.L116
+	.word	.L112,.L113,.L114
+	.byte	10
+	.word	.L115,.L116
 	.byte	10
 	.word	.L117,.L118
-	.byte	10
-	.word	.L119,.L120
 	.byte	9
-	.word	.L121,.L115,.L116
+	.word	.L119,.L113,.L114
 	.byte	8
-	.word	.L122,.L123,.L124
+	.word	.L120,.L113,.L121
 	.byte	10
-	.word	.L125,.L126
+	.word	.L122,.L123
 	.byte	10
-	.word	.L127,.L128
+	.word	.L124,.L125
 	.byte	10
-	.word	.L129,.L130
+	.word	.L126,.L127
 	.byte	11
-	.word	.L131,.L123,.L124
+	.word	.L128,.L113,.L121
 	.byte	0,0,0,5
-	.word	.L116,.L94
+	.word	.L114,.L93
 	.byte	6
 	.byte	'inputChannel',0,1,81,28
-	.word	.L132,.L133
+	.word	.L129,.L130
 	.byte	6
 	.byte	'triggerSelect',0,1,83,32
-	.word	.L134,.L135
+	.word	.L131,.L132
 	.byte	6
 	.byte	'outputChannel',0,1,84,32
-	.word	.L136,.L137
+	.word	.L133,.L134
 	.byte	5
-	.word	.L138,.L94
+	.word	.L135,.L93
 	.byte	6
 	.byte	'src',0,1,117,25
-	.word	.L139,.L140
+	.word	.L136,.L137
 	.byte	6
 	.byte	'eru_service',0,1,118,13
-	.word	.L141,.L142
+	.word	.L138,.L139
 	.byte	6
 	.byte	'eru_priority',0,1,119,8
-	.word	.L99,.L143
+	.word	.L140,.L141
 	.byte	8
-	.word	.L144,.L57,.L145
+	.word	.L142,.L49,.L143
+	.byte	10
+	.word	.L144,.L145
 	.byte	10
 	.word	.L146,.L147
 	.byte	10
 	.word	.L148,.L149
-	.byte	10
-	.word	.L150,.L151
 	.byte	9
-	.word	.L152,.L57,.L145
+	.word	.L150,.L49,.L143
 	.byte	8
-	.word	.L153,.L154,.L145
+	.word	.L151,.L152,.L143
 	.byte	10
-	.word	.L155,.L156
+	.word	.L153,.L154
 	.byte	11
-	.word	.L157,.L154,.L145
+	.word	.L155,.L152,.L143
 	.byte	0,0,0,8
-	.word	.L158,.L145,.L159
+	.word	.L156,.L143,.L157
 	.byte	10
-	.word	.L160,.L161
+	.word	.L158,.L159
 	.byte	11
-	.word	.L162,.L145,.L159
+	.word	.L160,.L143,.L157
 	.byte	0,8
-	.word	.L163,.L164,.L61
+	.word	.L161,.L157,.L53
 	.byte	10
-	.word	.L165,.L166
+	.word	.L162,.L163
 	.byte	9
-	.word	.L167,.L164,.L61
+	.word	.L164,.L157,.L53
 	.byte	8
-	.word	.L168,.L164,.L61
+	.word	.L165,.L157,.L53
 	.byte	10
-	.word	.L169,.L170
+	.word	.L166,.L167
 	.byte	11
-	.word	.L171,.L164,.L61
+	.word	.L168,.L157,.L53
 	.byte	0,0,0,0,0,0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('eru_init')
 	.sect	'.debug_abbrev'
-.L75:
+.L69:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3
 	.byte	8,58,15,59,15,57,15,73,16,2,6,0,0,7,52,0,3,8,58,15,59,15,57,15,73,16,2,9,0,0,8,29,1,49,16,17,1,18,1,0
 	.byte	0,9,11,1,49,16,17,1,18,1,0,0,10,5,0,49,16,2,6,0,0,11,11,0,49,16,17,1,18,1,0,0,0
 	.sdecl	'.debug_line',debug,cluster('eru_init')
 	.sect	'.debug_line'
-.L76:
-	.word	.L260-.L259
-.L259:
+.L70:
+	.word	.L202-.L201
+.L201:
 	.half	3
-	.word	.L262-.L261
-.L261:
+	.word	.L204-.L203
+.L203:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Std',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Scu\\Std',0
@@ -16954,741 +17082,634 @@ _999002___func__:	.type	object
 	.byte	0
 	.byte	'..\\Libraries\\seekfree_libraries\\zf_eru.c',0,0,0,0
 	.byte	'IfxCpu.h',0,1,0,0
-	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Service\\CpuGeneric\\SysSe\\Bsp\\Bsp.h',0
-	.byte	0,0,0
 	.byte	'IfxScuEru.h',0,2,0,0
 	.byte	'IfxPort.h',0,3,0,0
 	.byte	'IfxSrc.h',0,4,0,0,0
-.L262:
+.L204:
 	.byte	5,6,7,0,5,2
-	.word	.L65
+	.word	.L57
 	.byte	3,198,0,1,4,2,5,19,9
-	.half	.L105-.L65
+	.half	.L102-.L57
 	.byte	3,199,4,1,5,17,9
-	.half	.L195-.L105
+	.half	.L190-.L102
 	.byte	3,1,1,5,21,9
-	.half	.L196-.L195
-	.byte	1,5,5,9
-	.half	.L197-.L196
+	.half	.L191-.L190
 	.byte	1,5,14,9
-	.half	.L40-.L197
+	.half	.L108-.L191
 	.byte	3,8,1,5,10,9
-	.half	.L263-.L40
-	.byte	3,1,1,5,5,9
-	.half	.L264-.L263
-	.byte	3,1,1,4,3,9
-	.half	.L41-.L264
-	.byte	3,213,123,1,4,1,5,19,9
-	.half	.L42-.L41
-	.byte	3,95,1,5,9,9
-	.half	.L194-.L42
-	.byte	1,5,34,9
-	.half	.L199-.L194
-	.byte	3,2,1,4,4,5,37,9
-	.half	.L115-.L199
-	.byte	3,145,2,1,5,52,9
-	.half	.L265-.L115
-	.byte	1,4,5,5,40,9
-	.half	.L123-.L265
-	.byte	3,230,1,1,4,4,5,62,9
-	.half	.L124-.L123
+	.half	.L205-.L108
+	.byte	3,1,1,4,1,5,19,9
+	.half	.L103-.L205
+	.byte	3,181,123,1,5,9,9
+	.half	.L187-.L103
+	.byte	1,4,3,5,37,9
+	.half	.L113-.L187
+	.byte	3,147,2,1,5,52,9
+	.half	.L206-.L113
+	.byte	1,4,4,5,40,9
+	.half	.L207-.L206
+	.byte	3,230,1,1,4,3,5,62,9
+	.half	.L121-.L207
 	.byte	3,155,126,1,5,112,9
-	.half	.L266-.L124
+	.half	.L208-.L121
 	.byte	1,5,75,9
-	.half	.L267-.L266
-	.byte	1,4,1,5,73,9
-	.half	.L116-.L267
-	.byte	3,240,125,1,5,85,9
-	.half	.L203-.L116
-	.byte	3,2,1,5,84,9
-	.half	.L202-.L203
-	.byte	1,5,82,9
-	.half	.L204-.L202
-	.byte	3,1,1,5,81,9
-	.half	.L205-.L204
-	.byte	1,5,11,9
-	.half	.L206-.L205
+	.half	.L209-.L208
+	.byte	1,4,1,5,85,9
+	.half	.L114-.L209
+	.byte	3,242,125,1,5,73,3,126,1,5,84,9
+	.half	.L192-.L114
+	.byte	3,2,1,5,11,9
+	.half	.L210-.L192
+	.byte	3,5,1,7,9
+	.half	.L211-.L210
+	.byte	3,6,1,7,9
+	.half	.L212-.L211
+	.byte	3,6,1,7,9
+	.half	.L213-.L212
+	.byte	1,5,45,9
+	.half	.L38-.L213
+	.byte	3,118,1,5,7,9
+	.half	.L214-.L38
+	.byte	3,2,1,5,44,9
+	.half	.L39-.L214
 	.byte	3,4,1,9
-	.half	.L208-.L206
-	.byte	3,6,1,9
-	.half	.L210-.L208
-	.byte	3,6,1,5,45,9
-	.half	.L43-.L210
-	.byte	3,118,1,5,43,9
-	.half	.L214-.L43
+	.half	.L215-.L39
 	.byte	3,1,1,5,7,9
-	.half	.L216-.L214
+	.half	.L216-.L215
 	.byte	3,1,1,5,44,9
-	.half	.L44-.L216
-	.byte	3,4,1,9
-	.half	.L218-.L44
-	.byte	3,1,1,5,7,9
-	.half	.L220-.L218
-	.byte	3,1,1,5,44,9
-	.half	.L45-.L220
+	.half	.L40-.L216
 	.byte	3,4,1,5,43,9
-	.half	.L222-.L45
+	.half	.L42-.L40
 	.byte	3,1,1,5,7,9
-	.half	.L224-.L222
+	.half	.L217-.L42
 	.byte	3,1,1,5,15,9
-	.half	.L46-.L224
+	.half	.L41-.L217
 	.byte	3,2,1,5,34,9
-	.half	.L47-.L46
+	.half	.L43-.L41
 	.byte	3,3,1,5,44,9
-	.half	.L226-.L47
+	.half	.L218-.L43
 	.byte	3,1,1,5,68,9
-	.half	.L228-.L226
+	.half	.L219-.L218
 	.byte	3,2,1,5,45,9
-	.half	.L231-.L228
+	.half	.L220-.L219
 	.byte	3,1,1,5,56,9
-	.half	.L234-.L231
-	.byte	3,1,1,5,76,9
-	.half	.L138-.L234
-	.byte	3,3,1,5,74,9
-	.half	.L268-.L138
-	.byte	1,5,54,9
-	.half	.L269-.L268
-	.byte	1,5,19,9
-	.half	.L236-.L269
-	.byte	3,3,1,5,18,9
-	.half	.L237-.L236
-	.byte	1,5,22,9
-	.half	.L238-.L237
-	.byte	1,5,21,9
-	.half	.L270-.L238
+	.half	.L221-.L220
+	.byte	3,1,1,5,55,9
+	.half	.L135-.L221
+	.byte	3,3,1,5,50,1,5,54,9
+	.half	.L222-.L135
 	.byte	1,5,8,9
-	.half	.L271-.L270
-	.byte	3,2,1,9
-	.half	.L272-.L271
-	.byte	3,6,1,9
-	.half	.L273-.L272
-	.byte	3,6,1,9
-	.half	.L274-.L273
-	.byte	3,6,1,5,17,9
-	.half	.L52-.L274
-	.byte	3,112,1,9
-	.half	.L239-.L52
-	.byte	3,1,1,5,4,9
-	.half	.L240-.L239
-	.byte	3,1,1,5,17,9
-	.half	.L53-.L240
+	.half	.L193-.L222
+	.byte	3,5,1,7,9
+	.half	.L223-.L193
+	.byte	3,6,1,7,9
+	.half	.L224-.L223
+	.byte	3,6,1,7,9
+	.half	.L225-.L224
+	.byte	3,6,1,7,9
+	.half	.L226-.L225
+	.byte	1,5,17,9
+	.half	.L45-.L226
+	.byte	3,113,1,5,4,3,1,1,5,17,9
+	.half	.L46-.L45
+	.byte	3,5,1,5,4,3,1,1,5,17,9
+	.half	.L47-.L46
 	.byte	3,4,1,9
-	.half	.L241-.L53
-	.byte	3,1,1,5,4,9
-	.half	.L242-.L241
+	.half	.L194-.L47
+	.byte	3,1,1,5,4,3,1,1,5,17,9
+	.half	.L48-.L194
+	.byte	3,5,1,9
+	.half	.L51-.L48
+	.byte	3,127,1,4,5,9
+	.half	.L49-.L51
+	.byte	3,134,1,1,5,11,9
+	.half	.L195-.L49
 	.byte	3,1,1,5,17,9
-	.half	.L54-.L242
-	.byte	3,4,1,9
-	.half	.L243-.L54
-	.byte	3,1,1,5,4,9
-	.half	.L244-.L243
-	.byte	3,1,1,5,17,9
-	.half	.L55-.L244
-	.byte	3,4,1,9
-	.half	.L245-.L55
-	.byte	3,1,1,5,4,9
-	.half	.L246-.L245
-	.byte	3,1,1,4,6,5,11,9
-	.half	.L57-.L246
-	.byte	3,132,1,1,5,17,9
-	.half	.L247-.L57
+	.half	.L196-.L195
 	.byte	1,5,11,9
-	.half	.L275-.L247
-	.byte	3,1,1,5,17,9
-	.half	.L249-.L275
-	.byte	1,5,11,9
-	.half	.L154-.L249
+	.half	.L152-.L196
 	.byte	3,103,1,5,17,9
-	.half	.L276-.L154
+	.half	.L227-.L152
 	.byte	1,5,11,9
-	.half	.L145-.L276
+	.half	.L143-.L227
 	.byte	3,18,1,5,16,9
-	.half	.L277-.L145
-	.byte	1,4,1,5,23,9
-	.half	.L159-.L277
-	.byte	3,138,127,1,4,2,5,5,9
-	.half	.L164-.L159
-	.byte	3,146,6,1,5,17,7,9
-	.half	.L278-.L164
+	.half	.L228-.L143
+	.byte	1,4,2,5,5,9
+	.half	.L157-.L228
+	.byte	3,156,5,1,5,17,7,9
+	.half	.L229-.L157
 	.byte	3,2,1,4,1,5,1,9
-	.half	.L61-.L278
+	.half	.L53-.L229
 	.byte	3,237,121,1,7,9
-	.half	.L78-.L61
+	.half	.L72-.L53
 	.byte	0,1,1
-.L260:
+.L202:
 	.sdecl	'.debug_ranges',debug,cluster('eru_init')
 	.sect	'.debug_ranges'
-.L77:
-	.word	-1,.L65,0,.L78-.L65,0,0
+.L71:
+	.word	-1,.L57,0,.L72-.L57,0,0
 	.sdecl	'.debug_info',debug,cluster('eru_enable_interrupt')
 	.sect	'.debug_info'
-.L79:
-	.word	320
+.L73:
+	.word	272
 	.half	3
-	.word	.L80
+	.word	.L74
 	.byte	4,1
 	.byte	'..\\Libraries\\seekfree_libraries\\zf_eru.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L82,.L81
+	.word	.L76,.L75
 	.byte	2
-	.word	.L70
+	.word	.L64
 	.byte	3
 	.byte	'eru_enable_interrupt',0,1,162,1,6,1,1,1
-	.word	.L67,.L172,.L66
+	.word	.L59,.L169,.L58
 	.byte	4
 	.byte	'eru_pin',0,1,162,1,40
-	.word	.L95,.L173
+	.word	.L94,.L170
 	.byte	5
-	.word	.L67,.L172
+	.word	.L171
 	.byte	6
-	.byte	'outputChannel',0,1,164,1,29
-	.word	.L136,.L174
-	.byte	6
-	.byte	'src',0,1,166,1,25
-	.word	.L139,.L175
+	.word	.L156,.L172,.L173
 	.byte	7
-	.word	.L158,.L176,.L177
+	.word	.L158,.L174
 	.byte	8
-	.word	.L160,.L178
-	.byte	9
-	.word	.L162,.L176,.L177
+	.word	.L160,.L172,.L173
 	.byte	0,0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('eru_enable_interrupt')
 	.sect	'.debug_abbrev'
-.L80:
+.L74:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
-	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3
-	.byte	8,58,15,59,15,57,15,73,16,2,6,0,0,7,29,1,49,16,17,1,18,1,0,0,8,5,0,49,16,2,6,0,0,9,11,0,49,16,17,1,18
-	.byte	1,0,0,0
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,85,6,0,0,6,29,1,49,16
+	.byte	17,1,18,1,0,0,7,5,0,49,16,2,6,0,0,8,11,0,49,16,17,1,18,1,0,0,0
 	.sdecl	'.debug_line',debug,cluster('eru_enable_interrupt')
 	.sect	'.debug_line'
-.L81:
-	.word	.L280-.L279
-.L279:
+.L75:
+	.word	.L231-.L230
+.L230:
 	.half	3
-	.word	.L282-.L281
-.L281:
+	.word	.L233-.L232
+.L232:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Src\\Std',0
 	.byte	0
 	.byte	'..\\Libraries\\seekfree_libraries\\zf_eru.c',0,0,0,0
 	.byte	'IfxSrc.h',0,1,0,0,0
-.L282:
-	.byte	5,79,7,0,5,2
-	.word	.L67
-	.byte	3,163,1,1,5,78,9
-	.half	.L283-.L67
-	.byte	1,5,76,9
-	.half	.L251-.L283
-	.byte	3,2,1,5,74,9
-	.half	.L284-.L251
-	.byte	1,5,54,9
-	.half	.L252-.L284
-	.byte	1,4,2,5,11,9
-	.half	.L176-.L252
-	.byte	3,232,0,1,5,16,9
-	.half	.L285-.L176
-	.byte	1,4,1,5,1,9
-	.half	.L177-.L285
+.L233:
+	.byte	5,50,7,0,5,2
+	.word	.L59
+	.byte	3,165,1,1,4,2,5,16,9
+	.half	.L172-.L59
+	.byte	3,232,0,1,4,1,5,1,9
+	.half	.L173-.L172
 	.byte	3,154,127,1,7,9
-	.half	.L83-.L177
+	.half	.L77-.L173
 	.byte	0,1,1
-.L280:
+.L231:
 	.sdecl	'.debug_ranges',debug,cluster('eru_enable_interrupt')
 	.sect	'.debug_ranges'
-.L82:
-	.word	-1,.L67,0,.L83-.L67,0,0
+.L76:
+	.word	-1,.L59,0,.L77-.L59,0,0
+.L171:
+	.word	-1,.L59,0,.L169-.L59,-1,.L61,0,.L92-.L61,0,0
 	.sdecl	'.debug_info',debug,cluster('eru_disable_interrupt')
 	.sect	'.debug_info'
-.L84:
-	.word	321
+.L78:
+	.word	277
 	.half	3
-	.word	.L85
+	.word	.L79
 	.byte	4,1
 	.byte	'..\\Libraries\\seekfree_libraries\\zf_eru.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L87,.L86
+	.word	.L81,.L80
 	.byte	2
-	.word	.L70
+	.word	.L64
 	.byte	3
 	.byte	'eru_disable_interrupt',0,1,176,1,6,1,1,1
-	.word	.L69,.L179,.L68
+	.word	.L63,.L175,.L62
 	.byte	4
 	.byte	'eru_pin',0,1,176,1,41
-	.word	.L95,.L180
+	.word	.L94,.L176
 	.byte	5
-	.word	.L69,.L179
+	.word	.L63,.L175
 	.byte	6
-	.byte	'outputChannel',0,1,178,1,29
-	.word	.L136,.L181
-	.byte	6
-	.byte	'src',0,1,180,1,25
-	.word	.L139,.L182
+	.word	.L177,.L178,.L179
 	.byte	7
-	.word	.L183,.L184,.L185
+	.word	.L180,.L181
 	.byte	8
-	.word	.L186,.L187
-	.byte	9
-	.word	.L188,.L184,.L185
+	.word	.L182,.L178,.L179
 	.byte	0,0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('eru_disable_interrupt')
 	.sect	'.debug_abbrev'
-.L85:
+.L79:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
-	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3
-	.byte	8,58,15,59,15,57,15,73,16,2,6,0,0,7,29,1,49,16,17,1,18,1,0,0,8,5,0,49,16,2,6,0,0,9,11,0,49,16,17,1,18
-	.byte	1,0,0,0
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,29,1,49
+	.byte	16,17,1,18,1,0,0,7,5,0,49,16,2,6,0,0,8,11,0,49,16,17,1,18,1,0,0,0
 	.sdecl	'.debug_line',debug,cluster('eru_disable_interrupt')
 	.sect	'.debug_line'
-.L86:
-	.word	.L287-.L286
-.L286:
+.L80:
+	.word	.L235-.L234
+.L234:
 	.half	3
-	.word	.L289-.L288
-.L288:
+	.word	.L237-.L236
+.L236:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Src\\Std',0
 	.byte	0
 	.byte	'..\\Libraries\\seekfree_libraries\\zf_eru.c',0,0,0,0
 	.byte	'IfxSrc.h',0,1,0,0,0
-.L289:
-	.byte	5,79,7,0,5,2
-	.word	.L69
-	.byte	3,177,1,1,5,78,9
-	.half	.L290-.L69
-	.byte	1,5,76,9
-	.half	.L253-.L290
-	.byte	3,2,1,5,74,9
-	.half	.L291-.L253
-	.byte	1,5,54,9
-	.half	.L254-.L291
-	.byte	1,4,2,5,11,9
-	.half	.L184-.L254
-	.byte	3,212,0,1,5,16,9
-	.half	.L292-.L184
-	.byte	1,4,1,5,1,9
-	.half	.L185-.L292
+.L237:
+	.byte	5,50,7,0,5,2
+	.word	.L63
+	.byte	3,179,1,1,4,2,5,16,9
+	.half	.L178-.L63
+	.byte	3,212,0,1,4,1,5,1,9
+	.half	.L179-.L178
 	.byte	3,174,127,1,7,9
-	.half	.L88-.L185
+	.half	.L82-.L179
 	.byte	0,1,1
-.L287:
+.L235:
 	.sdecl	'.debug_ranges',debug,cluster('eru_disable_interrupt')
 	.sect	'.debug_ranges'
-.L87:
-	.word	-1,.L69,0,.L88-.L69,0,0
+.L81:
+	.word	-1,.L63,0,.L82-.L63,0,0
 	.sdecl	'.debug_info',debug,cluster('eru_mux')
 	.sect	'.debug_info'
-.L89:
+.L83:
 	.word	252
 	.half	3
-	.word	.L90
+	.word	.L84
 	.byte	4,1
 	.byte	'..\\Libraries\\seekfree_libraries\\zf_eru.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L92,.L91
+	.word	.L86,.L85
 	.byte	2
-	.word	.L70
+	.word	.L64
 	.byte	3
 	.byte	'eru_mux',0,1,31,16
-	.word	.L101
+	.word	.L98
 	.byte	1,1,1
-	.word	.L63,.L189,.L62
+	.word	.L55,.L183,.L54
 	.byte	4
 	.byte	'eru_pin',0,1,31,37
-	.word	.L95,.L190
+	.word	.L94,.L184
 	.byte	5
-	.word	.L63,.L189
+	.word	.L55,.L183
 	.byte	6
 	.byte	'__func__',0,1,60,12
-	.word	.L191
+	.word	.L185
 	.byte	5,3
 	.word	_999001___func__
 	.byte	0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('eru_mux')
 	.sect	'.debug_abbrev'
-.L90:
+.L84:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
 	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
 	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,9,0,0,0
 	.sdecl	'.debug_line',debug,cluster('eru_mux')
 	.sect	'.debug_line'
-.L91:
-	.word	.L294-.L293
-.L293:
+.L85:
+	.word	.L239-.L238
+.L238:
 	.half	3
-	.word	.L296-.L295
-.L295:
+	.word	.L241-.L240
+.L240:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\Libraries\\seekfree_libraries\\zf_eru.c',0,0,0,0,0
-.L296:
+.L241:
 	.byte	5,8,7,0,5,2
-	.word	.L63
-	.byte	3,34,1,9
-	.half	.L297-.L63
-	.byte	3,1,1,9
-	.half	.L298-.L297
-	.byte	3,2,1,9
-	.half	.L299-.L298
-	.byte	3,1,1,9
-	.half	.L300-.L299
-	.byte	3,2,1,9
-	.half	.L301-.L300
-	.byte	3,1,1,9
-	.half	.L302-.L301
-	.byte	3,1,1,9
-	.half	.L303-.L302
-	.byte	3,2,1,9
-	.half	.L304-.L303
-	.byte	3,1,1,9
-	.half	.L305-.L304
-	.byte	3,1,1,9
-	.half	.L306-.L305
-	.byte	3,2,1,9
-	.half	.L307-.L306
-	.byte	3,1,1,9
-	.half	.L308-.L307
-	.byte	3,2,1,9
-	.half	.L309-.L308
-	.byte	3,2,1,9
-	.half	.L310-.L309
-	.byte	3,1,1,9
-	.half	.L311-.L310
-	.byte	3,2,1,9
-	.half	.L312-.L311
-	.byte	3,1,1,5,38,9
-	.half	.L2-.L312
-	.byte	3,105,1,5,30,9
-	.half	.L313-.L2
-	.byte	1,5,38,9
-	.half	.L3-.L313
-	.byte	3,1,1,5,30,9
-	.half	.L314-.L3
-	.byte	1,5,38,9
-	.half	.L4-.L314
-	.byte	3,2,1,5,30,9
-	.half	.L315-.L4
-	.byte	1,5,38,9
-	.half	.L5-.L315
-	.byte	3,1,1,5,30,9
-	.half	.L316-.L5
-	.byte	1,5,38,9
-	.half	.L6-.L316
-	.byte	3,2,1,5,30,9
-	.half	.L317-.L6
-	.byte	1,5,38,9
-	.half	.L7-.L317
-	.byte	3,1,1,5,30,9
-	.half	.L318-.L7
-	.byte	1,5,38,9
-	.half	.L8-.L318
-	.byte	3,1,1,5,30,9
-	.half	.L319-.L8
-	.byte	1,5,38,9
-	.half	.L9-.L319
-	.byte	3,2,1,5,30,9
-	.half	.L320-.L9
-	.byte	1,5,38,9
-	.half	.L10-.L320
-	.byte	3,1,1,5,30,9
-	.half	.L321-.L10
-	.byte	1,5,38,9
-	.half	.L11-.L321
-	.byte	3,1,1,5,30,9
-	.half	.L322-.L11
-	.byte	1,5,38,9
-	.half	.L12-.L322
-	.byte	3,2,1,5,30,9
-	.half	.L323-.L12
-	.byte	1,5,38,9
-	.half	.L13-.L323
-	.byte	3,1,1,5,30,9
-	.half	.L324-.L13
-	.byte	1,5,38,9
-	.half	.L14-.L324
-	.byte	3,2,1,5,30,9
-	.half	.L325-.L14
-	.byte	1,5,38,9
-	.half	.L15-.L325
-	.byte	3,2,1,5,30,9
-	.half	.L326-.L15
-	.byte	1,5,38,9
-	.half	.L16-.L326
-	.byte	3,1,1,5,30,9
-	.half	.L327-.L16
-	.byte	1,5,38,9
-	.half	.L17-.L327
-	.byte	3,2,1,5,30,9
-	.half	.L328-.L17
-	.byte	1,5,38,9
-	.half	.L18-.L328
-	.byte	3,1,1,5,30,9
-	.half	.L329-.L18
-	.byte	1,5,12,9
-	.half	.L19-.L329
-	.byte	3,2,1,5,37,9
-	.half	.L38-.L19
-	.byte	1,5,30,9
-	.half	.L330-.L38
-	.byte	1,5,1,9
-	.half	.L20-.L330
+	.word	.L55
+	.byte	3,34,1,7,9
+	.half	.L242-.L55
+	.byte	3,1,1,7,9
+	.half	.L243-.L242
 	.byte	3,2,1,7,9
-	.half	.L93-.L20
+	.half	.L244-.L243
+	.byte	3,1,1,7,9
+	.half	.L245-.L244
+	.byte	3,2,1,7,9
+	.half	.L246-.L245
+	.byte	3,1,1,7,9
+	.half	.L247-.L246
+	.byte	3,1,1,9
+	.half	.L248-.L247
+	.byte	3,2,1,9
+	.half	.L249-.L248
+	.byte	3,1,1,9
+	.half	.L250-.L249
+	.byte	3,1,1,9
+	.half	.L251-.L250
+	.byte	3,2,1,9
+	.half	.L252-.L251
+	.byte	3,1,1,9
+	.half	.L253-.L252
+	.byte	3,2,1,9
+	.half	.L254-.L253
+	.byte	3,2,1,9
+	.half	.L255-.L254
+	.byte	3,1,1,9
+	.half	.L256-.L255
+	.byte	3,2,1,9
+	.half	.L257-.L256
+	.byte	3,1,1,5,12,9
+	.half	.L258-.L257
+	.byte	3,2,1,5,37,9
+	.half	.L259-.L258
+	.byte	1,5,1,9
+	.half	.L260-.L259
+	.byte	3,2,1,5,38,7,9
+	.half	.L2-.L260
+	.byte	3,101,1,5,1,9
+	.half	.L261-.L2
+	.byte	3,27,1,5,38,7,9
+	.half	.L3-.L261
+	.byte	3,102,1,5,1,9
+	.half	.L262-.L3
+	.byte	3,26,1,5,38,7,9
+	.half	.L4-.L262
+	.byte	3,104,1,5,1,9
+	.half	.L263-.L4
+	.byte	3,24,1,5,38,7,9
+	.half	.L5-.L263
+	.byte	3,105,1,5,1,9
+	.half	.L264-.L5
+	.byte	3,23,1,5,38,7,9
+	.half	.L6-.L264
+	.byte	3,107,1,5,1,9
+	.half	.L265-.L6
+	.byte	3,21,1,5,38,7,9
+	.half	.L7-.L265
+	.byte	3,108,1,5,1,9
+	.half	.L266-.L7
+	.byte	3,20,1,5,38,7,9
+	.half	.L8-.L266
+	.byte	3,109,1,5,1,9
+	.half	.L267-.L8
+	.byte	3,19,1,5,38,7,9
+	.half	.L9-.L267
+	.byte	3,111,1,5,1,9
+	.half	.L268-.L9
+	.byte	3,17,1,5,38,7,9
+	.half	.L10-.L268
+	.byte	3,112,1,5,1,9
+	.half	.L269-.L10
+	.byte	3,16,1,5,38,7,9
+	.half	.L11-.L269
+	.byte	3,113,1,5,1,9
+	.half	.L270-.L11
+	.byte	3,15,1,5,38,7,9
+	.half	.L12-.L270
+	.byte	3,115,1,5,1,9
+	.half	.L271-.L12
+	.byte	3,13,1,5,38,7,9
+	.half	.L13-.L271
+	.byte	3,116,1,5,1,9
+	.half	.L272-.L13
+	.byte	3,12,1,5,38,7,9
+	.half	.L14-.L272
+	.byte	3,118,1,5,1,9
+	.half	.L273-.L14
+	.byte	3,10,1,5,38,7,9
+	.half	.L15-.L273
+	.byte	3,120,1,5,1,9
+	.half	.L274-.L15
+	.byte	3,8,1,5,38,7,9
+	.half	.L16-.L274
+	.byte	3,121,1,5,1,9
+	.half	.L275-.L16
+	.byte	3,7,1,5,38,7,9
+	.half	.L17-.L275
+	.byte	3,123,1,5,1,9
+	.half	.L276-.L17
+	.byte	3,5,1,5,38,7,9
+	.half	.L18-.L276
+	.byte	3,124,1,5,1,9
+	.half	.L277-.L18
+	.byte	3,4,1,7,9
+	.half	.L87-.L277
 	.byte	0,1,1
-.L294:
+.L239:
 	.sdecl	'.debug_ranges',debug,cluster('eru_mux')
 	.sect	'.debug_ranges'
-.L92:
-	.word	-1,.L63,0,.L93-.L63,0,0
-	.sdecl	'.debug_loc',debug,cluster('eru_disable_interrupt')
+.L86:
+	.word	-1,.L55,0,.L87-.L55,0,0
+	.sdecl	'.debug_info',debug,cluster('.cocofun_2')
+	.sect	'.debug_info'
+.L88:
+	.word	196
+	.half	3
+	.word	.L89
+	.byte	4,1
+	.byte	'..\\Libraries\\seekfree_libraries\\zf_eru.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
+	.word	.L91,.L90
+	.byte	2
+	.word	.L64
+	.byte	3
+	.byte	'.cocofun_2',0,1,162,1,6,1
+	.word	.L61,.L92,.L60
+	.byte	0
+	.sdecl	'.debug_abbrev',debug,cluster('.cocofun_2')
+	.sect	'.debug_abbrev'
+.L89:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,0,3,8,58,15,59,15,57,15,54,15
+	.byte	17,1,18,1,64,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('.cocofun_2')
+	.sect	'.debug_line'
+.L90:
+	.word	.L279-.L278
+.L278:
+	.half	3
+	.word	.L281-.L280
+.L280:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Src\\Std',0
+	.byte	0
+	.byte	'..\\Libraries\\seekfree_libraries\\zf_eru.c',0,0,0,0
+	.byte	'IfxSrc.h',0,1,0,0,0
+.L281:
+	.byte	5,79,7,0,5,2
+	.word	.L61
+	.byte	3,163,1,1,5,50,3,2,1,5,78,9
+	.half	.L282-.L61
+	.byte	3,126,1,5,50,3,2,1,5,55,9
+	.half	.L283-.L282
+	.byte	1,5,54,9
+	.half	.L284-.L283
+	.byte	1,4,2,5,11,9
+	.half	.L285-.L284
+	.byte	3,232,0,1,9
+	.half	.L92-.L285
+	.byte	0,1,1,5,79,0,5,2
+	.word	.L61
+	.byte	3,177,1,1,5,50,3,2,1,5,78,9
+	.half	.L282-.L61
+	.byte	3,126,1,5,50,3,2,1,5,55,9
+	.half	.L283-.L282
+	.byte	1,5,54,9
+	.half	.L284-.L283
+	.byte	1,4,2,5,11,9
+	.half	.L285-.L284
+	.byte	3,212,0,1,9
+	.half	.L286-.L285
+	.byte	3,6,1,7,9
+	.half	.L92-.L286
+	.byte	0,1,1
+.L279:
+	.sdecl	'.debug_ranges',debug,cluster('.cocofun_2')
+	.sect	'.debug_ranges'
+.L91:
+	.word	-1,.L61,0,.L92-.L61,0,0
+	.sdecl	'.debug_loc',debug,cluster('.cocofun_2')
 	.sect	'.debug_loc'
-.L68:
-	.word	-1,.L69,0,.L179-.L69
+.L60:
+	.word	-1,.L61,0,.L92-.L61
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L180:
-	.word	-1,.L69,0,.L179-.L69
+	.sdecl	'.debug_loc',debug,cluster('eru_disable_interrupt')
+	.sect	'.debug_loc'
+.L62:
+	.word	-1,.L63,0,.L175-.L63
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L176:
+	.word	-1,.L63,.L61-.L63,.L92-.L63
+	.half	1
+	.byte	84
+	.word	.L178-.L63,.L175-.L63
 	.half	1
 	.byte	84
 	.word	0,0
 .L181:
-	.word	-1,.L69,.L253-.L69,.L254-.L69
-	.half	5
-	.byte	144,32,157,32,0
-	.word	0,0
-.L182:
-	.word	-1,.L69,.L184-.L69,.L179-.L69
-	.half	1
-	.byte	111
-	.word	0,0
-.L187:
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('eru_enable_interrupt')
 	.sect	'.debug_loc'
-.L66:
-	.word	-1,.L67,0,.L172-.L67
+.L58:
+	.word	-1,.L59,0,.L169-.L59
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L173:
-	.word	-1,.L67,0,.L172-.L67
+.L170:
+	.word	-1,.L59,.L61-.L59,.L92-.L59
+	.half	1
+	.byte	84
+	.word	.L172-.L59,.L169-.L59
 	.half	1
 	.byte	84
 	.word	0,0
 .L174:
-	.word	-1,.L67,.L251-.L67,.L252-.L67
-	.half	5
-	.byte	144,32,157,32,0
-	.word	0,0
-.L175:
-	.word	-1,.L67,.L176-.L67,.L172-.L67
-	.half	1
-	.byte	111
-	.word	0,0
-.L178:
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('eru_init')
 	.sect	'.debug_loc'
-.L166:
+.L163:
 	.word	0,0
-.L109:
+.L167:
 	.word	0,0
-.L170:
-	.word	0,0
-.L64:
-	.word	-1,.L65,0,.L193-.L65
-	.half	2
-	.byte	138,0
-	.word	.L193-.L65,.L94-.L65
-	.half	2
-	.byte	138,8
-	.word	.L94-.L65,.L94-.L65
+.L56:
+	.word	-1,.L57,0,.L93-.L57
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L96:
-	.word	-1,.L65,0,.L194-.L65
+.L95:
+	.word	-1,.L57,0,.L187-.L57
 	.half	1
 	.byte	84
-	.word	.L42-.L65,.L198-.L65
-	.half	1
-	.byte	90
-	.word	.L202-.L65,.L204-.L65
-	.half	1
-	.byte	90
-	.word	.L205-.L65,.L206-.L65
-	.half	1
-	.byte	90
-	.word	.L237-.L65,.L238-.L65
-	.half	1
-	.byte	90
-	.word	0,0
-.L143:
-	.word	-1,.L65,.L240-.L65,.L53-.L65
-	.half	1
-	.byte	95
-	.word	.L242-.L65,.L54-.L65
-	.half	1
-	.byte	95
-	.word	.L244-.L65,.L55-.L65
-	.half	1
-	.byte	95
-	.word	.L246-.L65,.L57-.L65
-	.half	1
-	.byte	95
-	.word	.L247-.L65,.L248-.L65
-	.half	1
-	.byte	95
-	.word	0,0
-.L142:
-	.word	-1,.L65,.L239-.L65,.L53-.L65
-	.half	5
-	.byte	144,32,157,32,0
-	.word	.L241-.L65,.L54-.L65
-	.half	5
-	.byte	144,32,157,32,0
-	.word	.L243-.L65,.L55-.L65
-	.half	5
-	.byte	144,32,157,32,0
-	.word	.L245-.L65,.L57-.L65
-	.half	5
-	.byte	144,32,157,32,0
-	.word	.L249-.L65,.L250-.L65
-	.half	5
-	.byte	144,32,157,32,0
-	.word	0,0
-.L133:
-	.word	-1,.L65,.L201-.L65,.L202-.L65
-	.half	1
-	.byte	95
-	.word	.L203-.L65,.L94-.L65
-	.half	2
-	.byte	145,120
-	.word	.L213-.L65,.L214-.L65
-	.half	1
-	.byte	84
-	.word	.L215-.L65,.L216-.L65
-	.half	1
-	.byte	84
-	.word	.L217-.L65,.L218-.L65
-	.half	1
-	.byte	84
-	.word	.L219-.L65,.L220-.L65
-	.half	1
-	.byte	84
-	.word	.L221-.L65,.L222-.L65
-	.half	1
-	.byte	84
-	.word	.L223-.L65,.L224-.L65
-	.half	1
-	.byte	84
-	.word	.L225-.L65,.L226-.L65
-	.half	1
-	.byte	84
-	.word	.L227-.L65,.L228-.L65
-	.half	1
-	.byte	84
-	.word	.L232-.L65,.L231-.L65
-	.half	1
-	.byte	85
-	.word	0,0
-.L120:
-	.word	0,0
-.L100:
-	.word	-1,.L65,.L197-.L65,.L94-.L65
-	.half	1
-	.byte	94
-	.word	0,0
-.L130:
-	.word	0,0
-.L137:
-	.word	-1,.L65,.L206-.L65,.L94-.L65
+	.word	.L188-.L57,.L93-.L57
 	.half	1
 	.byte	88
-	.word	.L230-.L65,.L231-.L65
+	.word	0,0
+.L141:
+	.word	-1,.L57,.L51-.L57,.L195-.L57
 	.half	1
-	.byte	84
-	.word	.L233-.L65,.L234-.L65
-	.half	1
-	.byte	84
-	.word	.L235-.L65,.L138-.L65
-	.half	1
-	.byte	84
+	.byte	95
 	.word	0,0
-.L128:
-	.word	0,0
-.L126:
-	.word	0,0
-.L151:
-	.word	0,0
-.L113:
-	.word	-1,.L65,.L195-.L65,.L196-.L65
+.L139:
+	.word	-1,.L57,.L194-.L57,.L48-.L57
 	.half	5
 	.byte	144,32,157,32,0
+	.word	.L196-.L57,.L152-.L57
+	.half	5
+	.byte	144,32,157,32,0
+	.word	0,0
+.L130:
+	.word	-1,.L57,.L192-.L57,.L93-.L57
+	.half	1
+	.byte	92
 	.word	0,0
 .L118:
 	.word	0,0
-.L102:
-	.word	-1,.L65,.L194-.L65,.L124-.L65
-	.half	1
-	.byte	98
-	.word	.L199-.L65,.L200-.L65
-	.half	1
-	.byte	111
+.L127:
 	.word	0,0
-.L140:
-	.word	-1,.L65,.L236-.L65,.L94-.L65
-	.half	1
-	.byte	111
+.L134:
 	.word	0,0
-.L156:
+.L125:
 	.word	0,0
-.L161:
-	.word	0,0
-.L147:
-	.word	0,0
-.L98:
-	.word	-1,.L65,0,.L194-.L65
-	.half	1
-	.byte	85
-	.word	.L207-.L65,.L208-.L65
-	.half	1
-	.byte	91
-	.word	.L209-.L65,.L210-.L65
-	.half	1
-	.byte	91
-	.word	.L211-.L65,.L212-.L65
-	.half	1
-	.byte	91
-	.word	0,0
-.L135:
-	.word	-1,.L65,.L204-.L65,.L94-.L65
-	.half	1
-	.byte	92
-	.word	.L229-.L65,.L228-.L65
-	.half	1
-	.byte	85
+.L123:
 	.word	0,0
 .L149:
 	.word	0,0
+.L111:
+	.word	-1,.L57,.L190-.L57,.L191-.L57
+	.half	5
+	.byte	144,32,157,32,0
+	.word	0,0
+.L116:
+	.word	0,0
+.L99:
+	.word	-1,.L57,.L187-.L57,.L121-.L57
+	.half	1
+	.byte	98
+	.word	.L113-.L57,.L189-.L57
+	.half	1
+	.byte	111
+	.word	0,0
+.L137:
+	.word	-1,.L57,.L193-.L57,.L93-.L57
+	.half	1
+	.byte	111
+	.word	0,0
+.L154:
+	.word	0,0
+.L159:
+	.word	0,0
+.L145:
+	.word	0,0
+.L97:
+	.word	-1,.L57,0,.L187-.L57
+	.half	1
+	.byte	85
+	.word	.L102-.L57,.L189-.L57
+	.half	1
+	.byte	95
+	.word	0,0
+.L132:
+	.word	0,0
+.L147:
+	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('eru_mux')
 	.sect	'.debug_loc'
-.L62:
-	.word	-1,.L63,0,.L189-.L63
+.L54:
+	.word	-1,.L55,0,.L183-.L55
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L190:
-	.word	-1,.L63,0,.L192-.L63
+.L184:
+	.word	-1,.L55,0,.L186-.L55
+	.half	1
+	.byte	84
+	.word	.L2-.L55,.L183-.L55
 	.half	1
 	.byte	84
 	.word	0,0
 	.sdecl	'.debug_frame',debug
 	.sect	'.debug_frame'
-.L331:
+.L287:
 	.word	48
 	.word	-1
 	.byte	3,0,2,1,27,12,26,0,8,27,8,26,8,28,8,29,8,30,8,31,8,34,8,35,8,32,8,33,8,16,8,17,8,24,8,25,8,36,8,37,8,38
@@ -17696,27 +17717,34 @@ _999002___func__:	.type	object
 	.sdecl	'.debug_frame',debug,cluster('eru_mux')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L331,.L63,.L189-.L63
+	.word	.L287,.L55,.L183-.L55
 	.sdecl	'.debug_frame',debug,cluster('eru_init')
 	.sect	'.debug_frame'
-	.word	36
-	.word	.L331,.L65,.L94-.L65
-	.byte	4
-	.word	(.L193-.L65)/2
-	.byte	19,8,22,26,3,19,138,8,4
-	.word	(.L94-.L193)/2
-	.byte	19,0,8,26,0,0
+	.word	12
+	.word	.L287,.L57,.L93-.L57
 	.sdecl	'.debug_frame',debug,cluster('eru_enable_interrupt')
 	.sect	'.debug_frame'
 	.word	24
-	.word	.L331,.L67,.L172-.L67
+	.word	.L287,.L59,.L169-.L59
 	.byte	8,18,8,19,8,20,8,21,8,22,8,23
 	.sdecl	'.debug_frame',debug,cluster('eru_disable_interrupt')
 	.sect	'.debug_frame'
 	.word	24
-	.word	.L331,.L69,.L179-.L69
+	.word	.L287,.L63,.L175-.L63
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug
+	.sect	'.debug_frame'
+.L288:
+	.word	52
+	.word	-1
+	.byte	3,0,2,1,40,12,26,0,9,40,27,155,0,7,26,8,28,8,29,8,30,8,31,8,34,8,35,8,32,8,33,8,16,8,17,8,24,8,25,8,36
+	.byte	8,37,8,38,8,39,0
+	.sdecl	'.debug_frame',debug,cluster('.cocofun_2')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L288,.L61,.L92-.L61
 	.byte	8,18,8,19,8,20,8,21,8,22,8,23
 
-; ..\Libraries\seekfree_libraries\zf_eru.c	   183  
+; ..\Libraries\seekfree_libraries\zf_eru.c	   183  //  Sample usage:				eru_disable_interrupt(ERU_CH0_REQ0_P15_4);
 ; ..\Libraries\seekfree_libraries\zf_eru.c	   184  //-------------------------------------------------------------------------------------------------------------------
 	; Module end

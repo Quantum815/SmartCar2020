@@ -1,6 +1,6 @@
 	; Module start
 	.compiler_version	"TASKING VX-toolset for TriCore: C compiler v6.3r1 Build 19041558 SN 99294086"
-	.compiler_invocation	"ctc --dep-file=Libraries\\seekfree_peripheral\\.SEEKFREE_MPU6050.o.d --fp-model=c,f,l,n,r,S,T,z -D__CPU__=tc26x -D__CPU_TC26X__ --core=tc1.6.x --iso=99 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\CODE -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Build -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Impl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Lib -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Lib\\DataHandling -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Lib\\InternalMux -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_PinMap -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Asc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Lin -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Spi -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\Icu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\PwmBc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\PwmHl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\TimerWithTrigger -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\TPwm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cif -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cif\\Cam -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cif\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\CStart -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Irq -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Trap -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dma -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dma\\Dma -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dma\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc\\Dsadc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc\\Rdc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dts -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dts\\Dts -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dts\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Emem -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Emem\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eray -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eray\\Eray -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eray\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eth -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eth\\Phy_Pef7071 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eth\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fce -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fce\\Crc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fce\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fft -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fft\\Fft -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fft\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Flash -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Flash\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gpt12 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gpt12\\IncrEnc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gpt12\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom\\Pwm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom\\PwmHl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tim -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tim\\In -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom\\Pwm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom\\PwmHl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Trig -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Hssl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Hssl\\Hssl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Hssl\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\I2c -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\I2c\\I2c -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\I2c\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Iom -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Iom\\Driver -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Iom\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Msc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Msc\\Msc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Msc\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Mtu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Mtu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Multican -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Multican\\Can -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Multican\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Port -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Port\\Io -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Port\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5\\Psi5 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5s -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5s\\Psi5s -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5s\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi\\SpiMaster -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi\\SpiSlave -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Scu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Scu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Sent -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Sent\\Sent -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Sent\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Smu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Smu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Src -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Src\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Stm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Stm\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Stm\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Vadc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Vadc\\Adc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Vadc\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Platform -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Platform\\Tricore -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Platform\\Tricore\\Compilers -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Sfr -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Sfr\\TC26B -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Sfr\\TC26B\\_Reg -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Service -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Service\\CpuGeneric -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\seekfree_libraries -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\seekfree_libraries\\common -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\seekfree_peripheral -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\USER -g2 -wW557 --make-target=Libraries\\seekfree_peripheral\\SEEKFREE_MPU6050.o -t4 --language=-gcc,-volatile,+strings,-kanji --default-near-size=0 -O0 --default-a1-size=0 --default-a0-size=0 --source --align=0 --switch=auto --error-limit=42 -o Libraries\\seekfree_peripheral\\SEEKFREE_MPU6050.src ..\\Libraries\\seekfree_peripheral\\SEEKFREE_MPU6050.c"
+	.compiler_invocation	"ctc --dep-file=Libraries\\seekfree_peripheral\\.SEEKFREE_MPU6050.o.d --fp-model=c,f,l,n,r,S,T,z -D__CPU__=tc26x -D__CPU_TC26X__ --core=tc1.6.x --iso=99 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\CODE -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Build -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Impl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Lib -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Lib\\DataHandling -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Lib\\InternalMux -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_PinMap -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Asc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Lin -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Spi -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\Icu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\PwmBc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\PwmHl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\TimerWithTrigger -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\TPwm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cif -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cif\\Cam -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cif\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\CStart -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Irq -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Trap -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dma -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dma\\Dma -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dma\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc\\Dsadc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc\\Rdc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dts -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dts\\Dts -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dts\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Emem -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Emem\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eray -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eray\\Eray -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eray\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eth -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eth\\Phy_Pef7071 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eth\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fce -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fce\\Crc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fce\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fft -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fft\\Fft -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fft\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Flash -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Flash\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gpt12 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gpt12\\IncrEnc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gpt12\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom\\Pwm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom\\PwmHl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tim -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tim\\In -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom\\Pwm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom\\PwmHl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Trig -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Hssl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Hssl\\Hssl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Hssl\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\I2c -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\I2c\\I2c -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\I2c\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Iom -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Iom\\Driver -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Iom\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Msc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Msc\\Msc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Msc\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Mtu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Mtu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Multican -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Multican\\Can -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Multican\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Port -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Port\\Io -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Port\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5\\Psi5 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5s -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5s\\Psi5s -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5s\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi\\SpiMaster -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi\\SpiSlave -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Scu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Scu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Sent -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Sent\\Sent -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Sent\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Smu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Smu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Src -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Src\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Stm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Stm\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Stm\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Vadc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Vadc\\Adc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Vadc\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Platform -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Platform\\Tricore -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Platform\\Tricore\\Compilers -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Sfr -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Sfr\\TC26B -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Sfr\\TC26B\\_Reg -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Service -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Service\\CpuGeneric -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\seekfree_libraries -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\seekfree_libraries\\common -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\seekfree_peripheral -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\USER -g2 -wW557 --make-target=Libraries\\seekfree_peripheral\\SEEKFREE_MPU6050.o -t4 --language=-gcc,-volatile,+strings,-kanji --default-near-size=0 -O2 --default-a1-size=0 --default-a0-size=0 --source --align=0 --compact-max-size=200 --switch=auto --error-limit=42 -o Libraries\\seekfree_peripheral\\SEEKFREE_MPU6050.src ..\\Libraries\\seekfree_peripheral\\SEEKFREE_MPU6050.c"
 	.compiler_name		"ctc"
 	;source	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_MPU6050.c'
 
@@ -64,40 +64,33 @@ $TC16X
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_MPU6050.c	    49  //-------------------------------------------------------------------------------------------------------------------
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_MPU6050.c	    50  void mpu6050_self1_check(void)
 ; Function mpu6050_self1_check
-.L5:
+.L4:
 mpu6050_self1_check:	.type	func
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_MPU6050.c	    51  {
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_MPU6050.c	    52      simiic_write_reg(MPU6050_DEV_ADDR, PWR_MGMT_1, 0x00);	//解除休眠状态
 	mov	d4,#104
-.L148:
-	mov	d5,#107
-.L149:
-	mov	d6,#0
-	call	simiic_write_reg
-.L150:
-
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MPU6050.c	    53      simiic_write_reg(MPU6050_DEV_ADDR, SMPLRT_DIV, 0x07);   //125HZ采样率
-	mov	d4,#104
 .L151:
-	mov	d5,#25
+	mov	d5,#107
 .L152:
-	mov	d6,#7
+	mov	d6,#0
 	call	simiic_write_reg
 .L153:
 
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MPU6050.c	    54      while(0x07 != simiic_read_reg(MPU6050_DEV_ADDR, SMPLRT_DIV,SIMIIC))
-	j	.L2
-.L3:
-.L2:
-	mov	d4,#104
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MPU6050.c	    53      simiic_write_reg(MPU6050_DEV_ADDR, SMPLRT_DIV, 0x07);   //125HZ采样率
+	fcall	.cocofun_2
 .L154:
-	mov	d5,#25
+	mov	d6,#7
+	call	simiic_write_reg
+
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MPU6050.c	    54      while(0x07 != simiic_read_reg(MPU6050_DEV_ADDR, SMPLRT_DIV,SIMIIC))
+.L2:
+	fcall	.cocofun_2
 .L155:
 	mov	d6,#0
 	call	simiic_read_reg
 .L156:
-	jne	d2,#7,.L3
+	jne	d2,#7,.L2
 .L157:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_MPU6050.c	    55      {
@@ -109,13 +102,26 @@ mpu6050_self1_check:	.type	func
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_MPU6050.c	    61      }
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_MPU6050.c	    62  }
 	ret
-.L54:
+.L68:
 	
 __mpu6050_self1_check_function_end:
 	.size	mpu6050_self1_check,__mpu6050_self1_check_function_end-mpu6050_self1_check
-.L35:
+.L38:
 	; End of function
 	
+	.sdecl	'.text.SEEKFREE_MPU6050..cocofun_2',code,cluster('.cocofun_2')
+	.sect	'.text.SEEKFREE_MPU6050..cocofun_2'
+	.align	2
+; Function .cocofun_2
+.L6:
+.cocofun_2:	.type	func
+; Function body .cocofun_2, coco_iter:0
+	mov	d4,#104
+.L167:
+	mov	d5,#25
+	fret
+.L48:
+	; End of function
 	.sdecl	'.text.SEEKFREE_MPU6050.mpu6050_init',code,cluster('mpu6050_init')
 	.sect	'.text.SEEKFREE_MPU6050.mpu6050_init'
 	.align	2
@@ -133,96 +139,90 @@ __mpu6050_self1_check_function_end:
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_MPU6050.c	    71  //-------------------------------------------------------------------------------------------------------------------
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_MPU6050.c	    72  void mpu6050_init(void)
 ; Function mpu6050_init
-.L7:
+.L8:
 mpu6050_init:	.type	func
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_MPU6050.c	    73  {
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_MPU6050.c	    74  	simiic_init();
 	call	simiic_init
-.L66:
+.L83:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_MPU6050.c	    75      systick_delay_ms(STM0, 100);                                   //上电延时
 	mov	d4,#0
 	mov.u	d5,#57600
 	addih	d5,d5,#1525
 	call	systick_delay
-.L67:
+.L84:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_MPU6050.c	    76  
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_MPU6050.c	    77      mpu6050_self1_check();
 	call	mpu6050_self1_check
-.L68:
+.L85:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_MPU6050.c	    78      simiic_write_reg(MPU6050_DEV_ADDR, PWR_MGMT_1, 0x00);	//解除休眠状态
 	mov	d4,#104
-.L69:
+.L86:
 	mov	d5,#107
-.L70:
+.L87:
 	mov	d6,#0
 	call	simiic_write_reg
-.L71:
+.L88:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_MPU6050.c	    79      simiic_write_reg(MPU6050_DEV_ADDR, SMPLRT_DIV, 0x07);   //125HZ采样率
-	mov	d4,#104
-.L72:
-	mov	d5,#25
-.L73:
+	fcall	.cocofun_2
+.L89:
 	mov	d6,#7
 	call	simiic_write_reg
-.L74:
+.L90:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_MPU6050.c	    80      simiic_write_reg(MPU6050_DEV_ADDR, MPU6050_CONFIG, 0x04);       //
 	mov	d4,#104
-.L75:
+.L91:
 	mov	d5,#26
-.L76:
+.L92:
 	mov	d6,#4
 	call	simiic_write_reg
-.L77:
+.L93:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_MPU6050.c	    81      simiic_write_reg(MPU6050_DEV_ADDR, GYRO_CONFIG, 0x18);  //2000
 	mov	d4,#104
-.L78:
+.L94:
 	mov	d5,#27
-.L79:
+.L95:
 	mov	d6,#24
 	call	simiic_write_reg
-.L80:
+.L96:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_MPU6050.c	    82      simiic_write_reg(MPU6050_DEV_ADDR, ACCEL_CONFIG, 0x10); //8g
 	mov	d4,#104
-.L81:
+.L97:
 	mov	d5,#28
-.L82:
+.L98:
 	mov	d6,#16
 	call	simiic_write_reg
-.L83:
+.L99:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_MPU6050.c	    83  	simiic_write_reg(MPU6050_DEV_ADDR, User_Control, 0x00);
 	mov	d4,#104
-.L84:
+.L100:
 	mov	d5,#106
-.L85:
+.L101:
 	mov	d6,#0
 	call	simiic_write_reg
-.L86:
+.L102:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_MPU6050.c	    84      simiic_write_reg(MPU6050_DEV_ADDR, INT_PIN_CFG, 0x02);
 	mov	d4,#104
-.L87:
+.L103:
 	mov	d5,#55
-.L88:
+.L104:
 	mov	d6,#2
-	call	simiic_write_reg
-.L89:
-
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MPU6050.c	    85  }
-	ret
-.L48:
+	j	simiic_write_reg
+.L61:
 	
 __mpu6050_init_function_end:
 	.size	mpu6050_init,__mpu6050_init_function_end-mpu6050_init
-.L20:
+.L23:
 	; End of function
 	
 	.sdecl	'.text.SEEKFREE_MPU6050.get_accdata',code,cluster('get_accdata')
@@ -231,6 +231,7 @@ __mpu6050_init_function_end:
 	
 	.global	get_accdata
 
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MPU6050.c	    85  }
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_MPU6050.c	    86  
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_MPU6050.c	    87  
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_MPU6050.c	    88  
@@ -243,81 +244,86 @@ __mpu6050_init_function_end:
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_MPU6050.c	    95  //-------------------------------------------------------------------------------------------------------------------
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_MPU6050.c	    96  void get_accdata(void)
 ; Function get_accdata
-.L9:
+.L10:
 get_accdata:	.type	func
-	sub.a	a10,#8
-.L56:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_MPU6050.c	    97  {
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_MPU6050.c	    98      uint8 dat[6];
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_MPU6050.c	    99  
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_MPU6050.c	   100      simiic_read_regs(MPU6050_DEV_ADDR, ACCEL_XOUT_H, dat, 6, SIMIIC);  
 	mov	d4,#104
-.L94:
+	sub.a	a10,#8
+.L71:
 	mov	d5,#59
-.L95:
-	lea	a4,[a10]0
-.L96:
+	mov.aa	a4,a10
+.L109:
 	mov	d6,#6
-.L97:
+.L110:
 	mov	d7,#0
 	call	simiic_read_regs
-.L98:
+.L111:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_MPU6050.c	   101      mpu_acc_x = (int16)(((uint16)dat[0]<<8 | dat[1]));
-	movh.a	a15,#@his(mpu_acc_x)
-	lea	a15,[a15]@los(mpu_acc_x)
-.L99:
 	ld.bu	d15,[a10]
-.L100:
-	sha	d0,d15,#8
-.L101:
+.L112:
+	movh.a	a15,#@his(mpu_acc_x)
+.L113:
+	fcall	.cocofun_1
+.L72:
 	ld.bu	d15,[a10]1
-.L102:
-	or	d0,d15
-.L103:
-	st.h	[a15],d0
-.L104:
+.L73:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_MPU6050.c	   102      mpu_acc_y = (int16)(((uint16)dat[2]<<8 | dat[3]));
-	movh.a	a15,#@his(mpu_acc_y)
-	lea	a15,[a15]@los(mpu_acc_y)
-.L105:
-	ld.bu	d15,[a10]2
-.L106:
-	sha	d0,d15,#8
-.L107:
-	ld.bu	d15,[a10]3
-.L108:
 	or	d0,d15
-.L109:
-	st.h	[a15],d0
-.L110:
+	ld.bu	d15,[a10]2
+.L114:
+	st.h	[a15]@los(mpu_acc_x),d0
+.L115:
+	movh.a	a15,#@his(mpu_acc_y)
+.L116:
+	fcall	.cocofun_1
+.L117:
+	ld.bu	d15,[a10]3
+.L118:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_MPU6050.c	   103      mpu_acc_z = (int16)(((uint16)dat[4]<<8 | dat[5]));
-	movh.a	a15,#@his(mpu_acc_z)
-	lea	a15,[a15]@los(mpu_acc_z)
-.L111:
-	ld.bu	d15,[a10]4
-.L112:
-	sha	d0,d15,#8
-.L113:
-	ld.bu	d15,[a10]5
-.L114:
 	or	d0,d15
-.L115:
-	st.h	[a15],d0
-.L116:
+	ld.bu	d15,[a10]4
+.L119:
+	st.h	[a15]@los(mpu_acc_y),d0
+.L120:
+	movh.a	a15,#@his(mpu_acc_z)
+.L121:
+	fcall	.cocofun_1
+.L122:
+	ld.bu	d15,[a10]5
+.L123:
+	or	d0,d15
+	st.h	[a15]@los(mpu_acc_z),d0
+.L124:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_MPU6050.c	   104  }
 	ret
-.L49:
+.L62:
 	
 __get_accdata_function_end:
 	.size	get_accdata,__get_accdata_function_end-get_accdata
-.L25:
+.L28:
 	; End of function
 	
+	.sdecl	'.text.SEEKFREE_MPU6050..cocofun_1',code,cluster('.cocofun_1')
+	.sect	'.text.SEEKFREE_MPU6050..cocofun_1'
+	.align	2
+; Function .cocofun_1
+.L12:
+.cocofun_1:	.type	func
+; Function body .cocofun_1, coco_iter:0
+	sha	d15,d15,#8
+.L162:
+	extr	d0,d15,#0,#16
+	fret
+.L43:
+	; End of function
 	.sdecl	'.text.SEEKFREE_MPU6050.get_gyro',code,cluster('get_gyro')
 	.sect	'.text.SEEKFREE_MPU6050.get_gyro'
 	.align	2
@@ -335,79 +341,71 @@ __get_accdata_function_end:
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_MPU6050.c	   113  //-------------------------------------------------------------------------------------------------------------------
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_MPU6050.c	   114  void get_gyro(void)
 ; Function get_gyro
-.L11:
+.L14:
 get_gyro:	.type	func
-	sub.a	a10,#8
-.L57:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_MPU6050.c	   115  {
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_MPU6050.c	   116      uint8 dat[6];
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_MPU6050.c	   117  
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_MPU6050.c	   118      simiic_read_regs(MPU6050_DEV_ADDR, GYRO_XOUT_H, dat, 6, SIMIIC);  
 	mov	d4,#104
-.L121:
+	sub.a	a10,#8
+.L74:
 	mov	d5,#67
-.L122:
-	lea	a4,[a10]0
-.L123:
+	mov.aa	a4,a10
+.L129:
 	mov	d6,#6
-.L124:
+.L130:
 	mov	d7,#0
 	call	simiic_read_regs
-.L125:
-
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MPU6050.c	   119      mpu_gyro_x = (int16)(((uint16)dat[0]<<8 | dat[1]));
-	movh.a	a15,#@his(mpu_gyro_x)
-	lea	a15,[a15]@los(mpu_gyro_x)
-.L126:
-	ld.bu	d15,[a10]
-.L127:
-	sha	d0,d15,#8
-.L128:
-	ld.bu	d15,[a10]1
-.L129:
-	or	d0,d15
-.L130:
-	st.h	[a15],d0
 .L131:
 
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MPU6050.c	   120      mpu_gyro_y = (int16)(((uint16)dat[2]<<8 | dat[3]));
-	movh.a	a15,#@his(mpu_gyro_y)
-	lea	a15,[a15]@los(mpu_gyro_y)
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MPU6050.c	   119      mpu_gyro_x = (int16)(((uint16)dat[0]<<8 | dat[1]));
+	ld.bu	d15,[a10]
 .L132:
-	ld.bu	d15,[a10]2
+	movh.a	a15,#@his(mpu_gyro_x)
 .L133:
-	sha	d0,d15,#8
+	fcall	.cocofun_1
 .L134:
-	ld.bu	d15,[a10]3
+	ld.bu	d15,[a10]1
 .L135:
+
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MPU6050.c	   120      mpu_gyro_y = (int16)(((uint16)dat[2]<<8 | dat[3]));
 	or	d0,d15
+	ld.bu	d15,[a10]2
 .L136:
-	st.h	[a15],d0
+	st.h	[a15]@los(mpu_gyro_x),d0
 .L137:
+	movh.a	a15,#@his(mpu_gyro_y)
+.L138:
+	fcall	.cocofun_1
+.L139:
+	ld.bu	d15,[a10]3
+.L140:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_MPU6050.c	   121      mpu_gyro_z = (int16)(((uint16)dat[4]<<8 | dat[5]));
-	movh.a	a15,#@his(mpu_gyro_z)
-	lea	a15,[a15]@los(mpu_gyro_z)
-.L138:
-	ld.bu	d15,[a10]4
-.L139:
-	sha	d0,d15,#8
-.L140:
-	ld.bu	d15,[a10]5
-.L141:
 	or	d0,d15
+	ld.bu	d15,[a10]4
+.L141:
+	st.h	[a15]@los(mpu_gyro_y),d0
 .L142:
-	st.h	[a15],d0
+	movh.a	a15,#@his(mpu_gyro_z)
 .L143:
+	fcall	.cocofun_1
+.L144:
+	ld.bu	d15,[a10]5
+.L145:
+	or	d0,d15
+	st.h	[a15]@los(mpu_gyro_z),d0
+.L146:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_MPU6050.c	   122  }
 	ret
-.L52:
+.L66:
 	
 __get_gyro_function_end:
 	.size	get_gyro,__get_gyro_function_end-get_gyro
-.L30:
+.L33:
 	; End of function
 	
 	.sdecl	'.bss.SEEKFREE_MPU6050.mpu_gyro_x',data,cluster('mpu_gyro_x')
@@ -460,9 +458,15 @@ mpu_acc_z:	.type	object
 	.calls	'mpu6050_init','simiic_write_reg'
 	.calls	'get_accdata','simiic_read_regs'
 	.calls	'get_gyro','simiic_read_regs'
+	.calls	'mpu6050_self1_check','.cocofun_2'
+	.calls	'mpu6050_init','.cocofun_2'
+	.calls	'get_accdata','.cocofun_1'
+	.calls	'get_gyro','.cocofun_1'
 	.calls	'mpu6050_self1_check','',0
+	.calls	'.cocofun_2','',0
 	.calls	'mpu6050_init','',0
 	.calls	'get_accdata','',8
+	.calls	'.cocofun_1','',0
 	.extern	systick_delay
 	.extern	simiic_write_reg
 	.extern	simiic_read_reg
@@ -471,17 +475,17 @@ mpu_acc_z:	.type	object
 	.calls	'get_gyro','',8
 	.sdecl	'.debug_info',debug
 	.sect	'.debug_info'
-.L13:
+.L16:
 	.word	983
 	.half	3
-	.word	.L14
+	.word	.L17
 	.byte	4
-.L12:
+.L15:
 	.byte	1
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_MPU6050.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L15
+	.word	.L18
 	.byte	2
 	.byte	'int',0,4,5,3
 	.word	172
@@ -561,7 +565,7 @@ mpu_acc_z:	.type	object
 	.word	472
 	.byte	0,16
 	.byte	'simiic_init',0,2,61,7,1,1,1,1
-.L50:
+.L64:
 	.byte	17,6
 	.word	389
 	.byte	18,5,0,19
@@ -590,7 +594,7 @@ mpu_acc_z:	.type	object
 	.byte	'char',0,1,6,19
 	.byte	'int8',0,5,33,29
 	.word	846
-.L55:
+.L70:
 	.byte	2
 	.byte	'short int',0,2,5,19
 	.byte	'int16',0,5,34,29
@@ -612,7 +616,7 @@ mpu_acc_z:	.type	object
 	.byte	0
 	.sdecl	'.debug_abbrev',debug
 	.sect	'.debug_abbrev'
-.L14:
+.L17:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,16,6,0,0,2,36,0,3,8,11,15,62,15,0,0,3,38,0,73,19,0,0,4,46,1,3,8,54
 	.byte	15,39,12,63,12,60,12,0,0,5,5,0,73,19,0,0,6,53,0,73,19,0,0,7,15,0,73,19,0,0,8,46,1,3,8,73,19,54,15,39,12
 	.byte	63,12,60,12,0,0,9,5,0,3,8,73,19,0,0,10,4,1,58,15,59,15,57,15,11,15,0,0,11,40,0,3,8,28,13,0,0,12,46,1,3
@@ -622,12 +626,12 @@ mpu_acc_z:	.type	object
 	.byte	15,57,15,73,19,0,0,20,21,0,54,15,0,0,0
 	.sdecl	'.debug_line',debug
 	.sect	'.debug_line'
-.L15:
-	.word	.L59-.L58
-.L58:
+.L18:
+	.word	.L76-.L75
+.L75:
 	.half	3
-	.word	.L61-.L60
-.L60:
+	.word	.L78-.L77
+.L77:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\seekfree_libraries',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Std',0
@@ -637,262 +641,234 @@ mpu_acc_z:	.type	object
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_MPU6050.c',0,0,0,0
 	.byte	'PLATFORM_TYPES.H',0,2,0,0
 	.byte	'common.h',0,3,0,0,0
-.L61:
-.L59:
+.L78:
+.L76:
 	.sdecl	'.debug_info',debug,cluster('mpu6050_init')
 	.sect	'.debug_info'
-.L16:
+.L19:
 	.word	220
 	.half	3
-	.word	.L17
+	.word	.L20
 	.byte	4,1
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_MPU6050.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L19,.L18
+	.word	.L22,.L21
 	.byte	2
-	.word	.L12
+	.word	.L15
 	.byte	3
 	.byte	'mpu6050_init',0,1,72,6,1,1,1
-	.word	.L7,.L48,.L6
+	.word	.L8,.L61,.L7
 	.byte	4
-	.word	.L7,.L48
+	.word	.L8,.L61
 	.byte	0,0
 	.sdecl	'.debug_abbrev',debug,cluster('mpu6050_init')
 	.sect	'.debug_abbrev'
-.L17:
+.L20:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
 	.sdecl	'.debug_line',debug,cluster('mpu6050_init')
 	.sect	'.debug_line'
-.L18:
-	.word	.L63-.L62
-.L62:
+.L21:
+	.word	.L80-.L79
+.L79:
 	.half	3
-	.word	.L65-.L64
-.L64:
+	.word	.L82-.L81
+.L81:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_MPU6050.c',0,0,0,0,0
-.L65:
+.L82:
 	.byte	5,13,7,0,5,2
-	.word	.L7
+	.word	.L8
 	.byte	3,201,0,1,5,5,9
-	.half	.L66-.L7
+	.half	.L83-.L8
 	.byte	3,1,1,5,24,9
-	.half	.L67-.L66
-	.byte	3,2,1,5,22,9
-	.half	.L68-.L67
-	.byte	3,1,1,5,40,9
-	.half	.L69-.L68
-	.byte	1,5,52,9
-	.half	.L70-.L69
-	.byte	1,5,22,9
-	.half	.L71-.L70
-	.byte	3,1,1,5,40,9
-	.half	.L72-.L71
-	.byte	1,5,52,9
-	.half	.L73-.L72
-	.byte	1,5,22,9
-	.half	.L74-.L73
-	.byte	3,1,1,5,40,9
-	.half	.L75-.L74
-	.byte	1,5,56,9
-	.half	.L76-.L75
-	.byte	1,5,22,9
-	.half	.L77-.L76
-	.byte	3,1,1,5,40,9
-	.half	.L78-.L77
-	.byte	1,5,53,9
-	.half	.L79-.L78
-	.byte	1,5,22,9
-	.half	.L80-.L79
-	.byte	3,1,1,5,40,9
-	.half	.L81-.L80
-	.byte	1,5,54,9
-	.half	.L82-.L81
-	.byte	1,5,19,9
-	.half	.L83-.L82
-	.byte	3,1,1,5,37,9
 	.half	.L84-.L83
-	.byte	1,5,51,9
+	.byte	3,2,1,5,22,9
 	.half	.L85-.L84
-	.byte	1,5,22,9
-	.half	.L86-.L85
 	.byte	3,1,1,5,40,9
+	.half	.L86-.L85
+	.byte	1,5,52,9
 	.half	.L87-.L86
-	.byte	1,5,53,9
+	.byte	1,5,22,9
 	.half	.L88-.L87
-	.byte	1,5,1,9
+	.byte	3,1,1,5,52,9
 	.half	.L89-.L88
-	.byte	3,1,1,7,9
-	.half	.L20-.L89
-	.byte	0,1,1
-.L63:
+	.byte	1,5,22,9
+	.half	.L90-.L89
+	.byte	3,1,1,5,40,9
+	.half	.L91-.L90
+	.byte	1,5,56,9
+	.half	.L92-.L91
+	.byte	1,5,22,9
+	.half	.L93-.L92
+	.byte	3,1,1,5,40,9
+	.half	.L94-.L93
+	.byte	1,5,53,9
+	.half	.L95-.L94
+	.byte	1,5,22,9
+	.half	.L96-.L95
+	.byte	3,1,1,5,40,9
+	.half	.L97-.L96
+	.byte	1,5,54,9
+	.half	.L98-.L97
+	.byte	1,5,19,9
+	.half	.L99-.L98
+	.byte	3,1,1,5,37,9
+	.half	.L100-.L99
+	.byte	1,5,51,9
+	.half	.L101-.L100
+	.byte	1,5,22,9
+	.half	.L102-.L101
+	.byte	3,1,1,5,40,9
+	.half	.L103-.L102
+	.byte	1,5,53,9
+	.half	.L104-.L103
+	.byte	1,5,1,9
+	.half	.L23-.L104
+	.byte	3,1,0,1,1
+.L80:
 	.sdecl	'.debug_ranges',debug,cluster('mpu6050_init')
 	.sect	'.debug_ranges'
-.L19:
-	.word	-1,.L7,0,.L20-.L7,0,0
+.L22:
+	.word	-1,.L8,0,.L23-.L8,0,0
 	.sdecl	'.debug_info',debug,cluster('get_accdata')
 	.sect	'.debug_info'
-.L21:
-	.word	236
+.L24:
+	.word	232
 	.half	3
-	.word	.L22
+	.word	.L25
 	.byte	4,1
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_MPU6050.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L24,.L23
+	.word	.L27,.L26
 	.byte	2
-	.word	.L12
+	.word	.L15
 	.byte	3
 	.byte	'get_accdata',0,1,96,6,1,1,1
-	.word	.L9,.L49,.L8
+	.word	.L10,.L62,.L9
 	.byte	4
-	.word	.L9,.L49
+	.word	.L63
 	.byte	5
 	.byte	'dat',0,1,98,11
-	.word	.L50,.L51
+	.word	.L64,.L65
 	.byte	0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('get_accdata')
 	.sect	'.debug_abbrev'
-.L22:
+.L25:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
-	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,1,17,1,18,1,0,0,5,52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,1,85,6,0,0,5,52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
 	.sdecl	'.debug_line',debug,cluster('get_accdata')
 	.sect	'.debug_line'
-.L23:
-	.word	.L91-.L90
-.L90:
+.L26:
+	.word	.L106-.L105
+.L105:
 	.half	3
-	.word	.L93-.L92
-.L92:
+	.word	.L108-.L107
+.L107:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_MPU6050.c',0,0,0,0,0
-.L93:
-	.byte	5,6,7,0,5,2
-	.word	.L9
-	.byte	3,223,0,1,5,22,9
-	.half	.L56-.L9
-	.byte	3,4,1,5,40,9
-	.half	.L94-.L56
-	.byte	1,5,54,9
-	.half	.L95-.L94
-	.byte	1,5,59,9
-	.half	.L96-.L95
+.L108:
+	.byte	5,22,7,0,5,2
+	.word	.L10
+	.byte	3,227,0,1,5,6,3,124,1,5,40,9
+	.half	.L71-.L10
+	.byte	3,4,1,5,54,1,5,59,9
+	.half	.L109-.L71
 	.byte	1,5,62,9
-	.half	.L97-.L96
-	.byte	1,5,5,9
-	.half	.L98-.L97
-	.byte	3,1,1,5,37,9
-	.half	.L99-.L98
-	.byte	1,5,40,9
-	.half	.L100-.L99
-	.byte	1,5,49,9
-	.half	.L101-.L100
-	.byte	1,5,44,9
-	.half	.L102-.L101
-	.byte	1,5,15,9
-	.half	.L103-.L102
-	.byte	1,5,5,9
-	.half	.L104-.L103
-	.byte	3,1,1,5,37,9
-	.half	.L105-.L104
-	.byte	1,5,40,9
-	.half	.L106-.L105
-	.byte	1,5,49,9
-	.half	.L107-.L106
-	.byte	1,5,44,9
-	.half	.L108-.L107
-	.byte	1,5,15,9
-	.half	.L109-.L108
-	.byte	1,5,5,9
 	.half	.L110-.L109
-	.byte	3,1,1,5,37,9
+	.byte	1,5,37,9
 	.half	.L111-.L110
-	.byte	1,5,40,9
+	.byte	3,1,1,5,5,9
 	.half	.L112-.L111
-	.byte	1,5,49,9
+	.byte	1,5,40,9
 	.half	.L113-.L112
+	.byte	1,5,49,9
+	.half	.L72-.L113
 	.byte	1,5,44,9
-	.half	.L114-.L113
-	.byte	1,5,15,9
+	.half	.L73-.L72
+	.byte	1,5,37,3,1,1,5,15,9
+	.half	.L114-.L73
+	.byte	3,127,1,5,5,9
 	.half	.L115-.L114
-	.byte	1,5,1,9
+	.byte	3,1,1,5,40,9
 	.half	.L116-.L115
+	.byte	1,5,49,9
+	.half	.L117-.L116
+	.byte	1,5,44,9
+	.half	.L118-.L117
+	.byte	1,5,37,3,1,1,5,15,9
+	.half	.L119-.L118
+	.byte	3,127,1,5,5,9
+	.half	.L120-.L119
+	.byte	3,1,1,5,40,9
+	.half	.L121-.L120
+	.byte	1,5,49,9
+	.half	.L122-.L121
+	.byte	1,5,44,9
+	.half	.L123-.L122
+	.byte	1,5,15,1,5,1,9
+	.half	.L124-.L123
 	.byte	3,1,1,7,9
-	.half	.L25-.L116
+	.half	.L28-.L124
 	.byte	0,1,1
-.L91:
+.L106:
 	.sdecl	'.debug_ranges',debug,cluster('get_accdata')
 	.sect	'.debug_ranges'
-.L24:
-	.word	-1,.L9,0,.L25-.L9,0,0
+.L27:
+	.word	-1,.L10,0,.L28-.L10,0,0
+.L63:
+	.word	-1,.L10,0,.L62-.L10,-1,.L12,0,.L43-.L12,0,0
 	.sdecl	'.debug_info',debug,cluster('get_gyro')
 	.sect	'.debug_info'
-.L26:
+.L29:
 	.word	233
 	.half	3
-	.word	.L27
+	.word	.L30
 	.byte	4,1
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_MPU6050.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L29,.L28
+	.word	.L32,.L31
 	.byte	2
-	.word	.L12
+	.word	.L15
 	.byte	3
 	.byte	'get_gyro',0,1,114,6,1,1,1
-	.word	.L11,.L52,.L10
+	.word	.L14,.L66,.L13
 	.byte	4
-	.word	.L11,.L52
+	.word	.L14,.L66
 	.byte	5
 	.byte	'dat',0,1,116,11
-	.word	.L50,.L53
+	.word	.L64,.L67
 	.byte	0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('get_gyro')
 	.sect	'.debug_abbrev'
-.L27:
+.L30:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,1,17,1,18,1,0,0,5,52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
 	.sdecl	'.debug_line',debug,cluster('get_gyro')
 	.sect	'.debug_line'
-.L28:
-	.word	.L118-.L117
-.L117:
+.L31:
+	.word	.L126-.L125
+.L125:
 	.half	3
-	.word	.L120-.L119
-.L119:
+	.word	.L128-.L127
+.L127:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_MPU6050.c',0,0,0,0,0
-.L120:
-	.byte	5,6,7,0,5,2
-	.word	.L11
-	.byte	3,241,0,1,5,22,9
-	.half	.L57-.L11
-	.byte	3,4,1,5,40,9
-	.half	.L121-.L57
-	.byte	1,5,53,9
-	.half	.L122-.L121
-	.byte	1,5,58,9
-	.half	.L123-.L122
+.L128:
+	.byte	5,22,7,0,5,2
+	.word	.L14
+	.byte	3,245,0,1,5,6,3,124,1,5,40,9
+	.half	.L74-.L14
+	.byte	3,4,1,5,53,1,5,58,9
+	.half	.L129-.L74
 	.byte	1,5,61,9
-	.half	.L124-.L123
-	.byte	1,5,5,9
-	.half	.L125-.L124
-	.byte	3,1,1,5,38,9
-	.half	.L126-.L125
-	.byte	1,5,41,9
-	.half	.L127-.L126
-	.byte	1,5,50,9
-	.half	.L128-.L127
-	.byte	1,5,45,9
-	.half	.L129-.L128
-	.byte	1,5,16,9
 	.half	.L130-.L129
-	.byte	1,5,5,9
+	.byte	1,5,38,9
 	.half	.L131-.L130
-	.byte	3,1,1,5,38,9
+	.byte	3,1,1,5,5,9
 	.half	.L132-.L131
 	.byte	1,5,41,9
 	.half	.L133-.L132
@@ -900,282 +876,437 @@ mpu_acc_z:	.type	object
 	.half	.L134-.L133
 	.byte	1,5,45,9
 	.half	.L135-.L134
-	.byte	1,5,16,9
+	.byte	1,5,38,3,1,1,5,16,9
 	.half	.L136-.L135
-	.byte	1,5,5,9
+	.byte	3,127,1,5,5,9
 	.half	.L137-.L136
-	.byte	3,1,1,5,38,9
+	.byte	3,1,1,5,41,9
 	.half	.L138-.L137
-	.byte	1,5,41,9
-	.half	.L139-.L138
 	.byte	1,5,50,9
-	.half	.L140-.L139
+	.half	.L139-.L138
 	.byte	1,5,45,9
+	.half	.L140-.L139
+	.byte	1,5,38,3,1,1,5,16,9
 	.half	.L141-.L140
-	.byte	1,5,16,9
+	.byte	3,127,1,5,5,9
 	.half	.L142-.L141
-	.byte	1,5,1,9
+	.byte	3,1,1,5,41,9
 	.half	.L143-.L142
+	.byte	1,5,50,9
+	.half	.L144-.L143
+	.byte	1,5,45,9
+	.half	.L145-.L144
+	.byte	1,5,16,1,5,1,9
+	.half	.L146-.L145
 	.byte	3,1,1,7,9
-	.half	.L30-.L143
+	.half	.L33-.L146
 	.byte	0,1,1
-.L118:
+.L126:
 	.sdecl	'.debug_ranges',debug,cluster('get_gyro')
 	.sect	'.debug_ranges'
-.L29:
-	.word	-1,.L11,0,.L30-.L11,0,0
+.L32:
+	.word	-1,.L14,0,.L33-.L14,0,0
 	.sdecl	'.debug_info',debug,cluster('mpu6050_self1_check')
 	.sect	'.debug_info'
-.L31:
-	.word	227
+.L34:
+	.word	223
 	.half	3
-	.word	.L32
+	.word	.L35
 	.byte	4,1
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_MPU6050.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L34,.L33
+	.word	.L37,.L36
 	.byte	2
-	.word	.L12
+	.word	.L15
 	.byte	3
 	.byte	'mpu6050_self1_check',0,1,50,6,1,1,1
-	.word	.L5,.L54,.L4
+	.word	.L4,.L68,.L3
 	.byte	4
-	.word	.L5,.L54
+	.word	.L69
 	.byte	0,0
 	.sdecl	'.debug_abbrev',debug,cluster('mpu6050_self1_check')
 	.sect	'.debug_abbrev'
-.L32:
+.L35:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
-	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,85,6,0,0,0
 	.sdecl	'.debug_line',debug,cluster('mpu6050_self1_check')
 	.sect	'.debug_line'
-.L33:
-	.word	.L145-.L144
-.L144:
+.L36:
+	.word	.L148-.L147
+.L147:
 	.half	3
-	.word	.L147-.L146
-.L146:
+	.word	.L150-.L149
+.L149:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_MPU6050.c',0,0,0,0,0
-.L147:
+.L150:
 	.byte	5,22,7,0,5,2
-	.word	.L5
+	.word	.L4
 	.byte	3,51,1,5,40,9
-	.half	.L148-.L5
-	.byte	1,5,52,9
-	.half	.L149-.L148
-	.byte	1,5,22,9
-	.half	.L150-.L149
-	.byte	3,1,1,5,40,9
-	.half	.L151-.L150
+	.half	.L151-.L4
 	.byte	1,5,52,9
 	.half	.L152-.L151
-	.byte	1,5,71,9
+	.byte	1,5,22,9
 	.half	.L153-.L152
-	.byte	3,1,1,5,35,9
-	.half	.L2-.L153
-	.byte	1,5,53,9
-	.half	.L154-.L2
-	.byte	1,5,64,9
-	.half	.L155-.L154
+	.byte	3,1,1,5,52,9
+	.half	.L154-.L153
+	.byte	1,5,35,9
+	.half	.L2-.L154
+	.byte	3,1,1,5,64,9
+	.half	.L155-.L2
 	.byte	1,5,71,9
 	.half	.L156-.L155
 	.byte	1,5,1,7,9
 	.half	.L157-.L156
 	.byte	3,8,1,7,9
-	.half	.L35-.L157
+	.half	.L38-.L157
 	.byte	0,1,1
-.L145:
+.L148:
 	.sdecl	'.debug_ranges',debug,cluster('mpu6050_self1_check')
 	.sect	'.debug_ranges'
-.L34:
-	.word	-1,.L5,0,.L35-.L5,0,0
-	.sdecl	'.debug_info',debug,cluster('mpu_gyro_x')
-	.sect	'.debug_info'
-.L36:
-	.word	196
-	.half	3
-	.word	.L37
-	.byte	4,1
-	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_MPU6050.c',0
-	.byte	'TASKING VX-toolset for TriCore: C compiler',0
-	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1,2
-	.word	.L12
-	.byte	3
-	.byte	'mpu_gyro_x',0,3,36,7
-	.word	.L55
-	.byte	1,5,3
-	.word	mpu_gyro_x
-	.byte	0
-	.sdecl	'.debug_abbrev',debug,cluster('mpu_gyro_x')
-	.sect	'.debug_abbrev'
 .L37:
-	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
-	.byte	0,0,0
-	.sdecl	'.debug_info',debug,cluster('mpu_gyro_y')
+	.word	-1,.L4,0,.L38-.L4,0,0
+.L69:
+	.word	-1,.L4,0,.L68-.L4,-1,.L6,0,.L48-.L6,0,0
+	.sdecl	'.debug_info',debug,cluster('.cocofun_1')
 	.sect	'.debug_info'
-.L38:
-	.word	196
-	.half	3
-	.word	.L39
-	.byte	4,1
-	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_MPU6050.c',0
-	.byte	'TASKING VX-toolset for TriCore: C compiler',0
-	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1,2
-	.word	.L12
-	.byte	3
-	.byte	'mpu_gyro_y',0,3,36,18
-	.word	.L55
-	.byte	1,5,3
-	.word	mpu_gyro_y
-	.byte	0
-	.sdecl	'.debug_abbrev',debug,cluster('mpu_gyro_y')
-	.sect	'.debug_abbrev'
 .L39:
-	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
-	.byte	0,0,0
-	.sdecl	'.debug_info',debug,cluster('mpu_gyro_z')
-	.sect	'.debug_info'
+	.word	206
+	.half	3
+	.word	.L40
+	.byte	4,1
+	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_MPU6050.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
+	.word	.L42,.L41
+	.byte	2
+	.word	.L15
+	.byte	3
+	.byte	'.cocofun_1',0,1,96,6,1
+	.word	.L12,.L43,.L11
+	.byte	0
+	.sdecl	'.debug_abbrev',debug,cluster('.cocofun_1')
+	.sect	'.debug_abbrev'
 .L40:
-	.word	196
-	.half	3
-	.word	.L41
-	.byte	4,1
-	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_MPU6050.c',0
-	.byte	'TASKING VX-toolset for TriCore: C compiler',0
-	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1,2
-	.word	.L12
-	.byte	3
-	.byte	'mpu_gyro_z',0,3,36,29
-	.word	.L55
-	.byte	1,5,3
-	.word	mpu_gyro_z
-	.byte	0
-	.sdecl	'.debug_abbrev',debug,cluster('mpu_gyro_z')
-	.sect	'.debug_abbrev'
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,0,3,8,58,15,59,15,57,15,54,15
+	.byte	17,1,18,1,64,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('.cocofun_1')
+	.sect	'.debug_line'
 .L41:
-	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
-	.byte	0,0,0
-	.sdecl	'.debug_info',debug,cluster('mpu_acc_x')
-	.sect	'.debug_info'
-.L42:
-	.word	195
+	.word	.L159-.L158
+.L158:
 	.half	3
-	.word	.L43
-	.byte	4,1
-	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_MPU6050.c',0
-	.byte	'TASKING VX-toolset for TriCore: C compiler',0
-	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1,2
+	.word	.L161-.L160
+.L160:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_MPU6050.c',0,0,0,0,0
+.L161:
+	.byte	5,40,7,0,5,2
 	.word	.L12
-	.byte	3
-	.byte	'mpu_acc_x',0,3,37,7
-	.word	.L55
-	.byte	1,5,3
-	.word	mpu_acc_x
-	.byte	0
-	.sdecl	'.debug_abbrev',debug,cluster('mpu_acc_x')
-	.sect	'.debug_abbrev'
-.L43:
-	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
-	.byte	0,0,0
-	.sdecl	'.debug_info',debug,cluster('mpu_acc_y')
+	.byte	3,228,0,1,9
+	.half	.L43-.L12
+	.byte	0,1,1,5,40,0,5,2
+	.word	.L12
+	.byte	3,229,0,1,9
+	.half	.L162-.L12
+	.byte	3,127,1,7,9
+	.half	.L43-.L162
+	.byte	0,1,1,5,40,0,5,2
+	.word	.L12
+	.byte	3,230,0,1,9
+	.half	.L162-.L12
+	.byte	3,126,1,7,9
+	.half	.L43-.L162
+	.byte	0,1,1,5,41,0,5,2
+	.word	.L12
+	.byte	3,246,0,1,5,40,9
+	.half	.L162-.L12
+	.byte	3,110,1,7,9
+	.half	.L43-.L162
+	.byte	0,1,1,5,41,0,5,2
+	.word	.L12
+	.byte	3,247,0,1,5,40,9
+	.half	.L162-.L12
+	.byte	3,109,1,7,9
+	.half	.L43-.L162
+	.byte	0,1,1,5,41,0,5,2
+	.word	.L12
+	.byte	3,248,0,1,5,40,9
+	.half	.L162-.L12
+	.byte	3,108,1,7,9
+	.half	.L43-.L162
+	.byte	0,1,1
+.L159:
+	.sdecl	'.debug_ranges',debug,cluster('.cocofun_1')
+	.sect	'.debug_ranges'
+.L42:
+	.word	-1,.L12,0,.L43-.L12,0,0
+	.sdecl	'.debug_info',debug,cluster('.cocofun_2')
 	.sect	'.debug_info'
 .L44:
-	.word	195
+	.word	206
 	.half	3
 	.word	.L45
 	.byte	4,1
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_MPU6050.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
+	.word	.L47,.L46
+	.byte	2
+	.word	.L15
+	.byte	3
+	.byte	'.cocofun_2',0,1,50,6,1
+	.word	.L6,.L48,.L5
+	.byte	0
+	.sdecl	'.debug_abbrev',debug,cluster('.cocofun_2')
+	.sect	'.debug_abbrev'
+.L45:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,0,3,8,58,15,59,15,57,15,54,15
+	.byte	17,1,18,1,64,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('.cocofun_2')
+	.sect	'.debug_line'
+.L46:
+	.word	.L164-.L163
+.L163:
+	.half	3
+	.word	.L166-.L165
+.L165:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_MPU6050.c',0,0,0,0,0
+.L166:
+	.byte	5,35,7,0,5,2
+	.word	.L6
+	.byte	3,53,1,5,53,9
+	.half	.L167-.L6
+	.byte	1,9
+	.half	.L48-.L167
+	.byte	0,1,1,5,22,0,5,2
+	.word	.L6
+	.byte	3,52,1,5,40,9
+	.half	.L167-.L6
+	.byte	1,5,53,3,1,1,7,9
+	.half	.L48-.L167
+	.byte	0,1,1,5,22,0,5,2
+	.word	.L6
+	.byte	3,206,0,1,5,40,9
+	.half	.L167-.L6
+	.byte	1,5,53,3,103,1,7,9
+	.half	.L48-.L167
+	.byte	0,1,1
+.L164:
+	.sdecl	'.debug_ranges',debug,cluster('.cocofun_2')
+	.sect	'.debug_ranges'
+.L47:
+	.word	-1,.L6,0,.L48-.L6,0,0
+	.sdecl	'.debug_info',debug,cluster('mpu_gyro_x')
+	.sect	'.debug_info'
+.L49:
+	.word	196
+	.half	3
+	.word	.L50
+	.byte	4,1
+	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_MPU6050.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1,2
-	.word	.L12
+	.word	.L15
+	.byte	3
+	.byte	'mpu_gyro_x',0,3,36,7
+	.word	.L70
+	.byte	1,5,3
+	.word	mpu_gyro_x
+	.byte	0
+	.sdecl	'.debug_abbrev',debug,cluster('mpu_gyro_x')
+	.sect	'.debug_abbrev'
+.L50:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
+	.byte	0,0,0
+	.sdecl	'.debug_info',debug,cluster('mpu_gyro_y')
+	.sect	'.debug_info'
+.L51:
+	.word	196
+	.half	3
+	.word	.L52
+	.byte	4,1
+	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_MPU6050.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1,2
+	.word	.L15
+	.byte	3
+	.byte	'mpu_gyro_y',0,3,36,18
+	.word	.L70
+	.byte	1,5,3
+	.word	mpu_gyro_y
+	.byte	0
+	.sdecl	'.debug_abbrev',debug,cluster('mpu_gyro_y')
+	.sect	'.debug_abbrev'
+.L52:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
+	.byte	0,0,0
+	.sdecl	'.debug_info',debug,cluster('mpu_gyro_z')
+	.sect	'.debug_info'
+.L53:
+	.word	196
+	.half	3
+	.word	.L54
+	.byte	4,1
+	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_MPU6050.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1,2
+	.word	.L15
+	.byte	3
+	.byte	'mpu_gyro_z',0,3,36,29
+	.word	.L70
+	.byte	1,5,3
+	.word	mpu_gyro_z
+	.byte	0
+	.sdecl	'.debug_abbrev',debug,cluster('mpu_gyro_z')
+	.sect	'.debug_abbrev'
+.L54:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
+	.byte	0,0,0
+	.sdecl	'.debug_info',debug,cluster('mpu_acc_x')
+	.sect	'.debug_info'
+.L55:
+	.word	195
+	.half	3
+	.word	.L56
+	.byte	4,1
+	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_MPU6050.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1,2
+	.word	.L15
+	.byte	3
+	.byte	'mpu_acc_x',0,3,37,7
+	.word	.L70
+	.byte	1,5,3
+	.word	mpu_acc_x
+	.byte	0
+	.sdecl	'.debug_abbrev',debug,cluster('mpu_acc_x')
+	.sect	'.debug_abbrev'
+.L56:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
+	.byte	0,0,0
+	.sdecl	'.debug_info',debug,cluster('mpu_acc_y')
+	.sect	'.debug_info'
+.L57:
+	.word	195
+	.half	3
+	.word	.L58
+	.byte	4,1
+	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_MPU6050.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1,2
+	.word	.L15
 	.byte	3
 	.byte	'mpu_acc_y',0,3,37,17
-	.word	.L55
+	.word	.L70
 	.byte	1,5,3
 	.word	mpu_acc_y
 	.byte	0
 	.sdecl	'.debug_abbrev',debug,cluster('mpu_acc_y')
 	.sect	'.debug_abbrev'
-.L45:
+.L58:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
 	.byte	0,0,0
 	.sdecl	'.debug_info',debug,cluster('mpu_acc_z')
 	.sect	'.debug_info'
-.L46:
+.L59:
 	.word	195
 	.half	3
-	.word	.L47
+	.word	.L60
 	.byte	4,1
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_MPU6050.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1,2
-	.word	.L12
+	.word	.L15
 	.byte	3
 	.byte	'mpu_acc_z',0,3,37,27
-	.word	.L55
+	.word	.L70
 	.byte	1,5,3
 	.word	mpu_acc_z
 	.byte	0
 	.sdecl	'.debug_abbrev',debug,cluster('mpu_acc_z')
 	.sect	'.debug_abbrev'
-.L47:
+.L60:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
 	.byte	0,0,0
+	.sdecl	'.debug_loc',debug,cluster('.cocofun_1')
+	.sect	'.debug_loc'
+.L11:
+	.word	-1,.L12,0,.L43-.L12
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('.cocofun_2')
+	.sect	'.debug_loc'
+.L5:
+	.word	-1,.L6,0,.L48-.L6
+	.half	2
+	.byte	138,0
+	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('get_accdata')
 	.sect	'.debug_loc'
-.L51:
-	.word	-1,.L9,0,.L49-.L9
+.L65:
+	.word	-1,.L10,0,.L72-.L10
+	.half	2
+	.byte	145,120
+	.word	.L12-.L10,.L43-.L10
+	.half	2
+	.byte	145,120
+	.word	.L73-.L10,.L62-.L10
 	.half	2
 	.byte	145,120
 	.word	0,0
-.L8:
-	.word	-1,.L9,0,.L56-.L9
+.L9:
+	.word	-1,.L10,0,.L71-.L10
 	.half	2
 	.byte	138,0
-	.word	.L56-.L9,.L49-.L9
+	.word	.L71-.L10,.L62-.L10
 	.half	2
 	.byte	138,8
-	.word	.L49-.L9,.L49-.L9
+	.word	.L62-.L10,.L62-.L10
 	.half	2
 	.byte	138,0
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('get_gyro')
 	.sect	'.debug_loc'
-.L53:
-	.word	-1,.L11,0,.L52-.L11
+.L67:
+	.word	-1,.L14,.L12-.L14,.L43-.L14
+	.half	2
+	.byte	145,120
+	.word	0,.L66-.L14
 	.half	2
 	.byte	145,120
 	.word	0,0
-.L10:
-	.word	-1,.L11,0,.L57-.L11
+.L13:
+	.word	-1,.L14,0,.L74-.L14
 	.half	2
 	.byte	138,0
-	.word	.L57-.L11,.L52-.L11
+	.word	.L74-.L14,.L66-.L14
 	.half	2
 	.byte	138,8
-	.word	.L52-.L11,.L52-.L11
+	.word	.L66-.L14,.L66-.L14
 	.half	2
 	.byte	138,0
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('mpu6050_init')
 	.sect	'.debug_loc'
-.L6:
-	.word	-1,.L7,0,.L48-.L7
+.L7:
+	.word	-1,.L8,0,.L61-.L8
 	.half	2
 	.byte	138,0
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('mpu6050_self1_check')
 	.sect	'.debug_loc'
-.L4:
-	.word	-1,.L5,0,.L54-.L5
+.L3:
+	.word	-1,.L4,0,.L68-.L4
 	.half	2
 	.byte	138,0
 	.word	0,0
 	.sdecl	'.debug_frame',debug
 	.sect	'.debug_frame'
-.L158:
+.L168:
 	.word	48
 	.word	-1
 	.byte	3,0,2,1,27,12,26,0,8,27,8,26,8,28,8,29,8,30,8,31,8,34,8,35,8,32,8,33,8,16,8,17,8,24,8,25,8,36,8,37,8,38
@@ -1183,29 +1314,46 @@ mpu_acc_z:	.type	object
 	.sdecl	'.debug_frame',debug,cluster('mpu6050_self1_check')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L158,.L5,.L54-.L5
+	.word	.L168,.L4,.L68-.L4
 	.sdecl	'.debug_frame',debug,cluster('mpu6050_init')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L158,.L7,.L48-.L7
+	.word	.L168,.L8,.L61-.L8
 	.sdecl	'.debug_frame',debug,cluster('get_accdata')
 	.sect	'.debug_frame'
 	.word	36
-	.word	.L158,.L9,.L49-.L9
+	.word	.L168,.L10,.L62-.L10
 	.byte	4
-	.word	(.L56-.L9)/2
+	.word	(.L71-.L10)/2
 	.byte	19,8,22,26,3,19,138,8,4
-	.word	(.L49-.L56)/2
+	.word	(.L62-.L71)/2
 	.byte	19,0,8,26,0,0
 	.sdecl	'.debug_frame',debug,cluster('get_gyro')
 	.sect	'.debug_frame'
 	.word	36
-	.word	.L158,.L11,.L52-.L11
+	.word	.L168,.L14,.L66-.L14
 	.byte	4
-	.word	(.L57-.L11)/2
+	.word	(.L74-.L14)/2
 	.byte	19,8,22,26,3,19,138,8,4
-	.word	(.L52-.L57)/2
+	.word	(.L66-.L74)/2
 	.byte	19,0,8,26,0,0
+	.sdecl	'.debug_frame',debug
+	.sect	'.debug_frame'
+.L169:
+	.word	52
+	.word	-1
+	.byte	3,0,2,1,40,12,26,0,9,40,27,155,0,7,26,8,28,8,29,8,30,8,31,8,34,8,35,8,32,8,33,8,16,8,17,8,24,8,25,8,36
+	.byte	8,37,8,38,8,39,0
+	.sdecl	'.debug_frame',debug,cluster('.cocofun_2')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L169,.L6,.L48-.L6
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('.cocofun_1')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L169,.L12,.L43-.L12
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_MPU6050.c	   123  
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_MPU6050.c	   124  //-------------------------------------------------------------------------------------------------------------------

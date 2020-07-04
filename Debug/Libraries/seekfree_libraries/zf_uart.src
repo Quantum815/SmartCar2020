@@ -1,6 +1,6 @@
 	; Module start
 	.compiler_version	"TASKING VX-toolset for TriCore: C compiler v6.3r1 Build 19041558 SN 99294086"
-	.compiler_invocation	"ctc --dep-file=Libraries\\seekfree_libraries\\.zf_uart.o.d --fp-model=c,f,l,n,r,S,T,z -D__CPU__=tc26x -D__CPU_TC26X__ --core=tc1.6.x --iso=99 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\CODE -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Build -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Impl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Lib -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Lib\\DataHandling -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Lib\\InternalMux -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_PinMap -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Asc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Lin -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Spi -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\Icu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\PwmBc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\PwmHl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\TimerWithTrigger -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\TPwm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cif -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cif\\Cam -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cif\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\CStart -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Irq -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Trap -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dma -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dma\\Dma -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dma\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc\\Dsadc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc\\Rdc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dts -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dts\\Dts -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dts\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Emem -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Emem\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eray -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eray\\Eray -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eray\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eth -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eth\\Phy_Pef7071 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eth\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fce -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fce\\Crc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fce\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fft -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fft\\Fft -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fft\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Flash -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Flash\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gpt12 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gpt12\\IncrEnc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gpt12\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom\\Pwm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom\\PwmHl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tim -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tim\\In -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom\\Pwm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom\\PwmHl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Trig -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Hssl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Hssl\\Hssl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Hssl\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\I2c -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\I2c\\I2c -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\I2c\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Iom -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Iom\\Driver -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Iom\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Msc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Msc\\Msc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Msc\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Mtu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Mtu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Multican -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Multican\\Can -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Multican\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Port -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Port\\Io -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Port\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5\\Psi5 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5s -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5s\\Psi5s -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5s\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi\\SpiMaster -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi\\SpiSlave -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Scu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Scu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Sent -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Sent\\Sent -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Sent\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Smu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Smu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Src -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Src\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Stm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Stm\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Stm\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Vadc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Vadc\\Adc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Vadc\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Platform -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Platform\\Tricore -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Platform\\Tricore\\Compilers -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Sfr -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Sfr\\TC26B -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Sfr\\TC26B\\_Reg -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Service -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Service\\CpuGeneric -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\seekfree_libraries -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\seekfree_libraries\\common -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\seekfree_peripheral -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\USER -g2 -wW557 --make-target=Libraries\\seekfree_libraries\\zf_uart.o -t4 --language=-gcc,-volatile,+strings,-kanji --default-near-size=0 -O0 --default-a1-size=0 --default-a0-size=0 --source --align=0 --switch=auto --error-limit=42 -o Libraries\\seekfree_libraries\\zf_uart.src ..\\Libraries\\seekfree_libraries\\zf_uart.c"
+	.compiler_invocation	"ctc --dep-file=Libraries\\seekfree_libraries\\.zf_uart.o.d --fp-model=c,f,l,n,r,S,T,z -D__CPU__=tc26x -D__CPU_TC26X__ --core=tc1.6.x --iso=99 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\CODE -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Build -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Impl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Lib -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Lib\\DataHandling -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Lib\\InternalMux -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_PinMap -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Asc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Lin -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Spi -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\Icu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\PwmBc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\PwmHl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\TimerWithTrigger -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\TPwm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cif -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cif\\Cam -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cif\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\CStart -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Irq -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Trap -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dma -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dma\\Dma -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dma\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc\\Dsadc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc\\Rdc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dts -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dts\\Dts -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dts\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Emem -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Emem\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eray -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eray\\Eray -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eray\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eth -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eth\\Phy_Pef7071 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eth\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fce -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fce\\Crc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fce\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fft -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fft\\Fft -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fft\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Flash -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Flash\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gpt12 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gpt12\\IncrEnc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gpt12\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom\\Pwm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom\\PwmHl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tim -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tim\\In -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom\\Pwm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom\\PwmHl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Trig -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Hssl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Hssl\\Hssl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Hssl\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\I2c -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\I2c\\I2c -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\I2c\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Iom -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Iom\\Driver -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Iom\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Msc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Msc\\Msc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Msc\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Mtu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Mtu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Multican -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Multican\\Can -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Multican\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Port -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Port\\Io -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Port\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5\\Psi5 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5s -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5s\\Psi5s -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5s\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi\\SpiMaster -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi\\SpiSlave -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Scu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Scu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Sent -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Sent\\Sent -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Sent\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Smu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Smu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Src -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Src\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Stm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Stm\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Stm\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Vadc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Vadc\\Adc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Vadc\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Platform -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Platform\\Tricore -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Platform\\Tricore\\Compilers -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Sfr -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Sfr\\TC26B -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Sfr\\TC26B\\_Reg -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Service -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Service\\CpuGeneric -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\seekfree_libraries -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\seekfree_libraries\\common -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\seekfree_peripheral -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\USER -g2 -wW557 --make-target=Libraries\\seekfree_libraries\\zf_uart.o -t4 --language=-gcc,-volatile,+strings,-kanji --default-near-size=0 -O2 --default-a1-size=0 --default-a0-size=0 --source --align=0 --compact-max-size=200 --switch=auto --error-limit=42 -o Libraries\\seekfree_libraries\\zf_uart.src ..\\Libraries\\seekfree_libraries\\zf_uart.c"
 	.compiler_name		"ctc"
 	;source	'..\\Libraries\\seekfree_libraries\\zf_uart.c'
 
@@ -82,16 +82,15 @@ $TC16X
 ; ..\Libraries\seekfree_libraries\zf_uart.c	    61  
 ; ..\Libraries\seekfree_libraries\zf_uart.c	    62  void uart_set_interrupt_priority(UARTN_enum uartn)
 ; Function uart_set_interrupt_priority
-.L151:
+.L135:
 uart_set_interrupt_priority:	.type	func
 
 ; ..\Libraries\seekfree_libraries\zf_uart.c	    63  {
 ; ..\Libraries\seekfree_libraries\zf_uart.c	    64  	switch(uartn)
 ; ..\Libraries\seekfree_libraries\zf_uart.c	    65  	{
 ; ..\Libraries\seekfree_libraries\zf_uart.c	    66  		case UART_0:
-	mov	d15,#0
-	jeq	d15,d4,.L2
-.L443:
+	jeq	d4,#0,.L2
+.L401:
 
 ; ..\Libraries\seekfree_libraries\zf_uart.c	    67  		{
 ; ..\Libraries\seekfree_libraries\zf_uart.c	    68  			uart_config.interrupt.txPriority 	= UART0_TX_INT_PRIO;
@@ -100,9 +99,8 @@ uart_set_interrupt_priority:	.type	func
 ; ..\Libraries\seekfree_libraries\zf_uart.c	    71  			uart_config.interrupt.typeOfService = (IfxSrc_Tos)UART0_INT_SERVICE;
 ; ..\Libraries\seekfree_libraries\zf_uart.c	    72  		}break;
 ; ..\Libraries\seekfree_libraries\zf_uart.c	    73  		case UART_1:
-	mov	d15,#1
-	jeq	d15,d4,.L3
-.L444:
+	jeq	d4,#1,.L3
+.L402:
 
 ; ..\Libraries\seekfree_libraries\zf_uart.c	    74  		{
 ; ..\Libraries\seekfree_libraries\zf_uart.c	    75  			uart_config.interrupt.txPriority 	= UART1_TX_INT_PRIO;
@@ -111,9 +109,8 @@ uart_set_interrupt_priority:	.type	func
 ; ..\Libraries\seekfree_libraries\zf_uart.c	    78  			uart_config.interrupt.typeOfService = (IfxSrc_Tos)UART1_INT_SERVICE;
 ; ..\Libraries\seekfree_libraries\zf_uart.c	    79  		}break;
 ; ..\Libraries\seekfree_libraries\zf_uart.c	    80  		case UART_2:
-	mov	d15,#2
-	jeq	d15,d4,.L4
-.L445:
+	jeq	d4,#2,.L4
+.L403:
 
 ; ..\Libraries\seekfree_libraries\zf_uart.c	    81  		{
 ; ..\Libraries\seekfree_libraries\zf_uart.c	    82  			uart_config.interrupt.txPriority 	= UART2_TX_INT_PRIO;
@@ -122,170 +119,102 @@ uart_set_interrupt_priority:	.type	func
 ; ..\Libraries\seekfree_libraries\zf_uart.c	    85  			uart_config.interrupt.typeOfService = (IfxSrc_Tos)UART2_INT_SERVICE;
 ; ..\Libraries\seekfree_libraries\zf_uart.c	    86  		}break;
 ; ..\Libraries\seekfree_libraries\zf_uart.c	    87  		case UART_3:
-	mov	d15,#3
-	jeq	d15,d4,.L5
+	jeq	d4,#3,.L5
+.L404:
 	j	.L6
 .L2:
-	movh.a	a15,#@his(uart_config)
-	lea	a15,[a15]@los(uart_config)
-.L446:
+	fcall	.cocofun_3
+.L405:
 	mov	d15,#10
-.L447:
 	st.h	[a15]32,d15
-.L448:
-	movh.a	a15,#@his(uart_config)
-	lea	a15,[a15]@los(uart_config)
-.L449:
+.L406:
 	mov	d15,#11
-.L450:
 	st.h	[a15]34,d15
-.L451:
-	movh.a	a15,#@his(uart_config)
-	lea	a15,[a15]@los(uart_config)
-.L452:
+.L407:
 	mov	d15,#12
-.L453:
-	st.h	[a15]36,d15
-.L454:
-	movh.a	a15,#@his(uart_config)
-	lea	a15,[a15]@los(uart_config)
-.L455:
-	mov	d15,#0
-.L456:
-	st.b	[a15]38,d15
-.L457:
 	j	.L7
 .L3:
-	movh.a	a15,#@his(uart_config)
-	lea	a15,[a15]@los(uart_config)
-.L458:
+	fcall	.cocofun_3
+.L315:
 	mov	d15,#13
-.L459:
 	st.h	[a15]32,d15
-.L460:
-	movh.a	a15,#@his(uart_config)
-	lea	a15,[a15]@los(uart_config)
-.L461:
+.L408:
 	mov	d15,#14
-.L462:
 	st.h	[a15]34,d15
-.L463:
-	movh.a	a15,#@his(uart_config)
-	lea	a15,[a15]@los(uart_config)
-.L464:
+.L409:
 	mov	d15,#15
-.L465:
-	st.h	[a15]36,d15
-.L466:
-	movh.a	a15,#@his(uart_config)
-	lea	a15,[a15]@los(uart_config)
-.L467:
-	mov	d15,#0
-.L468:
-	st.b	[a15]38,d15
-.L469:
 	j	.L8
 .L4:
-	movh.a	a15,#@his(uart_config)
-	lea	a15,[a15]@los(uart_config)
-.L470:
+	fcall	.cocofun_3
+.L316:
 	mov	d15,#16
-.L471:
 	st.h	[a15]32,d15
-.L472:
-	movh.a	a15,#@his(uart_config)
-	lea	a15,[a15]@los(uart_config)
-.L473:
+.L410:
 	mov	d15,#17
-.L474:
 	st.h	[a15]34,d15
-.L475:
-	movh.a	a15,#@his(uart_config)
-	lea	a15,[a15]@los(uart_config)
-.L476:
+.L411:
 	mov	d15,#18
-.L477:
-	st.h	[a15]36,d15
-.L478:
-	movh.a	a15,#@his(uart_config)
-	lea	a15,[a15]@los(uart_config)
-.L479:
-	mov	d15,#0
-.L480:
-	st.b	[a15]38,d15
-.L481:
 	j	.L9
 .L5:
 
 ; ..\Libraries\seekfree_libraries\zf_uart.c	    88  		{
 ; ..\Libraries\seekfree_libraries\zf_uart.c	    89  			uart_config.interrupt.txPriority 	= UART3_TX_INT_PRIO;
-	movh.a	a15,#@his(uart_config)
-	lea	a15,[a15]@los(uart_config)
-.L482:
+	fcall	.cocofun_3
+.L317:
 	mov	d15,#251
-.L483:
 	st.h	[a15]32,d15
-.L484:
+.L412:
 
 ; ..\Libraries\seekfree_libraries\zf_uart.c	    90  			uart_config.interrupt.rxPriority 	= UART3_RX_INT_PRIO;
-	movh.a	a15,#@his(uart_config)
-	lea	a15,[a15]@los(uart_config)
-.L485:
 	mov	d15,#252
-.L486:
 	st.h	[a15]34,d15
-.L487:
+.L413:
 
 ; ..\Libraries\seekfree_libraries\zf_uart.c	    91  			uart_config.interrupt.erPriority 	= UART3_ER_INT_PRIO;
-	movh.a	a15,#@his(uart_config)
-	lea	a15,[a15]@los(uart_config)
-.L488:
 	mov	d15,#253
-.L489:
-	st.h	[a15]36,d15
-.L490:
 
 ; ..\Libraries\seekfree_libraries\zf_uart.c	    92  			uart_config.interrupt.typeOfService = (IfxSrc_Tos)UART3_INT_SERVICE;
-	movh.a	a15,#@his(uart_config)
-	lea	a15,[a15]@los(uart_config)
-.L491:
-	mov	d15,#0
-.L492:
-	st.b	[a15]38,d15
-.L493:
-
 ; ..\Libraries\seekfree_libraries\zf_uart.c	    93  		}break;
-	j	.L10
-
 ; ..\Libraries\seekfree_libraries\zf_uart.c	    94  		default: ZF_ASSERT(FALSE);
-.L6:
+; ..\Libraries\seekfree_libraries\zf_uart.c	    95  	}
+; ..\Libraries\seekfree_libraries\zf_uart.c	    96  }
+.L7:
+.L8:
+.L9:
+	st.h	[a15]36,d15
+.L414:
 	mov	d15,#0
-	jeq	d15,#0,.L11
-	j	.L12
-.L11:
+	st.b	[a15]38,d15
+.L415:
+	ret
+.L6:
 	movh.a	a4,#@his(.1.str)
 	lea	a4,[a4]@los(.1.str)
 	mov	d4,#94
-.L323:
 	movh.a	a5,#@his(_999001___func__)
+.L318:
 	lea	a5,[a5]@los(_999001___func__)
-	call	assert
-.L12:
-
-; ..\Libraries\seekfree_libraries\zf_uart.c	    95  	}
-; ..\Libraries\seekfree_libraries\zf_uart.c	    96  }
-.L10:
-.L9:
-.L8:
-.L7:
-	ret
-.L304:
+	j	assert
+.L295:
 	
 __uart_set_interrupt_priority_function_end:
 	.size	uart_set_interrupt_priority,__uart_set_interrupt_priority_function_end-uart_set_interrupt_priority
-.L208:
+.L194:
 	; End of function
 	
+	.sdecl	'.text.zf_uart..cocofun_3',code,cluster('.cocofun_3')
+	.sect	'.text.zf_uart..cocofun_3'
+	.align	2
+; Function .cocofun_3
+.L137:
+.cocofun_3:	.type	func
+; Function body .cocofun_3, coco_iter:0
+	movh.a	a15,#@his(uart_config)
+	lea	a15,[a15]@los(uart_config)
+.L605:
+	fret
+.L214:
+	; End of function
 	.sdecl	'.text.zf_uart.uart_set_buffer',code,cluster('uart_set_buffer')
 	.sect	'.text.zf_uart.uart_set_buffer'
 	.align	2
@@ -295,16 +224,15 @@ __uart_set_interrupt_priority_function_end:
 ; ..\Libraries\seekfree_libraries\zf_uart.c	    97  
 ; ..\Libraries\seekfree_libraries\zf_uart.c	    98  void uart_set_buffer(UARTN_enum uartn)
 ; Function uart_set_buffer
-.L153:
+.L139:
 uart_set_buffer:	.type	func
 
 ; ..\Libraries\seekfree_libraries\zf_uart.c	    99  {
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   100  	switch(uartn)
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   101  	{
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   102  		case UART_0:
-	mov	d15,#0
-	jeq	d15,d4,.L13
-.L498:
+	jeq	d4,#0,.L11
+.L420:
 
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   103  		{
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   104  			uart_config.txBuffer 	 = &uart0_tx_buffer;
@@ -313,9 +241,8 @@ uart_set_buffer:	.type	func
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   107  			uart_config.rxBufferSize = UART0_RX_BUFFER_SIZE;
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   108  		}break;
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   109  		case UART_1:
-	mov	d15,#1
-	jeq	d15,d4,.L14
-.L499:
+	jeq	d4,#1,.L12
+.L421:
 
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   110  		{
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   111  			uart_config.txBuffer 	 = &uart1_tx_buffer;
@@ -324,9 +251,8 @@ uart_set_buffer:	.type	func
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   114  			uart_config.rxBufferSize = UART1_RX_BUFFER_SIZE;
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   115  		}break;
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   116  		case UART_2:
-	mov	d15,#2
-	jeq	d15,d4,.L15
-.L500:
+	jeq	d4,#2,.L13
+.L422:
 
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   117  		{
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   118  			uart_config.txBuffer 	 = &uart2_tx_buffer;
@@ -335,164 +261,87 @@ uart_set_buffer:	.type	func
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   121  			uart_config.rxBufferSize = UART2_RX_BUFFER_SIZE;
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   122  		}break;
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   123  		case UART_3:
-	mov	d15,#3
-	jeq	d15,d4,.L16
-	j	.L17
-.L13:
-	movh.a	a15,#@his(uart_config)
-	lea	a15,[a15]@los(uart_config)
-.L501:
-	movh.a	a2,#@his(uart0_tx_buffer)
-	lea	a2,[a2]@los(uart0_tx_buffer)
-.L502:
-	st.a	[a15]48,a2
-.L503:
-	movh.a	a15,#@his(uart_config)
-	lea	a15,[a15]@los(uart_config)
-.L504:
-	movh.a	a2,#@his(uart0_rx_buffer)
-	lea	a2,[a2]@los(uart0_rx_buffer)
-.L505:
-	st.a	[a15]56,a2
-.L506:
-	movh.a	a15,#@his(uart_config)
-	lea	a15,[a15]@los(uart_config)
-.L507:
-	mov	d15,#16
-.L508:
-	st.h	[a15]46,d15
-.L509:
-	movh.a	a15,#@his(uart_config)
-	lea	a15,[a15]@los(uart_config)
-.L510:
-	mov	d15,#16
-.L511:
-	st.h	[a15]52,d15
-.L512:
-	j	.L18
-.L14:
-	movh.a	a15,#@his(uart_config)
-	lea	a15,[a15]@los(uart_config)
-.L513:
-	movh.a	a2,#@his(uart1_tx_buffer)
-	lea	a2,[a2]@los(uart1_tx_buffer)
-.L514:
-	st.a	[a15]48,a2
-.L515:
-	movh.a	a15,#@his(uart_config)
-	lea	a15,[a15]@los(uart_config)
-.L516:
-	movh.a	a2,#@his(uart1_rx_buffer)
-	lea	a2,[a2]@los(uart1_rx_buffer)
-.L517:
-	st.a	[a15]56,a2
-.L518:
-	movh.a	a15,#@his(uart_config)
-	lea	a15,[a15]@los(uart_config)
-.L519:
-	mov	d15,#16
-.L520:
-	st.h	[a15]46,d15
-.L521:
-	movh.a	a15,#@his(uart_config)
-	lea	a15,[a15]@los(uart_config)
-.L522:
-	mov	d15,#16
-.L523:
-	st.h	[a15]52,d15
-.L524:
-	j	.L19
-.L15:
-	movh.a	a15,#@his(uart_config)
-	lea	a15,[a15]@los(uart_config)
-.L525:
-	movh.a	a2,#@his(uart2_tx_buffer)
-	lea	a2,[a2]@los(uart2_tx_buffer)
-.L526:
-	st.a	[a15]48,a2
-.L527:
-	movh.a	a15,#@his(uart_config)
-	lea	a15,[a15]@los(uart_config)
-.L528:
-	movh.a	a2,#@his(uart2_rx_buffer)
-	lea	a2,[a2]@los(uart2_rx_buffer)
-.L529:
-	st.a	[a15]56,a2
-.L530:
-	movh.a	a15,#@his(uart_config)
-	lea	a15,[a15]@los(uart_config)
-.L531:
-	mov	d15,#16
-.L532:
-	st.h	[a15]46,d15
-.L533:
-	movh.a	a15,#@his(uart_config)
-	lea	a15,[a15]@los(uart_config)
-.L534:
-	mov	d15,#16
-.L535:
-	st.h	[a15]52,d15
-.L536:
-	j	.L20
-.L16:
+	jeq	d4,#3,.L14
+.L423:
 
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   124  		{
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   125  			uart_config.txBuffer 	 = &uart3_tx_buffer;
-	movh.a	a15,#@his(uart_config)
-	lea	a15,[a15]@los(uart_config)
-.L537:
-	movh.a	a2,#@his(uart3_tx_buffer)
-	lea	a2,[a2]@los(uart3_tx_buffer)
-.L538:
-	st.a	[a15]48,a2
-.L539:
-
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   126  			uart_config.rxBuffer  	 = &uart3_rx_buffer;
-	movh.a	a15,#@his(uart_config)
-	lea	a15,[a15]@los(uart_config)
-.L540:
-	movh.a	a2,#@his(uart3_rx_buffer)
-	lea	a2,[a2]@los(uart3_rx_buffer)
-.L541:
-	st.a	[a15]56,a2
-.L542:
-
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   127  			uart_config.txBufferSize = UART3_TX_BUFFER_SIZE;
-	movh.a	a15,#@his(uart_config)
-	lea	a15,[a15]@los(uart_config)
-.L543:
-	mov	d15,#16
-.L544:
-	st.h	[a15]46,d15
-.L545:
-
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   128  			uart_config.rxBufferSize = UART3_RX_BUFFER_SIZE;
-	movh.a	a15,#@his(uart_config)
-	lea	a15,[a15]@los(uart_config)
-.L546:
-	mov	d15,#1
-.L547:
-	st.h	[a15]52,d15
-.L548:
-
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   129  		}break;
-	j	.L21
-
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   130  		default: IFX_ASSERT(IFX_VERBOSE_LEVEL_ERROR, FALSE);
-.L17:
-
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   131  	}
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   132  }
-.L21:
-.L20:
-.L19:
-.L18:
 	ret
-.L307:
+.L11:
+	fcall	.cocofun_3
+.L424:
+	movh.a	a2,#@his(uart0_tx_buffer)
+	lea	a2,[a2]@los(uart0_tx_buffer)
+.L425:
+	st.a	[a15]48,a2
+.L426:
+	movh.a	a2,#@his(uart0_rx_buffer)
+	lea	a2,[a2]@los(uart0_rx_buffer)
+.L427:
+	j	.L16
+.L12:
+	fcall	.cocofun_3
+.L428:
+	movh.a	a2,#@his(uart1_tx_buffer)
+	lea	a2,[a2]@los(uart1_tx_buffer)
+.L429:
+	st.a	[a15]48,a2
+.L430:
+	movh.a	a2,#@his(uart1_rx_buffer)
+	lea	a2,[a2]@los(uart1_rx_buffer)
+.L431:
+	j	.L17
+.L13:
+	fcall	.cocofun_3
+.L432:
+	movh.a	a2,#@his(uart2_tx_buffer)
+	lea	a2,[a2]@los(uart2_tx_buffer)
+.L433:
+	st.a	[a15]48,a2
+.L434:
+	movh.a	a2,#@his(uart2_rx_buffer)
+	lea	a2,[a2]@los(uart2_rx_buffer)
+.L16:
+.L17:
+	st.a	[a15]56,a2
+.L435:
+	mov	d15,#16
+	st.h	[a15]46,d15
+.L436:
+	j	.L18
+.L14:
+	fcall	.cocofun_3
+.L437:
+	movh.a	a2,#@his(uart3_tx_buffer)
+	lea	a2,[a2]@los(uart3_tx_buffer)
+.L438:
+	st.a	[a15]48,a2
+.L439:
+	movh.a	a2,#@his(uart3_rx_buffer)
+	lea	a2,[a2]@los(uart3_rx_buffer)
+.L440:
+	st.a	[a15]56,a2
+.L441:
+	mov	d15,#16
+	st.h	[a15]46,d15
+.L442:
+	mov	d15,#1
+.L18:
+	st.h	[a15]52,d15
+.L443:
+	ret
+.L299:
 	
 __uart_set_buffer_function_end:
 	.size	uart_set_buffer,__uart_set_buffer_function_end-uart_set_buffer
-.L213:
+.L199:
 	; End of function
 	
 	.sdecl	'.text.zf_uart.uart_get_handle',code,cluster('uart_get_handle')
@@ -505,74 +354,62 @@ __uart_set_buffer_function_end:
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   134  
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   135  IfxAsclin_Asc* uart_get_handle(UARTN_enum uartn)
 ; Function uart_get_handle
-.L155:
+.L141:
 uart_get_handle:	.type	func
 
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   136  {
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   137  	switch(uartn)
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   138  	{
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   139  		case UART_0:	 return &uart0_handle;
-	mov	d15,#0
-	jeq	d15,d4,.L22
-.L553:
+	jeq	d4,#0,.L19
+.L448:
 
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   140  		case UART_1:	 return &uart1_handle;
-	mov	d15,#1
-	jeq	d15,d4,.L23
-.L554:
+	jeq	d4,#1,.L20
+.L449:
 
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   141  		case UART_2:	 return &uart2_handle;
-	mov	d15,#2
-	jeq	d15,d4,.L24
-.L555:
+	jeq	d4,#2,.L21
+.L450:
 
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   142  		case UART_3:	 return &uart3_handle;
-	mov	d15,#3
-	jeq	d15,d4,.L25
-	j	.L26
-.L22:
-	movh.a	a2,#@his(uart0_handle)
-	lea	a2,[a2]@los(uart0_handle)
-.L556:
-	j	.L27
-.L23:
-	movh.a	a2,#@his(uart1_handle)
-	lea	a2,[a2]@los(uart1_handle)
-.L557:
-	j	.L28
-.L24:
-	movh.a	a2,#@his(uart2_handle)
-	lea	a2,[a2]@los(uart2_handle)
-.L558:
-	j	.L29
-.L25:
-	movh.a	a2,#@his(uart3_handle)
-	lea	a2,[a2]@los(uart3_handle)
-.L559:
-	j	.L30
+	jeq	d4,#3,.L22
+.L451:
 
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   143  		default: IFX_ASSERT(IFX_VERBOSE_LEVEL_ERROR, FALSE);
-.L26:
-
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   144  	}
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   145  
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   146  	return NULL;
 	mov.a	a2,#0
-.L560:
-	j	.L31
+.L452:
 
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   147  }
-.L31:
-.L30:
-.L29:
-.L28:
-.L27:
 	ret
-.L310:
+.L19:
+	movh.a	a2,#@his(uart0_handle)
+	lea	a2,[a2]@los(uart0_handle)
+.L453:
+	ret
+.L20:
+	movh.a	a2,#@his(uart1_handle)
+	lea	a2,[a2]@los(uart1_handle)
+.L454:
+	ret
+.L21:
+	movh.a	a2,#@his(uart2_handle)
+	lea	a2,[a2]@los(uart2_handle)
+.L455:
+	ret
+.L22:
+	movh.a	a2,#@his(uart3_handle)
+	lea	a2,[a2]@los(uart3_handle)
+.L456:
+	ret
+.L302:
 	
 __uart_get_handle_function_end:
 	.size	uart_get_handle,__uart_get_handle_function_end-uart_get_handle
-.L218:
+.L204:
 	; End of function
 	
 	.sdecl	'.text.zf_uart.uart_mux',code,cluster('uart_mux')
@@ -584,16 +421,15 @@ __uart_get_handle_function_end:
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   148  
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   149  void uart_mux(UARTN_enum uartn, UART_PIN_enum tx_pin, UART_PIN_enum rx_pin, uint32 *set_tx_pin, uint32 *set_rx_pin)
 ; Function uart_mux
-.L157:
+.L143:
 uart_mux:	.type	func
 
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   150  {
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   151  	switch(uartn)
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   152  	{
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   153  		case UART_0:
-	mov	d15,#0
-	jeq	d15,d4,.L32
-.L565:
+	jeq	d4,#0,.L29
+.L461:
 
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   154  		{
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   155  			if	   (UART0_TX_P14_0 == tx_pin)	*set_tx_pin = (uint32)&IfxAsclin0_TX_P14_0_OUT;
@@ -608,9 +444,8 @@ uart_mux:	.type	func
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   164  
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   165  		}break;
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   166  		case UART_1:
-	mov	d15,#1
-	jeq	d15,d4,.L33
-.L566:
+	jeq	d4,#1,.L30
+.L462:
 
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   167  		{
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   168  			if	   (UART1_TX_P02_2  == tx_pin)	*set_tx_pin = (uint32)&IfxAsclin1_TX_P02_2_OUT;
@@ -636,9 +471,8 @@ uart_mux:	.type	func
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   188  
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   189  		}break;
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   190  		case UART_2:
-	mov	d15,#2
-	jeq	d15,d4,.L34
-.L567:
+	jeq	d4,#2,.L31
+.L463:
 
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   191  		{
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   192  			if	   (UART2_TX_P02_0 == tx_pin)	*set_tx_pin = (uint32)&IfxAsclin2_TX_P02_0_OUT;
@@ -658,676 +492,506 @@ uart_mux:	.type	func
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   206  
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   207  		}break;
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   208  		case UART_3:
-	mov	d15,#3
-	jeq	d15,d4,.L35
-	j	.L36
-.L32:
-	jne	d5,#0,.L37
-.L568:
-	movh.a	a15,#@his(IfxAsclin0_TX_P14_0_OUT)
-	lea	a15,[a15]@los(IfxAsclin0_TX_P14_0_OUT)
-	mov.d	d15,a15
-.L569:
-	st.w	[a4],d15
-.L570:
-	j	.L38
-.L37:
-	jne	d5,#1,.L39
-.L571:
-	movh.a	a15,#@his(IfxAsclin0_TX_P14_1_OUT)
-	lea	a15,[a15]@los(IfxAsclin0_TX_P14_1_OUT)
-	mov.d	d15,a15
-.L572:
-	st.w	[a4],d15
-.L573:
-	j	.L40
-.L39:
-	jne	d5,#2,.L41
-.L574:
-	movh.a	a15,#@his(IfxAsclin0_TX_P15_2_OUT)
-	lea	a15,[a15]@los(IfxAsclin0_TX_P15_2_OUT)
-	mov.d	d15,a15
-.L575:
-	st.w	[a4],d15
-.L576:
-	j	.L42
-.L41:
-	jne	d5,#3,.L43
-.L577:
-	movh.a	a15,#@his(IfxAsclin0_TX_P15_3_OUT)
-	lea	a15,[a15]@los(IfxAsclin0_TX_P15_3_OUT)
-	mov.d	d15,a15
-.L578:
-	st.w	[a4],d15
-.L579:
-	j	.L44
-.L43:
-.L44:
-.L42:
-.L40:
-.L38:
-	jne	d6,#4,.L45
-.L580:
-	movh.a	a15,#@his(IfxAsclin0_RXA_P14_1_IN)
-	lea	a15,[a15]@los(IfxAsclin0_RXA_P14_1_IN)
-	mov.d	d15,a15
-.L581:
-	st.w	[a5],d15
-.L582:
-	j	.L46
-.L45:
-	jne	d6,#5,.L47
-.L583:
-	movh.a	a15,#@his(IfxAsclin0_RXB_P15_3_IN)
-	lea	a15,[a15]@los(IfxAsclin0_RXB_P15_3_IN)
-	mov.d	d15,a15
-.L584:
-	st.w	[a5],d15
-.L585:
-	j	.L48
-.L47:
-.L48:
-.L46:
-	j	.L49
-.L33:
-	jne	d5,#6,.L50
-.L586:
-	movh.a	a15,#@his(IfxAsclin1_TX_P02_2_OUT)
-	lea	a15,[a15]@los(IfxAsclin1_TX_P02_2_OUT)
-	mov.d	d15,a15
-.L587:
-	st.w	[a4],d15
-.L588:
-	j	.L51
-.L50:
-	jne	d5,#7,.L52
-.L589:
-	movh.a	a15,#@his(IfxAsclin1_TX_P11_12_OUT)
-	lea	a15,[a15]@los(IfxAsclin1_TX_P11_12_OUT)
-	mov.d	d15,a15
-.L590:
-	st.w	[a4],d15
-.L591:
-	j	.L53
-.L52:
-	mov	d15,#8
-.L592:
-	jne	d15,d5,.L54
-.L593:
-	movh.a	a15,#@his(IfxAsclin1_TX_P14_10_OUT)
-	lea	a15,[a15]@los(IfxAsclin1_TX_P14_10_OUT)
-	mov.d	d15,a15
-.L594:
-	st.w	[a4],d15
-.L595:
-	j	.L55
-.L54:
-	mov	d15,#9
-.L596:
-	jne	d15,d5,.L56
-.L597:
-	movh.a	a15,#@his(IfxAsclin1_TX_P15_0_OUT)
-	lea	a15,[a15]@los(IfxAsclin1_TX_P15_0_OUT)
-	mov.d	d15,a15
-.L598:
-	st.w	[a4],d15
-.L599:
-	j	.L57
-.L56:
-	mov	d15,#10
-.L600:
-	jne	d15,d5,.L58
-.L601:
-	movh.a	a15,#@his(IfxAsclin1_TX_P15_1_OUT)
-	lea	a15,[a15]@los(IfxAsclin1_TX_P15_1_OUT)
-	mov.d	d15,a15
-.L602:
-	st.w	[a4],d15
-.L603:
-	j	.L59
-.L58:
-	mov	d15,#11
-.L604:
-	jne	d15,d5,.L60
-.L605:
-	movh.a	a15,#@his(IfxAsclin1_TX_P15_4_OUT)
-	lea	a15,[a15]@los(IfxAsclin1_TX_P15_4_OUT)
-	mov.d	d15,a15
-.L606:
-	st.w	[a4],d15
-.L607:
-	j	.L61
-.L60:
-	mov	d15,#12
-.L608:
-	jne	d15,d5,.L62
-.L609:
-	movh.a	a15,#@his(IfxAsclin1_TX_P15_5_OUT)
-	lea	a15,[a15]@los(IfxAsclin1_TX_P15_5_OUT)
-	mov.d	d15,a15
-.L610:
-	st.w	[a4],d15
-.L611:
-	j	.L63
-.L62:
-	mov	d15,#13
-.L612:
-	jne	d15,d5,.L64
-.L613:
-	movh.a	a15,#@his(IfxAsclin1_TX_P20_10_OUT)
-	lea	a15,[a15]@los(IfxAsclin1_TX_P20_10_OUT)
-	mov.d	d15,a15
-.L614:
-	st.w	[a4],d15
-.L615:
-	j	.L65
-.L64:
-	mov	d15,#14
-.L616:
-	jne	d15,d5,.L66
-.L617:
-	movh.a	a15,#@his(IfxAsclin1_TX_P33_12_OUT)
-	lea	a15,[a15]@los(IfxAsclin1_TX_P33_12_OUT)
-	mov.d	d15,a15
-.L618:
-	st.w	[a4],d15
-.L619:
-	j	.L67
-.L66:
-	mov	d15,#15
-.L620:
-	jne	d15,d5,.L68
-.L621:
-	movh.a	a15,#@his(IfxAsclin1_TX_P33_13_OUT)
-	lea	a15,[a15]@los(IfxAsclin1_TX_P33_13_OUT)
-	mov.d	d15,a15
-.L622:
-	st.w	[a4],d15
-.L623:
-	j	.L69
-.L68:
-.L69:
-.L67:
-.L65:
-.L63:
-.L61:
-.L59:
-.L57:
-.L55:
-.L53:
-.L51:
-	mov	d15,#19
-.L624:
-	jne	d15,d6,.L70
-.L625:
-	movh.a	a15,#@his(IfxAsclin1_RXA_P15_1_IN)
-	lea	a15,[a15]@los(IfxAsclin1_RXA_P15_1_IN)
-	mov.d	d15,a15
-.L626:
-	st.w	[a5],d15
-.L627:
-	j	.L71
-.L70:
-	mov	d15,#20
-.L628:
-	jne	d15,d6,.L72
-.L629:
-	movh.a	a15,#@his(IfxAsclin1_RXB_P15_5_IN)
-	lea	a15,[a15]@los(IfxAsclin1_RXB_P15_5_IN)
-	mov.d	d15,a15
-.L630:
-	st.w	[a5],d15
-.L631:
-	j	.L73
-.L72:
-	mov	d15,#21
-.L632:
-	jne	d15,d6,.L74
-.L633:
-	movh.a	a15,#@his(IfxAsclin1_RXC_P20_9_IN)
-	lea	a15,[a15]@los(IfxAsclin1_RXC_P20_9_IN)
-	mov.d	d15,a15
-.L634:
-	st.w	[a5],d15
-.L635:
-	j	.L75
-.L74:
-	mov	d15,#18
-.L636:
-	jne	d15,d6,.L76
-.L637:
-	movh.a	a15,#@his(IfxAsclin1_RXD_P14_8_IN)
-	lea	a15,[a15]@los(IfxAsclin1_RXD_P14_8_IN)
-	mov.d	d15,a15
-.L638:
-	st.w	[a5],d15
-.L639:
-	j	.L77
-.L76:
-	mov	d15,#17
-.L640:
-	jne	d15,d6,.L78
-.L641:
-	movh.a	a15,#@his(IfxAsclin1_RXE_P11_10_IN)
-	lea	a15,[a15]@los(IfxAsclin1_RXE_P11_10_IN)
-	mov.d	d15,a15
-.L642:
-	st.w	[a5],d15
-.L643:
-	j	.L79
-.L78:
-	mov	d15,#22
-.L644:
-	jne	d15,d6,.L80
-.L645:
-	movh.a	a15,#@his(IfxAsclin1_RXF_P33_13_IN)
-	lea	a15,[a15]@los(IfxAsclin1_RXF_P33_13_IN)
-	mov.d	d15,a15
-.L646:
-	st.w	[a5],d15
-.L647:
-	j	.L81
-.L80:
-	mov	d15,#16
-.L648:
-	jne	d15,d6,.L82
-.L649:
-	movh.a	a15,#@his(IfxAsclin1_RXG_P02_3_IN)
-	lea	a15,[a15]@los(IfxAsclin1_RXG_P02_3_IN)
-	mov.d	d15,a15
-.L650:
-	st.w	[a5],d15
-.L651:
-	j	.L83
-.L82:
-.L83:
-.L81:
-.L79:
-.L77:
-.L75:
-.L73:
-.L71:
-	j	.L84
-.L34:
-	mov	d15,#23
-.L652:
-	jne	d15,d5,.L85
-.L653:
-	movh.a	a15,#@his(IfxAsclin2_TX_P02_0_OUT)
-	lea	a15,[a15]@los(IfxAsclin2_TX_P02_0_OUT)
-	mov.d	d15,a15
-.L654:
-	st.w	[a4],d15
-.L655:
-	j	.L86
-.L85:
-	mov	d15,#24
-.L656:
-	jne	d15,d5,.L87
-.L657:
-	movh.a	a15,#@his(IfxAsclin2_TX_P10_5_OUT)
-	lea	a15,[a15]@los(IfxAsclin2_TX_P10_5_OUT)
-	mov.d	d15,a15
-.L658:
-	st.w	[a4],d15
-.L659:
-	j	.L88
-.L87:
-	mov	d15,#25
-.L660:
-	jne	d15,d5,.L89
-.L661:
-	movh.a	a15,#@his(IfxAsclin2_TX_P14_2_OUT)
-	lea	a15,[a15]@los(IfxAsclin2_TX_P14_2_OUT)
-	mov.d	d15,a15
-.L662:
-	st.w	[a4],d15
-.L663:
-	j	.L90
-.L89:
-	mov	d15,#26
-.L664:
-	jne	d15,d5,.L91
-.L665:
-	movh.a	a15,#@his(IfxAsclin2_TX_P14_3_OUT)
-	lea	a15,[a15]@los(IfxAsclin2_TX_P14_3_OUT)
-	mov.d	d15,a15
-.L666:
-	st.w	[a4],d15
-.L667:
-	j	.L92
-.L91:
-	mov	d15,#27
-.L668:
-	jne	d15,d5,.L93
-.L669:
-	movh.a	a15,#@his(IfxAsclin2_TX_P33_8_OUT)
-	lea	a15,[a15]@los(IfxAsclin2_TX_P33_8_OUT)
-	mov.d	d15,a15
-.L670:
-	st.w	[a4],d15
-.L671:
-	j	.L94
-.L93:
-	mov	d15,#28
-.L672:
-	jne	d15,d5,.L95
-.L673:
-	movh.a	a15,#@his(IfxAsclin2_TX_P33_9_OUT)
-	lea	a15,[a15]@los(IfxAsclin2_TX_P33_9_OUT)
-	mov.d	d15,a15
-.L674:
-	st.w	[a4],d15
-.L675:
-	j	.L96
-.L95:
-.L96:
-.L94:
-.L92:
-.L90:
-.L88:
-.L86:
-	mov	d15,#32
-.L676:
-	jne	d15,d6,.L97
-.L677:
-	movh.a	a15,#@his(IfxAsclin2_RXA_P14_3_IN)
-	lea	a15,[a15]@los(IfxAsclin2_RXA_P14_3_IN)
-	mov.d	d15,a15
-.L678:
-	st.w	[a5],d15
-.L679:
-	j	.L98
-.L97:
-	mov	d15,#30
-.L680:
-	jne	d15,d6,.L99
-.L681:
-	movh.a	a15,#@his(IfxAsclin2_RXB_P02_1_IN)
-	lea	a15,[a15]@los(IfxAsclin2_RXB_P02_1_IN)
-	mov.d	d15,a15
-.L682:
-	st.w	[a5],d15
-.L683:
-	j	.L100
-.L99:
-	mov	d15,#31
-.L684:
-	jne	d15,d6,.L101
-.L685:
-	movh.a	a15,#@his(IfxAsclin2_RXD_P10_6_IN)
-	lea	a15,[a15]@los(IfxAsclin2_RXD_P10_6_IN)
-	mov.d	d15,a15
-.L686:
-	st.w	[a5],d15
-.L687:
-	j	.L102
-.L101:
-	mov	d15,#33
-.L688:
-	jne	d15,d6,.L103
-.L689:
-	movh.a	a15,#@his(IfxAsclin2_RXE_P33_8_IN)
-	lea	a15,[a15]@los(IfxAsclin2_RXE_P33_8_IN)
-	mov.d	d15,a15
-.L690:
-	st.w	[a5],d15
-.L691:
-	j	.L104
-.L103:
-	mov	d15,#29
-.L692:
-	jne	d15,d6,.L105
-.L693:
-	movh.a	a15,#@his(IfxAsclin2_RXG_P02_0_IN)
-	lea	a15,[a15]@los(IfxAsclin2_RXG_P02_0_IN)
-	mov.d	d15,a15
-.L694:
-	st.w	[a5],d15
-.L695:
-	j	.L106
-.L105:
-.L106:
-.L104:
-.L102:
-.L100:
-.L98:
-	j	.L107
-.L35:
+	jeq	d4,#3,.L32
+.L464:
 
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   209  		{
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   210  			if	   (UART3_TX_P00_0 == tx_pin)	*set_tx_pin = (uint32)&IfxAsclin3_TX_P00_0_OUT;
-	mov	d15,#34
-.L696:
-	jne	d15,d5,.L108
-.L697:
-	movh.a	a15,#@his(IfxAsclin3_TX_P00_0_OUT)
-	lea	a15,[a15]@los(IfxAsclin3_TX_P00_0_OUT)
-	mov.d	d15,a15
-.L698:
-	st.w	[a4],d15
-.L699:
-	j	.L109
-.L108:
-
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   211  			else if(UART3_TX_P00_1 == tx_pin)	*set_tx_pin = (uint32)&IfxAsclin3_TX_P00_1_OUT;
-	mov	d15,#35
-.L700:
-	jne	d15,d5,.L110
-.L701:
-	movh.a	a15,#@his(IfxAsclin3_TX_P00_1_OUT)
-	lea	a15,[a15]@los(IfxAsclin3_TX_P00_1_OUT)
-	mov.d	d15,a15
-.L702:
-	st.w	[a4],d15
-.L703:
-	j	.L111
-.L110:
-
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   212  			else if(UART3_TX_P15_6 == tx_pin)	*set_tx_pin = (uint32)&IfxAsclin3_TX_P15_6_OUT;
-	mov	d15,#36
-.L704:
-	jne	d15,d5,.L112
-.L705:
-	movh.a	a15,#@his(IfxAsclin3_TX_P15_6_OUT)
-	lea	a15,[a15]@los(IfxAsclin3_TX_P15_6_OUT)
-	mov.d	d15,a15
-.L706:
-	st.w	[a4],d15
-.L707:
-	j	.L113
-.L112:
-
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   213  			else if(UART3_TX_P15_7 == tx_pin)	*set_tx_pin = (uint32)&IfxAsclin3_TX_P15_7_OUT;
-	mov	d15,#37
-.L708:
-	jne	d15,d5,.L114
-.L709:
-	movh.a	a15,#@his(IfxAsclin3_TX_P15_7_OUT)
-	lea	a15,[a15]@los(IfxAsclin3_TX_P15_7_OUT)
-	mov.d	d15,a15
-.L710:
-	st.w	[a4],d15
-.L711:
-	j	.L115
-.L114:
-
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   214  			else if(UART3_TX_P20_0 == tx_pin)	*set_tx_pin = (uint32)&IfxAsclin3_TX_P20_0_OUT;
-	mov	d15,#38
-.L712:
-	jne	d15,d5,.L116
-.L713:
-	movh.a	a15,#@his(IfxAsclin3_TX_P20_0_OUT)
-	lea	a15,[a15]@los(IfxAsclin3_TX_P20_0_OUT)
-	mov.d	d15,a15
-.L714:
-	st.w	[a4],d15
-.L715:
-	j	.L117
-.L116:
-
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   215  			else if(UART3_TX_P20_3 == tx_pin)	*set_tx_pin = (uint32)&IfxAsclin3_TX_P20_3_OUT;
-	mov	d15,#39
-.L716:
-	jne	d15,d5,.L118
-.L717:
-	movh.a	a15,#@his(IfxAsclin3_TX_P20_3_OUT)
-	lea	a15,[a15]@los(IfxAsclin3_TX_P20_3_OUT)
-	mov.d	d15,a15
-.L718:
-	st.w	[a4],d15
-.L719:
-	j	.L119
-.L118:
-
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   216  			else if(UART3_TX_P21_7 == tx_pin)	*set_tx_pin = (uint32)&IfxAsclin3_TX_P21_7_OUT;
-	mov	d15,#40
-.L720:
-	jne	d15,d5,.L120
-.L721:
-	movh.a	a15,#@his(IfxAsclin3_TX_P21_7_OUT)
-	lea	a15,[a15]@los(IfxAsclin3_TX_P21_7_OUT)
-	mov.d	d15,a15
-.L722:
-	st.w	[a4],d15
-.L723:
-	j	.L121
-.L120:
-
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   217  			else if(UART3_TX_P32_2 == tx_pin)	*set_tx_pin = (uint32)&IfxAsclin3_TX_P32_2_OUT;
-	mov	d15,#41
-.L724:
-	jne	d15,d5,.L122
-.L725:
-	movh.a	a15,#@his(IfxAsclin3_TX_P32_2_OUT)
-	lea	a15,[a15]@los(IfxAsclin3_TX_P32_2_OUT)
-	mov.d	d15,a15
-.L726:
-	st.w	[a4],d15
-.L727:
-	j	.L123
-.L122:
-
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   218  			else if(UART3_TX_P32_3 == tx_pin)	*set_tx_pin = (uint32)&IfxAsclin3_TX_P32_3_OUT;
-	mov	d15,#42
-.L728:
-	jne	d15,d5,.L124
-.L729:
-	movh.a	a15,#@his(IfxAsclin3_TX_P32_3_OUT)
-	lea	a15,[a15]@los(IfxAsclin3_TX_P32_3_OUT)
-	mov.d	d15,a15
-.L730:
-	st.w	[a4],d15
-.L731:
-	j	.L125
-.L124:
-
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   219  			else IFX_ASSERT(IFX_VERBOSE_LEVEL_ERROR, FALSE);
-.L125:
-.L123:
-.L121:
-.L119:
-.L117:
-.L115:
-.L113:
-.L111:
-.L109:
-
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   220  
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   221  			if	   (UART3_RX_P15_7 == rx_pin)	*set_rx_pin = (uint32)&IfxAsclin3_RXA_P15_7_IN;
-	mov	d15,#44
-.L732:
-	jne	d15,d6,.L126
-.L733:
-	movh.a	a15,#@his(IfxAsclin3_RXA_P15_7_IN)
-	lea	a15,[a15]@los(IfxAsclin3_RXA_P15_7_IN)
-	mov.d	d15,a15
-.L734:
-	st.w	[a5],d15
-.L735:
-	j	.L127
-.L126:
-
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   222  			else if(UART3_RX_P20_3 == rx_pin)	*set_rx_pin = (uint32)&IfxAsclin3_RXC_P20_3_IN;
-	mov	d15,#45
-.L736:
-	jne	d15,d6,.L128
-.L737:
-	movh.a	a15,#@his(IfxAsclin3_RXC_P20_3_IN)
-	lea	a15,[a15]@los(IfxAsclin3_RXC_P20_3_IN)
-	mov.d	d15,a15
-.L738:
-	st.w	[a5],d15
-.L739:
-	j	.L129
-.L128:
-
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   223  			else if(UART3_RX_P32_2 == rx_pin)	*set_rx_pin = (uint32)&IfxAsclin3_RXD_P32_2_IN;
-	mov	d15,#47
-.L740:
-	jne	d15,d6,.L130
-.L741:
-	movh.a	a15,#@his(IfxAsclin3_RXD_P32_2_IN)
-	lea	a15,[a15]@los(IfxAsclin3_RXD_P32_2_IN)
-	mov.d	d15,a15
-.L742:
-	st.w	[a5],d15
-.L743:
-	j	.L131
-.L130:
-
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   224  			else if(UART3_RX_P00_1 == rx_pin)	*set_rx_pin = (uint32)&IfxAsclin3_RXE_P00_1_IN;
-	mov	d15,#43
-.L744:
-	jne	d15,d6,.L132
-.L745:
-	movh.a	a15,#@his(IfxAsclin3_RXE_P00_1_IN)
-	lea	a15,[a15]@los(IfxAsclin3_RXE_P00_1_IN)
-	mov.d	d15,a15
-.L746:
-	st.w	[a5],d15
-.L747:
-	j	.L133
-.L132:
-
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   225  			else if(UART3_RX_P21_6 == rx_pin)	*set_rx_pin = (uint32)&IfxAsclin3_RXF_P21_6_IN;
-	mov	d15,#46
-.L748:
-	jne	d15,d6,.L134
-.L749:
-	movh.a	a15,#@his(IfxAsclin3_RXF_P21_6_IN)
-	lea	a15,[a15]@los(IfxAsclin3_RXF_P21_6_IN)
-	mov.d	d15,a15
-.L750:
-	st.w	[a5],d15
-.L751:
-	j	.L135
-.L134:
-
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   226  			else IFX_ASSERT(IFX_VERBOSE_LEVEL_ERROR, FALSE);
-.L135:
-.L133:
-.L131:
-.L129:
-.L127:
-
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   227  
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   228  		}break;
-	j	.L136
-.L36:
-
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   229  	}
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   230  }
-.L136:
-.L107:
-.L84:
-.L49:
 	ret
-.L312:
+.L29:
+	jne	d5,#0,.L34
+.L465:
+	movh.a	a15,#@his(IfxAsclin0_TX_P14_0_OUT)
+	lea	a15,[a15]@los(IfxAsclin0_TX_P14_0_OUT)
+.L466:
+	j	.L35
+.L34:
+	jne	d5,#1,.L36
+.L467:
+	movh.a	a15,#@his(IfxAsclin0_TX_P14_1_OUT)
+	lea	a15,[a15]@los(IfxAsclin0_TX_P14_1_OUT)
+.L468:
+	j	.L37
+.L36:
+	jne	d5,#2,.L38
+.L469:
+	movh.a	a15,#@his(IfxAsclin0_TX_P15_2_OUT)
+	lea	a15,[a15]@los(IfxAsclin0_TX_P15_2_OUT)
+.L470:
+	j	.L39
+.L38:
+	jne	d5,#3,.L40
+.L471:
+	movh.a	a15,#@his(IfxAsclin0_TX_P15_3_OUT)
+	lea	a15,[a15]@los(IfxAsclin0_TX_P15_3_OUT)
+.L35:
+.L37:
+.L39:
+	mov.d	d15,a15
+.L472:
+	st.w	[a4],d15
+.L40:
+	jne	d6,#4,.L41
+.L473:
+	movh.a	a15,#@his(IfxAsclin0_RXA_P14_1_IN)
+	lea	a15,[a15]@los(IfxAsclin0_RXA_P14_1_IN)
+.L474:
+	j	.L42
+.L41:
+	jne	d6,#5,.L43
+.L475:
+	movh.a	a15,#@his(IfxAsclin0_RXB_P15_3_IN)
+	lea	a15,[a15]@los(IfxAsclin0_RXB_P15_3_IN)
+.L476:
+	j	.L44
+.L30:
+	jne	d5,#6,.L45
+.L477:
+	movh.a	a15,#@his(IfxAsclin1_TX_P02_2_OUT)
+	lea	a15,[a15]@los(IfxAsclin1_TX_P02_2_OUT)
+.L478:
+	j	.L46
+.L45:
+	jne	d5,#7,.L47
+.L479:
+	movh.a	a15,#@his(IfxAsclin1_TX_P11_12_OUT)
+	lea	a15,[a15]@los(IfxAsclin1_TX_P11_12_OUT)
+.L480:
+	j	.L48
+.L47:
+	mov	d15,#8
+.L481:
+	jne	d15,d5,.L49
+.L482:
+	movh.a	a15,#@his(IfxAsclin1_TX_P14_10_OUT)
+	lea	a15,[a15]@los(IfxAsclin1_TX_P14_10_OUT)
+.L483:
+	j	.L50
+.L49:
+	mov	d15,#9
+.L484:
+	jne	d15,d5,.L51
+.L485:
+	movh.a	a15,#@his(IfxAsclin1_TX_P15_0_OUT)
+	lea	a15,[a15]@los(IfxAsclin1_TX_P15_0_OUT)
+.L486:
+	j	.L52
+.L51:
+	mov	d15,#10
+.L487:
+	jne	d15,d5,.L53
+.L488:
+	movh.a	a15,#@his(IfxAsclin1_TX_P15_1_OUT)
+	lea	a15,[a15]@los(IfxAsclin1_TX_P15_1_OUT)
+.L489:
+	j	.L54
+.L53:
+	mov	d15,#11
+.L490:
+	jne	d15,d5,.L55
+.L491:
+	movh.a	a15,#@his(IfxAsclin1_TX_P15_4_OUT)
+	lea	a15,[a15]@los(IfxAsclin1_TX_P15_4_OUT)
+.L492:
+	j	.L56
+.L55:
+	mov	d15,#12
+.L493:
+	jne	d15,d5,.L57
+.L494:
+	movh.a	a15,#@his(IfxAsclin1_TX_P15_5_OUT)
+	lea	a15,[a15]@los(IfxAsclin1_TX_P15_5_OUT)
+.L495:
+	j	.L58
+.L57:
+	mov	d15,#13
+.L496:
+	jne	d15,d5,.L59
+.L497:
+	movh.a	a15,#@his(IfxAsclin1_TX_P20_10_OUT)
+	lea	a15,[a15]@los(IfxAsclin1_TX_P20_10_OUT)
+.L498:
+	j	.L60
+.L59:
+	mov	d15,#14
+.L499:
+	jne	d15,d5,.L61
+.L500:
+	movh.a	a15,#@his(IfxAsclin1_TX_P33_12_OUT)
+	lea	a15,[a15]@los(IfxAsclin1_TX_P33_12_OUT)
+.L501:
+	j	.L62
+.L61:
+	mov	d15,#15
+.L502:
+	jne	d15,d5,.L63
+.L503:
+	movh.a	a15,#@his(IfxAsclin1_TX_P33_13_OUT)
+	lea	a15,[a15]@los(IfxAsclin1_TX_P33_13_OUT)
+.L46:
+.L48:
+.L50:
+.L52:
+.L54:
+.L56:
+.L58:
+.L60:
+.L62:
+	mov.d	d15,a15
+.L504:
+	st.w	[a4],d15
+.L63:
+	mov	d15,#19
+.L505:
+	jne	d15,d6,.L64
+.L506:
+	movh.a	a15,#@his(IfxAsclin1_RXA_P15_1_IN)
+	lea	a15,[a15]@los(IfxAsclin1_RXA_P15_1_IN)
+.L507:
+	j	.L65
+.L64:
+	mov	d15,#20
+.L508:
+	jne	d15,d6,.L66
+.L509:
+	movh.a	a15,#@his(IfxAsclin1_RXB_P15_5_IN)
+	lea	a15,[a15]@los(IfxAsclin1_RXB_P15_5_IN)
+.L510:
+	j	.L67
+.L66:
+	mov	d15,#21
+.L511:
+	jne	d15,d6,.L68
+.L512:
+	movh.a	a15,#@his(IfxAsclin1_RXC_P20_9_IN)
+	lea	a15,[a15]@los(IfxAsclin1_RXC_P20_9_IN)
+.L513:
+	j	.L69
+.L68:
+	mov	d15,#18
+.L514:
+	jne	d15,d6,.L70
+.L515:
+	movh.a	a15,#@his(IfxAsclin1_RXD_P14_8_IN)
+	lea	a15,[a15]@los(IfxAsclin1_RXD_P14_8_IN)
+.L516:
+	j	.L71
+.L70:
+	mov	d15,#17
+.L517:
+	jne	d15,d6,.L72
+.L518:
+	movh.a	a15,#@his(IfxAsclin1_RXE_P11_10_IN)
+	lea	a15,[a15]@los(IfxAsclin1_RXE_P11_10_IN)
+.L519:
+	j	.L73
+.L72:
+	mov	d15,#22
+.L520:
+	jne	d15,d6,.L74
+.L521:
+	movh.a	a15,#@his(IfxAsclin1_RXF_P33_13_IN)
+	lea	a15,[a15]@los(IfxAsclin1_RXF_P33_13_IN)
+.L522:
+	j	.L75
+.L74:
+	mov	d15,#16
+.L523:
+	jne	d15,d6,.L76
+.L524:
+	movh.a	a15,#@his(IfxAsclin1_RXG_P02_3_IN)
+	lea	a15,[a15]@los(IfxAsclin1_RXG_P02_3_IN)
+.L525:
+	j	.L77
+.L31:
+	mov	d15,#23
+.L526:
+	jne	d15,d5,.L78
+.L527:
+	movh.a	a15,#@his(IfxAsclin2_TX_P02_0_OUT)
+	lea	a15,[a15]@los(IfxAsclin2_TX_P02_0_OUT)
+.L528:
+	j	.L79
+.L78:
+	mov	d15,#24
+.L529:
+	jne	d15,d5,.L80
+.L530:
+	movh.a	a15,#@his(IfxAsclin2_TX_P10_5_OUT)
+	lea	a15,[a15]@los(IfxAsclin2_TX_P10_5_OUT)
+.L531:
+	j	.L81
+.L80:
+	mov	d15,#25
+.L532:
+	jne	d15,d5,.L82
+.L533:
+	movh.a	a15,#@his(IfxAsclin2_TX_P14_2_OUT)
+	lea	a15,[a15]@los(IfxAsclin2_TX_P14_2_OUT)
+.L534:
+	j	.L83
+.L82:
+	mov	d15,#26
+.L535:
+	jne	d15,d5,.L84
+.L536:
+	movh.a	a15,#@his(IfxAsclin2_TX_P14_3_OUT)
+	lea	a15,[a15]@los(IfxAsclin2_TX_P14_3_OUT)
+.L537:
+	j	.L85
+.L84:
+	mov	d15,#27
+.L538:
+	jne	d15,d5,.L86
+.L539:
+	movh.a	a15,#@his(IfxAsclin2_TX_P33_8_OUT)
+	lea	a15,[a15]@los(IfxAsclin2_TX_P33_8_OUT)
+.L540:
+	j	.L87
+.L86:
+	mov	d15,#28
+.L541:
+	jne	d15,d5,.L88
+.L542:
+	movh.a	a15,#@his(IfxAsclin2_TX_P33_9_OUT)
+	lea	a15,[a15]@los(IfxAsclin2_TX_P33_9_OUT)
+.L79:
+.L81:
+.L83:
+.L85:
+.L87:
+	mov.d	d15,a15
+.L543:
+	st.w	[a4],d15
+.L88:
+	mov	d15,#32
+.L544:
+	jne	d15,d6,.L89
+.L545:
+	movh.a	a15,#@his(IfxAsclin2_RXA_P14_3_IN)
+	lea	a15,[a15]@los(IfxAsclin2_RXA_P14_3_IN)
+.L546:
+	j	.L90
+.L89:
+	mov	d15,#30
+.L547:
+	jne	d15,d6,.L91
+.L548:
+	movh.a	a15,#@his(IfxAsclin2_RXB_P02_1_IN)
+	lea	a15,[a15]@los(IfxAsclin2_RXB_P02_1_IN)
+.L549:
+	j	.L92
+.L91:
+	mov	d15,#31
+.L550:
+	jne	d15,d6,.L93
+.L551:
+	movh.a	a15,#@his(IfxAsclin2_RXD_P10_6_IN)
+	lea	a15,[a15]@los(IfxAsclin2_RXD_P10_6_IN)
+.L552:
+	j	.L94
+.L93:
+	mov	d15,#33
+.L553:
+	jne	d15,d6,.L95
+.L554:
+	movh.a	a15,#@his(IfxAsclin2_RXE_P33_8_IN)
+	lea	a15,[a15]@los(IfxAsclin2_RXE_P33_8_IN)
+.L555:
+	j	.L96
+.L95:
+	mov	d15,#29
+.L556:
+	jne	d15,d6,.L97
+.L557:
+	movh.a	a15,#@his(IfxAsclin2_RXG_P02_0_IN)
+	lea	a15,[a15]@los(IfxAsclin2_RXG_P02_0_IN)
+.L558:
+	j	.L98
+.L32:
+	mov	d15,#34
+.L559:
+	jne	d15,d5,.L99
+.L560:
+	movh.a	a15,#@his(IfxAsclin3_TX_P00_0_OUT)
+	lea	a15,[a15]@los(IfxAsclin3_TX_P00_0_OUT)
+.L561:
+	j	.L100
+.L99:
+	mov	d15,#35
+.L562:
+	jne	d15,d5,.L101
+.L563:
+	movh.a	a15,#@his(IfxAsclin3_TX_P00_1_OUT)
+	lea	a15,[a15]@los(IfxAsclin3_TX_P00_1_OUT)
+.L564:
+	j	.L102
+.L101:
+	mov	d15,#36
+.L565:
+	jne	d15,d5,.L103
+.L566:
+	movh.a	a15,#@his(IfxAsclin3_TX_P15_6_OUT)
+	lea	a15,[a15]@los(IfxAsclin3_TX_P15_6_OUT)
+.L567:
+	j	.L104
+.L103:
+	mov	d15,#37
+.L568:
+	jne	d15,d5,.L105
+.L569:
+	movh.a	a15,#@his(IfxAsclin3_TX_P15_7_OUT)
+	lea	a15,[a15]@los(IfxAsclin3_TX_P15_7_OUT)
+.L570:
+	j	.L106
+.L105:
+	mov	d15,#38
+.L571:
+	jne	d15,d5,.L107
+.L572:
+	movh.a	a15,#@his(IfxAsclin3_TX_P20_0_OUT)
+	lea	a15,[a15]@los(IfxAsclin3_TX_P20_0_OUT)
+.L573:
+	j	.L108
+.L107:
+	mov	d15,#39
+.L574:
+	jne	d15,d5,.L109
+.L575:
+	movh.a	a15,#@his(IfxAsclin3_TX_P20_3_OUT)
+	lea	a15,[a15]@los(IfxAsclin3_TX_P20_3_OUT)
+.L576:
+	j	.L110
+.L109:
+	mov	d15,#40
+.L577:
+	jne	d15,d5,.L111
+.L578:
+	movh.a	a15,#@his(IfxAsclin3_TX_P21_7_OUT)
+	lea	a15,[a15]@los(IfxAsclin3_TX_P21_7_OUT)
+.L579:
+	j	.L112
+.L111:
+	mov	d15,#41
+.L580:
+	jne	d15,d5,.L113
+.L581:
+	movh.a	a15,#@his(IfxAsclin3_TX_P32_2_OUT)
+	lea	a15,[a15]@los(IfxAsclin3_TX_P32_2_OUT)
+.L582:
+	j	.L114
+.L113:
+	mov	d15,#42
+.L583:
+	jne	d15,d5,.L115
+.L584:
+	movh.a	a15,#@his(IfxAsclin3_TX_P32_3_OUT)
+	lea	a15,[a15]@los(IfxAsclin3_TX_P32_3_OUT)
+.L100:
+.L102:
+.L104:
+.L106:
+.L108:
+.L110:
+.L112:
+.L114:
+	mov.d	d15,a15
+.L585:
+	st.w	[a4],d15
+.L115:
+	mov	d15,#44
+.L586:
+	jne	d15,d6,.L116
+.L587:
+	movh.a	a15,#@his(IfxAsclin3_RXA_P15_7_IN)
+	lea	a15,[a15]@los(IfxAsclin3_RXA_P15_7_IN)
+.L588:
+	j	.L117
+.L116:
+	mov	d15,#45
+.L589:
+	jne	d15,d6,.L118
+.L590:
+	movh.a	a15,#@his(IfxAsclin3_RXC_P20_3_IN)
+	lea	a15,[a15]@los(IfxAsclin3_RXC_P20_3_IN)
+.L591:
+	j	.L119
+.L118:
+	mov	d15,#47
+.L592:
+	jne	d15,d6,.L120
+.L593:
+	movh.a	a15,#@his(IfxAsclin3_RXD_P32_2_IN)
+	lea	a15,[a15]@los(IfxAsclin3_RXD_P32_2_IN)
+.L594:
+	j	.L121
+.L120:
+	mov	d15,#43
+.L595:
+	jne	d15,d6,.L122
+.L596:
+	movh.a	a15,#@his(IfxAsclin3_RXE_P00_1_IN)
+	lea	a15,[a15]@los(IfxAsclin3_RXE_P00_1_IN)
+.L597:
+	j	.L123
+.L122:
+	mov	d15,#46
+.L598:
+	jne	d15,d6,.L124
+.L599:
+	movh.a	a15,#@his(IfxAsclin3_RXF_P21_6_IN)
+	lea	a15,[a15]@los(IfxAsclin3_RXF_P21_6_IN)
+.L42:
+.L44:
+.L65:
+.L67:
+.L69:
+.L71:
+.L73:
+.L75:
+.L77:
+.L90:
+.L92:
+.L94:
+.L96:
+.L98:
+.L117:
+.L119:
+.L121:
+.L123:
+	mov.d	d15,a15
+.L600:
+	st.w	[a5],d15
+.L124:
+.L97:
+.L76:
+.L43:
+	ret
+.L304:
 	
 __uart_mux_function_end:
 	.size	uart_mux,__uart_mux_function_end-uart_mux
-.L223:
+.L209:
 	; End of function
 	
 	.sdecl	'.text.zf_uart.uart_init',code,cluster('uart_init')
@@ -1350,13 +1014,13 @@ __uart_mux_function_end:
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   242  //-------------------------------------------------------------------------------------------------------------------
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   243  void uart_init(UARTN_enum uartn, uint32 baud, UART_PIN_enum tx_pin, UART_PIN_enum rx_pin)
 ; Function uart_init
-.L159:
+.L145:
 uart_init:	.type	func
 	sub.a	a10,#32
-.L324:
+.L319:
 	mov	e8,d4,d5
 	mov	e10,d7,d6
-.L263:
+.L252:
 
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Cpu\Std\IfxCpu.h	     1  /**
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Cpu\Std\IfxCpu.h	     2   * \file IfxCpu.h
@@ -2013,19 +1677,13 @@ uart_init:	.type	func
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Cpu\Std\IfxCpu.h	   653      Ifx_CPU_ICR reg;
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Cpu\Std\IfxCpu.h	   654      reg.U = __mfcr(CPU_ICR);
 	mfcr	d15,#65068
-.L327:
+.L321:
 
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Cpu\Std\IfxCpu.h	   655      return reg.B.IE != 0;
 	extr.u	d15,d15,#15,#1
-.L328:
+.L322:
 	ne	d12,d15,#0
-.L329:
-
-; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Cpu\Std\IfxCpu.h	   655      return reg.B.IE != 0;      (inlined)
-	j	.L137
-
-; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Cpu\Std\IfxCpu.h	   656  }      (inlined)
-.L137:
+.L258:
 
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Cpu\Std\IfxCpu.h	   656  }
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Cpu\Std\IfxCpu.h	   657  
@@ -2036,157 +1694,111 @@ uart_init:	.type	func
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Cpu\Std\IfxCpu.h	   662      enabled = IfxCpu_areInterruptsEnabled();
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Cpu\Std\IfxCpu.h	   663      __disable();
 	disable
-.L374:
+.L350:
 
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Cpu\Std\IfxCpu.h	   664      __nop();
 	nop
-.L375:
-
-; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Cpu\Std\IfxCpu.h	   665      return enabled;      (inlined)
-	j	.L138
-
-; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Cpu\Std\IfxCpu.h	   666  }      (inlined)
-.L138:
-
-; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\Service\CpuGeneric\SysSe\Bsp\Bsp.h	   110      return IfxCpu_disableInterrupts();      (inlined)
-	j	.L139
-
-; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\Service\CpuGeneric\SysSe\Bsp\Bsp.h	   111  }      (inlined)
-.L139:
+.L253:
 
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   244  isableInterrupts();
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   245  
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   246  	volatile Ifx_ASCLIN *moudle = IfxAsclin_getAddress((IfxAsclin_Index)uartn);
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   247  
 	extr	d4,d9,#0,#8
-.L326:
 	call	IfxAsclin_getAddress
-.L325:
+.L320:
 
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   248  	IfxAsclin_Asc_initModuleConfig(&uart_config, moudle); 		//初始化化配置结构体
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   249  
-	movh.a	a4,#@his(uart_config)
-	lea	a4,[a4]@los(uart_config)
-.L376:
+	fcall	.cocofun_3
+.L323:
+	mov.aa	a4,a15
 	mov.aa	a5,a2
-.L331:
+.L325:
 	call	IfxAsclin_Asc_initModuleConfig
-.L330:
+.L324:
 
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   250  	uart_set_buffer(uartn);//设置缓冲区
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   251  	uart_set_interrupt_priority(uartn);//设置中断优先级
 	mov	d4,d9
-.L332:
 	call	uart_set_buffer
-.L333:
+.L351:
 
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   252  
 	mov	d4,d9
-.L334:
 	call	uart_set_interrupt_priority
-.L335:
+.L326:
 
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   253      uart_config.baudrate.prescaler    = 4;
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   254      uart_config.baudrate.baudrate     = (float32)baud;
-	movh.a	a15,#@his(uart_config)
-	lea	a15,[a15]@los(uart_config)
-.L377:
 	mov	d15,#4
-.L378:
 	st.h	[a15]8,d15
-.L379:
+.L327:
 
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   255      uart_config.baudrate.oversampling = IfxAsclin_OversamplingFactor_8;
-	movh.a	a15,#@his(uart_config)
-	lea	a15,[a15]@los(uart_config)
-.L336:
 	utof	d15,d8
-.L337:
 	st.w	[a15]4,d15
-.L380:
+.L328:
 
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   256  
-	movh.a	a15,#@his(uart_config)
-	lea	a15,[a15]@los(uart_config)
-.L381:
 	mov	d15,#7
-.L382:
 	st.b	[a15]10,d15
-.L272:
+.L262:
 
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   257      IfxAsclin_Asc_Pins pins;//设置引脚
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   258      pins.cts = NULL;
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   259      pins.rts = NULL;
-	mov.a	a15,#0
-.L383:
-	st.a	[a10],a15
-.L384:
-
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   260      uart_mux(uartn, tx_pin, rx_pin, (uint32 *)&pins.tx, (uint32 *)&pins.rx);
-	mov.a	a15,#0
-.L385:
-	st.a	[a10]16,a15
-.L386:
-
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   261      pins.rxMode = IfxPort_InputMode_pullUp;
-	lea	a4,[a10]24
-.L387:
-	lea	a5,[a10]8
-.L338:
 	mov	e4,d10,d9
-.L339:
+	mov.a	a2,#0
+.L329:
 	mov	d6,d11
-.L340:
+	st.a	[a10],a2
+.L330:
+	st.a	[a10]16,a2
+.L352:
+	lea	a4,[a10]24
+.L353:
+	lea	a5,[a10]8
+.L354:
 	call	uart_mux
-.L341:
+.L331:
 
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   262      pins.txMode = IfxPort_OutputMode_pushPull;
 	mov	d15,#16
-.L388:
 	st.b	[a10]12,d15
-.L389:
+.L355:
 
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   263      pins.pinDriver = IfxPort_PadDriver_cmosAutomotiveSpeed1;
 	mov	d15,#128
-.L390:
 	st.b	[a10]28,d15
-.L391:
+.L356:
 
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   264      uart_config.pins = &pins;
 	mov	d15,#0
-.L392:
 	st.b	[a10]29,d15
-.L393:
+.L357:
 
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   265  
-	movh.a	a15,#@his(uart_config)
-	lea	a15,[a15]@los(uart_config)
-.L394:
-	lea	a2,[a10]0
-.L395:
+	mov.aa	a2,a10
+.L358:
 	st.a	[a15]40,a2
-.L342:
+.L332:
 
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   266      IfxAsclin_Asc_initModule(uart_get_handle(uartn), &uart_config);
 ; ..\Libraries\seekfree_libraries\zf_uart.c	   267  
 	mov	d4,d9
-.L343:
 	call	uart_get_handle
-.L344:
-	movh.a	a5,#@his(uart_config)
-	lea	a5,[a5]@los(uart_config)
+.L333:
 	mov.aa	a4,a2
+	mov.aa	a5,a15
 	call	IfxAsclin_Asc_initModule
-.L396:
-
-; ..\Libraries\seekfree_libraries\zf_uart.c	   268      restoreInterrupts(interrupt_state);
-; ..\Libraries\seekfree_libraries\zf_uart.c	   269  }
-	mov	d15,d12
-.L276:
+.L266:
 
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Cpu\Std\IfxCpu.h	   938      if (enabled != FALSE)      (inlined)
-	jeq	d15,#0,.L140
-.L397:
+	jeq	d12,#0,.L125
+.L359:
 
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Cpu\Std\IfxCpu.h	     1  /**
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Cpu\Std\IfxCpu.h	     2   * \file IfxCpu.h
@@ -3131,15 +2743,17 @@ uart_init:	.type	func
 	enable
 
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Cpu\Std\IfxCpu.h	   938      if (enabled != FALSE)      (inlined)
-.L140:
+.L125:
 
-; ..\Libraries\seekfree_libraries\zf_uart.c	   270  -----------------------------------------------------------------------------------------------
+; ..\Libraries\seekfree_libraries\zf_uart.c	   268  terrupt_state);
+; ..\Libraries\seekfree_libraries\zf_uart.c	   269  }
+; ..\Libraries\seekfree_libraries\zf_uart.c	   270  
 	ret
-.L250:
+.L241:
 	
 __uart_init_function_end:
 	.size	uart_init,__uart_init_function_end-uart_init
-.L178:
+.L164:
 	; End of function
 	
 	.sdecl	'.text.zf_uart.uart_putchar',code,cluster('uart_putchar')
@@ -3148,55 +2762,50 @@ __uart_init_function_end:
 	
 	.global	uart_putchar
 
-; ..\Libraries\seekfree_libraries\zf_uart.c	   271  //  @brief      串口字节输出
-; ..\Libraries\seekfree_libraries\zf_uart.c	   272  //  @param      uartn           串口模块号(UART_0,UART_1,UART_2,UART_3)
-; ..\Libraries\seekfree_libraries\zf_uart.c	   273  //  @param      dat             需要发送的字节
-; ..\Libraries\seekfree_libraries\zf_uart.c	   274  //  @return     void        
-; ..\Libraries\seekfree_libraries\zf_uart.c	   275  //  Sample usage:               uart_putchar(UART_0, 0xA5);       // 串口0发送0xA5
-; ..\Libraries\seekfree_libraries\zf_uart.c	   276  //-------------------------------------------------------------------------------------------------------------------
-; ..\Libraries\seekfree_libraries\zf_uart.c	   277  void uart_putchar(UARTN_enum uartn, uint8 dat)
-; ..\Libraries\seekfree_libraries\zf_uart.c	   278  {
-; ..\Libraries\seekfree_libraries\zf_uart.c	   279  //	IfxAsclin_Asc_blockingWrite(uart_get_handle(uartn),dat);
-; ..\Libraries\seekfree_libraries\zf_uart.c	   280  	Ifx_SizeT count = 1;
-; ..\Libraries\seekfree_libraries\zf_uart.c	   281  	(void)IfxAsclin_Asc_write(uart_get_handle(uartn), &dat, &count, TIME_INFINITE);
-; ..\Libraries\seekfree_libraries\zf_uart.c	   282  }
+; ..\Libraries\seekfree_libraries\zf_uart.c	   271  
+; ..\Libraries\seekfree_libraries\zf_uart.c	   272  
+; ..\Libraries\seekfree_libraries\zf_uart.c	   273  
+; ..\Libraries\seekfree_libraries\zf_uart.c	   274  //-------------------------------------------------------------------------------------------------------------------
+; ..\Libraries\seekfree_libraries\zf_uart.c	   275  //  @brief      串口字节输出
+; ..\Libraries\seekfree_libraries\zf_uart.c	   276  //  @param      uartn           串口模块号(UART_0,UART_1,UART_2,UART_3)
+; ..\Libraries\seekfree_libraries\zf_uart.c	   277  //  @param      dat             需要发送的字节
+; ..\Libraries\seekfree_libraries\zf_uart.c	   278  //  @return     void        
+; ..\Libraries\seekfree_libraries\zf_uart.c	   279  //  Sample usage:               uart_putchar(UART_0, 0xA5);       // 串口0发送0xA5
+; ..\Libraries\seekfree_libraries\zf_uart.c	   280  //-------------------------------------------------------------------------------------------------------------------
+; ..\Libraries\seekfree_libraries\zf_uart.c	   281  void uart_putchar(UARTN_enum uartn, uint8 dat)
+; ..\Libraries\seekfree_libraries\zf_uart.c	   282  {
 ; Function uart_putchar
-.L161:
+.L147:
 uart_putchar:	.type	func
 	sub.a	a10,#8
-.L345:
+.L334:
 	st.b	[a10],d5
-.L402:
+.L364:
 
-; ..\Libraries\seekfree_libraries\zf_uart.c	   283  
-; ..\Libraries\seekfree_libraries\zf_uart.c	   284  //-------------------------------------------------------------------------------------------------------------------
-; ..\Libraries\seekfree_libraries\zf_uart.c	   285  //  @brief      串口发送数组
+; ..\Libraries\seekfree_libraries\zf_uart.c	   283  //	IfxAsclin_Asc_blockingWrite(uart_get_handle(uartn),dat);
+; ..\Libraries\seekfree_libraries\zf_uart.c	   284  	Ifx_SizeT count = 1;
+; ..\Libraries\seekfree_libraries\zf_uart.c	   285  	(void)IfxAsclin_Asc_write(uart_get_handle(uartn), &dat, &count, TIME_INFINITE);
 	mov	d15,#1
-.L403:
 	st.h	[a10]2,d15
-.L404:
+.L365:
 
-; ..\Libraries\seekfree_libraries\zf_uart.c	   286  //  @param      uartn           串口模块号(UART_0,UART_1,UART_2,UART_3)
+; ..\Libraries\seekfree_libraries\zf_uart.c	   286  }
 	call	uart_get_handle
-.L346:
-	lea	a5,[a10]0
-.L405:
+.L335:
+	mov.aa	a5,a10
+.L366:
 	lea	a6,[a10]2
-.L406:
+.L367:
 	movh.a	a15,#@his(.2.cnt)
 	lea	a15,[a15]@los(.2.cnt)
 	ld.d	e4,[a15]0
 	mov.aa	a4,a2
-	call	IfxAsclin_Asc_write
-.L407:
-
-; ..\Libraries\seekfree_libraries\zf_uart.c	   287  //  @param      *buff           要发送的数组地址
-	ret
-.L284:
+	j	IfxAsclin_Asc_write
+.L274:
 	
 __uart_putchar_function_end:
 	.size	uart_putchar,__uart_putchar_function_end-uart_putchar
-.L183:
+.L169:
 	; End of function
 	
 	.sdecl	'.text.zf_uart.uart_putbuff',code,cluster('uart_putbuff')
@@ -3205,57 +2814,52 @@ __uart_putchar_function_end:
 	
 	.global	uart_putbuff
 
-; ..\Libraries\seekfree_libraries\zf_uart.c	   288  //  @param      len             发送长度
-; ..\Libraries\seekfree_libraries\zf_uart.c	   289  //  @return     void
-; ..\Libraries\seekfree_libraries\zf_uart.c	   290  //  Sample usage:               uart_putbuff(UART_0,&a[0],5);
-; ..\Libraries\seekfree_libraries\zf_uart.c	   291  //-------------------------------------------------------------------------------------------------------------------
-; ..\Libraries\seekfree_libraries\zf_uart.c	   292  void uart_putbuff(UARTN_enum uartn, uint8 *buff, uint32 len)
-; ..\Libraries\seekfree_libraries\zf_uart.c	   293  {
-; ..\Libraries\seekfree_libraries\zf_uart.c	   294  	while(len)
-; ..\Libraries\seekfree_libraries\zf_uart.c	   295  	{
-; ..\Libraries\seekfree_libraries\zf_uart.c	   296  		uart_putchar(uartn, *buff);
-; ..\Libraries\seekfree_libraries\zf_uart.c	   297  		len--;
+; ..\Libraries\seekfree_libraries\zf_uart.c	   287  
+; ..\Libraries\seekfree_libraries\zf_uart.c	   288  //-------------------------------------------------------------------------------------------------------------------
+; ..\Libraries\seekfree_libraries\zf_uart.c	   289  //  @brief      串口发送数组
+; ..\Libraries\seekfree_libraries\zf_uart.c	   290  //  @param      uartn           串口模块号(UART_0,UART_1,UART_2,UART_3)
+; ..\Libraries\seekfree_libraries\zf_uart.c	   291  //  @param      *buff           要发送的数组地址
+; ..\Libraries\seekfree_libraries\zf_uart.c	   292  //  @param      len             发送长度
+; ..\Libraries\seekfree_libraries\zf_uart.c	   293  //  @return     void
+; ..\Libraries\seekfree_libraries\zf_uart.c	   294  //  Sample usage:               uart_putbuff(UART_0,&a[0],5);
+; ..\Libraries\seekfree_libraries\zf_uart.c	   295  //-------------------------------------------------------------------------------------------------------------------
+; ..\Libraries\seekfree_libraries\zf_uart.c	   296  void uart_putbuff(UARTN_enum uartn, uint8 *buff, uint32 len)
+; ..\Libraries\seekfree_libraries\zf_uart.c	   297  {
 ; Function uart_putbuff
-.L163:
+.L149:
 uart_putbuff:	.type	func
 	mov	d8,d4
-.L347:
 	mov.aa	a15,a4
-.L348:
+.L336:
+
+; ..\Libraries\seekfree_libraries\zf_uart.c	   298  	while(len)
+; ..\Libraries\seekfree_libraries\zf_uart.c	   299  	{
 	mov	d15,d5
-.L349:
+	j	.L126
+.L127:
 
-; ..\Libraries\seekfree_libraries\zf_uart.c	   298  		buff++;
-; ..\Libraries\seekfree_libraries\zf_uart.c	   299  	}
-	j	.L141
-.L142:
-
-; ..\Libraries\seekfree_libraries\zf_uart.c	   300  }
-; ..\Libraries\seekfree_libraries\zf_uart.c	   301  
-	ld.bu	d5,[a15]
+; ..\Libraries\seekfree_libraries\zf_uart.c	   300  		uart_putchar(uartn, *buff);
+; ..\Libraries\seekfree_libraries\zf_uart.c	   301  		len--;
+	ld.bu	d5,[a15+]
 	mov	d4,d8
-.L350:
 	call	uart_putchar
-.L351:
+.L372:
 
-; ..\Libraries\seekfree_libraries\zf_uart.c	   302  //-------------------------------------------------------------------------------------------------------------------
+; ..\Libraries\seekfree_libraries\zf_uart.c	   302  		buff++;
 	add	d15,#-1
-.L412:
+.L126:
+	jne	d15,#0,.L127
+.L373:
 
-; ..\Libraries\seekfree_libraries\zf_uart.c	   303  //  @brief      串口发送字符串
-	add.a	a15,#1
-.L141:
-	jne	d15,#0,.L142
-.L413:
-
-; ..\Libraries\seekfree_libraries\zf_uart.c	   304  //  @param      uartn           串口模块号(UART_0,UART_1,UART_2,UART_3)
-; ..\Libraries\seekfree_libraries\zf_uart.c	   305  //  @param      *str            要发送的字符串地址
+; ..\Libraries\seekfree_libraries\zf_uart.c	   303  	}
+; ..\Libraries\seekfree_libraries\zf_uart.c	   304  }
+; ..\Libraries\seekfree_libraries\zf_uart.c	   305  
 	ret
-.L289:
+.L280:
 	
 __uart_putbuff_function_end:
 	.size	uart_putbuff,__uart_putbuff_function_end-uart_putbuff
-.L188:
+.L174:
 	; End of function
 	
 	.sdecl	'.text.zf_uart.uart_putstr',code,cluster('uart_putstr')
@@ -3264,51 +2868,47 @@ __uart_putbuff_function_end:
 	
 	.global	uart_putstr
 
-; ..\Libraries\seekfree_libraries\zf_uart.c	   306  //  @return     void
-; ..\Libraries\seekfree_libraries\zf_uart.c	   307  //  Sample usage:               uart_putstr(UART_0,"i lvoe you");
-; ..\Libraries\seekfree_libraries\zf_uart.c	   308  //-------------------------------------------------------------------------------------------------------------------
-; ..\Libraries\seekfree_libraries\zf_uart.c	   309  void uart_putstr(UARTN_enum uartn, const int8 *str)
-; ..\Libraries\seekfree_libraries\zf_uart.c	   310  {
-; ..\Libraries\seekfree_libraries\zf_uart.c	   311      while(*str)
-; ..\Libraries\seekfree_libraries\zf_uart.c	   312      {
-; ..\Libraries\seekfree_libraries\zf_uart.c	   313          uart_putchar(uartn, *str++);
-; ..\Libraries\seekfree_libraries\zf_uart.c	   314      }
+; ..\Libraries\seekfree_libraries\zf_uart.c	   306  //-------------------------------------------------------------------------------------------------------------------
+; ..\Libraries\seekfree_libraries\zf_uart.c	   307  //  @brief      串口发送字符串
+; ..\Libraries\seekfree_libraries\zf_uart.c	   308  //  @param      uartn           串口模块号(UART_0,UART_1,UART_2,UART_3)
+; ..\Libraries\seekfree_libraries\zf_uart.c	   309  //  @param      *str            要发送的字符串地址
+; ..\Libraries\seekfree_libraries\zf_uart.c	   310  //  @return     void
+; ..\Libraries\seekfree_libraries\zf_uart.c	   311  //  Sample usage:               uart_putstr(UART_0,"i lvoe you");
+; ..\Libraries\seekfree_libraries\zf_uart.c	   312  //-------------------------------------------------------------------------------------------------------------------
+; ..\Libraries\seekfree_libraries\zf_uart.c	   313  void uart_putstr(UARTN_enum uartn, const int8 *str)
+; ..\Libraries\seekfree_libraries\zf_uart.c	   314  {
 ; Function uart_putstr
-.L165:
+.L151:
 uart_putstr:	.type	func
 	mov	d8,d4
-.L352:
 	mov.aa	a15,a4
-.L353:
+.L337:
 
-; ..\Libraries\seekfree_libraries\zf_uart.c	   315  }
-; ..\Libraries\seekfree_libraries\zf_uart.c	   316  
-	j	.L143
-.L144:
+; ..\Libraries\seekfree_libraries\zf_uart.c	   315      while(*str)
+; ..\Libraries\seekfree_libraries\zf_uart.c	   316      {
+	j	.L128
+.L129:
 
-; ..\Libraries\seekfree_libraries\zf_uart.c	   317  //-------------------------------------------------------------------------------------------------------------------
-; ..\Libraries\seekfree_libraries\zf_uart.c	   318  //  @brief      读取串口接收的数据（whlie等待）
-	ld.b	d15,[a15]0
-.L418:
-	add.a	a15,#1
-	extr.u	d5,d15,#0,#8
+; ..\Libraries\seekfree_libraries\zf_uart.c	   317          uart_putchar(uartn, *str++);
+; ..\Libraries\seekfree_libraries\zf_uart.c	   318      }
+	ld.bu	d5,[a15+]1
+.L378:
 	mov	d4,d8
-.L354:
 	call	uart_putchar
-.L143:
-	ld.b	d15,[a15]0
-.L419:
-	jne	d15,#0,.L144
-.L420:
+.L128:
+	ld.bu	d15,[a15]
+.L379:
+	jne	d15,#0,.L129
+.L380:
 
-; ..\Libraries\seekfree_libraries\zf_uart.c	   319  //  @param      uartn           串口模块号(UART_0,UART_1,UART_2,UART_3)
-; ..\Libraries\seekfree_libraries\zf_uart.c	   320  //  @param      *dat            接收数据的地址
+; ..\Libraries\seekfree_libraries\zf_uart.c	   319  }
+; ..\Libraries\seekfree_libraries\zf_uart.c	   320  
 	ret
-.L294:
+.L285:
 	
 __uart_putstr_function_end:
 	.size	uart_putstr,__uart_putstr_function_end-uart_putstr
-.L193:
+.L179:
 	; End of function
 	
 	.sdecl	'.text.zf_uart.uart_getchar',code,cluster('uart_getchar')
@@ -3317,56 +2917,47 @@ __uart_putstr_function_end:
 	
 	.global	uart_getchar
 
-; ..\Libraries\seekfree_libraries\zf_uart.c	   321  //  @return     void        
-; ..\Libraries\seekfree_libraries\zf_uart.c	   322  //  Sample usage:               uint8 dat; uart_getchar(UART_0,&dat);       // 接收串口0数据  存在在dat变量里
-; ..\Libraries\seekfree_libraries\zf_uart.c	   323  //-------------------------------------------------------------------------------------------------------------------
-; ..\Libraries\seekfree_libraries\zf_uart.c	   324  void uart_getchar(UARTN_enum uartn, uint8 *dat)
-; ..\Libraries\seekfree_libraries\zf_uart.c	   325  {
-; ..\Libraries\seekfree_libraries\zf_uart.c	   326  	while(IfxAsclin_Asc_getReadCount(uart_get_handle(uartn)) >0);
-; ..\Libraries\seekfree_libraries\zf_uart.c	   327  	*dat = IfxAsclin_Asc_blockingRead(uart_get_handle(uartn));
-; ..\Libraries\seekfree_libraries\zf_uart.c	   328  }
-; ..\Libraries\seekfree_libraries\zf_uart.c	   329  
+; ..\Libraries\seekfree_libraries\zf_uart.c	   321  //-------------------------------------------------------------------------------------------------------------------
+; ..\Libraries\seekfree_libraries\zf_uart.c	   322  //  @brief      读取串口接收的数据（whlie等待）
+; ..\Libraries\seekfree_libraries\zf_uart.c	   323  //  @param      uartn           串口模块号(UART_0,UART_1,UART_2,UART_3)
+; ..\Libraries\seekfree_libraries\zf_uart.c	   324  //  @param      *dat            接收数据的地址
+; ..\Libraries\seekfree_libraries\zf_uart.c	   325  //  @return     void        
+; ..\Libraries\seekfree_libraries\zf_uart.c	   326  //  Sample usage:               uint8 dat; uart_getchar(UART_0,&dat);       // 接收串口0数据  存在在dat变量里
+; ..\Libraries\seekfree_libraries\zf_uart.c	   327  //-------------------------------------------------------------------------------------------------------------------
+; ..\Libraries\seekfree_libraries\zf_uart.c	   328  void uart_getchar(UARTN_enum uartn, uint8 *dat)
+; ..\Libraries\seekfree_libraries\zf_uart.c	   329  {
 ; Function uart_getchar
-.L167:
+.L153:
 uart_getchar:	.type	func
-	mov	d15,d4
-.L355:
 	mov.aa	a15,a4
-.L356:
+.L339:
 
-; ..\Libraries\seekfree_libraries\zf_uart.c	   330  //-------------------------------------------------------------------------------------------------------------------
-; ..\Libraries\seekfree_libraries\zf_uart.c	   331  //  @brief      读取串口接收的数据（查询接收）
-	j	.L145
-.L146:
-.L145:
-	mov	d4,d15
-.L357:
+; ..\Libraries\seekfree_libraries\zf_uart.c	   330  	while(IfxAsclin_Asc_getReadCount(uart_get_handle(uartn)) >0);
+; ..\Libraries\seekfree_libraries\zf_uart.c	   331  	*dat = IfxAsclin_Asc_blockingRead(uart_get_handle(uartn));
 	call	uart_get_handle
-.L358:
-	mov.aa	a4,a2
+.L338:
+	mov.aa	a12,a2
+.L130:
+	mov.aa	a4,a12
 	call	IfxAsclin_Asc_getReadCount
-.L425:
-	jge	d2,#1,.L146
-.L426:
+.L385:
+	jge	d2,#1,.L130
+.L386:
 
-; ..\Libraries\seekfree_libraries\zf_uart.c	   332  //  @param      uartn           串口模块号(UART_0,UART_1,UART_2,UART_3)
-	mov	d4,d15
-.L359:
-	call	uart_get_handle
-.L360:
-	mov.aa	a4,a2
+; ..\Libraries\seekfree_libraries\zf_uart.c	   332  }
+	mov.aa	a4,a12
 	call	IfxAsclin_Asc_blockingRead
-.L427:
+.L387:
 	st.b	[a15],d2
-.L428:
+.L388:
 
-; ..\Libraries\seekfree_libraries\zf_uart.c	   333  //  @param      *dat            接收数据的地址
+; ..\Libraries\seekfree_libraries\zf_uart.c	   333  
 	ret
-.L298:
+.L289:
 	
 __uart_getchar_function_end:
 	.size	uart_getchar,__uart_getchar_function_end-uart_getchar
-.L198:
+.L184:
 	; End of function
 	
 	.sdecl	'.text.zf_uart.uart_query',code,cluster('uart_query')
@@ -3375,73 +2966,54 @@ __uart_getchar_function_end:
 	
 	.global	uart_query
 
-; ..\Libraries\seekfree_libraries\zf_uart.c	   334  //  @return     uint8           1：接收成功   0：未接收到数据
-; ..\Libraries\seekfree_libraries\zf_uart.c	   335  //  Sample usage:               uint8 dat; uart_query(UART_0,&dat);       // 接收串口0数据  存在在dat变量里
-; ..\Libraries\seekfree_libraries\zf_uart.c	   336  //-------------------------------------------------------------------------------------------------------------------
-; ..\Libraries\seekfree_libraries\zf_uart.c	   337  uint8 uart_query(UARTN_enum uartn, uint8 *dat)
-; ..\Libraries\seekfree_libraries\zf_uart.c	   338  {
-; ..\Libraries\seekfree_libraries\zf_uart.c	   339  	if(IfxAsclin_Asc_getReadCount(uart_get_handle(uartn)) >0)
-; ..\Libraries\seekfree_libraries\zf_uart.c	   340  	{
-; ..\Libraries\seekfree_libraries\zf_uart.c	   341  		*dat = IfxAsclin_Asc_blockingRead(uart_get_handle(uartn));
-; ..\Libraries\seekfree_libraries\zf_uart.c	   342  		return 1;
+; ..\Libraries\seekfree_libraries\zf_uart.c	   334  //-------------------------------------------------------------------------------------------------------------------
+; ..\Libraries\seekfree_libraries\zf_uart.c	   335  //  @brief      读取串口接收的数据（查询接收）
+; ..\Libraries\seekfree_libraries\zf_uart.c	   336  //  @param      uartn           串口模块号(UART_0,UART_1,UART_2,UART_3)
+; ..\Libraries\seekfree_libraries\zf_uart.c	   337  //  @param      *dat            接收数据的地址
+; ..\Libraries\seekfree_libraries\zf_uart.c	   338  //  @return     uint8           1：接收成功   0：未接收到数据
+; ..\Libraries\seekfree_libraries\zf_uart.c	   339  //  Sample usage:               uint8 dat; uart_query(UART_0,&dat);       // 接收串口0数据  存在在dat变量里
+; ..\Libraries\seekfree_libraries\zf_uart.c	   340  //-------------------------------------------------------------------------------------------------------------------
+; ..\Libraries\seekfree_libraries\zf_uart.c	   341  uint8 uart_query(UARTN_enum uartn, uint8 *dat)
+; ..\Libraries\seekfree_libraries\zf_uart.c	   342  {
 ; Function uart_query
-.L169:
+.L155:
 uart_query:	.type	func
-	mov	d15,d4
-.L362:
 	mov.aa	a15,a4
-.L363:
+.L341:
 
-; ..\Libraries\seekfree_libraries\zf_uart.c	   343  	}
-; ..\Libraries\seekfree_libraries\zf_uart.c	   344      return 0;
-	mov	d4,d15
+; ..\Libraries\seekfree_libraries\zf_uart.c	   343  	if(IfxAsclin_Asc_getReadCount(uart_get_handle(uartn)) >0)
+; ..\Libraries\seekfree_libraries\zf_uart.c	   344  	{
 	call	uart_get_handle
-.L361:
-	mov.aa	a4,a2
+.L340:
+	mov.aa	a12,a2
+	mov.aa	a4,a12
 	call	IfxAsclin_Asc_getReadCount
-.L433:
-	jlt	d2,#1,.L147
-.L434:
+.L393:
+	jlt	d2,#1,.L131
+.L394:
 
-; ..\Libraries\seekfree_libraries\zf_uart.c	   345  }
-; ..\Libraries\seekfree_libraries\zf_uart.c	   346  
-	mov	d4,d15
-.L364:
-	call	uart_get_handle
-.L365:
-	mov.aa	a4,a2
+; ..\Libraries\seekfree_libraries\zf_uart.c	   345  		*dat = IfxAsclin_Asc_blockingRead(uart_get_handle(uartn));
+; ..\Libraries\seekfree_libraries\zf_uart.c	   346  		return 1;
+	mov.aa	a4,a12
 	call	IfxAsclin_Asc_blockingRead
-.L435:
+.L395:
 	st.b	[a15],d2
-.L436:
+.L396:
 
-; ..\Libraries\seekfree_libraries\zf_uart.c	   347  
+; ..\Libraries\seekfree_libraries\zf_uart.c	   347  	}
+; ..\Libraries\seekfree_libraries\zf_uart.c	   348      return 0;
+; ..\Libraries\seekfree_libraries\zf_uart.c	   349  }
+; ..\Libraries\seekfree_libraries\zf_uart.c	   350  
 	mov	d2,#1
-.L437:
-	j	.L148
-.L147:
-
-; ..\Libraries\seekfree_libraries\zf_uart.c	   348  
-
-	mov	d2,#0
-.L438:
-
-
-	j	.L149
-
-
-.L149:
-
-
-.L148:
-
-
 	ret
-.L301:
+.L131:
+	mov	d2,#0
+	ret
+.L292:
 	
 __uart_query_function_end:
 	.size	uart_query,__uart_query_function_end-uart_query
-.L203:
+.L189:
 	; End of function
 	
 	.sdecl	'.bss.zf_uart.uart0_handle',data,cluster('uart0_handle')
@@ -3564,7 +3136,11 @@ _999001___func__:	.type	object
 	.calls	'uart_query','uart_get_handle'
 	.calls	'uart_query','IfxAsclin_Asc_getReadCount'
 	.calls	'uart_query','IfxAsclin_Asc_blockingRead'
+	.calls	'uart_set_interrupt_priority','.cocofun_3'
+	.calls	'uart_set_buffer','.cocofun_3'
+	.calls	'uart_init','.cocofun_3'
 	.calls	'uart_set_interrupt_priority','',0
+	.calls	'.cocofun_3','',0
 	.calls	'uart_set_buffer','',0
 	.calls	'uart_get_handle','',0
 	.calls	'uart_mux','',0
@@ -3631,17 +3207,17 @@ _999001___func__:	.type	object
 	.calls	'uart_query','',0
 	.sdecl	'.debug_info',debug
 	.sect	'.debug_info'
-.L171:
+.L157:
 	.word	104107
 	.half	3
-	.word	.L172
+	.word	.L158
 	.byte	4
-.L170:
+.L156:
 	.byte	1
 	.byte	'..\\Libraries\\seekfree_libraries\\zf_uart.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L173
+	.word	.L159
 	.byte	2,1,1,3
 	.word	162
 	.byte	4
@@ -3700,7 +3276,7 @@ _999001___func__:	.type	object
 	.byte	'B',0
 	.word	465
 	.byte	4,2,35,0,0
-.L258:
+.L276:
 	.byte	7
 	.byte	'unsigned char',0,1,8,7
 	.byte	'unsigned short int',0,2,7,10
@@ -5227,32 +4803,32 @@ _999001___func__:	.type	object
 	.byte	'IfxCpu_getCoreIndex',0,3,8,141,6,31
 	.word	9980
 	.byte	1,1,6,0
-.L268:
+.L257:
 	.byte	8
 	.byte	'IfxCpu_areInterruptsEnabled',0,3,8,139,5,20
 	.word	601
 	.byte	1,1
-.L269:
+.L259:
 	.byte	6,0
-.L265:
+.L255:
 	.byte	8
 	.byte	'IfxCpu_disableInterrupts',0,3,8,147,5,20
 	.word	601
 	.byte	1,1
-.L266:
+.L256:
 	.byte	19,6,0,0,4
 	.byte	'IfxCpu_enableInterrupts',0,3,8,157,5,17,1,1,6,0,4
 	.byte	'IfxCpu_forceDisableInterrupts',0,3,8,225,5,17,1,1,6,0
-.L280:
+.L270:
 	.byte	4
 	.byte	'IfxCpu_restoreInterrupts',0,3,8,168,7,17,1,1
-.L281:
+.L271:
 	.byte	5
 	.byte	'enabled',0,8,168,7,50
 	.word	601
-.L283:
+.L273:
 	.byte	6,0
-.L253:
+.L244:
 	.byte	7
 	.byte	'unsigned long int',0,4,7,8
 	.byte	'IfxCpu_getPerformanceCounter',0,3,8,161,6,19
@@ -5917,21 +5493,21 @@ _999001___func__:	.type	object
 	.byte	'stm',0,12,190,4,44
 	.word	14345
 	.byte	6,0
-.L262:
+.L251:
 	.byte	8
 	.byte	'disableInterrupts',0,3,14,108,20
 	.word	601
 	.byte	1,1
-.L264:
+.L254:
 	.byte	19,6,0,0
-.L275:
+.L265:
 	.byte	4
 	.byte	'restoreInterrupts',0,3,14,142,1,17,1,1
-.L277:
+.L267:
 	.byte	5
 	.byte	'enabled',0,14,142,1,43
 	.word	601
-.L279:
+.L269:
 	.byte	19,6,0,0,7
 	.byte	'long long int',0,8,5,8
 	.byte	'getDeadLine',0,3,14,164,2,25
@@ -7030,7 +6606,7 @@ _999001___func__:	.type	object
 	.word	20777
 	.byte	4,3,35,252,1,0,14
 	.word	20817
-.L260:
+.L249:
 	.byte	3
 	.word	21259
 	.byte	4
@@ -7067,7 +6643,7 @@ _999001___func__:	.type	object
 	.byte	'alti',0,15,191,18,82
 	.word	21515
 	.byte	6,0
-.L287:
+.L278:
 	.byte	7
 	.byte	'short int',0,2,5,7
 	.byte	'long int',0,4,5,20,17,60,9,12,13
@@ -7520,7 +7096,7 @@ _999001___func__:	.type	object
 	.word	10302
 	.byte	14
 	.word	14561
-.L319:
+.L311:
 	.byte	20,21,215,2,9,28,13
 	.byte	'asclin',0
 	.word	21264
@@ -7549,7 +7125,7 @@ _999001___func__:	.type	object
 	.byte	'txTimestamp',0
 	.word	23720
 	.byte	8,2,35,20,0
-.L309:
+.L301:
 	.byte	3
 	.word	23725
 	.byte	34
@@ -7844,7 +7420,7 @@ _999001___func__:	.type	object
 	.byte	'IfxPort_PadDriver_ttlSpeed2',0,9,18
 	.byte	'IfxPort_PadDriver_ttlSpeed3',0,10,18
 	.byte	'IfxPort_PadDriver_ttlSpeed4',0,11,0
-.L273:
+.L263:
 	.byte	20,21,188,2,9,32,13
 	.byte	'cts',0
 	.word	28538
@@ -7883,7 +7459,7 @@ _999001___func__:	.type	object
 	.byte	'IfxAsclin_ClockSource_flexRayClock',0,4,18
 	.byte	'IfxAsclin_ClockSource_ascFastClock',0,8,18
 	.byte	'IfxAsclin_ClockSource_ascSlowClock',0,16,0
-.L320:
+.L312:
 	.byte	20,21,230,2,9,64,13
 	.byte	'asclin',0
 	.word	21264
@@ -7952,13 +7528,13 @@ _999001___func__:	.type	object
 	.byte	'asclin',0,21,207,4,90
 	.word	21264
 	.byte	0
-.L251:
+.L242:
 	.byte	17,24,44,9,1,18
 	.byte	'UART_0',0,0,18
 	.byte	'UART_1',0,1,18
 	.byte	'UART_2',0,2,18
 	.byte	'UART_3',0,3,0
-.L255:
+.L246:
 	.byte	17,24,54,9,1,18
 	.byte	'UART0_TX_P14_0',0,0,18
 	.byte	'UART0_TX_P14_1',0,1,18
@@ -8024,7 +7600,7 @@ _999001___func__:	.type	object
 	.byte	'reserved_26',0,4
 	.word	449
 	.byte	6,0,2,35,0,0
-.L270:
+.L260:
 	.byte	12,25,223,7,9,4,13
 	.byte	'U',0
 	.word	426
@@ -8035,21 +7611,21 @@ _999001___func__:	.type	object
 	.byte	'B',0
 	.word	30833
 	.byte	4,2,35,0,0
-.L291:
+.L282:
 	.byte	3
 	.word	601
 	.byte	21
 	.word	23137
-.L296:
+.L287:
 	.byte	3
 	.word	30995
 	.byte	15,28
 	.word	23137
 	.byte	16,27,0
-.L306:
+.L298:
 	.byte	21
 	.word	31005
-.L316:
+.L308:
 	.byte	3
 	.word	10302
 	.byte	32
@@ -18366,17 +17942,17 @@ _999001___func__:	.type	object
 	.byte	32
 	.byte	'UART_PIN_enum',0,24,77,2
 	.word	30004
-.L321:
+.L313:
 	.byte	15,52
 	.word	601
 	.byte	16,51,0
-.L322:
+.L314:
 	.byte	15,37
 	.word	601
 	.byte	16,36,0,0
 	.sdecl	'.debug_abbrev',debug
 	.sect	'.debug_abbrev'
-.L172:
+.L158:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,16,6,0,0,2,21,0,54,15,39,12,0,0,3,15,0,73,19,0,0,4,46,1,3,8,32,13
 	.byte	58,15,59,15,57,15,54,15,39,12,0,0,5,5,0,3,8,58,15,59,15,57,15,73,19,0,0,6,11,0,0,0,7,36,0,3,8,11,15,62
 	.byte	15,0,0,8,46,1,3,8,32,13,58,15,59,15,57,15,73,19,54,15,39,12,0,0,9,59,0,3,8,0,0,10,19,1,3,8,58,15,59,15
@@ -18391,12 +17967,12 @@ _999001___func__:	.type	object
 	.byte	0,0,38,21,1,54,15,39,12,0,0,0
 	.sdecl	'.debug_line',debug
 	.sect	'.debug_line'
-.L173:
-	.word	.L367-.L366
-.L366:
+.L159:
+	.word	.L343-.L342
+.L342:
 	.half	3
-	.word	.L369-.L368
-.L368:
+	.word	.L345-.L344
+.L344:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Std',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Scu\\Std',0
@@ -18446,2079 +18022,1890 @@ _999001___func__:	.type	object
 	.byte	0,0,0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Service\\CpuGeneric\\StdIf\\IfxStdIf_DPipe.h',0
 	.byte	0,0,0,0
-.L369:
-.L367:
+.L345:
+.L343:
 	.sdecl	'.debug_info',debug,cluster('uart_init')
 	.sect	'.debug_info'
-.L174:
-	.word	558
+.L160:
+	.word	508
 	.half	3
-	.word	.L175
+	.word	.L161
 	.byte	4,1
 	.byte	'..\\Libraries\\seekfree_libraries\\zf_uart.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L177,.L176
+	.word	.L163,.L162
 	.byte	2
-	.word	.L170
+	.word	.L156
 	.byte	3
 	.byte	'uart_init',0,1,243,1,6,1,1,1
-	.word	.L159,.L250,.L158
+	.word	.L145,.L241,.L144
 	.byte	4
 	.byte	'uartn',0,1,243,1,27
-	.word	.L251,.L252
+	.word	.L242,.L243
 	.byte	4
 	.byte	'baud',0,1,243,1,41
-	.word	.L253,.L254
+	.word	.L244,.L245
 	.byte	4
 	.byte	'tx_pin',0,1,243,1,61
-	.word	.L255,.L256
+	.word	.L246,.L247
 	.byte	4
 	.byte	'rx_pin',0,1,243,1,83
-	.word	.L255,.L257
+	.word	.L246,.L248
 	.byte	5
-	.word	.L159,.L250
-	.byte	6
-	.byte	'interrupt_state',0,1,245,1,10
-	.word	.L258,.L259
+	.word	.L145,.L241
 	.byte	6
 	.byte	'moudle',0,1,247,1,23
-	.word	.L260,.L261
+	.word	.L249,.L250
 	.byte	7
-	.word	.L262,.L263,.L139
+	.word	.L251,.L252,.L253
 	.byte	8
-	.word	.L264,.L263,.L139
+	.word	.L254,.L252,.L253
 	.byte	7
-	.word	.L265,.L263,.L138
+	.word	.L255,.L252,.L253
 	.byte	8
-	.word	.L266,.L263,.L138
-	.byte	6
-	.byte	'enabled',0,2,149,5,13
-	.word	.L258,.L267
+	.word	.L256,.L252,.L253
 	.byte	7
-	.word	.L268,.L263,.L137
+	.word	.L257,.L252,.L258
 	.byte	8
-	.word	.L269,.L263,.L137
+	.word	.L259,.L252,.L258
 	.byte	6
 	.byte	'reg',0,2,141,5,17
-	.word	.L270,.L271
+	.word	.L260,.L261
 	.byte	0,0,0,0,0,0,5
-	.word	.L272,.L250
+	.word	.L262,.L241
 	.byte	6
 	.byte	'pins',0,1,130,2,24
-	.word	.L273,.L274
+	.word	.L263,.L264
 	.byte	7
-	.word	.L275,.L276,.L140
+	.word	.L265,.L266,.L125
 	.byte	9
-	.word	.L277,.L278
+	.word	.L267,.L268
 	.byte	8
-	.word	.L279,.L276,.L140
+	.word	.L269,.L266,.L125
 	.byte	7
-	.word	.L280,.L276,.L140
+	.word	.L270,.L266,.L125
 	.byte	9
-	.word	.L281,.L282
+	.word	.L271,.L272
 	.byte	10
-	.word	.L283,.L276,.L140
+	.word	.L273,.L266,.L125
 	.byte	0,0,0,0,0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('uart_init')
 	.sect	'.debug_abbrev'
-.L175:
+.L161:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3
 	.byte	8,58,15,59,15,57,15,73,16,2,6,0,0,7,29,1,49,16,17,1,18,1,0,0,8,11,1,49,16,17,1,18,1,0,0,9,5,0,49,16,2
 	.byte	6,0,0,10,11,0,49,16,17,1,18,1,0,0,0
 	.sdecl	'.debug_line',debug,cluster('uart_init')
 	.sect	'.debug_line'
-.L176:
-	.word	.L371-.L370
-.L370:
+.L162:
+	.word	.L347-.L346
+.L346:
 	.half	3
-	.word	.L373-.L372
-.L372:
+	.word	.L349-.L348
+.L348:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Std',0
 	.byte	0
 	.byte	'..\\Libraries\\seekfree_libraries\\zf_uart.c',0,0,0,0
-	.byte	'IfxCpu.h',0,1,0,0
-	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Service\\CpuGeneric\\SysSe\\Bsp\\Bsp.h',0
-	.byte	0,0,0,0
-.L373:
+	.byte	'IfxCpu.h',0,1,0,0,0
+.L349:
 	.byte	5,6,7,0,5,2
-	.word	.L159
+	.word	.L145
 	.byte	3,242,1,1,4,2,5,19,9
-	.half	.L263-.L159
+	.half	.L252-.L145
 	.byte	3,155,3,1,5,17,9
-	.half	.L327-.L263
+	.half	.L321-.L252
 	.byte	3,1,1,5,21,9
-	.half	.L328-.L327
-	.byte	1,5,5,9
-	.half	.L329-.L328
+	.half	.L322-.L321
 	.byte	1,5,14,9
-	.half	.L137-.L329
+	.half	.L258-.L322
 	.byte	3,8,1,5,10,9
-	.half	.L374-.L137
-	.byte	3,1,1,5,5,9
-	.half	.L375-.L374
-	.byte	3,1,1,4,3,9
-	.half	.L138-.L375
-	.byte	3,213,123,1,4,1,5,53,9
-	.half	.L139-.L138
-	.byte	3,137,1,1,5,34,9
-	.half	.L325-.L139
+	.half	.L350-.L258
+	.byte	3,1,1,4,1,5,53,9
+	.half	.L253-.L350
+	.byte	3,223,124,1,5,34,9
+	.half	.L320-.L253
 	.byte	3,2,1,5,47,9
-	.half	.L376-.L325
+	.half	.L323-.L320
 	.byte	1,5,18,9
-	.half	.L330-.L376
+	.half	.L324-.L323
 	.byte	3,2,1,5,30,9
-	.half	.L333-.L330
-	.byte	3,1,1,5,5,9
-	.half	.L335-.L333
-	.byte	3,2,1,5,41,9
-	.half	.L377-.L335
-	.byte	1,5,39,9
-	.half	.L378-.L377
-	.byte	1,5,5,9
-	.half	.L379-.L378
+	.half	.L351-.L324
 	.byte	3,1,1,5,41,9
-	.half	.L336-.L379
-	.byte	1,5,39,9
-	.half	.L337-.L336
-	.byte	1,5,5,9
-	.half	.L380-.L337
-	.byte	3,1,1,5,41,9
-	.half	.L381-.L380
-	.byte	1,5,39,9
-	.half	.L382-.L381
-	.byte	1,5,16,9
-	.half	.L272-.L382
-	.byte	3,3,1,5,14,9
-	.half	.L383-.L272
-	.byte	1,5,16,9
-	.half	.L384-.L383
-	.byte	3,1,1,5,14,9
-	.half	.L385-.L384
-	.byte	1,5,52,9
-	.half	.L386-.L385
+	.half	.L326-.L351
+	.byte	3,2,1,5,39,1,5,41,9
+	.half	.L327-.L326
+	.byte	3,1,1,5,39,1,5,41,9
+	.half	.L328-.L327
+	.byte	3,1,1,5,39,1,5,57,9
+	.half	.L262-.L328
+	.byte	3,5,1,5,16,3,126,1,5,57,9
+	.half	.L329-.L262
+	.byte	3,2,1,5,14,3,126,1,9
+	.half	.L330-.L329
+	.byte	3,1,1,5,52,9
+	.half	.L352-.L330
 	.byte	3,1,1,5,72,9
-	.half	.L387-.L386
+	.half	.L353-.L352
 	.byte	1,5,57,9
-	.half	.L338-.L387
+	.half	.L354-.L353
 	.byte	1,5,19,9
-	.half	.L341-.L338
-	.byte	3,1,1,5,17,9
-	.half	.L388-.L341
-	.byte	1,5,19,9
-	.half	.L389-.L388
-	.byte	3,1,1,5,17,9
-	.half	.L390-.L389
-	.byte	1,5,22,9
-	.half	.L391-.L390
-	.byte	3,1,1,5,20,9
-	.half	.L392-.L391
-	.byte	1,5,5,9
-	.half	.L393-.L392
-	.byte	3,1,1,5,25,9
-	.half	.L394-.L393
-	.byte	1,5,22,9
-	.half	.L395-.L394
+	.half	.L331-.L354
+	.byte	3,1,1,5,17,1,5,19,9
+	.half	.L355-.L331
+	.byte	3,1,1,5,17,1,5,22,9
+	.half	.L356-.L355
+	.byte	3,1,1,5,20,1,5,25,9
+	.half	.L357-.L356
+	.byte	3,1,1,5,22,9
+	.half	.L358-.L357
 	.byte	1,5,46,9
-	.half	.L342-.L395
+	.half	.L332-.L358
 	.byte	3,2,1,5,55,9
-	.half	.L344-.L342
-	.byte	1,5,23,9
-	.half	.L396-.L344
-	.byte	3,2,1,4,2,5,5,9
-	.half	.L276-.L396
-	.byte	3,157,5,1,5,17,7,9
-	.half	.L397-.L276
+	.half	.L333-.L332
+	.byte	1,4,2,5,5,9
+	.half	.L266-.L333
+	.byte	3,159,5,1,5,17,7,9
+	.half	.L359-.L266
 	.byte	3,2,1,4,1,5,1,9
-	.half	.L140-.L397
+	.half	.L125-.L359
 	.byte	3,226,122,1,7,9
-	.half	.L178-.L140
+	.half	.L164-.L125
 	.byte	0,1,1
-.L371:
+.L347:
 	.sdecl	'.debug_ranges',debug,cluster('uart_init')
 	.sect	'.debug_ranges'
-.L177:
-	.word	-1,.L159,0,.L178-.L159,0,0
+.L163:
+	.word	-1,.L145,0,.L164-.L145,0,0
 	.sdecl	'.debug_info',debug,cluster('uart_putchar')
 	.sect	'.debug_info'
-.L179:
+.L165:
 	.word	267
 	.half	3
-	.word	.L180
+	.word	.L166
 	.byte	4,1
 	.byte	'..\\Libraries\\seekfree_libraries\\zf_uart.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L182,.L181
+	.word	.L168,.L167
 	.byte	2
-	.word	.L170
+	.word	.L156
 	.byte	3
 	.byte	'uart_putchar',0,1,154,2,6,1,1,1
-	.word	.L161,.L284,.L160
+	.word	.L147,.L274,.L146
 	.byte	4
 	.byte	'uartn',0,1,154,2,30
-	.word	.L251,.L285
+	.word	.L242,.L275
 	.byte	4
 	.byte	'dat',0,1,154,2,43
-	.word	.L258,.L286
+	.word	.L276,.L277
 	.byte	5
-	.word	.L161,.L284
+	.word	.L147,.L274
 	.byte	6
 	.byte	'count',0,1,157,2,12
-	.word	.L287,.L288
+	.word	.L278,.L279
 	.byte	0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('uart_putchar')
 	.sect	'.debug_abbrev'
-.L180:
+.L166:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3
 	.byte	8,58,15,59,15,57,15,73,16,2,6,0,0,0
 	.sdecl	'.debug_line',debug,cluster('uart_putchar')
 	.sect	'.debug_line'
-.L181:
-	.word	.L399-.L398
-.L398:
+.L167:
+	.word	.L361-.L360
+.L360:
 	.half	3
-	.word	.L401-.L400
-.L400:
+	.word	.L363-.L362
+.L362:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\Libraries\\seekfree_libraries\\zf_uart.c',0,0,0,0,0
-.L401:
+.L363:
 	.byte	5,6,7,0,5,2
-	.word	.L161
+	.word	.L147
 	.byte	3,153,2,1,5,20,9
-	.half	.L402-.L161
-	.byte	3,3,1,5,18,9
-	.half	.L403-.L402
-	.byte	1,5,44,9
-	.half	.L404-.L403
+	.half	.L364-.L147
+	.byte	3,3,1,5,18,1,5,44,9
+	.half	.L365-.L364
 	.byte	3,1,1,5,53,9
-	.half	.L346-.L404
+	.half	.L335-.L365
 	.byte	1,5,59,9
-	.half	.L405-.L346
+	.half	.L366-.L335
 	.byte	1,5,66,9
-	.half	.L406-.L405
+	.half	.L367-.L366
 	.byte	1,5,1,9
-	.half	.L407-.L406
-	.byte	3,1,1,7,9
-	.half	.L183-.L407
-	.byte	0,1,1
-.L399:
+	.half	.L169-.L367
+	.byte	3,1,0,1,1
+.L361:
 	.sdecl	'.debug_ranges',debug,cluster('uart_putchar')
 	.sect	'.debug_ranges'
-.L182:
-	.word	-1,.L161,0,.L183-.L161,0,0
+.L168:
+	.word	-1,.L147,0,.L169-.L147,0,0
 	.sdecl	'.debug_info',debug,cluster('uart_putbuff')
 	.sect	'.debug_info'
-.L184:
+.L170:
 	.word	265
 	.half	3
-	.word	.L185
+	.word	.L171
 	.byte	4,1
 	.byte	'..\\Libraries\\seekfree_libraries\\zf_uart.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L187,.L186
+	.word	.L173,.L172
 	.byte	2
-	.word	.L170
+	.word	.L156
 	.byte	3
 	.byte	'uart_putbuff',0,1,169,2,6,1,1,1
-	.word	.L163,.L289,.L162
+	.word	.L149,.L280,.L148
 	.byte	4
 	.byte	'uartn',0,1,169,2,30
-	.word	.L251,.L290
+	.word	.L242,.L281
 	.byte	4
 	.byte	'buff',0,1,169,2,44
-	.word	.L291,.L292
+	.word	.L282,.L283
 	.byte	4
 	.byte	'len',0,1,169,2,57
-	.word	.L253,.L293
+	.word	.L244,.L284
 	.byte	5
-	.word	.L163,.L289
+	.word	.L149,.L280
 	.byte	0,0
 	.sdecl	'.debug_abbrev',debug,cluster('uart_putbuff')
 	.sect	'.debug_abbrev'
-.L185:
+.L171:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
 	.sdecl	'.debug_line',debug,cluster('uart_putbuff')
 	.sect	'.debug_line'
-.L186:
-	.word	.L409-.L408
-.L408:
+.L172:
+	.word	.L369-.L368
+.L368:
 	.half	3
-	.word	.L411-.L410
-.L410:
+	.word	.L371-.L370
+.L370:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\Libraries\\seekfree_libraries\\zf_uart.c',0,0,0,0,0
-.L411:
+.L371:
 	.byte	5,6,7,0,5,2
-	.word	.L163
+	.word	.L149
 	.byte	3,168,2,1,5,11,9
-	.half	.L349-.L163
+	.half	.L336-.L149
 	.byte	3,2,1,5,23,9
-	.half	.L142-.L349
+	.half	.L127-.L336
 	.byte	3,2,1,5,6,9
-	.half	.L351-.L142
-	.byte	3,1,1,5,7,9
-	.half	.L412-.L351
+	.half	.L372-.L127
 	.byte	3,1,1,5,11,9
-	.half	.L141-.L412
-	.byte	3,124,1,5,1,7,9
-	.half	.L413-.L141
+	.half	.L126-.L372
+	.byte	3,125,1,5,1,7,9
+	.half	.L373-.L126
 	.byte	3,6,1,7,9
-	.half	.L188-.L413
+	.half	.L174-.L373
 	.byte	0,1,1
-.L409:
+.L369:
 	.sdecl	'.debug_ranges',debug,cluster('uart_putbuff')
 	.sect	'.debug_ranges'
-.L187:
-	.word	-1,.L163,0,.L188-.L163,0,0
+.L173:
+	.word	-1,.L149,0,.L174-.L149,0,0
 	.sdecl	'.debug_info',debug,cluster('uart_putstr')
 	.sect	'.debug_info'
-.L189:
+.L175:
 	.word	246
 	.half	3
-	.word	.L190
+	.word	.L176
 	.byte	4,1
 	.byte	'..\\Libraries\\seekfree_libraries\\zf_uart.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L192,.L191
+	.word	.L178,.L177
 	.byte	2
-	.word	.L170
+	.word	.L156
 	.byte	3
 	.byte	'uart_putstr',0,1,186,2,6,1,1,1
-	.word	.L165,.L294,.L164
+	.word	.L151,.L285,.L150
 	.byte	4
 	.byte	'uartn',0,1,186,2,29
-	.word	.L251,.L295
+	.word	.L242,.L286
 	.byte	4
 	.byte	'str',0,1,186,2,48
-	.word	.L296,.L297
+	.word	.L287,.L288
 	.byte	5
-	.word	.L165,.L294
+	.word	.L151,.L285
 	.byte	0,0
 	.sdecl	'.debug_abbrev',debug,cluster('uart_putstr')
 	.sect	'.debug_abbrev'
-.L190:
+.L176:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
 	.sdecl	'.debug_line',debug,cluster('uart_putstr')
 	.sect	'.debug_line'
-.L191:
-	.word	.L415-.L414
-.L414:
+.L177:
+	.word	.L375-.L374
+.L374:
 	.half	3
-	.word	.L417-.L416
-.L416:
+	.word	.L377-.L376
+.L376:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\Libraries\\seekfree_libraries\\zf_uart.c',0,0,0,0,0
-.L417:
+.L377:
 	.byte	5,6,7,0,5,2
-	.word	.L165
+	.word	.L151
 	.byte	3,185,2,1,5,15,9
-	.half	.L353-.L165
+	.half	.L337-.L151
 	.byte	3,2,1,5,29,9
-	.half	.L144-.L353
+	.half	.L129-.L337
 	.byte	3,2,1,5,33,9
-	.half	.L418-.L144
+	.half	.L378-.L129
 	.byte	1,5,11,9
-	.half	.L143-.L418
+	.half	.L128-.L378
 	.byte	3,126,1,5,15,9
-	.half	.L419-.L143
+	.half	.L379-.L128
 	.byte	1,5,1,7,9
-	.half	.L420-.L419
+	.half	.L380-.L379
 	.byte	3,4,1,7,9
-	.half	.L193-.L420
+	.half	.L179-.L380
 	.byte	0,1,1
-.L415:
+.L375:
 	.sdecl	'.debug_ranges',debug,cluster('uart_putstr')
 	.sect	'.debug_ranges'
-.L192:
-	.word	-1,.L165,0,.L193-.L165,0,0
+.L178:
+	.word	-1,.L151,0,.L179-.L151,0,0
 	.sdecl	'.debug_info',debug,cluster('uart_getchar')
 	.sect	'.debug_info'
-.L194:
+.L180:
 	.word	247
 	.half	3
-	.word	.L195
+	.word	.L181
 	.byte	4,1
 	.byte	'..\\Libraries\\seekfree_libraries\\zf_uart.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L197,.L196
+	.word	.L183,.L182
 	.byte	2
-	.word	.L170
+	.word	.L156
 	.byte	3
 	.byte	'uart_getchar',0,1,201,2,6,1,1,1
-	.word	.L167,.L298,.L166
+	.word	.L153,.L289,.L152
 	.byte	4
 	.byte	'uartn',0,1,201,2,30
-	.word	.L251,.L299
+	.word	.L242,.L290
 	.byte	4
 	.byte	'dat',0,1,201,2,44
-	.word	.L291,.L300
+	.word	.L282,.L291
 	.byte	5
-	.word	.L167,.L298
+	.word	.L153,.L289
 	.byte	0,0
 	.sdecl	'.debug_abbrev',debug,cluster('uart_getchar')
 	.sect	'.debug_abbrev'
-.L195:
+.L181:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
 	.sdecl	'.debug_line',debug,cluster('uart_getchar')
 	.sect	'.debug_line'
-.L196:
-	.word	.L422-.L421
-.L421:
+.L182:
+	.word	.L382-.L381
+.L381:
 	.half	3
-	.word	.L424-.L423
-.L423:
+	.word	.L384-.L383
+.L383:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\Libraries\\seekfree_libraries\\zf_uart.c',0,0,0,0,0
-.L424:
+.L384:
 	.byte	5,6,7,0,5,2
-	.word	.L167
-	.byte	3,200,2,1,5,61,9
-	.half	.L356-.L167
-	.byte	3,2,1,5,51,9
-	.half	.L145-.L356
-	.byte	1,5,50,9
-	.half	.L358-.L145
-	.byte	1,5,61,9
-	.half	.L425-.L358
-	.byte	1,5,52,7,9
-	.half	.L426-.L425
-	.byte	3,1,1,5,51,9
-	.half	.L360-.L426
-	.byte	1,5,7,9
-	.half	.L427-.L360
+	.word	.L153
+	.byte	3,200,2,1,5,51,9
+	.half	.L339-.L153
+	.byte	3,2,1,5,1,9
+	.half	.L338-.L339
+	.byte	3,127,1,5,50,9
+	.half	.L130-.L338
+	.byte	3,1,1,5,61,9
+	.half	.L385-.L130
+	.byte	1,5,51,7,9
+	.half	.L386-.L385
+	.byte	3,1,1,5,7,9
+	.half	.L387-.L386
 	.byte	1,5,1,9
-	.half	.L428-.L427
+	.half	.L388-.L387
 	.byte	3,1,1,7,9
-	.half	.L198-.L428
+	.half	.L184-.L388
 	.byte	0,1,1
-.L422:
+.L382:
 	.sdecl	'.debug_ranges',debug,cluster('uart_getchar')
 	.sect	'.debug_ranges'
-.L197:
-	.word	-1,.L167,0,.L198-.L167,0,0
+.L183:
+	.word	-1,.L153,0,.L184-.L153,0,0
 	.sdecl	'.debug_info',debug,cluster('uart_query')
 	.sect	'.debug_info'
-.L199:
+.L185:
 	.word	249
 	.half	3
-	.word	.L200
+	.word	.L186
 	.byte	4,1
 	.byte	'..\\Libraries\\seekfree_libraries\\zf_uart.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L202,.L201
+	.word	.L188,.L187
 	.byte	2
-	.word	.L170
+	.word	.L156
 	.byte	3
 	.byte	'uart_query',0,1,214,2,7
-	.word	.L258
+	.word	.L276
 	.byte	1,1,1
-	.word	.L169,.L301,.L168
+	.word	.L155,.L292,.L154
 	.byte	4
 	.byte	'uartn',0,1,214,2,29
-	.word	.L251,.L302
+	.word	.L242,.L293
 	.byte	4
 	.byte	'dat',0,1,214,2,43
-	.word	.L291,.L303
+	.word	.L282,.L294
 	.byte	5
-	.word	.L169,.L301
+	.word	.L155,.L292
 	.byte	0,0
 	.sdecl	'.debug_abbrev',debug,cluster('uart_query')
 	.sect	'.debug_abbrev'
-.L200:
+.L186:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
 	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
 	.sdecl	'.debug_line',debug,cluster('uart_query')
 	.sect	'.debug_line'
-.L201:
-	.word	.L430-.L429
-.L429:
+.L187:
+	.word	.L390-.L389
+.L389:
 	.half	3
-	.word	.L432-.L431
-.L431:
+	.word	.L392-.L391
+.L391:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\Libraries\\seekfree_libraries\\zf_uart.c',0,0,0,0,0
-.L432:
+.L392:
 	.byte	5,7,7,0,5,2
-	.word	.L169
+	.word	.L155
 	.byte	3,213,2,1,5,48,9
-	.half	.L363-.L169
+	.half	.L341-.L155
 	.byte	3,2,1,5,47,9
-	.half	.L361-.L363
+	.half	.L340-.L341
 	.byte	1,5,2,9
-	.half	.L433-.L361
-	.byte	1,5,53,7,9
-	.half	.L434-.L433
-	.byte	3,2,1,5,52,9
-	.half	.L365-.L434
-	.byte	1,5,8,9
-	.half	.L435-.L365
+	.half	.L393-.L340
+	.byte	1,5,52,7,9
+	.half	.L394-.L393
+	.byte	3,2,1,5,8,9
+	.half	.L395-.L394
 	.byte	1,5,10,9
-	.half	.L436-.L435
-	.byte	3,1,1,5,3,9
-	.half	.L437-.L436
-	.byte	1,5,12,9
-	.half	.L147-.L437
-	.byte	3,2,1,5,5,9
-	.half	.L438-.L147
-	.byte	1,5,1,9
-	.half	.L148-.L438
-	.byte	3,1,1,7,9
-	.half	.L203-.L148
+	.half	.L396-.L395
+	.byte	3,1,1,5,1,3,3,1,5,12,7,9
+	.half	.L131-.L396
+	.byte	3,127,1,5,1,3,1,1,7,9
+	.half	.L189-.L131
 	.byte	0,1,1
-.L430:
+.L390:
 	.sdecl	'.debug_ranges',debug,cluster('uart_query')
 	.sect	'.debug_ranges'
-.L202:
-	.word	-1,.L169,0,.L203-.L169,0,0
+.L188:
+	.word	-1,.L155,0,.L189-.L155,0,0
 	.sdecl	'.debug_info',debug,cluster('uart_set_interrupt_priority')
 	.sect	'.debug_info'
-.L204:
-	.word	267
+.L190:
+	.word	263
 	.half	3
-	.word	.L205
+	.word	.L191
 	.byte	4,1
 	.byte	'..\\Libraries\\seekfree_libraries\\zf_uart.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L207,.L206
+	.word	.L193,.L192
 	.byte	2
-	.word	.L170
+	.word	.L156
 	.byte	3
 	.byte	'uart_set_interrupt_priority',0,1,62,6,1,1,1
-	.word	.L151,.L304,.L150
+	.word	.L135,.L295,.L134
 	.byte	4
 	.byte	'uartn',0,1,62,45
-	.word	.L251,.L305
+	.word	.L242,.L296
 	.byte	5
-	.word	.L151,.L304
+	.word	.L297
 	.byte	6
 	.byte	'__func__',0,1,94,12
-	.word	.L306
+	.word	.L298
 	.byte	5,3
 	.word	_999001___func__
 	.byte	0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('uart_set_interrupt_priority')
 	.sect	'.debug_abbrev'
-.L205:
+.L191:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
-	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3
-	.byte	8,58,15,59,15,57,15,73,16,2,9,0,0,0
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,85,6,0,0,6,52,0,3,8,58
+	.byte	15,59,15,57,15,73,16,2,9,0,0,0
 	.sdecl	'.debug_line',debug,cluster('uart_set_interrupt_priority')
 	.sect	'.debug_line'
-.L206:
-	.word	.L440-.L439
-.L439:
+.L192:
+	.word	.L398-.L397
+.L397:
 	.half	3
-	.word	.L442-.L441
-.L441:
+	.word	.L400-.L399
+.L399:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\Libraries\\seekfree_libraries\\zf_uart.c',0,0,0,0,0
-.L442:
+.L400:
 	.byte	5,8,7,0,5,2
-	.word	.L151
-	.byte	3,193,0,1,9
-	.half	.L443-.L151
-	.byte	3,7,1,9
-	.half	.L444-.L443
-	.byte	3,7,1,9
-	.half	.L445-.L444
-	.byte	3,7,1,5,4,9
-	.half	.L2-.L445
+	.word	.L135
+	.byte	3,193,0,1,7,9
+	.half	.L401-.L135
+	.byte	3,7,1,7,9
+	.half	.L402-.L401
+	.byte	3,7,1,7,9
+	.half	.L403-.L402
+	.byte	3,7,1,7,9
+	.half	.L404-.L403
+	.byte	1,5,4,9
+	.half	.L2-.L404
 	.byte	3,109,1,5,40,9
-	.half	.L446-.L2
-	.byte	1,5,38,9
-	.half	.L447-.L446
-	.byte	1,5,4,9
-	.half	.L448-.L447
-	.byte	3,1,1,5,40,9
-	.half	.L449-.L448
-	.byte	1,5,38,9
-	.half	.L450-.L449
-	.byte	1,5,4,9
-	.half	.L451-.L450
-	.byte	3,1,1,5,40,9
-	.half	.L452-.L451
-	.byte	1,5,38,9
-	.half	.L453-.L452
-	.byte	1,5,4,9
-	.half	.L454-.L453
-	.byte	3,1,1,5,42,9
-	.half	.L455-.L454
-	.byte	1,5,40,9
-	.half	.L456-.L455
-	.byte	1,5,4,9
-	.half	.L457-.L456
-	.byte	3,1,1,9
-	.half	.L3-.L457
+	.half	.L405-.L2
+	.byte	1,5,38,1,5,40,9
+	.half	.L406-.L405
+	.byte	3,1,1,5,38,1,5,40,9
+	.half	.L407-.L406
+	.byte	3,1,1,5,4,3,2,1,9
+	.half	.L3-.L407
 	.byte	3,3,1,5,40,9
-	.half	.L458-.L3
-	.byte	1,5,38,9
-	.half	.L459-.L458
-	.byte	1,5,4,9
-	.half	.L460-.L459
-	.byte	3,1,1,5,40,9
-	.half	.L461-.L460
-	.byte	1,5,38,9
-	.half	.L462-.L461
-	.byte	1,5,4,9
-	.half	.L463-.L462
-	.byte	3,1,1,5,40,9
-	.half	.L464-.L463
-	.byte	1,5,38,9
-	.half	.L465-.L464
-	.byte	1,5,4,9
-	.half	.L466-.L465
-	.byte	3,1,1,5,42,9
-	.half	.L467-.L466
-	.byte	1,5,40,9
-	.half	.L468-.L467
-	.byte	1,5,4,9
-	.half	.L469-.L468
-	.byte	3,1,1,9
-	.half	.L4-.L469
+	.half	.L315-.L3
+	.byte	1,5,38,1,5,40,9
+	.half	.L408-.L315
+	.byte	3,1,1,5,38,1,5,40,9
+	.half	.L409-.L408
+	.byte	3,1,1,5,4,3,2,1,9
+	.half	.L4-.L409
 	.byte	3,3,1,5,40,9
-	.half	.L470-.L4
-	.byte	1,5,38,9
-	.half	.L471-.L470
-	.byte	1,5,4,9
-	.half	.L472-.L471
-	.byte	3,1,1,5,40,9
-	.half	.L473-.L472
-	.byte	1,5,38,9
-	.half	.L474-.L473
-	.byte	1,5,4,9
-	.half	.L475-.L474
-	.byte	3,1,1,5,40,9
-	.half	.L476-.L475
-	.byte	1,5,38,9
-	.half	.L477-.L476
-	.byte	1,5,4,9
-	.half	.L478-.L477
-	.byte	3,1,1,5,42,9
-	.half	.L479-.L478
-	.byte	1,5,40,9
-	.half	.L480-.L479
-	.byte	1,5,4,9
-	.half	.L481-.L480
-	.byte	3,1,1,9
-	.half	.L5-.L481
+	.half	.L316-.L4
+	.byte	1,5,38,1,5,40,9
+	.half	.L410-.L316
+	.byte	3,1,1,5,38,1,5,40,9
+	.half	.L411-.L410
+	.byte	3,1,1,5,4,3,2,1,9
+	.half	.L5-.L411
 	.byte	3,3,1,5,40,9
-	.half	.L482-.L5
-	.byte	1,5,38,9
-	.half	.L483-.L482
-	.byte	1,5,4,9
-	.half	.L484-.L483
-	.byte	3,1,1,5,40,9
-	.half	.L485-.L484
-	.byte	1,5,38,9
-	.half	.L486-.L485
-	.byte	1,5,4,9
-	.half	.L487-.L486
-	.byte	3,1,1,5,40,9
-	.half	.L488-.L487
-	.byte	1,5,38,9
-	.half	.L489-.L488
-	.byte	1,5,4,9
-	.half	.L490-.L489
-	.byte	3,1,1,5,42,9
-	.half	.L491-.L490
-	.byte	1,5,40,9
-	.half	.L492-.L491
-	.byte	1,5,4,9
-	.half	.L493-.L492
-	.byte	3,1,1,5,12,9
-	.half	.L6-.L493
-	.byte	3,1,1,5,1,9
-	.half	.L7-.L6
-	.byte	3,2,1,7,9
-	.half	.L208-.L7
-	.byte	0,1,1
-.L440:
+	.half	.L317-.L5
+	.byte	1,5,38,1,5,40,9
+	.half	.L412-.L317
+	.byte	3,1,1,5,38,1,5,40,9
+	.half	.L413-.L412
+	.byte	3,1,1,5,38,9
+	.half	.L9-.L413
+	.byte	1,5,42,9
+	.half	.L414-.L9
+	.byte	3,1,1,5,40,1,5,1,9
+	.half	.L415-.L414
+	.byte	3,4,1,5,12,7,9
+	.half	.L6-.L415
+	.byte	3,126,1,5,1,9
+	.half	.L194-.L6
+	.byte	3,2,0,1,1
+.L398:
 	.sdecl	'.debug_ranges',debug,cluster('uart_set_interrupt_priority')
 	.sect	'.debug_ranges'
-.L207:
-	.word	-1,.L151,0,.L208-.L151,0,0
+.L193:
+	.word	-1,.L135,0,.L194-.L135,0,0
+.L297:
+	.word	-1,.L135,0,.L295-.L135,-1,.L137,0,.L214-.L137,0,0
 	.sdecl	'.debug_info',debug,cluster('uart_set_buffer')
 	.sect	'.debug_info'
-.L209:
+.L195:
 	.word	231
 	.half	3
-	.word	.L210
+	.word	.L196
 	.byte	4,1
 	.byte	'..\\Libraries\\seekfree_libraries\\zf_uart.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L212,.L211
+	.word	.L198,.L197
 	.byte	2
-	.word	.L170
+	.word	.L156
 	.byte	3
 	.byte	'uart_set_buffer',0,1,98,6,1,1,1
-	.word	.L153,.L307,.L152
+	.word	.L139,.L299,.L138
 	.byte	4
 	.byte	'uartn',0,1,98,33
-	.word	.L251,.L308
+	.word	.L242,.L300
 	.byte	5
-	.word	.L153,.L307
+	.word	.L139,.L299
 	.byte	0,0
 	.sdecl	'.debug_abbrev',debug,cluster('uart_set_buffer')
 	.sect	'.debug_abbrev'
-.L210:
+.L196:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
 	.sdecl	'.debug_line',debug,cluster('uart_set_buffer')
 	.sect	'.debug_line'
-.L211:
-	.word	.L495-.L494
-.L494:
+.L197:
+	.word	.L417-.L416
+.L416:
 	.half	3
-	.word	.L497-.L496
-.L496:
+	.word	.L419-.L418
+.L418:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\Libraries\\seekfree_libraries\\zf_uart.c',0,0,0,0,0
-.L497:
+.L419:
 	.byte	5,8,7,0,5,2
-	.word	.L153
-	.byte	3,229,0,1,9
-	.half	.L498-.L153
-	.byte	3,7,1,9
-	.half	.L499-.L498
-	.byte	3,7,1,9
-	.half	.L500-.L499
-	.byte	3,7,1,5,4,9
-	.half	.L13-.L500
-	.byte	3,109,1,5,30,9
-	.half	.L501-.L13
+	.word	.L139
+	.byte	3,229,0,1,7,9
+	.half	.L420-.L139
+	.byte	3,7,1,7,9
+	.half	.L421-.L420
+	.byte	3,7,1,7,9
+	.half	.L422-.L421
+	.byte	3,7,1,5,1,7,9
+	.half	.L423-.L422
+	.byte	3,9,1,5,4,7,9
+	.half	.L11-.L423
+	.byte	3,100,1,5,30,9
+	.half	.L424-.L11
 	.byte	1,5,27,9
-	.half	.L502-.L501
-	.byte	1,5,4,9
-	.half	.L503-.L502
-	.byte	3,1,1,5,30,9
-	.half	.L504-.L503
-	.byte	1,5,27,9
-	.half	.L505-.L504
-	.byte	1,5,4,9
-	.half	.L506-.L505
-	.byte	3,1,1,5,31,9
-	.half	.L507-.L506
-	.byte	1,5,29,9
-	.half	.L508-.L507
-	.byte	1,5,4,9
-	.half	.L509-.L508
-	.byte	3,1,1,5,31,9
-	.half	.L510-.L509
-	.byte	1,5,29,9
-	.half	.L511-.L510
-	.byte	1,5,4,9
-	.half	.L512-.L511
-	.byte	3,1,1,9
-	.half	.L14-.L512
+	.half	.L425-.L424
+	.byte	1,5,30,9
+	.half	.L426-.L425
+	.byte	3,1,1,5,4,9
+	.half	.L427-.L426
+	.byte	3,3,1,9
+	.half	.L12-.L427
 	.byte	3,3,1,5,30,9
-	.half	.L513-.L14
+	.half	.L428-.L12
 	.byte	1,5,27,9
-	.half	.L514-.L513
-	.byte	1,5,4,9
-	.half	.L515-.L514
-	.byte	3,1,1,5,30,9
-	.half	.L516-.L515
-	.byte	1,5,27,9
-	.half	.L517-.L516
-	.byte	1,5,4,9
-	.half	.L518-.L517
-	.byte	3,1,1,5,31,9
-	.half	.L519-.L518
-	.byte	1,5,29,9
-	.half	.L520-.L519
-	.byte	1,5,4,9
-	.half	.L521-.L520
-	.byte	3,1,1,5,31,9
-	.half	.L522-.L521
-	.byte	1,5,29,9
-	.half	.L523-.L522
-	.byte	1,5,4,9
-	.half	.L524-.L523
-	.byte	3,1,1,9
-	.half	.L15-.L524
+	.half	.L429-.L428
+	.byte	1,5,30,9
+	.half	.L430-.L429
+	.byte	3,1,1,5,4,9
+	.half	.L431-.L430
+	.byte	3,3,1,9
+	.half	.L13-.L431
 	.byte	3,3,1,5,30,9
-	.half	.L525-.L15
+	.half	.L432-.L13
 	.byte	1,5,27,9
-	.half	.L526-.L525
-	.byte	1,5,4,9
-	.half	.L527-.L526
-	.byte	3,1,1,5,30,9
-	.half	.L528-.L527
-	.byte	1,5,27,9
-	.half	.L529-.L528
-	.byte	1,5,4,9
-	.half	.L530-.L529
-	.byte	3,1,1,5,31,9
-	.half	.L531-.L530
-	.byte	1,5,29,9
-	.half	.L532-.L531
-	.byte	1,5,4,9
-	.half	.L533-.L532
-	.byte	3,1,1,5,31,9
-	.half	.L534-.L533
-	.byte	1,5,29,9
-	.half	.L535-.L534
-	.byte	1,5,4,9
-	.half	.L536-.L535
-	.byte	3,1,1,9
-	.half	.L16-.L536
+	.half	.L433-.L432
+	.byte	1,5,30,9
+	.half	.L434-.L433
+	.byte	3,1,1,5,27,9
+	.half	.L17-.L434
+	.byte	1,5,31,9
+	.half	.L435-.L17
+	.byte	3,1,1,5,29,1,5,4,9
+	.half	.L436-.L435
+	.byte	3,2,1,9
+	.half	.L14-.L436
 	.byte	3,3,1,5,30,9
-	.half	.L537-.L16
+	.half	.L437-.L14
 	.byte	1,5,27,9
-	.half	.L538-.L537
-	.byte	1,5,4,9
-	.half	.L539-.L538
-	.byte	3,1,1,5,31,9
-	.half	.L540-.L539
-	.byte	1,5,28,9
-	.half	.L541-.L540
-	.byte	1,5,4,9
-	.half	.L542-.L541
-	.byte	3,1,1,5,31,9
-	.half	.L543-.L542
-	.byte	1,5,29,9
-	.half	.L544-.L543
-	.byte	1,5,4,9
-	.half	.L545-.L544
-	.byte	3,1,1,5,31,9
-	.half	.L546-.L545
-	.byte	1,5,29,9
-	.half	.L547-.L546
-	.byte	1,5,4,9
-	.half	.L548-.L547
-	.byte	3,1,1,5,1,9
-	.half	.L18-.L548
-	.byte	3,3,1,7,9
-	.half	.L213-.L18
+	.half	.L438-.L437
+	.byte	1,5,31,9
+	.half	.L439-.L438
+	.byte	3,1,1,5,28,9
+	.half	.L440-.L439
+	.byte	1,5,31,9
+	.half	.L441-.L440
+	.byte	3,1,1,5,29,1,5,31,9
+	.half	.L442-.L441
+	.byte	3,1,1,5,29,9
+	.half	.L18-.L442
+	.byte	1,5,1,9
+	.half	.L443-.L18
+	.byte	3,4,1,7,9
+	.half	.L199-.L443
 	.byte	0,1,1
-.L495:
+.L417:
 	.sdecl	'.debug_ranges',debug,cluster('uart_set_buffer')
 	.sect	'.debug_ranges'
-.L212:
-	.word	-1,.L153,0,.L213-.L153,0,0
+.L198:
+	.word	-1,.L139,0,.L199-.L139,0,0
 	.sdecl	'.debug_info',debug,cluster('uart_get_handle')
 	.sect	'.debug_info'
-.L214:
+.L200:
 	.word	237
 	.half	3
-	.word	.L215
+	.word	.L201
 	.byte	4,1
 	.byte	'..\\Libraries\\seekfree_libraries\\zf_uart.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L217,.L216
+	.word	.L203,.L202
 	.byte	2
-	.word	.L170
+	.word	.L156
 	.byte	3
 	.byte	'uart_get_handle',0,1,135,1,16
-	.word	.L309
+	.word	.L301
 	.byte	1,1,1
-	.word	.L155,.L310,.L154
+	.word	.L141,.L302,.L140
 	.byte	4
 	.byte	'uartn',0,1,135,1,43
-	.word	.L251,.L311
+	.word	.L242,.L303
 	.byte	5
-	.word	.L155,.L310
+	.word	.L141,.L302
 	.byte	0,0
 	.sdecl	'.debug_abbrev',debug,cluster('uart_get_handle')
 	.sect	'.debug_abbrev'
-.L215:
+.L201:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
 	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
 	.sdecl	'.debug_line',debug,cluster('uart_get_handle')
 	.sect	'.debug_line'
-.L216:
-	.word	.L550-.L549
-.L549:
+.L202:
+	.word	.L445-.L444
+.L444:
 	.half	3
-	.word	.L552-.L551
-.L551:
+	.word	.L447-.L446
+.L446:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\Libraries\\seekfree_libraries\\zf_uart.c',0,0,0,0,0
-.L552:
+.L447:
 	.byte	5,8,7,0,5,2
-	.word	.L155
-	.byte	3,138,1,1,9
-	.half	.L553-.L155
-	.byte	3,1,1,9
-	.half	.L554-.L553
-	.byte	3,1,1,9
-	.half	.L555-.L554
-	.byte	3,1,1,5,25,9
-	.half	.L22-.L555
-	.byte	3,125,1,5,17,9
-	.half	.L556-.L22
-	.byte	1,5,25,9
-	.half	.L23-.L556
-	.byte	3,1,1,5,17,9
-	.half	.L557-.L23
-	.byte	1,5,25,9
-	.half	.L24-.L557
-	.byte	3,1,1,5,17,9
-	.half	.L558-.L24
-	.byte	1,5,25,9
-	.half	.L25-.L558
-	.byte	3,1,1,5,17,9
-	.half	.L559-.L25
-	.byte	1,5,9,9
-	.half	.L26-.L559
-	.byte	3,4,1,5,2,9
-	.half	.L560-.L26
-	.byte	1,5,1,9
-	.half	.L27-.L560
+	.word	.L141
+	.byte	3,138,1,1,7,9
+	.half	.L448-.L141
 	.byte	3,1,1,7,9
-	.half	.L218-.L27
+	.half	.L449-.L448
+	.byte	3,1,1,7,9
+	.half	.L450-.L449
+	.byte	3,1,1,5,9,7,9
+	.half	.L451-.L450
+	.byte	3,4,1,5,1,9
+	.half	.L452-.L451
+	.byte	3,1,1,5,25,7,9
+	.half	.L19-.L452
+	.byte	3,120,1,5,1,9
+	.half	.L453-.L19
+	.byte	3,8,1,5,25,7,9
+	.half	.L20-.L453
+	.byte	3,121,1,5,1,9
+	.half	.L454-.L20
+	.byte	3,7,1,5,25,7,9
+	.half	.L21-.L454
+	.byte	3,122,1,5,1,9
+	.half	.L455-.L21
+	.byte	3,6,1,5,25,7,9
+	.half	.L22-.L455
+	.byte	3,123,1,5,1,9
+	.half	.L456-.L22
+	.byte	3,5,1,7,9
+	.half	.L204-.L456
 	.byte	0,1,1
-.L550:
+.L445:
 	.sdecl	'.debug_ranges',debug,cluster('uart_get_handle')
 	.sect	'.debug_ranges'
-.L217:
-	.word	-1,.L155,0,.L218-.L155,0,0
+.L203:
+	.word	-1,.L141,0,.L204-.L141,0,0
 	.sdecl	'.debug_info',debug,cluster('uart_mux')
 	.sect	'.debug_info'
-.L219:
+.L205:
 	.word	314
 	.half	3
-	.word	.L220
+	.word	.L206
 	.byte	4,1
 	.byte	'..\\Libraries\\seekfree_libraries\\zf_uart.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L222,.L221
+	.word	.L208,.L207
 	.byte	2
-	.word	.L170
+	.word	.L156
 	.byte	3
 	.byte	'uart_mux',0,1,149,1,6,1,1,1
-	.word	.L157,.L312,.L156
+	.word	.L143,.L304,.L142
 	.byte	4
 	.byte	'uartn',0,1,149,1,26
-	.word	.L251,.L313
+	.word	.L242,.L305
 	.byte	4
 	.byte	'tx_pin',0,1,149,1,47
-	.word	.L255,.L314
+	.word	.L246,.L306
 	.byte	4
 	.byte	'rx_pin',0,1,149,1,69
-	.word	.L255,.L315
+	.word	.L246,.L307
 	.byte	4
 	.byte	'set_tx_pin',0,1,149,1,85
-	.word	.L316,.L317
+	.word	.L308,.L309
 	.byte	4
 	.byte	'set_rx_pin',0,1,149,1,105
-	.word	.L316,.L318
+	.word	.L308,.L310
 	.byte	5
-	.word	.L157,.L312
+	.word	.L143,.L304
 	.byte	0,0
 	.sdecl	'.debug_abbrev',debug,cluster('uart_mux')
 	.sect	'.debug_abbrev'
-.L220:
+.L206:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
 	.sdecl	'.debug_line',debug,cluster('uart_mux')
 	.sect	'.debug_line'
-.L221:
-	.word	.L562-.L561
-.L561:
+.L207:
+	.word	.L458-.L457
+.L457:
 	.half	3
-	.word	.L564-.L563
-.L563:
+	.word	.L460-.L459
+.L459:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\Libraries\\seekfree_libraries\\zf_uart.c',0,0,0,0,0
-.L564:
+.L460:
 	.byte	5,8,7,0,5,2
-	.word	.L157
-	.byte	3,152,1,1,9
-	.half	.L565-.L157
-	.byte	3,13,1,9
-	.half	.L566-.L565
-	.byte	3,24,1,9
-	.half	.L567-.L566
-	.byte	3,18,1,5,4,9
-	.half	.L32-.L567
-	.byte	3,75,1,5,60,7,9
-	.half	.L568-.L32
-	.byte	1,5,49,9
-	.half	.L569-.L568
+	.word	.L143
+	.byte	3,152,1,1,7,9
+	.half	.L461-.L143
+	.byte	3,13,1,7,9
+	.half	.L462-.L461
+	.byte	3,24,1,7,9
+	.half	.L463-.L462
+	.byte	3,18,1,5,1,7,9
+	.half	.L464-.L463
+	.byte	3,22,1,5,4,7,9
+	.half	.L29-.L464
+	.byte	3,181,127,1,5,60,7,9
+	.half	.L465-.L29
 	.byte	1,5,83,9
-	.half	.L570-.L569
+	.half	.L466-.L465
 	.byte	1,5,9,9
-	.half	.L37-.L570
+	.half	.L34-.L466
 	.byte	3,1,1,5,61,7,9
-	.half	.L571-.L37
+	.half	.L467-.L34
+	.byte	1,5,84,9
+	.half	.L468-.L467
+	.byte	1,5,9,9
+	.half	.L36-.L468
+	.byte	3,1,1,5,61,7,9
+	.half	.L469-.L36
+	.byte	1,5,84,9
+	.half	.L470-.L469
+	.byte	1,5,9,9
+	.half	.L38-.L470
+	.byte	3,1,1,5,61,7,9
+	.half	.L471-.L38
 	.byte	1,5,50,9
+	.half	.L472-.L471
+	.byte	1,5,4,9
+	.half	.L40-.L472
+	.byte	3,3,1,5,60,7,9
+	.half	.L473-.L40
+	.byte	1,5,83,9
+	.half	.L474-.L473
+	.byte	1,5,9,9
+	.half	.L41-.L474
+	.byte	3,1,1,5,61,7,9
+	.half	.L475-.L41
+	.byte	1,5,84,9
+	.half	.L476-.L475
+	.byte	1,5,4,9
+	.half	.L30-.L476
+	.byte	3,6,1,5,61,7,9
+	.half	.L477-.L30
+	.byte	1,5,84,9
+	.half	.L478-.L477
+	.byte	1,5,9,9
+	.half	.L45-.L478
+	.byte	3,1,1,5,62,7,9
+	.half	.L479-.L45
+	.byte	1,5,86,9
+	.half	.L480-.L479
+	.byte	1,5,12,9
+	.half	.L47-.L480
+	.byte	3,1,1,5,9,9
+	.half	.L481-.L47
+	.byte	1,5,62,7,9
+	.half	.L482-.L481
+	.byte	1,5,86,9
+	.half	.L483-.L482
+	.byte	1,5,12,9
+	.half	.L49-.L483
+	.byte	3,1,1,5,9,9
+	.half	.L484-.L49
+	.byte	1,5,62,7,9
+	.half	.L485-.L484
+	.byte	1,5,85,9
+	.half	.L486-.L485
+	.byte	1,5,12,9
+	.half	.L51-.L486
+	.byte	3,1,1,5,9,9
+	.half	.L487-.L51
+	.byte	1,5,62,7,9
+	.half	.L488-.L487
+	.byte	1,5,85,9
+	.half	.L489-.L488
+	.byte	1,5,12,9
+	.half	.L53-.L489
+	.byte	3,1,1,5,9,9
+	.half	.L490-.L53
+	.byte	1,5,62,7,9
+	.half	.L491-.L490
+	.byte	1,5,85,9
+	.half	.L492-.L491
+	.byte	1,5,12,9
+	.half	.L55-.L492
+	.byte	3,1,1,5,9,9
+	.half	.L493-.L55
+	.byte	1,5,62,7,9
+	.half	.L494-.L493
+	.byte	1,5,85,9
+	.half	.L495-.L494
+	.byte	1,5,12,9
+	.half	.L57-.L495
+	.byte	3,1,1,5,9,9
+	.half	.L496-.L57
+	.byte	1,5,62,7,9
+	.half	.L497-.L496
+	.byte	1,5,86,9
+	.half	.L498-.L497
+	.byte	1,5,12,9
+	.half	.L59-.L498
+	.byte	3,1,1,5,9,9
+	.half	.L499-.L59
+	.byte	1,5,62,7,9
+	.half	.L500-.L499
+	.byte	1,5,86,9
+	.half	.L501-.L500
+	.byte	1,5,12,9
+	.half	.L61-.L501
+	.byte	3,1,1,5,9,9
+	.half	.L502-.L61
+	.byte	1,5,62,7,9
+	.half	.L503-.L502
+	.byte	1,5,51,9
+	.half	.L504-.L503
+	.byte	1,5,11,9
+	.half	.L63-.L504
+	.byte	3,3,1,5,4,9
+	.half	.L505-.L63
+	.byte	1,5,61,7,9
+	.half	.L506-.L505
+	.byte	1,5,84,9
+	.half	.L507-.L506
+	.byte	1,5,12,9
+	.half	.L64-.L507
+	.byte	3,1,1,5,9,9
+	.half	.L508-.L64
+	.byte	1,5,62,7,9
+	.half	.L509-.L508
+	.byte	1,5,85,9
+	.half	.L510-.L509
+	.byte	1,5,12,9
+	.half	.L66-.L510
+	.byte	3,1,1,5,9,9
+	.half	.L511-.L66
+	.byte	1,5,62,7,9
+	.half	.L512-.L511
+	.byte	1,5,85,9
+	.half	.L513-.L512
+	.byte	1,5,12,9
+	.half	.L68-.L513
+	.byte	3,1,1,5,9,9
+	.half	.L514-.L68
+	.byte	1,5,62,7,9
+	.half	.L515-.L514
+	.byte	1,5,85,9
+	.half	.L516-.L515
+	.byte	1,5,12,9
+	.half	.L70-.L516
+	.byte	3,1,1,5,9,9
+	.half	.L517-.L70
+	.byte	1,5,62,7,9
+	.half	.L518-.L517
+	.byte	1,5,86,9
+	.half	.L519-.L518
+	.byte	1,5,12,9
+	.half	.L72-.L519
+	.byte	3,1,1,5,9,9
+	.half	.L520-.L72
+	.byte	1,5,62,7,9
+	.half	.L521-.L520
+	.byte	1,5,86,9
+	.half	.L522-.L521
+	.byte	1,5,12,9
+	.half	.L74-.L522
+	.byte	3,1,1,5,9,9
+	.half	.L523-.L74
+	.byte	1,5,62,7,9
+	.half	.L524-.L523
+	.byte	1,5,85,9
+	.half	.L525-.L524
+	.byte	1,5,11,9
+	.half	.L31-.L525
+	.byte	3,6,1,5,4,9
+	.half	.L526-.L31
+	.byte	1,5,60,7,9
+	.half	.L527-.L526
+	.byte	1,5,83,9
+	.half	.L528-.L527
+	.byte	1,5,12,9
+	.half	.L78-.L528
+	.byte	3,1,1,5,9,9
+	.half	.L529-.L78
+	.byte	1,5,61,7,9
+	.half	.L530-.L529
+	.byte	1,5,84,9
+	.half	.L531-.L530
+	.byte	1,5,12,9
+	.half	.L80-.L531
+	.byte	3,1,1,5,9,9
+	.half	.L532-.L80
+	.byte	1,5,61,7,9
+	.half	.L533-.L532
+	.byte	1,5,84,9
+	.half	.L534-.L533
+	.byte	1,5,12,9
+	.half	.L82-.L534
+	.byte	3,1,1,5,9,9
+	.half	.L535-.L82
+	.byte	1,5,61,7,9
+	.half	.L536-.L535
+	.byte	1,5,84,9
+	.half	.L537-.L536
+	.byte	1,5,12,9
+	.half	.L84-.L537
+	.byte	3,1,1,5,9,9
+	.half	.L538-.L84
+	.byte	1,5,61,7,9
+	.half	.L539-.L538
+	.byte	1,5,84,9
+	.half	.L540-.L539
+	.byte	1,5,12,9
+	.half	.L86-.L540
+	.byte	3,1,1,5,9,9
+	.half	.L541-.L86
+	.byte	1,5,61,7,9
+	.half	.L542-.L541
+	.byte	1,5,50,9
+	.half	.L543-.L542
+	.byte	1,5,11,9
+	.half	.L88-.L543
+	.byte	3,3,1,5,4,9
+	.half	.L544-.L88
+	.byte	1,5,60,7,9
+	.half	.L545-.L544
+	.byte	1,5,83,9
+	.half	.L546-.L545
+	.byte	1,5,12,9
+	.half	.L89-.L546
+	.byte	3,1,1,5,9,9
+	.half	.L547-.L89
+	.byte	1,5,61,7,9
+	.half	.L548-.L547
+	.byte	1,5,84,9
+	.half	.L549-.L548
+	.byte	1,5,12,9
+	.half	.L91-.L549
+	.byte	3,1,1,5,9,9
+	.half	.L550-.L91
+	.byte	1,5,61,7,9
+	.half	.L551-.L550
+	.byte	1,5,84,9
+	.half	.L552-.L551
+	.byte	1,5,12,9
+	.half	.L93-.L552
+	.byte	3,1,1,5,9,9
+	.half	.L553-.L93
+	.byte	1,5,61,7,9
+	.half	.L554-.L553
+	.byte	1,5,84,9
+	.half	.L555-.L554
+	.byte	1,5,12,9
+	.half	.L95-.L555
+	.byte	3,1,1,5,9,9
+	.half	.L556-.L95
+	.byte	1,5,61,7,9
+	.half	.L557-.L556
+	.byte	1,5,84,9
+	.half	.L558-.L557
+	.byte	1,5,11,9
+	.half	.L32-.L558
+	.byte	3,6,1,5,4,9
+	.half	.L559-.L32
+	.byte	1,5,60,7,9
+	.half	.L560-.L559
+	.byte	1,5,83,9
+	.half	.L561-.L560
+	.byte	1,5,12,9
+	.half	.L99-.L561
+	.byte	3,1,1,5,9,9
+	.half	.L562-.L99
+	.byte	1,5,61,7,9
+	.half	.L563-.L562
+	.byte	1,5,84,9
+	.half	.L564-.L563
+	.byte	1,5,12,9
+	.half	.L101-.L564
+	.byte	3,1,1,5,9,9
+	.half	.L565-.L101
+	.byte	1,5,61,7,9
+	.half	.L566-.L565
+	.byte	1,5,84,9
+	.half	.L567-.L566
+	.byte	1,5,12,9
+	.half	.L103-.L567
+	.byte	3,1,1,5,9,9
+	.half	.L568-.L103
+	.byte	1,5,61,7,9
+	.half	.L569-.L568
+	.byte	1,5,84,9
+	.half	.L570-.L569
+	.byte	1,5,12,9
+	.half	.L105-.L570
+	.byte	3,1,1,5,9,9
+	.half	.L571-.L105
+	.byte	1,5,61,7,9
 	.half	.L572-.L571
 	.byte	1,5,84,9
 	.half	.L573-.L572
-	.byte	1,5,9,9
-	.half	.L39-.L573
-	.byte	3,1,1,5,61,7,9
-	.half	.L574-.L39
-	.byte	1,5,50,9
+	.byte	1,5,12,9
+	.half	.L107-.L573
+	.byte	3,1,1,5,9,9
+	.half	.L574-.L107
+	.byte	1,5,61,7,9
 	.half	.L575-.L574
 	.byte	1,5,84,9
 	.half	.L576-.L575
-	.byte	1,5,9,9
-	.half	.L41-.L576
-	.byte	3,1,1,5,61,7,9
-	.half	.L577-.L41
-	.byte	1,5,50,9
+	.byte	1,5,12,9
+	.half	.L109-.L576
+	.byte	3,1,1,5,9,9
+	.half	.L577-.L109
+	.byte	1,5,61,7,9
 	.half	.L578-.L577
 	.byte	1,5,84,9
 	.half	.L579-.L578
-	.byte	1,5,4,9
-	.half	.L38-.L579
-	.byte	3,3,1,5,60,7,9
-	.half	.L580-.L38
-	.byte	1,5,49,9
+	.byte	1,5,12,9
+	.half	.L111-.L579
+	.byte	3,1,1,5,9,9
+	.half	.L580-.L111
+	.byte	1,5,61,7,9
 	.half	.L581-.L580
-	.byte	1,5,83,9
+	.byte	1,5,84,9
 	.half	.L582-.L581
-	.byte	1,5,9,9
-	.half	.L45-.L582
-	.byte	3,1,1,5,61,7,9
-	.half	.L583-.L45
-	.byte	1,5,50,9
+	.byte	1,5,12,9
+	.half	.L113-.L582
+	.byte	3,1,1,5,9,9
+	.half	.L583-.L113
+	.byte	1,5,61,7,9
 	.half	.L584-.L583
-	.byte	1,5,84,9
-	.half	.L585-.L584
-	.byte	1,5,4,9
-	.half	.L46-.L585
-	.byte	3,3,1,9
-	.half	.L33-.L46
-	.byte	3,3,1,5,61,7,9
-	.half	.L586-.L33
 	.byte	1,5,50,9
+	.half	.L585-.L584
+	.byte	1,5,11,9
+	.half	.L115-.L585
+	.byte	3,3,1,5,4,9
+	.half	.L586-.L115
+	.byte	1,5,60,7,9
 	.half	.L587-.L586
-	.byte	1,5,84,9
+	.byte	1,5,83,9
 	.half	.L588-.L587
-	.byte	1,5,9,9
-	.half	.L50-.L588
-	.byte	3,1,1,5,62,7,9
-	.half	.L589-.L50
-	.byte	1,5,51,9
+	.byte	1,5,12,9
+	.half	.L116-.L588
+	.byte	3,1,1,5,9,9
+	.half	.L589-.L116
+	.byte	1,5,61,7,9
 	.half	.L590-.L589
-	.byte	1,5,86,9
+	.byte	1,5,84,9
 	.half	.L591-.L590
 	.byte	1,5,12,9
-	.half	.L52-.L591
+	.half	.L118-.L591
 	.byte	3,1,1,5,9,9
-	.half	.L592-.L52
-	.byte	1,5,62,7,9
+	.half	.L592-.L118
+	.byte	1,5,61,7,9
 	.half	.L593-.L592
-	.byte	1,5,51,9
+	.byte	1,5,84,9
 	.half	.L594-.L593
-	.byte	1,5,86,9
-	.half	.L595-.L594
 	.byte	1,5,12,9
-	.half	.L54-.L595
+	.half	.L120-.L594
 	.byte	3,1,1,5,9,9
-	.half	.L596-.L54
-	.byte	1,5,62,7,9
+	.half	.L595-.L120
+	.byte	1,5,61,7,9
+	.half	.L596-.L595
+	.byte	1,5,84,9
 	.half	.L597-.L596
-	.byte	1,5,51,9
-	.half	.L598-.L597
-	.byte	1,5,85,9
+	.byte	1,5,12,9
+	.half	.L122-.L597
+	.byte	3,1,1,5,9,9
+	.half	.L598-.L122
+	.byte	1,5,61,7,9
 	.half	.L599-.L598
-	.byte	1,5,12,9
-	.half	.L56-.L599
-	.byte	3,1,1,5,9,9
-	.half	.L600-.L56
-	.byte	1,5,62,7,9
-	.half	.L601-.L600
-	.byte	1,5,51,9
-	.half	.L602-.L601
-	.byte	1,5,85,9
-	.half	.L603-.L602
-	.byte	1,5,12,9
-	.half	.L58-.L603
-	.byte	3,1,1,5,9,9
-	.half	.L604-.L58
-	.byte	1,5,62,7,9
-	.half	.L605-.L604
-	.byte	1,5,51,9
-	.half	.L606-.L605
-	.byte	1,5,85,9
-	.half	.L607-.L606
-	.byte	1,5,12,9
-	.half	.L60-.L607
-	.byte	3,1,1,5,9,9
-	.half	.L608-.L60
-	.byte	1,5,62,7,9
-	.half	.L609-.L608
-	.byte	1,5,51,9
-	.half	.L610-.L609
-	.byte	1,5,85,9
-	.half	.L611-.L610
-	.byte	1,5,12,9
-	.half	.L62-.L611
-	.byte	3,1,1,5,9,9
-	.half	.L612-.L62
-	.byte	1,5,62,7,9
-	.half	.L613-.L612
-	.byte	1,5,51,9
-	.half	.L614-.L613
-	.byte	1,5,86,9
-	.half	.L615-.L614
-	.byte	1,5,12,9
-	.half	.L64-.L615
-	.byte	3,1,1,5,9,9
-	.half	.L616-.L64
-	.byte	1,5,62,7,9
-	.half	.L617-.L616
-	.byte	1,5,51,9
-	.half	.L618-.L617
-	.byte	1,5,86,9
-	.half	.L619-.L618
-	.byte	1,5,12,9
-	.half	.L66-.L619
-	.byte	3,1,1,5,9,9
-	.half	.L620-.L66
-	.byte	1,5,62,7,9
-	.half	.L621-.L620
-	.byte	1,5,51,9
-	.half	.L622-.L621
-	.byte	1,5,86,9
-	.half	.L623-.L622
-	.byte	1,5,11,9
-	.half	.L51-.L623
-	.byte	3,3,1,5,4,9
-	.half	.L624-.L51
-	.byte	1,5,61,7,9
-	.half	.L625-.L624
 	.byte	1,5,50,9
-	.half	.L626-.L625
-	.byte	1,5,84,9
-	.half	.L627-.L626
-	.byte	1,5,12,9
-	.half	.L70-.L627
-	.byte	3,1,1,5,9,9
-	.half	.L628-.L70
-	.byte	1,5,62,7,9
-	.half	.L629-.L628
-	.byte	1,5,51,9
-	.half	.L630-.L629
-	.byte	1,5,85,9
-	.half	.L631-.L630
-	.byte	1,5,12,9
-	.half	.L72-.L631
-	.byte	3,1,1,5,9,9
-	.half	.L632-.L72
-	.byte	1,5,62,7,9
-	.half	.L633-.L632
-	.byte	1,5,51,9
-	.half	.L634-.L633
-	.byte	1,5,85,9
-	.half	.L635-.L634
-	.byte	1,5,12,9
-	.half	.L74-.L635
-	.byte	3,1,1,5,9,9
-	.half	.L636-.L74
-	.byte	1,5,62,7,9
-	.half	.L637-.L636
-	.byte	1,5,51,9
-	.half	.L638-.L637
-	.byte	1,5,85,9
-	.half	.L639-.L638
-	.byte	1,5,12,9
-	.half	.L76-.L639
-	.byte	3,1,1,5,9,9
-	.half	.L640-.L76
-	.byte	1,5,62,7,9
-	.half	.L641-.L640
-	.byte	1,5,51,9
-	.half	.L642-.L641
-	.byte	1,5,86,9
-	.half	.L643-.L642
-	.byte	1,5,12,9
-	.half	.L78-.L643
-	.byte	3,1,1,5,9,9
-	.half	.L644-.L78
-	.byte	1,5,62,7,9
-	.half	.L645-.L644
-	.byte	1,5,51,9
-	.half	.L646-.L645
-	.byte	1,5,86,9
-	.half	.L647-.L646
-	.byte	1,5,12,9
-	.half	.L80-.L647
-	.byte	3,1,1,5,9,9
-	.half	.L648-.L80
-	.byte	1,5,62,7,9
-	.half	.L649-.L648
-	.byte	1,5,51,9
-	.half	.L650-.L649
-	.byte	1,5,85,9
-	.half	.L651-.L650
-	.byte	1,5,4,9
-	.half	.L71-.L651
-	.byte	3,3,1,5,11,9
-	.half	.L34-.L71
-	.byte	3,3,1,5,4,9
-	.half	.L652-.L34
-	.byte	1,5,60,7,9
-	.half	.L653-.L652
-	.byte	1,5,49,9
-	.half	.L654-.L653
-	.byte	1,5,83,9
-	.half	.L655-.L654
-	.byte	1,5,12,9
-	.half	.L85-.L655
-	.byte	3,1,1,5,9,9
-	.half	.L656-.L85
-	.byte	1,5,61,7,9
-	.half	.L657-.L656
-	.byte	1,5,50,9
-	.half	.L658-.L657
-	.byte	1,5,84,9
-	.half	.L659-.L658
-	.byte	1,5,12,9
-	.half	.L87-.L659
-	.byte	3,1,1,5,9,9
-	.half	.L660-.L87
-	.byte	1,5,61,7,9
-	.half	.L661-.L660
-	.byte	1,5,50,9
-	.half	.L662-.L661
-	.byte	1,5,84,9
-	.half	.L663-.L662
-	.byte	1,5,12,9
-	.half	.L89-.L663
-	.byte	3,1,1,5,9,9
-	.half	.L664-.L89
-	.byte	1,5,61,7,9
-	.half	.L665-.L664
-	.byte	1,5,50,9
-	.half	.L666-.L665
-	.byte	1,5,84,9
-	.half	.L667-.L666
-	.byte	1,5,12,9
-	.half	.L91-.L667
-	.byte	3,1,1,5,9,9
-	.half	.L668-.L91
-	.byte	1,5,61,7,9
-	.half	.L669-.L668
-	.byte	1,5,50,9
-	.half	.L670-.L669
-	.byte	1,5,84,9
-	.half	.L671-.L670
-	.byte	1,5,12,9
-	.half	.L93-.L671
-	.byte	3,1,1,5,9,9
-	.half	.L672-.L93
-	.byte	1,5,61,7,9
-	.half	.L673-.L672
-	.byte	1,5,50,9
-	.half	.L674-.L673
-	.byte	1,5,84,9
-	.half	.L675-.L674
-	.byte	1,5,11,9
-	.half	.L86-.L675
-	.byte	3,3,1,5,4,9
-	.half	.L676-.L86
-	.byte	1,5,60,7,9
-	.half	.L677-.L676
-	.byte	1,5,49,9
-	.half	.L678-.L677
-	.byte	1,5,83,9
-	.half	.L679-.L678
-	.byte	1,5,12,9
-	.half	.L97-.L679
-	.byte	3,1,1,5,9,9
-	.half	.L680-.L97
-	.byte	1,5,61,7,9
-	.half	.L681-.L680
-	.byte	1,5,50,9
-	.half	.L682-.L681
-	.byte	1,5,84,9
-	.half	.L683-.L682
-	.byte	1,5,12,9
-	.half	.L99-.L683
-	.byte	3,1,1,5,9,9
-	.half	.L684-.L99
-	.byte	1,5,61,7,9
-	.half	.L685-.L684
-	.byte	1,5,50,9
-	.half	.L686-.L685
-	.byte	1,5,84,9
-	.half	.L687-.L686
-	.byte	1,5,12,9
-	.half	.L101-.L687
-	.byte	3,1,1,5,9,9
-	.half	.L688-.L101
-	.byte	1,5,61,7,9
-	.half	.L689-.L688
-	.byte	1,5,50,9
-	.half	.L690-.L689
-	.byte	1,5,84,9
-	.half	.L691-.L690
-	.byte	1,5,12,9
-	.half	.L103-.L691
-	.byte	3,1,1,5,9,9
-	.half	.L692-.L103
-	.byte	1,5,61,7,9
-	.half	.L693-.L692
-	.byte	1,5,50,9
-	.half	.L694-.L693
-	.byte	1,5,84,9
-	.half	.L695-.L694
-	.byte	1,5,4,9
-	.half	.L98-.L695
-	.byte	3,3,1,5,11,9
-	.half	.L35-.L98
-	.byte	3,3,1,5,4,9
-	.half	.L696-.L35
-	.byte	1,5,60,7,9
-	.half	.L697-.L696
-	.byte	1,5,49,9
-	.half	.L698-.L697
-	.byte	1,5,83,9
-	.half	.L699-.L698
-	.byte	1,5,12,9
-	.half	.L108-.L699
-	.byte	3,1,1,5,9,9
-	.half	.L700-.L108
-	.byte	1,5,61,7,9
-	.half	.L701-.L700
-	.byte	1,5,50,9
-	.half	.L702-.L701
-	.byte	1,5,84,9
-	.half	.L703-.L702
-	.byte	1,5,12,9
-	.half	.L110-.L703
-	.byte	3,1,1,5,9,9
-	.half	.L704-.L110
-	.byte	1,5,61,7,9
-	.half	.L705-.L704
-	.byte	1,5,50,9
-	.half	.L706-.L705
-	.byte	1,5,84,9
-	.half	.L707-.L706
-	.byte	1,5,12,9
-	.half	.L112-.L707
-	.byte	3,1,1,5,9,9
-	.half	.L708-.L112
-	.byte	1,5,61,7,9
-	.half	.L709-.L708
-	.byte	1,5,50,9
-	.half	.L710-.L709
-	.byte	1,5,84,9
-	.half	.L711-.L710
-	.byte	1,5,12,9
-	.half	.L114-.L711
-	.byte	3,1,1,5,9,9
-	.half	.L712-.L114
-	.byte	1,5,61,7,9
-	.half	.L713-.L712
-	.byte	1,5,50,9
-	.half	.L714-.L713
-	.byte	1,5,84,9
-	.half	.L715-.L714
-	.byte	1,5,12,9
-	.half	.L116-.L715
-	.byte	3,1,1,5,9,9
-	.half	.L716-.L116
-	.byte	1,5,61,7,9
-	.half	.L717-.L716
-	.byte	1,5,50,9
-	.half	.L718-.L717
-	.byte	1,5,84,9
-	.half	.L719-.L718
-	.byte	1,5,12,9
-	.half	.L118-.L719
-	.byte	3,1,1,5,9,9
-	.half	.L720-.L118
-	.byte	1,5,61,7,9
-	.half	.L721-.L720
-	.byte	1,5,50,9
-	.half	.L722-.L721
-	.byte	1,5,84,9
-	.half	.L723-.L722
-	.byte	1,5,12,9
-	.half	.L120-.L723
-	.byte	3,1,1,5,9,9
-	.half	.L724-.L120
-	.byte	1,5,61,7,9
-	.half	.L725-.L724
-	.byte	1,5,50,9
-	.half	.L726-.L725
-	.byte	1,5,84,9
-	.half	.L727-.L726
-	.byte	1,5,12,9
-	.half	.L122-.L727
-	.byte	3,1,1,5,9,9
-	.half	.L728-.L122
-	.byte	1,5,61,7,9
-	.half	.L729-.L728
-	.byte	1,5,50,9
-	.half	.L730-.L729
-	.byte	1,5,84,9
-	.half	.L731-.L730
-	.byte	1,5,11,9
-	.half	.L109-.L731
-	.byte	3,3,1,5,4,9
-	.half	.L732-.L109
-	.byte	1,5,60,7,9
-	.half	.L733-.L732
-	.byte	1,5,49,9
-	.half	.L734-.L733
-	.byte	1,5,83,9
-	.half	.L735-.L734
-	.byte	1,5,12,9
-	.half	.L126-.L735
-	.byte	3,1,1,5,9,9
-	.half	.L736-.L126
-	.byte	1,5,61,7,9
-	.half	.L737-.L736
-	.byte	1,5,50,9
-	.half	.L738-.L737
-	.byte	1,5,84,9
-	.half	.L739-.L738
-	.byte	1,5,12,9
-	.half	.L128-.L739
-	.byte	3,1,1,5,9,9
-	.half	.L740-.L128
-	.byte	1,5,61,7,9
-	.half	.L741-.L740
-	.byte	1,5,50,9
-	.half	.L742-.L741
-	.byte	1,5,84,9
-	.half	.L743-.L742
-	.byte	1,5,12,9
-	.half	.L130-.L743
-	.byte	3,1,1,5,9,9
-	.half	.L744-.L130
-	.byte	1,5,61,7,9
-	.half	.L745-.L744
-	.byte	1,5,50,9
-	.half	.L746-.L745
-	.byte	1,5,84,9
-	.half	.L747-.L746
-	.byte	1,5,12,9
-	.half	.L132-.L747
-	.byte	3,1,1,5,9,9
-	.half	.L748-.L132
-	.byte	1,5,61,7,9
-	.half	.L749-.L748
-	.byte	1,5,50,9
-	.half	.L750-.L749
-	.byte	1,5,84,9
-	.half	.L751-.L750
-	.byte	1,5,4,9
-	.half	.L127-.L751
-	.byte	3,3,1,5,1,9
-	.half	.L49-.L127
-	.byte	3,2,1,7,9
-	.half	.L223-.L49
+	.half	.L600-.L599
+	.byte	1,5,1,9
+	.half	.L43-.L600
+	.byte	3,5,1,7,9
+	.half	.L209-.L43
 	.byte	0,1,1
-.L562:
+.L458:
 	.sdecl	'.debug_ranges',debug,cluster('uart_mux')
 	.sect	'.debug_ranges'
-.L222:
-	.word	-1,.L157,0,.L223-.L157,0,0
+.L208:
+	.word	-1,.L143,0,.L209-.L143,0,0
+	.sdecl	'.debug_info',debug,cluster('.cocofun_3')
+	.sect	'.debug_info'
+.L210:
+	.word	196
+	.half	3
+	.word	.L211
+	.byte	4,1
+	.byte	'..\\Libraries\\seekfree_libraries\\zf_uart.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
+	.word	.L213,.L212
+	.byte	2
+	.word	.L156
+	.byte	3
+	.byte	'.cocofun_3',0,1,62,6,1
+	.word	.L137,.L214,.L136
+	.byte	0
+	.sdecl	'.debug_abbrev',debug,cluster('.cocofun_3')
+	.sect	'.debug_abbrev'
+.L211:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,0,3,8,58,15,59,15,57,15,54,15
+	.byte	17,1,18,1,64,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('.cocofun_3')
+	.sect	'.debug_line'
+.L212:
+	.word	.L602-.L601
+.L601:
+	.half	3
+	.word	.L604-.L603
+.L603:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'..\\Libraries\\seekfree_libraries\\zf_uart.c',0,0,0,0,0
+.L604:
+	.byte	5,4,7,0,5,2
+	.word	.L137
+	.byte	3,195,0,1,9
+	.half	.L214-.L137
+	.byte	0,1,1,5,4,0,5,2
+	.word	.L137
+	.byte	3,202,0,1,9
+	.half	.L605-.L137
+	.byte	3,121,1,7,9
+	.half	.L214-.L605
+	.byte	0,1,1,5,4,0,5,2
+	.word	.L137
+	.byte	3,209,0,1,9
+	.half	.L605-.L137
+	.byte	3,114,1,7,9
+	.half	.L214-.L605
+	.byte	0,1,1,5,4,0,5,2
+	.word	.L137
+	.byte	3,216,0,1,9
+	.half	.L605-.L137
+	.byte	3,107,1,7,9
+	.half	.L214-.L605
+	.byte	0,1,1,5,4,0,5,2
+	.word	.L137
+	.byte	3,231,0,1,9
+	.half	.L605-.L137
+	.byte	3,92,1,7,9
+	.half	.L214-.L605
+	.byte	0,1,1,5,4,0,5,2
+	.word	.L137
+	.byte	3,238,0,1,9
+	.half	.L605-.L137
+	.byte	3,85,1,7,9
+	.half	.L214-.L605
+	.byte	0,1,1,5,4,0,5,2
+	.word	.L137
+	.byte	3,245,0,1,9
+	.half	.L605-.L137
+	.byte	3,78,1,7,9
+	.half	.L214-.L605
+	.byte	0,1,1,5,4,0,5,2
+	.word	.L137
+	.byte	3,252,0,1,9
+	.half	.L605-.L137
+	.byte	3,71,1,7,9
+	.half	.L214-.L605
+	.byte	0,1,1,5,34,0,5,2
+	.word	.L137
+	.byte	3,248,1,1,5,4,9
+	.half	.L605-.L137
+	.byte	3,203,126,1,7,9
+	.half	.L214-.L605
+	.byte	0,1,1
+.L602:
+	.sdecl	'.debug_ranges',debug,cluster('.cocofun_3')
+	.sect	'.debug_ranges'
+.L213:
+	.word	-1,.L137,0,.L214-.L137,0,0
 	.sdecl	'.debug_info',debug,cluster('uart0_handle')
 	.sect	'.debug_info'
-.L224:
+.L215:
 	.word	188
 	.half	3
-	.word	.L225
+	.word	.L216
 	.byte	4,1
 	.byte	'..\\Libraries\\seekfree_libraries\\zf_uart.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1,2
-	.word	.L170
+	.word	.L156
 	.byte	3
 	.byte	'uart0_handle',0,26,34,15
-	.word	.L319
+	.word	.L311
 	.byte	1,5,3
 	.word	uart0_handle
 	.byte	0
 	.sdecl	'.debug_abbrev',debug,cluster('uart0_handle')
 	.sect	'.debug_abbrev'
-.L225:
+.L216:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
 	.byte	0,0,0
 	.sdecl	'.debug_info',debug,cluster('uart1_handle')
 	.sect	'.debug_info'
-.L226:
+.L217:
 	.word	188
 	.half	3
-	.word	.L227
+	.word	.L218
 	.byte	4,1
 	.byte	'..\\Libraries\\seekfree_libraries\\zf_uart.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1,2
-	.word	.L170
+	.word	.L156
 	.byte	3
 	.byte	'uart1_handle',0,26,35,15
-	.word	.L319
+	.word	.L311
 	.byte	1,5,3
 	.word	uart1_handle
 	.byte	0
 	.sdecl	'.debug_abbrev',debug,cluster('uart1_handle')
 	.sect	'.debug_abbrev'
-.L227:
+.L218:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
 	.byte	0,0,0
 	.sdecl	'.debug_info',debug,cluster('uart2_handle')
 	.sect	'.debug_info'
-.L228:
+.L219:
 	.word	188
 	.half	3
-	.word	.L229
+	.word	.L220
 	.byte	4,1
 	.byte	'..\\Libraries\\seekfree_libraries\\zf_uart.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1,2
-	.word	.L170
+	.word	.L156
 	.byte	3
 	.byte	'uart2_handle',0,26,36,15
-	.word	.L319
+	.word	.L311
 	.byte	1,5,3
 	.word	uart2_handle
 	.byte	0
 	.sdecl	'.debug_abbrev',debug,cluster('uart2_handle')
 	.sect	'.debug_abbrev'
-.L229:
+.L220:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
 	.byte	0,0,0
 	.sdecl	'.debug_info',debug,cluster('uart3_handle')
 	.sect	'.debug_info'
-.L230:
+.L221:
 	.word	188
 	.half	3
-	.word	.L231
+	.word	.L222
 	.byte	4,1
 	.byte	'..\\Libraries\\seekfree_libraries\\zf_uart.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1,2
-	.word	.L170
+	.word	.L156
 	.byte	3
 	.byte	'uart3_handle',0,26,37,15
-	.word	.L319
+	.word	.L311
 	.byte	1,5,3
 	.word	uart3_handle
 	.byte	0
 	.sdecl	'.debug_abbrev',debug,cluster('uart3_handle')
 	.sect	'.debug_abbrev'
-.L231:
+.L222:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
 	.byte	0,0,0
 	.sdecl	'.debug_info',debug,cluster('uart_config')
 	.sect	'.debug_info'
-.L232:
+.L223:
 	.word	186
 	.half	3
-	.word	.L233
+	.word	.L224
 	.byte	4,1
 	.byte	'..\\Libraries\\seekfree_libraries\\zf_uart.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1,2
-	.word	.L170
+	.word	.L156
 	.byte	3
 	.byte	'uart_config',0,26,40,29
-	.word	.L320
+	.word	.L312
 	.byte	5,3
 	.word	uart_config
 	.byte	0
 	.sdecl	'.debug_abbrev',debug,cluster('uart_config')
 	.sect	'.debug_abbrev'
-.L233:
+.L224:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,2,9,0,0,0
 	.sdecl	'.debug_info',debug,cluster('uart0_tx_buffer')
 	.sect	'.debug_info'
-.L234:
+.L225:
 	.word	190
 	.half	3
-	.word	.L235
+	.word	.L226
 	.byte	4,1
 	.byte	'..\\Libraries\\seekfree_libraries\\zf_uart.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1,2
-	.word	.L170
+	.word	.L156
 	.byte	3
 	.byte	'uart0_tx_buffer',0,26,44,14
-	.word	.L321
+	.word	.L313
 	.byte	5,3
 	.word	uart0_tx_buffer
 	.byte	0
 	.sdecl	'.debug_abbrev',debug,cluster('uart0_tx_buffer')
 	.sect	'.debug_abbrev'
-.L235:
+.L226:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,2,9,0,0,0
 	.sdecl	'.debug_info',debug,cluster('uart0_rx_buffer')
 	.sect	'.debug_info'
-.L236:
+.L227:
 	.word	190
 	.half	3
-	.word	.L237
+	.word	.L228
 	.byte	4,1
 	.byte	'..\\Libraries\\seekfree_libraries\\zf_uart.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1,2
-	.word	.L170
+	.word	.L156
 	.byte	3
 	.byte	'uart0_rx_buffer',0,26,45,14
-	.word	.L321
+	.word	.L313
 	.byte	5,3
 	.word	uart0_rx_buffer
 	.byte	0
 	.sdecl	'.debug_abbrev',debug,cluster('uart0_rx_buffer')
 	.sect	'.debug_abbrev'
-.L237:
+.L228:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,2,9,0,0,0
 	.sdecl	'.debug_info',debug,cluster('uart1_tx_buffer')
 	.sect	'.debug_info'
-.L238:
+.L229:
 	.word	190
 	.half	3
-	.word	.L239
+	.word	.L230
 	.byte	4,1
 	.byte	'..\\Libraries\\seekfree_libraries\\zf_uart.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1,2
-	.word	.L170
+	.word	.L156
 	.byte	3
 	.byte	'uart1_tx_buffer',0,26,47,14
-	.word	.L321
+	.word	.L313
 	.byte	5,3
 	.word	uart1_tx_buffer
 	.byte	0
 	.sdecl	'.debug_abbrev',debug,cluster('uart1_tx_buffer')
 	.sect	'.debug_abbrev'
-.L239:
+.L230:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,2,9,0,0,0
 	.sdecl	'.debug_info',debug,cluster('uart1_rx_buffer')
 	.sect	'.debug_info'
-.L240:
+.L231:
 	.word	190
 	.half	3
-	.word	.L241
+	.word	.L232
 	.byte	4,1
 	.byte	'..\\Libraries\\seekfree_libraries\\zf_uart.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1,2
-	.word	.L170
+	.word	.L156
 	.byte	3
 	.byte	'uart1_rx_buffer',0,26,48,14
-	.word	.L321
+	.word	.L313
 	.byte	5,3
 	.word	uart1_rx_buffer
 	.byte	0
 	.sdecl	'.debug_abbrev',debug,cluster('uart1_rx_buffer')
 	.sect	'.debug_abbrev'
-.L241:
+.L232:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,2,9,0,0,0
 	.sdecl	'.debug_info',debug,cluster('uart2_tx_buffer')
 	.sect	'.debug_info'
-.L242:
+.L233:
 	.word	190
 	.half	3
-	.word	.L243
+	.word	.L234
 	.byte	4,1
 	.byte	'..\\Libraries\\seekfree_libraries\\zf_uart.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1,2
-	.word	.L170
+	.word	.L156
 	.byte	3
 	.byte	'uart2_tx_buffer',0,26,50,14
-	.word	.L321
+	.word	.L313
 	.byte	5,3
 	.word	uart2_tx_buffer
 	.byte	0
 	.sdecl	'.debug_abbrev',debug,cluster('uart2_tx_buffer')
 	.sect	'.debug_abbrev'
-.L243:
+.L234:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,2,9,0,0,0
 	.sdecl	'.debug_info',debug,cluster('uart2_rx_buffer')
 	.sect	'.debug_info'
-.L244:
+.L235:
 	.word	190
 	.half	3
-	.word	.L245
+	.word	.L236
 	.byte	4,1
 	.byte	'..\\Libraries\\seekfree_libraries\\zf_uart.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1,2
-	.word	.L170
+	.word	.L156
 	.byte	3
 	.byte	'uart2_rx_buffer',0,26,51,14
-	.word	.L321
+	.word	.L313
 	.byte	5,3
 	.word	uart2_rx_buffer
 	.byte	0
 	.sdecl	'.debug_abbrev',debug,cluster('uart2_rx_buffer')
 	.sect	'.debug_abbrev'
-.L245:
+.L236:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,2,9,0,0,0
 	.sdecl	'.debug_info',debug,cluster('uart3_tx_buffer')
 	.sect	'.debug_info'
-.L246:
+.L237:
 	.word	190
 	.half	3
-	.word	.L247
+	.word	.L238
 	.byte	4,1
 	.byte	'..\\Libraries\\seekfree_libraries\\zf_uart.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1,2
-	.word	.L170
+	.word	.L156
 	.byte	3
 	.byte	'uart3_tx_buffer',0,26,53,14
-	.word	.L321
+	.word	.L313
 	.byte	5,3
 	.word	uart3_tx_buffer
 	.byte	0
 	.sdecl	'.debug_abbrev',debug,cluster('uart3_tx_buffer')
 	.sect	'.debug_abbrev'
-.L247:
+.L238:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,2,9,0,0,0
 	.sdecl	'.debug_info',debug,cluster('uart3_rx_buffer')
 	.sect	'.debug_info'
-.L248:
+.L239:
 	.word	190
 	.half	3
-	.word	.L249
+	.word	.L240
 	.byte	4,1
 	.byte	'..\\Libraries\\seekfree_libraries\\zf_uart.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1,2
-	.word	.L170
+	.word	.L156
 	.byte	3
 	.byte	'uart3_rx_buffer',0,26,54,14
-	.word	.L322
+	.word	.L314
 	.byte	5,3
 	.word	uart3_rx_buffer
 	.byte	0
 	.sdecl	'.debug_abbrev',debug,cluster('uart3_rx_buffer')
 	.sect	'.debug_abbrev'
-.L249:
+.L240:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,2,9,0,0,0
-	.sdecl	'.debug_loc',debug,cluster('uart_get_handle')
+	.sdecl	'.debug_loc',debug,cluster('.cocofun_3')
 	.sect	'.debug_loc'
-.L154:
-	.word	-1,.L155,0,.L310-.L155
+.L136:
+	.word	-1,.L137,0,.L214-.L137
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L311:
-	.word	-1,.L155,0,.L310-.L155
+	.sdecl	'.debug_loc',debug,cluster('uart_get_handle')
+	.sect	'.debug_loc'
+.L140:
+	.word	-1,.L141,0,.L302-.L141
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L303:
+	.word	-1,.L141,0,.L302-.L141
 	.half	1
 	.byte	84
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('uart_getchar')
 	.sect	'.debug_loc'
-.L300:
-	.word	-1,.L167,0,.L145-.L167
+.L291:
+	.word	-1,.L153,0,.L338-.L153
 	.half	1
 	.byte	100
-	.word	.L356-.L167,.L298-.L167
+	.word	.L339-.L153,.L289-.L153
 	.half	1
 	.byte	111
 	.word	0,0
-.L166:
-	.word	-1,.L167,0,.L298-.L167
+.L152:
+	.word	-1,.L153,0,.L289-.L153
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L299:
-	.word	-1,.L167,0,.L145-.L167
-	.half	1
-	.byte	84
-	.word	.L355-.L167,.L298-.L167
-	.half	1
-	.byte	95
-	.word	.L357-.L167,.L358-.L167
-	.half	1
-	.byte	84
-	.word	.L359-.L167,.L360-.L167
+.L290:
+	.word	-1,.L153,0,.L338-.L153
 	.half	1
 	.byte	84
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('uart_init')
 	.sect	'.debug_loc'
-.L254:
-	.word	-1,.L159,0,.L325-.L159
+.L245:
+	.word	-1,.L145,0,.L320-.L145
 	.half	1
 	.byte	85
-	.word	.L336-.L159,.L337-.L159
+	.word	.L327-.L145,.L328-.L145
 	.half	1
 	.byte	88
 	.word	0,0
-.L278:
+.L268:
 	.word	0,0
-.L267:
+.L272:
 	.word	0,0
-.L282:
-	.word	0,0
-.L259:
-	.word	-1,.L159,.L329-.L159,.L250-.L159
-	.half	1
-	.byte	92
-	.word	0,0
-.L261:
-	.word	-1,.L159,.L325-.L159,.L330-.L159
+.L250:
+	.word	-1,.L145,.L253-.L145,.L320-.L145
 	.half	1
 	.byte	98
-	.word	.L331-.L159,.L330-.L159
+	.word	.L137-.L145,.L214-.L145
+	.half	1
+	.byte	98
+	.word	.L323-.L145,.L324-.L145
+	.half	1
+	.byte	98
+	.word	.L325-.L145,.L324-.L145
 	.half	1
 	.byte	101
 	.word	0,0
-.L274:
-	.word	-1,.L159,0,.L250-.L159
+.L264:
+	.word	-1,.L145,0,.L320-.L145
+	.half	2
+	.byte	145,96
+	.word	.L137-.L145,.L214-.L145
+	.half	2
+	.byte	145,96
+	.word	.L323-.L145,.L241-.L145
 	.half	2
 	.byte	145,96
 	.word	0,0
-.L271:
-	.word	-1,.L159,.L327-.L159,.L328-.L159
+.L261:
+	.word	-1,.L145,.L321-.L145,.L322-.L145
 	.half	1
 	.byte	95
 	.word	0,0
-.L257:
-	.word	-1,.L159,0,.L325-.L159
+.L248:
+	.word	-1,.L145,0,.L320-.L145
 	.half	1
 	.byte	87
-	.word	.L339-.L159,.L340-.L159
+	.word	.L329-.L145,.L330-.L145
 	.half	1
 	.byte	91
-	.word	.L340-.L159,.L341-.L159
+	.word	.L330-.L145,.L331-.L145
 	.half	1
 	.byte	86
 	.word	0,0
-.L256:
-	.word	-1,.L159,0,.L325-.L159
+.L247:
+	.word	-1,.L145,0,.L320-.L145
 	.half	1
 	.byte	86
-	.word	.L338-.L159,.L339-.L159
+	.word	.L262-.L145,.L329-.L145
 	.half	1
 	.byte	90
 	.word	0,0
-.L158:
-	.word	-1,.L159,0,.L324-.L159
+.L144:
+	.word	-1,.L145,0,.L319-.L145
 	.half	2
 	.byte	138,0
-	.word	.L324-.L159,.L250-.L159
+	.word	.L319-.L145,.L241-.L145
 	.half	2
 	.byte	138,32
-	.word	.L250-.L159,.L250-.L159
+	.word	.L241-.L145,.L241-.L145
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L252:
-	.word	-1,.L159,0,.L326-.L159
+.L243:
+	.word	-1,.L145,0,.L320-.L145
 	.half	1
 	.byte	84
-	.word	.L139-.L159,.L326-.L159
+	.word	.L253-.L145,.L320-.L145
 	.half	1
 	.byte	89
-	.word	.L330-.L159,.L332-.L159
+	.word	.L324-.L145,.L326-.L145
 	.half	1
 	.byte	89
-	.word	.L332-.L159,.L333-.L159
-	.half	1
-	.byte	84
-	.word	.L333-.L159,.L334-.L159
+	.word	.L262-.L145,.L329-.L145
 	.half	1
 	.byte	89
-	.word	.L334-.L159,.L335-.L159
-	.half	1
-	.byte	84
-	.word	.L338-.L159,.L339-.L159
+	.word	.L332-.L145,.L333-.L145
 	.half	1
 	.byte	89
-	.word	.L342-.L159,.L343-.L159
-	.half	1
-	.byte	89
-	.word	.L343-.L159,.L344-.L159
-	.half	1
-	.byte	84
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('uart_mux')
 	.sect	'.debug_loc'
-.L315:
-	.word	-1,.L157,0,.L312-.L157
+.L307:
+	.word	-1,.L143,0,.L304-.L143
 	.half	1
 	.byte	86
 	.word	0,0
-.L318:
-	.word	-1,.L157,0,.L312-.L157
+.L310:
+	.word	-1,.L143,0,.L304-.L143
 	.half	1
 	.byte	101
 	.word	0,0
-.L317:
-	.word	-1,.L157,0,.L312-.L157
+.L309:
+	.word	-1,.L143,0,.L304-.L143
 	.half	1
 	.byte	100
 	.word	0,0
-.L314:
-	.word	-1,.L157,0,.L312-.L157
+.L306:
+	.word	-1,.L143,0,.L304-.L143
 	.half	1
 	.byte	85
 	.word	0,0
-.L156:
-	.word	-1,.L157,0,.L312-.L157
+.L142:
+	.word	-1,.L143,0,.L304-.L143
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L313:
-	.word	-1,.L157,0,.L312-.L157
+.L305:
+	.word	-1,.L143,0,.L304-.L143
 	.half	1
 	.byte	84
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('uart_putbuff')
 	.sect	'.debug_loc'
-.L292:
-	.word	-1,.L163,0,.L142-.L163
+.L283:
+	.word	-1,.L149,0,.L127-.L149
 	.half	1
 	.byte	100
-	.word	.L348-.L163,.L289-.L163
+	.word	.L336-.L149,.L280-.L149
 	.half	1
 	.byte	111
 	.word	0,0
-.L293:
-	.word	-1,.L163,0,.L142-.L163
+.L284:
+	.word	-1,.L149,0,.L127-.L149
 	.half	1
 	.byte	85
-	.word	.L349-.L163,.L289-.L163
+	.word	.L127-.L149,.L280-.L149
 	.half	1
 	.byte	95
 	.word	0,0
-.L162:
-	.word	-1,.L163,0,.L289-.L163
+.L148:
+	.word	-1,.L149,0,.L280-.L149
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L290:
-	.word	-1,.L163,0,.L142-.L163
+.L281:
+	.word	-1,.L149,0,.L127-.L149
 	.half	1
 	.byte	84
-	.word	.L347-.L163,.L289-.L163
+	.word	.L336-.L149,.L280-.L149
 	.half	1
 	.byte	88
-	.word	.L350-.L163,.L351-.L163
-	.half	1
-	.byte	84
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('uart_putchar')
 	.sect	'.debug_loc'
-.L288:
-	.word	-1,.L161,0,.L284-.L161
+.L279:
+	.word	-1,.L147,0,.L274-.L147
 	.half	2
 	.byte	145,122
 	.word	0,0
-.L286:
-	.word	-1,.L161,0,.L346-.L161
+.L277:
+	.word	-1,.L147,0,.L335-.L147
 	.half	1
 	.byte	85
-	.word	0,.L284-.L161
+	.word	0,.L274-.L147
 	.half	2
 	.byte	145,120
 	.word	0,0
-.L160:
-	.word	-1,.L161,0,.L345-.L161
+.L146:
+	.word	-1,.L147,0,.L334-.L147
 	.half	2
 	.byte	138,0
-	.word	.L345-.L161,.L284-.L161
+	.word	.L334-.L147,.L274-.L147
 	.half	2
 	.byte	138,8
-	.word	.L284-.L161,.L284-.L161
+	.word	.L274-.L147,.L274-.L147
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L285:
-	.word	-1,.L161,0,.L346-.L161
+.L275:
+	.word	-1,.L147,0,.L335-.L147
 	.half	1
 	.byte	84
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('uart_putstr')
 	.sect	'.debug_loc'
-.L297:
-	.word	-1,.L165,0,.L144-.L165
+.L288:
+	.word	-1,.L151,0,.L129-.L151
 	.half	1
 	.byte	100
-	.word	.L353-.L165,.L294-.L165
+	.word	.L337-.L151,.L285-.L151
 	.half	1
 	.byte	111
 	.word	0,0
-.L164:
-	.word	-1,.L165,0,.L294-.L165
+.L150:
+	.word	-1,.L151,0,.L285-.L151
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L295:
-	.word	-1,.L165,0,.L144-.L165
+.L286:
+	.word	-1,.L151,0,.L129-.L151
 	.half	1
 	.byte	84
-	.word	.L352-.L165,.L294-.L165
+	.word	.L337-.L151,.L285-.L151
 	.half	1
 	.byte	88
-	.word	.L354-.L165,.L143-.L165
-	.half	1
-	.byte	84
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('uart_query')
 	.sect	'.debug_loc'
-.L303:
-	.word	-1,.L169,0,.L361-.L169
+.L294:
+	.word	-1,.L155,0,.L340-.L155
 	.half	1
 	.byte	100
-	.word	.L363-.L169,.L301-.L169
+	.word	.L341-.L155,.L292-.L155
 	.half	1
 	.byte	111
 	.word	0,0
-.L168:
-	.word	-1,.L169,0,.L301-.L169
+.L154:
+	.word	-1,.L155,0,.L292-.L155
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L302:
-	.word	-1,.L169,0,.L361-.L169
-	.half	1
-	.byte	84
-	.word	.L362-.L169,.L301-.L169
-	.half	1
-	.byte	95
-	.word	.L364-.L169,.L365-.L169
+.L293:
+	.word	-1,.L155,0,.L340-.L155
 	.half	1
 	.byte	84
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('uart_set_buffer')
 	.sect	'.debug_loc'
-.L152:
-	.word	-1,.L153,0,.L307-.L153
+.L138:
+	.word	-1,.L139,0,.L299-.L139
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L308:
-	.word	-1,.L153,0,.L307-.L153
+.L300:
+	.word	-1,.L139,.L137-.L139,.L214-.L139
+	.half	1
+	.byte	84
+	.word	0,.L299-.L139
 	.half	1
 	.byte	84
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('uart_set_interrupt_priority')
 	.sect	'.debug_loc'
-.L150:
-	.word	-1,.L151,0,.L304-.L151
+.L134:
+	.word	-1,.L135,0,.L295-.L135
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L305:
-	.word	-1,.L151,0,.L323-.L151
+.L296:
+	.word	-1,.L135,.L137-.L135,.L214-.L135
+	.half	1
+	.byte	84
+	.word	0,.L3-.L135
+	.half	1
+	.byte	84
+	.word	.L315-.L135,.L4-.L135
+	.half	1
+	.byte	84
+	.word	.L316-.L135,.L5-.L135
+	.half	1
+	.byte	84
+	.word	.L317-.L135,.L318-.L135
 	.half	1
 	.byte	84
 	.word	0,0
 	.sdecl	'.debug_frame',debug
 	.sect	'.debug_frame'
-.L752:
+.L606:
 	.word	48
 	.word	-1
 	.byte	3,0,2,1,27,12,26,0,8,27,8,26,8,28,8,29,8,30,8,31,8,34,8,35,8,32,8,33,8,16,8,17,8,24,8,25,8,36,8,37,8,38
@@ -20526,56 +19913,70 @@ _999001___func__:	.type	object
 	.sdecl	'.debug_frame',debug,cluster('uart_set_interrupt_priority')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L752,.L151,.L304-.L151
+	.word	.L606,.L135,.L295-.L135
 	.sdecl	'.debug_frame',debug,cluster('uart_set_buffer')
 	.sect	'.debug_frame'
 	.word	24
-	.word	.L752,.L153,.L307-.L153
+	.word	.L606,.L139,.L299-.L139
 	.byte	8,19,8,20,8,21,8,22,8,23,0,0
 	.sdecl	'.debug_frame',debug,cluster('uart_get_handle')
 	.sect	'.debug_frame'
 	.word	24
-	.word	.L752,.L155,.L310-.L155
+	.word	.L606,.L141,.L302-.L141
 	.byte	8,19,8,20,8,21,8,22,8,23,0,0
 	.sdecl	'.debug_frame',debug,cluster('uart_mux')
 	.sect	'.debug_frame'
 	.word	20
-	.word	.L752,.L157,.L312-.L157
+	.word	.L606,.L143,.L304-.L143
 	.byte	8,18,8,19,8,22,8,23
 	.sdecl	'.debug_frame',debug,cluster('uart_init')
 	.sect	'.debug_frame'
 	.word	36
-	.word	.L752,.L159,.L250-.L159
+	.word	.L606,.L145,.L241-.L145
 	.byte	4
-	.word	(.L324-.L159)/2
+	.word	(.L319-.L145)/2
 	.byte	19,32,22,26,3,19,138,32,4
-	.word	(.L250-.L324)/2
+	.word	(.L241-.L319)/2
 	.byte	19,0,8,26,0,0
 	.sdecl	'.debug_frame',debug,cluster('uart_putchar')
 	.sect	'.debug_frame'
 	.word	36
-	.word	.L752,.L161,.L284-.L161
+	.word	.L606,.L147,.L274-.L147
 	.byte	4
-	.word	(.L345-.L161)/2
+	.word	(.L334-.L147)/2
 	.byte	19,8,22,26,3,19,138,8,4
-	.word	(.L284-.L345)/2
+	.word	(.L274-.L334)/2
 	.byte	19,0,8,26,0,0
 	.sdecl	'.debug_frame',debug,cluster('uart_putbuff')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L752,.L163,.L289-.L163
+	.word	.L606,.L149,.L280-.L149
 	.sdecl	'.debug_frame',debug,cluster('uart_putstr')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L752,.L165,.L294-.L165
+	.word	.L606,.L151,.L285-.L151
 	.sdecl	'.debug_frame',debug,cluster('uart_getchar')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L752,.L167,.L298-.L167
+	.word	.L606,.L153,.L289-.L153
 	.sdecl	'.debug_frame',debug,cluster('uart_query')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L752,.L169,.L301-.L169
+	.word	.L606,.L155,.L292-.L155
+	.sdecl	'.debug_frame',debug
+	.sect	'.debug_frame'
+.L607:
+	.word	52
+	.word	-1
+	.byte	3,0,2,1,40,12,26,0,9,40,27,155,0,7,26,8,28,8,29,8,30,8,31,8,34,8,35,8,32,8,33,8,16,8,17,8,24,8,25,8,36
+	.byte	8,37,8,38,8,39,0
+	.sdecl	'.debug_frame',debug,cluster('.cocofun_3')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L607,.L137,.L214-.L137
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
 
+; ..\Libraries\seekfree_libraries\zf_uart.c	   351  
+; ..\Libraries\seekfree_libraries\zf_uart.c	   352  
 
 	; Module end

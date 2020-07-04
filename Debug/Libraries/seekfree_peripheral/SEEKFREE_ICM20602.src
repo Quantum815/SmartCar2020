@@ -1,6 +1,6 @@
 	; Module start
 	.compiler_version	"TASKING VX-toolset for TriCore: C compiler v6.3r1 Build 19041558 SN 99294086"
-	.compiler_invocation	"ctc --dep-file=Libraries\\seekfree_peripheral\\.SEEKFREE_ICM20602.o.d --fp-model=c,f,l,n,r,S,T,z -D__CPU__=tc26x -D__CPU_TC26X__ --core=tc1.6.x --iso=99 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\CODE -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Build -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Impl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Lib -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Lib\\DataHandling -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Lib\\InternalMux -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_PinMap -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Asc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Lin -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Spi -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\Icu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\PwmBc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\PwmHl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\TimerWithTrigger -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\TPwm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cif -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cif\\Cam -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cif\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\CStart -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Irq -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Trap -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dma -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dma\\Dma -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dma\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc\\Dsadc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc\\Rdc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dts -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dts\\Dts -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dts\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Emem -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Emem\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eray -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eray\\Eray -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eray\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eth -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eth\\Phy_Pef7071 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eth\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fce -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fce\\Crc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fce\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fft -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fft\\Fft -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fft\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Flash -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Flash\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gpt12 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gpt12\\IncrEnc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gpt12\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom\\Pwm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom\\PwmHl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tim -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tim\\In -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom\\Pwm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom\\PwmHl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Trig -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Hssl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Hssl\\Hssl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Hssl\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\I2c -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\I2c\\I2c -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\I2c\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Iom -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Iom\\Driver -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Iom\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Msc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Msc\\Msc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Msc\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Mtu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Mtu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Multican -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Multican\\Can -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Multican\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Port -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Port\\Io -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Port\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5\\Psi5 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5s -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5s\\Psi5s -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5s\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi\\SpiMaster -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi\\SpiSlave -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Scu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Scu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Sent -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Sent\\Sent -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Sent\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Smu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Smu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Src -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Src\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Stm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Stm\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Stm\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Vadc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Vadc\\Adc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Vadc\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Platform -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Platform\\Tricore -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Platform\\Tricore\\Compilers -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Sfr -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Sfr\\TC26B -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Sfr\\TC26B\\_Reg -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Service -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Service\\CpuGeneric -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\seekfree_libraries -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\seekfree_libraries\\common -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\seekfree_peripheral -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\USER -g2 -wW557 --make-target=Libraries\\seekfree_peripheral\\SEEKFREE_ICM20602.o -t4 --language=-gcc,-volatile,+strings,-kanji --default-near-size=0 -O0 --default-a1-size=0 --default-a0-size=0 --source --align=0 --switch=auto --error-limit=42 -o Libraries\\seekfree_peripheral\\SEEKFREE_ICM20602.src ..\\Libraries\\seekfree_peripheral\\SEEKFREE_ICM20602.c"
+	.compiler_invocation	"ctc --dep-file=Libraries\\seekfree_peripheral\\.SEEKFREE_ICM20602.o.d --fp-model=c,f,l,n,r,S,T,z -D__CPU__=tc26x -D__CPU_TC26X__ --core=tc1.6.x --iso=99 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\CODE -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Build -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Impl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Lib -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Lib\\DataHandling -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Lib\\InternalMux -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_PinMap -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Asc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Lin -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Spi -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\Icu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\PwmBc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\PwmHl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\TimerWithTrigger -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\TPwm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cif -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cif\\Cam -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cif\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\CStart -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Irq -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Trap -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dma -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dma\\Dma -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dma\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc\\Dsadc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc\\Rdc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dts -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dts\\Dts -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dts\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Emem -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Emem\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eray -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eray\\Eray -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eray\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eth -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eth\\Phy_Pef7071 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eth\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fce -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fce\\Crc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fce\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fft -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fft\\Fft -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fft\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Flash -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Flash\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gpt12 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gpt12\\IncrEnc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gpt12\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom\\Pwm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom\\PwmHl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tim -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tim\\In -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom\\Pwm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom\\PwmHl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Trig -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Hssl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Hssl\\Hssl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Hssl\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\I2c -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\I2c\\I2c -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\I2c\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Iom -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Iom\\Driver -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Iom\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Msc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Msc\\Msc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Msc\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Mtu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Mtu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Multican -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Multican\\Can -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Multican\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Port -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Port\\Io -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Port\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5\\Psi5 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5s -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5s\\Psi5s -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5s\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi\\SpiMaster -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi\\SpiSlave -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Scu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Scu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Sent -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Sent\\Sent -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Sent\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Smu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Smu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Src -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Src\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Stm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Stm\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Stm\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Vadc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Vadc\\Adc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Vadc\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Platform -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Platform\\Tricore -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Platform\\Tricore\\Compilers -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Sfr -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Sfr\\TC26B -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Sfr\\TC26B\\_Reg -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Service -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Service\\CpuGeneric -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\seekfree_libraries -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\seekfree_libraries\\common -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\seekfree_peripheral -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\USER -g2 -wW557 --make-target=Libraries\\seekfree_peripheral\\SEEKFREE_ICM20602.o -t4 --language=-gcc,-volatile,+strings,-kanji --default-near-size=0 -O2 --default-a1-size=0 --default-a0-size=0 --source --align=0 --compact-max-size=200 --switch=auto --error-limit=42 -o Libraries\\seekfree_peripheral\\SEEKFREE_ICM20602.src ..\\Libraries\\seekfree_peripheral\\SEEKFREE_ICM20602.c"
 	.compiler_name		"ctc"
 	;source	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_ICM20602.c'
 
@@ -59,40 +59,33 @@ $TC16X
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	    44  //-------------------------------------------------------------------------------------------------------------------
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	    45  void icm20602_self1_check(void)
 ; Function icm20602_self1_check
-.L10:
 icm20602_self1_check:	.type	func
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	    46  {
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	    47      uint8 dat=0;
-	mov	d8,#0
-.L133:
-
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	    48      while(0x12 != dat)   //读取ICM20602 ID
-	j	.L2
-.L3:
+.L2:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	    49      {
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	    50          dat = simiic_read_reg(ICM20602_DEV_ADDR,ICM20602_WHO_AM_I,SIMIIC);
 	mov	d4,#105
-.L339:
+.L332:
 	mov	d5,#117
-.L340:
+.L333:
 	mov	d6,#0
 	call	simiic_read_reg
-.L134:
-	mov	d8,d2
-.L135:
+.L153:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	    51          systick_delay_ms(STM0, 10);
-	mov	d4,#0
-	mov.u	d5,#38528
-	addih	d5,d5,#152
+	mov	d8,d2
+	fcall	.cocofun_2
+.L154:
 	call	systick_delay
-.L2:
+.L156:
 	mov	d15,#18
-.L341:
-	jne	d15,d8,.L3
-.L342:
+.L334:
+	jne	d15,d8,.L2
+.L335:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	    52          //卡在这里原因有以下几点
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	    53          //1 ICM20602坏了，如果是新的这样的概率极低
@@ -102,13 +95,28 @@ icm20602_self1_check:	.type	func
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	    57      }
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	    58  }
 	ret
-.L115:
+.L134:
 	
 __icm20602_self1_check_function_end:
 	.size	icm20602_self1_check,__icm20602_self1_check_function_end-icm20602_self1_check
-.L69:
+.L71:
 	; End of function
 	
+	.sdecl	'.text.SEEKFREE_ICM20602..cocofun_2',code,cluster('.cocofun_2')
+	.sect	'.text.SEEKFREE_ICM20602..cocofun_2'
+	.align	2
+; Function .cocofun_2
+.L8:
+.cocofun_2:	.type	func
+; Function body .cocofun_2, coco_iter:0
+	mov	d4,#0
+.L155:
+	mov.u	d5,#38528
+.L375:
+	addih	d5,d5,#152
+	fret
+.L101:
+	; End of function
 	.sdecl	'.text.SEEKFREE_ICM20602.icm20602_init',code,cluster('icm20602_init')
 	.sect	'.text.SEEKFREE_ICM20602.icm20602_init'
 	.align	2
@@ -127,139 +135,138 @@ __icm20602_self1_check_function_end:
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	    68  //-------------------------------------------------------------------------------------------------------------------
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	    69  void icm20602_init(void)
 ; Function icm20602_init
-.L12:
+.L10:
 icm20602_init:	.type	func
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	    70  {
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	    71  	simiic_init();
 	call	simiic_init
-.L161:
+.L183:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	    72      systick_delay_ms(STM0, 10);  //上电延时
-	mov	d4,#0
-	mov.u	d5,#38528
-	addih	d5,d5,#152
+	fcall	.cocofun_2
 	call	systick_delay
-.L162:
+.L184:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	    73      
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	    74      //检测
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	    75      icm20602_self1_check();
 	call	icm20602_self1_check
-.L163:
+.L185:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	    76      
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	    77      //复位
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	    78      simiic_write_reg(ICM20602_DEV_ADDR,ICM20602_PWR_MGMT_1,0x80);               //复位设备
-	mov	d4,#105
-.L164:
-	mov	d5,#107
-.L165:
+	fcall	.cocofun_3
+.L186:
 	mov	d6,#128
 	call	simiic_write_reg
-.L166:
+.L187:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	    79      systick_delay_ms(STM0, 2);                                                        //延时
 	mov	d4,#0
 	mov	d5,#15625
 	sh	d5,#7
 	call	systick_delay
-.L167:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	    80      while(0x80 & simiic_read_reg(ICM20602_DEV_ADDR,ICM20602_PWR_MGMT_1,SIMIIC));//等待复位完成
-	j	.L4
-.L5:
-.L4:
-	mov	d4,#105
-.L168:
-	mov	d5,#107
-.L169:
+.L3:
+	fcall	.cocofun_3
+.L188:
 	mov	d6,#0
 	call	simiic_read_reg
-.L170:
-	jnz.t	d2:7,.L5
-.L171:
+.L189:
+	jnz.t	d2:7,.L3
+.L190:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	    81      
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	    82      //配置参数
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	    83      simiic_write_reg(ICM20602_DEV_ADDR,ICM20602_PWR_MGMT_1,0x01);               //时钟设置
-	mov	d4,#105
-.L172:
-	mov	d5,#107
-.L173:
-	mov	d6,#1
-	call	simiic_write_reg
-.L174:
-
-; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	    84      simiic_write_reg(ICM20602_DEV_ADDR,ICM20602_PWR_MGMT_2,0x00);               //开启陀螺仪和加速度计
-	mov	d4,#105
-.L175:
-	mov	d5,#108
-.L176:
-	mov	d6,#0
-	call	simiic_write_reg
-.L177:
-
-; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	    85      simiic_write_reg(ICM20602_DEV_ADDR,ICM20602_CONFIG,0x01);                   //176HZ 1KHZ
-	mov	d4,#105
-.L178:
-	mov	d5,#26
-.L179:
-	mov	d6,#1
-	call	simiic_write_reg
-.L180:
-
-; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	    86      simiic_write_reg(ICM20602_DEV_ADDR,ICM20602_SMPLRT_DIV,0x07);               //采样速率 SAMPLE_RATE = INTERNAL_SAMPLE_RATE / (1 + SMPLRT_DIV)
-	mov	d4,#105
-.L181:
-	mov	d5,#25
-.L182:
-	mov	d6,#7
-	call	simiic_write_reg
-.L183:
-
-; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	    87      simiic_write_reg(ICM20602_DEV_ADDR,ICM20602_GYRO_CONFIG,0x18);              //±2000 dps
-	mov	d4,#105
-.L184:
-	mov	d5,#27
-.L185:
-	mov	d6,#24
-	call	simiic_write_reg
-.L186:
-
-; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	    88      simiic_write_reg(ICM20602_DEV_ADDR,ICM20602_ACCEL_CONFIG,0x10);             //±8g
-	mov	d4,#105
-.L187:
-	mov	d5,#28
-.L188:
-	mov	d6,#16
-	call	simiic_write_reg
-.L189:
-
-; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	    89      simiic_write_reg(ICM20602_DEV_ADDR,ICM20602_ACCEL_CONFIG_2,0x03);           //Average 4 samples   44.8HZ   //0x23 Average 16 samples
-	mov	d4,#105
-.L190:
-	mov	d5,#29
+	fcall	.cocofun_3
 .L191:
-	mov	d6,#3
+	mov	d6,#1
 	call	simiic_write_reg
 .L192:
 
-; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	    90  }
-	ret
-.L102:
+; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	    84      simiic_write_reg(ICM20602_DEV_ADDR,ICM20602_PWR_MGMT_2,0x00);               //开启陀螺仪和加速度计
+	mov	d4,#105
+.L193:
+	mov	d5,#108
+.L194:
+	mov	d6,#0
+	call	simiic_write_reg
+.L195:
+
+; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	    85      simiic_write_reg(ICM20602_DEV_ADDR,ICM20602_CONFIG,0x01);                   //176HZ 1KHZ
+	mov	d4,#105
+.L196:
+	mov	d5,#26
+.L197:
+	mov	d6,#1
+	call	simiic_write_reg
+.L198:
+
+; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	    86      simiic_write_reg(ICM20602_DEV_ADDR,ICM20602_SMPLRT_DIV,0x07);               //采样速率 SAMPLE_RATE = INTERNAL_SAMPLE_RATE / (1 + SMPLRT_DIV)
+	mov	d4,#105
+.L199:
+	mov	d5,#25
+.L200:
+	mov	d6,#7
+	call	simiic_write_reg
+.L201:
+
+; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	    87      simiic_write_reg(ICM20602_DEV_ADDR,ICM20602_GYRO_CONFIG,0x18);              //±2000 dps
+	mov	d4,#105
+.L202:
+	mov	d5,#27
+.L203:
+	mov	d6,#24
+	call	simiic_write_reg
+.L204:
+
+; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	    88      simiic_write_reg(ICM20602_DEV_ADDR,ICM20602_ACCEL_CONFIG,0x10);             //±8g
+	mov	d4,#105
+.L205:
+	mov	d5,#28
+.L206:
+	mov	d6,#16
+	call	simiic_write_reg
+.L207:
+
+; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	    89      simiic_write_reg(ICM20602_DEV_ADDR,ICM20602_ACCEL_CONFIG_2,0x03);           //Average 4 samples   44.8HZ   //0x23 Average 16 samples
+	mov	d4,#105
+.L208:
+	mov	d5,#29
+.L209:
+	mov	d6,#3
+	j	simiic_write_reg
+.L119:
 	
 __icm20602_init_function_end:
 	.size	icm20602_init,__icm20602_init_function_end-icm20602_init
-.L39:
+.L41:
 	; End of function
 	
+	.sdecl	'.text.SEEKFREE_ICM20602..cocofun_3',code,cluster('.cocofun_3')
+	.sect	'.text.SEEKFREE_ICM20602..cocofun_3'
+	.align	2
+; Function .cocofun_3
+.L12:
+.cocofun_3:	.type	func
+; Function body .cocofun_3, coco_iter:0
+	mov	d4,#105
+.L380:
+	mov	d5,#107
+	fret
+.L106:
+	; End of function
 	.sdecl	'.text.SEEKFREE_ICM20602.get_icm20602_accdata',code,cluster('get_icm20602_accdata')
 	.sect	'.text.SEEKFREE_ICM20602.get_icm20602_accdata'
 	.align	2
 	
 	.global	get_icm20602_accdata
 
+; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	    90  }
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	    91  
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	    92  
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	    93  //-------------------------------------------------------------------------------------------------------------------
@@ -273,79 +280,84 @@ __icm20602_init_function_end:
 ; Function get_icm20602_accdata
 .L14:
 get_icm20602_accdata:	.type	func
-	sub.a	a10,#8
-.L136:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   101  {
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   102      uint8 dat[6];
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   103      
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   104      simiic_read_regs(ICM20602_DEV_ADDR, ICM20602_ACCEL_XOUT_H, dat, 6, SIMIIC);  
 	mov	d4,#105
-.L197:
+	sub.a	a10,#8
+.L157:
 	mov	d5,#59
-.L198:
-	lea	a4,[a10]0
-.L199:
+	mov.aa	a4,a10
+.L214:
 	mov	d6,#6
-.L200:
+.L215:
 	mov	d7,#0
 	call	simiic_read_regs
-.L201:
+.L216:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   105      icm_acc_x = (int16)(((uint16)dat[0]<<8 | dat[1]));
-	movh.a	a15,#@his(icm_acc_x)
-	lea	a15,[a15]@los(icm_acc_x)
-.L202:
 	ld.bu	d15,[a10]
-.L203:
-	sha	d0,d15,#8
-.L204:
+.L217:
+	movh.a	a15,#@his(icm_acc_x)
+.L218:
+	fcall	.cocofun_1
+.L158:
 	ld.bu	d15,[a10]1
-.L205:
-	or	d0,d15
-.L206:
-	st.h	[a15],d0
-.L207:
+.L159:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   106      icm_acc_y = (int16)(((uint16)dat[2]<<8 | dat[3]));
-	movh.a	a15,#@his(icm_acc_y)
-	lea	a15,[a15]@los(icm_acc_y)
-.L208:
-	ld.bu	d15,[a10]2
-.L209:
-	sha	d0,d15,#8
-.L210:
-	ld.bu	d15,[a10]3
-.L211:
 	or	d0,d15
-.L212:
-	st.h	[a15],d0
-.L213:
+	ld.bu	d15,[a10]2
+.L219:
+	st.h	[a15]@los(icm_acc_x),d0
+.L220:
+	movh.a	a15,#@his(icm_acc_y)
+.L221:
+	fcall	.cocofun_1
+.L222:
+	ld.bu	d15,[a10]3
+.L223:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   107      icm_acc_z = (int16)(((uint16)dat[4]<<8 | dat[5]));
-	movh.a	a15,#@his(icm_acc_z)
-	lea	a15,[a15]@los(icm_acc_z)
-.L214:
-	ld.bu	d15,[a10]4
-.L215:
-	sha	d0,d15,#8
-.L216:
-	ld.bu	d15,[a10]5
-.L217:
 	or	d0,d15
-.L218:
-	st.h	[a15],d0
-.L219:
+	ld.bu	d15,[a10]4
+.L224:
+	st.h	[a15]@los(icm_acc_y),d0
+.L225:
+	movh.a	a15,#@his(icm_acc_z)
+.L226:
+	fcall	.cocofun_1
+.L227:
+	ld.bu	d15,[a10]5
+.L228:
+	or	d0,d15
+	st.h	[a15]@los(icm_acc_z),d0
+.L229:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   108  }
 	ret
-.L103:
+.L121:
 	
 __get_icm20602_accdata_function_end:
 	.size	get_icm20602_accdata,__get_icm20602_accdata_function_end-get_icm20602_accdata
-.L44:
+.L46:
 	; End of function
 	
+	.sdecl	'.text.SEEKFREE_ICM20602..cocofun_1',code,cluster('.cocofun_1')
+	.sect	'.text.SEEKFREE_ICM20602..cocofun_1'
+	.align	2
+; Function .cocofun_1
+.L16:
+.cocofun_1:	.type	func
+; Function body .cocofun_1, coco_iter:0
+	sha	d15,d15,#8
+.L370:
+	extr	d0,d15,#0,#16
+	fret
+.L96:
+	; End of function
 	.sdecl	'.text.SEEKFREE_ICM20602.get_icm20602_gyro',code,cluster('get_icm20602_gyro')
 	.sect	'.text.SEEKFREE_ICM20602.get_icm20602_gyro'
 	.align	2
@@ -362,79 +374,71 @@ __get_icm20602_accdata_function_end:
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   116  //-------------------------------------------------------------------------------------------------------------------
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   117  void get_icm20602_gyro(void)
 ; Function get_icm20602_gyro
-.L16:
+.L18:
 get_icm20602_gyro:	.type	func
-	sub.a	a10,#8
-.L137:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   118  {
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   119      uint8 dat[6];
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   120  
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   121      simiic_read_regs(ICM20602_DEV_ADDR, ICM20602_GYRO_XOUT_H, dat, 6, SIMIIC);  
 	mov	d4,#105
-.L224:
+	sub.a	a10,#8
+.L160:
 	mov	d5,#67
-.L225:
-	lea	a4,[a10]0
-.L226:
+	mov.aa	a4,a10
+.L234:
 	mov	d6,#6
-.L227:
+.L235:
 	mov	d7,#0
 	call	simiic_read_regs
-.L228:
+.L236:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   122      icm_gyro_x = (int16)(((uint16)dat[0]<<8 | dat[1]));
-	movh.a	a15,#@his(icm_gyro_x)
-	lea	a15,[a15]@los(icm_gyro_x)
-.L229:
 	ld.bu	d15,[a10]
-.L230:
-	sha	d0,d15,#8
-.L231:
-	ld.bu	d15,[a10]1
-.L232:
-	or	d0,d15
-.L233:
-	st.h	[a15],d0
-.L234:
-
-; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   123      icm_gyro_y = (int16)(((uint16)dat[2]<<8 | dat[3]));
-	movh.a	a15,#@his(icm_gyro_y)
-	lea	a15,[a15]@los(icm_gyro_y)
-.L235:
-	ld.bu	d15,[a10]2
-.L236:
-	sha	d0,d15,#8
 .L237:
-	ld.bu	d15,[a10]3
+	movh.a	a15,#@his(icm_gyro_x)
 .L238:
-	or	d0,d15
+	fcall	.cocofun_1
 .L239:
-	st.h	[a15],d0
+	ld.bu	d15,[a10]1
 .L240:
 
-; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   124      icm_gyro_z = (int16)(((uint16)dat[4]<<8 | dat[5]));
-	movh.a	a15,#@his(icm_gyro_z)
-	lea	a15,[a15]@los(icm_gyro_z)
-.L241:
-	ld.bu	d15,[a10]4
-.L242:
-	sha	d0,d15,#8
-.L243:
-	ld.bu	d15,[a10]5
-.L244:
+; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   123      icm_gyro_y = (int16)(((uint16)dat[2]<<8 | dat[3]));
 	or	d0,d15
+	ld.bu	d15,[a10]2
+.L241:
+	st.h	[a15]@los(icm_gyro_x),d0
+.L242:
+	movh.a	a15,#@his(icm_gyro_y)
+.L243:
+	fcall	.cocofun_1
+.L244:
+	ld.bu	d15,[a10]3
 .L245:
-	st.h	[a15],d0
+
+; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   124      icm_gyro_z = (int16)(((uint16)dat[4]<<8 | dat[5]));
+	or	d0,d15
+	ld.bu	d15,[a10]4
 .L246:
+	st.h	[a15]@los(icm_gyro_y),d0
+.L247:
+	movh.a	a15,#@his(icm_gyro_z)
+.L248:
+	fcall	.cocofun_1
+.L249:
+	ld.bu	d15,[a10]5
+.L250:
+	or	d0,d15
+	st.h	[a15]@los(icm_gyro_z),d0
+.L251:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   125  }
 	ret
-.L106:
+.L125:
 	
 __get_icm20602_gyro_function_end:
 	.size	get_icm20602_gyro,__get_icm20602_gyro_function_end-get_icm20602_gyro
-.L49:
+.L51:
 	; End of function
 	
 	.sdecl	'.text.SEEKFREE_ICM20602.icm_spi_w_reg_byte',code,cluster('icm_spi_w_reg_byte')
@@ -577,45 +581,36 @@ __get_icm20602_gyro_function_end:
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   257  //-------------------------------------------------------------------------------------------------------------------
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   258  void icm_spi_w_reg_byte(uint8 cmd, uint8 val)
 ; Function icm_spi_w_reg_byte
-.L18:
+.L20:
 icm_spi_w_reg_byte:	.type	func
 	sub.a	a10,#8
-.L138:
+.L161:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   259  {
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   260      uint8 dat[2];
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   261      
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   262      dat[0] = cmd | ICM20602_SPI_W;
-	st.b	[a10],d4
-.L347:
-
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   263      dat[1] = val;
-	st.b	[a10]1,d5
-.L348:
-
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   264      
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   265      spi_mosi(SPI_NUM,SPI_CS_PIN,dat,dat,2,1);
-	mov	d4,#0
-.L139:
-	mov	d5,#30
-.L140:
-	lea	a4,[a10]0
-.L349:
-	lea	a5,[a10]0
-.L350:
 	mov	d6,#2
-.L351:
+	st.b	[a10],d4
+.L340:
+	mov	d4,#0
+	mov.aa	a4,a10
+.L162:
 	mov	d7,#1
-	call	spi_mosi
-.L352:
-
-; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   266  }
-	ret
-.L117:
+	st.b	[a10]1,d5
+.L341:
+	mov	d5,#30
+	mov.aa	a5,a4
+.L163:
+	j	spi_mosi
+.L137:
 	
 __icm_spi_w_reg_byte_function_end:
 	.size	icm_spi_w_reg_byte,__icm_spi_w_reg_byte_function_end-icm_spi_w_reg_byte
-.L74:
+.L76:
 	; End of function
 	
 	.sdecl	'.text.SEEKFREE_ICM20602.icm_spi_r_reg_byte',code,cluster('icm_spi_r_reg_byte')
@@ -624,6 +619,7 @@ __icm_spi_w_reg_byte_function_end:
 	
 	.global	icm_spi_r_reg_byte
 
+; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   266  }
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   267  
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   268  //-------------------------------------------------------------------------------------------------------------------
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   269  //  @brief      ICM20602 SPI读寄存器
@@ -635,58 +631,53 @@ __icm_spi_w_reg_byte_function_end:
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   275  //-------------------------------------------------------------------------------------------------------------------
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   276  void icm_spi_r_reg_byte(uint8 cmd, uint8 *val)
 ; Function icm_spi_r_reg_byte
-.L20:
+.L22:
 icm_spi_r_reg_byte:	.type	func
-	sub.a	a10,#8
-.L141:
-	mov.aa	a15,a4
-.L144:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   277  {
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   278      uint8 dat[2];
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   279      
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   280      dat[0] = cmd | ICM20602_SPI_R;
 	or	d15,d4,#128
-.L357:
-	st.b	[a10],d15
-.L358:
+	sub.a	a10,#8
+.L164:
+	mov.aa	a15,a4
+.L167:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   281      dat[1] = *val;
-	ld.bu	d15,[a15]
-.L359:
-	st.b	[a10]1,d15
-.L360:
-
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   282      
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   283      spi_mosi(SPI_NUM,SPI_CS_PIN,dat,dat,2,1);
 	mov	d4,#0
-.L142:
+	st.b	[a10],d15
+.L165:
 	mov	d5,#30
-.L361:
-	lea	a4,[a10]0
-.L143:
-	lea	a5,[a10]0
-.L362:
+	ld.bu	d15,[a15]
+.L346:
 	mov	d6,#2
-.L363:
+	mov.aa	a4,a10
+.L166:
 	mov	d7,#1
+	st.b	[a10]1,d15
+.L347:
+	mov.aa	a5,a4
+.L348:
 	call	spi_mosi
-.L364:
+.L349:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   284      
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   285      *val = dat[1];
 	ld.bu	d15,[a10]1
-.L365:
+.L350:
 	st.b	[a15],d15
-.L366:
+.L351:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   286  }
 	ret
-.L122:
+.L142:
 	
 __icm_spi_r_reg_byte_function_end:
 	.size	icm_spi_r_reg_byte,__icm_spi_r_reg_byte_function_end-icm_spi_r_reg_byte
-.L79:
+.L81:
 	; End of function
 	
 	.sdecl	'.text.SEEKFREE_ICM20602.icm_spi_r_reg_bytes',code,cluster('icm_spi_r_reg_bytes')
@@ -707,30 +698,26 @@ __icm_spi_r_reg_byte_function_end:
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   296  //-------------------------------------------------------------------------------------------------------------------
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   297  void icm_spi_r_reg_bytes(uint8 * val, uint8 num)
 ; Function icm_spi_r_reg_bytes
-.L22:
+.L24:
 icm_spi_r_reg_bytes:	.type	func
 	mov	d6,d4
-.L147:
+.L169:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   298  {
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   299      spi_mosi(SPI_NUM,SPI_CS_PIN,val,val,num,1);
 	mov	d4,#0
-.L145:
+.L168:
 	mov	d5,#30
-.L371:
+.L356:
 	mov	d7,#1
 	mov.aa	a5,a4
-.L148:
-	call	spi_mosi
-.L146:
-
-; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   300  }
-	ret
-.L127:
+.L170:
+	j	spi_mosi
+.L147:
 	
 __icm_spi_r_reg_bytes_function_end:
 	.size	icm_spi_r_reg_bytes,__icm_spi_r_reg_bytes_function_end-icm_spi_r_reg_bytes
-.L84:
+.L86:
 	; End of function
 	
 	.sdecl	'.text.SEEKFREE_ICM20602.icm20602_self3_check',code,cluster('icm20602_self3_check')
@@ -739,6 +726,7 @@ __icm_spi_r_reg_bytes_function_end:
 	
 	.global	icm20602_self3_check
 
+; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   300  }
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   301  
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   302  
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   303  //-------------------------------------------------------------------------------------------------------------------
@@ -750,42 +738,36 @@ __icm_spi_r_reg_bytes_function_end:
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   309  //-------------------------------------------------------------------------------------------------------------------
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   310  void icm20602_self3_check(void)
 ; Function icm20602_self3_check
-.L24:
+.L26:
 icm20602_self3_check:	.type	func
 	sub.a	a10,#8
-.L149:
+.L171:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   311  {
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   312      uint8 dat=0;
 	mov	d15,#0
-.L376:
 	st.b	[a10],d15
-.L377:
+.L361:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   313      while(0x12 != dat)   //读取ICM20602 ID
-	j	.L6
-.L7:
+	mov	d15,#18
+.L4:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   314      {
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   315          icm_spi_r_reg_byte(ICM20602_WHO_AM_I,&dat);
 	mov	d4,#117
-.L378:
-	lea	a4,[a10]0
+	mov.aa	a4,a10
 	call	icm_spi_r_reg_byte
-.L379:
+.L362:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   316          systick_delay_ms(STM0, 10);
-	mov	d4,#0
-	mov.u	d5,#38528
-	addih	d5,d5,#152
+	fcall	.cocofun_2
 	call	systick_delay
-.L6:
+.L363:
 	ld.bu	d0,[a10]
-.L380:
-	mov	d15,#18
-.L381:
-	jne	d15,d0,.L7
-.L382:
+.L364:
+	jne	d15,d0,.L4
+.L365:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   317          //卡在这里原因有以下几点
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   318          //1 ICM20602坏了，如果是新的这样的概率极低
@@ -795,11 +777,11 @@ icm20602_self3_check:	.type	func
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   322  
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   323  }
 	ret
-.L130:
+.L150:
 	
 __icm20602_self3_check_function_end:
 	.size	icm20602_self3_check,__icm20602_self3_check_function_end-icm20602_self3_check
-.L89:
+.L91:
 	; End of function
 	
 	.sdecl	'.text.SEEKFREE_ICM20602.icm20602_init_spi',code,cluster('icm20602_init_spi')
@@ -818,141 +800,132 @@ __icm20602_self3_check_function_end:
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   331  //-------------------------------------------------------------------------------------------------------------------
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   332  void icm20602_init_spi(void)
 ; Function icm20602_init_spi
-.L26:
+.L28:
 icm20602_init_spi:	.type	func
 	sub.a	a10,#16
-.L150:
+.L172:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   333  {
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   334      uint8 val = 0x0;
-	mov	d15,#0
-.L251:
-	st.b	[a10]12,d15
-.L252:
+	mov	d4,#0
+	st.b	[a10]12,d4
+.L256:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   335  
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   336      systick_delay_ms(STM0, 10);  //上电延时
-	mov	d4,#0
-	mov.u	d5,#38528
-	addih	d5,d5,#152
+	mov.u	d8,#38528
+	addih	d8,d8,#152
+	mov	d5,d8
 	call	systick_delay
-.L253:
+.L257:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   337      
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   338      (void)spi_init(SPI_NUM, SPI_SCK_PIN, SPI_MOSI_PIN, SPI_MISO_PIN, SPI_CS_PIN, 3, 10*1000*1000);//硬件SPI初始化
 	mov	d15,#30
 	st.h	[a10],d15
-.L254:
+.L258:
 	mov	d15,#3
 	st.b	[a10]4,d15
-.L255:
-	mov.u	d15,#38528
-	addih	d15,d15,#152
-	st.w	[a10]8,d15
-.L256:
-	mov	d4,#0
-.L257:
-	mov	d5,#0
-.L258:
-	mov	d6,#7
 .L259:
+	mov	d4,#0
+	st.w	[a10]8,d8
+.L260:
+	mov	d5,d4
+.L261:
+	mov	d6,#7
+.L262:
 	mov	d7,#12
 	call	spi_init
-.L260:
+.L263:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   339  
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   340      icm20602_self3_check();//检测
 	call	icm20602_self3_check
-.L261:
+.L264:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   341      
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   342      icm_spi_w_reg_byte(ICM20602_PWR_MGMT_1,0x80);//复位设备
 	mov	d4,#107
-.L262:
+.L265:
 	mov	d5,#128
 	call	icm_spi_w_reg_byte
-.L263:
+.L266:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   343      systick_delay_ms(STM0, 2);
 	mov	d4,#0
 	mov	d5,#15625
 	sh	d5,#7
 	call	systick_delay
+.L267:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   344      do
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   345      {//等待复位成功
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   346          icm_spi_r_reg_byte(ICM20602_PWR_MGMT_1,&val);
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   347      }while(0x41 != val);
-.L8:
+	mov	d15,#65
+.L5:
 	mov	d4,#107
-.L264:
 	lea	a4,[a10]12
 	call	icm_spi_r_reg_byte
-.L265:
-	ld.bu	d0,[a10]12
-.L266:
-	mov	d15,#65
-.L267:
-	jne	d15,d0,.L8
 .L268:
+	ld.bu	d0,[a10]12
+.L269:
+	jne	d15,d0,.L5
+.L270:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   348      
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   349      icm_spi_w_reg_byte(ICM20602_PWR_MGMT_1,     0x01);            //时钟设置
 	mov	d4,#107
-.L269:
-	mov	d5,#1
-	call	icm_spi_w_reg_byte
-.L270:
-
-; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   350      icm_spi_w_reg_byte(ICM20602_PWR_MGMT_2,     0x00);            //开启陀螺仪和加速度计
-	mov	d4,#108
 .L271:
-	mov	d5,#0
+	mov	d5,#1
 	call	icm_spi_w_reg_byte
 .L272:
 
-; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   351      icm_spi_w_reg_byte(ICM20602_CONFIG,         0x01);            //176HZ 1KHZ
-	mov	d4,#26
+; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   350      icm_spi_w_reg_byte(ICM20602_PWR_MGMT_2,     0x00);            //开启陀螺仪和加速度计
+	mov	d4,#108
 .L273:
-	mov	d5,#1
+	mov	d5,#0
 	call	icm_spi_w_reg_byte
 .L274:
 
-; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   352      icm_spi_w_reg_byte(ICM20602_SMPLRT_DIV,     0x07);            //采样速率 SAMPLE_RATE = INTERNAL_SAMPLE_RATE / (1 + SMPLRT_DIV)
-	mov	d4,#25
+; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   351      icm_spi_w_reg_byte(ICM20602_CONFIG,         0x01);            //176HZ 1KHZ
+	mov	d4,#26
 .L275:
-	mov	d5,#7
+	mov	d5,#1
 	call	icm_spi_w_reg_byte
 .L276:
 
-; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   353      icm_spi_w_reg_byte(ICM20602_GYRO_CONFIG,    0x18);            //±2000 dps
-	mov	d4,#27
+; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   352      icm_spi_w_reg_byte(ICM20602_SMPLRT_DIV,     0x07);            //采样速率 SAMPLE_RATE = INTERNAL_SAMPLE_RATE / (1 + SMPLRT_DIV)
+	mov	d4,#25
 .L277:
-	mov	d5,#24
+	mov	d5,#7
 	call	icm_spi_w_reg_byte
 .L278:
 
-; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   354      icm_spi_w_reg_byte(ICM20602_ACCEL_CONFIG,   0x10);            //±8g
-	mov	d4,#28
+; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   353      icm_spi_w_reg_byte(ICM20602_GYRO_CONFIG,    0x18);            //±2000 dps
+	mov	d4,#27
 .L279:
-	mov	d5,#16
+	mov	d5,#24
 	call	icm_spi_w_reg_byte
 .L280:
 
-; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   355      icm_spi_w_reg_byte(ICM20602_ACCEL_CONFIG_2, 0x03);            //Average 4 samples   44.8HZ   //0x23 Average 16 samples
-	mov	d4,#29
+; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   354      icm_spi_w_reg_byte(ICM20602_ACCEL_CONFIG,   0x10);            //±8g
+	mov	d4,#28
 .L281:
-	mov	d5,#3
+	mov	d5,#16
 	call	icm_spi_w_reg_byte
 .L282:
 
-; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   356  }
-	ret
-.L108:
+; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   355      icm_spi_w_reg_byte(ICM20602_ACCEL_CONFIG_2, 0x03);            //Average 4 samples   44.8HZ   //0x23 Average 16 samples
+	mov	d4,#29
+.L283:
+	mov	d5,#3
+	j	icm_spi_w_reg_byte
+.L127:
 	
 __icm20602_init_spi_function_end:
 	.size	icm20602_init_spi,__icm20602_init_spi_function_end-icm20602_init_spi
-.L54:
+.L56:
 	; End of function
 	
 	.sdecl	'.text.SEEKFREE_ICM20602.get_icm20602_accdata_spi',code,cluster('get_icm20602_accdata_spi')
@@ -961,6 +934,7 @@ __icm20602_init_spi_function_end:
 	
 	.global	get_icm20602_accdata_spi
 
+; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   356  }
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   357  
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   358  //-------------------------------------------------------------------------------------------------------------------
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   359  //  @brief      获取ICM20602加速度计数据
@@ -971,10 +945,10 @@ __icm20602_init_spi_function_end:
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   364  //-------------------------------------------------------------------------------------------------------------------
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   365  void get_icm20602_accdata_spi(void)
 ; Function get_icm20602_accdata_spi
-.L28:
+.L30:
 get_icm20602_accdata_spi:	.type	func
 	sub.a	a10,#8
-.L151:
+.L173:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   366  {
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   367      struct
@@ -985,70 +959,63 @@ get_icm20602_accdata_spi:	.type	func
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   372  
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   373      buf.reg = ICM20602_ACCEL_XOUT_H | ICM20602_SPI_R;
 	mov	d15,#187
-.L287:
 	st.b	[a10],d15
 .L288:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   374      
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   375      icm_spi_r_reg_bytes(&buf.reg, 7);
-	lea	a4,[a10]0
+	mov.aa	a4,a10
 .L289:
 	mov	d4,#7
 	call	icm_spi_r_reg_bytes
 .L290:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   376      icm_acc_x = (int16)(((uint16)buf.dat[0]<<8 | buf.dat[1]));
-	movh.a	a15,#@his(icm_acc_x)
-	lea	a15,[a15]@los(icm_acc_x)
-.L291:
 	ld.bu	d15,[a10]1
+.L291:
+	movh.a	a15,#@his(icm_acc_x)
 .L292:
-	sha	d0,d15,#8
+	fcall	.cocofun_1
 .L293:
 	ld.bu	d15,[a10]2
 .L294:
-	or	d0,d15
-.L295:
-	st.h	[a15],d0
-.L296:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   377      icm_acc_y = (int16)(((uint16)buf.dat[2]<<8 | buf.dat[3]));
-	movh.a	a15,#@his(icm_acc_y)
-	lea	a15,[a15]@los(icm_acc_y)
-.L297:
-	ld.bu	d15,[a10]3
-.L298:
-	sha	d0,d15,#8
-.L299:
-	ld.bu	d15,[a10]4
-.L300:
 	or	d0,d15
-.L301:
-	st.h	[a15],d0
-.L302:
+	ld.bu	d15,[a10]3
+.L295:
+	st.h	[a15]@los(icm_acc_x),d0
+.L296:
+	movh.a	a15,#@his(icm_acc_y)
+.L297:
+	fcall	.cocofun_1
+.L298:
+	ld.bu	d15,[a10]4
+.L299:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   378      icm_acc_z = (int16)(((uint16)buf.dat[4]<<8 | buf.dat[5]));
-	movh.a	a15,#@his(icm_acc_z)
-	lea	a15,[a15]@los(icm_acc_z)
-.L303:
-	ld.bu	d15,[a10]5
-.L304:
-	sha	d0,d15,#8
-.L305:
-	ld.bu	d15,[a10]6
-.L306:
 	or	d0,d15
-.L307:
-	st.h	[a15],d0
-.L308:
+	ld.bu	d15,[a10]5
+.L300:
+	st.h	[a15]@los(icm_acc_y),d0
+.L301:
+	movh.a	a15,#@his(icm_acc_z)
+.L302:
+	fcall	.cocofun_1
+.L303:
+	ld.bu	d15,[a10]6
+.L304:
+	or	d0,d15
+	st.h	[a15]@los(icm_acc_z),d0
+.L305:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   379  }
 	ret
-.L111:
+.L130:
 	
 __get_icm20602_accdata_spi_function_end:
 	.size	get_icm20602_accdata_spi,__get_icm20602_accdata_spi_function_end-get_icm20602_accdata_spi
-.L59:
+.L61:
 	; End of function
 	
 	.sdecl	'.text.SEEKFREE_ICM20602.get_icm20602_gyro_spi',code,cluster('get_icm20602_gyro_spi')
@@ -1067,10 +1034,10 @@ __get_icm20602_accdata_spi_function_end:
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   387  //-------------------------------------------------------------------------------------------------------------------
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   388  void get_icm20602_gyro_spi(void)
 ; Function get_icm20602_gyro_spi
-.L30:
+.L32:
 get_icm20602_gyro_spi:	.type	func
 	sub.a	a10,#8
-.L152:
+.L174:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   389  {
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   390      struct
@@ -1081,70 +1048,63 @@ get_icm20602_gyro_spi:	.type	func
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   395  
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   396      buf.reg = ICM20602_GYRO_XOUT_H | ICM20602_SPI_R;
 	mov	d15,#195
-.L313:
 	st.b	[a10],d15
-.L314:
+.L310:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   397      
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   398      icm_spi_r_reg_bytes(&buf.reg, 7);
-	lea	a4,[a10]0
-.L315:
+	mov.aa	a4,a10
+.L311:
 	mov	d4,#7
 	call	icm_spi_r_reg_bytes
-.L316:
+.L312:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   399      icm_gyro_x = (int16)(((uint16)buf.dat[0]<<8 | buf.dat[1]));
-	movh.a	a15,#@his(icm_gyro_x)
-	lea	a15,[a15]@los(icm_gyro_x)
-.L317:
 	ld.bu	d15,[a10]1
-.L318:
-	sha	d0,d15,#8
-.L319:
+.L313:
+	movh.a	a15,#@his(icm_gyro_x)
+.L314:
+	fcall	.cocofun_1
+.L315:
 	ld.bu	d15,[a10]2
-.L320:
-	or	d0,d15
-.L321:
-	st.h	[a15],d0
-.L322:
+.L316:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   400      icm_gyro_y = (int16)(((uint16)buf.dat[2]<<8 | buf.dat[3]));
-	movh.a	a15,#@his(icm_gyro_y)
-	lea	a15,[a15]@los(icm_gyro_y)
-.L323:
-	ld.bu	d15,[a10]3
-.L324:
-	sha	d0,d15,#8
-.L325:
-	ld.bu	d15,[a10]4
-.L326:
 	or	d0,d15
-.L327:
-	st.h	[a15],d0
-.L328:
+	ld.bu	d15,[a10]3
+.L317:
+	st.h	[a15]@los(icm_gyro_x),d0
+.L318:
+	movh.a	a15,#@his(icm_gyro_y)
+.L319:
+	fcall	.cocofun_1
+.L320:
+	ld.bu	d15,[a10]4
+.L321:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   401      icm_gyro_z = (int16)(((uint16)buf.dat[4]<<8 | buf.dat[5]));
-	movh.a	a15,#@his(icm_gyro_z)
-	lea	a15,[a15]@los(icm_gyro_z)
-.L329:
-	ld.bu	d15,[a10]5
-.L330:
-	sha	d0,d15,#8
-.L331:
-	ld.bu	d15,[a10]6
-.L332:
 	or	d0,d15
-.L333:
-	st.h	[a15],d0
-.L334:
+	ld.bu	d15,[a10]5
+.L322:
+	st.h	[a15]@los(icm_gyro_y),d0
+.L323:
+	movh.a	a15,#@his(icm_gyro_z)
+.L324:
+	fcall	.cocofun_1
+.L325:
+	ld.bu	d15,[a10]6
+.L326:
+	or	d0,d15
+	st.h	[a15]@los(icm_gyro_z),d0
+.L327:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   402  }
 	ret
-.L113:
+.L132:
 	
 __get_icm20602_gyro_spi_function_end:
 	.size	get_icm20602_gyro_spi,__get_icm20602_gyro_spi_function_end-get_icm20602_gyro_spi
-.L64:
+.L66:
 	; End of function
 	
 	.sdecl	'.bss.SEEKFREE_ICM20602.icm_gyro_x',data,cluster('icm_gyro_x')
@@ -1210,9 +1170,20 @@ icm_acc_z:	.type	object
 	.calls	'icm20602_init_spi','icm_spi_r_reg_byte'
 	.calls	'get_icm20602_accdata_spi','icm_spi_r_reg_bytes'
 	.calls	'get_icm20602_gyro_spi','icm_spi_r_reg_bytes'
+	.calls	'icm20602_self1_check','.cocofun_2'
+	.calls	'icm20602_init','.cocofun_2'
+	.calls	'icm20602_init','.cocofun_3'
+	.calls	'get_icm20602_accdata','.cocofun_1'
+	.calls	'get_icm20602_gyro','.cocofun_1'
+	.calls	'icm20602_self3_check','.cocofun_2'
+	.calls	'get_icm20602_accdata_spi','.cocofun_1'
+	.calls	'get_icm20602_gyro_spi','.cocofun_1'
 	.calls	'icm20602_self1_check','',0
+	.calls	'.cocofun_2','',0
 	.calls	'icm20602_init','',0
+	.calls	'.cocofun_3','',0
 	.calls	'get_icm20602_accdata','',8
+	.calls	'.cocofun_1','',0
 	.calls	'get_icm20602_gyro','',8
 	.calls	'icm_spi_w_reg_byte','',8
 	.calls	'icm_spi_r_reg_byte','',8
@@ -1230,17 +1201,17 @@ icm_acc_z:	.type	object
 	.calls	'get_icm20602_gyro_spi','',8
 	.sdecl	'.debug_info',debug
 	.sect	'.debug_info'
-.L32:
+.L34:
 	.word	38749
 	.half	3
-	.word	.L33
+	.word	.L35
 	.byte	4
-.L31:
+.L33:
 	.byte	1
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_ICM20602.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L34
+	.word	.L36
 	.byte	2,1,1,3
 	.word	173
 	.byte	4
@@ -1275,7 +1246,7 @@ icm_acc_z:	.type	object
 	.byte	6,0,7
 	.byte	'unsigned int',0,4,7,7
 	.byte	'int',0,4,5
-.L109:
+.L128:
 	.byte	7
 	.byte	'unsigned char',0,1,8,7
 	.byte	'unsigned short int',0,2,7,10
@@ -2817,7 +2788,7 @@ icm_acc_z:	.type	object
 	.byte	'baud',0,6,113,140,1
 	.word	8530
 	.byte	0
-.L124:
+.L144:
 	.byte	3
 	.word	428
 	.byte	24
@@ -2882,15 +2853,15 @@ icm_acc_z:	.type	object
 	.word	10788
 	.byte	0,29
 	.byte	'simiic_init',0,7,61,7,1,1,1,1
-.L104:
+.L123:
 	.byte	14,6
 	.word	428
 	.byte	15,5,0
-.L120:
+.L140:
 	.byte	14,2
 	.word	428
 	.byte	15,1,0
-.L132:
+.L152:
 	.byte	7
 	.byte	'short int',0,2,5,30
 	.byte	'__wchar_t',0,8,1,1
@@ -6834,7 +6805,7 @@ icm_acc_z:	.type	object
 	.byte	0
 	.sdecl	'.debug_abbrev',debug
 	.sect	'.debug_abbrev'
-.L33:
+.L35:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,16,6,0,0,2,21,0,54,15,39,12,0,0,3,15,0,73,19,0,0,4,46,1,3,8,32,13
 	.byte	58,15,59,15,57,15,54,15,39,12,0,0,5,5,0,3,8,58,15,59,15,57,15,73,19,0,0,6,11,0,0,0,7,36,0,3,8,11,15,62
 	.byte	15,0,0,8,46,1,3,8,32,13,58,15,59,15,57,15,73,19,54,15,39,12,0,0,9,59,0,3,8,0,0,10,19,1,3,8,58,15,59,15
@@ -6847,12 +6818,12 @@ icm_acc_z:	.type	object
 	.byte	15,39,12,63,12,60,12,0,0,30,22,0,3,8,58,15,59,15,57,15,73,19,0,0,31,21,0,54,15,0,0,0
 	.sdecl	'.debug_line',debug
 	.sect	'.debug_line'
-.L34:
-	.word	.L154-.L153
-.L153:
+.L36:
+	.word	.L176-.L175
+.L175:
 	.half	3
-	.word	.L156-.L155
-.L155:
+	.word	.L178-.L177
+.L177:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Std',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Port\\Std',0
@@ -6874,396 +6845,360 @@ icm_acc_z:	.type	object
 	.byte	'Ifx_Types.h',0,1,0,0
 	.byte	'IfxScu_cfg.h',0,6,0,0
 	.byte	'IfxScu_regdef.h',0,3,0,0,0
-.L156:
-.L154:
+.L178:
+.L176:
 	.sdecl	'.debug_info',debug,cluster('icm20602_init')
 	.sect	'.debug_info'
-.L35:
-	.word	222
+.L37:
+	.word	218
 	.half	3
-	.word	.L36
+	.word	.L38
 	.byte	4,1
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_ICM20602.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L38,.L37
+	.word	.L40,.L39
 	.byte	2
-	.word	.L31
+	.word	.L33
 	.byte	3
 	.byte	'icm20602_init',0,1,69,6,1,1,1
-	.word	.L12,.L102,.L11
+	.word	.L10,.L119,.L9
 	.byte	4
-	.word	.L12,.L102
+	.word	.L120
 	.byte	0,0
 	.sdecl	'.debug_abbrev',debug,cluster('icm20602_init')
 	.sect	'.debug_abbrev'
-.L36:
+.L38:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
-	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,85,6,0,0,0
 	.sdecl	'.debug_line',debug,cluster('icm20602_init')
 	.sect	'.debug_line'
-.L37:
-	.word	.L158-.L157
-.L157:
+.L39:
+	.word	.L180-.L179
+.L179:
 	.half	3
-	.word	.L160-.L159
-.L159:
+	.word	.L182-.L181
+.L181:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_ICM20602.c',0,0,0,0,0
-.L160:
+.L182:
 	.byte	5,13,7,0,5,2
-	.word	.L12
+	.word	.L10
 	.byte	3,198,0,1,5,5,9
-	.half	.L161-.L12
+	.half	.L183-.L10
 	.byte	3,1,1,5,25,9
-	.half	.L162-.L161
-	.byte	3,3,1,5,22,9
-	.half	.L163-.L162
-	.byte	3,3,1,5,40,9
-	.half	.L164-.L163
-	.byte	1,5,60,9
-	.half	.L165-.L164
-	.byte	1,5,5,9
-	.half	.L166-.L165
-	.byte	3,1,1,5,79,9
-	.half	.L167-.L166
-	.byte	3,1,1,5,34,9
-	.half	.L4-.L167
-	.byte	1,5,52,9
-	.half	.L168-.L4
-	.byte	1,5,72,9
-	.half	.L169-.L168
-	.byte	1,5,79,9
-	.half	.L170-.L169
-	.byte	1,5,22,7,9
-	.half	.L171-.L170
-	.byte	3,3,1,5,40,9
-	.half	.L172-.L171
-	.byte	1,5,60,9
-	.half	.L173-.L172
-	.byte	1,5,22,9
-	.half	.L174-.L173
-	.byte	3,1,1,5,40,9
-	.half	.L175-.L174
-	.byte	1,5,60,9
-	.half	.L176-.L175
-	.byte	1,5,22,9
-	.half	.L177-.L176
-	.byte	3,1,1,5,40,9
-	.half	.L178-.L177
-	.byte	1,5,56,9
-	.half	.L179-.L178
-	.byte	1,5,22,9
-	.half	.L180-.L179
-	.byte	3,1,1,5,40,9
-	.half	.L181-.L180
-	.byte	1,5,60,9
-	.half	.L182-.L181
-	.byte	1,5,22,9
-	.half	.L183-.L182
-	.byte	3,1,1,5,40,9
 	.half	.L184-.L183
-	.byte	1,5,61,9
+	.byte	3,3,1,5,22,9
 	.half	.L185-.L184
-	.byte	1,5,22,9
+	.byte	3,3,1,5,60,9
 	.half	.L186-.L185
-	.byte	3,1,1,5,40,9
+	.byte	1,5,5,9
 	.half	.L187-.L186
-	.byte	1,5,62,9
-	.half	.L188-.L187
-	.byte	1,5,22,9
+	.byte	3,1,1,5,34,9
+	.half	.L3-.L187
+	.byte	3,1,1,5,72,9
+	.half	.L188-.L3
+	.byte	1,5,79,9
 	.half	.L189-.L188
-	.byte	3,1,1,5,40,9
+	.byte	1,5,22,7,9
 	.half	.L190-.L189
-	.byte	1,5,64,9
+	.byte	3,3,1,5,60,9
 	.half	.L191-.L190
-	.byte	1,5,1,9
+	.byte	1,5,22,9
 	.half	.L192-.L191
-	.byte	3,1,1,7,9
-	.half	.L39-.L192
-	.byte	0,1,1
-.L158:
+	.byte	3,1,1,5,40,9
+	.half	.L193-.L192
+	.byte	1,5,60,9
+	.half	.L194-.L193
+	.byte	1,5,22,9
+	.half	.L195-.L194
+	.byte	3,1,1,5,40,9
+	.half	.L196-.L195
+	.byte	1,5,56,9
+	.half	.L197-.L196
+	.byte	1,5,22,9
+	.half	.L198-.L197
+	.byte	3,1,1,5,40,9
+	.half	.L199-.L198
+	.byte	1,5,60,9
+	.half	.L200-.L199
+	.byte	1,5,22,9
+	.half	.L201-.L200
+	.byte	3,1,1,5,40,9
+	.half	.L202-.L201
+	.byte	1,5,61,9
+	.half	.L203-.L202
+	.byte	1,5,22,9
+	.half	.L204-.L203
+	.byte	3,1,1,5,40,9
+	.half	.L205-.L204
+	.byte	1,5,62,9
+	.half	.L206-.L205
+	.byte	1,5,22,9
+	.half	.L207-.L206
+	.byte	3,1,1,5,40,9
+	.half	.L208-.L207
+	.byte	1,5,64,9
+	.half	.L209-.L208
+	.byte	1,5,1,9
+	.half	.L41-.L209
+	.byte	3,1,0,1,1
+.L180:
 	.sdecl	'.debug_ranges',debug,cluster('icm20602_init')
 	.sect	'.debug_ranges'
-.L38:
-	.word	-1,.L12,0,.L39-.L12,0,0
+.L40:
+	.word	-1,.L10,0,.L41-.L10,0,0
+.L120:
+	.word	-1,.L10,0,.L119-.L10,-1,.L12,0,.L106-.L12,0,0
 	.sdecl	'.debug_info',debug,cluster('get_icm20602_accdata')
 	.sect	'.debug_info'
-.L40:
-	.word	246
+.L42:
+	.word	242
 	.half	3
-	.word	.L41
+	.word	.L43
 	.byte	4,1
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_ICM20602.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L43,.L42
+	.word	.L45,.L44
 	.byte	2
-	.word	.L31
+	.word	.L33
 	.byte	3
 	.byte	'get_icm20602_accdata',0,1,100,6,1,1,1
-	.word	.L14,.L103,.L13
+	.word	.L14,.L121,.L13
 	.byte	4
-	.word	.L14,.L103
+	.word	.L122
 	.byte	5
 	.byte	'dat',0,1,102,11
-	.word	.L104,.L105
+	.word	.L123,.L124
 	.byte	0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('get_icm20602_accdata')
 	.sect	'.debug_abbrev'
-.L41:
+.L43:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
-	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,1,17,1,18,1,0,0,5,52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,1,85,6,0,0,5,52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
 	.sdecl	'.debug_line',debug,cluster('get_icm20602_accdata')
 	.sect	'.debug_line'
-.L42:
-	.word	.L194-.L193
-.L193:
+.L44:
+	.word	.L211-.L210
+.L210:
 	.half	3
-	.word	.L196-.L195
-.L195:
+	.word	.L213-.L212
+.L212:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_ICM20602.c',0,0,0,0,0
-.L196:
-	.byte	5,6,7,0,5,2
+.L213:
+	.byte	5,22,7,0,5,2
 	.word	.L14
-	.byte	3,227,0,1,5,22,9
-	.half	.L136-.L14
-	.byte	3,4,1,5,41,9
-	.half	.L197-.L136
-	.byte	1,5,64,9
-	.half	.L198-.L197
-	.byte	1,5,69,9
-	.half	.L199-.L198
+	.byte	3,231,0,1,5,6,3,124,1,5,41,9
+	.half	.L157-.L14
+	.byte	3,4,1,5,64,1,5,69,9
+	.half	.L214-.L157
 	.byte	1,5,72,9
-	.half	.L200-.L199
-	.byte	1,5,5,9
-	.half	.L201-.L200
-	.byte	3,1,1,5,37,9
-	.half	.L202-.L201
-	.byte	1,5,40,9
-	.half	.L203-.L202
-	.byte	1,5,49,9
-	.half	.L204-.L203
-	.byte	1,5,44,9
-	.half	.L205-.L204
-	.byte	1,5,15,9
-	.half	.L206-.L205
-	.byte	1,5,5,9
-	.half	.L207-.L206
-	.byte	3,1,1,5,37,9
-	.half	.L208-.L207
-	.byte	1,5,40,9
-	.half	.L209-.L208
-	.byte	1,5,49,9
-	.half	.L210-.L209
-	.byte	1,5,44,9
-	.half	.L211-.L210
-	.byte	1,5,15,9
-	.half	.L212-.L211
-	.byte	1,5,5,9
-	.half	.L213-.L212
-	.byte	3,1,1,5,37,9
-	.half	.L214-.L213
-	.byte	1,5,40,9
 	.half	.L215-.L214
-	.byte	1,5,49,9
+	.byte	1,5,37,9
 	.half	.L216-.L215
-	.byte	1,5,44,9
+	.byte	3,1,1,5,5,9
 	.half	.L217-.L216
-	.byte	1,5,15,9
+	.byte	1,5,40,9
 	.half	.L218-.L217
-	.byte	1,5,1,9
-	.half	.L219-.L218
+	.byte	1,5,49,9
+	.half	.L158-.L218
+	.byte	1,5,44,9
+	.half	.L159-.L158
+	.byte	1,5,37,3,1,1,5,15,9
+	.half	.L219-.L159
+	.byte	3,127,1,5,5,9
+	.half	.L220-.L219
+	.byte	3,1,1,5,40,9
+	.half	.L221-.L220
+	.byte	1,5,49,9
+	.half	.L222-.L221
+	.byte	1,5,44,9
+	.half	.L223-.L222
+	.byte	1,5,37,3,1,1,5,15,9
+	.half	.L224-.L223
+	.byte	3,127,1,5,5,9
+	.half	.L225-.L224
+	.byte	3,1,1,5,40,9
+	.half	.L226-.L225
+	.byte	1,5,49,9
+	.half	.L227-.L226
+	.byte	1,5,44,9
+	.half	.L228-.L227
+	.byte	1,5,15,1,5,1,9
+	.half	.L229-.L228
 	.byte	3,1,1,7,9
-	.half	.L44-.L219
+	.half	.L46-.L229
 	.byte	0,1,1
-.L194:
+.L211:
 	.sdecl	'.debug_ranges',debug,cluster('get_icm20602_accdata')
 	.sect	'.debug_ranges'
-.L43:
-	.word	-1,.L14,0,.L44-.L14,0,0
+.L45:
+	.word	-1,.L14,0,.L46-.L14,0,0
+.L122:
+	.word	-1,.L14,0,.L121-.L14,-1,.L16,0,.L96-.L16,0,0
 	.sdecl	'.debug_info',debug,cluster('get_icm20602_gyro')
 	.sect	'.debug_info'
-.L45:
+.L47:
 	.word	243
 	.half	3
-	.word	.L46
+	.word	.L48
 	.byte	4,1
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_ICM20602.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L48,.L47
+	.word	.L50,.L49
 	.byte	2
-	.word	.L31
+	.word	.L33
 	.byte	3
 	.byte	'get_icm20602_gyro',0,1,117,6,1,1,1
-	.word	.L16,.L106,.L15
+	.word	.L18,.L125,.L17
 	.byte	4
-	.word	.L16,.L106
+	.word	.L18,.L125
 	.byte	5
 	.byte	'dat',0,1,119,11
-	.word	.L104,.L107
+	.word	.L123,.L126
 	.byte	0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('get_icm20602_gyro')
 	.sect	'.debug_abbrev'
-.L46:
+.L48:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,1,17,1,18,1,0,0,5,52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
 	.sdecl	'.debug_line',debug,cluster('get_icm20602_gyro')
 	.sect	'.debug_line'
-.L47:
-	.word	.L221-.L220
-.L220:
+.L49:
+	.word	.L231-.L230
+.L230:
 	.half	3
-	.word	.L223-.L222
-.L222:
+	.word	.L233-.L232
+.L232:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_ICM20602.c',0,0,0,0,0
-.L223:
-	.byte	5,6,7,0,5,2
-	.word	.L16
-	.byte	3,244,0,1,5,22,9
-	.half	.L137-.L16
-	.byte	3,4,1,5,41,9
-	.half	.L224-.L137
-	.byte	1,5,63,9
-	.half	.L225-.L224
-	.byte	1,5,68,9
-	.half	.L226-.L225
+.L233:
+	.byte	5,22,7,0,5,2
+	.word	.L18
+	.byte	3,248,0,1,5,6,3,124,1,5,41,9
+	.half	.L160-.L18
+	.byte	3,4,1,5,63,1,5,68,9
+	.half	.L234-.L160
 	.byte	1,5,71,9
-	.half	.L227-.L226
-	.byte	1,5,5,9
-	.half	.L228-.L227
-	.byte	3,1,1,5,38,9
-	.half	.L229-.L228
-	.byte	1,5,41,9
-	.half	.L230-.L229
-	.byte	1,5,50,9
-	.half	.L231-.L230
-	.byte	1,5,45,9
-	.half	.L232-.L231
-	.byte	1,5,16,9
-	.half	.L233-.L232
-	.byte	1,5,5,9
-	.half	.L234-.L233
-	.byte	3,1,1,5,38,9
 	.half	.L235-.L234
-	.byte	1,5,41,9
+	.byte	1,5,38,9
 	.half	.L236-.L235
-	.byte	1,5,50,9
+	.byte	3,1,1,5,5,9
 	.half	.L237-.L236
-	.byte	1,5,45,9
-	.half	.L238-.L237
-	.byte	1,5,16,9
-	.half	.L239-.L238
-	.byte	1,5,5,9
-	.half	.L240-.L239
-	.byte	3,1,1,5,38,9
-	.half	.L241-.L240
 	.byte	1,5,41,9
-	.half	.L242-.L241
+	.half	.L238-.L237
 	.byte	1,5,50,9
-	.half	.L243-.L242
+	.half	.L239-.L238
 	.byte	1,5,45,9
+	.half	.L240-.L239
+	.byte	1,5,38,3,1,1,5,16,9
+	.half	.L241-.L240
+	.byte	3,127,1,5,5,9
+	.half	.L242-.L241
+	.byte	3,1,1,5,41,9
+	.half	.L243-.L242
+	.byte	1,5,50,9
 	.half	.L244-.L243
-	.byte	1,5,16,9
+	.byte	1,5,45,9
 	.half	.L245-.L244
-	.byte	1,5,1,9
+	.byte	1,5,38,3,1,1,5,16,9
 	.half	.L246-.L245
+	.byte	3,127,1,5,5,9
+	.half	.L247-.L246
+	.byte	3,1,1,5,41,9
+	.half	.L248-.L247
+	.byte	1,5,50,9
+	.half	.L249-.L248
+	.byte	1,5,45,9
+	.half	.L250-.L249
+	.byte	1,5,16,1,5,1,9
+	.half	.L251-.L250
 	.byte	3,1,1,7,9
-	.half	.L49-.L246
+	.half	.L51-.L251
 	.byte	0,1,1
-.L221:
+.L231:
 	.sdecl	'.debug_ranges',debug,cluster('get_icm20602_gyro')
 	.sect	'.debug_ranges'
-.L48:
-	.word	-1,.L16,0,.L49-.L16,0,0
+.L50:
+	.word	-1,.L18,0,.L51-.L18,0,0
 	.sdecl	'.debug_info',debug,cluster('icm20602_init_spi')
 	.sect	'.debug_info'
-.L50:
+.L52:
 	.word	245
 	.half	3
-	.word	.L51
+	.word	.L53
 	.byte	4,1
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_ICM20602.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L53,.L52
+	.word	.L55,.L54
 	.byte	2
-	.word	.L31
+	.word	.L33
 	.byte	3
 	.byte	'icm20602_init_spi',0,1,204,2,6,1,1,1
-	.word	.L26,.L108,.L25
+	.word	.L28,.L127,.L27
 	.byte	4
-	.word	.L26,.L108
+	.word	.L28,.L127
 	.byte	5
 	.byte	'val',0,1,206,2,11
-	.word	.L109,.L110
+	.word	.L128,.L129
 	.byte	0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('icm20602_init_spi')
 	.sect	'.debug_abbrev'
-.L51:
+.L53:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,1,17,1,18,1,0,0,5,52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
 	.sdecl	'.debug_line',debug,cluster('icm20602_init_spi')
 	.sect	'.debug_line'
-.L52:
-	.word	.L248-.L247
-.L247:
+.L54:
+	.word	.L253-.L252
+.L252:
 	.half	3
-	.word	.L250-.L249
-.L249:
+	.word	.L255-.L254
+.L254:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_ICM20602.c',0,0,0,0,0
-.L250:
+.L255:
 	.byte	5,6,7,0,5,2
-	.word	.L26
+	.word	.L28
 	.byte	3,203,2,1,5,17,9
-	.half	.L150-.L26
-	.byte	3,2,1,5,15,9
-	.half	.L251-.L150
-	.byte	1,5,5,9
-	.half	.L252-.L251
+	.half	.L172-.L28
+	.byte	3,2,1,5,15,1,5,5,9
+	.half	.L256-.L172
 	.byte	3,2,1,5,70,9
-	.half	.L253-.L252
-	.byte	3,2,1,5,82,9
-	.half	.L254-.L253
-	.byte	1,5,92,9
-	.half	.L255-.L254
-	.byte	1,5,20,9
-	.half	.L256-.L255
-	.byte	1,5,29,9
 	.half	.L257-.L256
-	.byte	1,5,42,9
+	.byte	3,2,1,5,82,9
 	.half	.L258-.L257
-	.byte	1,5,56,9
-	.half	.L259-.L258
-	.byte	1,5,25,9
-	.half	.L260-.L259
-	.byte	3,2,1,5,24,9
-	.half	.L261-.L260
-	.byte	3,2,1,5,44,9
-	.half	.L262-.L261
-	.byte	1,5,5,9
-	.half	.L263-.L262
-	.byte	3,1,1,5,28,9
-	.half	.L8-.L263
-	.byte	3,3,1,5,49,9
-	.half	.L264-.L8
 	.byte	1,5,20,9
+	.half	.L259-.L258
+	.byte	1,5,92,1,5,29,9
+	.half	.L260-.L259
+	.byte	1,5,42,9
+	.half	.L261-.L260
+	.byte	1,5,56,9
+	.half	.L262-.L261
+	.byte	1,5,25,9
+	.half	.L263-.L262
+	.byte	3,2,1,5,24,9
+	.half	.L264-.L263
+	.byte	3,2,1,5,44,9
 	.half	.L265-.L264
-	.byte	3,1,1,5,12,9
+	.byte	1,5,5,9
 	.half	.L266-.L265
-	.byte	1,5,24,9
+	.byte	3,1,1,5,12,9
 	.half	.L267-.L266
-	.byte	1,7,9
-	.half	.L268-.L267
-	.byte	3,2,1,5,49,9
+	.byte	3,4,1,5,28,9
+	.half	.L5-.L267
+	.byte	3,127,1,5,49,1,5,20,9
+	.half	.L268-.L5
+	.byte	3,1,1,5,24,9
 	.half	.L269-.L268
-	.byte	1,5,24,9
+	.byte	1,7,9
 	.half	.L270-.L269
-	.byte	3,1,1,5,49,9
+	.byte	3,2,1,5,49,9
 	.half	.L271-.L270
 	.byte	1,5,24,9
 	.half	.L272-.L271
@@ -7285,74 +7220,74 @@ icm_acc_z:	.type	object
 	.half	.L280-.L279
 	.byte	3,1,1,5,49,9
 	.half	.L281-.L280
-	.byte	1,5,1,9
+	.byte	1,5,24,9
 	.half	.L282-.L281
-	.byte	3,1,1,7,9
-	.half	.L54-.L282
-	.byte	0,1,1
-.L248:
+	.byte	3,1,1,5,49,9
+	.half	.L283-.L282
+	.byte	1,5,1,9
+	.half	.L56-.L283
+	.byte	3,1,0,1,1
+.L253:
 	.sdecl	'.debug_ranges',debug,cluster('icm20602_init_spi')
 	.sect	'.debug_ranges'
-.L53:
-	.word	-1,.L26,0,.L54-.L26,0,0
+.L55:
+	.word	-1,.L28,0,.L56-.L28,0,0
 	.sdecl	'.debug_info',debug,cluster('get_icm20602_accdata_spi')
 	.sect	'.debug_info'
-.L55:
+.L57:
 	.word	285
 	.half	3
-	.word	.L56
+	.word	.L58
 	.byte	4,1
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_ICM20602.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L58,.L57
+	.word	.L60,.L59
 	.byte	2
-	.word	.L31
+	.word	.L33
 	.byte	3,1,239,2,5,8,4
 	.byte	'reg',0
-	.word	.L109
+	.word	.L128
 	.byte	1,2,35,0,4
 	.byte	'dat',0
-	.word	.L104
+	.word	.L123
 	.byte	6,2,35,1,0,5
 	.byte	'get_icm20602_accdata_spi',0,1,237,2,6,1,1,1
-	.word	.L28,.L111,.L27
+	.word	.L30,.L130,.L29
 	.byte	6
-	.word	.L28,.L111
+	.word	.L30,.L130
 	.byte	7
 	.byte	'buf',0,1,243,2,6
-	.word	182,.L112
+	.word	182,.L131
 	.byte	0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('get_icm20602_accdata_spi')
 	.sect	'.debug_abbrev'
-.L56:
+.L58:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,19,1,58,15,59,15,57,15,11,15,0,0
 	.byte	4,13,0,3,8,73,16,11,15,56,9,0,0,5,46,1,3,8,58,15,59,15,57,15,54,15,39,12,63,12,17,1,18,1,64,6,0,0,6,11
 	.byte	1,17,1,18,1,0,0,7,52,0,3,8,58,15,59,15,57,15,73,19,2,6,0,0,0
 	.sdecl	'.debug_line',debug,cluster('get_icm20602_accdata_spi')
 	.sect	'.debug_line'
-.L57:
-	.word	.L284-.L283
-.L283:
+.L59:
+	.word	.L285-.L284
+.L284:
 	.half	3
-	.word	.L286-.L285
-.L285:
+	.word	.L287-.L286
+.L286:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_ICM20602.c',0,0,0,0,0
-.L286:
+.L287:
 	.byte	5,6,7,0,5,2
-	.word	.L28
+	.word	.L30
 	.byte	3,236,2,1,5,37,9
-	.half	.L151-.L28
-	.byte	3,8,1,5,13,9
-	.half	.L287-.L151
-	.byte	1,5,26,9
-	.half	.L288-.L287
+	.half	.L173-.L30
+	.byte	3,8,1,5,13,1,5,26,9
+	.half	.L288-.L173
 	.byte	3,2,1,5,35,9
 	.half	.L289-.L288
-	.byte	1,5,5,9
+	.byte	1,5,41,9
 	.half	.L290-.L289
-	.byte	3,1,1,5,41,9
+	.byte	3,1,1,5,5,9
 	.half	.L291-.L290
 	.byte	1,5,44,9
 	.half	.L292-.L291
@@ -7360,840 +7295,1064 @@ icm_acc_z:	.type	object
 	.half	.L293-.L292
 	.byte	1,5,48,9
 	.half	.L294-.L293
-	.byte	1,5,15,9
+	.byte	1,5,41,3,1,1,5,15,9
 	.half	.L295-.L294
-	.byte	1,5,5,9
+	.byte	3,127,1,5,5,9
 	.half	.L296-.L295
-	.byte	3,1,1,5,41,9
+	.byte	3,1,1,5,44,9
 	.half	.L297-.L296
-	.byte	1,5,44,9
+	.byte	1,5,57,9
 	.half	.L298-.L297
-	.byte	1,5,57,9
+	.byte	1,5,48,9
 	.half	.L299-.L298
-	.byte	1,5,48,9
+	.byte	1,5,41,3,1,1,5,15,9
 	.half	.L300-.L299
-	.byte	1,5,15,9
+	.byte	3,127,1,5,5,9
 	.half	.L301-.L300
-	.byte	1,5,5,9
+	.byte	3,1,1,5,44,9
 	.half	.L302-.L301
-	.byte	3,1,1,5,41,9
-	.half	.L303-.L302
-	.byte	1,5,44,9
-	.half	.L304-.L303
 	.byte	1,5,57,9
-	.half	.L305-.L304
+	.half	.L303-.L302
 	.byte	1,5,48,9
-	.half	.L306-.L305
-	.byte	1,5,15,9
-	.half	.L307-.L306
-	.byte	1,5,1,9
-	.half	.L308-.L307
+	.half	.L304-.L303
+	.byte	1,5,15,1,5,1,9
+	.half	.L305-.L304
 	.byte	3,1,1,7,9
-	.half	.L59-.L308
+	.half	.L61-.L305
 	.byte	0,1,1
-.L284:
+.L285:
 	.sdecl	'.debug_ranges',debug,cluster('get_icm20602_accdata_spi')
 	.sect	'.debug_ranges'
-.L58:
-	.word	-1,.L28,0,.L59-.L28,0,0
+.L60:
+	.word	-1,.L30,0,.L61-.L30,0,0
 	.sdecl	'.debug_info',debug,cluster('get_icm20602_gyro_spi')
 	.sect	'.debug_info'
-.L60:
+.L62:
 	.word	282
 	.half	3
-	.word	.L61
+	.word	.L63
 	.byte	4,1
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_ICM20602.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L63,.L62
+	.word	.L65,.L64
 	.byte	2
-	.word	.L31
+	.word	.L33
 	.byte	3,1,134,3,5,8,4
 	.byte	'reg',0
-	.word	.L109
+	.word	.L128
 	.byte	1,2,35,0,4
 	.byte	'dat',0
-	.word	.L104
+	.word	.L123
 	.byte	6,2,35,1,0,5
 	.byte	'get_icm20602_gyro_spi',0,1,132,3,6,1,1,1
-	.word	.L30,.L113,.L29
+	.word	.L32,.L132,.L31
 	.byte	6
-	.word	.L30,.L113
+	.word	.L32,.L132
 	.byte	7
 	.byte	'buf',0,1,138,3,6
-	.word	182,.L114
+	.word	182,.L133
 	.byte	0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('get_icm20602_gyro_spi')
 	.sect	'.debug_abbrev'
-.L61:
+.L63:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,19,1,58,15,59,15,57,15,11,15,0,0
 	.byte	4,13,0,3,8,73,16,11,15,56,9,0,0,5,46,1,3,8,58,15,59,15,57,15,54,15,39,12,63,12,17,1,18,1,64,6,0,0,6,11
 	.byte	1,17,1,18,1,0,0,7,52,0,3,8,58,15,59,15,57,15,73,19,2,6,0,0,0
 	.sdecl	'.debug_line',debug,cluster('get_icm20602_gyro_spi')
 	.sect	'.debug_line'
-.L62:
-	.word	.L310-.L309
-.L309:
+.L64:
+	.word	.L307-.L306
+.L306:
 	.half	3
-	.word	.L312-.L311
-.L311:
+	.word	.L309-.L308
+.L308:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_ICM20602.c',0,0,0,0,0
-.L312:
+.L309:
 	.byte	5,6,7,0,5,2
-	.word	.L30
+	.word	.L32
 	.byte	3,131,3,1,5,36,9
-	.half	.L152-.L30
-	.byte	3,8,1,5,13,9
-	.half	.L313-.L152
-	.byte	1,5,26,9
-	.half	.L314-.L313
+	.half	.L174-.L32
+	.byte	3,8,1,5,13,1,5,26,9
+	.half	.L310-.L174
 	.byte	3,2,1,5,35,9
-	.half	.L315-.L314
-	.byte	1,5,5,9
-	.half	.L316-.L315
-	.byte	3,1,1,5,42,9
-	.half	.L317-.L316
+	.half	.L311-.L310
+	.byte	1,5,42,9
+	.half	.L312-.L311
+	.byte	3,1,1,5,5,9
+	.half	.L313-.L312
 	.byte	1,5,45,9
-	.half	.L318-.L317
+	.half	.L314-.L313
 	.byte	1,5,58,9
-	.half	.L319-.L318
+	.half	.L315-.L314
 	.byte	1,5,49,9
+	.half	.L316-.L315
+	.byte	1,5,42,3,1,1,5,16,9
+	.half	.L317-.L316
+	.byte	3,127,1,5,5,9
+	.half	.L318-.L317
+	.byte	3,1,1,5,45,9
+	.half	.L319-.L318
+	.byte	1,5,58,9
 	.half	.L320-.L319
-	.byte	1,5,16,9
+	.byte	1,5,49,9
 	.half	.L321-.L320
-	.byte	1,5,5,9
+	.byte	1,5,42,3,1,1,5,16,9
 	.half	.L322-.L321
-	.byte	3,1,1,5,42,9
+	.byte	3,127,1,5,5,9
 	.half	.L323-.L322
-	.byte	1,5,45,9
+	.byte	3,1,1,5,45,9
 	.half	.L324-.L323
 	.byte	1,5,58,9
 	.half	.L325-.L324
 	.byte	1,5,49,9
 	.half	.L326-.L325
-	.byte	1,5,16,9
+	.byte	1,5,16,1,5,1,9
 	.half	.L327-.L326
-	.byte	1,5,5,9
-	.half	.L328-.L327
-	.byte	3,1,1,5,42,9
-	.half	.L329-.L328
-	.byte	1,5,45,9
-	.half	.L330-.L329
-	.byte	1,5,58,9
-	.half	.L331-.L330
-	.byte	1,5,49,9
-	.half	.L332-.L331
-	.byte	1,5,16,9
-	.half	.L333-.L332
-	.byte	1,5,1,9
-	.half	.L334-.L333
 	.byte	3,1,1,7,9
-	.half	.L64-.L334
+	.half	.L66-.L327
 	.byte	0,1,1
-.L310:
+.L307:
 	.sdecl	'.debug_ranges',debug,cluster('get_icm20602_gyro_spi')
 	.sect	'.debug_ranges'
-.L63:
-	.word	-1,.L30,0,.L64-.L30,0,0
+.L65:
+	.word	-1,.L32,0,.L66-.L32,0,0
 	.sdecl	'.debug_info',debug,cluster('icm20602_self1_check')
 	.sect	'.debug_info'
-.L65:
-	.word	246
+.L67:
+	.word	242
 	.half	3
-	.word	.L66
+	.word	.L68
 	.byte	4,1
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_ICM20602.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L68,.L67
+	.word	.L70,.L69
 	.byte	2
-	.word	.L31
+	.word	.L33
 	.byte	3
 	.byte	'icm20602_self1_check',0,1,45,6,1,1,1
-	.word	.L10,.L115,.L9
+	.word	.L2,.L134,.L6
 	.byte	4
-	.word	.L10,.L115
+	.word	.L135
 	.byte	5
 	.byte	'dat',0,1,47,11
-	.word	.L109,.L116
+	.word	.L128,.L136
 	.byte	0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('icm20602_self1_check')
 	.sect	'.debug_abbrev'
-.L66:
+.L68:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
-	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,1,17,1,18,1,0,0,5,52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,1,85,6,0,0,5,52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
 	.sdecl	'.debug_line',debug,cluster('icm20602_self1_check')
 	.sect	'.debug_line'
-.L67:
-	.word	.L336-.L335
-.L335:
+.L69:
+	.word	.L329-.L328
+.L328:
 	.half	3
-	.word	.L338-.L337
-.L337:
+	.word	.L331-.L330
+.L330:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_ICM20602.c',0,0,0,0,0
-.L338:
-	.byte	5,14,7,0,5,2
-	.word	.L10
-	.byte	3,46,1,5,22,9
-	.half	.L133-.L10
-	.byte	3,1,1,5,31,9
-	.half	.L3-.L133
-	.byte	3,2,1,5,49,9
-	.half	.L339-.L3
+.L331:
+	.byte	5,31,7,0,5,2
+	.word	.L2
+	.byte	3,49,1,5,49,9
+	.half	.L332-.L2
 	.byte	1,5,67,9
-	.half	.L340-.L339
+	.half	.L333-.L332
 	.byte	1,5,13,9
-	.half	.L134-.L340
-	.byte	1,5,9,9
-	.half	.L135-.L134
-	.byte	3,1,1,5,11,9
-	.half	.L2-.L135
+	.half	.L153-.L333
+	.byte	1,5,9,3,1,1,5,11,9
+	.half	.L156-.L153
 	.byte	3,125,1,5,22,9
-	.half	.L341-.L2
+	.half	.L334-.L156
 	.byte	1,5,1,7,9
-	.half	.L342-.L341
+	.half	.L335-.L334
 	.byte	3,10,1,7,9
-	.half	.L69-.L342
+	.half	.L71-.L335
 	.byte	0,1,1
-.L336:
+.L329:
 	.sdecl	'.debug_ranges',debug,cluster('icm20602_self1_check')
 	.sect	'.debug_ranges'
-.L68:
-	.word	-1,.L10,0,.L69-.L10,0,0
+.L70:
+	.word	-1,.L2,0,.L71-.L2,0,0
+.L135:
+	.word	-1,.L2,0,.L134-.L2,-1,.L8,0,.L101-.L8,0,0
 	.sdecl	'.debug_info',debug,cluster('icm_spi_w_reg_byte')
 	.sect	'.debug_info'
-.L70:
+.L72:
 	.word	280
 	.half	3
-	.word	.L71
+	.word	.L73
 	.byte	4,1
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_ICM20602.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L73,.L72
+	.word	.L75,.L74
 	.byte	2
-	.word	.L31
+	.word	.L33
 	.byte	3
 	.byte	'icm_spi_w_reg_byte',0,1,130,2,6,1,1,1
-	.word	.L18,.L117,.L17
+	.word	.L20,.L137,.L19
 	.byte	4
 	.byte	'cmd',0,1,130,2,31
-	.word	.L109,.L118
+	.word	.L128,.L138
 	.byte	4
 	.byte	'val',0,1,130,2,42
-	.word	.L109,.L119
+	.word	.L128,.L139
 	.byte	5
-	.word	.L18,.L117
+	.word	.L20,.L137
 	.byte	6
 	.byte	'dat',0,1,132,2,11
-	.word	.L120,.L121
+	.word	.L140,.L141
 	.byte	0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('icm_spi_w_reg_byte')
 	.sect	'.debug_abbrev'
-.L71:
+.L73:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3
 	.byte	8,58,15,59,15,57,15,73,16,2,6,0,0,0
 	.sdecl	'.debug_line',debug,cluster('icm_spi_w_reg_byte')
 	.sect	'.debug_line'
-.L72:
-	.word	.L344-.L343
-.L343:
+.L74:
+	.word	.L337-.L336
+.L336:
 	.half	3
-	.word	.L346-.L345
-.L345:
+	.word	.L339-.L338
+.L338:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_ICM20602.c',0,0,0,0,0
-.L346:
+.L339:
 	.byte	5,6,7,0,5,2
-	.word	.L18
-	.byte	3,129,2,1,5,12,9
-	.half	.L138-.L18
-	.byte	3,4,1,9
-	.half	.L347-.L138
-	.byte	3,1,1,5,14,9
-	.half	.L348-.L347
-	.byte	3,2,1,5,22,9
-	.half	.L139-.L348
-	.byte	1,5,33,9
-	.half	.L140-.L139
-	.byte	1,5,37,9
-	.half	.L349-.L140
-	.byte	1,5,41,9
-	.half	.L350-.L349
-	.byte	1,5,43,9
-	.half	.L351-.L350
-	.byte	1,5,1,9
-	.half	.L352-.L351
-	.byte	3,1,1,7,9
-	.half	.L74-.L352
-	.byte	0,1,1
-.L344:
+	.word	.L20
+	.byte	3,129,2,1,5,41,9
+	.half	.L161-.L20
+	.byte	3,7,1,5,12,3,125,1,5,14,9
+	.half	.L340-.L161
+	.byte	3,3,1,5,33,1,5,43,9
+	.half	.L162-.L340
+	.byte	1,5,12,3,126,1,5,22,9
+	.half	.L341-.L162
+	.byte	3,2,1,5,37,1,5,43,9
+	.half	.L163-.L341
+	.byte	1,5,1,7,9
+	.half	.L76-.L163
+	.byte	3,1,0,1,1
+.L337:
 	.sdecl	'.debug_ranges',debug,cluster('icm_spi_w_reg_byte')
 	.sect	'.debug_ranges'
-.L73:
-	.word	-1,.L18,0,.L74-.L18,0,0
+.L75:
+	.word	-1,.L20,0,.L76-.L20,0,0
 	.sdecl	'.debug_info',debug,cluster('icm_spi_r_reg_byte')
 	.sect	'.debug_info'
-.L75:
+.L77:
 	.word	280
 	.half	3
-	.word	.L76
+	.word	.L78
 	.byte	4,1
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_ICM20602.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L78,.L77
+	.word	.L80,.L79
 	.byte	2
-	.word	.L31
+	.word	.L33
 	.byte	3
 	.byte	'icm_spi_r_reg_byte',0,1,148,2,6,1,1,1
-	.word	.L20,.L122,.L19
+	.word	.L22,.L142,.L21
 	.byte	4
 	.byte	'cmd',0,1,148,2,31
-	.word	.L109,.L123
+	.word	.L128,.L143
 	.byte	4
 	.byte	'val',0,1,148,2,43
-	.word	.L124,.L125
+	.word	.L144,.L145
 	.byte	5
-	.word	.L20,.L122
+	.word	.L22,.L142
 	.byte	6
 	.byte	'dat',0,1,150,2,11
-	.word	.L120,.L126
+	.word	.L140,.L146
 	.byte	0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('icm_spi_r_reg_byte')
 	.sect	'.debug_abbrev'
-.L76:
+.L78:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3
 	.byte	8,58,15,59,15,57,15,73,16,2,6,0,0,0
 	.sdecl	'.debug_line',debug,cluster('icm_spi_r_reg_byte')
 	.sect	'.debug_line'
-.L77:
-	.word	.L354-.L353
-.L353:
+.L79:
+	.word	.L343-.L342
+.L342:
 	.half	3
-	.word	.L356-.L355
-.L355:
+	.word	.L345-.L344
+.L344:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_ICM20602.c',0,0,0,0,0
-.L356:
-	.byte	5,6,7,0,5,2
-	.word	.L20
-	.byte	3,147,2,1,5,18,9
-	.half	.L144-.L20
-	.byte	3,4,1,5,12,9
-	.half	.L357-.L144
-	.byte	1,5,14,9
-	.half	.L358-.L357
-	.byte	3,1,1,5,12,9
-	.half	.L359-.L358
-	.byte	1,5,14,9
-	.half	.L360-.L359
-	.byte	3,2,1,5,22,9
-	.half	.L142-.L360
-	.byte	1,5,33,9
-	.half	.L361-.L142
-	.byte	1,5,37,9
-	.half	.L143-.L361
-	.byte	1,5,41,9
-	.half	.L362-.L143
-	.byte	1,5,43,9
-	.half	.L363-.L362
+.L345:
+	.byte	5,18,7,0,5,2
+	.word	.L22
+	.byte	3,151,2,1,5,6,3,124,1,5,14,9
+	.half	.L167-.L22
+	.byte	3,7,1,5,12,3,125,1,5,22,9
+	.half	.L165-.L167
+	.byte	3,3,1,5,14,3,126,1,5,41,9
+	.half	.L346-.L165
+	.byte	3,2,1,5,33,1,5,43,9
+	.half	.L166-.L346
+	.byte	1,5,12,3,126,1,5,37,9
+	.half	.L347-.L166
+	.byte	3,2,1,5,43,9
+	.half	.L348-.L347
 	.byte	1,5,15,9
-	.half	.L364-.L363
+	.half	.L349-.L348
 	.byte	3,2,1,5,10,9
-	.half	.L365-.L364
+	.half	.L350-.L349
 	.byte	1,5,1,9
-	.half	.L366-.L365
+	.half	.L351-.L350
 	.byte	3,1,1,7,9
-	.half	.L79-.L366
+	.half	.L81-.L351
 	.byte	0,1,1
-.L354:
+.L343:
 	.sdecl	'.debug_ranges',debug,cluster('icm_spi_r_reg_byte')
 	.sect	'.debug_ranges'
-.L78:
-	.word	-1,.L20,0,.L79-.L20,0,0
+.L80:
+	.word	-1,.L22,0,.L81-.L22,0,0
 	.sdecl	'.debug_info',debug,cluster('icm_spi_r_reg_bytes')
 	.sect	'.debug_info'
-.L80:
+.L82:
 	.word	263
 	.half	3
-	.word	.L81
+	.word	.L83
 	.byte	4,1
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_ICM20602.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L83,.L82
+	.word	.L85,.L84
 	.byte	2
-	.word	.L31
+	.word	.L33
 	.byte	3
 	.byte	'icm_spi_r_reg_bytes',0,1,169,2,6,1,1,1
-	.word	.L22,.L127,.L21
+	.word	.L24,.L147,.L23
 	.byte	4
 	.byte	'val',0,1,169,2,34
-	.word	.L124,.L128
+	.word	.L144,.L148
 	.byte	4
 	.byte	'num',0,1,169,2,45
-	.word	.L109,.L129
+	.word	.L128,.L149
 	.byte	5
-	.word	.L22,.L127
+	.word	.L24,.L147
 	.byte	0,0
 	.sdecl	'.debug_abbrev',debug,cluster('icm_spi_r_reg_bytes')
 	.sect	'.debug_abbrev'
-.L81:
+.L83:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
 	.sdecl	'.debug_line',debug,cluster('icm_spi_r_reg_bytes')
 	.sect	'.debug_line'
-.L82:
-	.word	.L368-.L367
-.L367:
+.L84:
+	.word	.L353-.L352
+.L352:
 	.half	3
-	.word	.L370-.L369
-.L369:
+	.word	.L355-.L354
+.L354:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_ICM20602.c',0,0,0,0,0
-.L370:
+.L355:
 	.byte	5,6,7,0,5,2
-	.word	.L22
+	.word	.L24
 	.byte	3,168,2,1,5,14,9
-	.half	.L147-.L22
+	.half	.L169-.L24
 	.byte	3,2,1,5,22,9
-	.half	.L145-.L147
+	.half	.L168-.L169
 	.byte	1,5,45,9
-	.half	.L371-.L145
+	.half	.L356-.L168
 	.byte	1,5,1,9
-	.half	.L146-.L371
-	.byte	3,1,1,7,9
-	.half	.L84-.L146
-	.byte	0,1,1
-.L368:
+	.half	.L86-.L356
+	.byte	3,1,0,1,1
+.L353:
 	.sdecl	'.debug_ranges',debug,cluster('icm_spi_r_reg_bytes')
 	.sect	'.debug_ranges'
-.L83:
-	.word	-1,.L22,0,.L84-.L22,0,0
+.L85:
+	.word	-1,.L24,0,.L86-.L24,0,0
 	.sdecl	'.debug_info',debug,cluster('icm20602_self3_check')
 	.sect	'.debug_info'
-.L85:
+.L87:
 	.word	248
 	.half	3
-	.word	.L86
+	.word	.L88
 	.byte	4,1
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_ICM20602.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L88,.L87
+	.word	.L90,.L89
 	.byte	2
-	.word	.L31
+	.word	.L33
 	.byte	3
 	.byte	'icm20602_self3_check',0,1,182,2,6,1,1,1
-	.word	.L24,.L130,.L23
+	.word	.L26,.L150,.L25
 	.byte	4
-	.word	.L24,.L130
+	.word	.L26,.L150
 	.byte	5
 	.byte	'dat',0,1,184,2,11
-	.word	.L109,.L131
+	.word	.L128,.L151
 	.byte	0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('icm20602_self3_check')
 	.sect	'.debug_abbrev'
-.L86:
+.L88:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,1,17,1,18,1,0,0,5,52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
 	.sdecl	'.debug_line',debug,cluster('icm20602_self3_check')
 	.sect	'.debug_line'
-.L87:
-	.word	.L373-.L372
-.L372:
+.L89:
+	.word	.L358-.L357
+.L357:
 	.half	3
-	.word	.L375-.L374
-.L374:
+	.word	.L360-.L359
+.L359:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_ICM20602.c',0,0,0,0,0
-.L375:
+.L360:
 	.byte	5,6,7,0,5,2
-	.word	.L24
+	.word	.L26
 	.byte	3,181,2,1,5,15,9
-	.half	.L149-.L24
-	.byte	3,2,1,5,14,9
-	.half	.L376-.L149
-	.byte	1,5,22,9
-	.half	.L377-.L376
+	.half	.L171-.L26
+	.byte	3,2,1,5,14,1,5,11,9
+	.half	.L361-.L171
 	.byte	3,1,1,5,28,9
-	.half	.L7-.L377
-	.byte	3,2,1,5,47,9
-	.half	.L378-.L7
-	.byte	1,5,9,9
-	.half	.L379-.L378
+	.half	.L4-.L361
+	.byte	3,2,1,5,47,1,5,9,9
+	.half	.L362-.L4
 	.byte	3,1,1,5,19,9
-	.half	.L6-.L379
-	.byte	3,125,1,5,11,9
-	.half	.L380-.L6
-	.byte	1,5,22,9
-	.half	.L381-.L380
+	.half	.L363-.L362
+	.byte	3,125,1,5,22,9
+	.half	.L364-.L363
 	.byte	1,5,1,7,9
-	.half	.L382-.L381
+	.half	.L365-.L364
 	.byte	3,10,1,7,9
-	.half	.L89-.L382
+	.half	.L91-.L365
 	.byte	0,1,1
-.L373:
+.L358:
 	.sdecl	'.debug_ranges',debug,cluster('icm20602_self3_check')
 	.sect	'.debug_ranges'
-.L88:
-	.word	-1,.L24,0,.L89-.L24,0,0
-	.sdecl	'.debug_info',debug,cluster('icm_gyro_x')
-	.sect	'.debug_info'
 .L90:
-	.word	197
-	.half	3
-	.word	.L91
-	.byte	4,1
-	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_ICM20602.c',0
-	.byte	'TASKING VX-toolset for TriCore: C compiler',0
-	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1,2
-	.word	.L31
-	.byte	3
-	.byte	'icm_gyro_x',0,8,34,7
-	.word	.L132
-	.byte	1,5,3
-	.word	icm_gyro_x
-	.byte	0
-	.sdecl	'.debug_abbrev',debug,cluster('icm_gyro_x')
-	.sect	'.debug_abbrev'
-.L91:
-	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
-	.byte	0,0,0
-	.sdecl	'.debug_info',debug,cluster('icm_gyro_y')
+	.word	-1,.L26,0,.L91-.L26,0,0
+	.sdecl	'.debug_info',debug,cluster('.cocofun_1')
 	.sect	'.debug_info'
 .L92:
-	.word	197
+	.word	207
 	.half	3
 	.word	.L93
 	.byte	4,1
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_ICM20602.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
+	.word	.L95,.L94
+	.byte	2
+	.word	.L33
+	.byte	3
+	.byte	'.cocofun_1',0,1,100,6,1
+	.word	.L16,.L96,.L15
+	.byte	0
+	.sdecl	'.debug_abbrev',debug,cluster('.cocofun_1')
+	.sect	'.debug_abbrev'
+.L93:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,0,3,8,58,15,59,15,57,15,54,15
+	.byte	17,1,18,1,64,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('.cocofun_1')
+	.sect	'.debug_line'
+.L94:
+	.word	.L367-.L366
+.L366:
+	.half	3
+	.word	.L369-.L368
+.L368:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_ICM20602.c',0,0,0,0,0
+.L369:
+	.byte	5,40,7,0,5,2
+	.word	.L16
+	.byte	3,232,0,1,9
+	.half	.L96-.L16
+	.byte	0,1,1,5,40,0,5,2
+	.word	.L16
+	.byte	3,233,0,1,9
+	.half	.L370-.L16
+	.byte	3,127,1,7,9
+	.half	.L96-.L370
+	.byte	0,1,1,5,40,0,5,2
+	.word	.L16
+	.byte	3,234,0,1,9
+	.half	.L370-.L16
+	.byte	3,126,1,7,9
+	.half	.L96-.L370
+	.byte	0,1,1,5,41,0,5,2
+	.word	.L16
+	.byte	3,249,0,1,5,40,9
+	.half	.L370-.L16
+	.byte	3,111,1,7,9
+	.half	.L96-.L370
+	.byte	0,1,1,5,41,0,5,2
+	.word	.L16
+	.byte	3,250,0,1,5,40,9
+	.half	.L370-.L16
+	.byte	3,110,1,7,9
+	.half	.L96-.L370
+	.byte	0,1,1,5,41,0,5,2
+	.word	.L16
+	.byte	3,251,0,1,5,40,9
+	.half	.L370-.L16
+	.byte	3,109,1,7,9
+	.half	.L96-.L370
+	.byte	0,1,1,5,44,0,5,2
+	.word	.L16
+	.byte	3,247,2,1,5,40,9
+	.half	.L370-.L16
+	.byte	3,241,125,1,7,9
+	.half	.L96-.L370
+	.byte	0,1,1,5,44,0,5,2
+	.word	.L16
+	.byte	3,248,2,1,5,40,9
+	.half	.L370-.L16
+	.byte	3,240,125,1,7,9
+	.half	.L96-.L370
+	.byte	0,1,1,5,44,0,5,2
+	.word	.L16
+	.byte	3,249,2,1,5,40,9
+	.half	.L370-.L16
+	.byte	3,239,125,1,7,9
+	.half	.L96-.L370
+	.byte	0,1,1,5,45,0,5,2
+	.word	.L16
+	.byte	3,142,3,1,5,40,9
+	.half	.L370-.L16
+	.byte	3,218,125,1,7,9
+	.half	.L96-.L370
+	.byte	0,1,1,5,45,0,5,2
+	.word	.L16
+	.byte	3,143,3,1,5,40,9
+	.half	.L370-.L16
+	.byte	3,217,125,1,7,9
+	.half	.L96-.L370
+	.byte	0,1,1,5,45,0,5,2
+	.word	.L16
+	.byte	3,144,3,1,5,40,9
+	.half	.L370-.L16
+	.byte	3,216,125,1,7,9
+	.half	.L96-.L370
+	.byte	0,1,1
+.L367:
+	.sdecl	'.debug_ranges',debug,cluster('.cocofun_1')
+	.sect	'.debug_ranges'
+.L95:
+	.word	-1,.L16,0,.L96-.L16,0,0
+	.sdecl	'.debug_info',debug,cluster('.cocofun_2')
+	.sect	'.debug_info'
+.L97:
+	.word	207
+	.half	3
+	.word	.L98
+	.byte	4,1
+	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_ICM20602.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
+	.word	.L100,.L99
+	.byte	2
+	.word	.L33
+	.byte	3
+	.byte	'.cocofun_2',0,1,45,6,1
+	.word	.L8,.L101,.L7
+	.byte	0
+	.sdecl	'.debug_abbrev',debug,cluster('.cocofun_2')
+	.sect	'.debug_abbrev'
+.L98:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,0,3,8,58,15,59,15,57,15,54,15
+	.byte	17,1,18,1,64,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('.cocofun_2')
+	.sect	'.debug_line'
+.L99:
+	.word	.L372-.L371
+.L371:
+	.half	3
+	.word	.L374-.L373
+.L373:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_ICM20602.c',0,0,0,0,0
+.L374:
+	.byte	5,9,7,0,5,2
+	.word	.L8
+	.byte	3,50,1,9
+	.half	.L101-.L8
+	.byte	0,1,1,5,5,0,5,2
+	.word	.L8
+	.byte	3,199,0,1,5,9,9
+	.half	.L375-.L8
+	.byte	3,107,1,7,9
+	.half	.L101-.L375
+	.byte	0,1,1,5,9,0,5,2
+	.word	.L8
+	.byte	3,187,2,1,9
+	.half	.L375-.L8
+	.byte	3,247,125,1,7,9
+	.half	.L101-.L375
+	.byte	0,1,1
+.L372:
+	.sdecl	'.debug_ranges',debug,cluster('.cocofun_2')
+	.sect	'.debug_ranges'
+.L100:
+	.word	-1,.L8,0,.L101-.L8,0,0
+	.sdecl	'.debug_info',debug,cluster('.cocofun_3')
+	.sect	'.debug_info'
+.L102:
+	.word	207
+	.half	3
+	.word	.L103
+	.byte	4,1
+	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_ICM20602.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
+	.word	.L105,.L104
+	.byte	2
+	.word	.L33
+	.byte	3
+	.byte	'.cocofun_3',0,1,69,6,1
+	.word	.L12,.L106,.L11
+	.byte	0
+	.sdecl	'.debug_abbrev',debug,cluster('.cocofun_3')
+	.sect	'.debug_abbrev'
+.L103:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,0,3,8,58,15,59,15,57,15,54,15
+	.byte	17,1,18,1,64,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('.cocofun_3')
+	.sect	'.debug_line'
+.L104:
+	.word	.L377-.L376
+.L376:
+	.half	3
+	.word	.L379-.L378
+.L378:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_ICM20602.c',0,0,0,0,0
+.L379:
+	.byte	5,34,7,0,5,2
+	.word	.L12
+	.byte	3,207,0,1,5,52,9
+	.half	.L380-.L12
+	.byte	1,9
+	.half	.L106-.L380
+	.byte	0,1,1,5,22,0,5,2
+	.word	.L12
+	.byte	3,205,0,1,5,40,9
+	.half	.L380-.L12
+	.byte	1,5,52,3,2,1,7,9
+	.half	.L106-.L380
+	.byte	0,1,1,5,22,0,5,2
+	.word	.L12
+	.byte	3,210,0,1,5,40,9
+	.half	.L380-.L12
+	.byte	1,5,52,3,125,1,7,9
+	.half	.L106-.L380
+	.byte	0,1,1
+.L377:
+	.sdecl	'.debug_ranges',debug,cluster('.cocofun_3')
+	.sect	'.debug_ranges'
+.L105:
+	.word	-1,.L12,0,.L106-.L12,0,0
+	.sdecl	'.debug_info',debug,cluster('icm_gyro_x')
+	.sect	'.debug_info'
+.L107:
+	.word	197
+	.half	3
+	.word	.L108
+	.byte	4,1
+	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_ICM20602.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1,2
-	.word	.L31
+	.word	.L33
+	.byte	3
+	.byte	'icm_gyro_x',0,8,34,7
+	.word	.L152
+	.byte	1,5,3
+	.word	icm_gyro_x
+	.byte	0
+	.sdecl	'.debug_abbrev',debug,cluster('icm_gyro_x')
+	.sect	'.debug_abbrev'
+.L108:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
+	.byte	0,0,0
+	.sdecl	'.debug_info',debug,cluster('icm_gyro_y')
+	.sect	'.debug_info'
+.L109:
+	.word	197
+	.half	3
+	.word	.L110
+	.byte	4,1
+	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_ICM20602.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1,2
+	.word	.L33
 	.byte	3
 	.byte	'icm_gyro_y',0,8,34,18
-	.word	.L132
+	.word	.L152
 	.byte	1,5,3
 	.word	icm_gyro_y
 	.byte	0
 	.sdecl	'.debug_abbrev',debug,cluster('icm_gyro_y')
 	.sect	'.debug_abbrev'
-.L93:
+.L110:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
 	.byte	0,0,0
 	.sdecl	'.debug_info',debug,cluster('icm_gyro_z')
 	.sect	'.debug_info'
-.L94:
+.L111:
 	.word	197
 	.half	3
-	.word	.L95
+	.word	.L112
 	.byte	4,1
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_ICM20602.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1,2
-	.word	.L31
+	.word	.L33
 	.byte	3
 	.byte	'icm_gyro_z',0,8,34,29
-	.word	.L132
+	.word	.L152
 	.byte	1,5,3
 	.word	icm_gyro_z
 	.byte	0
 	.sdecl	'.debug_abbrev',debug,cluster('icm_gyro_z')
 	.sect	'.debug_abbrev'
-.L95:
+.L112:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
 	.byte	0,0,0
 	.sdecl	'.debug_info',debug,cluster('icm_acc_x')
 	.sect	'.debug_info'
-.L96:
+.L113:
 	.word	196
 	.half	3
-	.word	.L97
+	.word	.L114
 	.byte	4,1
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_ICM20602.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1,2
-	.word	.L31
+	.word	.L33
 	.byte	3
 	.byte	'icm_acc_x',0,8,35,7
-	.word	.L132
+	.word	.L152
 	.byte	1,5,3
 	.word	icm_acc_x
 	.byte	0
 	.sdecl	'.debug_abbrev',debug,cluster('icm_acc_x')
 	.sect	'.debug_abbrev'
-.L97:
+.L114:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
 	.byte	0,0,0
 	.sdecl	'.debug_info',debug,cluster('icm_acc_y')
 	.sect	'.debug_info'
-.L98:
+.L115:
 	.word	196
 	.half	3
-	.word	.L99
+	.word	.L116
 	.byte	4,1
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_ICM20602.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1,2
-	.word	.L31
+	.word	.L33
 	.byte	3
 	.byte	'icm_acc_y',0,8,35,17
-	.word	.L132
+	.word	.L152
 	.byte	1,5,3
 	.word	icm_acc_y
 	.byte	0
 	.sdecl	'.debug_abbrev',debug,cluster('icm_acc_y')
 	.sect	'.debug_abbrev'
-.L99:
+.L116:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
 	.byte	0,0,0
 	.sdecl	'.debug_info',debug,cluster('icm_acc_z')
 	.sect	'.debug_info'
-.L100:
+.L117:
 	.word	196
 	.half	3
-	.word	.L101
+	.word	.L118
 	.byte	4,1
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_ICM20602.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1,2
-	.word	.L31
+	.word	.L33
 	.byte	3
 	.byte	'icm_acc_z',0,8,35,27
-	.word	.L132
+	.word	.L152
 	.byte	1,5,3
 	.word	icm_acc_z
 	.byte	0
 	.sdecl	'.debug_abbrev',debug,cluster('icm_acc_z')
 	.sect	'.debug_abbrev'
-.L101:
+.L118:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
 	.byte	0,0,0
+	.sdecl	'.debug_loc',debug,cluster('.cocofun_1')
+	.sect	'.debug_loc'
+.L15:
+	.word	-1,.L16,0,.L96-.L16
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('.cocofun_2')
+	.sect	'.debug_loc'
+.L7:
+	.word	-1,.L8,0,.L101-.L8
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('.cocofun_3')
+	.sect	'.debug_loc'
+.L11:
+	.word	-1,.L12,0,.L106-.L12
+	.half	2
+	.byte	138,0
+	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('get_icm20602_accdata')
 	.sect	'.debug_loc'
-.L105:
-	.word	-1,.L14,0,.L103-.L14
+.L124:
+	.word	-1,.L14,0,.L158-.L14
+	.half	2
+	.byte	145,120
+	.word	.L16-.L14,.L96-.L14
+	.half	2
+	.byte	145,120
+	.word	.L159-.L14,.L121-.L14
 	.half	2
 	.byte	145,120
 	.word	0,0
 .L13:
-	.word	-1,.L14,0,.L136-.L14
+	.word	-1,.L14,0,.L157-.L14
 	.half	2
 	.byte	138,0
-	.word	.L136-.L14,.L103-.L14
+	.word	.L157-.L14,.L121-.L14
 	.half	2
 	.byte	138,8
-	.word	.L103-.L14,.L103-.L14
+	.word	.L121-.L14,.L121-.L14
 	.half	2
 	.byte	138,0
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('get_icm20602_accdata_spi')
 	.sect	'.debug_loc'
-.L112:
-	.word	-1,.L28,0,.L111-.L28
+.L131:
+	.word	-1,.L30,.L16-.L30,.L96-.L30
+	.half	2
+	.byte	145,120
+	.word	0,.L130-.L30
 	.half	2
 	.byte	145,120
 	.word	0,0
-.L27:
-	.word	-1,.L28,0,.L151-.L28
+.L29:
+	.word	-1,.L30,0,.L173-.L30
 	.half	2
 	.byte	138,0
-	.word	.L151-.L28,.L111-.L28
+	.word	.L173-.L30,.L130-.L30
 	.half	2
 	.byte	138,8
-	.word	.L111-.L28,.L111-.L28
+	.word	.L130-.L30,.L130-.L30
 	.half	2
 	.byte	138,0
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('get_icm20602_gyro')
 	.sect	'.debug_loc'
-.L107:
-	.word	-1,.L16,0,.L106-.L16
+.L126:
+	.word	-1,.L18,.L16-.L18,.L96-.L18
+	.half	2
+	.byte	145,120
+	.word	0,.L125-.L18
 	.half	2
 	.byte	145,120
 	.word	0,0
-.L15:
-	.word	-1,.L16,0,.L137-.L16
+.L17:
+	.word	-1,.L18,0,.L160-.L18
 	.half	2
 	.byte	138,0
-	.word	.L137-.L16,.L106-.L16
+	.word	.L160-.L18,.L125-.L18
 	.half	2
 	.byte	138,8
-	.word	.L106-.L16,.L106-.L16
+	.word	.L125-.L18,.L125-.L18
 	.half	2
 	.byte	138,0
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('get_icm20602_gyro_spi')
 	.sect	'.debug_loc'
-.L114:
-	.word	-1,.L30,0,.L113-.L30
+.L133:
+	.word	-1,.L32,.L16-.L32,.L96-.L32
+	.half	2
+	.byte	145,120
+	.word	0,.L132-.L32
 	.half	2
 	.byte	145,120
 	.word	0,0
-.L29:
-	.word	-1,.L30,0,.L152-.L30
+.L31:
+	.word	-1,.L32,0,.L174-.L32
 	.half	2
 	.byte	138,0
-	.word	.L152-.L30,.L113-.L30
+	.word	.L174-.L32,.L132-.L32
 	.half	2
 	.byte	138,8
-	.word	.L113-.L30,.L113-.L30
+	.word	.L132-.L32,.L132-.L32
 	.half	2
 	.byte	138,0
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('icm20602_init')
 	.sect	'.debug_loc'
-.L11:
-	.word	-1,.L12,0,.L102-.L12
+.L9:
+	.word	-1,.L10,0,.L119-.L10
 	.half	2
 	.byte	138,0
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('icm20602_init_spi')
 	.sect	'.debug_loc'
-.L25:
-	.word	-1,.L26,0,.L150-.L26
+.L27:
+	.word	-1,.L28,0,.L172-.L28
 	.half	2
 	.byte	138,0
-	.word	.L150-.L26,.L108-.L26
+	.word	.L172-.L28,.L127-.L28
 	.half	2
 	.byte	138,16
-	.word	.L108-.L26,.L108-.L26
+	.word	.L127-.L28,.L127-.L28
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L110:
-	.word	-1,.L26,0,.L108-.L26
+.L129:
+	.word	-1,.L28,0,.L127-.L28
 	.half	2
 	.byte	145,124
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('icm20602_self1_check')
 	.sect	'.debug_loc'
-.L116:
-	.word	-1,.L10,.L133-.L10,.L134-.L10
-	.half	1
-	.byte	88
-	.word	.L134-.L10,.L2-.L10
+.L136:
+	.word	-1,.L2,.L153-.L2,.L154-.L2
 	.half	1
 	.byte	82
-	.word	.L135-.L10,.L115-.L10
+	.word	.L153-.L2,.L154-.L2
+	.half	1
+	.byte	88
+	.word	.L155-.L2,.L101-.L2
+	.half	1
+	.byte	88
+	.word	.L155-.L2,.L101-.L2
+	.half	1
+	.byte	82
+	.word	.L156-.L2,.L134-.L2
 	.half	1
 	.byte	88
 	.word	0,0
-.L9:
-	.word	-1,.L10,0,.L115-.L10
+.L6:
+	.word	-1,.L2,0,.L134-.L2
 	.half	2
 	.byte	138,0
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('icm20602_self3_check')
 	.sect	'.debug_loc'
-.L131:
-	.word	-1,.L24,0,.L130-.L24
+.L151:
+	.word	-1,.L26,.L8-.L26,.L101-.L26
+	.half	2
+	.byte	145,120
+	.word	0,.L150-.L26
 	.half	2
 	.byte	145,120
 	.word	0,0
-.L23:
-	.word	-1,.L24,0,.L149-.L24
+.L25:
+	.word	-1,.L26,0,.L171-.L26
 	.half	2
 	.byte	138,0
-	.word	.L149-.L24,.L130-.L24
+	.word	.L171-.L26,.L150-.L26
 	.half	2
 	.byte	138,8
-	.word	.L130-.L24,.L130-.L24
+	.word	.L150-.L26,.L150-.L26
 	.half	2
 	.byte	138,0
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('icm_spi_r_reg_byte')
 	.sect	'.debug_loc'
-.L123:
-	.word	-1,.L20,0,.L142-.L20
+.L143:
+	.word	-1,.L22,0,.L165-.L22
 	.half	1
 	.byte	84
 	.word	0,0
-.L126:
-	.word	-1,.L20,0,.L122-.L20
+.L146:
+	.word	-1,.L22,0,.L142-.L22
 	.half	2
 	.byte	145,120
 	.word	0,0
-.L19:
-	.word	-1,.L20,0,.L141-.L20
+.L21:
+	.word	-1,.L22,0,.L164-.L22
 	.half	2
 	.byte	138,0
-	.word	.L141-.L20,.L122-.L20
+	.word	.L164-.L22,.L142-.L22
 	.half	2
 	.byte	138,8
-	.word	.L122-.L20,.L122-.L20
+	.word	.L142-.L22,.L142-.L22
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L125:
-	.word	-1,.L20,0,.L143-.L20
+.L145:
+	.word	-1,.L22,0,.L166-.L22
 	.half	1
 	.byte	100
-	.word	.L144-.L20,.L122-.L20
+	.word	.L167-.L22,.L142-.L22
 	.half	1
 	.byte	111
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('icm_spi_r_reg_bytes')
 	.sect	'.debug_loc'
-.L21:
-	.word	-1,.L22,0,.L127-.L22
+.L23:
+	.word	-1,.L24,0,.L147-.L24
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L129:
-	.word	-1,.L22,0,.L145-.L22
+.L149:
+	.word	-1,.L24,0,.L168-.L24
 	.half	1
 	.byte	84
-	.word	.L147-.L22,.L146-.L22
+	.word	.L169-.L24,.L147-.L24
 	.half	1
 	.byte	86
 	.word	0,0
-.L128:
-	.word	-1,.L22,0,.L146-.L22
+.L148:
+	.word	-1,.L24,0,.L147-.L24
 	.half	1
 	.byte	100
-	.word	.L148-.L22,.L146-.L22
+	.word	.L170-.L24,.L147-.L24
 	.half	1
 	.byte	101
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('icm_spi_w_reg_byte')
 	.sect	'.debug_loc'
-.L118:
-	.word	-1,.L18,0,.L139-.L18
+.L138:
+	.word	-1,.L20,0,.L162-.L20
 	.half	1
 	.byte	84
 	.word	0,0
-.L121:
-	.word	-1,.L18,0,.L117-.L18
+.L141:
+	.word	-1,.L20,0,.L137-.L20
 	.half	2
 	.byte	145,120
 	.word	0,0
-.L17:
-	.word	-1,.L18,0,.L138-.L18
+.L19:
+	.word	-1,.L20,0,.L161-.L20
 	.half	2
 	.byte	138,0
-	.word	.L138-.L18,.L117-.L18
+	.word	.L161-.L20,.L137-.L20
 	.half	2
 	.byte	138,8
-	.word	.L117-.L18,.L117-.L18
+	.word	.L137-.L20,.L137-.L20
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L119:
-	.word	-1,.L18,0,.L140-.L18
+.L139:
+	.word	-1,.L20,0,.L163-.L20
 	.half	1
 	.byte	85
 	.word	0,0
 	.sdecl	'.debug_frame',debug
 	.sect	'.debug_frame'
-.L383:
+.L381:
 	.word	48
 	.word	-1
 	.byte	3,0,2,1,27,12,26,0,8,27,8,26,8,28,8,29,8,30,8,31,8,34,8,35,8,32,8,33,8,16,8,17,8,24,8,25,8,36,8,37,8,38
@@ -8201,87 +8360,109 @@ icm_acc_z:	.type	object
 	.sdecl	'.debug_frame',debug,cluster('icm20602_self1_check')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L383,.L10,.L115-.L10
+	.word	.L381,.L2,.L134-.L2
 	.sdecl	'.debug_frame',debug,cluster('icm20602_init')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L383,.L12,.L102-.L12
+	.word	.L381,.L10,.L119-.L10
 	.sdecl	'.debug_frame',debug,cluster('get_icm20602_accdata')
 	.sect	'.debug_frame'
 	.word	36
-	.word	.L383,.L14,.L103-.L14
+	.word	.L381,.L14,.L121-.L14
 	.byte	4
-	.word	(.L136-.L14)/2
+	.word	(.L157-.L14)/2
 	.byte	19,8,22,26,3,19,138,8,4
-	.word	(.L103-.L136)/2
+	.word	(.L121-.L157)/2
 	.byte	19,0,8,26,0,0
 	.sdecl	'.debug_frame',debug,cluster('get_icm20602_gyro')
 	.sect	'.debug_frame'
 	.word	36
-	.word	.L383,.L16,.L106-.L16
+	.word	.L381,.L18,.L125-.L18
 	.byte	4
-	.word	(.L137-.L16)/2
+	.word	(.L160-.L18)/2
 	.byte	19,8,22,26,3,19,138,8,4
-	.word	(.L106-.L137)/2
+	.word	(.L125-.L160)/2
 	.byte	19,0,8,26,0,0
 	.sdecl	'.debug_frame',debug,cluster('icm_spi_w_reg_byte')
 	.sect	'.debug_frame'
 	.word	36
-	.word	.L383,.L18,.L117-.L18
+	.word	.L381,.L20,.L137-.L20
 	.byte	4
-	.word	(.L138-.L18)/2
+	.word	(.L161-.L20)/2
 	.byte	19,8,22,26,3,19,138,8,4
-	.word	(.L117-.L138)/2
+	.word	(.L137-.L161)/2
 	.byte	19,0,8,26,0,0
 	.sdecl	'.debug_frame',debug,cluster('icm_spi_r_reg_byte')
 	.sect	'.debug_frame'
 	.word	36
-	.word	.L383,.L20,.L122-.L20
+	.word	.L381,.L22,.L142-.L22
 	.byte	4
-	.word	(.L141-.L20)/2
+	.word	(.L164-.L22)/2
 	.byte	19,8,22,26,3,19,138,8,4
-	.word	(.L122-.L141)/2
+	.word	(.L142-.L164)/2
 	.byte	19,0,8,26,0,0
 	.sdecl	'.debug_frame',debug,cluster('icm_spi_r_reg_bytes')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L383,.L22,.L127-.L22
+	.word	.L381,.L24,.L147-.L24
 	.sdecl	'.debug_frame',debug,cluster('icm20602_self3_check')
 	.sect	'.debug_frame'
 	.word	36
-	.word	.L383,.L24,.L130-.L24
+	.word	.L381,.L26,.L150-.L26
 	.byte	4
-	.word	(.L149-.L24)/2
+	.word	(.L171-.L26)/2
 	.byte	19,8,22,26,3,19,138,8,4
-	.word	(.L130-.L149)/2
+	.word	(.L150-.L171)/2
 	.byte	19,0,8,26,0,0
 	.sdecl	'.debug_frame',debug,cluster('icm20602_init_spi')
 	.sect	'.debug_frame'
 	.word	36
-	.word	.L383,.L26,.L108-.L26
+	.word	.L381,.L28,.L127-.L28
 	.byte	4
-	.word	(.L150-.L26)/2
+	.word	(.L172-.L28)/2
 	.byte	19,16,22,26,3,19,138,16,4
-	.word	(.L108-.L150)/2
+	.word	(.L127-.L172)/2
 	.byte	19,0,8,26,0,0
 	.sdecl	'.debug_frame',debug,cluster('get_icm20602_accdata_spi')
 	.sect	'.debug_frame'
 	.word	36
-	.word	.L383,.L28,.L111-.L28
+	.word	.L381,.L30,.L130-.L30
 	.byte	4
-	.word	(.L151-.L28)/2
+	.word	(.L173-.L30)/2
 	.byte	19,8,22,26,3,19,138,8,4
-	.word	(.L111-.L151)/2
+	.word	(.L130-.L173)/2
 	.byte	19,0,8,26,0,0
 	.sdecl	'.debug_frame',debug,cluster('get_icm20602_gyro_spi')
 	.sect	'.debug_frame'
 	.word	36
-	.word	.L383,.L30,.L113-.L30
+	.word	.L381,.L32,.L132-.L32
 	.byte	4
-	.word	(.L152-.L30)/2
+	.word	(.L174-.L32)/2
 	.byte	19,8,22,26,3,19,138,8,4
-	.word	(.L113-.L152)/2
+	.word	(.L132-.L174)/2
 	.byte	19,0,8,26,0,0
+	.sdecl	'.debug_frame',debug
+	.sect	'.debug_frame'
+.L382:
+	.word	52
+	.word	-1
+	.byte	3,0,2,1,40,12,26,0,9,40,27,155,0,7,26,8,28,8,29,8,30,8,31,8,34,8,35,8,32,8,33,8,16,8,17,8,24,8,25,8,36
+	.byte	8,37,8,38,8,39,0
+	.sdecl	'.debug_frame',debug,cluster('.cocofun_2')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L382,.L8,.L101-.L8
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('.cocofun_3')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L382,.L12,.L106-.L12
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('.cocofun_1')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L382,.L16,.L96-.L16
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   403  
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_ICM20602.c	   404  

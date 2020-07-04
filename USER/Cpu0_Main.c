@@ -31,8 +31,6 @@
 
 #pragma section all "cpu0_psram"
 
-
-
 void core0_main(void)
 {
 	disableInterrupts();

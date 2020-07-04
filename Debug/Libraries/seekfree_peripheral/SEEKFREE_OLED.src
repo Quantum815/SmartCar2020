@@ -1,6 +1,6 @@
 	; Module start
 	.compiler_version	"TASKING VX-toolset for TriCore: C compiler v6.3r1 Build 19041558 SN 99294086"
-	.compiler_invocation	"ctc --dep-file=Libraries\\seekfree_peripheral\\.SEEKFREE_OLED.o.d --fp-model=c,f,l,n,r,S,T,z -D__CPU__=tc26x -D__CPU_TC26X__ --core=tc1.6.x --iso=99 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\CODE -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Build -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Impl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Lib -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Lib\\DataHandling -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Lib\\InternalMux -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_PinMap -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Asc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Lin -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Spi -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\Icu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\PwmBc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\PwmHl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\TimerWithTrigger -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\TPwm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cif -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cif\\Cam -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cif\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\CStart -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Irq -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Trap -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dma -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dma\\Dma -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dma\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc\\Dsadc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc\\Rdc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dts -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dts\\Dts -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dts\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Emem -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Emem\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eray -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eray\\Eray -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eray\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eth -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eth\\Phy_Pef7071 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eth\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fce -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fce\\Crc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fce\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fft -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fft\\Fft -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fft\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Flash -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Flash\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gpt12 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gpt12\\IncrEnc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gpt12\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom\\Pwm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom\\PwmHl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tim -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tim\\In -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom\\Pwm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom\\PwmHl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Trig -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Hssl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Hssl\\Hssl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Hssl\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\I2c -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\I2c\\I2c -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\I2c\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Iom -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Iom\\Driver -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Iom\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Msc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Msc\\Msc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Msc\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Mtu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Mtu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Multican -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Multican\\Can -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Multican\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Port -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Port\\Io -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Port\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5\\Psi5 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5s -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5s\\Psi5s -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5s\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi\\SpiMaster -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi\\SpiSlave -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Scu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Scu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Sent -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Sent\\Sent -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Sent\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Smu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Smu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Src -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Src\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Stm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Stm\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Stm\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Vadc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Vadc\\Adc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Vadc\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Platform -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Platform\\Tricore -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Platform\\Tricore\\Compilers -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Sfr -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Sfr\\TC26B -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Sfr\\TC26B\\_Reg -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Service -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Service\\CpuGeneric -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\seekfree_libraries -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\seekfree_libraries\\common -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\seekfree_peripheral -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\USER -g2 -wW557 --make-target=Libraries\\seekfree_peripheral\\SEEKFREE_OLED.o -t4 --language=-gcc,-volatile,+strings,-kanji --default-near-size=0 -O0 --default-a1-size=0 --default-a0-size=0 --source --align=0 --switch=auto --error-limit=42 -o Libraries\\seekfree_peripheral\\SEEKFREE_OLED.src ..\\Libraries\\seekfree_peripheral\\SEEKFREE_OLED.c"
+	.compiler_invocation	"ctc --dep-file=Libraries\\seekfree_peripheral\\.SEEKFREE_OLED.o.d --fp-model=c,f,l,n,r,S,T,z -D__CPU__=tc26x -D__CPU_TC26X__ --core=tc1.6.x --iso=99 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\CODE -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Build -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Impl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Lib -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Lib\\DataHandling -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Lib\\InternalMux -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_PinMap -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Asc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Lin -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Spi -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\Icu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\PwmBc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\PwmHl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\TimerWithTrigger -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\TPwm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cif -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cif\\Cam -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cif\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\CStart -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Irq -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Trap -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dma -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dma\\Dma -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dma\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc\\Dsadc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc\\Rdc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dts -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dts\\Dts -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dts\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Emem -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Emem\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eray -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eray\\Eray -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eray\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eth -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eth\\Phy_Pef7071 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eth\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fce -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fce\\Crc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fce\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fft -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fft\\Fft -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fft\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Flash -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Flash\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gpt12 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gpt12\\IncrEnc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gpt12\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom\\Pwm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom\\PwmHl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tim -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tim\\In -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom\\Pwm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom\\PwmHl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Trig -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Hssl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Hssl\\Hssl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Hssl\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\I2c -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\I2c\\I2c -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\I2c\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Iom -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Iom\\Driver -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Iom\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Msc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Msc\\Msc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Msc\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Mtu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Mtu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Multican -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Multican\\Can -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Multican\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Port -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Port\\Io -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Port\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5\\Psi5 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5s -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5s\\Psi5s -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5s\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi\\SpiMaster -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi\\SpiSlave -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Scu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Scu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Sent -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Sent\\Sent -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Sent\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Smu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Smu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Src -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Src\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Stm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Stm\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Stm\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Vadc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Vadc\\Adc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Vadc\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Platform -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Platform\\Tricore -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Platform\\Tricore\\Compilers -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Sfr -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Sfr\\TC26B -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Sfr\\TC26B\\_Reg -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Service -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Service\\CpuGeneric -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\seekfree_libraries -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\seekfree_libraries\\common -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\seekfree_peripheral -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\USER -g2 -wW557 --make-target=Libraries\\seekfree_peripheral\\SEEKFREE_OLED.o -t4 --language=-gcc,-volatile,+strings,-kanji --default-near-size=0 -O2 --default-a1-size=0 --default-a0-size=0 --source --align=0 --compact-max-size=200 --switch=auto --error-limit=42 -o Libraries\\seekfree_peripheral\\SEEKFREE_OLED.src ..\\Libraries\\seekfree_peripheral\\SEEKFREE_OLED.c"
 	.compiler_name		"ctc"
 	;source	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_OLED.c'
 
@@ -67,105 +67,118 @@ $TC16X
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	    52  //-------------------------------------------------------------------------------------------------------------------
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	    53  void oled_wrdat(uint8 data)
 ; Function oled_wrdat
-.L101:
+.L67:
 oled_wrdat:	.type	func
 	mov	d8,d4
-.L328:
+.L317:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	    54  {
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	    55  	uint8 i=8;
 	mov	d15,#8
-.L330:
+.L319:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	    56  	
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	    57      OLED_CS(0); //使能信号端，拉低时正常使用
-	mov	d4,#482
-.L327:
 	mov	d5,#0
+	mov	d4,#482
 	call	gpio_set
-.L786:
+.L316:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	    58  	OLED_DC(1);
 	mov	d4,#480
 	mov	d5,#1
 	call	gpio_set
-.L787:
+.L318:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	    59  	OLED_SCL(0);
-	mov	d4,#483
-	mov	d5,#0
+	fcall	.cocofun_8
 	call	gpio_set
-.L788:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	    60  	while(i--)
-	j	.L2
-.L3:
+.L2:
+	fcall	.cocofun_6
+.L668:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	    61  	{
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	    62  	  	if(data&0x80){OLED_SDA(1);}
-	jz.t	d8:7,.L4
-.L789:
-	mov	d4,#485
-	mov	d5,#1
-	call	gpio_set
-.L790:
-	j	.L5
-.L4:
-
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	    63  	  	else{OLED_SDA(0);}
-	mov	d4,#485
-	mov	d5,#0
 	call	gpio_set
-.L5:
+.L322:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	    64  	  	OLED_SCL(1);
-	mov	d4,#483
 	mov	d5,#1
+	mov	d4,d9
 	call	gpio_set
-.L791:
+.L669:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	    65  		
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	    66  	  	OLED_SCL(0);
-	mov	d4,#483
 	mov	d5,#0
+	mov	d4,d9
 	call	gpio_set
-.L792:
+.L670:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	    67  	  	data<<=1;
 	sha	d8,#1
-.L329:
+.L323:
 	extr.u	d8,d8,#0,#8
-.L2:
-	mov	d0,d15
-	add	d15,#-1
-.L331:
-	extr.u	d15,d15,#0,#8
-.L332:
-	jne	d0,#0,.L3
-.L793:
+.L324:
+	jne	d15,#0,.L2
+.L671:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	    68  	}
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	    69      OLED_CS(1); //使能信号端，拉低时正常使用
-	mov	d4,#482
 	mov	d5,#1
-	call	gpio_set
-.L794:
-
-; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	    70  }
-	ret
-.L312:
+.L672:
+	mov	d4,#482
+.L673:
+	j	gpio_set
+.L300:
 	
 __oled_wrdat_function_end:
 	.size	oled_wrdat,__oled_wrdat_function_end-oled_wrdat
-.L207:
+.L179:
 	; End of function
 	
+	.sdecl	'.text.SEEKFREE_OLED..cocofun_8',code,cluster('.cocofun_8')
+	.sect	'.text.SEEKFREE_OLED..cocofun_8'
+	.align	2
+; Function .cocofun_8
+.L69:
+.cocofun_8:	.type	func
+; Function body .cocofun_8, coco_iter:0
+	mov	d9,#483
+	mov	d5,#0
+.L715:
+	mov	d4,d9
+	fret
+.L209:
+	; End of function
+	.sdecl	'.text.SEEKFREE_OLED..cocofun_6',code,cluster('.cocofun_6')
+	.sect	'.text.SEEKFREE_OLED..cocofun_6'
+	.align	2
+; Function .cocofun_6
+.L71:
+.cocofun_6:	.type	func
+; Function body .cocofun_6, coco_iter:0
+	add	d15,#-1
+.L320:
+	extr.u	d15,d15,#0,#8
+.L321:
+	and	d0,d8,#128
+	ne	d5,d0,#0
+.L706:
+	mov	d4,#485
+	fret
+.L199:
+	; End of function
 	.sdecl	'.text.SEEKFREE_OLED.oled_wr6dat',code,cluster('oled_wr6dat')
 	.sect	'.text.SEEKFREE_OLED.oled_wr6dat'
 	.align	2
 	
 	.global	oled_wr6dat
 
+; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	    70  }
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	    71  
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	    72  //-------------------------------------------------------------------------------------------------------------------
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	    73  //  @brief      内部调用，用户无需关心
@@ -176,96 +189,77 @@ __oled_wrdat_function_end:
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	    78  //-------------------------------------------------------------------------------------------------------------------
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	    79  void oled_wr6dat(uint8 data)
 ; Function oled_wr6dat
-.L103:
+.L73:
 oled_wr6dat:	.type	func
 	mov	d8,d4
-.L334:
+.L326:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	    80  {
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	    81  	uint8 i=6;
-	mov	d9,#6
-.L336:
+	mov	d15,#6
+.L328:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	    82      
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	    83  	OLED_CS(0); //使能信号端，拉低时正常使用
-	mov	d4,#482
-.L333:
 	mov	d5,#0
+	mov	d4,#482
 	call	gpio_set
-.L799:
+.L325:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	    84  	OLED_DC(1);
 	mov	d4,#480
 	mov	d5,#1
 	call	gpio_set
-.L800:
+.L327:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	    85  	OLED_SCL(0);
-	mov	d4,#483
-	mov	d5,#0
+	fcall	.cocofun_8
+.L329:
 	call	gpio_set
-.L801:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	    86  	while(i--)
-	j	.L6
-.L7:
+.L5:
+	fcall	.cocofun_6
+.L678:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	    87  	{
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	    88  	 	if(data&0x80){OLED_SDA(1);}
-	jz.t	d8:7,.L8
-.L802:
-	mov	d4,#485
-	mov	d5,#1
-	call	gpio_set
-.L803:
-	j	.L9
-.L8:
-
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	    89  	 	else{OLED_SDA(0);}
-	mov	d4,#485
-	mov	d5,#0
 	call	gpio_set
-.L9:
+.L679:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	    90  	 	OLED_SCL(1);
-	mov	d4,#483
 	mov	d5,#1
+	mov	d4,d9
 	call	gpio_set
-.L804:
+.L680:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	    91  	 	OLED_SCL(0);
-	mov	d4,#483
 	mov	d5,#0
+	mov	d4,d9
 	call	gpio_set
-.L805:
+.L681:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	    92  	 	data<<=1;
 	sha	d8,#1
-.L335:
+.L330:
 	extr.u	d8,d8,#0,#8
-.L6:
-	mov	d15,d9
-	add	d9,#-1
-.L337:
-	extr.u	d9,d9,#0,#8
-.L338:
-	jne	d15,#0,.L7
-.L806:
+.L331:
+	jne	d15,#0,.L5
+.L682:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	    93  	}
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	    94      OLED_CS(1); //使能信号端，拉低时正常使用
-	mov	d4,#482
 	mov	d5,#1
-	call	gpio_set
-.L807:
-
-; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	    95  }
-	ret
-.L315:
+.L683:
+	mov	d4,#482
+.L684:
+	j	gpio_set
+.L304:
 	
 __oled_wr6dat_function_end:
 	.size	oled_wr6dat,__oled_wr6dat_function_end-oled_wr6dat
-.L212:
+.L184:
 	; End of function
 	
 	.sdecl	'.text.SEEKFREE_OLED.oled_wrcmd',code,cluster('oled_wrcmd')
@@ -274,6 +268,7 @@ __oled_wr6dat_function_end:
 	
 	.global	oled_wrcmd
 
+; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	    95  }
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	    96  
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	    97  //-------------------------------------------------------------------------------------------------------------------
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	    98  //  @brief      内部调用，用户无需关心
@@ -284,98 +279,79 @@ __oled_wr6dat_function_end:
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   103  //-------------------------------------------------------------------------------------------------------------------
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   104  void oled_wrcmd(uint8 cmd)
 ; Function oled_wrcmd
-.L105:
+.L75:
 oled_wrcmd:	.type	func
 	mov	d8,d4
-.L340:
+.L333:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   105  {
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   106  	uint8 i=8;
 	mov	d15,#8
-.L342:
+.L335:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   107      
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   108  	OLED_CS(0); //使能信号端，拉低时正常使用
-	mov	d4,#482
-.L339:
 	mov	d5,#0
+	mov	d4,#482
 	call	gpio_set
-.L812:
+.L332:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   109  	OLED_DC(0);
 	mov	d4,#480
 	mov	d5,#0
 	call	gpio_set
-.L813:
+.L334:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   110  	OLED_SCL(0);;
-	mov	d4,#483
-	mov	d5,#0
+	fcall	.cocofun_8
+.L336:
 	call	gpio_set
-.L814:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   111  	
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   112  	while(i--)
-	j	.L10
-.L11:
+.L8:
+	fcall	.cocofun_6
+.L689:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   113  	{
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   114  		if(cmd&0x80){OLED_SDA(1);}
-	jz.t	d8:7,.L12
-.L815:
-	mov	d4,#485
-	mov	d5,#1
-	call	gpio_set
-.L816:
-	j	.L13
-.L12:
-
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   115  		else{OLED_SDA(0);}
-	mov	d4,#485
-	mov	d5,#0
 	call	gpio_set
-.L13:
+.L690:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   116  		OLED_SCL(1);
-	mov	d4,#483
 	mov	d5,#1
+	mov	d4,d9
 	call	gpio_set
-.L817:
+.L691:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   117  		
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   118  		OLED_SCL(0);
-	mov	d4,#483
 	mov	d5,#0
+	mov	d4,d9
 	call	gpio_set
-.L818:
+.L692:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   119  		cmd<<=1;
 	sha	d8,#1
-.L341:
+.L337:
 	extr.u	d8,d8,#0,#8
-.L10:
-	mov	d0,d15
-	add	d15,#-1
-.L343:
-	extr.u	d15,d15,#0,#8
-.L344:
-	jne	d0,#0,.L11
-.L819:
+.L338:
+	jne	d15,#0,.L8
+.L693:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   120  	}
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   121      OLED_CS(1); //使能信号端，拉低时正常使用
-	mov	d4,#482
 	mov	d5,#1
-	call	gpio_set
-.L820:
-
-; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   122  }
-	ret
-.L318:
+.L694:
+	mov	d4,#482
+.L695:
+	j	gpio_set
+.L307:
 	
 __oled_wrcmd_function_end:
 	.size	oled_wrcmd,__oled_wrcmd_function_end-oled_wrcmd
-.L217:
+.L189:
 	; End of function
 	
 	.sdecl	'.text.SEEKFREE_OLED.oled_hexascii',code,cluster('oled_hexascii')
@@ -384,6 +360,7 @@ __oled_wrcmd_function_end:
 	
 	.global	oled_hexascii
 
+; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   122  }
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   123  
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   124  //-------------------------------------------------------------------------------------------------------------------
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   125  //  @brief      内部调用，用户无需关心
@@ -394,66 +371,49 @@ __oled_wrcmd_function_end:
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   130  //-------------------------------------------------------------------------------------------------------------------
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   131  void oled_hexascii(uint16 hex,int8 * Print)
 ; Function oled_hexascii
-.L107:
+.L77:
 oled_hexascii:	.type	func
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   132  {
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   133  	uint8 hexcheck ;
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   134  	uint8 TEMP ;
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   135  	TEMP = 6 ;
-	mov	d15,#6
-.L346:
-
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   136  	Print[TEMP ]='\0';
-	mov.aa	a15,a4
-.L347:
-	add.a	a15,#6
-.L345:
-	mov	d0,#0
-.L825:
-	st.b	[a15],d0
-.L826:
+	mov	d15,#0
+	st.b	[+a4]6,d15
+.L700:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   137  	while(TEMP)
-	j	.L14
-.L15:
+	mov.a	a15,#5
+.L11:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   138  	{
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   139  	  	TEMP -- ;
-	add	d15,#-1
-.L827:
-
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   140  	  	hexcheck  =  hex%10 ;
-	mov	d0,#10
-.L348:
-	div	e0,d4,d0
-.L349:
+	mov	d15,#10
+.L339:
+	div	e0,d4,d15
+.L341:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   141  	  	hex   /=10 ;
-	mov	d2,#10
-.L350:
-	div	e4,d4,d2
-.L351:
+	div.u	e4,d4,d15
+.L340:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   142  	  	Print[TEMP ]  = hexcheck + 0x30 ;
-	addsc.a	a15,a4,d15,#0
-.L352:
-	add	d0,d1,#48
-.L828:
-	st.b	[a15],d0
-.L14:
-	jne	d15,#0,.L15
-.L829:
+	add	d15,d1,#48
+	st.b	[+a4]-1,d15
+	loop	a15,.L11
+.L701:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   143  	}
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   144    
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   145  }
 	ret
-.L321:
+.L310:
 	
 __oled_hexascii_function_end:
 	.size	oled_hexascii,__oled_hexascii_function_end-oled_hexascii
-.L222:
+.L194:
 	; End of function
 	
 	.sdecl	'.text.SEEKFREE_OLED.oled_init',code,cluster('oled_init')
@@ -472,133 +432,135 @@ __oled_hexascii_function_end:
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   153  //-------------------------------------------------------------------------------------------------------------------
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   154  void oled_init(void)
 ; Function oled_init
-.L109:
+.L79:
 oled_init:	.type	func
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   155  {
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   156  	gpio_init (OLED_SCL_PIN, GPO,1,PUSHPULL);
-	mov	d4,#483
-.L484:
+	mov	d15,#483
+.L449:
 	mov	d5,#1
-.L485:
-	mov	d6,#1
-.L486:
+.L450:
+	mov	d6,d5
+.L451:
 	mov	d7,#3
+	mov	d4,d15
 	call	gpio_init
-.L487:
+.L452:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   157      gpio_init (OLED_SDA_PIN, GPO,0,PUSHPULL);
 	mov	d4,#485
-.L488:
+.L453:
 	mov	d5,#1
-.L489:
+.L454:
 	mov	d6,#0
-.L490:
+.L455:
 	mov	d7,#3
 	call	gpio_init
-.L491:
+.L456:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   158      gpio_init (OLED_RST_PIN, GPO,1,PUSHPULL);
-	mov	d4,#481
-.L492:
+	mov	d8,#481
+.L457:
 	mov	d5,#1
-.L493:
-	mov	d6,#1
-.L494:
+.L458:
+	mov	d6,d5
+.L459:
 	mov	d7,#3
+	mov	d4,d8
 	call	gpio_init
-.L495:
+.L460:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   159      gpio_init (OLED_DC_PIN , GPO,1,PUSHPULL);
 	mov	d4,#480
-.L496:
+.L461:
 	mov	d5,#1
-.L497:
-	mov	d6,#1
-.L498:
+.L462:
+	mov	d6,d5
+.L463:
 	mov	d7,#3
 	call	gpio_init
-.L499:
+.L464:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   160      gpio_init (OLED_CS_PIN , GPO,1,PUSHPULL);
 	mov	d4,#482
-.L500:
+.L465:
 	mov	d5,#1
-.L501:
-	mov	d6,#1
-.L502:
+.L466:
+	mov	d6,d5
+.L467:
 	mov	d7,#3
 	call	gpio_init
-.L503:
+.L468:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   161      
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   162  	OLED_SCL(1);
-	mov	d4,#483
 	mov	d5,#1
+	mov	d4,d15
 	call	gpio_set
-.L504:
+.L469:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   163  	OLED_RST(0);
-	mov	d4,#481
 	mov	d5,#0
+	mov	d4,d8
 	call	gpio_set
-.L505:
+.L470:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   164  	systick_delay_ms(STM0, 50);
 	mov	d4,#0
 	mov.u	d5,#61568
 	addih	d5,d5,#762
 	call	systick_delay
-.L506:
+.L471:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   165  	OLED_RST(1);
-	mov	d4,#481
 	mov	d5,#1
+	mov	d4,d8
 	call	gpio_set
-.L507:
+.L472:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   166  	
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   167  	oled_wrcmd(0xae);//--turn off oled panel
 	mov	d4,#174
 	call	oled_wrcmd
-.L508:
+.L473:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   168  	oled_wrcmd(0x00);//---set low column address
 	mov	d4,#0
 	call	oled_wrcmd
-.L509:
+.L474:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   169  	oled_wrcmd(0x10);//---set high column address
 	mov	d4,#16
 	call	oled_wrcmd
-.L510:
+.L475:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   170  	oled_wrcmd(0x40);//--set start line address  Set Mapping RAM Display Start Line (0x00~0x3F)
 	mov	d4,#64
 	call	oled_wrcmd
-.L511:
+.L476:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   171  	oled_wrcmd(0x81);//--set contrast control register
 	mov	d4,#129
 	call	oled_wrcmd
-.L512:
+.L477:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   172  	oled_wrcmd(Brightness); // Set SEG Output Current Brightness
 	mov	d4,#127
 	call	oled_wrcmd
-.L513:
+.L478:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   173      
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   174  #if (0 == OLED_DISPLAY_DIR)
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   175  	oled_wrcmd(0xa1);//--Set SEG/Column Mapping     0xa0左右反置 0xa1正常
 	mov	d4,#161
 	call	oled_wrcmd
-.L514:
+.L479:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   176  	oled_wrcmd(0xc8);//Set COM/Row Scan Direction   0xc0上下反置 0xc8正常
 	mov	d4,#200
 	call	oled_wrcmd
-.L515:
+.L480:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   177  #else
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   178      oled_wrcmd(0xa0);//--Set SEG/Column Mapping     0xa0左右反置 0xa1正常
@@ -608,122 +570,118 @@ oled_init:	.type	func
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   182  	oled_wrcmd(0xa6);//--set normal display
 	mov	d4,#166
 	call	oled_wrcmd
-.L516:
+.L481:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   183  	oled_wrcmd(0xa8);//--set multiplex ratio(1 to 64)
 	mov	d4,#168
 	call	oled_wrcmd
-.L517:
+.L482:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   184  	oled_wrcmd(0x3f);//--1/64 duty
 	mov	d4,#63
 	call	oled_wrcmd
-.L518:
+.L483:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   185  	oled_wrcmd(0xd3);//-set display offset	Shift Mapping RAM Counter (0x00~0x3F)
 	mov	d4,#211
 	call	oled_wrcmd
-.L519:
+.L484:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   186  	oled_wrcmd(0x00);//-not offset
 	mov	d4,#0
 	call	oled_wrcmd
-.L520:
+.L485:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   187  	oled_wrcmd(0xd5);//--set display clock divide ratio/oscillator frequency
 	mov	d4,#213
 	call	oled_wrcmd
-.L521:
+.L486:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   188  	oled_wrcmd(0x80);//--set divide ratio, Set Clock as 100 Frames/Sec
 	mov	d4,#128
 	call	oled_wrcmd
-.L522:
+.L487:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   189  	oled_wrcmd(0xd9);//--set pre-charge period
 	mov	d4,#217
 	call	oled_wrcmd
-.L523:
+.L488:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   190  	oled_wrcmd(0xf1);//Set Pre-Charge as 15 Clocks & Discharge as 1 Clock
 	mov	d4,#241
 	call	oled_wrcmd
-.L524:
+.L489:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   191  	oled_wrcmd(0xda);//--set com pins hardware configuration
 	mov	d4,#218
 	call	oled_wrcmd
-.L525:
+.L490:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   192  	oled_wrcmd(0x12);
 	mov	d4,#18
 	call	oled_wrcmd
-.L526:
+.L491:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   193  	oled_wrcmd(0xdb);//--set vcomh
 	mov	d4,#219
 	call	oled_wrcmd
-.L527:
+.L492:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   194  	oled_wrcmd(0x40);//Set VCOM Deselect Level
 	mov	d4,#64
 	call	oled_wrcmd
-.L528:
+.L493:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   195  	oled_wrcmd(0x20);//-Set Page Addressing Mode (0x00/0x01/0x02)
 	mov	d4,#32
 	call	oled_wrcmd
-.L529:
+.L494:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   196  	oled_wrcmd(0x02);//
 	mov	d4,#2
 	call	oled_wrcmd
-.L530:
+.L495:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   197  	oled_wrcmd(0x8d);//--set Charge Pump enable/disable
 	mov	d4,#141
 	call	oled_wrcmd
-.L531:
+.L496:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   198  	oled_wrcmd(0x14);//--set(0x10) disable
 	mov	d4,#20
 	call	oled_wrcmd
-.L532:
+.L497:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   199  	oled_wrcmd(0xa4);// Disable Entire Display On (0xa4/0xa5)
 	mov	d4,#164
 	call	oled_wrcmd
-.L533:
+.L498:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   200  	oled_wrcmd(0xa6);// Disable Inverse Display On (0xa6/a7)
 	mov	d4,#166
 	call	oled_wrcmd
-.L534:
+.L499:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   201  	oled_wrcmd(0xaf);//--turn on oled panel
 	mov	d4,#175
 	call	oled_wrcmd
-.L535:
+.L500:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   202  	oled_fill(0x00);  //初始清屏
 	mov	d4,#0
 	call	oled_fill
-.L536:
+.L501:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   203  	oled_set_pos(0,0);
 	mov	d4,#0
-.L537:
-	mov	d5,#0
-	call	oled_set_pos
-.L538:
-
-; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   204  }
-	ret
-.L223:
+.L502:
+	mov	d5,d4
+	j	oled_set_pos
+.L210:
 	
 __oled_init_function_end:
 	.size	oled_init,__oled_init_function_end-oled_init
-.L142:
+.L114:
 	; End of function
 	
 	.sdecl	'.text.SEEKFREE_OLED.oled_set_pos',code,cluster('oled_set_pos')
@@ -732,6 +690,7 @@ __oled_init_function_end:
 	
 	.global	oled_set_pos
 
+; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   204  }
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   205  
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   206  //-------------------------------------------------------------------------------------------------------------------
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   207  //  @brief      OLED显示坐标设置
@@ -743,73 +702,63 @@ __oled_init_function_end:
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   213  //-------------------------------------------------------------------------------------------------------------------
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   214  void oled_set_pos(uint8 x, uint8 y)
 ; Function oled_set_pos
-.L111:
+.L81:
 oled_set_pos:	.type	func
 	mov	e8,d5,d4
-.L553:
+.L517:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   215  {
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   216      ZF_ASSERT(X_WIDTH>x);      //参数断言，进入断言标志参数超出范围
 	mov	d15,#128
-.L354:
-	jge.u	d8,d15,.L16
-.L355:
-	j	.L17
-.L16:
+.L343:
+	jlt.u	d8,d15,.L12
+.L344:
 	movh.a	a4,#@his(.1.str)
 	lea	a4,[a4]@los(.1.str)
 	mov	d4,#216
-.L353:
 	movh.a	a5,#@his(_999001___func__)
+.L342:
 	lea	a5,[a5]@los(_999001___func__)
 	call	assert
-.L17:
+.L12:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   217      ZF_ASSERT((Y_WIDTH/8)>y);
-	mov	d15,#8
-.L356:
-	jge	d9,d15,.L18
-.L357:
-	j	.L19
-.L18:
+	jlt.u	d9,#8,.L13
+.L345:
 	movh.a	a4,#@his(.1.str)
 	lea	a4,[a4]@los(.1.str)
 	mov	d4,#217
 	movh.a	a5,#@his(_999001___func__)
 	lea	a5,[a5]@los(_999001___func__)
 	call	assert
-.L19:
+.L13:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   218      
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   219      oled_wrcmd(0xb0+y);
 	add	d15,d9,#176
-.L358:
+.L346:
 	extr.u	d4,d15,#0,#8
 	call	oled_wrcmd
-.L359:
+.L347:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   220      oled_wrcmd(((x&0xf0)>>4)|0x10);
 	and	d15,d8,#240
-.L360:
+.L348:
 	sha	d15,#-4
-.L554:
+.L518:
 	or	d4,d15,#16
 	call	oled_wrcmd
-.L361:
+.L349:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   221      oled_wrcmd((x&0x0f)|0x00);
 	and	d4,d8,#15
-.L362:
-	call	oled_wrcmd
-.L555:
-
-; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   222  }
-	ret
-.L229:
+.L350:
+	j	oled_wrcmd
+.L216:
 	
 __oled_set_pos_function_end:
 	.size	oled_set_pos,__oled_set_pos_function_end-oled_set_pos
-.L152:
+.L124:
 	; End of function
 	
 	.sdecl	'.text.SEEKFREE_OLED.oled_fill',code,cluster('oled_fill')
@@ -818,6 +767,7 @@ __oled_set_pos_function_end:
 	
 	.global	oled_fill
 
+; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   222  }
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   223  
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   224  //-------------------------------------------------------------------------------------------------------------------
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   225  //  @brief      OLED清屏函数
@@ -828,64 +778,55 @@ __oled_set_pos_function_end:
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   230  //-------------------------------------------------------------------------------------------------------------------
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   231  void oled_fill(uint8 bmp_data)
 ; Function oled_fill
-.L113:
+.L83:
 oled_fill:	.type	func
-	mov	d8,d4
-.L363:
+	mov	d15,d4
+.L351:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   232  {
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   233  	uint8 y,x;
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   234  	
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   235  	for(y=0;y<8;y++)
-	mov	d9,#0
-.L364:
-	j	.L20
-.L21:
+	mov	d8,#0
+	mov.a	a15,#7
+.L14:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   236  	{
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   237  		oled_wrcmd(0xb0+y);
-	add	d4,d9,#176
+	add	d4,d8,#176
 	call	oled_wrcmd
-.L543:
+.L507:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   238  		oled_wrcmd(0x01);
 	mov	d4,#1
 	call	oled_wrcmd
-.L544:
+.L508:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   239  		oled_wrcmd(0x10);
 	mov	d4,#16
 	call	oled_wrcmd
-.L545:
+.L509:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   240  		for(x=0;x<X_WIDTH;x++)	oled_wrdat(bmp_data); 
-	mov	d10,#0
-.L365:
-	j	.L22
-.L23:
-	mov	d4,d8
-.L366:
+	lea	a12,127
+.L15:
+	mov	d4,d15
 	call	oled_wrdat
-.L367:
-	add	d10,#1
-.L22:
-	mov	d15,#128
-.L546:
-	jlt.u	d10,d15,.L23
-.L547:
-	add	d9,#1
-.L20:
-	jlt.u	d9,#8,.L21
-.L548:
+.L510:
+	loop	a12,.L15
+.L511:
+	add	d8,#1
+	loop	a15,.L14
+.L512:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   241  	}
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   242  }
 	ret
-.L224:
+.L211:
 	
 __oled_fill_function_end:
 	.size	oled_fill,__oled_fill_function_end-oled_fill
-.L147:
+.L119:
 	; End of function
 	
 	.sdecl	'.text.SEEKFREE_OLED.oled_putpixel',code,cluster('oled_putpixel')
@@ -908,54 +849,47 @@ __oled_fill_function_end:
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   254  //-------------------------------------------------------------------------------------------------------------------
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   255  void oled_putpixel(uint8 x,uint8 y,uint8 data1)
 ; Function oled_putpixel
-.L115:
+.L85:
 oled_putpixel:	.type	func
 	mov	d15,d4
-.L370:
-	mov	e8,d6,d5
-.L371:
+.L353:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   256  {
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   257  	oled_set_pos(x,y);
-	mov	e4,d8,d15
-.L369:
+	mov	e8,d6,d5
 	call	oled_set_pos
-.L368:
+.L352:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   258      oled_wrcmd(0xb0+y);
 	add	d0,d8,#176
-.L372:
+.L354:
 	extr.u	d4,d0,#0,#8
 	call	oled_wrcmd
-.L560:
+.L523:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   259  	oled_wrcmd(((x&0xf0)>>4)|0x10);
 	and	d0,d15,#240
-.L561:
+.L524:
 	sha	d0,#-4
-.L562:
+.L525:
 	or	d4,d0,#16
 	call	oled_wrcmd
-.L563:
+.L526:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   260  	oled_wrcmd((x&0x0f)|0x00);
 	and	d4,d15,#15
 	call	oled_wrcmd
-.L373:
+.L355:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   261  	oled_wrdat(data1);
 	mov	d4,d9
-.L374:
-	call	oled_wrdat
-.L375:
-
-; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   262  }
-	ret
-.L233:
+.L356:
+	j	oled_wrdat
+.L220:
 	
 __oled_putpixel_function_end:
 	.size	oled_putpixel,__oled_putpixel_function_end-oled_putpixel
-.L157:
+.L129:
 	; End of function
 	
 	.sdecl	'.text.SEEKFREE_OLED.oled_clrpixel',code,cluster('oled_clrpixel')
@@ -964,6 +898,7 @@ __oled_putpixel_function_end:
 	
 	.global	oled_clrpixel
 
+; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   262  }
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   263  
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   264  //-------------------------------------------------------------------------------------------------------------------
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   265  //  @brief      OLED关闭一个坐标所有亮点
@@ -975,52 +910,45 @@ __oled_putpixel_function_end:
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   271  //-------------------------------------------------------------------------------------------------------------------
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   272  void oled_clrpixel(uint8 x,uint8 y)
 ; Function oled_clrpixel
-.L117:
+.L87:
 oled_clrpixel:	.type	func
 	mov	d15,d4
-.L377:
-	mov	d8,d5
-.L378:
+.L358:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   273  {
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   274  	oled_set_pos(x,y);
-	mov	e4,d8,d15
-.L376:
+	mov	d8,d5
 	call	oled_set_pos
-.L568:
+.L357:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   275      oled_wrcmd(0xb0+y);
 	add	d0,d8,#176
 	extr.u	d4,d0,#0,#8
 	call	oled_wrcmd
-.L569:
+.L531:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   276  	oled_wrcmd(((x&0xf0)>>4)|0x10);
 	and	d0,d15,#240
-.L570:
+.L532:
 	sha	d0,#-4
-.L571:
+.L533:
 	or	d4,d0,#16
 	call	oled_wrcmd
-.L572:
+.L534:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   277  	oled_wrcmd((x&0x0f)|0x00);
 	and	d4,d15,#15
 	call	oled_wrcmd
-.L573:
+.L535:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   278  	oled_wrdat(0x00);
 	mov	d4,#0
-	call	oled_wrdat
-.L574:
-
-; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   279  }
-	ret
-.L237:
+	j	oled_wrdat
+.L224:
 	
 __oled_clrpixel_function_end:
 	.size	oled_clrpixel,__oled_clrpixel_function_end-oled_clrpixel
-.L162:
+.L134:
 	; End of function
 	
 	.sdecl	'.text.SEEKFREE_OLED.oled_p6x8str',code,cluster('oled_p6x8str')
@@ -1029,6 +957,7 @@ __oled_clrpixel_function_end:
 	
 	.global	oled_p6x8str
 
+; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   279  }
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   280  
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   281  
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   282  //-------------------------------------------------------------------------------------------------------------------
@@ -1042,94 +971,88 @@ __oled_clrpixel_function_end:
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   290  //-------------------------------------------------------------------------------------------------------------------
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   291  void oled_p6x8str(uint8 x,uint8 y,const int8 ch[])
 ; Function oled_p6x8str
-.L119:
+.L89:
 oled_p6x8str:	.type	func
-	mov	d11,d4
-.L379:
-	mov	d8,d5
-.L380:
 	mov.aa	a12,a4
-.L382:
+.L359:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   292  {
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   293  	uint8 c=0,i=0,j=0;
-	mov	d10,#0
-.L383:
-
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   294  	while (ch[j]!='\0')
-	j	.L24
-.L25:
+	mov	d11,d4
+	ld.bu	d15,[a12]
+.L360:
+	mov	d8,d5
+.L361:
+	mov	d10,#0
+.L363:
+	jeq	d15,#0,.L16
+.L17:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   295  	{
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   296  	  	c =ch[j]-32;
 	addsc.a	a15,a12,d10,#0
-	ld.b	d0,[a15]0
-.L579:
-	add	d0,d0,#-32
-	extr.u	d9,d0,#0,#8
-.L385:
+.L540:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   297  	  	if(x>126){x=0;y++;}
 	mov	d15,#126
-.L580:
-	jge.u	d15,d11,.L26
-.L581:
+.L541:
+	ld.b	d0,[a15]0
+.L542:
+	add	d0,d0,#-32
+	extr.u	d9,d0,#0,#8
+.L365:
+	jge.u	d15,d11,.L18
+.L543:
 	mov	d11,#0
-.L582:
+.L544:
 	add	d8,#1
-.L381:
+.L362:
 	extr.u	d8,d8,#0,#8
-.L26:
+.L18:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   298  	  	oled_set_pos(x,y);
 	mov	e4,d8,d11
 	call	oled_set_pos
-.L583:
+.L545:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   299  	  	for(i=0;i<6;i++)	oled_wrdat(oled_6x8[c][i]);
-	mov	d15,#0
-.L386:
-	j	.L27
-.L28:
-	mul	d0,d9,#6
-.L584:
+	mul	d15,d9,#6
 	movh.a	a15,#@his(oled_6x8)
 	lea	a15,[a15]@los(oled_6x8)
-.L585:
-	addsc.a	a15,a15,d0,#0
-.L586:
+.L546:
 	addsc.a	a15,a15,d15,#0
-	ld.bu	d4,[a15]
+.L547:
+	mov.a	a13,#5
+.L19:
+	ld.bu	d4,[a15+]
 	call	oled_wrdat
-.L587:
-	add	d15,#1
-.L27:
-	jlt.u	d15,#6,.L28
-.L588:
+.L548:
+	loop	a13,.L19
+.L549:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   300  	  	x+=6;
-	add	d11,#6
-.L589:
-
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   301  	  	j++;
 	add	d10,#1
-.L384:
+.L364:
 	extr.u	d10,d10,#0,#8
-.L24:
+.L366:
+	add	d11,#6
+.L550:
 	addsc.a	a15,a12,d10,#0
-	ld.b	d15,[a15]0
-.L590:
-	jne	d15,#0,.L25
-.L591:
+	ld.bu	d15,[a15]
+.L551:
+	jne	d15,#0,.L17
+.L16:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   302  	}
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   303  }
 	ret
-.L240:
+.L227:
 	
 __oled_p6x8str_function_end:
 	.size	oled_p6x8str,__oled_p6x8str_function_end-oled_p6x8str
-.L167:
+.L139:
 	; End of function
 	
 	.sdecl	'.text.SEEKFREE_OLED.oled_p8x16str',code,cluster('oled_p8x16str')
@@ -1150,127 +1073,112 @@ __oled_p6x8str_function_end:
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   313  //-------------------------------------------------------------------------------------------------------------------
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   314  void oled_p8x16str(uint8 x,uint8 y,const int8 ch[])
 ; Function oled_p8x16str
-.L121:
+.L91:
 oled_p8x16str:	.type	func
-	mov	e10,d5,d4
 	mov.aa	a12,a4
-.L387:
+.L367:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   315  {
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   316  	uint8 c=0,i=0,j=0;
-	mov	d9,#0
-.L388:
-
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   317  	
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   318  	while (ch[j]!='\0')
-	j	.L29
-.L30:
+	mov	e10,d5,d4
+	ld.bu	d15,[a12]
+.L556:
+	mov	d9,#0
+.L368:
+	jeq	d15,#0,.L20
+.L21:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   319  	{
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   320  	  	c =ch[j]-32;
 	addsc.a	a15,a12,d9,#0
-	ld.b	d0,[a15]0
-.L596:
-	add	d0,d0,#-32
-	extr.u	d12,d0,#0,#8
-.L390:
+.L557:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   321  	  	if(x>120){x=0;y++;}
 	mov	d15,#120
-.L391:
-	jge.u	d15,d10,.L31
-.L392:
+.L558:
+	ld.b	d0,[a15]0
+.L559:
+	add	d0,d0,#-32
+	extr.u	d8,d0,#0,#8
+.L370:
+	jge.u	d15,d10,.L22
+.L372:
 	mov	d10,#0
-.L393:
+.L373:
 	add	d0,d11,#1
-.L395:
+.L375:
 	extr.u	d11,d0,#0,#8
-.L31:
+.L22:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   322  		
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   323  	  	oled_set_pos(x,y);
 	mov	e4,d11,d10
-.L394:
 	call	oled_set_pos
-.L597:
+.L374:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   324  	  	for(i=0;i<8;i++)	oled_wrdat(oled_8x16[c*16+i]);
-	mov	d8,#0
-.L396:
-	j	.L32
-.L33:
-	mov	d15,#16
-.L598:
-	madd	d15,d8,d12,d15
-.L599:
+	sha	d8,#4
 	movh.a	a15,#@his(oled_8x16)
+.L371:
 	lea	a15,[a15]@los(oled_8x16)
-.L600:
-	addsc.a	a15,a15,d15,#0
-	ld.bu	d4,[a15]
+	addsc.a	a15,a15,d8,#0
+.L560:
+	mov.a	a14,#7
+.L561:
+	mov.aa	a13,a15
+.L23:
+	ld.bu	d4,[a13+]
 	call	oled_wrdat
-.L601:
-	add	d8,#1
-.L32:
-	jlt.u	d8,#8,.L33
-.L397:
+.L562:
+	loop	a14,.L23
+.L376:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   325  	  	  
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   326  	  	oled_set_pos(x,y+1);
 	add	d15,d11,#1
-.L398:
+.L377:
 	extr.u	d5,d15,#0,#8
-.L399:
+.L378:
 	mov	d4,d10
-.L400:
 	call	oled_set_pos
-.L401:
+.L379:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   327  	  	for(i=0;i<8;i++)	oled_wrdat(oled_8x16[c*16+i+8]);
-	mov	d8,#0
-.L602:
-	j	.L34
-.L35:
-	mov	d15,#16
-.L603:
-	madd	d15,d8,d12,d15
-.L604:
-	movh.a	a15,#@his(oled_8x16)
-	lea	a15,[a15]@los(oled_8x16)
-.L605:
-	addsc.a	a15,a15,d15,#0
-	ld.bu	d4,[a15]8
+	lea	a15,[a15]8
+.L563:
+	mov.a	a13,#7
+.L24:
+	ld.bu	d4,[a15+]
 	call	oled_wrdat
-.L606:
-	add	d8,#1
-.L34:
-	jlt.u	d8,#8,.L35
-.L402:
+.L564:
+	loop	a13,.L24
+.L565:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   328  	  	  
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   329  	  	x+=8;
-	add	d10,d10,#8
-.L607:
-
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   330  	  	j++;
 	add	d9,#1
-.L389:
+.L369:
 	extr.u	d9,d9,#0,#8
-.L29:
+.L380:
+	add	d10,d10,#8
+.L566:
 	addsc.a	a15,a12,d9,#0
-	ld.b	d15,[a15]0
-.L608:
-	jne	d15,#0,.L30
-.L609:
+	ld.bu	d15,[a15]
+.L567:
+	jne	d15,#0,.L21
+.L20:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   331  	}
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   332  }
 	ret
-.L248:
+.L235:
 	
 __oled_p8x16str_function_end:
 	.size	oled_p8x16str,__oled_p8x16str_function_end-oled_p8x16str
-.L172:
+.L144:
 	; End of function
 	
 	.sdecl	'.text.SEEKFREE_OLED.oled_uint16',code,cluster('oled_uint16')
@@ -1291,40 +1199,33 @@ __oled_p8x16str_function_end:
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   342  //-------------------------------------------------------------------------------------------------------------------
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   343  void oled_uint16(uint8 x, uint8 y, uint16 num)
 ; Function oled_uint16
-.L123:
+.L93:
 oled_uint16:	.type	func
-	sub.a	a10,#8
-.L403:
 	mov	d15,d4
-.L406:
-	mov	d8,d5
-.L407:
+	sub.a	a10,#8
+.L381:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   344  {
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   345  	int8 ch[7];
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   346  	
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   347  	oled_hexascii(num,ch);
-	lea	a4,[a10]0
+	mov	d8,d5
+	mov.aa	a4,a10
+.L383:
 	mov	d4,d6
-.L405:
 	call	oled_hexascii
-.L404:
+.L382:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   348      
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   349      oled_p6x8str(x, y, &ch[1]);	    //显示数字  6*8字体
-	lea	a4,[a10]1
 	mov	e4,d8,d15
-	call	oled_p6x8str
-.L614:
-
-; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   350      //oled_p8x16str(x, y, &ch[1]);	//显示数字  8*16字体
-; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   351  }
-	ret
-.L255:
+	lea	a4,[a10]1
+	j	oled_p6x8str
+.L242:
 	
 __oled_uint16_function_end:
 	.size	oled_uint16,__oled_uint16_function_end-oled_uint16
-.L177:
+.L149:
 	; End of function
 	
 	.sdecl	'.text.SEEKFREE_OLED.oled_int16',code,cluster('oled_int16')
@@ -1333,6 +1234,8 @@ __oled_uint16_function_end:
 	
 	.global	oled_int16
 
+; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   350      //oled_p8x16str(x, y, &ch[1]);	//显示数字  8*16字体
+; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   351  }
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   352  
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   353  //-------------------------------------------------------------------------------------------------------------------
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   354  //  @brief      OLED显示有符号数(6*8字体)
@@ -1345,72 +1248,57 @@ __oled_uint16_function_end:
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   361  //-------------------------------------------------------------------------------------------------------------------
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   362  void oled_int16(uint8 x, uint8 y, int16 num)
 ; Function oled_int16
-.L125:
+.L95:
 oled_int16:	.type	func
-	sub.a	a10,#8
-.L408:
-	mov	d15,d4
-.L411:
 	mov	e8,d6,d5
-.L413:
+	sub.a	a10,#8
+.L384:
+	mov	d15,d4
+.L387:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   363  {
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   364  	int8 ch[7];
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   365  	if(num<0)   {num = -num;oled_p6x8str(x, y, "-");}
-	jge	d9,#0,.L36
-.L619:
+	jge	d9,#0,.L25
+.L576:
 	rsub	d9,#0
-.L409:
-	extr	d9,d9,#0,#16
-.L620:
 	movh.a	a4,#@his(.2.str)
+.L385:
+	extr	d9,d9,#0,#16
 	lea	a4,[a4]@los(.2.str)
-.L414:
-	mov	e4,d8,d15
-.L410:
-	call	oled_p6x8str
-.L621:
-	j	.L37
-.L36:
+.L577:
+	j	.L26
+.L25:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   366  	else         oled_p6x8str(x, y, " ");
 	movh.a	a4,#@his(.3.str)
 	lea	a4,[a4]@los(.3.str)
-.L416:
-	mov	e4,d8,d15
-.L415:
+.L26:
 	call	oled_p6x8str
-.L37:
+.L386:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   367  	x+=6;       
-	add	d15,#6
-.L412:
-	extr.u	d15,d15,#0,#8
-.L417:
-
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   368      
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   369  	oled_hexascii(num,ch);
+	add	d15,#6
+	mov.aa	a4,a10
+.L388:
+	extr.u	d15,d15,#0,#8
+.L389:
 	extr.u	d4,d9,#0,#16
-.L418:
-	lea	a4,[a10]0
 	call	oled_hexascii
-.L622:
+.L390:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   370      oled_p6x8str(x, y, &ch[1]);	    //显示数字  6*8字体
-	lea	a4,[a10]1
-.L419:
 	mov	e4,d8,d15
-.L420:
-	call	oled_p6x8str
-.L623:
-
-; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   371  }
-	ret
-.L262:
+	lea	a4,[a10]1
+.L391:
+	j	oled_p6x8str
+.L249:
 	
 __oled_int16_function_end:
 	.size	oled_int16,__oled_int16_function_end-oled_int16
-.L182:
+.L154:
 	; End of function
 	
 	.sdecl	'.text.SEEKFREE_OLED.oled_printf_int32',code,cluster('oled_printf_int32')
@@ -1419,6 +1307,7 @@ __oled_int16_function_end:
 	
 	.global	oled_printf_int32
 
+; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   371  }
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   372  
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   373  //-------------------------------------------------------------------------------------------------------------------
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   374  //  @brief      OLED显示32位有符号(去除整数部分无效的0)
@@ -1433,110 +1322,97 @@ __oled_int16_function_end:
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   383  //-------------------------------------------------------------------------------------------------------------------
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   384  void oled_printf_int32(uint16 x,uint16 y,int32 dat,uint8 num)
 ; Function oled_printf_int32
-.L127:
+.L97:
 oled_printf_int32:	.type	func
-	sub.a	a10,#40
-.L421:
-	mov	e8,d5,d4
-.L628:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   385  {
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   386      int8    buff[34];
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   387      uint32  length;
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   388      
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   389      if(10<num)      num = 10;
-	jlt.u	d7,#11,.L38
-.L629:
-	mov	d7,#10
-.L38:
-
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   390      
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   391      num++;
-	add	d10,d7,#1
-.L423:
-
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   392      if(0>dat)   length = zf_sprintf( &buff[0],"%d",dat);//负数
-	jge	d6,#0,.L39
-.L630:
-	st.w	[a10],d6
-.L631:
-	lea	a4,[a10]4
-.L632:
+	min.u	d15,d7,#10
 	movh.a	a5,#@his(.4.str)
+.L582:
+	mov	e8,d5,d4
 	lea	a5,[a5]@los(.4.str)
+.L583:
+	add	d10,d15,#1
+	sub.a	a10,#40
+.L392:
+	jge	d6,#0,.L27
+.L584:
+	st.w	[a10],d6
+.L585:
+	lea	a4,[a10]4
+.L586:
 	call	zf_sprintf
-.L422:
-	j	.L40
-.L39:
+.L393:
+	j	.L28
+.L27:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   393      else
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   394      {
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   395          buff[0] = ' ';
 	mov	d15,#32
-.L633:
 	st.b	[a10]4,d15
-.L634:
+.L587:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   396          length = zf_sprintf( &buff[1],"%d",dat);
 	st.w	[a10],d6
-.L635:
+.L588:
 	lea	a4,[a10]5
-.L636:
-	movh.a	a5,#@his(.4.str)
-	lea	a5,[a5]@los(.4.str)
+.L589:
 	call	zf_sprintf
-.L424:
+.L394:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   397          length++;
 	add	d2,#1
-.L40:
+.L28:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   398      }
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   399      while(length < num)
-	j	.L41
-.L42:
-
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   400      {
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   401          buff[length] = ' ';
 	addsc.a	a15,a10,d2,#0
-.L637:
+.L590:
 	mov	d15,#32
-.L638:
-	st.b	[a15]4,d15
-.L639:
+.L591:
+	lea	a15,[a15]4
+.L592:
+	j	.L29
+.L30:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   402          length++;
 	add	d2,#1
-.L41:
-	jlt.u	d2,d10,.L42
-.L640:
+	st.b	[a15+],d15
+.L29:
+	jlt.u	d2,d10,.L30
+.L593:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   403      }
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   404      buff[num] = '\0';
 	addsc.a	a15,a10,d10,#0
-.L641:
-	mov	d15,#0
-.L642:
-	st.b	[a15]4,d15
-.L426:
+.L395:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   405      
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   406      oled_p6x8str((uint8)x, (uint8)y, buff);	//显示数字
 	extr.u	d4,d8,#0,#8
-.L427:
-	extr.u	d5,d9,#0,#8
-.L428:
 	lea	a4,[a10]4
-	call	oled_p6x8str
-.L425:
-
-; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   407  }
-	ret
-.L268:
+.L396:
+	extr.u	d5,d9,#0,#8
+.L397:
+	mov	d15,#0
+	st.b	[a15]4,d15
+.L594:
+	j	oled_p6x8str
+.L255:
 	
 __oled_printf_int32_function_end:
 	.size	oled_printf_int32,__oled_printf_int32_function_end-oled_printf_int32
-.L187:
+.L159:
 	; End of function
 	
 	.sdecl	'.text.SEEKFREE_OLED.oled_printf_float',code,cluster('oled_printf_float')
@@ -1545,6 +1421,7 @@ __oled_printf_int32_function_end:
 	
 	.global	oled_printf_float
 
+; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   407  }
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   408  
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   409  //-------------------------------------------------------------------------------------------------------------------
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   410  //  @brief      OLED显示浮点数(去除整数部分无效的0)
@@ -1563,14 +1440,11 @@ __oled_printf_int32_function_end:
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   423  //-------------------------------------------------------------------------------------------------------------------
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   424  void oled_printf_float(uint16 x,uint16 y,double dat,uint8 num,uint8 pointnum)
 ; Function oled_printf_float
-.L129:
+.L99:
 oled_printf_float:	.type	func
+	mov	d12,d6
 	sub.a	a10,#40
-.L429:
-	mov	e8,d5,d4
-	mov	e10,d7,d6
-	ld.bu	d12,[a10]40
-.L431:
+.L398:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   425  {
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   426      uint32  length;
@@ -1578,150 +1452,131 @@ oled_printf_float:	.type	func
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   428  	int8    start,end,point;
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   429  
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   430  	if(6<pointnum)  pointnum = 6;
-	jlt.u	d12,#7,.L43
-.L647:
-	mov	d12,#6
-.L43:
-
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   431      if(10<num)      num = 10;
-	jlt.u	d11,#11,.L44
-.L432:
-	mov	d11,#10
-.L44:
-
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   432          
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   433      if(0>dat)   length = zf_sprintf( &buff[0],"%f",dat);//负数
-	mov	d0,#0
-.L433:
-	cmp.f	d15,d10,d0
-.L434:
-	jnz.t	d15:0,.L45
-.L435:
+	mov	d13,#0
+	ld.bu	d15,[a10]40
+.L401:
+	mov	e10,d5,d4
+	movh.a	a5,#@his(.5.str)
+.L599:
+	min.u	d8,d15,#6
+	lea	a5,[a5]@los(.5.str)
+.L402:
+	cmp.f	d15,d12,d13
+.L600:
+	min.u	d9,d7,#10
+.L400:
+	jnz.t	d15:0,.L31
+.L601:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   434      else
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   435      {
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   436          length = zf_sprintf( &buff[1],"%f",dat);
-	st.w	[a10],d10
-.L436:
+	st.w	[a10],d12
+.L602:
 	lea	a4,[a10]5
-.L648:
-	movh.a	a5,#@his(.5.str)
-	lea	a5,[a5]@los(.5.str)
+.L603:
 	call	zf_sprintf
-.L430:
+.L399:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   437          length++;
 	add	d2,#1
-.L649:
-	j	.L46
-.L45:
-	st.w	[a10],d10
-.L437:
+	j	.L32
+.L31:
+	st.w	[a10],d12
+.L604:
 	lea	a4,[a10]4
-.L650:
-	movh.a	a5,#@his(.5.str)
-	lea	a5,[a5]@los(.5.str)
+.L605:
 	call	zf_sprintf
-.L46:
+.L32:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   438      }
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   439      point = (int8)(length - 7);         //计算小数点位置
 	add	d2,#-7
-.L438:
+.L404:
 	extr	d15,d2,#0,#8
-.L439:
+.L405:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   440      start = point - num - 1;    //计算起始位
-	sub	d0,d15,d11
-.L440:
-	add	d0,#-1
-	extr	d0,d0,#0,#8
-.L442:
-
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   441      end = point + pointnum + 1; //计算结束位
-	add	d15,d12
-.L441:
-	add	d15,#1
-	extr	d1,d15,#0,#8
-.L444:
+	add	d8,d15
+.L403:
+	add	d8,#1
+	extr	d1,d8,#0,#8
+.L406:
+	sub	d0,d15,d9
+.L606:
+	add	d0,#-1
+.L607:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   442      while(0>start)//整数位不够  末尾应该填充空格
-	j	.L47
-.L48:
-
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   443      {
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   444          buff[end] = ' ';
 	addsc.a	a15,a10,d1,#0
-.L651:
+.L608:
+	extr	d0,d0,#0,#8
+.L408:
+	lea	a15,[a15]4
+.L609:
 	mov	d15,#32
-.L652:
-	st.b	[a15]4,d15
-.L653:
+	j	.L33
+.L34:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   445          end++;
 	add	d1,#1
-.L445:
+	st.b	[a15+],d15
+.L407:
 	extr	d1,d1,#0,#8
-.L446:
+.L409:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   446          start++;
 	add	d0,#1
-.L47:
-	jlt	d0,#0,.L48
-.L654:
+.L33:
+	jlt	d0,#0,.L34
+.L610:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   447      }
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   448      
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   449      if(0>dat)   buff[start] = '-';
-	mov	d15,#0
-.L447:
-	cmp.f	d15,d10,d15
-.L448:
-	jnz.t	d15:0,.L49
-.L655:
+	addsc.a	a15,a10,d0,#0
+.L611:
+	cmp.f	d15,d12,d13
+.L612:
+	lea	a15,[a15]4
+.L613:
+	jnz.t	d15:0,.L35
+.L614:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   450      else        buff[start] = ' ';
-	addsc.a	a15,a10,d0,#0
-.L656:
 	mov	d15,#32
-.L657:
-	st.b	[a15]4,d15
-.L658:
-	j	.L50
-.L49:
-	addsc.a	a15,a10,d0,#0
-.L659:
+	j	.L36
+.L35:
 	mov	d15,#45
-.L660:
-	st.b	[a15]4,d15
-.L50:
+.L36:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   451      
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   452      buff[end] = '\0';
-	addsc.a	a15,a10,d1,#0
-.L661:
-	mov	d15,#0
-.L662:
-	st.b	[a15]4,d15
-.L449:
-
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   453      
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   454      oled_p6x8str((uint8)x, (uint8)y, buff);	//显示数字
-	extr.u	d4,d8,#0,#8
-.L450:
-	extr.u	d5,d9,#0,#8
-.L451:
+	extr.u	d4,d10,#0,#8
+	st.b	[a15],d15
+.L410:
+	addsc.a	a15,a10,d1,#0
+.L411:
+	extr.u	d5,d11,#0,#8
 	lea	a4,[a10]4
-	call	oled_p6x8str
-.L443:
-
-; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   455  }
-	ret
-.L278:
+.L412:
+	mov	d15,#0
+	st.b	[a15]4,d15
+.L615:
+	j	oled_p6x8str
+.L265:
 	
 __oled_printf_float_function_end:
 	.size	oled_printf_float,__oled_printf_float_function_end-oled_printf_float
-.L192:
+.L164:
 	; End of function
 	
 	.sdecl	'.text.SEEKFREE_OLED.oled_dis_bmp',code,cluster('oled_dis_bmp')
@@ -1730,6 +1585,7 @@ __oled_printf_float_function_end:
 	
 	.global	oled_dis_bmp
 
+; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   455  }
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   456  
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   457  
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   458  
@@ -1747,16 +1603,8 @@ __oled_printf_float_function_end:
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   470  //-------------------------------------------------------------------------------------------------------------------
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   471  void oled_dis_bmp(uint16 high, uint16 width, uint8 *p,uint8 value)
 ; Function oled_dis_bmp
-.L131:
+.L101:
 oled_dis_bmp:	.type	func
-	sub.a	a10,#8
-.L452:
-	mov	d8,d5
-.L453:
-	mov.aa	a12,a4
-.L454:
-	mov	d9,d6
-.L455:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   472  {
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   473      int16 i,j;
@@ -1765,371 +1613,216 @@ oled_dis_bmp:	.type	func
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   476      
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   477      
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   478      temp1 = high%8;
-	mov	d15,#8
-.L667:
-	div	e10,d4,d15
-.L456:
-
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   479      if(temp1 == 0) temp = high/8;
-	jne	d11,#0,.L51
-.L668:
-	mov	d15,#8
-.L669:
-	div	e0,d4,d15
-	st.d	[a10]0,e0
-.L670:
-	j	.L52
-.L51:
-
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   480      else           temp = high/8+1;
-	mov	d15,#8
-.L671:
-	div	e0,d4,d15
-.L672:
-	add	d15,d0,#1
-	st.w	[a10],d15
-.L52:
-
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   481  
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   482      for(i=0; i<temp; i++)
-	mov	d12,#0
-.L457:
-	j	.L53
-.L54:
+	and	d12,d4,#7
+	mov.aa	a12,a4
+.L414:
+	sha	d4,#-3
+.L413:
+	caddn	d4,d12,d4,#-1
+.L620:
+	mov	e10,d6,d5
+.L621:
+	add	d8,d4,#1
+.L416:
+	mov	d9,#0
+	j	.L37
+.L38:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   483      {
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   484          oled_set_pos(0,(uint8)i);
 	mov	d4,#0
-.L673:
-	extr.u	d5,d12,#0,#8
+.L622:
+	extr.u	d5,d9,#0,#8
 	call	oled_set_pos
-.L674:
+.L623:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   485          for(j=0; j<width; j++)
 	mov	d13,#0
-.L459:
-	j	.L55
-.L56:
+	mov.aa	a13,a12
+.L417:
+	addsc.a	a12,a12,d10,#3
+.L418:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   486          {
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   487              dat = 0;
-	mov	d0,#0
-.L461:
-
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   488              dat |= (*(p+i*8*width+j+width*0) > value? 1: 0)<<0;
-	mul	d1,d12,#8
-.L675:
-	mul	d1,d8
-.L676:
-	addsc.a	a15,a12,d1,#0
-.L677:
-	addsc.a	a15,a15,d13,#0
-.L678:
-	ld.bu	d15,[a15]
-	jge.u	d9,d15,.L57
-.L679:
-	mov	d15,#1
-.L680:
-	j	.L58
-.L57:
-	mov	d15,#0
-.L58:
-	or	d0,d15
-.L681:
-
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   489              if( i<(temp-1) || !temp1 || temp1>=2)dat |= (*(p+i*8*width+j+width*1) > value? 1: 0)<<1;
-	ld.w	d15,[a10]
-	add	d15,#-1
-.L682:
-	jlt	d12,d15,.L59
-.L683:
-	jeq	d11,#0,.L60
-.L684:
-	jlt	d11,#2,.L61
-.L60:
-.L59:
-	mul	d15,d8,#1
-.L685:
-	mul	d1,d12,#8
-.L686:
-	mul	d1,d8
-.L687:
-	addsc.a	a15,a12,d1,#0
-.L688:
-	addsc.a	a15,a15,d13,#0
-.L689:
-	addsc.a	a15,a15,d15,#0
-.L690:
-	ld.bu	d15,[a15]
-	jge.u	d9,d15,.L62
-.L691:
-	mov	d15,#1
-.L692:
-	j	.L63
-.L62:
-	mov	d15,#0
-.L63:
+	add	d14,d8,#-1
+	j	.L39
+.L40:
+	ld.bu	d0,[a13]
+.L419:
+	lt.u	d4,d11,d0
+.L420:
+	jlt	d9,d14,.L41
+.L624:
+	jeq	d12,#0,.L42
+.L625:
+	jlt	d12,#2,.L43
+.L42:
+.L41:
+	addsc.a	a15,a13,d10,#0
+.L626:
+	fcall	.cocofun_7
+.L415:
 	sha	d15,#1
-.L693:
-	or	d0,d15
-.L61:
+.L428:
+	or	d4,d15
+.L43:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   490              if( i<(temp-1) || !temp1 || temp1>=3)dat |= (*(p+i*8*width+j+width*2) > value? 1: 0)<<2;
-	ld.w	d15,[a10]
-	add	d15,#-1
-.L694:
-	jlt	d12,d15,.L64
-.L695:
-	jeq	d11,#0,.L65
-.L696:
-	jlt	d11,#3,.L66
-.L65:
-.L64:
-	mul	d15,d8,#2
-.L697:
-	mul	d1,d12,#8
-.L698:
-	mul	d1,d8
-.L699:
-	addsc.a	a15,a12,d1,#0
-.L700:
-	addsc.a	a15,a15,d13,#0
-.L701:
-	addsc.a	a15,a15,d15,#0
-.L702:
-	ld.bu	d15,[a15]
-	jge.u	d9,d15,.L67
-.L703:
-	mov	d15,#1
-.L704:
-	j	.L68
-.L67:
-	mov	d15,#0
-.L68:
+	jlt	d9,d14,.L44
+.L627:
+	jeq	d12,#0,.L45
+.L628:
+	jlt	d12,#3,.L46
+.L45:
+.L44:
+	addsc.a	a15,a13,d10,#1
+.L629:
+	fcall	.cocofun_7
+.L422:
 	sha	d15,#2
-.L705:
-	or	d0,d15
-.L66:
+.L630:
+	or	d4,d15
+.L46:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   491              if( i<(temp-1) || !temp1 || temp1>=4)dat |= (*(p+i*8*width+j+width*3) > value? 1: 0)<<3;
-	ld.w	d15,[a10]
-	add	d15,#-1
-.L706:
-	jlt	d12,d15,.L69
-.L707:
-	jeq	d11,#0,.L70
-.L708:
-	jlt	d11,#4,.L71
-.L70:
-.L69:
-	mul	d15,d8,#3
-.L709:
-	mul	d1,d12,#8
-.L710:
-	mul	d1,d8
-.L711:
-	addsc.a	a15,a12,d1,#0
-.L712:
-	addsc.a	a15,a15,d13,#0
-.L713:
-	addsc.a	a15,a15,d15,#0
-.L714:
-	ld.bu	d15,[a15]
-	jge.u	d9,d15,.L72
-.L715:
-	mov	d15,#1
-.L716:
-	j	.L73
-.L72:
-	mov	d15,#0
-.L73:
+	jlt	d9,d14,.L47
+.L631:
+	jeq	d12,#0,.L48
+.L632:
+	jlt	d12,#4,.L49
+.L48:
+.L47:
+	mul	d15,d10,#3
+.L423:
+	addsc.a	a15,a13,d15,#0
+.L633:
+	fcall	.cocofun_7
+.L634:
 	sha	d15,#3
-.L717:
-	or	d0,d15
-.L71:
+.L635:
+	or	d4,d15
+.L49:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   492              if( i<(temp-1) || !temp1 || temp1>=5)dat |= (*(p+i*8*width+j+width*4) > value? 1: 0)<<4;
-	ld.w	d15,[a10]
-	add	d15,#-1
-.L718:
-	jlt	d12,d15,.L74
-.L719:
-	jeq	d11,#0,.L75
-.L720:
-	jlt	d11,#5,.L76
-.L75:
-.L74:
-	mul	d15,d8,#4
-.L721:
-	mul	d1,d12,#8
-.L722:
-	mul	d1,d8
-.L723:
-	addsc.a	a15,a12,d1,#0
-.L724:
-	addsc.a	a15,a15,d13,#0
-.L725:
-	addsc.a	a15,a15,d15,#0
-.L726:
-	ld.bu	d15,[a15]
-	jge.u	d9,d15,.L77
-.L727:
-	mov	d15,#1
-.L728:
-	j	.L78
-.L77:
-	mov	d15,#0
-.L78:
+	jlt	d9,d14,.L50
+.L636:
+	jeq	d12,#0,.L51
+.L637:
+	jlt	d12,#5,.L52
+.L51:
+.L50:
+	addsc.a	a15,a13,d10,#2
+.L638:
+	fcall	.cocofun_7
+.L424:
 	sha	d15,#4
-.L729:
-	or	d0,d15
-.L76:
+.L639:
+	or	d4,d15
+.L52:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   493              if( i<(temp-1) || !temp1 || temp1>=6)dat |= (*(p+i*8*width+j+width*5) > value? 1: 0)<<5;
-	ld.w	d15,[a10]
-	add	d15,#-1
-.L730:
-	jlt	d12,d15,.L79
-.L731:
-	jeq	d11,#0,.L80
-.L732:
-	jlt	d11,#6,.L81
-.L80:
-.L79:
-	mul	d15,d8,#5
-.L733:
-	mul	d1,d12,#8
-.L734:
-	mul	d1,d8
-.L735:
-	addsc.a	a15,a12,d1,#0
-.L736:
-	addsc.a	a15,a15,d13,#0
-.L737:
-	addsc.a	a15,a15,d15,#0
-.L738:
-	ld.bu	d15,[a15]
-	jge.u	d9,d15,.L82
-.L739:
-	mov	d15,#1
-.L740:
-	j	.L83
-.L82:
-	mov	d15,#0
-.L83:
+	jlt	d9,d14,.L53
+.L640:
+	jeq	d12,#0,.L54
+.L641:
+	jlt	d12,#6,.L55
+.L54:
+.L53:
+	mul	d15,d10,#5
+.L425:
+	addsc.a	a15,a13,d15,#0
+.L642:
+	fcall	.cocofun_7
+.L643:
 	sha	d15,#5
-.L741:
-	or	d0,d15
-.L81:
+.L644:
+	or	d4,d15
+.L55:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   494              if( i<(temp-1) || !temp1 || temp1>=7)dat |= (*(p+i*8*width+j+width*6) > value? 1: 0)<<6;
-	ld.w	d15,[a10]
-	add	d15,#-1
-.L742:
-	jlt	d12,d15,.L84
-.L743:
-	jeq	d11,#0,.L85
-.L744:
-	jlt	d11,#7,.L86
-.L85:
-.L84:
-	mul	d15,d8,#6
-.L745:
-	mul	d1,d12,#8
-.L746:
-	mul	d1,d8
-.L747:
-	addsc.a	a15,a12,d1,#0
-.L748:
-	addsc.a	a15,a15,d13,#0
-.L749:
-	addsc.a	a15,a15,d15,#0
-.L750:
-	ld.bu	d15,[a15]
-	jge.u	d9,d15,.L87
-.L751:
-	mov	d15,#1
-.L752:
-	j	.L88
-.L87:
-	mov	d15,#0
-.L88:
+	jlt	d9,d14,.L56
+.L645:
+	jeq	d12,#0,.L57
+.L646:
+	jlt	d12,#7,.L58
+.L57:
+.L56:
+	mul	d15,d10,#6
+.L426:
+	addsc.a	a15,a13,d15,#0
+.L647:
+	fcall	.cocofun_7
+.L648:
 	sha	d15,#6
-.L753:
-	or	d0,d15
-.L86:
+.L649:
+	or	d4,d15
+.L58:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   495              if( i<(temp-1) || !temp1 || temp1>=8)dat |= (*(p+i*8*width+j+width*7) > value? 1: 0)<<7;
-	ld.w	d15,[a10]
-	add	d15,#-1
-.L754:
-	jlt	d12,d15,.L89
-.L755:
-	jeq	d11,#0,.L90
-.L756:
-	mov	d15,#8
-.L757:
-	jlt	d11,d15,.L91
-.L90:
-.L89:
-	mul	d15,d8,#7
-.L758:
-	mul	d1,d12,#8
-.L759:
-	mul	d1,d8
-.L760:
-	addsc.a	a15,a12,d1,#0
-.L761:
-	addsc.a	a15,a15,d13,#0
-.L762:
-	addsc.a	a15,a15,d15,#0
-.L763:
-	ld.bu	d15,[a15]
-	jge.u	d9,d15,.L92
-.L764:
-	mov	d15,#1
-.L765:
-	j	.L93
-.L92:
-	mov	d15,#0
-.L93:
+	jlt	d9,d14,.L59
+.L650:
+	jne	d12,#0,.L60
+.L59:
+	mul	d15,d10,#7
+.L427:
+	addsc.a	a15,a13,d15,#0
+.L651:
+	fcall	.cocofun_7
+.L652:
 	sha	d15,#7
-.L766:
-	or	d0,d15
-.L91:
+.L653:
+	or	d4,d15
+.L60:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   496             
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   497              oled_wrdat(dat);
-	mov	d4,d0
-.L463:
 	call	oled_wrdat
-.L462:
+.L429:
 	add	d13,#1
-.L460:
+	add.a	a13,#1
+.L431:
 	extr	d13,d13,#0,#16
-.L55:
-	jlt	d13,d8,.L56
-.L767:
-	add	d12,#1
-.L458:
-	extr	d12,d12,#0,#16
-.L53:
-	ld.w	d15,[a10]
-.L464:
-	jlt	d12,d15,.L54
-.L768:
+.L39:
+	jlt	d13,d10,.L40
+.L432:
+	add	d9,#1
+.L430:
+	extr	d9,d9,#0,#16
+.L37:
+	jlt	d9,d8,.L38
+.L654:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   498          }
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   499      }
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   500  }
 	ret
-.L291:
+.L278:
 	
 __oled_dis_bmp_function_end:
 	.size	oled_dis_bmp,__oled_dis_bmp_function_end-oled_dis_bmp
-.L197:
+.L169:
 	; End of function
 	
+	.sdecl	'.text.SEEKFREE_OLED..cocofun_7',code,cluster('.cocofun_7')
+	.sect	'.text.SEEKFREE_OLED..cocofun_7'
+	.align	2
+; Function .cocofun_7
+.L103:
+.cocofun_7:	.type	func
+; Function body .cocofun_7, coco_iter:0
+	ld.bu	d15,[a15]
+.L421:
+	lt.u	d15,d11,d15
+	fret
+.L204:
+	; End of function
 	.sdecl	'.text.SEEKFREE_OLED.oled_print_chinese',code,cluster('oled_print_chinese')
 	.sect	'.text.SEEKFREE_OLED.oled_print_chinese'
 	.align	2
@@ -2151,92 +1844,78 @@ __oled_dis_bmp_function_end:
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   513  //-------------------------------------------------------------------------------------------------------------------
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   514  void oled_print_chinese(uint8 x, uint8 y, uint8 size, const uint8 *p, uint8 len)
 ; Function oled_print_chinese
-.L133:
+.L105:
 oled_print_chinese:	.type	func
 	mov	e8,d5,d4
 	mov	d10,d6
-.L465:
 	mov.aa	a15,a4
-.L466:
+.L433:
 	mov	d12,d7
-.L467:
+.L434:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   515  {
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   516      int16 i,j,k;
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   517      
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   518      for(i=0; i<len; i++)
 	mov	d11,#0
-.L468:
-	j	.L94
-.L95:
+.L435:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   519      {
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   520          for(j=0; j<(size/8); j++)
-	mov	d13,#0
-.L470:
-	j	.L96
-.L97:
+	sha	d13,d10,#-3
+	j	.L61
+.L62:
+	mov	d15,#0
+	j	.L63
+.L64:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   521          {
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   522              oled_set_pos(x+i*size,y+j);
 	madd	d0,d8,d11,d10
-.L472:
+.L438:
 	extr.u	d4,d0,#0,#8
-.L473:
-	add	d15,d9,d13
-.L474:
-	extr.u	d5,d15,#0,#8
+.L439:
+	add	d0,d15,d9
+.L440:
+	extr.u	d5,d0,#0,#8
 	call	oled_set_pos
-.L773:
+.L659:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   523              for(k=0; k<16; k++)
-	mov	d14,#0
-.L475:
-	j	.L98
-.L99:
+	mov.a	a12,#15
+.L65:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   524              {
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   525                  oled_wrdat(*p);
-	ld.bu	d4,[a15]
+	ld.bu	d4,[a15+]
 	call	oled_wrdat
-.L774:
+.L660:
+	loop	a12,.L65
+.L661:
+	add	d15,#1
+.L437:
+	extr	d15,d15,#0,#16
+.L63:
+	jlt	d15,d13,.L64
+.L662:
+	add	d11,#1
+.L436:
+	extr	d11,d11,#0,#16
+.L61:
+	jlt	d11,d12,.L62
+.L663:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   526                  p++;
-	add.a	a15,#1
-.L775:
-	add	d14,#1
-.L98:
-	mov	d15,#16
-.L776:
-	jlt	d14,d15,.L99
-.L777:
-	add	d13,#1
-.L471:
-	extr	d13,d13,#0,#16
-.L96:
-	mov	d15,#8
-.L778:
-	div	e0,d10,d15
-.L779:
-	jlt	d13,d0,.L97
-.L780:
-	add	d11,#1
-.L469:
-	extr	d11,d11,#0,#16
-.L94:
-	jlt	d11,d12,.L95
-.L781:
-
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   527              }
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   528          }
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   529      }
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   530  }
 	ret
-.L302:
+.L290:
 	
 __oled_print_chinese_function_end:
 	.size	oled_print_chinese,__oled_print_chinese_function_end-oled_print_chinese
-.L202:
+.L174:
 	; End of function
 	
 	.sdecl	'.rodata.SEEKFREE_OLED..1.str',data,rom
@@ -2323,7 +2002,16 @@ _999001___func__:	.type	object
 	.calls	'oled_dis_bmp','oled_wrdat'
 	.calls	'oled_print_chinese','oled_set_pos'
 	.calls	'oled_print_chinese','oled_wrdat'
+	.calls	'oled_wrdat','.cocofun_8'
+	.calls	'oled_wrdat','.cocofun_6'
+	.calls	'oled_wr6dat','.cocofun_8'
+	.calls	'oled_wr6dat','.cocofun_6'
+	.calls	'oled_wrcmd','.cocofun_8'
+	.calls	'oled_wrcmd','.cocofun_6'
+	.calls	'oled_dis_bmp','.cocofun_7'
 	.calls	'oled_wrdat','',0
+	.calls	'.cocofun_8','',0
+	.calls	'.cocofun_6','',0
 	.calls	'oled_wr6dat','',0
 	.calls	'oled_wrcmd','',0
 	.calls	'oled_hexascii','',0
@@ -2338,7 +2026,8 @@ _999001___func__:	.type	object
 	.calls	'oled_int16','',8
 	.calls	'oled_printf_int32','',40
 	.calls	'oled_printf_float','',40
-	.calls	'oled_dis_bmp','',8
+	.calls	'oled_dis_bmp','',0
+	.calls	'.cocofun_7','',0
 	.extern	assert
 	.extern	gpio_init
 	.extern	gpio_set
@@ -2349,17 +2038,17 @@ _999001___func__:	.type	object
 	.calls	'oled_print_chinese','',0
 	.sdecl	'.debug_info',debug
 	.sect	'.debug_info'
-.L135:
+.L107:
 	.word	38827
 	.half	3
-	.word	.L136
+	.word	.L108
 	.byte	4
-.L134:
+.L106:
 	.byte	1
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_OLED.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L137
+	.word	.L109
 	.byte	2,1,1,3
 	.word	169
 	.byte	4
@@ -2368,7 +2057,7 @@ _999001___func__:	.type	object
 	.word	172
 	.byte	6,0,7
 	.byte	'__fract',0,4,128,1
-.L281:
+.L268:
 	.byte	7
 	.byte	'float',0,4,4,8
 	.byte	'Ifx__float_to_fract',0,3,1,152,2,18
@@ -2396,10 +2085,10 @@ _999001___func__:	.type	object
 	.byte	6,0,7
 	.byte	'unsigned int',0,4,7,7
 	.byte	'int',0,4,5
-.L225:
+.L212:
 	.byte	7
 	.byte	'unsigned char',0,1,8
-.L258:
+.L245:
 	.byte	7
 	.byte	'unsigned short int',0,2,7,10
 	.byte	'_Ifx_P_OUT_Bits',0,4,143,3,16,4,11
@@ -3783,7 +3472,7 @@ _999001___func__:	.type	object
 	.byte	'compare',0
 	.word	401
 	.byte	0
-.L287:
+.L274:
 	.byte	7
 	.byte	'char',0,1,6,19
 	.word	8506
@@ -4070,7 +3759,7 @@ _999001___func__:	.type	object
 	.byte	0,17,9,27,9,1,18
 	.byte	'STM0',0,0,18
 	.byte	'STM1',0,1,0
-.L276:
+.L263:
 	.byte	7
 	.byte	'unsigned long int',0,4,7,25
 	.byte	'systick_delay',0,9,34,6,1,1,1,1,5
@@ -4093,37 +3782,37 @@ _999001___func__:	.type	object
 	.byte	29,10,25,48,0,14,13
 	.word	8506
 	.byte	15,12,0
-.L232:
+.L219:
 	.byte	19
 	.word	10965
 	.byte	19
 	.word	8506
-.L243:
+.L230:
 	.byte	3
 	.word	10979
-.L260:
+.L247:
 	.byte	14,7
 	.word	8506
 	.byte	15,6,0
-.L265:
+.L252:
 	.byte	7
 	.byte	'short int',0,2,5
-.L271:
+.L258:
 	.byte	7
 	.byte	'long int',0,4,5
-.L274:
+.L261:
 	.byte	14,34
 	.word	8506
 	.byte	15,33,0
-.L294:
+.L281:
 	.byte	3
 	.word	424
 	.byte	19
 	.word	424
-.L306:
+.L294:
 	.byte	3
 	.word	11037
-.L323:
+.L312:
 	.byte	3
 	.word	8506
 	.byte	24
@@ -8082,7 +7771,7 @@ _999001___func__:	.type	object
 	.byte	1,1,0
 	.sdecl	'.debug_abbrev',debug
 	.sect	'.debug_abbrev'
-.L136:
+.L108:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,16,6,0,0,2,21,0,54,15,39,12,0,0,3,15,0,73,19,0,0,4,46,1,3,8,32,13
 	.byte	58,15,59,15,57,15,54,15,39,12,0,0,5,5,0,3,8,58,15,59,15,57,15,73,19,0,0,6,11,0,0,0,7,36,0,3,8,11,15,62
 	.byte	15,0,0,8,46,1,3,8,32,13,58,15,59,15,57,15,73,19,54,15,39,12,0,0,9,59,0,3,8,0,0,10,19,1,3,8,58,15,59,15
@@ -8095,12 +7784,12 @@ _999001___func__:	.type	object
 	.byte	0,30,21,0,54,15,0,0,31,1,1,73,19,0,0,32,33,0,0,0,33,52,0,3,8,58,15,59,15,57,15,73,19,63,12,60,12,0,0,0
 	.sdecl	'.debug_line',debug
 	.sect	'.debug_line'
-.L137:
-	.word	.L477-.L476
-.L476:
+.L109:
+	.word	.L442-.L441
+.L441:
 	.half	3
-	.word	.L479-.L478
-.L478:
+	.word	.L444-.L443
+.L443:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Std',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Port\\Std',0
@@ -8124,2710 +7813,2725 @@ _999001___func__:	.type	object
 	.byte	'IfxScu_cfg.h',0,6,0,0
 	.byte	'IfxScu_regdef.h',0,3,0,0
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_FONT.h',0,0,0,0,0
-.L479:
-.L477:
+.L444:
+.L442:
 	.sdecl	'.debug_info',debug,cluster('oled_init')
 	.sect	'.debug_info'
-.L138:
+.L110:
 	.word	215
 	.half	3
-	.word	.L139
+	.word	.L111
 	.byte	4,1
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_OLED.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L141,.L140
+	.word	.L113,.L112
 	.byte	2
-	.word	.L134
+	.word	.L106
 	.byte	3
 	.byte	'oled_init',0,1,154,1,6,1,1,1
-	.word	.L109,.L223,.L108
+	.word	.L79,.L210,.L78
 	.byte	4
-	.word	.L109,.L223
+	.word	.L79,.L210
 	.byte	0,0
 	.sdecl	'.debug_abbrev',debug,cluster('oled_init')
 	.sect	'.debug_abbrev'
-.L139:
+.L111:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
 	.sdecl	'.debug_line',debug,cluster('oled_init')
 	.sect	'.debug_line'
-.L140:
-	.word	.L481-.L480
-.L480:
+.L112:
+	.word	.L446-.L445
+.L445:
 	.half	3
-	.word	.L483-.L482
-.L482:
+	.word	.L448-.L447
+.L447:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_OLED.c',0,0,0,0,0
-.L483:
+.L448:
 	.byte	5,13,7,0,5,2
-	.word	.L109
+	.word	.L79
 	.byte	3,155,1,1,5,27,9
-	.half	.L484-.L109
+	.half	.L449-.L79
 	.byte	1,5,31,9
-	.half	.L485-.L484
+	.half	.L450-.L449
 	.byte	1,5,33,9
-	.half	.L486-.L485
+	.half	.L451-.L450
 	.byte	1,5,16,9
-	.half	.L487-.L486
+	.half	.L452-.L451
 	.byte	3,1,1,5,30,9
-	.half	.L488-.L487
+	.half	.L453-.L452
 	.byte	1,5,34,9
-	.half	.L489-.L488
+	.half	.L454-.L453
 	.byte	1,5,36,9
-	.half	.L490-.L489
+	.half	.L455-.L454
 	.byte	1,5,16,9
-	.half	.L491-.L490
+	.half	.L456-.L455
 	.byte	3,1,1,5,30,9
-	.half	.L492-.L491
+	.half	.L457-.L456
 	.byte	1,5,34,9
-	.half	.L493-.L492
+	.half	.L458-.L457
 	.byte	1,5,36,9
-	.half	.L494-.L493
+	.half	.L459-.L458
 	.byte	1,5,16,9
-	.half	.L495-.L494
+	.half	.L460-.L459
 	.byte	3,1,1,5,30,9
-	.half	.L496-.L495
+	.half	.L461-.L460
 	.byte	1,5,34,9
-	.half	.L497-.L496
+	.half	.L462-.L461
 	.byte	1,5,36,9
-	.half	.L498-.L497
+	.half	.L463-.L462
 	.byte	1,5,16,9
-	.half	.L499-.L498
+	.half	.L464-.L463
 	.byte	3,1,1,5,30,9
-	.half	.L500-.L499
+	.half	.L465-.L464
 	.byte	1,5,34,9
-	.half	.L501-.L500
+	.half	.L466-.L465
 	.byte	1,5,36,9
-	.half	.L502-.L501
+	.half	.L467-.L466
 	.byte	1,5,2,9
-	.half	.L503-.L502
+	.half	.L468-.L467
 	.byte	3,2,1,9
-	.half	.L504-.L503
+	.half	.L469-.L468
 	.byte	3,1,1,9
-	.half	.L505-.L504
+	.half	.L470-.L469
 	.byte	3,1,1,9
-	.half	.L506-.L505
+	.half	.L471-.L470
 	.byte	3,1,1,5,13,9
-	.half	.L507-.L506
+	.half	.L472-.L471
 	.byte	3,2,1,9
-	.half	.L508-.L507
+	.half	.L473-.L472
 	.byte	3,1,1,9
-	.half	.L509-.L508
+	.half	.L474-.L473
 	.byte	3,1,1,9
-	.half	.L510-.L509
+	.half	.L475-.L474
 	.byte	3,1,1,9
-	.half	.L511-.L510
+	.half	.L476-.L475
 	.byte	3,1,1,9
-	.half	.L512-.L511
+	.half	.L477-.L476
 	.byte	3,1,1,9
-	.half	.L513-.L512
+	.half	.L478-.L477
 	.byte	3,3,1,9
-	.half	.L514-.L513
+	.half	.L479-.L478
 	.byte	3,1,1,9
-	.half	.L515-.L514
+	.half	.L480-.L479
 	.byte	3,6,1,9
-	.half	.L516-.L515
+	.half	.L481-.L480
 	.byte	3,1,1,9
-	.half	.L517-.L516
+	.half	.L482-.L481
 	.byte	3,1,1,9
-	.half	.L518-.L517
+	.half	.L483-.L482
 	.byte	3,1,1,9
-	.half	.L519-.L518
+	.half	.L484-.L483
 	.byte	3,1,1,9
-	.half	.L520-.L519
+	.half	.L485-.L484
 	.byte	3,1,1,9
-	.half	.L521-.L520
+	.half	.L486-.L485
 	.byte	3,1,1,9
-	.half	.L522-.L521
+	.half	.L487-.L486
 	.byte	3,1,1,9
-	.half	.L523-.L522
+	.half	.L488-.L487
 	.byte	3,1,1,9
-	.half	.L524-.L523
+	.half	.L489-.L488
 	.byte	3,1,1,9
-	.half	.L525-.L524
+	.half	.L490-.L489
 	.byte	3,1,1,9
-	.half	.L526-.L525
+	.half	.L491-.L490
 	.byte	3,1,1,9
-	.half	.L527-.L526
+	.half	.L492-.L491
 	.byte	3,1,1,9
-	.half	.L528-.L527
+	.half	.L493-.L492
 	.byte	3,1,1,9
-	.half	.L529-.L528
+	.half	.L494-.L493
 	.byte	3,1,1,9
-	.half	.L530-.L529
+	.half	.L495-.L494
 	.byte	3,1,1,9
-	.half	.L531-.L530
+	.half	.L496-.L495
 	.byte	3,1,1,9
-	.half	.L532-.L531
+	.half	.L497-.L496
 	.byte	3,1,1,9
-	.half	.L533-.L532
+	.half	.L498-.L497
 	.byte	3,1,1,9
-	.half	.L534-.L533
+	.half	.L499-.L498
 	.byte	3,1,1,5,12,9
-	.half	.L535-.L534
+	.half	.L500-.L499
 	.byte	3,1,1,5,15,9
-	.half	.L536-.L535
+	.half	.L501-.L500
 	.byte	3,1,1,5,17,9
-	.half	.L537-.L536
+	.half	.L502-.L501
 	.byte	1,5,1,9
-	.half	.L538-.L537
-	.byte	3,1,1,7,9
-	.half	.L142-.L538
-	.byte	0,1,1
-.L481:
+	.half	.L114-.L502
+	.byte	3,1,0,1,1
+.L446:
 	.sdecl	'.debug_ranges',debug,cluster('oled_init')
 	.sect	'.debug_ranges'
-.L141:
-	.word	-1,.L109,0,.L142-.L109,0,0
+.L113:
+	.word	-1,.L79,0,.L114-.L79,0,0
 	.sdecl	'.debug_info',debug,cluster('oled_fill')
 	.sect	'.debug_info'
-.L143:
+.L115:
 	.word	268
 	.half	3
-	.word	.L144
+	.word	.L116
 	.byte	4,1
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_OLED.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L146,.L145
+	.word	.L118,.L117
 	.byte	2
-	.word	.L134
+	.word	.L106
 	.byte	3
 	.byte	'oled_fill',0,1,231,1,6,1,1,1
-	.word	.L113,.L224,.L112
+	.word	.L83,.L211,.L82
 	.byte	4
 	.byte	'bmp_data',0,1,231,1,22
-	.word	.L225,.L226
+	.word	.L212,.L213
 	.byte	5
-	.word	.L113,.L224
+	.word	.L83,.L211
 	.byte	6
 	.byte	'y',0,1,233,1,8
-	.word	.L225,.L227
+	.word	.L212,.L214
 	.byte	6
 	.byte	'x',0,1,233,1,10
-	.word	.L225,.L228
+	.word	.L212,.L215
 	.byte	0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('oled_fill')
 	.sect	'.debug_abbrev'
-.L144:
+.L116:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3
 	.byte	8,58,15,59,15,57,15,73,16,2,6,0,0,0
 	.sdecl	'.debug_line',debug,cluster('oled_fill')
 	.sect	'.debug_line'
-.L145:
-	.word	.L540-.L539
-.L539:
+.L117:
+	.word	.L504-.L503
+.L503:
 	.half	3
-	.word	.L542-.L541
-.L541:
+	.word	.L506-.L505
+.L505:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_OLED.c',0,0,0,0,0
-.L542:
+.L506:
 	.byte	5,6,7,0,5,2
-	.word	.L113
+	.word	.L83
 	.byte	3,230,1,1,5,7,9
-	.half	.L363-.L113
-	.byte	3,4,1,5,13,9
-	.half	.L364-.L363
-	.byte	1,5,18,9
-	.half	.L21-.L364
+	.half	.L351-.L83
+	.byte	3,4,1,5,13,1,5,18,9
+	.half	.L14-.L351
 	.byte	3,2,1,5,14,9
-	.half	.L543-.L21
+	.half	.L507-.L14
 	.byte	3,1,1,9
-	.half	.L544-.L543
-	.byte	3,1,1,5,8,9
-	.half	.L545-.L544
+	.half	.L508-.L507
 	.byte	3,1,1,5,20,9
-	.half	.L365-.L545
-	.byte	1,5,37,9
-	.half	.L23-.L365
-	.byte	1,5,22,9
-	.half	.L367-.L23
-	.byte	1,5,13,9
-	.half	.L22-.L367
+	.half	.L509-.L508
+	.byte	3,1,1,5,37,9
+	.half	.L15-.L509
 	.byte	1,5,20,9
-	.half	.L546-.L22
+	.half	.L510-.L15
 	.byte	1,5,15,7,9
-	.half	.L547-.L546
-	.byte	3,123,1,5,13,9
-	.half	.L20-.L547
-	.byte	1,5,1,7,9
-	.half	.L548-.L20
+	.half	.L511-.L510
+	.byte	3,123,1,5,13,1,5,1,7,9
+	.half	.L512-.L511
 	.byte	3,7,1,7,9
-	.half	.L147-.L548
+	.half	.L119-.L512
 	.byte	0,1,1
-.L540:
+.L504:
 	.sdecl	'.debug_ranges',debug,cluster('oled_fill')
 	.sect	'.debug_ranges'
-.L146:
-	.word	-1,.L113,0,.L147-.L113,0,0
+.L118:
+	.word	-1,.L83,0,.L119-.L83,0,0
 	.sdecl	'.debug_info',debug,cluster('oled_set_pos')
 	.sect	'.debug_info'
-.L148:
+.L120:
 	.word	273
 	.half	3
-	.word	.L149
+	.word	.L121
 	.byte	4,1
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_OLED.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L151,.L150
+	.word	.L123,.L122
 	.byte	2
-	.word	.L134
+	.word	.L106
 	.byte	3
 	.byte	'oled_set_pos',0,1,214,1,6,1,1,1
-	.word	.L111,.L229,.L110
+	.word	.L81,.L216,.L80
 	.byte	4
 	.byte	'x',0,1,214,1,25
-	.word	.L225,.L230
+	.word	.L212,.L217
 	.byte	4
 	.byte	'y',0,1,214,1,34
-	.word	.L225,.L231
+	.word	.L212,.L218
 	.byte	5
-	.word	.L111,.L229
+	.word	.L81,.L216
 	.byte	6
 	.byte	'__func__',0,1,216,1,5
-	.word	.L232
+	.word	.L219
 	.byte	5,3
 	.word	_999001___func__
 	.byte	0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('oled_set_pos')
 	.sect	'.debug_abbrev'
-.L149:
+.L121:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3
 	.byte	8,58,15,59,15,57,15,73,16,2,9,0,0,0
 	.sdecl	'.debug_line',debug,cluster('oled_set_pos')
 	.sect	'.debug_line'
-.L150:
-	.word	.L550-.L549
-.L549:
+.L122:
+	.word	.L514-.L513
+.L513:
 	.half	3
-	.word	.L552-.L551
-.L551:
+	.word	.L516-.L515
+.L515:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_OLED.c',0,0,0,0,0
-.L552:
+.L516:
 	.byte	5,6,7,0,5,2
-	.word	.L111
+	.word	.L81
 	.byte	3,213,1,1,5,5,9
-	.half	.L553-.L111
+	.half	.L517-.L81
 	.byte	3,2,1,9
-	.half	.L17-.L553
-	.byte	3,1,1,5,20,9
-	.half	.L19-.L17
-	.byte	3,2,1,5,19,9
-	.half	.L359-.L19
-	.byte	3,1,1,5,25,9
-	.half	.L360-.L359
-	.byte	1,5,29,9
-	.half	.L554-.L360
-	.byte	1,5,18,9
-	.half	.L361-.L554
-	.byte	3,1,1,5,1,9
-	.half	.L555-.L361
+	.half	.L12-.L517
 	.byte	3,1,1,7,9
-	.half	.L152-.L555
-	.byte	0,1,1
-.L550:
+	.half	.L345-.L12
+	.byte	1,5,20,9
+	.half	.L13-.L345
+	.byte	3,2,1,5,19,9
+	.half	.L347-.L13
+	.byte	3,1,1,5,25,9
+	.half	.L348-.L347
+	.byte	1,5,29,9
+	.half	.L518-.L348
+	.byte	1,5,18,9
+	.half	.L349-.L518
+	.byte	3,1,1,5,1,9
+	.half	.L124-.L349
+	.byte	3,1,0,1,1
+.L514:
 	.sdecl	'.debug_ranges',debug,cluster('oled_set_pos')
 	.sect	'.debug_ranges'
-.L151:
-	.word	-1,.L111,0,.L152-.L111,0,0
+.L123:
+	.word	-1,.L81,0,.L124-.L81,0,0
 	.sdecl	'.debug_info',debug,cluster('oled_putpixel')
 	.sect	'.debug_info'
-.L153:
+.L125:
 	.word	268
 	.half	3
-	.word	.L154
+	.word	.L126
 	.byte	4,1
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_OLED.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L156,.L155
+	.word	.L128,.L127
 	.byte	2
-	.word	.L134
+	.word	.L106
 	.byte	3
 	.byte	'oled_putpixel',0,1,255,1,6,1,1,1
-	.word	.L115,.L233,.L114
+	.word	.L85,.L220,.L84
 	.byte	4
 	.byte	'x',0,1,255,1,26
-	.word	.L225,.L234
+	.word	.L212,.L221
 	.byte	4
 	.byte	'y',0,1,255,1,34
-	.word	.L225,.L235
+	.word	.L212,.L222
 	.byte	4
 	.byte	'data1',0,1,255,1,42
-	.word	.L225,.L236
+	.word	.L212,.L223
 	.byte	5
-	.word	.L115,.L233
+	.word	.L85,.L220
 	.byte	0,0
 	.sdecl	'.debug_abbrev',debug,cluster('oled_putpixel')
 	.sect	'.debug_abbrev'
-.L154:
+.L126:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
 	.sdecl	'.debug_line',debug,cluster('oled_putpixel')
 	.sect	'.debug_line'
-.L155:
-	.word	.L557-.L556
-.L556:
+.L127:
+	.word	.L520-.L519
+.L519:
 	.half	3
-	.word	.L559-.L558
-.L558:
+	.word	.L522-.L521
+.L521:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_OLED.c',0,0,0,0,0
-.L559:
+.L522:
 	.byte	5,6,7,0,5,2
-	.word	.L115
+	.word	.L85
 	.byte	3,254,1,1,5,17,9
-	.half	.L371-.L115
+	.half	.L353-.L85
 	.byte	3,2,1,5,20,9
-	.half	.L368-.L371
+	.half	.L352-.L353
 	.byte	3,1,1,5,16,9
-	.half	.L560-.L368
+	.half	.L523-.L352
 	.byte	3,1,1,5,22,9
-	.half	.L561-.L560
+	.half	.L524-.L523
 	.byte	1,5,26,9
-	.half	.L562-.L561
+	.half	.L525-.L524
 	.byte	1,5,15,9
-	.half	.L563-.L562
+	.half	.L526-.L525
 	.byte	3,1,1,5,13,9
-	.half	.L373-.L563
+	.half	.L355-.L526
 	.byte	3,1,1,5,1,9
-	.half	.L375-.L373
-	.byte	3,1,1,7,9
-	.half	.L157-.L375
-	.byte	0,1,1
-.L557:
+	.half	.L129-.L355
+	.byte	3,1,0,1,1
+.L520:
 	.sdecl	'.debug_ranges',debug,cluster('oled_putpixel')
 	.sect	'.debug_ranges'
-.L156:
-	.word	-1,.L115,0,.L157-.L115,0,0
+.L128:
+	.word	-1,.L85,0,.L129-.L85,0,0
 	.sdecl	'.debug_info',debug,cluster('oled_clrpixel')
 	.sect	'.debug_info'
-.L158:
+.L130:
 	.word	249
 	.half	3
-	.word	.L159
+	.word	.L131
 	.byte	4,1
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_OLED.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L161,.L160
+	.word	.L133,.L132
 	.byte	2
-	.word	.L134
+	.word	.L106
 	.byte	3
 	.byte	'oled_clrpixel',0,1,144,2,6,1,1,1
-	.word	.L117,.L237,.L116
+	.word	.L87,.L224,.L86
 	.byte	4
 	.byte	'x',0,1,144,2,26
-	.word	.L225,.L238
+	.word	.L212,.L225
 	.byte	4
 	.byte	'y',0,1,144,2,34
-	.word	.L225,.L239
+	.word	.L212,.L226
 	.byte	5
-	.word	.L117,.L237
+	.word	.L87,.L224
 	.byte	0,0
 	.sdecl	'.debug_abbrev',debug,cluster('oled_clrpixel')
 	.sect	'.debug_abbrev'
-.L159:
+.L131:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
 	.sdecl	'.debug_line',debug,cluster('oled_clrpixel')
 	.sect	'.debug_line'
-.L160:
-	.word	.L565-.L564
-.L564:
+.L132:
+	.word	.L528-.L527
+.L527:
 	.half	3
-	.word	.L567-.L566
-.L566:
+	.word	.L530-.L529
+.L529:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_OLED.c',0,0,0,0,0
-.L567:
+.L530:
 	.byte	5,6,7,0,5,2
-	.word	.L117
+	.word	.L87
 	.byte	3,143,2,1,5,17,9
-	.half	.L378-.L117
+	.half	.L358-.L87
 	.byte	3,2,1,5,20,9
-	.half	.L568-.L378
+	.half	.L357-.L358
 	.byte	3,1,1,5,16,9
-	.half	.L569-.L568
+	.half	.L531-.L357
 	.byte	3,1,1,5,22,9
-	.half	.L570-.L569
+	.half	.L532-.L531
 	.byte	1,5,26,9
-	.half	.L571-.L570
+	.half	.L533-.L532
 	.byte	1,5,15,9
-	.half	.L572-.L571
+	.half	.L534-.L533
 	.byte	3,1,1,5,13,9
-	.half	.L573-.L572
+	.half	.L535-.L534
 	.byte	3,1,1,5,1,9
-	.half	.L574-.L573
-	.byte	3,1,1,7,9
-	.half	.L162-.L574
-	.byte	0,1,1
-.L565:
+	.half	.L134-.L535
+	.byte	3,1,0,1,1
+.L528:
 	.sdecl	'.debug_ranges',debug,cluster('oled_clrpixel')
 	.sect	'.debug_ranges'
-.L161:
-	.word	-1,.L117,0,.L162-.L117,0,0
+.L133:
+	.word	-1,.L87,0,.L134-.L87,0,0
 	.sdecl	'.debug_info',debug,cluster('oled_p6x8str')
 	.sect	'.debug_info'
-.L163:
+.L135:
 	.word	310
 	.half	3
-	.word	.L164
+	.word	.L136
 	.byte	4,1
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_OLED.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L166,.L165
+	.word	.L138,.L137
 	.byte	2
-	.word	.L134
+	.word	.L106
 	.byte	3
 	.byte	'oled_p6x8str',0,1,163,2,6,1,1,1
-	.word	.L119,.L240,.L118
+	.word	.L89,.L227,.L88
 	.byte	4
 	.byte	'x',0,1,163,2,25
-	.word	.L225,.L241
+	.word	.L212,.L228
 	.byte	4
 	.byte	'y',0,1,163,2,33
-	.word	.L225,.L242
+	.word	.L212,.L229
 	.byte	4
 	.byte	'ch',0,1,163,2,46
-	.word	.L243,.L244
+	.word	.L230,.L231
 	.byte	5
-	.word	.L119,.L240
+	.word	.L89,.L227
 	.byte	6
 	.byte	'c',0,1,165,2,8
-	.word	.L225,.L245
+	.word	.L212,.L232
 	.byte	6
 	.byte	'i',0,1,165,2,12
-	.word	.L225,.L246
+	.word	.L212,.L233
 	.byte	6
 	.byte	'j',0,1,165,2,16
-	.word	.L225,.L247
+	.word	.L212,.L234
 	.byte	0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('oled_p6x8str')
 	.sect	'.debug_abbrev'
-.L164:
+.L136:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3
 	.byte	8,58,15,59,15,57,15,73,16,2,6,0,0,0
 	.sdecl	'.debug_line',debug,cluster('oled_p6x8str')
 	.sect	'.debug_line'
-.L165:
-	.word	.L576-.L575
-.L575:
+.L137:
+	.word	.L537-.L536
+.L536:
 	.half	3
-	.word	.L578-.L577
-.L577:
+	.word	.L539-.L538
+.L538:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_OLED.c',0,0,0,0,0
-.L578:
+.L539:
 	.byte	5,6,7,0,5,2
-	.word	.L119
-	.byte	3,162,2,1,5,17,9
-	.half	.L382-.L119
+	.word	.L89
+	.byte	3,162,2,1,5,11,9
+	.half	.L359-.L89
+	.byte	3,3,1,5,6,9
+	.half	.L360-.L359
+	.byte	3,125,1,5,17,9
+	.half	.L361-.L360
 	.byte	3,2,1,5,20,9
-	.half	.L383-.L382
-	.byte	3,1,1,5,10,9
-	.half	.L25-.L383
-	.byte	3,2,1,5,13,9
-	.half	.L579-.L25
-	.byte	1,5,10,9
-	.half	.L385-.L579
-	.byte	3,1,1,5,5,9
-	.half	.L580-.L385
-	.byte	1,5,16,7,9
-	.half	.L581-.L580
-	.byte	1,5,20,9
-	.half	.L582-.L581
-	.byte	1,9
-	.half	.L26-.L582
-	.byte	3,1,1,5,10,9
-	.half	.L583-.L26
-	.byte	3,1,1,5,16,9
-	.half	.L386-.L583
-	.byte	1,5,41,9
-	.half	.L28-.L386
-	.byte	1,5,33,9
-	.half	.L584-.L28
-	.byte	1,5,41,9
-	.half	.L585-.L584
-	.byte	1,5,44,9
-	.half	.L586-.L585
-	.byte	1,5,18,9
-	.half	.L587-.L586
-	.byte	1,5,16,9
-	.half	.L27-.L587
-	.byte	1,5,6,7,9
-	.half	.L588-.L27
+	.half	.L363-.L361
+	.byte	3,1,1,5,10,7,9
+	.half	.L17-.L363
+	.byte	3,2,1,9
+	.half	.L540-.L17
 	.byte	3,1,1,9
-	.half	.L589-.L588
-	.byte	3,1,1,5,11,9
-	.half	.L24-.L589
-	.byte	3,121,1,5,20,9
-	.half	.L590-.L24
+	.half	.L541-.L540
+	.byte	3,127,1,5,13,9
+	.half	.L542-.L541
+	.byte	1,5,5,9
+	.half	.L365-.L542
+	.byte	3,1,1,5,16,7,9
+	.half	.L543-.L365
+	.byte	1,5,20,9
+	.half	.L544-.L543
+	.byte	1,9
+	.half	.L18-.L544
+	.byte	3,1,1,5,41,9
+	.half	.L545-.L18
+	.byte	3,1,1,5,33,1,5,41,9
+	.half	.L546-.L545
+	.byte	1,5,16,9
+	.half	.L547-.L546
+	.byte	1,5,44,9
+	.half	.L19-.L547
+	.byte	1,5,16,9
+	.half	.L548-.L19
+	.byte	1,5,6,7,9
+	.half	.L549-.L548
+	.byte	3,2,1,9
+	.half	.L366-.L549
+	.byte	3,127,1,5,11,9
+	.half	.L550-.L366
+	.byte	3,122,1,5,20,9
+	.half	.L551-.L550
 	.byte	1,5,1,7,9
-	.half	.L591-.L590
+	.half	.L16-.L551
 	.byte	3,9,1,7,9
-	.half	.L167-.L591
+	.half	.L139-.L16
 	.byte	0,1,1
-.L576:
+.L537:
 	.sdecl	'.debug_ranges',debug,cluster('oled_p6x8str')
 	.sect	'.debug_ranges'
-.L166:
-	.word	-1,.L119,0,.L167-.L119,0,0
+.L138:
+	.word	-1,.L89,0,.L139-.L89,0,0
 	.sdecl	'.debug_info',debug,cluster('oled_p8x16str')
 	.sect	'.debug_info'
-.L168:
+.L140:
 	.word	311
 	.half	3
-	.word	.L169
+	.word	.L141
 	.byte	4,1
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_OLED.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L171,.L170
+	.word	.L143,.L142
 	.byte	2
-	.word	.L134
+	.word	.L106
 	.byte	3
 	.byte	'oled_p8x16str',0,1,186,2,6,1,1,1
-	.word	.L121,.L248,.L120
+	.word	.L91,.L235,.L90
 	.byte	4
 	.byte	'x',0,1,186,2,26
-	.word	.L225,.L249
+	.word	.L212,.L236
 	.byte	4
 	.byte	'y',0,1,186,2,34
-	.word	.L225,.L250
+	.word	.L212,.L237
 	.byte	4
 	.byte	'ch',0,1,186,2,47
-	.word	.L243,.L251
+	.word	.L230,.L238
 	.byte	5
-	.word	.L121,.L248
+	.word	.L91,.L235
 	.byte	6
 	.byte	'c',0,1,188,2,8
-	.word	.L225,.L252
+	.word	.L212,.L239
 	.byte	6
 	.byte	'i',0,1,188,2,12
-	.word	.L225,.L253
+	.word	.L212,.L240
 	.byte	6
 	.byte	'j',0,1,188,2,16
-	.word	.L225,.L254
+	.word	.L212,.L241
 	.byte	0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('oled_p8x16str')
 	.sect	'.debug_abbrev'
-.L169:
+.L141:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3
 	.byte	8,58,15,59,15,57,15,73,16,2,6,0,0,0
 	.sdecl	'.debug_line',debug,cluster('oled_p8x16str')
 	.sect	'.debug_line'
-.L170:
-	.word	.L593-.L592
-.L592:
+.L142:
+	.word	.L553-.L552
+.L552:
 	.half	3
-	.word	.L595-.L594
-.L594:
+	.word	.L555-.L554
+.L554:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_OLED.c',0,0,0,0,0
-.L595:
+.L555:
 	.byte	5,6,7,0,5,2
-	.word	.L121
-	.byte	3,185,2,1,5,17,9
-	.half	.L387-.L121
-	.byte	3,2,1,5,20,9
-	.half	.L388-.L387
-	.byte	3,2,1,5,10,9
-	.half	.L30-.L388
-	.byte	3,2,1,5,13,9
-	.half	.L596-.L30
-	.byte	1,5,10,9
-	.half	.L390-.L596
-	.byte	3,1,1,5,5,9
-	.half	.L391-.L390
-	.byte	1,5,16,7,9
-	.half	.L392-.L391
-	.byte	1,5,20,9
-	.half	.L393-.L392
-	.byte	1,9
-	.half	.L31-.L393
-	.byte	3,2,1,5,10,9
-	.half	.L597-.L31
-	.byte	3,1,1,5,16,9
-	.half	.L396-.L597
-	.byte	1,5,45,9
-	.half	.L33-.L396
-	.byte	1,5,47,9
-	.half	.L598-.L33
-	.byte	1,5,33,9
-	.half	.L599-.L598
-	.byte	1,5,42,9
-	.half	.L600-.L599
-	.byte	1,5,18,9
-	.half	.L601-.L600
-	.byte	1,5,16,9
-	.half	.L32-.L601
-	.byte	1,5,21,7,9
-	.half	.L397-.L32
-	.byte	3,2,1,5,10,9
-	.half	.L401-.L397
-	.byte	3,1,1,5,16,9
-	.half	.L602-.L401
-	.byte	1,5,45,9
-	.half	.L35-.L602
-	.byte	1,5,47,9
-	.half	.L603-.L35
-	.byte	1,5,33,9
-	.half	.L604-.L603
-	.byte	1,5,42,9
-	.half	.L605-.L604
-	.byte	1,5,18,9
-	.half	.L606-.L605
-	.byte	1,5,16,9
-	.half	.L34-.L606
-	.byte	1,5,6,7,9
-	.half	.L402-.L34
+	.word	.L91
+	.byte	3,185,2,1,5,11,9
+	.half	.L367-.L91
+	.byte	3,4,1,5,17,9
+	.half	.L556-.L367
+	.byte	3,126,1,5,20,9
+	.half	.L368-.L556
+	.byte	3,2,1,5,10,7,9
+	.half	.L21-.L368
 	.byte	3,2,1,9
-	.half	.L607-.L402
-	.byte	3,1,1,5,11,9
-	.half	.L29-.L607
-	.byte	3,116,1,5,20,9
-	.half	.L608-.L29
+	.half	.L557-.L21
+	.byte	3,1,1,9
+	.half	.L558-.L557
+	.byte	3,127,1,5,13,9
+	.half	.L559-.L558
+	.byte	1,5,5,9
+	.half	.L370-.L559
+	.byte	3,1,1,5,16,7,9
+	.half	.L372-.L370
+	.byte	1,5,20,9
+	.half	.L373-.L372
+	.byte	1,9
+	.half	.L22-.L373
+	.byte	3,2,1,5,43,9
+	.half	.L374-.L22
+	.byte	3,1,1,5,33,1,5,16,9
+	.half	.L560-.L374
+	.byte	1,5,20,9
+	.half	.L561-.L560
+	.byte	1,5,42,9
+	.half	.L23-.L561
+	.byte	1,5,16,9
+	.half	.L562-.L23
+	.byte	1,5,21,7,9
+	.half	.L376-.L562
+	.byte	3,2,1,5,50,9
+	.half	.L379-.L376
+	.byte	3,1,1,5,16,9
+	.half	.L563-.L379
+	.byte	1,5,42,9
+	.half	.L24-.L563
+	.byte	1,5,16,9
+	.half	.L564-.L24
+	.byte	1,5,6,7,9
+	.half	.L565-.L564
+	.byte	3,3,1,9
+	.half	.L380-.L565
+	.byte	3,127,1,5,11,9
+	.half	.L566-.L380
+	.byte	3,117,1,5,20,9
+	.half	.L567-.L566
 	.byte	1,5,1,7,9
-	.half	.L609-.L608
+	.half	.L20-.L567
 	.byte	3,14,1,7,9
-	.half	.L172-.L609
+	.half	.L144-.L20
 	.byte	0,1,1
-.L593:
+.L553:
 	.sdecl	'.debug_ranges',debug,cluster('oled_p8x16str')
 	.sect	'.debug_ranges'
-.L171:
-	.word	-1,.L121,0,.L172-.L121,0,0
+.L143:
+	.word	-1,.L91,0,.L144-.L91,0,0
 	.sdecl	'.debug_info',debug,cluster('oled_uint16')
 	.sect	'.debug_info'
-.L173:
+.L145:
 	.word	281
 	.half	3
-	.word	.L174
+	.word	.L146
 	.byte	4,1
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_OLED.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L176,.L175
+	.word	.L148,.L147
 	.byte	2
-	.word	.L134
+	.word	.L106
 	.byte	3
 	.byte	'oled_uint16',0,1,215,2,6,1,1,1
-	.word	.L123,.L255,.L122
+	.word	.L93,.L242,.L92
 	.byte	4
 	.byte	'x',0,1,215,2,24
-	.word	.L225,.L256
+	.word	.L212,.L243
 	.byte	4
 	.byte	'y',0,1,215,2,33
-	.word	.L225,.L257
+	.word	.L212,.L244
 	.byte	4
 	.byte	'num',0,1,215,2,43
-	.word	.L258,.L259
+	.word	.L245,.L246
 	.byte	5
-	.word	.L123,.L255
+	.word	.L93,.L242
 	.byte	6
 	.byte	'ch',0,1,217,2,7
-	.word	.L260,.L261
+	.word	.L247,.L248
 	.byte	0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('oled_uint16')
 	.sect	'.debug_abbrev'
-.L174:
+.L146:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3
 	.byte	8,58,15,59,15,57,15,73,16,2,6,0,0,0
 	.sdecl	'.debug_line',debug,cluster('oled_uint16')
 	.sect	'.debug_line'
-.L175:
-	.word	.L611-.L610
-.L610:
+.L147:
+	.word	.L569-.L568
+.L568:
 	.half	3
-	.word	.L613-.L612
-.L612:
+	.word	.L571-.L570
+.L570:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_OLED.c',0,0,0,0,0
-.L613:
+.L571:
 	.byte	5,6,7,0,5,2
-	.word	.L123
+	.word	.L93
 	.byte	3,214,2,1,5,20,9
-	.half	.L407-.L123
+	.half	.L381-.L93
 	.byte	3,4,1,5,27,9
-	.half	.L404-.L407
+	.half	.L382-.L381
 	.byte	3,2,1,5,1,9
-	.half	.L614-.L404
-	.byte	3,2,1,7,9
-	.half	.L177-.L614
-	.byte	0,1,1
-.L611:
+	.half	.L149-.L382
+	.byte	3,2,0,1,1
+.L569:
 	.sdecl	'.debug_ranges',debug,cluster('oled_uint16')
 	.sect	'.debug_ranges'
-.L176:
-	.word	-1,.L123,0,.L177-.L123,0,0
+.L148:
+	.word	-1,.L93,0,.L149-.L93,0,0
 	.sdecl	'.debug_info',debug,cluster('oled_int16')
 	.sect	'.debug_info'
-.L178:
+.L150:
 	.word	280
 	.half	3
-	.word	.L179
+	.word	.L151
 	.byte	4,1
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_OLED.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L181,.L180
+	.word	.L153,.L152
 	.byte	2
-	.word	.L134
+	.word	.L106
 	.byte	3
 	.byte	'oled_int16',0,1,234,2,6,1,1,1
-	.word	.L125,.L262,.L124
+	.word	.L95,.L249,.L94
 	.byte	4
 	.byte	'x',0,1,234,2,23
-	.word	.L225,.L263
+	.word	.L212,.L250
 	.byte	4
 	.byte	'y',0,1,234,2,32
-	.word	.L225,.L264
+	.word	.L212,.L251
 	.byte	4
 	.byte	'num',0,1,234,2,41
-	.word	.L265,.L266
+	.word	.L252,.L253
 	.byte	5
-	.word	.L125,.L262
+	.word	.L95,.L249
 	.byte	6
 	.byte	'ch',0,1,236,2,7
-	.word	.L260,.L267
+	.word	.L247,.L254
 	.byte	0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('oled_int16')
 	.sect	'.debug_abbrev'
-.L179:
+.L151:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3
 	.byte	8,58,15,59,15,57,15,73,16,2,6,0,0,0
 	.sdecl	'.debug_line',debug,cluster('oled_int16')
 	.sect	'.debug_line'
-.L180:
-	.word	.L616-.L615
-.L615:
+.L152:
+	.word	.L573-.L572
+.L572:
 	.half	3
-	.word	.L618-.L617
-.L617:
+	.word	.L575-.L574
+.L574:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_OLED.c',0,0,0,0,0
-.L618:
+.L575:
 	.byte	5,6,7,0,5,2
-	.word	.L125
+	.word	.L95
 	.byte	3,233,2,1,5,2,9
-	.half	.L413-.L125
+	.half	.L387-.L95
 	.byte	3,3,1,5,21,7,9
-	.half	.L619-.L413
-	.byte	1,5,45,9
-	.half	.L620-.L619
-	.byte	1,5,25,9
-	.half	.L621-.L620
+	.half	.L576-.L387
+	.byte	1,5,45,1,5,21,9
+	.half	.L385-.L576
+	.byte	1,5,45,1,5,25,9
+	.half	.L577-.L385
 	.byte	1,5,34,9
-	.half	.L36-.L621
+	.half	.L25-.L577
 	.byte	3,1,1,5,3,9
-	.half	.L37-.L36
-	.byte	3,1,1,5,16,9
-	.half	.L417-.L37
-	.byte	3,2,1,5,20,9
-	.half	.L418-.L417
-	.byte	1,5,27,9
-	.half	.L622-.L418
+	.half	.L386-.L25
+	.byte	3,1,1,5,20,3,2,1,5,3,9
+	.half	.L388-.L386
+	.byte	3,126,1,5,16,9
+	.half	.L389-.L388
+	.byte	3,2,1,5,20,1,5,27,9
+	.half	.L390-.L389
 	.byte	3,1,1,5,1,9
-	.half	.L623-.L622
-	.byte	3,1,1,7,9
-	.half	.L182-.L623
-	.byte	0,1,1
-.L616:
+	.half	.L154-.L390
+	.byte	3,1,0,1,1
+.L573:
 	.sdecl	'.debug_ranges',debug,cluster('oled_int16')
 	.sect	'.debug_ranges'
-.L181:
-	.word	-1,.L125,0,.L182-.L125,0,0
+.L153:
+	.word	-1,.L95,0,.L154-.L95,0,0
 	.sdecl	'.debug_info',debug,cluster('oled_printf_int32')
 	.sect	'.debug_info'
-.L183:
+.L155:
 	.word	326
 	.half	3
-	.word	.L184
+	.word	.L156
 	.byte	4,1
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_OLED.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L186,.L185
+	.word	.L158,.L157
 	.byte	2
-	.word	.L134
+	.word	.L106
 	.byte	3
 	.byte	'oled_printf_int32',0,1,128,3,6,1,1,1
-	.word	.L127,.L268,.L126
+	.word	.L97,.L255,.L96
 	.byte	4
 	.byte	'x',0,1,128,3,31
-	.word	.L258,.L269
+	.word	.L245,.L256
 	.byte	4
 	.byte	'y',0,1,128,3,40
-	.word	.L258,.L270
+	.word	.L245,.L257
 	.byte	4
 	.byte	'dat',0,1,128,3,48
-	.word	.L271,.L272
+	.word	.L258,.L259
 	.byte	4
 	.byte	'num',0,1,128,3,58
-	.word	.L225,.L273
+	.word	.L212,.L260
 	.byte	5
-	.word	.L127,.L268
+	.word	.L97,.L255
 	.byte	6
 	.byte	'buff',0,1,130,3,13
-	.word	.L274,.L275
+	.word	.L261,.L262
 	.byte	6
 	.byte	'length',0,1,131,3,13
-	.word	.L276,.L277
+	.word	.L263,.L264
 	.byte	0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('oled_printf_int32')
 	.sect	'.debug_abbrev'
-.L184:
+.L156:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3
 	.byte	8,58,15,59,15,57,15,73,16,2,6,0,0,0
 	.sdecl	'.debug_line',debug,cluster('oled_printf_int32')
 	.sect	'.debug_line'
-.L185:
-	.word	.L625-.L624
-.L624:
+.L157:
+	.word	.L579-.L578
+.L578:
 	.half	3
-	.word	.L627-.L626
-.L626:
+	.word	.L581-.L580
+.L580:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_OLED.c',0,0,0,0,0
-.L627:
-	.byte	5,6,7,0,5,2
-	.word	.L127
-	.byte	3,255,2,1,5,5,9
-	.half	.L628-.L127
-	.byte	3,5,1,5,25,7,9
-	.half	.L629-.L628
-	.byte	1,5,8,9
-	.half	.L38-.L629
-	.byte	3,2,1,5,5,9
-	.half	.L423-.L38
-	.byte	3,1,1,5,52,7,9
-	.half	.L630-.L423
+.L581:
+	.byte	5,10,7,0,5,2
+	.word	.L97
+	.byte	3,132,3,1,5,47,3,3,1,5,6,9
+	.half	.L582-.L97
+	.byte	3,120,1,5,47,3,8,1,5,8,9
+	.half	.L583-.L582
+	.byte	3,127,1,5,6,3,121,1,5,5,9
+	.half	.L392-.L583
+	.byte	3,8,1,5,52,7,9
+	.half	.L584-.L392
 	.byte	1,5,39,9
-	.half	.L631-.L630
+	.half	.L585-.L584
 	.byte	1,5,47,9
-	.half	.L632-.L631
+	.half	.L586-.L585
 	.byte	1,5,56,9
-	.half	.L422-.L632
+	.half	.L393-.L586
 	.byte	1,5,19,9
-	.half	.L39-.L422
-	.byte	3,3,1,5,17,9
-	.half	.L633-.L39
-	.byte	1,5,44,9
-	.half	.L634-.L633
+	.half	.L27-.L393
+	.byte	3,3,1,5,17,1,5,44,9
+	.half	.L587-.L27
 	.byte	3,1,1,5,35,9
-	.half	.L635-.L634
+	.half	.L588-.L587
 	.byte	1,5,39,9
-	.half	.L636-.L635
+	.half	.L589-.L588
 	.byte	1,5,15,9
-	.half	.L424-.L636
-	.byte	3,1,1,5,23,9
-	.half	.L40-.L424
-	.byte	3,2,1,5,13,9
-	.half	.L42-.L40
-	.byte	3,2,1,5,24,9
-	.half	.L637-.L42
-	.byte	1,5,22,9
-	.half	.L638-.L637
-	.byte	1,5,15,9
-	.half	.L639-.L638
-	.byte	3,1,1,5,23,9
-	.half	.L41-.L639
-	.byte	3,125,1,5,9,7,9
-	.half	.L640-.L41
-	.byte	3,5,1,5,17,9
-	.half	.L641-.L640
-	.byte	1,5,15,9
-	.half	.L642-.L641
-	.byte	1,5,18,9
-	.half	.L426-.L642
-	.byte	3,2,1,5,28,9
-	.half	.L427-.L426
-	.byte	1,5,38,9
-	.half	.L428-.L427
-	.byte	1,5,1,9
-	.half	.L425-.L428
-	.byte	3,1,1,7,9
-	.half	.L187-.L425
-	.byte	0,1,1
-.L625:
+	.half	.L394-.L589
+	.byte	3,1,1,5,13,9
+	.half	.L28-.L394
+	.byte	3,4,1,5,24,9
+	.half	.L590-.L28
+	.byte	1,5,13,9
+	.half	.L591-.L590
+	.byte	1,5,23,9
+	.half	.L592-.L591
+	.byte	3,126,1,5,15,9
+	.half	.L30-.L592
+	.byte	3,3,1,5,22,3,127,1,5,23,9
+	.half	.L29-.L30
+	.byte	3,126,1,5,9,7,9
+	.half	.L593-.L29
+	.byte	3,5,1,5,18,9
+	.half	.L395-.L593
+	.byte	3,2,1,5,38,1,5,28,9
+	.half	.L396-.L395
+	.byte	1,5,17,9
+	.half	.L397-.L396
+	.byte	3,126,1,5,15,1,5,38,9
+	.half	.L594-.L397
+	.byte	3,2,1,5,1,7,9
+	.half	.L159-.L594
+	.byte	3,1,0,1,1
+.L579:
 	.sdecl	'.debug_ranges',debug,cluster('oled_printf_int32')
 	.sect	'.debug_ranges'
-.L186:
-	.word	-1,.L127,0,.L187-.L127,0,0
+.L158:
+	.word	-1,.L97,0,.L159-.L97,0,0
 	.sdecl	'.debug_info',debug,cluster('oled_printf_float')
 	.sect	'.debug_info'
-.L188:
+.L160:
 	.word	403
 	.half	3
-	.word	.L189
+	.word	.L161
 	.byte	4,1
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_OLED.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L191,.L190
+	.word	.L163,.L162
 	.byte	2
-	.word	.L134
+	.word	.L106
 	.byte	3
 	.byte	'oled_printf_float',0,1,168,3,6,1,1,1
-	.word	.L129,.L278,.L128
+	.word	.L99,.L265,.L98
 	.byte	4
 	.byte	'x',0,1,168,3,31
-	.word	.L258,.L279
+	.word	.L245,.L266
 	.byte	4
 	.byte	'y',0,1,168,3,40
-	.word	.L258,.L280
+	.word	.L245,.L267
 	.byte	4
 	.byte	'dat',0,1,168,3,49
-	.word	.L281,.L282
+	.word	.L268,.L269
 	.byte	4
 	.byte	'num',0,1,168,3,59
-	.word	.L225,.L283
+	.word	.L212,.L270
 	.byte	4
 	.byte	'pointnum',0,1,168,3,69
-	.word	.L225,.L284
+	.word	.L212,.L271
 	.byte	5
-	.word	.L129,.L278
+	.word	.L99,.L265
 	.byte	6
 	.byte	'length',0,1,170,3,13
-	.word	.L276,.L285
+	.word	.L263,.L272
 	.byte	6
 	.byte	'buff',0,1,171,3,10
-	.word	.L274,.L286
+	.word	.L261,.L273
 	.byte	6
 	.byte	'start',0,1,172,3,10
-	.word	.L287,.L288
+	.word	.L274,.L275
 	.byte	6
 	.byte	'end',0,1,172,3,16
-	.word	.L287,.L289
+	.word	.L274,.L276
 	.byte	6
 	.byte	'point',0,1,172,3,20
-	.word	.L287,.L290
+	.word	.L274,.L277
 	.byte	0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('oled_printf_float')
 	.sect	'.debug_abbrev'
-.L189:
+.L161:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3
 	.byte	8,58,15,59,15,57,15,73,16,2,6,0,0,0
 	.sdecl	'.debug_line',debug,cluster('oled_printf_float')
 	.sect	'.debug_line'
-.L190:
-	.word	.L644-.L643
-.L643:
+.L162:
+	.word	.L596-.L595
+.L595:
 	.half	3
-	.word	.L646-.L645
-.L645:
+	.word	.L598-.L597
+.L597:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_OLED.c',0,0,0,0,0
-.L646:
+.L598:
 	.byte	5,6,7,0,5,2
-	.word	.L129
-	.byte	3,167,3,1,5,2,9
-	.half	.L431-.L129
-	.byte	3,6,1,5,27,7,9
-	.half	.L647-.L431
-	.byte	1,5,5,9
-	.half	.L43-.L647
-	.byte	3,1,1,5,25,7,9
-	.half	.L432-.L43
-	.byte	1,5,8,9
-	.half	.L44-.L432
-	.byte	3,2,1,5,5,9
-	.half	.L433-.L44
-	.byte	1,5,44,9
-	.half	.L435-.L433
+	.word	.L99
+	.byte	3,167,3,1,5,8,9
+	.half	.L398-.L99
+	.byte	3,9,1,5,6,3,119,1,5,47,9
+	.half	.L401-.L398
+	.byte	3,9,1,5,6,9
+	.half	.L599-.L401
+	.byte	3,125,1,5,47,3,3,1,5,5,9
+	.half	.L402-.L599
+	.byte	1,5,10,9
+	.half	.L600-.L402
+	.byte	3,126,1,5,5,9
+	.half	.L400-.L600
+	.byte	3,2,1,5,44,7,9
+	.half	.L601-.L400
 	.byte	3,3,1,5,35,9
-	.half	.L436-.L435
+	.half	.L602-.L601
 	.byte	1,5,39,9
-	.half	.L648-.L436
+	.half	.L603-.L602
 	.byte	1,5,15,9
-	.half	.L430-.L648
-	.byte	3,1,1,5,56,9
-	.half	.L649-.L430
-	.byte	3,124,1,5,52,9
-	.half	.L45-.L649
+	.half	.L399-.L603
+	.byte	3,1,1,5,56,3,124,1,5,52,9
+	.half	.L31-.L399
 	.byte	1,5,39,9
-	.half	.L437-.L45
+	.half	.L604-.L31
 	.byte	1,5,47,9
-	.half	.L650-.L437
+	.half	.L605-.L604
 	.byte	1,5,27,9
-	.half	.L46-.L650
+	.half	.L32-.L605
 	.byte	3,6,1,5,13,9
-	.half	.L438-.L46
-	.byte	1,5,19,9
-	.half	.L439-.L438
-	.byte	3,1,1,5,25,9
-	.half	.L440-.L439
+	.half	.L404-.L32
 	.byte	1,5,17,9
-	.half	.L442-.L440
-	.byte	3,1,1,5,28,9
-	.half	.L441-.L442
-	.byte	1,5,18,9
-	.half	.L444-.L441
-	.byte	3,1,1,5,13,9
-	.half	.L48-.L444
-	.byte	3,2,1,5,21,9
-	.half	.L651-.L48
-	.byte	1,5,19,9
-	.half	.L652-.L651
-	.byte	1,5,12,9
-	.half	.L653-.L652
-	.byte	3,1,1,5,14,9
-	.half	.L446-.L653
-	.byte	3,1,1,5,18,9
-	.half	.L47-.L446
-	.byte	3,124,1,5,8,7,9
-	.half	.L654-.L47
-	.byte	3,7,1,5,5,9
-	.half	.L447-.L654
-	.byte	1,5,21,9
-	.half	.L655-.L447
-	.byte	3,1,1,5,31,9
-	.half	.L656-.L655
-	.byte	1,5,29,9
-	.half	.L657-.L656
-	.byte	1,5,34,9
-	.half	.L658-.L657
-	.byte	3,127,1,5,21,9
-	.half	.L49-.L658
-	.byte	1,5,31,9
-	.half	.L659-.L49
-	.byte	1,5,29,9
-	.half	.L660-.L659
-	.byte	1,5,9,9
-	.half	.L50-.L660
-	.byte	3,3,1,5,17,9
-	.half	.L661-.L50
-	.byte	1,5,15,9
-	.half	.L662-.L661
-	.byte	1,5,18,9
-	.half	.L449-.L662
+	.half	.L405-.L404
 	.byte	3,2,1,5,28,9
-	.half	.L450-.L449
-	.byte	1,5,38,9
-	.half	.L451-.L450
-	.byte	1,5,1,9
-	.half	.L443-.L451
-	.byte	3,1,1,7,9
-	.half	.L192-.L443
-	.byte	0,1,1
-.L644:
+	.half	.L403-.L405
+	.byte	1,5,19,9
+	.half	.L406-.L403
+	.byte	3,127,1,5,25,9
+	.half	.L606-.L406
+	.byte	1,5,13,9
+	.half	.L607-.L606
+	.byte	3,4,1,5,25,9
+	.half	.L608-.L607
+	.byte	3,124,1,5,13,9
+	.half	.L408-.L608
+	.byte	3,4,1,5,21,9
+	.half	.L609-.L408
+	.byte	1,5,18,3,126,1,5,12,9
+	.half	.L34-.L609
+	.byte	3,3,1,5,19,3,127,1,5,12,9
+	.half	.L407-.L34
+	.byte	3,1,1,5,14,9
+	.half	.L409-.L407
+	.byte	3,1,1,5,18,9
+	.half	.L33-.L409
+	.byte	3,124,1,5,21,7,9
+	.half	.L610-.L33
+	.byte	3,7,1,5,5,9
+	.half	.L611-.L610
+	.byte	1,5,21,9
+	.half	.L612-.L611
+	.byte	1,5,5,9
+	.half	.L613-.L612
+	.byte	1,5,31,7,9
+	.half	.L614-.L613
+	.byte	3,1,1,5,34,3,127,1,5,31,9
+	.half	.L35-.L614
+	.byte	1,5,18,9
+	.half	.L36-.L35
+	.byte	3,5,1,5,29,3,123,1,5,9,9
+	.half	.L410-.L36
+	.byte	3,3,1,5,28,9
+	.half	.L411-.L410
+	.byte	3,2,1,5,38,1,5,17,9
+	.half	.L412-.L411
+	.byte	3,126,1,5,15,1,5,38,9
+	.half	.L615-.L412
+	.byte	3,2,1,5,1,7,9
+	.half	.L164-.L615
+	.byte	3,1,0,1,1
+.L596:
 	.sdecl	'.debug_ranges',debug,cluster('oled_printf_float')
 	.sect	'.debug_ranges'
-.L191:
-	.word	-1,.L129,0,.L192-.L129,0,0
+.L163:
+	.word	-1,.L99,0,.L164-.L99,0,0
 	.sdecl	'.debug_info',debug,cluster('oled_dis_bmp')
 	.sect	'.debug_info'
-.L193:
-	.word	374
+.L165:
+	.word	370
 	.half	3
-	.word	.L194
+	.word	.L166
 	.byte	4,1
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_OLED.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L196,.L195
+	.word	.L168,.L167
 	.byte	2
-	.word	.L134
+	.word	.L106
 	.byte	3
 	.byte	'oled_dis_bmp',0,1,215,3,6,1,1,1
-	.word	.L131,.L291,.L130
+	.word	.L101,.L278,.L100
 	.byte	4
 	.byte	'high',0,1,215,3,26
-	.word	.L258,.L292
+	.word	.L245,.L279
 	.byte	4
 	.byte	'width',0,1,215,3,39
-	.word	.L258,.L293
+	.word	.L245,.L280
 	.byte	4
 	.byte	'p',0,1,215,3,53
-	.word	.L294,.L295
+	.word	.L281,.L282
 	.byte	4
 	.byte	'value',0,1,215,3,61
-	.word	.L225,.L296
+	.word	.L212,.L283
 	.byte	5
-	.word	.L131,.L291
+	.word	.L284
 	.byte	6
 	.byte	'i',0,1,217,3,11
-	.word	.L265,.L297
+	.word	.L252,.L285
 	.byte	6
 	.byte	'j',0,1,217,3,13
-	.word	.L265,.L298
+	.word	.L252,.L286
 	.byte	6
 	.byte	'temp',0,1,218,3,11
-	.word	.L265,.L299
+	.word	.L252,.L287
 	.byte	6
 	.byte	'temp1',0,1,218,3,16
-	.word	.L265,.L300
+	.word	.L252,.L288
 	.byte	6
 	.byte	'dat',0,1,219,3,11
-	.word	.L225,.L301
+	.word	.L212,.L289
 	.byte	0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('oled_dis_bmp')
 	.sect	'.debug_abbrev'
-.L194:
+.L166:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
-	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3
-	.byte	8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,85,6,0,0,6,52,0,3,8,58
+	.byte	15,59,15,57,15,73,16,2,6,0,0,0
 	.sdecl	'.debug_line',debug,cluster('oled_dis_bmp')
 	.sect	'.debug_line'
-.L195:
-	.word	.L664-.L663
-.L663:
+.L167:
+	.word	.L617-.L616
+.L616:
 	.half	3
-	.word	.L666-.L665
-.L665:
+	.word	.L619-.L618
+.L618:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_OLED.c',0,0,0,0,0
-.L666:
-	.byte	5,6,7,0,5,2
-	.word	.L131
-	.byte	3,214,3,1,5,18,9
-	.half	.L455-.L131
-	.byte	3,7,1,5,17,9
-	.half	.L667-.L455
-	.byte	1,5,5,9
-	.half	.L456-.L667
-	.byte	3,1,1,5,32,7,9
-	.half	.L668-.L456
-	.byte	1,5,31,9
-	.half	.L669-.L668
-	.byte	1,5,33,9
-	.half	.L670-.L669
-	.byte	1,5,32,9
-	.half	.L51-.L670
-	.byte	3,1,1,5,31,9
-	.half	.L671-.L51
-	.byte	1,5,33,9
-	.half	.L672-.L671
-	.byte	1,5,10,9
-	.half	.L52-.L672
-	.byte	3,2,1,5,20,9
-	.half	.L457-.L52
-	.byte	1,5,22,9
-	.half	.L54-.L457
+.L619:
+	.byte	5,13,7,0,5,2
+	.word	.L101
+	.byte	3,221,3,1,5,25,3,4,1,5,27,9
+	.half	.L414-.L101
+	.byte	3,126,1,5,6,9
+	.half	.L620-.L414
+	.byte	3,119,1,5,27,9
+	.half	.L621-.L620
+	.byte	3,9,1,5,10,9
+	.half	.L416-.L621
+	.byte	3,2,1,5,20,1,5,22,9
+	.half	.L38-.L416
 	.byte	3,2,1,5,24,9
-	.half	.L673-.L54
+	.half	.L622-.L38
 	.byte	1,5,14,9
-	.half	.L674-.L673
-	.byte	3,1,1,5,25,9
-	.half	.L459-.L674
+	.half	.L623-.L622
+	.byte	3,1,1,5,30,1,5,23,9
+	.half	.L417-.L623
+	.byte	3,125,1,5,24,9
+	.half	.L418-.L417
+	.byte	3,7,1,5,25,3,124,1,5,21,9
+	.half	.L40-.L418
+	.byte	3,3,1,5,46,9
+	.half	.L419-.L40
 	.byte	1,5,17,9
-	.half	.L56-.L459
-	.byte	3,2,1,5,26,9
-	.half	.L461-.L56
-	.byte	3,1,1,5,28,9
-	.half	.L675-.L461
-	.byte	1,5,24,9
-	.half	.L676-.L675
-	.byte	1,5,34,9
-	.half	.L677-.L676
-	.byte	1,5,21,9
-	.half	.L678-.L677
-	.byte	1,5,53,9
-	.half	.L679-.L678
-	.byte	1,5,56,9
-	.half	.L680-.L679
-	.byte	1,5,53,9
-	.half	.L57-.L680
+	.half	.L420-.L419
+	.byte	3,1,1,5,32,7,9
+	.half	.L624-.L420
+	.byte	1,5,46,7,9
+	.half	.L625-.L624
+	.byte	1,5,73,7,9
+	.half	.L41-.L625
+	.byte	1,5,58,9
+	.half	.L626-.L41
+	.byte	1,5,97,9
+	.half	.L415-.L626
+	.byte	1,5,54,9
+	.half	.L428-.L415
 	.byte	1,5,17,9
-	.half	.L58-.L57
-	.byte	1,5,24,9
-	.half	.L681-.L58
-	.byte	3,1,1,5,17,9
-	.half	.L682-.L681
-	.byte	1,5,32,7,9
-	.half	.L683-.L682
+	.half	.L43-.L428
+	.byte	3,1,1,5,32,7,9
+	.half	.L627-.L43
 	.byte	1,5,46,7,9
-	.half	.L684-.L683
-	.byte	1,5,79,7,9
-	.half	.L59-.L684
-	.byte	1,5,63,9
-	.half	.L685-.L59
-	.byte	1,5,65,9
-	.half	.L686-.L685
-	.byte	1,5,61,9
-	.half	.L687-.L686
-	.byte	1,5,71,9
-	.half	.L688-.L687
-	.byte	1,5,73,9
-	.half	.L689-.L688
+	.half	.L628-.L627
+	.byte	1,5,73,7,9
+	.half	.L44-.L628
 	.byte	1,5,58,9
-	.half	.L690-.L689
-	.byte	1,5,90,9
-	.half	.L691-.L690
-	.byte	1,5,93,9
-	.half	.L692-.L691
-	.byte	1,5,90,9
-	.half	.L62-.L692
+	.half	.L629-.L44
 	.byte	1,5,97,9
-	.half	.L63-.L62
+	.half	.L422-.L629
 	.byte	1,5,54,9
-	.half	.L693-.L63
-	.byte	1,5,24,9
-	.half	.L61-.L693
-	.byte	3,1,1,5,17,9
-	.half	.L694-.L61
-	.byte	1,5,32,7,9
-	.half	.L695-.L694
+	.half	.L630-.L422
+	.byte	1,5,17,9
+	.half	.L46-.L630
+	.byte	3,1,1,5,32,7,9
+	.half	.L631-.L46
 	.byte	1,5,46,7,9
-	.half	.L696-.L695
+	.half	.L632-.L631
 	.byte	1,5,79,7,9
-	.half	.L64-.L696
-	.byte	1,5,63,9
-	.half	.L697-.L64
-	.byte	1,5,65,9
-	.half	.L698-.L697
-	.byte	1,5,61,9
-	.half	.L699-.L698
-	.byte	1,5,71,9
-	.half	.L700-.L699
+	.half	.L47-.L632
 	.byte	1,5,73,9
-	.half	.L701-.L700
+	.half	.L423-.L47
 	.byte	1,5,58,9
-	.half	.L702-.L701
-	.byte	1,5,90,9
-	.half	.L703-.L702
-	.byte	1,5,93,9
-	.half	.L704-.L703
-	.byte	1,5,90,9
-	.half	.L67-.L704
+	.half	.L633-.L423
 	.byte	1,5,97,9
-	.half	.L68-.L67
+	.half	.L634-.L633
 	.byte	1,5,54,9
-	.half	.L705-.L68
-	.byte	1,5,24,9
-	.half	.L66-.L705
-	.byte	3,1,1,5,17,9
-	.half	.L706-.L66
-	.byte	1,5,32,7,9
-	.half	.L707-.L706
+	.half	.L635-.L634
+	.byte	1,5,17,9
+	.half	.L49-.L635
+	.byte	3,1,1,5,32,7,9
+	.half	.L636-.L49
 	.byte	1,5,46,7,9
-	.half	.L708-.L707
-	.byte	1,5,79,7,9
-	.half	.L69-.L708
-	.byte	1,5,63,9
-	.half	.L709-.L69
-	.byte	1,5,65,9
-	.half	.L710-.L709
-	.byte	1,5,61,9
-	.half	.L711-.L710
-	.byte	1,5,71,9
-	.half	.L712-.L711
-	.byte	1,5,73,9
-	.half	.L713-.L712
+	.half	.L637-.L636
+	.byte	1,5,73,7,9
+	.half	.L50-.L637
 	.byte	1,5,58,9
-	.half	.L714-.L713
-	.byte	1,5,90,9
-	.half	.L715-.L714
-	.byte	1,5,93,9
-	.half	.L716-.L715
-	.byte	1,5,90,9
-	.half	.L72-.L716
+	.half	.L638-.L50
 	.byte	1,5,97,9
-	.half	.L73-.L72
+	.half	.L424-.L638
 	.byte	1,5,54,9
-	.half	.L717-.L73
-	.byte	1,5,24,9
-	.half	.L71-.L717
-	.byte	3,1,1,5,17,9
-	.half	.L718-.L71
-	.byte	1,5,32,7,9
-	.half	.L719-.L718
+	.half	.L639-.L424
+	.byte	1,5,17,9
+	.half	.L52-.L639
+	.byte	3,1,1,5,32,7,9
+	.half	.L640-.L52
 	.byte	1,5,46,7,9
-	.half	.L720-.L719
+	.half	.L641-.L640
 	.byte	1,5,79,7,9
-	.half	.L74-.L720
-	.byte	1,5,63,9
-	.half	.L721-.L74
-	.byte	1,5,65,9
-	.half	.L722-.L721
-	.byte	1,5,61,9
-	.half	.L723-.L722
-	.byte	1,5,71,9
-	.half	.L724-.L723
+	.half	.L53-.L641
 	.byte	1,5,73,9
-	.half	.L725-.L724
+	.half	.L425-.L53
 	.byte	1,5,58,9
-	.half	.L726-.L725
-	.byte	1,5,90,9
-	.half	.L727-.L726
-	.byte	1,5,93,9
-	.half	.L728-.L727
-	.byte	1,5,90,9
-	.half	.L77-.L728
+	.half	.L642-.L425
 	.byte	1,5,97,9
-	.half	.L78-.L77
+	.half	.L643-.L642
 	.byte	1,5,54,9
-	.half	.L729-.L78
-	.byte	1,5,24,9
-	.half	.L76-.L729
-	.byte	3,1,1,5,17,9
-	.half	.L730-.L76
-	.byte	1,5,32,7,9
-	.half	.L731-.L730
+	.half	.L644-.L643
+	.byte	1,5,17,9
+	.half	.L55-.L644
+	.byte	3,1,1,5,32,7,9
+	.half	.L645-.L55
 	.byte	1,5,46,7,9
-	.half	.L732-.L731
+	.half	.L646-.L645
 	.byte	1,5,79,7,9
-	.half	.L79-.L732
-	.byte	1,5,63,9
-	.half	.L733-.L79
-	.byte	1,5,65,9
-	.half	.L734-.L733
-	.byte	1,5,61,9
-	.half	.L735-.L734
-	.byte	1,5,71,9
-	.half	.L736-.L735
+	.half	.L56-.L646
 	.byte	1,5,73,9
-	.half	.L737-.L736
+	.half	.L426-.L56
 	.byte	1,5,58,9
-	.half	.L738-.L737
-	.byte	1,5,90,9
-	.half	.L739-.L738
-	.byte	1,5,93,9
-	.half	.L740-.L739
-	.byte	1,5,90,9
-	.half	.L82-.L740
+	.half	.L647-.L426
 	.byte	1,5,97,9
-	.half	.L83-.L82
+	.half	.L648-.L647
 	.byte	1,5,54,9
-	.half	.L741-.L83
-	.byte	1,5,24,9
-	.half	.L81-.L741
-	.byte	3,1,1,5,17,9
-	.half	.L742-.L81
-	.byte	1,5,32,7,9
-	.half	.L743-.L742
-	.byte	1,5,46,7,9
-	.half	.L744-.L743
+	.half	.L649-.L648
+	.byte	1,5,17,9
+	.half	.L58-.L649
+	.byte	3,1,1,5,32,7,9
+	.half	.L650-.L58
 	.byte	1,5,79,7,9
-	.half	.L84-.L744
-	.byte	1,5,63,9
-	.half	.L745-.L84
-	.byte	1,5,65,9
-	.half	.L746-.L745
-	.byte	1,5,61,9
-	.half	.L747-.L746
-	.byte	1,5,71,9
-	.half	.L748-.L747
+	.half	.L59-.L650
 	.byte	1,5,73,9
-	.half	.L749-.L748
+	.half	.L427-.L59
 	.byte	1,5,58,9
-	.half	.L750-.L749
-	.byte	1,5,90,9
-	.half	.L751-.L750
-	.byte	1,5,93,9
-	.half	.L752-.L751
-	.byte	1,5,90,9
-	.half	.L87-.L752
+	.half	.L651-.L427
 	.byte	1,5,97,9
-	.half	.L88-.L87
+	.half	.L652-.L651
 	.byte	1,5,54,9
-	.half	.L753-.L88
+	.half	.L653-.L652
 	.byte	1,5,24,9
-	.half	.L86-.L753
-	.byte	3,1,1,5,17,9
-	.half	.L754-.L86
-	.byte	1,5,32,7,9
-	.half	.L755-.L754
-	.byte	1,5,48,7,9
-	.half	.L756-.L755
-	.byte	1,5,46,9
-	.half	.L757-.L756
-	.byte	1,5,79,7,9
-	.half	.L89-.L757
-	.byte	1,5,63,9
-	.half	.L758-.L89
-	.byte	1,5,65,9
-	.half	.L759-.L758
-	.byte	1,5,61,9
-	.half	.L760-.L759
-	.byte	1,5,71,9
-	.half	.L761-.L760
-	.byte	1,5,73,9
-	.half	.L762-.L761
-	.byte	1,5,58,9
-	.half	.L763-.L762
-	.byte	1,5,90,9
-	.half	.L764-.L763
-	.byte	1,5,93,9
-	.half	.L765-.L764
-	.byte	1,5,90,9
-	.half	.L92-.L765
-	.byte	1,5,97,9
-	.half	.L93-.L92
-	.byte	1,5,54,9
-	.half	.L766-.L93
-	.byte	1,5,24,9
-	.half	.L91-.L766
+	.half	.L60-.L653
 	.byte	3,2,1,5,28,9
-	.half	.L462-.L91
+	.half	.L429-.L60
 	.byte	3,116,1,5,25,9
-	.half	.L55-.L462
+	.half	.L39-.L429
 	.byte	1,5,23,7,9
-	.half	.L767-.L55
+	.half	.L432-.L39
 	.byte	3,125,1,5,20,9
-	.half	.L53-.L767
-	.byte	1,5,1,9
-	.half	.L768-.L53
+	.half	.L37-.L432
+	.byte	1,5,1,7,9
+	.half	.L654-.L37
 	.byte	3,18,1,7,9
-	.half	.L197-.L768
+	.half	.L169-.L654
 	.byte	0,1,1
-.L664:
+.L617:
 	.sdecl	'.debug_ranges',debug,cluster('oled_dis_bmp')
 	.sect	'.debug_ranges'
-.L196:
-	.word	-1,.L131,0,.L197-.L131,0,0
+.L168:
+	.word	-1,.L101,0,.L169-.L101,0,0
+.L284:
+	.word	-1,.L101,0,.L278-.L101,-1,.L103,0,.L204-.L103,0,0
 	.sdecl	'.debug_info',debug,cluster('oled_print_chinese')
 	.sect	'.debug_info'
-.L198:
+.L170:
 	.word	350
 	.half	3
-	.word	.L199
+	.word	.L171
 	.byte	4,1
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_OLED.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L201,.L200
+	.word	.L173,.L172
 	.byte	2
-	.word	.L134
+	.word	.L106
 	.byte	3
 	.byte	'oled_print_chinese',0,1,130,4,6,1,1,1
-	.word	.L133,.L302,.L132
+	.word	.L105,.L290,.L104
 	.byte	4
 	.byte	'x',0,1,130,4,31
-	.word	.L225,.L303
+	.word	.L212,.L291
 	.byte	4
 	.byte	'y',0,1,130,4,40
-	.word	.L225,.L304
+	.word	.L212,.L292
 	.byte	4
 	.byte	'size',0,1,130,4,49
-	.word	.L225,.L305
+	.word	.L212,.L293
 	.byte	4
 	.byte	'p',0,1,130,4,68
-	.word	.L306,.L307
+	.word	.L294,.L295
 	.byte	4
 	.byte	'len',0,1,130,4,77
-	.word	.L225,.L308
+	.word	.L212,.L296
 	.byte	5
-	.word	.L133,.L302
+	.word	.L105,.L290
 	.byte	6
 	.byte	'i',0,1,132,4,11
-	.word	.L265,.L309
+	.word	.L252,.L297
 	.byte	6
 	.byte	'j',0,1,132,4,13
-	.word	.L265,.L310
+	.word	.L252,.L298
 	.byte	6
 	.byte	'k',0,1,132,4,15
-	.word	.L265,.L311
+	.word	.L252,.L299
 	.byte	0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('oled_print_chinese')
 	.sect	'.debug_abbrev'
-.L199:
+.L171:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3
 	.byte	8,58,15,59,15,57,15,73,16,2,6,0,0,0
 	.sdecl	'.debug_line',debug,cluster('oled_print_chinese')
 	.sect	'.debug_line'
-.L200:
-	.word	.L770-.L769
-.L769:
+.L172:
+	.word	.L656-.L655
+.L655:
 	.half	3
-	.word	.L772-.L771
-.L771:
+	.word	.L658-.L657
+.L657:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_OLED.c',0,0,0,0,0
-.L772:
+.L658:
 	.byte	5,6,7,0,5,2
-	.word	.L133
+	.word	.L105
 	.byte	3,129,4,1,5,10,9
-	.half	.L467-.L133
-	.byte	3,4,1,5,19,9
-	.half	.L468-.L467
-	.byte	1,5,14,9
-	.half	.L95-.L468
-	.byte	3,2,1,5,28,9
-	.half	.L470-.L95
-	.byte	1,5,27,9
-	.half	.L97-.L470
+	.half	.L434-.L105
+	.byte	3,4,1,5,21,9
+	.half	.L435-.L434
+	.byte	3,2,1,5,19,3,126,1,5,14,9
+	.half	.L62-.L435
+	.byte	3,2,1,5,28,1,5,27,9
+	.half	.L64-.L62
 	.byte	3,2,1,5,36,9
-	.half	.L473-.L97
-	.byte	1,5,18,9
-	.half	.L773-.L473
-	.byte	3,1,1,5,26,9
-	.half	.L475-.L773
-	.byte	1,5,28,9
-	.half	.L99-.L475
-	.byte	3,2,1,5,18,9
-	.half	.L774-.L99
-	.byte	3,1,1,5,29,9
-	.half	.L775-.L774
-	.byte	3,125,1,5,24,9
-	.half	.L98-.L775
+	.half	.L439-.L64
 	.byte	1,5,26,9
-	.half	.L776-.L98
-	.byte	1,5,31,7,9
-	.half	.L777-.L776
-	.byte	3,125,1,5,26,9
-	.half	.L96-.L777
-	.byte	1,5,25,9
-	.half	.L778-.L96
-	.byte	1,5,28,9
-	.half	.L779-.L778
+	.half	.L659-.L439
+	.byte	3,1,1,5,28,9
+	.half	.L65-.L659
+	.byte	3,2,1,5,26,9
+	.half	.L660-.L65
+	.byte	3,126,1,5,31,7,9
+	.half	.L661-.L660
+	.byte	3,125,1,5,28,9
+	.half	.L63-.L661
 	.byte	1,5,22,7,9
-	.half	.L780-.L779
+	.half	.L662-.L63
 	.byte	3,126,1,5,19,9
-	.half	.L94-.L780
+	.half	.L61-.L662
 	.byte	1,5,1,7,9
-	.half	.L781-.L94
+	.half	.L663-.L61
 	.byte	3,12,1,7,9
-	.half	.L202-.L781
+	.half	.L174-.L663
 	.byte	0,1,1
-.L770:
+.L656:
 	.sdecl	'.debug_ranges',debug,cluster('oled_print_chinese')
 	.sect	'.debug_ranges'
-.L201:
-	.word	-1,.L133,0,.L202-.L133,0,0
+.L173:
+	.word	-1,.L105,0,.L174-.L105,0,0
 	.sdecl	'.debug_info',debug,cluster('oled_wrdat')
 	.sect	'.debug_info'
-.L203:
-	.word	247
+.L175:
+	.word	243
 	.half	3
-	.word	.L204
+	.word	.L176
 	.byte	4,1
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_OLED.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L206,.L205
+	.word	.L178,.L177
 	.byte	2
-	.word	.L134
+	.word	.L106
 	.byte	3
 	.byte	'oled_wrdat',0,1,53,6,1,1,1
-	.word	.L101,.L312,.L100
+	.word	.L67,.L300,.L66
 	.byte	4
 	.byte	'data',0,1,53,23
-	.word	.L225,.L313
+	.word	.L212,.L301
 	.byte	5
-	.word	.L101,.L312
+	.word	.L302
 	.byte	6
 	.byte	'i',0,1,55,8
-	.word	.L225,.L314
+	.word	.L212,.L303
 	.byte	0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('oled_wrdat')
 	.sect	'.debug_abbrev'
-.L204:
+.L176:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
-	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3
-	.byte	8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,85,6,0,0,6,52,0,3,8,58
+	.byte	15,59,15,57,15,73,16,2,6,0,0,0
 	.sdecl	'.debug_line',debug,cluster('oled_wrdat')
 	.sect	'.debug_line'
-.L205:
-	.word	.L783-.L782
-.L782:
+.L177:
+	.word	.L665-.L664
+.L664:
 	.half	3
-	.word	.L785-.L784
-.L784:
+	.word	.L667-.L666
+.L666:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_OLED.c',0,0,0,0,0
-.L785:
+.L667:
 	.byte	5,6,7,0,5,2
-	.word	.L101
+	.word	.L67
 	.byte	3,52,1,5,9,9
-	.half	.L328-.L101
+	.half	.L317-.L67
 	.byte	3,2,1,5,5,9
-	.half	.L330-.L328
+	.half	.L319-.L317
 	.byte	3,2,1,5,2,9
-	.half	.L786-.L330
+	.half	.L316-.L319
 	.byte	3,1,1,9
-	.half	.L787-.L786
-	.byte	3,1,1,5,11,9
-	.half	.L788-.L787
-	.byte	3,1,1,5,5,9
-	.half	.L3-.L788
-	.byte	3,2,1,5,19,7,9
-	.half	.L789-.L3
-	.byte	1,5,30,9
-	.half	.L790-.L789
-	.byte	1,5,10,9
-	.half	.L4-.L790
-	.byte	3,1,1,5,5,9
-	.half	.L5-.L4
+	.half	.L318-.L316
+	.byte	3,1,1,5,9,9
+	.half	.L2-.L318
+	.byte	3,1,1,5,10,9
+	.half	.L668-.L2
+	.byte	3,3,1,5,5,9
+	.half	.L322-.L668
 	.byte	3,1,1,9
-	.half	.L791-.L5
+	.half	.L669-.L322
 	.byte	3,2,1,5,9,9
-	.half	.L792-.L791
-	.byte	3,1,1,9
-	.half	.L2-.L792
-	.byte	3,121,1,5,11,9
-	.half	.L332-.L2
-	.byte	1,5,5,7,9
-	.half	.L793-.L332
-	.byte	3,9,1,5,1,9
-	.half	.L794-.L793
-	.byte	3,1,1,7,9
-	.half	.L207-.L794
-	.byte	0,1,1
-.L783:
+	.half	.L670-.L669
+	.byte	3,1,1,5,11,9
+	.half	.L324-.L670
+	.byte	3,121,1,5,5,7,9
+	.half	.L671-.L324
+	.byte	3,9,1,9
+	.half	.L672-.L671
+	.byte	3,116,1,9
+	.half	.L673-.L672
+	.byte	3,12,1,5,1,7,9
+	.half	.L179-.L673
+	.byte	3,1,0,1,1
+.L665:
 	.sdecl	'.debug_ranges',debug,cluster('oled_wrdat')
 	.sect	'.debug_ranges'
-.L206:
-	.word	-1,.L101,0,.L207-.L101,0,0
+.L178:
+	.word	-1,.L67,0,.L179-.L67,0,0
+.L302:
+	.word	-1,.L67,0,.L300-.L67,-1,.L69,0,.L209-.L69,-1,.L71,0,.L199-.L71,0,0
 	.sdecl	'.debug_info',debug,cluster('oled_wr6dat')
 	.sect	'.debug_info'
-.L208:
+.L180:
 	.word	248
 	.half	3
-	.word	.L209
+	.word	.L181
 	.byte	4,1
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_OLED.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L211,.L210
+	.word	.L183,.L182
 	.byte	2
-	.word	.L134
+	.word	.L106
 	.byte	3
 	.byte	'oled_wr6dat',0,1,79,6,1,1,1
-	.word	.L103,.L315,.L102
+	.word	.L73,.L304,.L72
 	.byte	4
 	.byte	'data',0,1,79,24
-	.word	.L225,.L316
+	.word	.L212,.L305
 	.byte	5
-	.word	.L103,.L315
+	.word	.L73,.L304
 	.byte	6
 	.byte	'i',0,1,81,8
-	.word	.L225,.L317
+	.word	.L212,.L306
 	.byte	0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('oled_wr6dat')
 	.sect	'.debug_abbrev'
-.L209:
+.L181:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3
 	.byte	8,58,15,59,15,57,15,73,16,2,6,0,0,0
 	.sdecl	'.debug_line',debug,cluster('oled_wr6dat')
 	.sect	'.debug_line'
-.L210:
-	.word	.L796-.L795
-.L795:
+.L182:
+	.word	.L675-.L674
+.L674:
 	.half	3
-	.word	.L798-.L797
-.L797:
+	.word	.L677-.L676
+.L676:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_OLED.c',0,0,0,0,0
-.L798:
+.L677:
 	.byte	5,6,7,0,5,2
-	.word	.L103
+	.word	.L73
 	.byte	3,206,0,1,5,9,9
-	.half	.L334-.L103
+	.half	.L326-.L73
 	.byte	3,2,1,5,2,9
-	.half	.L336-.L334
+	.half	.L328-.L326
 	.byte	3,2,1,9
-	.half	.L799-.L336
+	.half	.L325-.L328
 	.byte	3,1,1,9
-	.half	.L800-.L799
-	.byte	3,1,1,5,11,9
-	.half	.L801-.L800
-	.byte	3,1,1,5,4,9
-	.half	.L7-.L801
-	.byte	3,2,1,5,18,7,9
-	.half	.L802-.L7
-	.byte	1,5,29,9
-	.half	.L803-.L802
-	.byte	1,5,9,9
-	.half	.L8-.L803
-	.byte	3,1,1,5,4,9
-	.half	.L9-.L8
-	.byte	3,1,1,9
-	.half	.L804-.L9
-	.byte	3,1,1,5,8,9
-	.half	.L805-.L804
+	.half	.L327-.L325
 	.byte	3,1,1,5,9,9
-	.half	.L6-.L805
-	.byte	3,122,1,5,11,9
-	.half	.L338-.L6
-	.byte	1,5,5,7,9
-	.half	.L806-.L338
-	.byte	3,8,1,5,1,9
-	.half	.L807-.L806
-	.byte	3,1,1,7,9
-	.half	.L212-.L807
-	.byte	0,1,1
-.L796:
+	.half	.L5-.L327
+	.byte	3,1,1,9
+	.half	.L678-.L5
+	.byte	3,3,1,5,4,9
+	.half	.L679-.L678
+	.byte	3,1,1,9
+	.half	.L680-.L679
+	.byte	3,1,1,5,8,9
+	.half	.L681-.L680
+	.byte	3,1,1,5,11,9
+	.half	.L331-.L681
+	.byte	3,122,1,5,5,7,9
+	.half	.L682-.L331
+	.byte	3,8,1,5,2,9
+	.half	.L683-.L682
+	.byte	3,117,1,5,5,9
+	.half	.L684-.L683
+	.byte	3,11,1,5,1,7,9
+	.half	.L184-.L684
+	.byte	3,1,0,1,1
+.L675:
 	.sdecl	'.debug_ranges',debug,cluster('oled_wr6dat')
 	.sect	'.debug_ranges'
-.L211:
-	.word	-1,.L103,0,.L212-.L103,0,0
+.L183:
+	.word	-1,.L73,0,.L184-.L73,0,0
 	.sdecl	'.debug_info',debug,cluster('oled_wrcmd')
 	.sect	'.debug_info'
-.L213:
+.L185:
 	.word	246
 	.half	3
-	.word	.L214
+	.word	.L186
 	.byte	4,1
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_OLED.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L216,.L215
+	.word	.L188,.L187
 	.byte	2
-	.word	.L134
+	.word	.L106
 	.byte	3
 	.byte	'oled_wrcmd',0,1,104,6,1,1,1
-	.word	.L105,.L318,.L104
+	.word	.L75,.L307,.L74
 	.byte	4
 	.byte	'cmd',0,1,104,23
-	.word	.L225,.L319
+	.word	.L212,.L308
 	.byte	5
-	.word	.L105,.L318
+	.word	.L75,.L307
 	.byte	6
 	.byte	'i',0,1,106,8
-	.word	.L225,.L320
+	.word	.L212,.L309
 	.byte	0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('oled_wrcmd')
 	.sect	'.debug_abbrev'
-.L214:
+.L186:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3
 	.byte	8,58,15,59,15,57,15,73,16,2,6,0,0,0
 	.sdecl	'.debug_line',debug,cluster('oled_wrcmd')
 	.sect	'.debug_line'
-.L215:
-	.word	.L809-.L808
-.L808:
+.L187:
+	.word	.L686-.L685
+.L685:
 	.half	3
-	.word	.L811-.L810
-.L810:
+	.word	.L688-.L687
+.L687:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_OLED.c',0,0,0,0,0
-.L811:
+.L688:
 	.byte	5,6,7,0,5,2
-	.word	.L105
+	.word	.L75
 	.byte	3,231,0,1,5,9,9
-	.half	.L340-.L105
+	.half	.L333-.L75
 	.byte	3,2,1,5,2,9
-	.half	.L342-.L340
+	.half	.L335-.L333
 	.byte	3,2,1,9
-	.half	.L812-.L342
+	.half	.L332-.L335
 	.byte	3,1,1,9
-	.half	.L813-.L812
-	.byte	3,1,1,5,11,9
-	.half	.L814-.L813
-	.byte	3,2,1,5,3,9
-	.half	.L11-.L814
-	.byte	3,2,1,5,16,7,9
-	.half	.L815-.L11
-	.byte	1,5,27,9
-	.half	.L816-.L815
-	.byte	1,5,8,9
-	.half	.L12-.L816
-	.byte	3,1,1,5,3,9
-	.half	.L13-.L12
-	.byte	3,1,1,9
-	.half	.L817-.L13
-	.byte	3,2,1,5,6,9
-	.half	.L818-.L817
+	.half	.L334-.L332
 	.byte	3,1,1,5,9,9
-	.half	.L10-.L818
-	.byte	3,121,1,5,11,9
-	.half	.L344-.L10
-	.byte	1,5,5,7,9
-	.half	.L819-.L344
-	.byte	3,9,1,5,1,9
-	.half	.L820-.L819
-	.byte	3,1,1,7,9
-	.half	.L217-.L820
-	.byte	0,1,1
-.L809:
+	.half	.L8-.L334
+	.byte	3,2,1,5,8,9
+	.half	.L689-.L8
+	.byte	3,3,1,5,3,9
+	.half	.L690-.L689
+	.byte	3,1,1,9
+	.half	.L691-.L690
+	.byte	3,2,1,5,6,9
+	.half	.L692-.L691
+	.byte	3,1,1,5,11,9
+	.half	.L338-.L692
+	.byte	3,121,1,5,5,7,9
+	.half	.L693-.L338
+	.byte	3,9,1,5,2,9
+	.half	.L694-.L693
+	.byte	3,115,1,5,5,9
+	.half	.L695-.L694
+	.byte	3,13,1,5,1,7,9
+	.half	.L189-.L695
+	.byte	3,1,0,1,1
+.L686:
 	.sdecl	'.debug_ranges',debug,cluster('oled_wrcmd')
 	.sect	'.debug_ranges'
-.L216:
-	.word	-1,.L105,0,.L217-.L105,0,0
+.L188:
+	.word	-1,.L75,0,.L189-.L75,0,0
 	.sdecl	'.debug_info',debug,cluster('oled_hexascii')
 	.sect	'.debug_info'
-.L218:
+.L190:
 	.word	296
 	.half	3
-	.word	.L219
+	.word	.L191
 	.byte	4,1
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_OLED.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L221,.L220
+	.word	.L193,.L192
 	.byte	2
-	.word	.L134
+	.word	.L106
 	.byte	3
 	.byte	'oled_hexascii',0,1,131,1,6,1,1,1
-	.word	.L107,.L321,.L106
+	.word	.L77,.L310,.L76
 	.byte	4
 	.byte	'hex',0,1,131,1,27
-	.word	.L258,.L322
+	.word	.L245,.L311
 	.byte	4
 	.byte	'Print',0,1,131,1,38
-	.word	.L323,.L324
+	.word	.L312,.L313
 	.byte	5
-	.word	.L107,.L321
+	.word	.L77,.L310
 	.byte	6
 	.byte	'hexcheck',0,1,133,1,8
-	.word	.L225,.L325
+	.word	.L212,.L314
 	.byte	6
 	.byte	'TEMP',0,1,134,1,8
-	.word	.L225,.L326
+	.word	.L212,.L315
 	.byte	0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('oled_hexascii')
 	.sect	'.debug_abbrev'
-.L219:
+.L191:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3
 	.byte	8,58,15,59,15,57,15,73,16,2,6,0,0,0
 	.sdecl	'.debug_line',debug,cluster('oled_hexascii')
 	.sect	'.debug_line'
-.L220:
-	.word	.L822-.L821
-.L821:
+.L192:
+	.word	.L697-.L696
+.L696:
 	.half	3
-	.word	.L824-.L823
-.L823:
+	.word	.L699-.L698
+.L698:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_OLED.c',0,0,0,0,0
-.L824:
-	.byte	5,7,7,0,5,2
-	.word	.L107
-	.byte	3,134,1,1,5,8,9
-	.half	.L346-.L107
-	.byte	3,1,1,5,7,9
-	.half	.L347-.L346
-	.byte	1,5,15,9
-	.half	.L345-.L347
-	.byte	1,5,14,9
-	.half	.L825-.L345
-	.byte	1,5,12,9
-	.half	.L826-.L825
-	.byte	3,1,1,5,10,9
-	.half	.L15-.L826
-	.byte	3,2,1,5,22,9
-	.half	.L827-.L15
-	.byte	3,1,1,5,21,9
-	.half	.L348-.L827
-	.byte	1,5,13,9
-	.half	.L349-.L348
-	.byte	3,1,1,5,11,9
-	.half	.L350-.L349
-	.byte	1,5,10,9
-	.half	.L351-.L350
+.L699:
+	.byte	5,15,7,0,5,2
+	.word	.L77
+	.byte	3,135,1,1,5,14,1,5,12,9
+	.half	.L700-.L77
+	.byte	3,1,1,5,22,9
+	.half	.L11-.L700
+	.byte	3,3,1,5,21,9
+	.half	.L339-.L11
+	.byte	1,5,11,9
+	.half	.L341-.L339
 	.byte	3,1,1,5,30,9
-	.half	.L352-.L351
-	.byte	1,5,19,9
-	.half	.L828-.L352
-	.byte	1,5,12,9
-	.half	.L14-.L828
-	.byte	3,123,1,5,1,7,9
-	.half	.L829-.L14
+	.half	.L340-.L341
+	.byte	3,1,1,5,19,1,5,12,3,123,1,5,1,7,9
+	.half	.L701-.L340
 	.byte	3,8,1,7,9
-	.half	.L222-.L829
+	.half	.L194-.L701
 	.byte	0,1,1
-.L822:
+.L697:
 	.sdecl	'.debug_ranges',debug,cluster('oled_hexascii')
 	.sect	'.debug_ranges'
-.L221:
-	.word	-1,.L107,0,.L222-.L107,0,0
-	.sdecl	'.debug_loc',debug,cluster('oled_clrpixel')
+.L193:
+	.word	-1,.L77,0,.L194-.L77,0,0
+	.sdecl	'.debug_info',debug,cluster('.cocofun_6')
+	.sect	'.debug_info'
+.L195:
+	.word	203
+	.half	3
+	.word	.L196
+	.byte	4,1
+	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_OLED.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
+	.word	.L198,.L197
+	.byte	2
+	.word	.L106
+	.byte	3
+	.byte	'.cocofun_6',0,1,53,6,1
+	.word	.L71,.L199,.L70
+	.byte	0
+	.sdecl	'.debug_abbrev',debug,cluster('.cocofun_6')
+	.sect	'.debug_abbrev'
+.L196:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,0,3,8,58,15,59,15,57,15,54,15
+	.byte	17,1,18,1,64,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('.cocofun_6')
+	.sect	'.debug_line'
+.L197:
+	.word	.L703-.L702
+.L702:
+	.half	3
+	.word	.L705-.L704
+.L704:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_OLED.c',0,0,0,0,0
+.L705:
+	.byte	5,9,7,0,5,2
+	.word	.L71
+	.byte	3,59,1,5,5,9
+	.half	.L321-.L71
+	.byte	3,2,1,5,9,9
+	.half	.L706-.L321
+	.byte	3,121,1,9
+	.half	.L199-.L706
+	.byte	0,1,1,5,9,0,5,2
+	.word	.L71
+	.byte	3,213,0,1,5,4,9
+	.half	.L321-.L71
+	.byte	3,2,1,5,9,9
+	.half	.L706-.L321
+	.byte	3,121,1,3,102,1,7,9
+	.half	.L199-.L706
+	.byte	0,1,1,5,9,0,5,2
+	.word	.L71
+	.byte	3,239,0,1,5,3,9
+	.half	.L321-.L71
+	.byte	3,2,1,5,9,9
+	.half	.L706-.L321
+	.byte	3,120,1,3,77,1,7,9
+	.half	.L199-.L706
+	.byte	0,1,1
+.L703:
+	.sdecl	'.debug_ranges',debug,cluster('.cocofun_6')
+	.sect	'.debug_ranges'
+.L198:
+	.word	-1,.L71,0,.L199-.L71,0,0
+	.sdecl	'.debug_info',debug,cluster('.cocofun_7')
+	.sect	'.debug_info'
+.L200:
+	.word	204
+	.half	3
+	.word	.L201
+	.byte	4,1
+	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_OLED.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
+	.word	.L203,.L202
+	.byte	2
+	.word	.L106
+	.byte	3
+	.byte	'.cocofun_7',0,1,215,3,6,1
+	.word	.L103,.L204,.L102
+	.byte	0
+	.sdecl	'.debug_abbrev',debug,cluster('.cocofun_7')
+	.sect	'.debug_abbrev'
+.L201:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,0,3,8,58,15,59,15,57,15,54,15
+	.byte	17,1,18,1,64,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('.cocofun_7')
+	.sect	'.debug_line'
+.L202:
+	.word	.L708-.L707
+.L707:
+	.half	3
+	.word	.L710-.L709
+.L709:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_OLED.c',0,0,0,0,0
+.L710:
+	.byte	5,58,7,0,5,2
+	.word	.L103
+	.byte	3,232,3,1,5,83,9
+	.half	.L421-.L103
+	.byte	1,9
+	.half	.L204-.L421
+	.byte	0,1,1,5,58,0,5,2
+	.word	.L103
+	.byte	3,233,3,1,5,83,9
+	.half	.L421-.L103
+	.byte	1,3,127,1,7,9
+	.half	.L204-.L421
+	.byte	0,1,1,5,58,0,5,2
+	.word	.L103
+	.byte	3,234,3,1,5,83,9
+	.half	.L421-.L103
+	.byte	1,3,126,1,7,9
+	.half	.L204-.L421
+	.byte	0,1,1,5,58,0,5,2
+	.word	.L103
+	.byte	3,235,3,1,5,83,9
+	.half	.L421-.L103
+	.byte	1,3,125,1,7,9
+	.half	.L204-.L421
+	.byte	0,1,1,5,58,0,5,2
+	.word	.L103
+	.byte	3,236,3,1,5,83,9
+	.half	.L421-.L103
+	.byte	1,3,124,1,7,9
+	.half	.L204-.L421
+	.byte	0,1,1,5,58,0,5,2
+	.word	.L103
+	.byte	3,237,3,1,5,83,9
+	.half	.L421-.L103
+	.byte	1,3,123,1,7,9
+	.half	.L204-.L421
+	.byte	0,1,1,5,58,0,5,2
+	.word	.L103
+	.byte	3,238,3,1,5,83,9
+	.half	.L421-.L103
+	.byte	1,3,122,1,7,9
+	.half	.L204-.L421
+	.byte	0,1,1
+.L708:
+	.sdecl	'.debug_ranges',debug,cluster('.cocofun_7')
+	.sect	'.debug_ranges'
+.L203:
+	.word	-1,.L103,0,.L204-.L103,0,0
+	.sdecl	'.debug_info',debug,cluster('.cocofun_8')
+	.sect	'.debug_info'
+.L205:
+	.word	203
+	.half	3
+	.word	.L206
+	.byte	4,1
+	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_OLED.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
+	.word	.L208,.L207
+	.byte	2
+	.word	.L106
+	.byte	3
+	.byte	'.cocofun_8',0,1,53,6,1
+	.word	.L69,.L209,.L68
+	.byte	0
+	.sdecl	'.debug_abbrev',debug,cluster('.cocofun_8')
+	.sect	'.debug_abbrev'
+.L206:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,0,3,8,58,15,59,15,57,15,54,15
+	.byte	17,1,18,1,64,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('.cocofun_8')
+	.sect	'.debug_line'
+.L207:
+	.word	.L712-.L711
+.L711:
+	.half	3
+	.word	.L714-.L713
+.L713:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_OLED.c',0,0,0,0,0
+.L714:
+	.byte	5,2,7,0,5,2
+	.word	.L69
+	.byte	3,58,1,9
+	.half	.L209-.L69
+	.byte	0,1,1,5,2,0,5,2
+	.word	.L69
+	.byte	3,212,0,1,9
+	.half	.L715-.L69
+	.byte	3,102,1,7,9
+	.half	.L209-.L715
+	.byte	0,1,1,5,2,0,5,2
+	.word	.L69
+	.byte	3,237,0,1,9
+	.half	.L715-.L69
+	.byte	3,77,1,7,9
+	.half	.L209-.L715
+	.byte	0,1,1
+.L712:
+	.sdecl	'.debug_ranges',debug,cluster('.cocofun_8')
+	.sect	'.debug_ranges'
+.L208:
+	.word	-1,.L69,0,.L209-.L69,0,0
+	.sdecl	'.debug_loc',debug,cluster('.cocofun_6')
 	.sect	'.debug_loc'
-.L116:
-	.word	-1,.L117,0,.L237-.L117
+.L70:
+	.word	-1,.L71,0,.L199-.L71
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L238:
-	.word	-1,.L117,0,.L376-.L117
+	.sdecl	'.debug_loc',debug,cluster('.cocofun_7')
+	.sect	'.debug_loc'
+.L102:
+	.word	-1,.L103,0,.L204-.L103
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('.cocofun_8')
+	.sect	'.debug_loc'
+.L68:
+	.word	-1,.L69,0,.L209-.L69
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('oled_clrpixel')
+	.sect	'.debug_loc'
+.L86:
+	.word	-1,.L87,0,.L224-.L87
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L225:
+	.word	-1,.L87,0,.L357-.L87
 	.half	1
 	.byte	84
-	.word	.L377-.L117,.L237-.L117
+	.word	.L358-.L87,.L224-.L87
 	.half	1
 	.byte	95
 	.word	0,0
-.L239:
-	.word	-1,.L117,0,.L376-.L117
+.L226:
+	.word	-1,.L87,0,.L357-.L87
 	.half	1
 	.byte	85
-	.word	.L378-.L117,.L237-.L117
+	.word	.L357-.L87,.L224-.L87
 	.half	1
 	.byte	88
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('oled_dis_bmp')
 	.sect	'.debug_loc'
-.L301:
-	.word	-1,.L131,.L461-.L131,.L462-.L131
-	.half	5
-	.byte	144,32,157,32,0
-	.word	.L463-.L131,.L462-.L131
+.L289:
+	.word	-1,.L101,.L420-.L101,.L415-.L101
+	.half	1
+	.byte	84
+	.word	.L103-.L101,.L204-.L101
+	.half	1
+	.byte	84
+	.word	.L428-.L101,.L429-.L101
 	.half	1
 	.byte	84
 	.word	0,0
-.L292:
-	.word	-1,.L131,0,.L54-.L131
+.L279:
+	.word	-1,.L101,0,.L413-.L101
 	.half	1
 	.byte	84
 	.word	0,0
-.L297:
-	.word	-1,.L131,.L457-.L131,.L458-.L131
+.L285:
+	.word	-1,.L101,.L38-.L101,.L415-.L101
 	.half	1
-	.byte	92
-	.word	.L53-.L131,.L291-.L131
+	.byte	89
+	.word	.L103-.L101,.L204-.L101
 	.half	1
-	.byte	92
+	.byte	89
+	.word	.L428-.L101,.L430-.L101
+	.half	1
+	.byte	89
+	.word	.L37-.L101,.L278-.L101
+	.half	1
+	.byte	89
 	.word	0,0
-.L298:
-	.word	-1,.L131,.L459-.L131,.L460-.L131
+.L286:
+	.word	-1,.L101,.L417-.L101,.L415-.L101
 	.half	1
 	.byte	93
-	.word	.L55-.L131,.L53-.L131
+	.word	.L103-.L101,.L204-.L101
+	.half	1
+	.byte	93
+	.word	.L428-.L101,.L431-.L101
+	.half	1
+	.byte	93
+	.word	.L39-.L101,.L37-.L101
 	.half	1
 	.byte	93
 	.word	0,0
-.L130:
-	.word	-1,.L131,0,.L452-.L131
-	.half	2
-	.byte	138,0
-	.word	.L452-.L131,.L291-.L131
-	.half	2
-	.byte	138,8
-	.word	.L291-.L131,.L291-.L131
+.L100:
+	.word	-1,.L101,0,.L278-.L101
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L295:
-	.word	-1,.L131,0,.L54-.L131
+.L282:
+	.word	-1,.L101,0,.L38-.L101
 	.half	1
 	.byte	100
-	.word	.L454-.L131,.L291-.L131
-	.half	1
-	.byte	108
 	.word	0,0
-.L299:
-	.word	-1,.L131,.L54-.L131,.L56-.L131
+.L287:
+	.word	-1,.L101,.L416-.L101,.L415-.L101
 	.half	1
-	.byte	95
-	.word	.L464-.L131,.L291-.L131
+	.byte	88
+	.word	.L103-.L101,.L204-.L101
 	.half	1
-	.byte	95
+	.byte	88
+	.word	.L428-.L101,.L278-.L101
+	.half	1
+	.byte	88
 	.word	0,0
-.L300:
-	.word	-1,.L131,.L456-.L131,.L291-.L131
+.L288:
+	.word	-1,.L101,.L414-.L101,.L415-.L101
+	.half	1
+	.byte	92
+	.word	.L103-.L101,.L204-.L101
+	.half	1
+	.byte	92
+	.word	.L428-.L101,.L278-.L101
+	.half	1
+	.byte	92
+	.word	0,0
+.L283:
+	.word	-1,.L101,0,.L38-.L101
+	.half	1
+	.byte	86
+	.word	.L419-.L101,.L420-.L101
+	.half	1
+	.byte	91
+	.word	.L421-.L101,.L204-.L101
 	.half	1
 	.byte	91
 	.word	0,0
-.L296:
-	.word	-1,.L131,0,.L54-.L131
-	.half	1
-	.byte	86
-	.word	.L455-.L131,.L291-.L131
-	.half	1
-	.byte	89
-	.word	0,0
-.L293:
-	.word	-1,.L131,0,.L54-.L131
+.L280:
+	.word	-1,.L101,0,.L38-.L101
 	.half	1
 	.byte	85
-	.word	.L453-.L131,.L291-.L131
+	.word	.L417-.L101,.L418-.L101
 	.half	1
-	.byte	88
-	.word	0,0
-	.sdecl	'.debug_loc',debug,cluster('oled_fill')
-	.sect	'.debug_loc'
-.L226:
-	.word	-1,.L113,0,.L21-.L113
+	.byte	90
+	.word	.L41-.L101,.L415-.L101
 	.half	1
-	.byte	84
-	.word	.L363-.L113,.L224-.L113
+	.byte	90
+	.word	.L44-.L101,.L422-.L101
 	.half	1
-	.byte	88
-	.word	.L366-.L113,.L367-.L113
+	.byte	90
+	.word	.L47-.L101,.L423-.L101
 	.half	1
-	.byte	84
-	.word	0,0
-.L112:
-	.word	-1,.L113,0,.L224-.L113
-	.half	2
-	.byte	138,0
-	.word	0,0
-.L228:
-	.word	-1,.L113,.L365-.L113,.L20-.L113
+	.byte	90
+	.word	.L50-.L101,.L424-.L101
+	.half	1
+	.byte	90
+	.word	.L53-.L101,.L425-.L101
+	.half	1
+	.byte	90
+	.word	.L56-.L101,.L426-.L101
+	.half	1
+	.byte	90
+	.word	.L59-.L101,.L427-.L101
+	.half	1
+	.byte	90
+	.word	.L39-.L101,.L432-.L101
 	.half	1
 	.byte	90
 	.word	0,0
-.L227:
-	.word	-1,.L113,.L364-.L113,.L224-.L113
-	.half	1
-	.byte	89
-	.word	0,0
-	.sdecl	'.debug_loc',debug,cluster('oled_hexascii')
+	.sdecl	'.debug_loc',debug,cluster('oled_fill')
 	.sect	'.debug_loc'
-.L324:
-	.word	-1,.L107,0,.L345-.L107
+.L213:
+	.word	-1,.L83,0,.L14-.L83
 	.half	1
-	.byte	100
-	.word	.L347-.L107,.L15-.L107
-	.half	1
-	.byte	111
-	.word	.L351-.L107,.L352-.L107
-	.half	1
-	.byte	100
-	.word	0,0
-.L326:
-	.word	-1,.L107,.L346-.L107,.L321-.L107
+	.byte	84
+	.word	.L351-.L83,.L211-.L83
 	.half	1
 	.byte	95
 	.word	0,0
-.L322:
-	.word	-1,.L107,0,.L15-.L107
+.L82:
+	.word	-1,.L83,0,.L211-.L83
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L215:
+	.word	0,0
+.L214:
+	.word	-1,.L83,.L14-.L83,.L211-.L83
+	.half	1
+	.byte	88
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('oled_hexascii')
+	.sect	'.debug_loc'
+.L313:
+	.word	-1,.L77,0,.L310-.L77
+	.half	1
+	.byte	100
+	.word	0,0
+.L315:
+	.word	0,0
+.L311:
+	.word	-1,.L77,0,.L11-.L77
 	.half	1
 	.byte	84
-	.word	.L348-.L107,.L349-.L107
-	.half	1
-	.byte	84
-	.word	.L350-.L107,.L351-.L107
+	.word	.L339-.L77,.L340-.L77
 	.half	1
 	.byte	84
 	.word	0,0
-.L325:
-	.word	-1,.L107,.L349-.L107,.L14-.L107
+.L314:
+	.word	-1,.L77,.L341-.L77,.L310-.L77
 	.half	1
 	.byte	81
 	.word	0,0
-.L106:
-	.word	-1,.L107,0,.L321-.L107
+.L76:
+	.word	-1,.L77,0,.L310-.L77
 	.half	2
 	.byte	138,0
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('oled_init')
 	.sect	'.debug_loc'
-.L108:
-	.word	-1,.L109,0,.L223-.L109
+.L78:
+	.word	-1,.L79,0,.L210-.L79
 	.half	2
 	.byte	138,0
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('oled_int16')
 	.sect	'.debug_loc'
-.L267:
-	.word	-1,.L125,0,.L262-.L125
+.L254:
+	.word	-1,.L95,0,.L249-.L95
 	.half	2
 	.byte	145,120
 	.word	0,0
-.L266:
-	.word	-1,.L125,0,.L409-.L125
+.L253:
+	.word	-1,.L95,0,.L385-.L95
 	.half	1
 	.byte	86
-	.word	.L413-.L125,.L36-.L125
+	.word	.L387-.L95,.L25-.L95
 	.half	1
 	.byte	89
-	.word	.L36-.L125,.L37-.L125
+	.word	.L25-.L95,.L26-.L95
 	.half	1
 	.byte	86
-	.word	.L417-.L125,.L418-.L125
+	.word	.L389-.L95,.L390-.L95
 	.half	1
 	.byte	89
 	.word	0,0
-.L124:
-	.word	-1,.L125,0,.L408-.L125
+.L94:
+	.word	-1,.L95,0,.L384-.L95
 	.half	2
 	.byte	138,0
-	.word	.L408-.L125,.L262-.L125
+	.word	.L384-.L95,.L249-.L95
 	.half	2
 	.byte	138,8
-	.word	.L262-.L125,.L262-.L125
+	.word	.L249-.L95,.L249-.L95
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L263:
-	.word	-1,.L125,0,.L410-.L125
+.L250:
+	.word	-1,.L95,0,.L386-.L95
 	.half	1
 	.byte	84
-	.word	.L411-.L125,.L412-.L125
+	.word	.L387-.L95,.L388-.L95
 	.half	1
 	.byte	95
-	.word	.L36-.L125,.L415-.L125
-	.half	1
-	.byte	84
-	.word	.L417-.L125,.L262-.L125
+	.word	.L389-.L95,.L249-.L95
 	.half	1
 	.byte	95
 	.word	0,0
-.L264:
-	.word	-1,.L125,0,.L410-.L125
+.L251:
+	.word	-1,.L95,0,.L386-.L95
 	.half	1
 	.byte	85
-	.word	.L414-.L125,.L410-.L125
-	.half	1
-	.byte	88
-	.word	.L36-.L125,.L415-.L125
-	.half	1
-	.byte	85
-	.word	.L416-.L125,.L415-.L125
-	.half	1
-	.byte	88
-	.word	.L419-.L125,.L420-.L125
+	.word	.L390-.L95,.L391-.L95
 	.half	1
 	.byte	88
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('oled_p6x8str')
 	.sect	'.debug_loc'
-.L245:
-	.word	-1,.L119,.L385-.L119,.L24-.L119
+.L232:
+	.word	-1,.L89,.L365-.L89,.L16-.L89
 	.half	1
 	.byte	89
 	.word	0,0
-.L244:
-	.word	-1,.L119,0,.L25-.L119
+.L231:
+	.word	-1,.L89,0,.L17-.L89
 	.half	1
 	.byte	100
-	.word	.L382-.L119,.L240-.L119
+	.word	.L359-.L89,.L227-.L89
 	.half	1
 	.byte	108
 	.word	0,0
-.L246:
-	.word	-1,.L119,.L386-.L119,.L24-.L119
-	.half	1
-	.byte	95
+.L233:
 	.word	0,0
-.L247:
-	.word	-1,.L119,.L383-.L119,.L384-.L119
+.L234:
+	.word	-1,.L89,.L363-.L89,.L364-.L89
 	.half	1
 	.byte	90
-	.word	.L24-.L119,.L240-.L119
+	.word	.L366-.L89,.L227-.L89
 	.half	1
 	.byte	90
 	.word	0,0
-.L118:
-	.word	-1,.L119,0,.L240-.L119
+.L88:
+	.word	-1,.L89,0,.L227-.L89
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L241:
-	.word	-1,.L119,0,.L25-.L119
+.L228:
+	.word	-1,.L89,0,.L17-.L89
 	.half	1
 	.byte	84
-	.word	.L379-.L119,.L240-.L119
+	.word	.L360-.L89,.L227-.L89
 	.half	1
 	.byte	91
 	.word	0,0
-.L242:
-	.word	-1,.L119,0,.L25-.L119
+.L229:
+	.word	-1,.L89,0,.L17-.L89
 	.half	1
 	.byte	85
-	.word	.L380-.L119,.L381-.L119
+	.word	.L361-.L89,.L362-.L89
 	.half	1
 	.byte	88
-	.word	.L26-.L119,.L240-.L119
+	.word	.L18-.L89,.L227-.L89
 	.half	1
 	.byte	88
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('oled_p8x16str')
 	.sect	'.debug_loc'
-.L252:
-	.word	-1,.L121,.L390-.L121,.L29-.L121
-	.half	1
-	.byte	92
-	.word	0,0
-.L251:
-	.word	-1,.L121,0,.L30-.L121
-	.half	1
-	.byte	100
-	.word	.L387-.L121,.L248-.L121
-	.half	1
-	.byte	108
-	.word	0,0
-.L253:
-	.word	-1,.L121,.L396-.L121,.L29-.L121
+.L239:
+	.word	-1,.L91,.L370-.L91,.L371-.L91
 	.half	1
 	.byte	88
 	.word	0,0
-.L254:
-	.word	-1,.L121,.L388-.L121,.L389-.L121
+.L238:
+	.word	-1,.L91,0,.L21-.L91
+	.half	1
+	.byte	100
+	.word	.L367-.L91,.L235-.L91
+	.half	1
+	.byte	108
+	.word	0,0
+.L240:
+	.word	0,0
+.L241:
+	.word	-1,.L91,.L368-.L91,.L369-.L91
 	.half	1
 	.byte	89
-	.word	.L29-.L121,.L248-.L121
+	.word	.L380-.L91,.L235-.L91
 	.half	1
 	.byte	89
 	.word	0,0
-.L120:
-	.word	-1,.L121,0,.L248-.L121
+.L90:
+	.word	-1,.L91,0,.L235-.L91
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L249:
-	.word	-1,.L121,0,.L30-.L121
+.L236:
+	.word	-1,.L91,0,.L21-.L91
 	.half	1
 	.byte	84
-	.word	.L391-.L121,.L392-.L121
+	.word	.L370-.L91,.L372-.L91
 	.half	1
 	.byte	90
-	.word	.L393-.L121,.L394-.L121
+	.word	.L373-.L91,.L374-.L91
 	.half	1
 	.byte	90
-	.word	.L399-.L121,.L400-.L121
+	.word	.L378-.L91,.L379-.L91
 	.half	1
 	.byte	90
-	.word	.L400-.L121,.L401-.L121
-	.half	1
-	.byte	84
-	.word	.L402-.L121,.L29-.L121
+	.word	.L380-.L91,.L20-.L91
 	.half	1
 	.byte	90
 	.word	0,0
-.L250:
-	.word	-1,.L121,0,.L30-.L121
+.L237:
+	.word	-1,.L91,0,.L21-.L91
 	.half	1
 	.byte	85
-	.word	.L393-.L121,.L395-.L121
+	.word	.L373-.L91,.L375-.L91
 	.half	1
 	.byte	91
-	.word	.L31-.L121,.L394-.L121
+	.word	.L22-.L91,.L374-.L91
 	.half	1
 	.byte	91
-	.word	.L397-.L121,.L398-.L121
+	.word	.L376-.L91,.L377-.L91
 	.half	1
 	.byte	91
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('oled_print_chinese')
 	.sect	'.debug_loc'
-.L309:
-	.word	-1,.L133,.L468-.L133,.L469-.L133
+.L297:
+	.word	-1,.L105,.L435-.L105,.L436-.L105
 	.half	1
 	.byte	91
-	.word	.L94-.L133,.L302-.L133
+	.word	.L61-.L105,.L290-.L105
 	.half	1
 	.byte	91
 	.word	0,0
-.L310:
-	.word	-1,.L133,.L470-.L133,.L471-.L133
+.L298:
+	.word	-1,.L105,.L64-.L105,.L437-.L105
 	.half	1
-	.byte	93
-	.word	.L96-.L133,.L94-.L133
+	.byte	95
+	.word	.L63-.L105,.L61-.L105
 	.half	1
-	.byte	93
+	.byte	95
 	.word	0,0
-.L311:
-	.word	-1,.L133,.L475-.L133,.L96-.L133
-	.half	1
-	.byte	94
+.L299:
 	.word	0,0
-.L308:
-	.word	-1,.L133,0,.L95-.L133
+.L296:
+	.word	-1,.L105,0,.L62-.L105
 	.half	1
 	.byte	87
-	.word	.L467-.L133,.L302-.L133
+	.word	.L434-.L105,.L290-.L105
 	.half	1
 	.byte	92
 	.word	0,0
-.L132:
-	.word	-1,.L133,0,.L302-.L133
+.L104:
+	.word	-1,.L105,0,.L290-.L105
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L307:
-	.word	-1,.L133,0,.L95-.L133
+.L295:
+	.word	-1,.L105,0,.L62-.L105
 	.half	1
 	.byte	100
-	.word	.L466-.L133,.L302-.L133
+	.word	.L433-.L105,.L290-.L105
 	.half	1
 	.byte	111
 	.word	0,0
-.L305:
-	.word	-1,.L133,0,.L95-.L133
+.L293:
+	.word	-1,.L105,0,.L62-.L105
 	.half	1
 	.byte	86
-	.word	.L465-.L133,.L302-.L133
+	.word	.L433-.L105,.L290-.L105
 	.half	1
 	.byte	90
 	.word	0,0
-.L303:
-	.word	-1,.L133,0,.L95-.L133
+.L291:
+	.word	-1,.L105,0,.L62-.L105
 	.half	1
 	.byte	84
-	.word	.L97-.L133,.L472-.L133
+	.word	.L64-.L105,.L438-.L105
 	.half	1
 	.byte	88
 	.word	0,0
-.L304:
-	.word	-1,.L133,0,.L95-.L133
+.L292:
+	.word	-1,.L105,0,.L62-.L105
 	.half	1
 	.byte	85
-	.word	.L473-.L133,.L474-.L133
+	.word	.L439-.L105,.L440-.L105
 	.half	1
 	.byte	89
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('oled_printf_float')
 	.sect	'.debug_loc'
-.L286:
-	.word	-1,.L129,0,.L278-.L129
+.L273:
+	.word	-1,.L99,0,.L265-.L99
 	.half	2
 	.byte	145,92
 	.word	0,0
-.L282:
-	.word	-1,.L129,0,.L430-.L129
+.L269:
+	.word	-1,.L99,0,.L399-.L99
 	.half	1
 	.byte	86
-	.word	.L433-.L129,.L434-.L129
-	.half	1
-	.byte	90
-	.word	.L435-.L129,.L436-.L129
-	.half	1
-	.byte	90
-	.word	.L45-.L129,.L46-.L129
-	.half	1
-	.byte	86
-	.word	.L45-.L129,.L437-.L129
-	.half	1
-	.byte	90
-	.word	.L447-.L129,.L448-.L129
-	.half	1
-	.byte	90
-	.word	0,0
-.L289:
-	.word	-1,.L129,.L444-.L129,.L445-.L129
-	.half	1
-	.byte	81
-	.word	.L446-.L129,.L443-.L129
-	.half	1
-	.byte	81
-	.word	0,0
-.L285:
-	.word	-1,.L129,.L430-.L129,.L45-.L129
-	.half	1
-	.byte	82
-	.word	.L46-.L129,.L438-.L129
-	.half	1
-	.byte	82
-	.word	0,0
-.L283:
-	.word	-1,.L129,0,.L44-.L129
-	.half	1
-	.byte	87
-	.word	.L43-.L129,.L432-.L129
-	.half	1
-	.byte	91
-	.word	.L439-.L129,.L440-.L129
-	.half	1
-	.byte	91
-	.word	0,0
-.L128:
-	.word	-1,.L129,0,.L429-.L129
-	.half	2
-	.byte	138,0
-	.word	.L429-.L129,.L278-.L129
-	.half	2
-	.byte	138,40
-	.word	.L278-.L129,.L278-.L129
-	.half	2
-	.byte	138,0
-	.word	0,0
-.L290:
-	.word	-1,.L129,.L439-.L129,.L441-.L129
-	.half	1
-	.byte	95
-	.word	0,0
-.L284:
-	.word	-1,.L129,0,.L278-.L129
-	.half	2
-	.byte	145,0
-	.word	.L431-.L129,.L278-.L129
+	.word	.L398-.L99,.L265-.L99
 	.half	1
 	.byte	92
+	.word	.L31-.L99,.L32-.L99
+	.half	1
+	.byte	86
 	.word	0,0
-.L288:
-	.word	-1,.L129,.L442-.L129,.L443-.L129
-	.half	5
-	.byte	144,32,157,32,0
+.L276:
+	.word	-1,.L99,.L406-.L99,.L407-.L99
+	.half	1
+	.byte	81
+	.word	.L409-.L99,.L265-.L99
+	.half	1
+	.byte	81
 	.word	0,0
-.L279:
-	.word	-1,.L129,0,.L430-.L129
+.L272:
+	.word	-1,.L99,.L399-.L99,.L31-.L99
 	.half	1
-	.byte	84
-	.word	.L45-.L129,.L46-.L129
+	.byte	82
+	.word	.L32-.L99,.L404-.L99
 	.half	1
-	.byte	84
-	.word	.L449-.L129,.L450-.L129
-	.half	1
-	.byte	88
+	.byte	82
 	.word	0,0
-.L280:
-	.word	-1,.L129,0,.L430-.L129
+.L270:
+	.word	-1,.L99,0,.L400-.L99
 	.half	1
-	.byte	85
-	.word	.L45-.L129,.L46-.L129
-	.half	1
-	.byte	85
-	.word	.L450-.L129,.L451-.L129
+	.byte	87
+	.word	.L400-.L99,.L265-.L99
 	.half	1
 	.byte	89
 	.word	0,0
-	.sdecl	'.debug_loc',debug,cluster('oled_printf_int32')
-	.sect	'.debug_loc'
-.L275:
-	.word	-1,.L127,0,.L268-.L127
-	.half	2
-	.byte	145,92
-	.word	0,0
-.L272:
-	.word	-1,.L127,0,.L422-.L127
-	.half	1
-	.byte	86
-	.word	.L39-.L127,.L424-.L127
-	.half	1
-	.byte	86
-	.word	0,0
-.L277:
-	.word	-1,.L127,.L422-.L127,.L39-.L127
-	.half	1
-	.byte	82
-	.word	.L424-.L127,.L425-.L127
-	.half	1
-	.byte	82
-	.word	0,0
-.L273:
-	.word	-1,.L127,0,.L423-.L127
-	.half	1
-	.byte	87
-	.word	.L423-.L127,.L268-.L127
-	.half	1
-	.byte	90
-	.word	0,0
-.L126:
-	.word	-1,.L127,0,.L421-.L127
+.L98:
+	.word	-1,.L99,0,.L398-.L99
 	.half	2
 	.byte	138,0
-	.word	.L421-.L127,.L268-.L127
+	.word	.L398-.L99,.L265-.L99
 	.half	2
 	.byte	138,40
-	.word	.L268-.L127,.L268-.L127
+	.word	.L265-.L99,.L265-.L99
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L269:
-	.word	-1,.L127,0,.L422-.L127
+.L277:
+	.word	-1,.L99,.L405-.L99,.L34-.L99
 	.half	1
-	.byte	84
-	.word	.L39-.L127,.L424-.L127
+	.byte	95
+	.word	0,0
+.L271:
+	.word	-1,.L99,0,.L265-.L99
+	.half	2
+	.byte	145,0
+	.word	.L401-.L99,.L402-.L99
 	.half	1
-	.byte	84
-	.word	.L426-.L127,.L427-.L127
+	.byte	95
+	.word	.L402-.L99,.L403-.L99
 	.half	1
 	.byte	88
 	.word	0,0
-.L270:
-	.word	-1,.L127,0,.L422-.L127
+.L275:
+	.word	-1,.L99,.L408-.L99,.L265-.L99
+	.half	5
+	.byte	144,32,157,32,0
+	.word	0,0
+.L266:
+	.word	-1,.L99,0,.L399-.L99
+	.half	1
+	.byte	84
+	.word	.L31-.L99,.L32-.L99
+	.half	1
+	.byte	84
+	.word	.L36-.L99,.L410-.L99
+	.half	1
+	.byte	90
+	.word	0,0
+.L267:
+	.word	-1,.L99,0,.L399-.L99
 	.half	1
 	.byte	85
-	.word	.L39-.L127,.L424-.L127
+	.word	.L31-.L99,.L32-.L99
 	.half	1
 	.byte	85
-	.word	.L427-.L127,.L428-.L127
+	.word	.L411-.L99,.L412-.L99
+	.half	1
+	.byte	91
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('oled_printf_int32')
+	.sect	'.debug_loc'
+.L262:
+	.word	-1,.L97,0,.L255-.L97
+	.half	2
+	.byte	145,92
+	.word	0,0
+.L259:
+	.word	-1,.L97,0,.L393-.L97
+	.half	1
+	.byte	86
+	.word	.L27-.L97,.L394-.L97
+	.half	1
+	.byte	86
+	.word	0,0
+.L264:
+	.word	-1,.L97,.L393-.L97,.L27-.L97
+	.half	1
+	.byte	82
+	.word	.L394-.L97,.L255-.L97
+	.half	1
+	.byte	82
+	.word	0,0
+.L260:
+	.word	-1,.L97,0,.L392-.L97
+	.half	1
+	.byte	87
+	.word	.L392-.L97,.L255-.L97
+	.half	1
+	.byte	90
+	.word	0,0
+.L96:
+	.word	-1,.L97,0,.L392-.L97
+	.half	2
+	.byte	138,0
+	.word	.L392-.L97,.L255-.L97
+	.half	2
+	.byte	138,40
+	.word	.L255-.L97,.L255-.L97
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L256:
+	.word	-1,.L97,0,.L393-.L97
+	.half	1
+	.byte	84
+	.word	.L27-.L97,.L394-.L97
+	.half	1
+	.byte	84
+	.word	.L395-.L97,.L396-.L97
+	.half	1
+	.byte	88
+	.word	0,0
+.L257:
+	.word	-1,.L97,0,.L393-.L97
+	.half	1
+	.byte	85
+	.word	.L27-.L97,.L394-.L97
+	.half	1
+	.byte	85
+	.word	.L396-.L97,.L397-.L97
 	.half	1
 	.byte	89
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('oled_putpixel')
 	.sect	'.debug_loc'
-.L236:
-	.word	-1,.L115,0,.L368-.L115
+.L223:
+	.word	-1,.L85,0,.L352-.L85
 	.half	1
 	.byte	86
-	.word	.L373-.L115,.L374-.L115
+	.word	.L355-.L85,.L356-.L85
 	.half	1
 	.byte	89
-	.word	.L374-.L115,.L375-.L115
+	.word	.L356-.L85,.L220-.L85
 	.half	1
 	.byte	84
 	.word	0,0
-.L114:
-	.word	-1,.L115,0,.L233-.L115
+.L84:
+	.word	-1,.L85,0,.L220-.L85
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L234:
-	.word	-1,.L115,0,.L369-.L115
+.L221:
+	.word	-1,.L85,0,.L352-.L85
 	.half	1
 	.byte	84
-	.word	.L370-.L115,.L233-.L115
+	.word	.L353-.L85,.L220-.L85
 	.half	1
 	.byte	95
 	.word	0,0
-.L235:
-	.word	-1,.L115,0,.L369-.L115
+.L222:
+	.word	-1,.L85,0,.L352-.L85
 	.half	1
 	.byte	85
-	.word	.L371-.L115,.L369-.L115
-	.half	1
-	.byte	88
-	.word	.L368-.L115,.L372-.L115
+	.word	.L352-.L85,.L354-.L85
 	.half	1
 	.byte	88
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('oled_set_pos')
 	.sect	'.debug_loc'
-.L110:
-	.word	-1,.L111,0,.L229-.L111
+.L80:
+	.word	-1,.L81,0,.L216-.L81
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L230:
-	.word	-1,.L111,0,.L353-.L111
+.L217:
+	.word	-1,.L81,0,.L342-.L81
 	.half	1
 	.byte	84
-	.word	.L354-.L111,.L355-.L111
+	.word	.L343-.L81,.L344-.L81
 	.half	1
 	.byte	88
-	.word	.L359-.L111,.L360-.L111
+	.word	.L347-.L81,.L348-.L81
 	.half	1
 	.byte	88
-	.word	.L361-.L111,.L362-.L111
+	.word	.L349-.L81,.L350-.L81
 	.half	1
 	.byte	88
 	.word	0,0
-.L231:
-	.word	-1,.L111,0,.L17-.L111
+.L218:
+	.word	-1,.L81,0,.L12-.L81
 	.half	1
 	.byte	85
-	.word	.L356-.L111,.L357-.L111
+	.word	.L12-.L81,.L345-.L81
 	.half	1
 	.byte	89
-	.word	.L19-.L111,.L358-.L111
+	.word	.L13-.L81,.L346-.L81
 	.half	1
 	.byte	89
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('oled_uint16')
 	.sect	'.debug_loc'
-.L261:
-	.word	-1,.L123,0,.L255-.L123
+.L248:
+	.word	-1,.L93,0,.L242-.L93
 	.half	2
 	.byte	145,120
 	.word	0,0
-.L259:
-	.word	-1,.L123,0,.L404-.L123
+.L246:
+	.word	-1,.L93,0,.L382-.L93
 	.half	1
 	.byte	86
-	.word	.L405-.L123,.L404-.L123
-	.half	1
-	.byte	84
 	.word	0,0
-.L122:
-	.word	-1,.L123,0,.L403-.L123
+.L92:
+	.word	-1,.L93,0,.L381-.L93
 	.half	2
 	.byte	138,0
-	.word	.L403-.L123,.L255-.L123
+	.word	.L381-.L93,.L242-.L93
 	.half	2
 	.byte	138,8
-	.word	.L255-.L123,.L255-.L123
+	.word	.L242-.L93,.L242-.L93
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L256:
-	.word	-1,.L123,0,.L405-.L123
+.L243:
+	.word	-1,.L93,0,.L382-.L93
 	.half	1
 	.byte	84
-	.word	.L406-.L123,.L255-.L123
+	.word	.L381-.L93,.L242-.L93
 	.half	1
 	.byte	95
 	.word	0,0
-.L257:
-	.word	-1,.L123,0,.L404-.L123
+.L244:
+	.word	-1,.L93,0,.L382-.L93
 	.half	1
 	.byte	85
-	.word	.L407-.L123,.L255-.L123
+	.word	.L383-.L93,.L242-.L93
 	.half	1
 	.byte	88
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('oled_wr6dat')
 	.sect	'.debug_loc'
-.L316:
-	.word	-1,.L103,0,.L333-.L103
+.L305:
+	.word	-1,.L73,0,.L325-.L73
 	.half	1
 	.byte	84
-	.word	.L334-.L103,.L335-.L103
+	.word	.L326-.L73,.L327-.L73
 	.half	1
 	.byte	88
-	.word	.L6-.L103,.L315-.L103
+	.word	.L69-.L73,.L209-.L73
+	.half	1
+	.byte	88
+	.word	.L71-.L73,.L199-.L73
+	.half	1
+	.byte	88
+	.word	.L329-.L73,.L330-.L73
+	.half	1
+	.byte	88
+	.word	.L331-.L73,.L304-.L73
 	.half	1
 	.byte	88
 	.word	0,0
-.L317:
-	.word	-1,.L103,.L336-.L103,.L337-.L103
+.L306:
+	.word	-1,.L73,.L328-.L73,.L327-.L73
 	.half	1
-	.byte	89
-	.word	.L338-.L103,.L315-.L103
+	.byte	95
+	.word	.L69-.L73,.L209-.L73
 	.half	1
-	.byte	89
+	.byte	95
+	.word	.L71-.L73,.L320-.L73
+	.half	1
+	.byte	95
+	.word	.L321-.L73,.L199-.L73
+	.half	1
+	.byte	95
+	.word	.L329-.L73,.L304-.L73
+	.half	1
+	.byte	95
 	.word	0,0
-.L102:
-	.word	-1,.L103,0,.L315-.L103
+.L72:
+	.word	-1,.L73,0,.L304-.L73
 	.half	2
 	.byte	138,0
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('oled_wrcmd')
 	.sect	'.debug_loc'
-.L319:
-	.word	-1,.L105,0,.L339-.L105
+.L308:
+	.word	-1,.L75,0,.L332-.L75
 	.half	1
 	.byte	84
-	.word	.L340-.L105,.L341-.L105
+	.word	.L333-.L75,.L334-.L75
 	.half	1
 	.byte	88
-	.word	.L10-.L105,.L318-.L105
+	.word	.L69-.L75,.L209-.L75
+	.half	1
+	.byte	88
+	.word	.L71-.L75,.L199-.L75
+	.half	1
+	.byte	88
+	.word	.L336-.L75,.L337-.L75
+	.half	1
+	.byte	88
+	.word	.L338-.L75,.L307-.L75
 	.half	1
 	.byte	88
 	.word	0,0
-.L320:
-	.word	-1,.L105,.L342-.L105,.L343-.L105
+.L309:
+	.word	-1,.L75,.L335-.L75,.L334-.L75
 	.half	1
 	.byte	95
-	.word	.L344-.L105,.L318-.L105
+	.word	.L69-.L75,.L209-.L75
+	.half	1
+	.byte	95
+	.word	.L71-.L75,.L320-.L75
+	.half	1
+	.byte	95
+	.word	.L321-.L75,.L199-.L75
+	.half	1
+	.byte	95
+	.word	.L336-.L75,.L307-.L75
 	.half	1
 	.byte	95
 	.word	0,0
-.L104:
-	.word	-1,.L105,0,.L318-.L105
+.L74:
+	.word	-1,.L75,0,.L307-.L75
 	.half	2
 	.byte	138,0
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('oled_wrdat')
 	.sect	'.debug_loc'
-.L313:
-	.word	-1,.L101,0,.L327-.L101
+.L301:
+	.word	-1,.L67,0,.L316-.L67
 	.half	1
 	.byte	84
-	.word	.L328-.L101,.L329-.L101
+	.word	.L317-.L67,.L318-.L67
 	.half	1
 	.byte	88
-	.word	.L2-.L101,.L312-.L101
+	.word	.L69-.L67,.L209-.L67
+	.half	1
+	.byte	88
+	.word	.L71-.L67,.L199-.L67
+	.half	1
+	.byte	88
+	.word	.L322-.L67,.L323-.L67
+	.half	1
+	.byte	88
+	.word	.L324-.L67,.L300-.L67
 	.half	1
 	.byte	88
 	.word	0,0
-.L314:
-	.word	-1,.L101,.L330-.L101,.L331-.L101
+.L303:
+	.word	-1,.L67,.L319-.L67,.L318-.L67
 	.half	1
 	.byte	95
-	.word	.L332-.L101,.L312-.L101
+	.word	.L69-.L67,.L209-.L67
+	.half	1
+	.byte	95
+	.word	.L71-.L67,.L320-.L67
+	.half	1
+	.byte	95
+	.word	.L321-.L67,.L199-.L67
+	.half	1
+	.byte	95
+	.word	.L322-.L67,.L300-.L67
 	.half	1
 	.byte	95
 	.word	0,0
-.L100:
-	.word	-1,.L101,0,.L312-.L101
+.L66:
+	.word	-1,.L67,0,.L300-.L67
 	.half	2
 	.byte	138,0
 	.word	0,0
 	.sdecl	'.debug_frame',debug
 	.sect	'.debug_frame'
-.L830:
+.L716:
 	.word	48
 	.word	-1
 	.byte	3,0,2,1,27,12,26,0,8,27,8,26,8,28,8,29,8,30,8,31,8,34,8,35,8,32,8,33,8,16,8,17,8,24,8,25,8,36,8,37,8,38
@@ -10835,97 +10539,114 @@ _999001___func__:	.type	object
 	.sdecl	'.debug_frame',debug,cluster('oled_wrdat')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L830,.L101,.L312-.L101
+	.word	.L716,.L67,.L300-.L67
 	.sdecl	'.debug_frame',debug,cluster('oled_wr6dat')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L830,.L103,.L315-.L103
+	.word	.L716,.L73,.L304-.L73
 	.sdecl	'.debug_frame',debug,cluster('oled_wrcmd')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L830,.L105,.L318-.L105
+	.word	.L716,.L75,.L307-.L75
 	.sdecl	'.debug_frame',debug,cluster('oled_hexascii')
 	.sect	'.debug_frame'
 	.word	24
-	.word	.L830,.L107,.L321-.L107
+	.word	.L716,.L77,.L310-.L77
 	.byte	8,18,8,19,8,21,8,22,8,23,0,0
 	.sdecl	'.debug_frame',debug,cluster('oled_init')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L830,.L109,.L223-.L109
+	.word	.L716,.L79,.L210-.L79
 	.sdecl	'.debug_frame',debug,cluster('oled_set_pos')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L830,.L111,.L229-.L111
+	.word	.L716,.L81,.L216-.L81
 	.sdecl	'.debug_frame',debug,cluster('oled_fill')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L830,.L113,.L224-.L113
+	.word	.L716,.L83,.L211-.L83
 	.sdecl	'.debug_frame',debug,cluster('oled_putpixel')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L830,.L115,.L233-.L115
+	.word	.L716,.L85,.L220-.L85
 	.sdecl	'.debug_frame',debug,cluster('oled_clrpixel')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L830,.L117,.L237-.L117
+	.word	.L716,.L87,.L224-.L87
 	.sdecl	'.debug_frame',debug,cluster('oled_p6x8str')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L830,.L119,.L240-.L119
+	.word	.L716,.L89,.L227-.L89
 	.sdecl	'.debug_frame',debug,cluster('oled_p8x16str')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L830,.L121,.L248-.L121
+	.word	.L716,.L91,.L235-.L91
 	.sdecl	'.debug_frame',debug,cluster('oled_uint16')
 	.sect	'.debug_frame'
 	.word	36
-	.word	.L830,.L123,.L255-.L123
+	.word	.L716,.L93,.L242-.L93
 	.byte	4
-	.word	(.L403-.L123)/2
+	.word	(.L381-.L93)/2
 	.byte	19,8,22,26,3,19,138,8,4
-	.word	(.L255-.L403)/2
+	.word	(.L242-.L381)/2
 	.byte	19,0,8,26,0,0
 	.sdecl	'.debug_frame',debug,cluster('oled_int16')
 	.sect	'.debug_frame'
 	.word	36
-	.word	.L830,.L125,.L262-.L125
+	.word	.L716,.L95,.L249-.L95
 	.byte	4
-	.word	(.L408-.L125)/2
+	.word	(.L384-.L95)/2
 	.byte	19,8,22,26,3,19,138,8,4
-	.word	(.L262-.L408)/2
+	.word	(.L249-.L384)/2
 	.byte	19,0,8,26,0,0
 	.sdecl	'.debug_frame',debug,cluster('oled_printf_int32')
 	.sect	'.debug_frame'
 	.word	36
-	.word	.L830,.L127,.L268-.L127
+	.word	.L716,.L97,.L255-.L97
 	.byte	4
-	.word	(.L421-.L127)/2
+	.word	(.L392-.L97)/2
 	.byte	19,40,22,26,3,19,138,40,4
-	.word	(.L268-.L421)/2
+	.word	(.L255-.L392)/2
 	.byte	19,0,8,26,0,0
 	.sdecl	'.debug_frame',debug,cluster('oled_printf_float')
 	.sect	'.debug_frame'
 	.word	36
-	.word	.L830,.L129,.L278-.L129
+	.word	.L716,.L99,.L265-.L99
 	.byte	4
-	.word	(.L429-.L129)/2
+	.word	(.L398-.L99)/2
 	.byte	19,40,22,26,3,19,138,40,4
-	.word	(.L278-.L429)/2
+	.word	(.L265-.L398)/2
 	.byte	19,0,8,26,0,0
 	.sdecl	'.debug_frame',debug,cluster('oled_dis_bmp')
 	.sect	'.debug_frame'
-	.word	36
-	.word	.L830,.L131,.L291-.L131
-	.byte	4
-	.word	(.L452-.L131)/2
-	.byte	19,8,22,26,3,19,138,8,4
-	.word	(.L291-.L452)/2
-	.byte	19,0,8,26,0,0
+	.word	12
+	.word	.L716,.L101,.L278-.L101
 	.sdecl	'.debug_frame',debug,cluster('oled_print_chinese')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L830,.L133,.L302-.L133
+	.word	.L716,.L105,.L290-.L105
+	.sdecl	'.debug_frame',debug
+	.sect	'.debug_frame'
+.L717:
+	.word	52
+	.word	-1
+	.byte	3,0,2,1,40,12,26,0,9,40,27,155,0,7,26,8,28,8,29,8,30,8,31,8,34,8,35,8,32,8,33,8,16,8,17,8,24,8,25,8,36
+	.byte	8,37,8,38,8,39,0
+	.sdecl	'.debug_frame',debug,cluster('.cocofun_8')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L717,.L69,.L209-.L69
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('.cocofun_6')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L717,.L71,.L199-.L71
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('.cocofun_7')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L717,.L103,.L204-.L103
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_OLED.c	   531  
 
