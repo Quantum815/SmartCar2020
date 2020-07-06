@@ -23,6 +23,8 @@ void UserInit(void)
 	//EncoderInit();
 	//ServoMotorInit();
 	//MotorInit();
+	//ips114_init();
+	//GyroInit();
 }
 
 

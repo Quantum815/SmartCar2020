@@ -7,4 +7,29 @@
 
 #include "..\CODE\Inc\User_Gyro_I2C.h"
 
+uint8 GyroPtr[24];
+float AX, AY, AZ, Roll_value, Pitch_value, Yaw_value;
 
+short CharToShort(unsigned char cData[])
+{
+	return ((short)cData[1]<<8)|cData[0];
+}
+
+void GyroInit(void)
+{
+	simiic_init();
+}
+
+void GyroReadByte(void)
+{
+	simiic_read_regs(I2C_ADDR, AX_PTR, &GyroPtr[0], 24, SIMIIC);
+
+	AX = (float)CharToShort(&GyroPtr[0])/32768.0*16;  //xÖá½ÇËÙ¶È
+	AY = (float)CharToShort(&GyroPtr[2])/32768.0*16;  //yÖá½ÇËÙ¶È
+	AZ = (float)CharToShort(&GyroPtr[4])/32768.0*16;  //zÖá½ÇËÙ¶È
+
+	Roll_value = (float)CharToShort(&GyroPtr[18])/32768.0*180;  //xÖá¹ö¶¯½Ç
+	Pitch_value = (float)CharToShort(&GyroPtr[20])/32768.0*180;  //yÖá¸©Ñö½Ç
+	Yaw_value = (float)CharToShort(&GyroPtr[22])/32768.0*180;  //zÖáÐý×ª½Ç
+	//printf("AX:%f AY:%f AZ:%f \r\nRoll_value:%f Pitch_value:%f Yaw_value:%f\r\n", AX, AY, AZ, Roll_value, Pitch_value, Yaw_value);
+}

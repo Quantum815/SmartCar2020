@@ -44,6 +44,8 @@ void core0_main(void)
 	while (TRUE)
 	{
 		//用户在此处编写任务代码
+		//GyroReadByte();
+    	systick_delay_ms(STM0, 20);
 	}
 }
 

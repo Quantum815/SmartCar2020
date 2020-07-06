@@ -74,6 +74,7 @@
 #include "..\CODE\Inc\User_Encoder.h"
 #include "..\CODE\Inc\User_Motor.h"
 #include "..\CODE\Inc\User_Gyro_I2C.h"
+#include "..\CODE\Inc\User_OSTU.h"
 
 #endif
 

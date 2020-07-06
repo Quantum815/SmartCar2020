@@ -14,6 +14,8 @@ SmartCar2020TC264.elf : .\CODE\Src\User_Init.o
 .\CODE\Src\User_Init.o :
 SmartCar2020TC264.elf : .\CODE\Src\User_Motor.o
 .\CODE\Src\User_Motor.o :
+SmartCar2020TC264.elf : .\CODE\Src\User_OSTU.o
+.\CODE\Src\User_OSTU.o :
 SmartCar2020TC264.elf : .\CODE\Src\User_Uart.o
 .\CODE\Src\User_Uart.o :
 SmartCar2020TC264.elf : .\Libraries\BaseSw\Infra\Platform\Tricore\Compilers\CompilerDcc.o

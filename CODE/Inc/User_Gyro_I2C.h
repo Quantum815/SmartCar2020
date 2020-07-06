@@ -10,6 +10,10 @@
 
 #include "headfile.h"
 
+#define I2C_ADDR 0x50
+#define AX_PTR 0x34
+
+short CharToShort(unsigned char cData[]);
 void GyroInit(void);
 void GyroReadByte(void);
 
