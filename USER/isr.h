@@ -23,15 +23,11 @@
 
 #include "headfile.h"
 
+#define CPU0TIMES 100  //LED…¡À∏
+#define CPU1TIMES 50  //LED…¡À∏
 
-
-
-
-
-
-
-
-
+int i;
+int j;
 
 #endif
 

@@ -7,7 +7,7 @@
 
 #include "..\CODE\Inc\User_OSTU.h"
 
-uint8_t Threshold;                  //OSTU´ó½ò·¨¼ÆËãµÄÍ¼ÏñãĞÖµ
+uint16_t Threshold;                  //OSTU´ó½ò·¨¼ÆËãµÄÍ¼ÏñãĞÖµ, ·µ»ØÀàĞÍÔ­À´Îªuint8_t
 
 /***************************************************************
 *
@@ -30,7 +30,7 @@ Ostu·½·¨ÓÖÃû×î´óÀà¼ä²î·½·¨£¬Í¨¹ıÍ³¼ÆÕû¸öÍ¼ÏñµÄÖ±·½Í¼ÌØĞÔÀ´ÊµÏÖÈ«¾ÖãĞÖµTµÄ×Ô¶¯Ñ¡È
 7£©½«×î´ógÏàÓ¦µÄiÖµ×÷ÎªÍ¼ÏñµÄÈ«¾ÖãĞÖµ
 È±Ïİ:OSTUËã·¨ÔÚ´¦Àí¹âÕÕ²»¾ùÔÈµÄÍ¼ÏñµÄÊ±ºò£¬Ğ§¹û»áÃ÷ÏÔ²»ºÃ£¬ÒòÎªÀûÓÃµÄÊÇÈ«¾ÖÏñËØĞÅÏ¢¡£
 ***************************************************************/
-uint8_t GetOSTU(uint8_t tmImage[IMAGEH][IMAGEW])
+uint16_t GetOSTU(uint8_t tmImage[IMAGEH][IMAGEW])  //º¯Êı·µ»ØÀàĞÍÔ­À´Îªuint8_t
 {
   int16_t i,j;
   uint32_t Amount = 0;
@@ -41,7 +41,7 @@ uint8_t GetOSTU(uint8_t tmImage[IMAGEH][IMAGEW])
   int32_t PixelFore = 0;
   double OmegaBack, OmegaFore, MicroBack, MicroFore, SigmaB, Sigma; // Àà¼ä·½²î;
   int16_t MinValue, MaxValue;
-  uint8_t Threshold = 0;
+  uint16_t Threshold = 0;
   uint8_t HistoGram[256];              //
 
   for (j = 0; j < 256; j++)  HistoGram[j] = 0; //³õÊ¼»¯»Ò¶ÈÖ±·½Í¼

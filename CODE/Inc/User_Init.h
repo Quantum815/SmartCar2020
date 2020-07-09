@@ -10,7 +10,6 @@
 
 #include "headfile.h"
 #define MainProcessTime 5
-#define CPU0TestTime 500
 
 void UserInit(void);
 

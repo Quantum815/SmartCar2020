@@ -22,72 +22,113 @@ $TC16X
 ; ..\CODE\Src\User_PID.c	     7  
 ; ..\CODE\Src\User_PID.c	     8  #include "..\CODE\Inc\User_PID.h"
 ; ..\CODE\Src\User_PID.c	     9  
-; ..\CODE\Src\User_PID.c	    10  uint8_t GetPIDValue(uint8_t middle,uint8_t value,uint8_t kP,uint8_t kI,uint8_t kD)
+; ..\CODE\Src\User_PID.c	    10  uint8_t PidValue;
+; ..\CODE\Src\User_PID.c	    11  uint8_t OldValue;
+; ..\CODE\Src\User_PID.c	    12  
+; ..\CODE\Src\User_PID.c	    13  uint8_t GetPIDValue(uint8_t middle,uint8_t value,uint8_t kP,uint8_t kI,uint8_t kD)
 ; Function GetPIDValue
 .L4:
 GetPIDValue:	.type	func
 
-; ..\CODE\Src\User_PID.c	    11  {
-; ..\CODE\Src\User_PID.c	    12  	uint8_t PidValue;
-; ..\CODE\Src\User_PID.c	    13  	uint8_t OldValue = 0;
-; ..\CODE\Src\User_PID.c	    14  	static double NowErrorValue;
-; ..\CODE\Src\User_PID.c	    15  	static double IntegralErrorValue;
-; ..\CODE\Src\User_PID.c	    16  	static double PreviousErrorValue;
-; ..\CODE\Src\User_PID.c	    17  
-; ..\CODE\Src\User_PID.c	    18  	NowErrorValue = value - middle;
-; ..\CODE\Src\User_PID.c	    19  	IntegralErrorValue += NowErrorValue;
+; ..\CODE\Src\User_PID.c	    14  {
+; ..\CODE\Src\User_PID.c	    15  	static double NowErrorValue;
+; ..\CODE\Src\User_PID.c	    16  	static double IntegralErrorValue;
+; ..\CODE\Src\User_PID.c	    17  	static double PreviousErrorValue;
+; ..\CODE\Src\User_PID.c	    18  
+; ..\CODE\Src\User_PID.c	    19  	NowErrorValue = value - middle;
+; ..\CODE\Src\User_PID.c	    20  	IntegralErrorValue += NowErrorValue;
 	sub	d5,d4
-	movh.a	a15,#@his(_999001_IntegralErrorValue)
-.L24:
-	itof	d8,d5
-	ld.w	d0,[a15]@los(_999001_IntegralErrorValue)
-.L36:
-
-; ..\CODE\Src\User_PID.c	    20  
-; ..\CODE\Src\User_PID.c	    21  	OldValue = PidValue;  //问题亟需解决
-; ..\CODE\Src\User_PID.c	    22  
-; ..\CODE\Src\User_PID.c	    23  	PidValue = kP * NowErrorValue + kI * IntegralErrorValue + kD * (NowErrorValue - PreviousErrorValue);
-	utof	d3,d7
-	ld.bu	d15,[a10]
-.L25:
-	add.f	d0,d0,d8
-	st.w	[a15]@los(_999001_IntegralErrorValue),d0
-.L37:
-	utof	d2,d6
-	movh.a	a15,#@his(_999002_PreviousErrorValue)
-.L38:
-	mul.f	d0,d3,d0
-	ld.w	d1,[a15]@los(_999002_PreviousErrorValue)
-.L39:
-	utof	d15,d15
-.L26:
-	madd.f	d0,d0,d2,d8
-.L40:
-	sub.f	d1,d8,d1
-.L41:
-	madd.f	d4,d0,d15,d1
-	call	__f_ftouc
-.L23:
-
-; ..\CODE\Src\User_PID.c	    24  	PreviousErrorValue = NowErrorValue;
-; ..\CODE\Src\User_PID.c	    25  
-; ..\CODE\Src\User_PID.c	    26  	PidValue = 0.1 * OldValue + 0.9 * PidValue;	                       //低通滤波
-	utof	d15,d2
-	st.w	[a15]@los(_999002_PreviousErrorValue),d8
+	movh.a	a2,#@his(_999001_IntegralErrorValue)
 .L27:
-	mov	d0,#26214
-	addih	d0,d0,#16230
+	itof	d8,d5
+	lea	a2,[a2]@los(_999001_IntegralErrorValue)
+	ld.w	d1,[a2]
+.L38:
+
+; ..\CODE\Src\User_PID.c	    21  
+; ..\CODE\Src\User_PID.c	    22  	OldValue = PidValue;
+	movh.a	a15,#@his(PidValue)
+.L39:
+	add.f	d1,d1,d8
+	ld.bu	d0,[a15]@los(PidValue)
+.L40:
+	ld.bu	d15,[a10]
+.L28:
+	st.w	[a2],d1
+.L41:
+	movh.a	a12,#@his(OldValue)
 .L42:
-	mul.f	d4,d15,d0
+	st.b	[a12]@los(OldValue),d0
 .L43:
-	j	__f_ftouc
-.L15:
+
+; ..\CODE\Src\User_PID.c	    23  
+; ..\CODE\Src\User_PID.c	    24  	PidValue = kP * NowErrorValue + kI * IntegralErrorValue + kD * (NowErrorValue - PreviousErrorValue);
+	utof	d2,d7
+	movh.a	a13,#@his(_999002_PreviousErrorValue)
+.L44:
+	utof	d1,d6
+	ld.w	d3,[a2]
+.L45:
+	ld.w	d0,[a13]@los(_999002_PreviousErrorValue)
+.L46:
+	mul.f	d2,d2,d3
+.L47:
+	utof	d15,d15
+.L29:
+	madd.f	d1,d2,d1,d8
+.L48:
+	sub.f	d0,d8,d0
+.L49:
+	madd.f	d4,d1,d15,d0
+	call	__f_ftouc
+.L26:
+
+; ..\CODE\Src\User_PID.c	    25  	PreviousErrorValue = NowErrorValue;
+; ..\CODE\Src\User_PID.c	    26  
+; ..\CODE\Src\User_PID.c	    27  	PidValue = 0.05 * OldValue + 0.95 * PidValue;	                       //低通滤波
+	utof	d1,d2
+	ld.bu	d15,[a12]@los(OldValue)
+.L50:
+	mov	d2,#13107
+	st.w	[a13]@los(_999002_PreviousErrorValue),d8
+.L51:
+	addih	d2,d2,#16243
+.L52:
+	utof	d15,d15
+.L53:
+	mul.f	d1,d1,d2
+.L54:
+	mov.u	d0,#52429
+	addih	d0,d0,#15692
+.L55:
+	madd.f	d4,d1,d15,d0
+	call	__f_ftouc
+.L56:
+
+; ..\CODE\Src\User_PID.c	    28  
+; ..\CODE\Src\User_PID.c	    29  	return PidValue;
+; ..\CODE\Src\User_PID.c	    30  }
+	st.b	[a15]@los(PidValue),d2
+	ret
+.L19:
 	
 __GetPIDValue_function_end:
 	.size	GetPIDValue,__GetPIDValue_function_end-GetPIDValue
 .L13:
 	; End of function
 	
+	.sdecl	'.bss.User_PID.PidValue',data,cluster('PidValue')
+	.sect	'.bss.User_PID.PidValue'
+	.global	PidValue
+PidValue:	.type	object
+	.size	PidValue,1
+	.space	1
+	.sdecl	'.bss.User_PID.OldValue',data,cluster('OldValue')
+	.sect	'.bss.User_PID.OldValue'
+	.global	OldValue
+OldValue:	.type	object
+	.size	OldValue,1
+	.space	1
 	.sdecl	'.bss.User_PID._999001_IntegralErrorValue',data,cluster('_999001_IntegralErrorValue')
 	.sect	'.bss.User_PID._999001_IntegralErrorValue'
 	.align	2
@@ -124,7 +165,7 @@ _999002_PreviousErrorValue:	.type	object
 	.word	146
 	.byte	6,0,7
 	.byte	'__fract',0,4,128,1
-.L22:
+.L25:
 	.byte	7
 	.byte	'float',0,4,4,8
 	.byte	'Ifx__float_to_fract',0,3,1,152,2,18
@@ -190,7 +231,7 @@ _999002_PreviousErrorValue:	.type	object
 	.byte	'B',0
 	.word	518
 	.byte	4,2,35,0,0
-.L14:
+.L18:
 	.byte	7
 	.byte	'unsigned char',0,1,8,7
 	.byte	'unsigned short int',0,2,7,11
@@ -34455,11 +34496,11 @@ _999002_PreviousErrorValue:	.type	object
 	.sdecl	'.debug_line',debug
 	.sect	'.debug_line'
 .L8:
-	.word	.L29-.L28
-.L28:
-	.half	3
 	.word	.L31-.L30
 .L30:
+	.half	3
+	.word	.L33-.L32
+.L32:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Std',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Scu\\Std',0
@@ -34530,12 +34571,12 @@ _999002_PreviousErrorValue:	.type	object
 	.byte	'IfxDma.h',0,17,0,0
 	.byte	'stdint.h',0,13,0,0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\CODE\\Inc\\User_FSM.h',0,0,0,0,0
+.L33:
 .L31:
-.L29:
 	.sdecl	'.debug_info',debug,cluster('GetPIDValue')
 	.sect	'.debug_info'
 .L9:
-	.word	364
+	.word	343
 	.half	3
 	.word	.L10
 	.byte	4,1
@@ -34546,38 +34587,35 @@ _999002_PreviousErrorValue:	.type	object
 	.byte	2
 	.word	.L5
 	.byte	3
-	.byte	'GetPIDValue',0,1,10,9
-	.word	.L14
+	.byte	'GetPIDValue',0,1,13,9
+	.word	.L18
 	.byte	1,1,1
-	.word	.L4,.L15,.L3
+	.word	.L4,.L19,.L3
 	.byte	4
-	.byte	'middle',0,1,10,29
-	.word	.L14,.L16
+	.byte	'middle',0,1,13,29
+	.word	.L18,.L20
 	.byte	4
-	.byte	'value',0,1,10,44
-	.word	.L14,.L17
+	.byte	'value',0,1,13,44
+	.word	.L18,.L21
 	.byte	4
-	.byte	'kP',0,1,10,58
-	.word	.L14,.L18
+	.byte	'kP',0,1,13,58
+	.word	.L18,.L22
 	.byte	4
-	.byte	'kI',0,1,10,69
-	.word	.L14,.L19
+	.byte	'kI',0,1,13,69
+	.word	.L18,.L23
 	.byte	4
-	.byte	'kD',0,1,10,80
-	.word	.L14,.L20
+	.byte	'kD',0,1,13,80
+	.word	.L18,.L24
 	.byte	5
-	.word	.L4,.L15
+	.word	.L4,.L19
 	.byte	6
-	.byte	'PidValue',0,1,12,10
-	.word	.L14,.L21
-	.byte	7
-	.byte	'IntegralErrorValue',0,1,15,16
-	.word	.L22
+	.byte	'IntegralErrorValue',0,1,16,16
+	.word	.L25
 	.byte	5,3
 	.word	_999001_IntegralErrorValue
-	.byte	7
-	.byte	'PreviousErrorValue',0,1,16,16
-	.word	.L22
+	.byte	6
+	.byte	'PreviousErrorValue',0,1,17,16
+	.word	.L25
 	.byte	5,3
 	.word	_999002_PreviousErrorValue
 	.byte	0,0,0
@@ -34586,97 +34624,156 @@ _999002_PreviousErrorValue:	.type	object
 .L10:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
 	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
-	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,7,52,0,3,8,58,15,59,15,57,15,73,16,2,9,0,0,0
+	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,9,0,0,0
 	.sdecl	'.debug_line',debug,cluster('GetPIDValue')
 	.sect	'.debug_line'
 .L11:
-	.word	.L33-.L32
-.L32:
-	.half	3
 	.word	.L35-.L34
 .L34:
+	.half	3
+	.word	.L37-.L36
+.L36:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\CODE\\Src\\User_PID.c',0,0,0,0,0
-.L35:
+.L37:
 	.byte	5,24,7,0,5,2
 	.word	.L4
-	.byte	3,17,1,5,2,3,1,1,5,24,9
-	.half	.L24-.L4
-	.byte	3,127,1,5,2,3,1,1,5,34,9
-	.half	.L36-.L24
-	.byte	3,4,1,5,9,3,115,1,5,21,9
-	.half	.L25-.L36
-	.byte	3,9,1,5,13,9
-	.half	.L37-.L25
-	.byte	3,4,1,5,82,1,5,37,9
-	.half	.L38-.L37
-	.byte	1,5,82,1,5,60,9
+	.byte	3,18,1,5,2,3,1,1,5,24,9
+	.half	.L27-.L4
+	.byte	3,127,1,5,2,3,1,1,5,13,9
+	.half	.L38-.L27
+	.byte	3,2,1,5,21,9
 	.half	.L39-.L38
-	.byte	1,5,32,9
-	.half	.L26-.L39
-	.byte	1,5,80,9
-	.half	.L40-.L26
-	.byte	1,5,58,9
-	.half	.L41-.L40
-	.byte	1,5,36,9
-	.half	.L23-.L41
-	.byte	3,3,1,5,21,3,126,1,5,30,9
-	.half	.L27-.L23
-	.byte	3,2,1,5,34,9
-	.half	.L42-.L27
-	.byte	1,5,28,9
+	.byte	3,126,1,5,13,3,2,1,5,9,9
+	.half	.L40-.L39
+	.byte	3,119,1,5,21,9
+	.half	.L28-.L40
+	.byte	3,7,1,5,2,9
+	.half	.L41-.L28
+	.byte	3,2,1,5,11,9
+	.half	.L42-.L41
+	.byte	1,5,34,9
 	.half	.L43-.L42
-	.byte	1,5,1,7,9
-	.half	.L13-.L43
-	.byte	3,3,0,1,1
-.L33:
+	.byte	3,2,1,5,82,1,5,13,9
+	.half	.L44-.L43
+	.byte	1,5,39,1,5,82,9
+	.half	.L45-.L44
+	.byte	1,5,37,9
+	.half	.L46-.L45
+	.byte	1,5,60,9
+	.half	.L47-.L46
+	.byte	1,5,32,9
+	.half	.L29-.L47
+	.byte	1,5,80,9
+	.half	.L48-.L29
+	.byte	1,5,58,9
+	.half	.L49-.L48
+	.byte	1,5,38,9
+	.half	.L26-.L49
+	.byte	3,3,1,5,20,1,5,31,9
+	.half	.L50-.L26
+	.byte	1,5,21,3,126,1,5,31,9
+	.half	.L51-.L50
+	.byte	3,2,1,5,20,9
+	.half	.L52-.L51
+	.byte	1,5,36,9
+	.half	.L53-.L52
+	.byte	1,5,13,9
+	.half	.L54-.L53
+	.byte	1,5,29,9
+	.half	.L55-.L54
+	.byte	1,5,1,9
+	.half	.L56-.L55
+	.byte	3,3,1,9
+	.half	.L13-.L56
+	.byte	0,1,1
+.L35:
 	.sdecl	'.debug_ranges',debug,cluster('GetPIDValue')
 	.sect	'.debug_ranges'
 .L12:
 	.word	-1,.L4,0,.L13-.L4,0,0
+	.sdecl	'.debug_info',debug,cluster('PidValue')
+	.sect	'.debug_info'
+.L14:
+	.word	165
+	.half	3
+	.word	.L15
+	.byte	4,1
+	.byte	'..\\CODE\\Src\\User_PID.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1,2
+	.word	.L5
+	.byte	3
+	.byte	'PidValue',0,23,10,9
+	.word	.L18
+	.byte	1,5,3
+	.word	PidValue
+	.byte	0
+	.sdecl	'.debug_abbrev',debug,cluster('PidValue')
+	.sect	'.debug_abbrev'
+.L15:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
+	.byte	0,0,0
+	.sdecl	'.debug_info',debug,cluster('OldValue')
+	.sect	'.debug_info'
+.L16:
+	.word	165
+	.half	3
+	.word	.L17
+	.byte	4,1
+	.byte	'..\\CODE\\Src\\User_PID.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1,2
+	.word	.L5
+	.byte	3
+	.byte	'OldValue',0,23,11,9
+	.word	.L18
+	.byte	1,5,3
+	.word	OldValue
+	.byte	0
+	.sdecl	'.debug_abbrev',debug,cluster('OldValue')
+	.sect	'.debug_abbrev'
+.L17:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
+	.byte	0,0,0
 	.sdecl	'.debug_loc',debug,cluster('GetPIDValue')
 	.sect	'.debug_loc'
 .L3:
-	.word	-1,.L4,0,.L15-.L4
+	.word	-1,.L4,0,.L19-.L4
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L21:
-	.word	-1,.L4,.L23-.L4,.L27-.L4
-	.half	1
-	.byte	82
-	.word	0,0
-.L20:
-	.word	-1,.L4,0,.L15-.L4
+.L24:
+	.word	-1,.L4,0,.L19-.L4
 	.half	2
 	.byte	145,0
-	.word	.L25-.L4,.L26-.L4
+	.word	.L28-.L4,.L29-.L4
 	.half	1
 	.byte	95
 	.word	0,0
-.L19:
-	.word	-1,.L4,0,.L23-.L4
+.L23:
+	.word	-1,.L4,0,.L26-.L4
 	.half	1
 	.byte	87
 	.word	0,0
-.L18:
-	.word	-1,.L4,0,.L23-.L4
+.L22:
+	.word	-1,.L4,0,.L26-.L4
 	.half	1
 	.byte	86
 	.word	0,0
-.L16:
-	.word	-1,.L4,0,.L23-.L4
+.L20:
+	.word	-1,.L4,0,.L26-.L4
 	.half	1
 	.byte	84
 	.word	0,0
-.L17:
-	.word	-1,.L4,0,.L24-.L4
+.L21:
+	.word	-1,.L4,0,.L27-.L4
 	.half	1
 	.byte	85
 	.word	0,0
 	.sdecl	'.debug_frame',debug
 	.sect	'.debug_frame'
-.L44:
+.L57:
 	.word	48
 	.word	-1
 	.byte	3,0,2,1,27,12,26,0,8,27,8,26,8,28,8,29,8,30,8,31,8,34,8,35,8,32,8,33,8,16,8,17,8,24,8,25,8,36,8,37,8,38
@@ -34684,10 +34781,7 @@ _999002_PreviousErrorValue:	.type	object
 	.sdecl	'.debug_frame',debug,cluster('GetPIDValue')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L44,.L4,.L15-.L4
+	.word	.L57,.L4,.L19-.L4
 
-; ..\CODE\Src\User_PID.c	    27  
-; ..\CODE\Src\User_PID.c	    28  	return PidValue;
-; ..\CODE\Src\User_PID.c	    29  }
 
 	; Module end

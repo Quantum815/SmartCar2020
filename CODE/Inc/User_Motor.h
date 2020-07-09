@@ -11,17 +11,17 @@
 #include "headfile.h"
 #define WHEEL_DIAMETER 62
 
-enum Motor_State
+typedef enum Motor_State
 {
     LMotor_F,
     LMotor_B,
     RMotor_F,
-	RMotor_B,
-};
+	RMotor_B
+}Motor_State_t;
 
 void ServoMotorInit(void);
-void MotorInit(void);
 void SetServoPWM(uint8 ServoNum, float PWMDuty);
-void SetMotorPWM(uint8 MotorState, float PWMDuty);
+void MotorInit(void);
+void SetMotorPWM(Motor_State_t MotorState, float PWMDuty);
 
 #endif /* CODE_INC_USER_MOTOR_H_ */

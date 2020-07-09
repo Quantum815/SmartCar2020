@@ -11,7 +11,6 @@ void UserInit(void)
 {
 	//LED判断CPU0是否卡死
 	gpio_init(P20_9, GPO, 0, PUSHPULL);
-	pit_interrupt_ms(CCU6_1, PIT_CH0, CPU0TestTime);
 
 	//主进程
 	pit_interrupt_ms(CCU6_0, PIT_CH0, MainProcessTime);

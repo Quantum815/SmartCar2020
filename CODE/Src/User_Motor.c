@@ -32,15 +32,15 @@ void MotorInit(void)
 	gtm_pwm_init(ATOM1_CH7_P02_7 , 2000, 5000);
 }
 
-void SetMotorPWM(uint8 MotorState, float PWMDuty)
+void SetMotorPWM(Motor_State_t MotorState, float PWMDuty)  //已经过驱动板测试，暂时不用更改
 {
 	double PWMCount = 0;
-	PWMCount = GTM_ATOM1_PWM_DUTY_MAX * (PWMDuty/100);
+	PWMCount = GTM_ATOM1_PWM_DUTY_MAX * (PWMDuty / 100);
 	switch(MotorState)
 	{
-		case LMotor_F: pwm_duty(ATOM1_CH4_P02_4, (uint32)PWMCount); break;
-		case LMotor_B: pwm_duty(ATOM1_CH5_P02_5, (uint32)PWMCount); break;
-		case RMotor_F: pwm_duty(ATOM1_CH6_P02_6, (uint32)PWMCount); break;
+		case LMotor_F: pwm_duty(ATOM1_CH5_P02_5, (uint32)PWMCount); break;
+		case LMotor_B: pwm_duty(ATOM1_CH6_P02_6, (uint32)PWMCount); break;
+		case RMotor_F: pwm_duty(ATOM1_CH4_P02_4, (uint32)PWMCount); break;
 		case RMotor_B: pwm_duty(ATOM1_CH7_P02_7, (uint32)PWMCount); break;
 	}
 }

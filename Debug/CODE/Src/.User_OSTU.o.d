@@ -338,6 +338,8 @@ CODE\Src\User_OSTU.o :	"E:\ProgramData\GithubRepositories\SmartCar2020TC264\CODE
 "E:\ProgramData\GithubRepositories\SmartCar2020TC264\CODE\Inc\User_Motor.h" :
 CODE\Src\User_OSTU.o :	"E:\ProgramData\GithubRepositories\SmartCar2020TC264\CODE\Inc\User_Gyro_I2C.h"
 "E:\ProgramData\GithubRepositories\SmartCar2020TC264\CODE\Inc\User_Gyro_I2C.h" :
+CODE\Src\User_OSTU.o :	"E:\ProgramData\GithubRepositories\SmartCar2020TC264\CODE\Inc\User_Image_Process.h"
+"E:\ProgramData\GithubRepositories\SmartCar2020TC264\CODE\Inc\User_Image_Process.h" :
 CODE\Src\User_OSTU.o :	"E:\ProgramData\GithubRepositories\SmartCar2020TC264\CODE\Inc\User_OSTU.h"
 "E:\ProgramData\GithubRepositories\SmartCar2020TC264\CODE\Inc\User_OSTU.h" :
 CODE\Src\User_OSTU.o :	"E:\ProgramData\GithubRepositories\SmartCar2020TC264\CODE\Inc\User_PID.h"

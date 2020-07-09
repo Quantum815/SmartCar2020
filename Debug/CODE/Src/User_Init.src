@@ -40,31 +40,23 @@ UserInit:	.type	func
 	call	gpio_init
 .L25:
 
-; ..\CODE\Src\User_Init.c	    14  	pit_interrupt_ms(CCU6_1, PIT_CH0, CPU0TestTime);
-	mov	d4,#1
-	mov	d5,#0
-	mov	d6,#15625
-	sh	d6,#5
-	call	pit_init
-.L26:
-
-; ..\CODE\Src\User_Init.c	    15  
-; ..\CODE\Src\User_Init.c	    16  	//主进程
-; ..\CODE\Src\User_Init.c	    17  	pit_interrupt_ms(CCU6_0, PIT_CH0, MainProcessTime);
+; ..\CODE\Src\User_Init.c	    14  
+; ..\CODE\Src\User_Init.c	    15  	//主进程
+; ..\CODE\Src\User_Init.c	    16  	pit_interrupt_ms(CCU6_0, PIT_CH0, MainProcessTime);
 	mov	d4,#0
 	mov	d5,d4
 	mov	d6,#5000
 	call	pit_init
-.L27:
+.L26:
 
-; ..\CODE\Src\User_Init.c	    18  
-; ..\CODE\Src\User_Init.c	    19  	//各类资源与外设
-; ..\CODE\Src\User_Init.c	    20  	//adc_init(ADC_1,ADC1_CH3_B14,ADC_8BIT);  //需要修改
-; ..\CODE\Src\User_Init.c	    21  
-; ..\CODE\Src\User_Init.c	    22  	//DebugUARTInit();
-; ..\CODE\Src\User_Init.c	    23  	//EncoderInit();
-; ..\CODE\Src\User_Init.c	    24  	//ServoMotorInit();
-; ..\CODE\Src\User_Init.c	    25  	MotorInit();
+; ..\CODE\Src\User_Init.c	    17  
+; ..\CODE\Src\User_Init.c	    18  	//各类资源与外设
+; ..\CODE\Src\User_Init.c	    19  	//adc_init(ADC_1,ADC1_CH3_B14,ADC_8BIT);  //需要修改
+; ..\CODE\Src\User_Init.c	    20  
+; ..\CODE\Src\User_Init.c	    21  	//DebugUARTInit();
+; ..\CODE\Src\User_Init.c	    22  	//EncoderInit();
+; ..\CODE\Src\User_Init.c	    23  	//ServoMotorInit();
+; ..\CODE\Src\User_Init.c	    24  	MotorInit();
 	j	MotorInit
 .L13:
 	
@@ -6755,7 +6747,7 @@ __UserInit_function_end:
 	.byte	'time',0,25,48,62
 	.word	10536
 	.byte	0,33
-	.byte	'MotorInit',0,26,23,6,1,1,1,1,34
+	.byte	'MotorInit',0,26,24,6,1,1,1,1,34
 	.byte	'__wchar_t',0,27,1,1
 	.word	39233
 	.byte	34
@@ -34809,12 +34801,10 @@ __UserInit_function_end:
 	.half	.L24-.L23
 	.byte	1,5,2,9
 	.half	.L25-.L24
-	.byte	3,1,1,9
-	.half	.L26-.L25
 	.byte	3,3,1,5,11,9
-	.half	.L27-.L26
+	.half	.L26-.L25
 	.byte	3,8,1,5,1,7,9
-	.half	.L12-.L27
+	.half	.L12-.L26
 	.byte	3,3,0,1,1
 .L19:
 	.sdecl	'.debug_ranges',debug,cluster('UserInit')
@@ -34830,7 +34820,7 @@ __UserInit_function_end:
 	.word	0,0
 	.sdecl	'.debug_frame',debug
 	.sect	'.debug_frame'
-.L28:
+.L27:
 	.word	48
 	.word	-1
 	.byte	3,0,2,1,27,12,26,0,8,27,8,26,8,28,8,29,8,30,8,31,8,34,8,35,8,32,8,33,8,16,8,17,8,24,8,25,8,36,8,37,8,38
@@ -34838,12 +34828,12 @@ __UserInit_function_end:
 	.sdecl	'.debug_frame',debug,cluster('UserInit')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L28,.L3,.L13-.L3
+	.word	.L27,.L3,.L13-.L3
 
-; ..\CODE\Src\User_Init.c	    26  	//GyroInit();
-; ..\CODE\Src\User_Init.c	    27  	//ips114_init();
-; ..\CODE\Src\User_Init.c	    28  }
+; ..\CODE\Src\User_Init.c	    25  	//GyroInit();
+; ..\CODE\Src\User_Init.c	    26  	//ips114_init();
+; ..\CODE\Src\User_Init.c	    27  }
+; ..\CODE\Src\User_Init.c	    28  
 ; ..\CODE\Src\User_Init.c	    29  
-; ..\CODE\Src\User_Init.c	    30  
 
 	; Module end

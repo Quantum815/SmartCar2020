@@ -11,7 +11,6 @@
 #include "headfile.h"
 //#define USECARMERA
 #define CameraProcessTime 10
-#define CPU1TestTime 500
 
 void UserCameraInit(void);
 

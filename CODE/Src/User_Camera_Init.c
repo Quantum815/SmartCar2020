@@ -15,7 +15,6 @@ void UserCameraInit(void)
 
 	//LED判断CPU1是否卡死
 	gpio_init(P21_4, GPO, 1, PUSHPULL);
-	pit_interrupt_ms(CCU6_1, PIT_CH1, CPU1TestTime);
 
 	//摄像头进程
 	pit_interrupt_ms(CCU6_0, PIT_CH1, CameraProcessTime);
