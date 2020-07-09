@@ -13,7 +13,7 @@ void ServoMotorInit(void)
 	gtm_pwm_init(ATOM0_CH1_P21_3, 50, 5000);
 }
 
-void SetServoPWM(uint8 ServoNum, float PWMDuty)
+void SetServoPWM(uint8 ServoNum, float PWMDuty)  //PWMDuty为百分比
 {
 	double PWMCount = 0;
 	PWMCount = GTM_ATOM0_PWM_DUTY_MAX * (PWMDuty/100);

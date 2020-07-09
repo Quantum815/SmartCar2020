@@ -87,6 +87,7 @@ uint8_t GetOSTU(uint8_t tmImage[IMAGEH][IMAGEW])
   }
   return Threshold;                        //返回最佳阈值;
 }
+
 /***************************************************************
 *
 * 函数名称：void BinaryImage(uint8_t tmImage[IMAGEH][IMAGEW])

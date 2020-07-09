@@ -9,6 +9,23 @@
 
 uint8 DebugUartRxBuff;
 
+void ADCReadData(void)
+{
+    uint16 ADCValue, NumLenth = 0, temp;
+    uint8 ADCStr[1000];
+    ADCValue = adc_convert(ADC_0, ADC0_CH0_A0, ADC_12BIT);
+    temp = ADCValue;
+    while(temp != 0)
+    {
+        temp = temp / 10;
+        NumLenth++;
+    }
+    ADCStr[0] = ADCValue + '0';
+    uart_putbuff(UART_3, ADCStr, NumLenth);
+    uart_putstr(UART_3, "\r\n");
+    systick_delay_ms(STM1, 100);
+}
+
 //debug命令
 //0x01 停车  0x02启动   0x03通过串口发送数据回上位机
 //0x04 返回当前状态回上位机
@@ -34,18 +51,18 @@ void UserDebug(void)
 	{
 		if(ReturnFSMState(&CarFSM) == GoLine)
 		{
-			uart_putstr(UART_0, "Goline\r\n");
-			my_delay(20000000);
+			uart_putstr(UART_0, "GoLine\r\n");
+			my_delay(3333334);
 		}
 		else if(ReturnFSMState(&CarFSM) == Stop)
 		{
 			uart_putstr(UART_0, "Stop\r\n");
-			my_delay(20000000);
+			my_delay(3333334);
 		}
 		else if(ReturnFSMState(&CarFSM) == SendBall)
 		{
 			uart_putstr(UART_0, "SendBall\r\n");
-			my_delay(20000000);
+			my_delay(3333334);
 		}
 	}
 }

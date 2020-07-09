@@ -10,11 +10,11 @@
 
 #include "headfile.h"
 
-#define IMAGEH  MT9V03X_H //ÐÐ HEIGHT
-#define IMAGEW  MT9V03X_W  //ÁÐ WIDTH
+#define IMAGEH  MT9V03X_H
+#define IMAGEW  MT9V03X_W
 
 uint8_t GetOSTU(uint8_t tmImage[IMAGEH][IMAGEW]);
 void BinaryImage(uint8_t tmImage[IMAGEH][IMAGEW],uint8_t ThresholdV);
-void GyroReadByte(void);
+//void GyroReadByte(void);
 
 #endif /* CODE_INC_USER_OSTU_H_ */

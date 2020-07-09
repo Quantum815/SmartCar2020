@@ -7,15 +7,17 @@
 
 #include "..\CODE\Inc\User_fsm.h"
 
-FSMTable CarTable[] =
+FSMTable_t CarTable[] =
 {
     //{到来的事件，当前的状态，将要要执行的函数，下一个状态}
     { RUNSTART, Stop,   RunStart, GoLine },
-    { RUNSTOP,  GoLine, RunStop,  Stop   }
+    { RUNSTOP,  GoLine, RunStop,  Stop   },
+	//{ NoAction, Stop,   RunStop,  Stop   },
+	//{ NoAction, GoLine, FindLine, GoLine }
     //如果出现新的代码加入在此
 };
 
-FSM CarFSM;
+FSM_t CarFSM;
 
 //事件反应函数
 void RunStart(void)
@@ -24,6 +26,14 @@ void RunStart(void)
 }
 
 void RunStop(void)
+{
+	SetMotorPWM(LMotor_F, 0);
+	SetMotorPWM(LMotor_B, 0);
+	SetMotorPWM(RMotor_F, 0);
+	SetMotorPWM(RMotor_B, 0);
+}
+
+void FindLine(void)
 {
 
 }
@@ -34,7 +44,7 @@ void RunStop(void)
 //函数作用：状态机注册
 //
 //****************
-void FSMRegist(FSM *fsm, FSMTable *fsmtable)
+void FSMRegist(FSM_t *fsm, FSMTable_t *fsmtable)
 {
     fsm->FsmTable = fsmtable;
 }
@@ -44,14 +54,14 @@ void FSMRegist(FSM *fsm, FSMTable *fsmtable)
 //函数作用：状态机状态迁移
 //
 //****************
-void FSMStateTransfer(FSM* fsm, int state)
+void FSMStateTransfer(FSM_t* fsm, int state)
 {
     fsm->CurState = state;
 }
 
-void FSMEventHandle(FSM *fsm, int event)
+void FSMEventHandle(FSM_t *fsm, int event)
 {
-	FSMTable *fsmTable = fsm->FsmTable;
+	FSMTable_t *fsmTable = fsm->FsmTable;
     int curState = fsm->CurState;
     void (*eventAction)() = NULL;  //函数指针初始化为空
     int nextState = -1;
@@ -80,16 +90,16 @@ void FSMEventHandle(FSM *fsm, int event)
     }
 }
 
-void LogicThing(void)
+int ReturnFSMState(FSM_t *fsm)
+{
+	return fsm->CurState;
+}
+
+void FSMRun(void)
 {
     FSMRegist(&CarFSM, CarTable);
     CarFSM.CurState = Stop;
-    CarFSM.Size = sizeof(CarTable) / sizeof(FSMTable);
+    CarFSM.Size = sizeof(CarTable) / sizeof(FSMTable_t);
     FSMEventHandle(&CarFSM, RUNSTART);
-}
-
-int ReturnFSMState(FSM *fsm)
-{
-	return fsm->CurState;
 }
 

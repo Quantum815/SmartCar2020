@@ -10,45 +10,47 @@
 
 #include "headfile.h"
 
-enum CarState
+enum CarState  //状态
 {
     Stop,
     GoLine,
-    SendBall
+    SendBall,
+	//NoAction
     //如果出现新的代码加入在此
 };
 
-enum CarEvent
+enum CarEvent  //事件
 {
     RUNSTART,
     RUNSTOP
     //如果出现新的代码加入在此
 };
 
-typedef struct {
+typedef struct FSMTable{
     int Event;   //事件
     int CurState;  //当前状态
     void (*EventAction)();  //函数指针
     int NextState;  //下一个状态
-}FSMTable;
+}FSMTable_t;
 
-extern FSMTable CarTable[];
+extern FSMTable_t CarTable[];
 
-typedef struct {
+typedef struct FSM{
     int CurState;  //当前状态
-    FSMTable *FsmTable;  //状态表
+    FSMTable_t *FsmTable;  //状态表
     int Size;  //表的项数
-}FSM;
+}FSM_t;
 
-extern FSM CarFSM;
+extern FSM_t CarFSM;
 
 void RunStart(void);
 void RunStop(void);
+void FindLine(void);
+void FSMRun(void);
 
-void FSMRegist(FSM* fsm, FSMTable *fsmtable);
-void FSMStateTransfer(FSM *fsm, int state);
-void FSMEventHandle(FSM *fsm, int event);
-void LogicThing(void);
-int ReturnFSMState(FSM *fsm);
+void FSMRegist(FSM_t *fsm, FSMTable_t *fsmtable);
+void FSMStateTransfer(FSM_t *fsm, int state);
+void FSMEventHandle(FSM_t *fsm, int event);
+int ReturnFSMState(FSM_t *fsm);
 
 #endif /* CODE_INC_USER_FSM_H_ */

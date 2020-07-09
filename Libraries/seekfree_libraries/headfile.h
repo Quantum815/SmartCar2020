@@ -66,6 +66,7 @@
 #include "SEEKFREE_RDA5807.h"
 
 //------自定义头文件
+#include <stdint.h>
 #include "..\CODE\Inc\User_Init.h"
 #include "..\CODE\Inc\User_Camera_Init.h"
 #include "..\CODE\Inc\User_DebugCode.h"
@@ -75,6 +76,7 @@
 #include "..\CODE\Inc\User_Motor.h"
 #include "..\CODE\Inc\User_Gyro_I2C.h"
 #include "..\CODE\Inc\User_OSTU.h"
+#include "..\CODE\Inc\User_PID.h"
 
 #endif
 

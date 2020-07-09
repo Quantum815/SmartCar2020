@@ -10,7 +10,7 @@
 
 #include "headfile.h"
 
-extern uint8 DebugUartRxBuff;
+void ADCReadData(void);
 void UserDebug(void);
 
 #endif /* CODE_INC_USER_DEBUGCODE_H_ */
