@@ -127,7 +127,7 @@ CountDistance:	.type	func
 	call	gpt12_clear
 .L84:
 
-; ..\CODE\Src\User_Encoder.c	    33  	//printf("%lf\r\n",Ldistance);  //测试
+; ..\CODE\Src\User_Encoder.c	    33  	//printf("%lf\r\n",CurRdistance);  //测试
 ; ..\CODE\Src\User_Encoder.c	    34  	gpt12_clear(GPT12_T6);
 	mov	d4,#4
 	j	gpt12_clear
@@ -173,7 +173,7 @@ __GetDistance_function_end:
 	.global	GetSpeed
 
 ; ..\CODE\Src\User_Encoder.c	    41  
-; ..\CODE\Src\User_Encoder.c	    42  double GetSpeed(void)  //主进程20ms   似乎存在问题
+; ..\CODE\Src\User_Encoder.c	    42  double GetSpeed(void)  //主进程20ms
 ; Function GetSpeed
 .L11:
 GetSpeed:	.type	func

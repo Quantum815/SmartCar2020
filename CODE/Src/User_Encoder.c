@@ -30,7 +30,7 @@ void CountDistance(void)
 	TotalDistance += CurDistance;
 
 	gpt12_clear(GPT12_T2);
-	//printf("%lf\r\n",Ldistance);  //测试
+	//printf("%lf\r\n",CurRdistance);  //测试
 	gpt12_clear(GPT12_T6);
 }
 
@@ -39,7 +39,7 @@ double GetDistance(void)
 	return TotalDistance;
 }
 
-double GetSpeed(void)  //主进程20ms   似乎存在问题
+double GetSpeed(void)  //主进程20ms
 {
 	return (CurDistance/0.02);
 }

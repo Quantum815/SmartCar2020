@@ -45,7 +45,13 @@ void core0_main(void)
 	{
 		//用户在此处编写任务代码
 		//GyroReadByte();
-    	systick_delay_ms(STM0, 20);
+		//CountDistance();
+    	//systick_delay_ms(STM0, 50);
+		//ips114_showchar(50,50,'t');
+		SetMotorPWM(LMotor_F, 50);
+		SetMotorPWM(LMotor_B, 80);
+		SetMotorPWM(RMotor_F, 50);
+		SetMotorPWM(RMotor_B, 50);
 	}
 }
 
