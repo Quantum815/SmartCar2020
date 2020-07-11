@@ -21,8 +21,8 @@ void UserInit(void)
 	//DebugUARTInit();
 	//EncoderInit();
 	//ServoMotorInit();
-	MotorInit();
-	//GyroInit();
+	//MotorInit();
+	GyroInit();
 	//ips114_init();
 }
 

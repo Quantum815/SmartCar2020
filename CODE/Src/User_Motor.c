@@ -26,10 +26,10 @@ void SetServoPWM(uint8 ServoNum, float PWMDuty)  //PWMDutyÎª°Ù·Ö±È
 
 void MotorInit(void)
 {
-	gtm_pwm_init(ATOM1_CH4_P02_4 , 2000, 45000);
-	gtm_pwm_init(ATOM1_CH5_P02_5 , 2000, 5000);
-	gtm_pwm_init(ATOM1_CH6_P02_6 , 2000, 45000);
-	gtm_pwm_init(ATOM1_CH7_P02_7 , 2000, 5000);
+	gtm_pwm_init(ATOM1_CH5_P02_5 , 2000, 25000);
+	gtm_pwm_init(ATOM1_CH6_P02_6 , 2000, 25000);
+	gtm_pwm_init(ATOM1_CH4_P02_4 , 2000, 25000);
+	gtm_pwm_init(ATOM1_CH7_P02_7 , 2000, 25000);
 }
 
 void SetMotorPWM(Motor_State_t MotorState, float PWMDuty)  //ÒÑ¾­¹ýÇý¶¯°å²âÊÔ£¬ÔÝÊ±²»ÓÃ¸ü¸Ä
@@ -43,5 +43,62 @@ void SetMotorPWM(Motor_State_t MotorState, float PWMDuty)  //ÒÑ¾­¹ýÇý¶¯°å²âÊÔ£¬Ô
 		case RMotor_F: pwm_duty(ATOM1_CH4_P02_4, (uint32)PWMCount); break;
 		case RMotor_B: pwm_duty(ATOM1_CH7_P02_7, (uint32)PWMCount); break;
 	}
+}
+
+void MotorUserHandle(Motor_State_t Motor, float PWMDuty)
+{
+    if(Motor == LMotor_F)
+    {
+        if(PWMDuty < 0)
+        {
+            SetMotorPWM(LMotor_F, 0);
+            SetMotorPWM(LMotor_B, -PWMDuty);
+        }
+        else
+        {
+			SetMotorPWM(LMotor_B, 0);
+            SetMotorPWM(LMotor_F, PWMDuty);
+        }
+    }
+    else if(Motor == LMotor_B)
+    {
+        if(PWMDuty < 0)
+        {
+            SetMotorPWM(LMotor_B, 0);
+            SetMotorPWM(LMotor_F, -PWMDuty);
+        }
+        else
+        {
+			SetMotorPWM(LMotor_F, 0);
+            SetMotorPWM(LMotor_B, PWMDuty);
+        }
+    }
+    else if(Motor == RMotor_F)
+    {
+        if(PWMDuty < 0)
+        {
+            SetMotorPWM(RMotor_F, 0);
+            SetMotorPWM(RMotor_B, -PWMDuty);
+        }
+        else
+        {
+			SetMotorPWM(RMotor_B, 0);
+            SetMotorPWM(RMotor_F, PWMDuty);
+        }
+
+    }
+    else if(Motor == RMotor_B)
+    {
+        if(PWMDuty < 0)
+        {
+            SetMotorPWM(RMotor_B, 0);
+            SetMotorPWM(RMotor_F, -PWMDuty);
+        }
+        else
+        {
+			SetMotorPWM(RMotor_F, 0);
+            SetMotorPWM(RMotor_B, PWMDuty);
+        }
+    }
 }
 

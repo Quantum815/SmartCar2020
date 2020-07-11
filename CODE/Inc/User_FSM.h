@@ -14,15 +14,15 @@ enum CarState  //状态
 {
     Stop,
     GoLine,
-    SendBall,
-	//NoAction
+    SendBall
     //如果出现新的代码加入在此
 };
 
 enum CarEvent  //事件
 {
     RUNSTART,
-    RUNSTOP
+    RUNSTOP,
+	NOEVENT
     //如果出现新的代码加入在此
 };
 

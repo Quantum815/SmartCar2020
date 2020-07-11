@@ -31,5 +31,5 @@ void GyroReadByte(void)
 	Roll_value = (float)CharToShort(&GyroPtr[18])/32768.0*180;  //xÖá¹ö¶¯½Ç
 	Pitch_value = (float)CharToShort(&GyroPtr[20])/32768.0*180;  //yÖá¸©Ñö½Ç
 	Yaw_value = (float)CharToShort(&GyroPtr[22])/32768.0*180;  //zÖáÐý×ª½Ç
-	//printf("AX:%f AY:%f AZ:%f \r\nRoll_value:%f Pitch_value:%f Yaw_value:%f\r\n", AX, AY, AZ, Roll_value, Pitch_value, Yaw_value);
+	printf("AX:%f AY:%f AZ:%f \r\nRoll_value:%f Pitch_value:%f Yaw_value:%f\r\n\r\n", AX, AY, AZ, Roll_value, Pitch_value, Yaw_value);
 }

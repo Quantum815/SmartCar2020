@@ -31,13 +31,19 @@ void ADCReadData(void)
 //0x04 返回当前状态回上位机
 void UserDebug(void)
 {
+	if(DebugUartRxBuff == 0x00)
+	{
+		FSMEventHandle(&CarFSM, NOEVENT);
+	}
     if(DebugUartRxBuff == 0x01)
     {
         FSMEventHandle(&CarFSM, RUNSTOP);
+        DebugUartRxBuff = 0x00;
     }
     else if(DebugUartRxBuff == 0x02)
     {
         FSMEventHandle(&CarFSM, RUNSTART);
+        DebugUartRxBuff = 0x00;
     }
     else if(DebugUartRxBuff == 0x03)
     {

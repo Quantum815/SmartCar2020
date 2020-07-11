@@ -32,9 +32,9 @@ IFX_INTERRUPT(cc60_pit_ch0_isr, 0, CCU6_0_CH0_ISR_PRIORITY)  //Ö÷³ÌÐò
 		gpio_toggle(P20_9);
 		i = 0;
 	}
-	CameraProcess();
-	GyroReadByte();
-	FSMRun();
+	//CameraProcess();
+	//GyroReadByte();
+	//FSMRun();
 }
 
 

@@ -27,8 +27,8 @@ $TC16X
 ; ..\CODE\Src\User_FSM.c	    12      //{到来的事件，当前的状态，将要要执行的函数，下一个状态}
 ; ..\CODE\Src\User_FSM.c	    13      { RUNSTART, Stop,   RunStart, GoLine },
 ; ..\CODE\Src\User_FSM.c	    14      { RUNSTOP,  GoLine, RunStop,  Stop   },
-; ..\CODE\Src\User_FSM.c	    15  	//{ NoAction, Stop,   RunStop,  Stop   },
-; ..\CODE\Src\User_FSM.c	    16  	//{ NoAction, GoLine, FindLine, GoLine }
+; ..\CODE\Src\User_FSM.c	    15  	{ NOEVENT, Stop,   RunStop,  Stop   },
+; ..\CODE\Src\User_FSM.c	    16  	{ NOEVENT, GoLine, FindLine, GoLine }
 ; ..\CODE\Src\User_FSM.c	    17      //如果出现新的代码加入在此
 ; ..\CODE\Src\User_FSM.c	    18  };
 ; ..\CODE\Src\User_FSM.c	    19  
@@ -342,16 +342,17 @@ FSMRun:	.type	func
 .L136:
 
 ; ..\CODE\Src\User_FSM.c	   101      CarFSM.CurState = Stop;
-	mov	d4,#0
-	st.w	[a15],d4
+	mov	d15,#0
+	st.w	[a15],d15
 .L137:
 
 ; ..\CODE\Src\User_FSM.c	   102      CarFSM.Size = sizeof(CarTable) / sizeof(FSMTable_t);
-	mov	d15,#2
+	mov	d15,#4
 	st.w	[a15]8,d15
 .L138:
 
-; ..\CODE\Src\User_FSM.c	   103      FSMEventHandle(&CarFSM, RUNSTART);
+; ..\CODE\Src\User_FSM.c	   103      FSMEventHandle(&CarFSM, NOEVENT);
+	mov	d4,#2
 	mov.aa	a4,a15
 	j	FSMEventHandle
 .L77:
@@ -366,11 +367,16 @@ __FSMRun_function_end:
 	.global	CarTable
 	.align	4
 CarTable:	.type	object
-	.size	CarTable,32
+	.size	CarTable,64
 	.space	8
 	.word	RunStart,1,1,1
 	.word	RunStop
 	.space	4
+	.word	2
+	.space	4
+	.word	RunStop
+	.space	4
+	.word	2,1,FindLine,1
 	.sdecl	'.bss.User_FSM.CarFSM',data,cluster('CarFSM')
 	.sect	'.bss.User_FSM.CarFSM'
 	.global	CarFSM
@@ -390,6 +396,7 @@ CarFSM:	.type	object
 	.space	1
 	.calls	'__INDIRECT__','RunStart'
 	.calls	'__INDIRECT__','RunStop'
+	.calls	'__INDIRECT__','FindLine'
 	.calls	'RunStop','SetMotorPWM'
 	.calls	'FSMEventHandle','__INDIRECT__'
 	.calls	'FSMEventHandle','FSMStateTransfer'
@@ -34787,9 +34794,9 @@ CarFSM:	.type	object
 	.byte	'FSMTable_t',0,25,34,2
 	.word	40833
 .L99:
-	.byte	15,32
+	.byte	15,64
 	.word	40833
-	.byte	16,1,0,40
+	.byte	16,3,0,40
 	.byte	'FSM_t',0,25,42,2
 	.word	40926
 	.byte	0
