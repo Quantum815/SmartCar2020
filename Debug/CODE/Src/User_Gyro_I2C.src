@@ -22,7 +22,7 @@ $TC16X
 ; ..\CODE\Src\User_Gyro_I2C.c	     7  
 ; ..\CODE\Src\User_Gyro_I2C.c	     8  #include "..\CODE\Inc\User_Gyro_I2C.h"
 ; ..\CODE\Src\User_Gyro_I2C.c	     9  
-; ..\CODE\Src\User_Gyro_I2C.c	    10  uint8 GyroPtr[24];
+; ..\CODE\Src\User_Gyro_I2C.c	    10  uint8 GyroPtr[25];
 ; ..\CODE\Src\User_Gyro_I2C.c	    11  float AX, AY, AZ, Roll_value, Pitch_value, Yaw_value;
 ; ..\CODE\Src\User_Gyro_I2C.c	    12  
 ; ..\CODE\Src\User_Gyro_I2C.c	    13  short CharToShort(unsigned char cData[])
@@ -86,7 +86,7 @@ __GyroInit_function_end:
 GyroReadByte:	.type	func
 
 ; ..\CODE\Src\User_Gyro_I2C.c	    24  {
-; ..\CODE\Src\User_Gyro_I2C.c	    25  	simiic_read_regs(I2C_ADDR, AX_PTR, &GyroPtr[0], 24, SIMIIC);
+; ..\CODE\Src\User_Gyro_I2C.c	    25  	simiic_read_regs(I2C_ADDR, AX_PTR, &GyroPtr[0], 24, SCCB);
 	movh.a	a12,#@his(GyroPtr)
 .L78:
 	mov	d4,#80
@@ -98,7 +98,7 @@ GyroReadByte:	.type	func
 	mov	d6,#24
 	sub.a	a10,#24
 .L58:
-	mov	d7,#0
+	mov	d7,#1
 	call	simiic_read_regs
 .L81:
 
@@ -229,8 +229,8 @@ __GyroReadByte_function_end:
 	.sect	'.bss.User_Gyro_I2C.GyroPtr'
 	.global	GyroPtr
 GyroPtr:	.type	object
-	.size	GyroPtr,24
-	.space	24
+	.size	GyroPtr,25
+	.space	25
 	.sdecl	'.bss.User_Gyro_I2C.AX',data,cluster('AX')
 	.sect	'.bss.User_Gyro_I2C.AX'
 	.global	AX
@@ -34682,9 +34682,9 @@ Yaw_value:	.type	object
 	.byte	'FSMTable_t',0,47,34,2
 	.word	252085
 .L56:
-	.byte	15,24
+	.byte	15,25
 	.word	659
-	.byte	16,23,0,0
+	.byte	16,24,0,0
 	.sdecl	'.debug_abbrev',debug
 	.sect	'.debug_abbrev'
 .L13:
@@ -35004,7 +35004,7 @@ Yaw_value:	.type	object
 	.half	.L117-.L116
 	.byte	1,5,1,9
 	.half	.L29-.L117
-	.byte	3,1,0,1,1
+	.byte	3,3,0,1,1
 .L75:
 	.sdecl	'.debug_ranges',debug,cluster('GyroReadByte')
 	.sect	'.debug_ranges'
@@ -35318,6 +35318,8 @@ Yaw_value:	.type	object
 	.word	.L124,.L10,.L34-.L10
 	.byte	8,18,8,19,8,20,8,21,8,22,8,23
 
-; ..\CODE\Src\User_Gyro_I2C.c	    35  }
+; ..\CODE\Src\User_Gyro_I2C.c	    35  	//uart_putstr(UART_3, "test");
+; ..\CODE\Src\User_Gyro_I2C.c	    36  	//uart_putchar(UART_3, Roll_value);
+; ..\CODE\Src\User_Gyro_I2C.c	    37  }
 
 	; Module end

@@ -46,21 +46,30 @@ $TC16X
 ; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    31      IfxDma_Dma_Channel channel;              //DMA通道句柄
 ; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    32  }DMA_LINK;
 ; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    33  
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    34  
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    35  DMA_LINK dma_link_list;
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    36  
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    37  //-------------------------------------------------------------------------------------------------------------------
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    38  //  @brief      eru触发dma初始化
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    39  //  @param      dma_ch           	选择DMA通道
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    40  //  @param      source_addr         设置源地址
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    41  //  @param      destination_addr    设置目的地址
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    42  //  @param      eru_pin				设置触发的eru通道
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    43  //  @param      trigger				设置触发方式
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    44  //  @param      dma_count			设置dma搬移次数
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    45  //	@return		void
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    46  //  Sample usage:
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    47  //-------------------------------------------------------------------------------------------------------------------
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    48  uint8 eru_dma_init(IfxDma_ChannelId dma_ch, uint8 *source_addr, uint8 *destination_addr, ERU_PIN_enum eru_pin, TRIGGER_enum trigger, uint16 dma_count)
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    34  #if(0 == ERU_DMA_INT_SERVICE)
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    35  #pragma section all "cpu0_dsram"
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    36  DMA_LINK dma_link_list;
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    37  
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    38  #elif(1 == ERU_DMA_INT_SERVICE)
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    39  #pragma section all "cpu1_dsram"
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    40  DMA_LINK dma_link_list;
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    41  
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    42  #endif
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    43  #pragma section all restore
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    44  
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    45  
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    46  //-------------------------------------------------------------------------------------------------------------------
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    47  //  @brief      eru触发dma初始化
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    48  //  @param      dma_ch           	选择DMA通道
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    49  //  @param      source_addr         设置源地址
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    50  //  @param      destination_addr    设置目的地址
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    51  //  @param      eru_pin				设置触发的eru通道
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    52  //  @param      trigger				设置触发方式
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    53  //  @param      dma_count			设置dma搬移次数
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    54  //	@return		void
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    55  //  Sample usage:
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    56  //-------------------------------------------------------------------------------------------------------------------
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    57  uint8 eru_dma_init(IfxDma_ChannelId dma_ch, uint8 *source_addr, uint8 *destination_addr, ERU_PIN_enum eru_pin, TRIGGER_enum trigger, uint16 dma_count)
 ; Function eru_dma_init
 .L29:
 eru_dma_init:	.type	func
@@ -71,10 +80,10 @@ eru_dma_init:	.type	func
 	mov.aa	a15,a4
 .L143:
 
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    49  {
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    50  	IfxDma_Dma_Channel dmaChn;
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    51  	//eru触发DMA通道号   在eru文件中设置eru的优先级，即为触发的通道
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    52  	eru_init(eru_pin, trigger);
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    58  {
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    59  	IfxDma_Dma_Channel dmaChn;
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    60  	//eru触发DMA通道号   在eru文件中设置eru的优先级，即为触发的通道
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    61  	eru_init(eru_pin, trigger);
 	mov	d4,d5
 	mov.aa	a12,a5
 .L142:
@@ -82,75 +91,75 @@ eru_dma_init:	.type	func
 	call	eru_init
 .L85:
 
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    53  
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    54  	IfxDma_Dma_Config        dmaConfig;
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    55      IfxDma_Dma_initModuleConfig(&dmaConfig, &MODULE_DMA);
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    62  
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    63  	IfxDma_Dma_Config        dmaConfig;
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    64      IfxDma_Dma_initModuleConfig(&dmaConfig, &MODULE_DMA);
 	lea	a4,[a10]12
 .L170:
 	movh.a	a5,#61441
 	call	IfxDma_Dma_initModuleConfig
 .L88:
 
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    56  
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    57      IfxDma_Dma               dma;
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    58      IfxDma_Dma_initModule(&dma, &dmaConfig);
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    65  
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    66      IfxDma_Dma               dma;
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    67      IfxDma_Dma_initModule(&dma, &dmaConfig);
 	lea	a4,[a10]16
 .L171:
 	lea	a5,[a10]12
 	call	IfxDma_Dma_initModule
 .L91:
 
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    59  
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    60      IfxDma_Dma_ChannelConfig cfg;
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    61      IfxDma_Dma_initChannelConfig(&cfg, &dma);
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    68  
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    69      IfxDma_Dma_ChannelConfig cfg;
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    70      IfxDma_Dma_initChannelConfig(&cfg, &dma);
 	lea	a4,[a10]20
 .L172:
 	lea	a5,[a10]16
 	call	IfxDma_Dma_initChannelConfig
 .L94:
 
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    62  
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    63  	uint8  list_num, i;
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    64  	uint16 single_channel_dma_count;
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    65  
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    66  	ZF_ASSERT(!(dma_count%8));//传输次数必须为8的倍数
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    71  
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    72  	uint8  list_num, i;
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    73  	uint16 single_channel_dma_count;
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    74  
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    75  	ZF_ASSERT(!(dma_count%8));//传输次数必须为8的倍数
 	and	d15,d9,#7
 	jeq	d15,#0,.L2
 	movh.a	a4,#@his(.1.str)
 	lea	a4,[a4]@los(.1.str)
-	mov	d4,#66
+	mov	d4,#75
 	movh.a	a5,#@his(_999001___func__)
 	lea	a5,[a5]@los(_999001___func__)
 	call	assert
 .L2:
 
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    67  
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    68  
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    69  	list_num = 1;
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    76  
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    77  
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    78  	list_num = 1;
 	mov	d13,#1
 .L157:
 
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    70  	single_channel_dma_count = dma_count / list_num;
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    79  	single_channel_dma_count = dma_count / list_num;
 	mov	d10,d9
 .L158:
 
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    71  	if(16384 < single_channel_dma_count)
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    80  	if(16384 < single_channel_dma_count)
 	mov	d12,#16384
 .L173:
 	jge.u	d12,d9,.L3
 
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    72  	{
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    73  		while(TRUE)
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    81  	{
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    82  		while(TRUE)
 .L4:
 
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    74  		{
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    75  			single_channel_dma_count = dma_count / list_num;
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    76  			if((single_channel_dma_count <= 16384) && !(dma_count % list_num))
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    77  			{
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    78  				break;
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    79  			}
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    80  			list_num++;
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    81  			if(list_num > 8) ZF_ASSERT(FALSE);
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    83  		{
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    84  			single_channel_dma_count = dma_count / list_num;
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    85  			if((single_channel_dma_count <= 16384) && !(dma_count % list_num))
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    86  			{
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    87  				break;
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    88  			}
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    89  			list_num++;
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    90  			if(list_num > 8) ZF_ASSERT(FALSE);
 .L5:
 	div.u	e10,d9,d13
 .L174:
@@ -167,31 +176,31 @@ eru_dma_init:	.type	func
 .L178:
 	movh.a	a4,#@his(.1.str)
 	lea	a4,[a4]@los(.1.str)
-	mov	d4,#81
+	mov	d4,#90
 	movh.a	a5,#@his(_999001___func__)
 	lea	a5,[a5]@los(_999001___func__)
 	call	assert
 .L179:
 	j	.L4
 
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    82  		}
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    83  	}
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    91  		}
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    92  	}
 .L7:
 .L3:
 
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    84  
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    85  
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    86  	if(1 == list_num)
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    87  	{
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    88  		cfg.shadowControl 				= IfxDma_ChannelShadow_none;
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    89  		cfg.operationMode       	    = IfxDma_ChannelOperationMode_single;
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    90  		cfg.shadowAddress				= 0;
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    91  	}
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    92  	else
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    93  	{
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    94  		cfg.shadowControl 				= IfxDma_ChannelShadow_linkedList;
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    95  		cfg.operationMode       		= IfxDma_ChannelOperationMode_continuous;
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    96  		cfg.shadowAddress 				= IFXCPU_GLB_ADDR_DSPR(IfxCpu_getCoreId(), (unsigned)&dma_link_list.linked_list[1]);
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    93  
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    94  
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    95  	if(1 == list_num)
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    96  	{
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    97  		cfg.shadowControl 				= IfxDma_ChannelShadow_none;
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    98  		cfg.operationMode       	    = IfxDma_ChannelOperationMode_single;
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    99  		cfg.shadowAddress				= 0;
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   100  	}
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   101  	else
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   102  	{
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   103  		cfg.shadowControl 				= IfxDma_ChannelShadow_linkedList;
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   104  		cfg.operationMode       		= IfxDma_ChannelOperationMode_continuous;
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   105  		cfg.shadowAddress 				= IFXCPU_GLB_ADDR_DSPR(IfxCpu_getCoreId(), (unsigned)&dma_link_list.linked_list[1]);
 	movh	d9,#53248
 .L144:
 	movh	d12,#61440
@@ -1008,24 +1017,24 @@ eru_dma_init:	.type	func
 	st.w	[a10]34,d0
 .L187:
 
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    97     cfg.moveSize                        = IfxDma_ChannelMoveSize_8bit;
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    98      cfg.busPriority 					= IfxDma_ChannelBusPriority_high;
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	    99  
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   106  	}
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   107  
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   108      cfg.requestMode                     = IfxDma_ChannelRequestMode_oneTransferPerRequest;
 	mov	d15,#0
 	st.b	[a10]49,d15
 .L188:
 
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   100      cfg.sourceAddress      				= IFXCPU_GLB_ADDR_DSPR(IfxCpu_getCoreId(), source_addr);
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   109      cfg.moveSize                        = IfxDma_ChannelMoveSize_8bit;
 	st.b	[a10]51,d15
 .L189:
 
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   101      cfg.sourceAddressCircularRange      = IfxDma_ChannelIncrementCircular_none;
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   110      cfg.busPriority 					= IfxDma_ChannelBusPriority_high;
 	mov	d15,#2
 	st.b	[a10]54,d15
 .L190:
 
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   102      cfg.sourceCircularBufferEnabled     = TRUE;
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   103  
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   111  
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   112      cfg.sourceAddress      				= IFXCPU_GLB_ADDR_DSPR(IfxCpu_getCoreId(), source_addr);
 	mov.d	d0,a15
 .L147:
 	and	d15,d0,d12
@@ -1817,47 +1826,47 @@ eru_dma_init:	.type	func
 	st.w	[a10]26,d0
 .L191:
 
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   104  ular_none;
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   113      cfg.sourceAddressCircularRange      = IfxDma_ChannelIncrementCircular_none;
 	mov	d0,#0
 	st.b	[a10]58,d0
 .L192:
 
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   105      cfg.sourceCircularBufferEnabled     = TRUE;
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   114      cfg.sourceCircularBufferEnabled     = TRUE;
 	mov	d15,#1
 	st.b	[a10]63,d15
 .L193:
 
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   106  
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   107      cfg.destinationAddressIncrementStep = IfxDma_ChannelIncrementStep_1;
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   115  
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   116      cfg.destinationAddressIncrementStep = IfxDma_ChannelIncrementStep_1;
 	st.b	[a10]59,d0
 .L194:
 
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   108  
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   109  	cfg.channelId          				= (IfxDma_ChannelId)dma_ch;
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   117  
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   118  	cfg.channelId          				= (IfxDma_ChannelId)dma_ch;
 	st.b	[a10]24,d8
 .L195:
 
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   110  	cfg.hardwareRequestEnabled  		= FALSE;
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   119  	cfg.hardwareRequestEnabled  		= FALSE;
 	st.b	[a10]55,d0
 .L196:
 
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   111  	cfg.channelInterruptEnabled       	= TRUE;
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   120  	cfg.channelInterruptEnabled       	= TRUE;
 	st.b	[a10]68,d15
 .L197:
 
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   112  	cfg.channelInterruptPriority      	= ERU_DMA_INT_PRIO;
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   121  	cfg.channelInterruptPriority      	= ERU_DMA_INT_PRIO;
 	mov	d15,#60
 	st.h	[a10]72,d15
 .L198:
 
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   113  	cfg.channelInterruptTypeOfService 	= (IfxSrc_Tos)ERU_DMA_INT_SERVICE;
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   122  	cfg.channelInterruptTypeOfService 	= (IfxSrc_Tos)ERU_DMA_INT_SERVICE;
 	st.b	[a10]74,d0
 .L199:
 
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   114  
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   115  
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   116  
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   117  	cfg.destinationAddress 				= IFXCPU_GLB_ADDR_DSPR(IfxCpu_getCoreId(), destination_addr);
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   123  
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   124  
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   125  
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   126  	cfg.destinationAddress 				= IFXCPU_GLB_ADDR_DSPR(IfxCpu_getCoreId(), destination_addr);
 	mov.d	d0,a12
 .L150:
 	and	d15,d0,d12
@@ -2649,35 +2658,35 @@ eru_dma_init:	.type	func
 	st.w	[a10]30,d0
 .L200:
 
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   118  ADDR_DSPR(IfxCpu_getCoreId(), destination_addr);
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   119  
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   127  
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   128  	cfg.transferCount                   = single_channel_dma_count;
 	st.h	[a10]46,d10
 .L201:
 
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   120  	cfg.transferCount                   = single_channel_dma_count;
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   121  
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   129  
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   130  	IfxDma_Dma_initChannel(&dmaChn, &cfg);
 	mov.aa	a4,a10
 .L202:
 	lea	a5,[a10]20
 	call	IfxDma_Dma_initChannel
 .L203:
 
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   122  	IfxDma_Dma_initChannel(&dmaChn, &cfg);
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   123  
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   131  
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   132  	if(1 < list_num)
 	jlt.u	d13,#2,.L16
 .L204:
 
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   124  	if(1 < list_num)
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   125  	{
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   126  		i = 0;
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   133  	{
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   134  		i = 0;
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   135  		while(i < list_num)
 	mov	d8,#0
 	mov.aa	a14,a13
 .L152:
 	j	.L17
 .L18:
 
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   127  		while(i < list_num)
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   128  		{
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   136  		{
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   137  			cfg.destinationAddress 		= IFXCPU_GLB_ADDR_DSPR(IfxCpu_getCoreId(), destination_addr + single_channel_dma_count * i);
 	mul	d15,d10,d8
 	addsc.a	a15,a12,d15,#0
 	mov.d	d0,a15
@@ -3468,7 +3477,7 @@ eru_dma_init:	.type	func
 	fcall	.cocofun_2
 .L19:
 
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   129  
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   138  			if(i == (list_num - 1))	cfg.shadowAddress = IFXCPU_GLB_ADDR_DSPR(IfxCpu_getCoreId(), (unsigned)&dma_link_list.linked_list[0]);
 	add	d15,d13,#-1
 	st.w	[a10]30,d0
 .L205:
@@ -4264,7 +4273,7 @@ eru_dma_init:	.type	func
 	j	.L24
 .L21:
 
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   130  Channel(&dmaChn, &cfg);
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   139  			else					cfg.shadowAddress = IFXCPU_GLB_ADDR_DSPR(IfxCpu_getCoreId(), (unsigned)&dma_link_list.linked_list[i+1]);
 	lea	a15,[a14]32
 	mov.d	d0,a15
 	and	d15,d0,d12
@@ -5062,18 +5071,18 @@ eru_dma_init:	.type	func
 	st.w	[a10]34,d0
 .L207:
 
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   131  nt;
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   140  			cfg.transferCount           = single_channel_dma_count;
 	st.h	[a10]46,d10
 .L208:
 
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   132  
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   133  	IfxDma_Dma_initChannel(&dmaChn, &cfg);
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   141  
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   142  			IfxDma_Dma_initLinkedListEntry((void *)&dma_link_list.linked_list[i], &cfg);
 	lea	a5,[a10]20
 	mov.aa	a4,a14
 	call	IfxDma_Dma_initLinkedListEntry
 .L209:
 
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   134  
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   143  			i++;
 	add	d8,#1
 	lea	a14,[a14]32
 .L156:
@@ -7365,13 +7374,13 @@ eru_dma_init:	.type	func
 	addsc.a	a15,a15,d15,#2
 .L117:
 
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   135  ;
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   136  
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   137  	IfxDma_Dma_initChannel(&dmaChn, &cfg);
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   138  
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   139  	if(1 < list_num)
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   140  	{
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   141  		i = 0;
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   144  		}
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   145  	}
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   146  
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   147  
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   148  	IfxDma_Dma_getSrcPointer(&dma_link_list.channel)->B.CLRR = 1;
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   149  
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   150  	return list_num;
 	mov	d2,d13
 .L159:
 	ld.bu	d15,[+a15]3
@@ -7379,7 +7388,7 @@ eru_dma_init:	.type	func
 	st.b	[a15],d15
 .L212:
 
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   142  		while(i < list_num)
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   151  }
 	ret
 .L70:
 	
@@ -8190,15 +8199,15 @@ __eru_dma_init_function_end:
 	
 	.global	dma_stop
 
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   143  _num)
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   144  	{
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   145  		i = 0;
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   146  		while(i < list_num)
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   147  		{
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   148  			cfg.destinationAddress 		= IFXCPU_GLB_ADDR_DSPR(IfxCpu_getCoreId(), destination_addr + single_channel_dma_count * i);
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   149  			if(i == (list_num - 1))	cfg.shadowAddress = IFXCPU_GLB_ADDR_DSPR(IfxCpu_getCoreId(), (unsigned)&dma_link_list.linked_list[0]);
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   150  			else					cfg.shadowAddress = IFXCPU_GLB_ADDR_DSPR(IfxCpu_getCoreId(), (unsigned)&dma_link_list.linked_list[i+1]);
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   151  			cfg.transferCount           = single_channel_dma_count;
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   152  
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   153  
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   154  //-------------------------------------------------------------------------------------------------------------------
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   155  //  @brief      dma停止
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   156  //  @param      dma_ch           	选择DMA通道
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   157  //	@return		void
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   158  //  Sample usage:
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   159  //-------------------------------------------------------------------------------------------------------------------
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   160  void dma_stop(IfxDma_ChannelId dma_ch)
 ; Function dma_stop
 .L33:
 dma_stop:	.type	func
@@ -9507,9 +9516,9 @@ dma_stop:	.type	func
 	st.b	[a15],d15
 .L124:
 
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   152         = single_channel_dma_count;
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   153  
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   154  			IfxDma_Dma_initLinkedListEntry((void *)&dma_link_list.linked_list[i], &cfg);
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   161  {
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   162  	IfxDma_disableChannelTransaction(&MODULE_DMA, dma_ch);
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   163  }
 	ret
 .L121:
 	
@@ -10840,15 +10849,15 @@ __dma_stop_function_end:
 	
 	.global	dma_start
 
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   155  link_list.linked_list[i], &cfg);
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   156  			i++;
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   157  		}
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   158  	}
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   159  
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   160  
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   161  	IfxDma_Dma_getSrcPointer(&dma_link_list.channel)->B.CLRR = 1;
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   162  
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   163  	return list_num;
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   164  
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   165  
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   166  //-------------------------------------------------------------------------------------------------------------------
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   167  //  @brief      dma启动
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   168  //  @param      dma_ch           	选择DMA通道
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   169  //	@return		void
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   170  //  Sample usage:
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   171  //-------------------------------------------------------------------------------------------------------------------
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   172  void dma_start(IfxDma_ChannelId dma_ch)
 ; Function dma_start
 .L37:
 dma_start:	.type	func
@@ -12201,9 +12210,9 @@ dma_start:	.type	func
 	st.b	[a15],d15
 .L134:
 
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   164   = 1;
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   165  
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   166  	return list_num;
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   173  {
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   174  	IfxDma_enableChannelTransaction(&MODULE_DMA, dma_ch);
+; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   175  }
 	ret
 .L131:
 	
@@ -12212,8 +12221,8 @@ __dma_start_function_end:
 .L56:
 	; End of function
 	
-	.sdecl	'.bss.zf_eru_dma.dma_link_list',data,cluster('dma_link_list')
-	.sect	'.bss.zf_eru_dma.dma_link_list'
+	.sdecl	'.bss.cpu0_dsram',data,cluster('dma_link_list')
+	.sect	'.bss.cpu0_dsram'
 	.global	dma_link_list
 	.align	256
 dma_link_list:	.type	object
@@ -26800,63 +26809,63 @@ _999001___func__:	.type	object
 	.byte	2
 	.word	.L38
 	.byte	3
-	.byte	'eru_dma_init',0,1,48,7
+	.byte	'eru_dma_init',0,1,57,7
 	.word	.L69
 	.byte	1,1,1
 	.word	.L29,.L70,.L28
 	.byte	4
-	.byte	'dma_ch',0,1,48,37
+	.byte	'dma_ch',0,1,57,37
 	.word	.L71,.L72
 	.byte	4
-	.byte	'source_addr',0,1,48,52
+	.byte	'source_addr',0,1,57,52
 	.word	.L73,.L74
 	.byte	4
-	.byte	'destination_addr',0,1,48,72
+	.byte	'destination_addr',0,1,57,72
 	.word	.L73,.L75
 	.byte	4
-	.byte	'eru_pin',0,1,48,103
+	.byte	'eru_pin',0,1,57,103
 	.word	.L76,.L77
 	.byte	4
-	.byte	'trigger',0,1,48,125
+	.byte	'trigger',0,1,57,125
 	.word	.L78,.L79
 	.byte	4
-	.byte	'dma_count',0,1,48,141,1
+	.byte	'dma_count',0,1,57,141,1
 	.word	.L80,.L81
 	.byte	5
 	.word	.L29,.L70
 	.byte	6
-	.byte	'dmaChn',0,1,50,21
+	.byte	'dmaChn',0,1,59,21
 	.word	.L82,.L83
 	.byte	7
-	.byte	'__func__',0,1,66,2
+	.byte	'__func__',0,1,75,2
 	.word	.L84
 	.byte	5,3
 	.word	_999001___func__
 	.byte	5
 	.word	.L85,.L70
 	.byte	6
-	.byte	'dmaConfig',0,1,54,27
+	.byte	'dmaConfig',0,1,63,27
 	.word	.L86,.L87
 	.byte	5
 	.word	.L88,.L70
 	.byte	6
-	.byte	'dma',0,1,57,30
+	.byte	'dma',0,1,66,30
 	.word	.L89,.L90
 	.byte	5
 	.word	.L91,.L70
 	.byte	6
-	.byte	'cfg',0,1,60,30
+	.byte	'cfg',0,1,69,30
 	.word	.L92,.L93
 	.byte	5
 	.word	.L94,.L70
 	.byte	6
-	.byte	'list_num',0,1,63,9
+	.byte	'list_num',0,1,72,9
 	.word	.L69,.L95
 	.byte	6
-	.byte	'i',0,1,63,19
+	.byte	'i',0,1,72,19
 	.word	.L69,.L96
 	.byte	6
-	.byte	'single_channel_dma_count',0,1,64,9
+	.byte	'single_channel_dma_count',0,1,73,9
 	.word	.L80,.L97
 	.byte	8
 	.word	.L98,.L99,.L9
@@ -26935,7 +26944,7 @@ _999001___func__:	.type	object
 .L169:
 	.byte	5,7,7,0,5,2
 	.word	.L29
-	.byte	3,47,1,5,20,9
+	.byte	3,56,1,5,20,9
 	.half	.L143-.L29
 	.byte	3,4,1,5,7,3,124,1,5,20,9
 	.half	.L142-.L143
@@ -26997,11 +27006,11 @@ _999001___func__:	.type	object
 	.half	.L186-.L185
 	.byte	3,1,1,4,2,5,19,9
 	.half	.L99-.L186
-	.byte	3,168,5,1,5,28,9
+	.byte	3,159,5,1,5,28,9
 	.half	.L145-.L99
 	.byte	3,1,1,4,1,5,25,9
 	.half	.L9-.L145
-	.byte	3,215,122,1,5,43,9
+	.byte	3,224,122,1,5,43,9
 	.half	.L187-.L9
 	.byte	3,3,1,5,41,1,9
 	.half	.L188-.L187
@@ -27011,11 +27020,11 @@ _999001___func__:	.type	object
 	.half	.L190-.L189
 	.byte	3,2,1,4,2,5,19,9
 	.half	.L103-.L190
-	.byte	3,161,5,1,5,28,9
+	.byte	3,152,5,1,5,28,9
 	.half	.L148-.L103
 	.byte	3,1,1,4,1,5,32,9
 	.half	.L12-.L148
-	.byte	3,222,122,1,5,43,9
+	.byte	3,231,122,1,5,43,9
 	.half	.L191-.L12
 	.byte	3,1,1,5,41,1,5,43,9
 	.half	.L192-.L191
@@ -27035,11 +27044,11 @@ _999001___func__:	.type	object
 	.half	.L199-.L198
 	.byte	3,4,1,4,2,5,19,9
 	.half	.L105-.L199
-	.byte	3,147,5,1,5,28,9
+	.byte	3,138,5,1,5,28,9
 	.half	.L151-.L105
 	.byte	3,1,1,4,1,5,29,9
 	.half	.L14-.L151
-	.byte	3,236,122,1,5,38,9
+	.byte	3,245,122,1,5,38,9
 	.half	.L200-.L14
 	.byte	3,2,1,5,26,9
 	.half	.L201-.L200
@@ -27053,29 +27062,29 @@ _999001___func__:	.type	object
 	.half	.L18-.L204
 	.byte	3,2,1,4,2,5,19,9
 	.half	.L107-.L18
-	.byte	3,136,5,1,5,28,9
+	.byte	3,255,4,1,5,28,9
 	.half	.L153-.L107
 	.byte	3,1,1,4,1,5,22,9
 	.half	.L19-.L153
-	.byte	3,248,122,1,5,29,3,127,1,5,4,9
+	.byte	3,129,123,1,5,29,3,127,1,5,4,9
 	.half	.L205-.L19
 	.byte	3,1,1,5,48,7,9
 	.half	.L206-.L205
 	.byte	1,4,2,5,19,9
 	.half	.L110-.L206
-	.byte	3,135,5,1,5,28,9
+	.byte	3,254,4,1,5,28,9
 	.half	.L154-.L110
 	.byte	3,1,1,4,1,5,129,1,9
 	.half	.L111-.L154
-	.byte	3,248,122,1,5,33,9
+	.byte	3,129,123,1,5,33,9
 	.half	.L21-.L111
 	.byte	3,1,1,4,2,5,19,9
 	.half	.L113-.L21
-	.byte	3,134,5,1,5,28,9
+	.byte	3,253,4,1,5,28,9
 	.half	.L155-.L113
 	.byte	3,1,1,4,1,5,33,9
 	.half	.L114-.L155
-	.byte	3,249,122,1,5,31,9
+	.byte	3,130,123,1,5,31,9
 	.half	.L24-.L114
 	.byte	1,5,32,9
 	.half	.L207-.L24
@@ -27087,13 +27096,13 @@ _999001___func__:	.type	object
 	.half	.L17-.L209
 	.byte	3,120,1,4,3,5,54,7,9
 	.half	.L16-.L17
-	.byte	3,230,4,1,4,4,5,34,9
+	.byte	3,221,4,1,4,4,5,34,9
 	.half	.L210-.L16
 	.byte	3,154,6,1,5,37,9
 	.half	.L211-.L210
 	.byte	1,4,1,5,2,9
 	.half	.L117-.L211
-	.byte	3,143,117,1,5,59,9
+	.byte	3,152,117,1,5,59,9
 	.half	.L159-.L117
 	.byte	3,126,1,5,1,9
 	.half	.L212-.L159
@@ -27121,10 +27130,10 @@ _999001___func__:	.type	object
 	.byte	2
 	.word	.L38
 	.byte	3
-	.byte	'dma_stop',0,1,151,1,6,1,1,1
+	.byte	'dma_stop',0,1,160,1,6,1,1,1
 	.word	.L33,.L121,.L32
 	.byte	4
-	.byte	'dma_ch',0,1,151,1,32
+	.byte	'dma_ch',0,1,160,1,32
 	.word	.L71,.L122
 	.byte	5
 	.word	.L33,.L121
@@ -27163,7 +27172,7 @@ _999001___func__:	.type	object
 	.half	.L160-.L33
 	.byte	1,4,1,5,1,9
 	.half	.L124-.L160
-	.byte	3,136,119,1,7,9
+	.byte	3,145,119,1,7,9
 	.half	.L51-.L124
 	.byte	0,1,1
 .L214:
@@ -27187,10 +27196,10 @@ _999001___func__:	.type	object
 	.byte	2
 	.word	.L38
 	.byte	3
-	.byte	'dma_start',0,1,163,1,6,1,1,1
+	.byte	'dma_start',0,1,172,1,6,1,1,1
 	.word	.L37,.L131,.L36
 	.byte	4
-	.byte	'dma_ch',0,1,163,1,33
+	.byte	'dma_ch',0,1,172,1,33
 	.word	.L71,.L132
 	.byte	5
 	.word	.L37,.L131
@@ -27229,7 +27238,7 @@ _999001___func__:	.type	object
 	.half	.L161-.L37
 	.byte	1,4,1,5,1,9
 	.half	.L134-.L161
-	.byte	3,232,118,1,7,9
+	.byte	3,241,118,1,7,9
 	.half	.L56-.L134
 	.byte	0,1,1
 .L218:
@@ -27251,7 +27260,7 @@ _999001___func__:	.type	object
 	.byte	2
 	.word	.L38
 	.byte	3
-	.byte	'.cocofun_2',0,1,48,7,1
+	.byte	'.cocofun_2',0,1,57,7,1
 	.word	.L31,.L61,.L30
 	.byte	0
 	.sdecl	'.debug_abbrev',debug,cluster('.cocofun_2')
@@ -27275,59 +27284,59 @@ _999001___func__:	.type	object
 .L224:
 	.byte	5,31,7,0,5,2
 	.word	.L31
-	.byte	3,255,0,1,4,2,5,28,9
+	.byte	3,136,1,1,4,2,5,28,9
 	.half	.L149-.L31
-	.byte	3,137,5,1,4,1,5,31,9
+	.byte	3,128,5,1,4,1,5,31,9
 	.half	.L146-.L149
-	.byte	3,247,122,1,9
+	.byte	3,128,123,1,9
 	.half	.L61-.L146
 	.byte	0,1,1,5,27,0,5,2
 	.word	.L31
-	.byte	3,223,0,1,4,2,5,28,9
+	.byte	3,232,0,1,4,2,5,28,9
 	.half	.L149-.L31
-	.byte	3,169,5,1,4,1,5,27,9
+	.byte	3,160,5,1,4,1,5,27,9
 	.half	.L146-.L149
-	.byte	3,215,122,1,5,31,9
+	.byte	3,224,122,1,5,31,9
 	.half	.L225-.L146
 	.byte	3,32,1,7,9
 	.half	.L61-.L225
 	.byte	0,1,1,5,34,0,5,2
 	.word	.L31
-	.byte	3,230,0,1,4,2,5,28,9
+	.byte	3,239,0,1,4,2,5,28,9
 	.half	.L149-.L31
-	.byte	3,162,5,1,4,1,5,34,9
+	.byte	3,153,5,1,4,1,5,34,9
 	.half	.L146-.L149
-	.byte	3,222,122,1,5,31,9
+	.byte	3,231,122,1,5,31,9
 	.half	.L225-.L146
 	.byte	3,25,1,7,9
 	.half	.L61-.L225
 	.byte	0,1,1,5,31,0,5,2
 	.word	.L31
-	.byte	3,244,0,1,4,2,5,28,9
+	.byte	3,253,0,1,4,2,5,28,9
 	.half	.L149-.L31
-	.byte	3,148,5,1,4,1,5,31,9
+	.byte	3,139,5,1,4,1,5,31,9
 	.half	.L146-.L149
-	.byte	3,236,122,1,9
+	.byte	3,245,122,1,9
 	.half	.L225-.L146
 	.byte	3,11,1,7,9
 	.half	.L61-.L225
 	.byte	0,1,1,5,48,0,5,2
 	.word	.L31
-	.byte	3,128,1,1,4,2,5,28,9
+	.byte	3,137,1,1,4,2,5,28,9
 	.half	.L149-.L31
-	.byte	3,136,5,1,4,1,5,48,9
+	.byte	3,255,4,1,4,1,5,48,9
 	.half	.L146-.L149
-	.byte	3,248,122,1,5,31,9
+	.byte	3,129,123,1,5,31,9
 	.half	.L225-.L146
 	.byte	3,127,1,7,9
 	.half	.L61-.L225
 	.byte	0,1,1,5,33,0,5,2
 	.word	.L31
-	.byte	3,129,1,1,4,2,5,28,9
+	.byte	3,138,1,1,4,2,5,28,9
 	.half	.L149-.L31
-	.byte	3,135,5,1,4,1,5,33,9
+	.byte	3,254,4,1,4,1,5,33,9
 	.half	.L146-.L149
-	.byte	3,249,122,1,5,31,9
+	.byte	3,130,123,1,5,31,9
 	.half	.L225-.L146
 	.byte	3,126,1,7,9
 	.half	.L61-.L225
@@ -27351,7 +27360,7 @@ _999001___func__:	.type	object
 	.byte	2
 	.word	.L38
 	.byte	3
-	.byte	'.cocofun_3',0,1,151,1,6,1
+	.byte	'.cocofun_3',0,1,160,1,6,1
 	.word	.L35,.L66,.L34
 	.byte	0
 	.sdecl	'.debug_abbrev',debug,cluster('.cocofun_3')
@@ -27409,7 +27418,7 @@ _999001___func__:	.type	object
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1,2
 	.word	.L38
 	.byte	3
-	.byte	'dma_link_list',0,20,35,10
+	.byte	'dma_link_list',0,20,36,10
 	.word	.L140
 	.byte	1,5,3
 	.word	dma_link_list
@@ -27706,5 +27715,5 @@ _999001___func__:	.type	object
 	.word	.L234,.L35,.L66-.L35
 	.byte	8,18,8,19,8,20,8,21,8,22,8,23
 
-; ..\Libraries\seekfree_libraries\zf_eru_dma.c	   167  }
+
 	; Module end

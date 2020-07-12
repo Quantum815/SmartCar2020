@@ -1418,10 +1418,10 @@ mt9v03x_init:	.type	func
 	nop
 .L163:
 
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   284   (MT9V03X_COF_UART, 9600, MT9V03X_COF_UART_TX, MT9V03X_COF_UART_RX);	//初始换串口 配置摄像头
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   285      enableInterrupts();//开启中断
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   284  
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   285      boolean interrupt_state = disableInterrupts();
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   286  
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   287      //等待摄像头上电初始化成功 方式有两种：延时或者通过获取配置的方式 二选一
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   287      uart_init (MT9V03X_COF_UART, 9600, MT9V03X_COF_UART_TX, MT9V03X_COF_UART_RX);	//初始换串口 配置摄像头
 	mov	d5,#9600
 .L356:
 	mov	d6,#6
@@ -2104,7 +2104,7 @@ mt9v03x_init:	.type	func
 	enable
 .L174:
 
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   288  ();//开启中断
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   288      enableInterrupts();//开启中断
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   289  
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   290      //等待摄像头上电初始化成功 方式有两种：延时或者通过获取配置的方式 二选一
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   291      //systick_delay_ms(STM0, 1000);//延时方式
@@ -2813,18 +2813,18 @@ mt9v03x_init:	.type	func
 	nop
 .L179:
 
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   299  FG);
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   300  
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   301      //获取配置便于查看配置是否正确
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   302      get_config(MT9V03X_COF_UART, GET_CFG);
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   303  
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   304      disableInterrupts();
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   299  
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   300      disableInterrupts();
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   301  
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   302  	//摄像头采集初始化
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   303  	//初始化 数据引脚
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   304  	for(i=0; i<8; i++)
 	mov	d8,#0
 	mov.a	a15,#7
 .L19:
 
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   305  
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   306  	//摄像头采集初始化
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   305  	{
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   306  		gpio_init((PIN_enum)(MT9V03X_DATA_PIN+i), GPI, 0, PULLUP);
 	mov	d5,#0
 .L364:
 	mov	d6,d5
@@ -2837,9 +2837,9 @@ mt9v03x_init:	.type	func
 	loop	a15,.L19
 .L367:
 
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   307  	//初始化 数据引脚
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   308  	for(i=0; i<8; i++)
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   309  	{
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   307  	}
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   308  
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   309      link_list_num = eru_dma_init(MT9V03X_DMA_CH, GET_PORT_IN_ADDR(MT9V03X_DATA_PIN), mt9v03x_image[0], MT9V03X_PCLK_PIN, RISING, MT9V03X_W*MT9V03X_H);
 	mov	d4,#0
 	call	IfxPort_getAddress
 .L368:
@@ -2858,8 +2858,8 @@ mt9v03x_init:	.type	func
 	call	eru_dma_init
 .L373:
 
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   310  		gpio_init((PIN_enum)(MT9V03X_DATA_PIN+i), GPI, 0, PULLUP);
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   311  	}
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   310  
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   311      eru_init(MT9V03X_VSYNC_PIN, FALLING);	//初始化场中断，并设置为下降沿触发中断
 	mov	d4,#9
 	st.b	[a15]@los(link_list_num),d2
 .L374:
@@ -3816,8 +3816,8 @@ mt9v03x_init:	.type	func
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Cpu\Std\IfxCpu.h	   938      if (enabled != FALSE)      (inlined)
 .L20:
 
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   312  8; i++)
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   313  	{
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   312      restoreInterrupts(interrupt_state);
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   313  }
 	ret
 .L158:
 	
@@ -3832,52 +3832,52 @@ __mt9v03x_init_function_end:
 	
 	.global	mt9v03x_vsync
 
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   314  		gpio_init((PIN_enum)(MT9V03X_DATA_PIN+i), GPI, 0, PULLUP);
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   315  	}
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   316  
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   317      link_list_num = eru_dma_init(MT9V03X_DMA_CH, GET_PORT_IN_ADDR(MT9V03X_DATA_PIN), mt9v03x_image[0], MT9V03X_PCLK_PIN, RISING, MT9V03X_W*MT9V03X_H);
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   318  
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   319      eru_init(MT9V03X_VSYNC_PIN, FALLING);	//初始化场中断，并设置为下降沿触发中断
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   320      restoreInterrupts(interrupt_state);
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   321  }
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   322  
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   323  
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   324  uint8   mt9v03x_finish_flag = 0;    //一场图像采集完成标志位
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   325  uint8	mt9v03x_dma_int_num;	//当前DMA中断次数
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   314  
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   315  
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   316  uint8   mt9v03x_finish_flag = 0;    //一场图像采集完成标志位
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   317  uint8	mt9v03x_dma_int_num;	//当前DMA中断次数
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   318  //-------------------------------------------------------------------------------------------------------------------
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   319  //  @brief      MT9V03X摄像头场中断
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   320  //  @param      NULL
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   321  //  @return     void			
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   322  //  @since      v1.0
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   323  //  Sample usage:				此函数在isr.c中被eru（GPIO中断）中断调用
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   324  //-------------------------------------------------------------------------------------------------------------------
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   325  void mt9v03x_vsync(void)
 ; Function mt9v03x_vsync
 .L45:
 mt9v03x_vsync:	.type	func
 
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   326  //-------------------------------------------------------------------------------------------------------------------
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   327  //  @brief      MT9V03X摄像头场中断
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   326  {
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   327  	CLEAR_GPIO_FLAG(MT9V03X_VSYNC_PIN);
 	mov	d4,#3
 	call	IfxScuEru_clearEventFlag
 .L380:
 
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   328  //  @param      NULL
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   328  	mt9v03x_dma_int_num = 0;
 	movh.a	a15,#@his(mt9v03x_dma_int_num)
 .L381:
 	mov	d15,#0
 	st.b	[a15]@los(mt9v03x_dma_int_num),d15
 .L382:
 
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   329  //  @return     void			
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   329  	if(!mt9v03x_finish_flag)//查看图像数组是否使用完毕，如果未使用完毕则不开始采集，避免出现访问冲突
 	movh.a	a15,#@his(mt9v03x_finish_flag)
 	ld.bu	d15,[a15]@los(mt9v03x_finish_flag)
 	jne	d15,#0,.L21
 .L383:
 
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   330  //  @since      v1.0
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   331  //  Sample usage:				此函数在isr.c中被eru（GPIO中断）中断调用
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   330  	{
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   331  		if(1 == link_list_num)
 	movh.a	a15,#@his(link_list_num)
 	ld.bu	d15,[a15]@los(link_list_num)
 .L384:
 	jne	d15,#1,.L22
 .L385:
 
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   332  //-------------------------------------------------------------------------------------------------------------------
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   333  void mt9v03x_vsync(void)
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   334  {
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   332  		{
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   333  			//没有采用链接传输模式 重新设置目的地址
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   334  			DMA_SET_DESTINATION(MT9V03X_DMA_CH, mt9v03x_image[0]);
 	movh.a	a15,#@his(mt9v03x_image)
 	lea	a15,[a15]@los(mt9v03x_image)
 	mov.d	d0,a15
@@ -7043,15 +7043,15 @@ mt9v03x_vsync:	.type	func
 	st.w	[a15]@los(0xf00120ac),d0
 .L22:
 
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   335  ----------------------------
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   336  void mt9v03x_vsync(void)
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   335  		}
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   336  		dma_start(MT9V03X_DMA_CH);
 	mov	d4,#5
 	j	dma_start
 .L21:
 
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   337  {
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   338  	CLEAR_GPIO_FLAG(MT9V03X_VSYNC_PIN);
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   339  	mt9v03x_dma_int_num = 0;
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   337  	}
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   338  
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   339  }
 	ret
 .L191:
 	
@@ -7066,16 +7066,16 @@ __mt9v03x_vsync_function_end:
 	
 	.global	mt9v03x_dma
 
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   340  	if(!mt9v03x_finish_flag)//查看图像数组是否使用完毕，如果未使用完毕则不开始采集，避免出现访问冲突
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   341  	{
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   342  		if(1 == link_list_num)
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   343  		{
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   344  			//没有采用链接传输模式 重新设置目的地址
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   345  			DMA_SET_DESTINATION(MT9V03X_DMA_CH, mt9v03x_image[0]);
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   346  		}
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   347  		dma_start(MT9V03X_DMA_CH);
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   348  	}
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   349  
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   340  
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   341  
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   342  //-------------------------------------------------------------------------------------------------------------------
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   343  //  @brief      MT9V03X摄像头DMA完成中断
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   344  //  @param      NULL
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   345  //  @return     void			
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   346  //  @since      v1.0
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   347  //  Sample usage:				此函数在isr.c中被dma中断调用
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   348  //-------------------------------------------------------------------------------------------------------------------
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   349  void mt9v03x_dma(void)
 ; Function mt9v03x_dma
 .L47:
 mt9v03x_dma:	.type	func
@@ -8351,11 +8351,11 @@ mt9v03x_dma:	.type	func
 	ld.bu	d15,[a15]@los(0xf00120bf)
 .L211:
 
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   350  e[0]);
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   351  		}
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   352  		dma_start(MT9V03X_DMA_CH);
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   353  	}
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   354  
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   350  {
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   351  	CLEAR_DMA_FLAG(MT9V03X_DMA_CH);
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   352  	mt9v03x_dma_int_num++;
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   353  
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   354  	if(mt9v03x_dma_int_num >= link_list_num)
 	movh.a	a2,#@his(link_list_num)
 .L218:
 
@@ -9643,15 +9643,15 @@ mt9v03x_dma:	.type	func
 	jlt.u	d15,d0,.L25
 .L394:
 
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   355  e[0]);
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   356  		}
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   357  		dma_start(MT9V03X_DMA_CH);
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   355  	{
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   356  		//采集完成
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   357  		mt9v03x_dma_int_num = 0;
 	mov	d15,#0
 	st.b	[a15],d15
 .L395:
 
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   358  	}
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   359  
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   358  		mt9v03x_finish_flag = 1;//一副图像从采集开始到采集结束耗时3.8MS左右(50FPS、188*120分辨率)
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   359  		dma_stop(MT9V03X_DMA_CH);
 	mov	d4,#5
 	movh.a	a15,#@his(mt9v03x_finish_flag)
 .L396:
@@ -9661,9 +9661,8 @@ mt9v03x_dma:	.type	func
 	j	dma_stop
 .L25:
 
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   360  }
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   361  
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   362  
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   360  	}
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   361  }
 	ret
 .L209:
 	
@@ -9678,20 +9677,20 @@ __mt9v03x_dma_function_end:
 	
 	.global	seekfree_sendimg_03x
 
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   363  //-------------------------------------------------------------------------------------------------------------------
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   364  //  @brief      MT9V03X摄像头DMA完成中断
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   365  //  @param      NULL
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   366  //  @return     void			
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   367  //  @since      v1.0
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   368  //  Sample usage:				此函数在isr.c中被dma中断调用
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   369  //-------------------------------------------------------------------------------------------------------------------
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   370  void mt9v03x_dma(void)
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   371  {
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   372  	CLEAR_DMA_FLAG(MT9V03X_DMA_CH);
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   373  	mt9v03x_dma_int_num++;
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   374  
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   375  	if(mt9v03x_dma_int_num >= link_list_num)
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   376  	{
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   362  
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   363  
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   364  
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   365  //-------------------------------------------------------------------------------------------------------------------
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   366  //  @brief      总钻风摄像头图像发送至上位机查看图像
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   367  //  @param      uartn			使用的串口号
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   368  //  @param      image			需要发送的图像地址
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   369  //  @param      width			图像的列
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   370  //  @param      height			图像的行
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   371  //  @return     void			
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   372  //  @since      v1.0
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   373  //  Sample usage:				
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   374  //-------------------------------------------------------------------------------------------------------------------
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   375  void seekfree_sendimg_03x(UARTN_enum uartn, uint8 *image, uint16 width, uint16 height)
 ; Function seekfree_sendimg_03x
 .L49:
 seekfree_sendimg_03x:	.type	func
@@ -9701,8 +9700,8 @@ seekfree_sendimg_03x:	.type	func
 	mov	e8,d6,d5
 .L402:
 
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   377  		//采集完成
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   378  		mt9v03x_dma_int_num = 0;
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   376  {
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   377  	uart_putchar(uartn,0x00);uart_putchar(uartn,0xff);uart_putchar(uartn,0x01);uart_putchar(uartn,0x01);//发送命令
 	mov	d5,#0
 	call	uart_putchar
 .L265:
@@ -9719,7 +9718,7 @@ seekfree_sendimg_03x:	.type	func
 	call	uart_putchar
 .L267:
 
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   379  		mt9v03x_finish_flag = 1;//一副图像从采集开始到采集结束耗时3.8MS左右(50FPS、188*120分辨率)
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   378      uart_putbuff(uartn, image, width*height);  //发送图像
 	mul	d5,d8,d9
 .L268:
 	mov	d4,d15
@@ -27790,7 +27789,7 @@ mt9v03x_dma_int_num:	.type	object
 	.half	.L397-.L396
 	.byte	3,1,1,5,1,7,9
 	.half	.L25-.L397
-	.byte	3,3,1,7,9
+	.byte	3,2,1,7,9
 	.half	.L93-.L25
 	.byte	0,1,1
 .L387:
@@ -27814,19 +27813,19 @@ mt9v03x_dma_int_num:	.type	object
 	.byte	2
 	.word	.L50
 	.byte	3
-	.byte	'seekfree_sendimg_03x',0,1,248,2,6,1,1,1
+	.byte	'seekfree_sendimg_03x',0,1,247,2,6,1,1,1
 	.word	.L49,.L220,.L48
 	.byte	4
-	.byte	'uartn',0,1,248,2,38
+	.byte	'uartn',0,1,247,2,38
 	.word	.L134,.L221
 	.byte	4
-	.byte	'image',0,1,248,2,52
+	.byte	'image',0,1,247,2,52
 	.word	.L222,.L223
 	.byte	4
-	.byte	'width',0,1,248,2,66
+	.byte	'width',0,1,247,2,66
 	.word	.L139,.L224
 	.byte	4
-	.byte	'height',0,1,248,2,80
+	.byte	'height',0,1,247,2,80
 	.word	.L139,.L225
 	.byte	5
 	.word	.L49,.L220
@@ -27849,7 +27848,7 @@ mt9v03x_dma_int_num:	.type	object
 .L401:
 	.byte	5,6,7,0,5,2
 	.word	.L49
-	.byte	3,247,2,1,5,21,9
+	.byte	3,246,2,1,5,21,9
 	.half	.L402-.L49
 	.byte	3,2,1,5,46,9
 	.half	.L265-.L402
@@ -28745,8 +28744,8 @@ mt9v03x_dma_int_num:	.type	object
 	.word	.L429,.L37,.L108-.L37
 	.byte	8,18,8,19,8,20,8,21,8,22,8,23
 
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   380  		dma_stop(MT9V03X_DMA_CH);
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   379  }
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   380  
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   381  
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   382  	}
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	   383  }
+
 	; Module end

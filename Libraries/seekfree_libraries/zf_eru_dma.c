@@ -31,8 +31,17 @@ typedef struct
     IfxDma_Dma_Channel channel;              //DMA通道句柄
 }DMA_LINK;
 
-
+#if(0 == ERU_DMA_INT_SERVICE)
+#pragma section all "cpu0_dsram"
 DMA_LINK dma_link_list;
+
+#elif(1 == ERU_DMA_INT_SERVICE)
+#pragma section all "cpu1_dsram"
+DMA_LINK dma_link_list;
+
+#endif
+#pragma section all restore
+
 
 //-------------------------------------------------------------------------------------------------------------------
 //  @brief      eru触发dma初始化

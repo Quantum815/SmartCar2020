@@ -40,8 +40,7 @@
 
 
 
-
-
+#define RAD5807_DELAY_TIME 200
 
 
 void rda5807_init(float freq);
@@ -49,6 +48,7 @@ void rda5807_set_transimt(void);
 void rda5807_set_idle(void);
 void rda5807_set_channel(float freq);
 void rda5807_channel_config(uint16 reg_chn);
+uint8 rda5807_read_rssi(void);
 
 
 #endif

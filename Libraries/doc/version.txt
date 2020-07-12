@@ -65,3 +65,12 @@ V1.0.8
 	修复CCU6在线调试的时候定时器不能自动停止，导致在线调试时持续进中断的问题
 	对CCU6增加pit_close与pit_start函数用于控制定时器的开始与停止
 	对CCU6增加pit_disable_interrupt与pit_enable_interrupt函数用于控制中断开关
+	
+V1.0.9
+	修改RDA5807驱动文件，主要保证上电后1S在操作FM模块
+	
+V1.1.0
+	对ISR文件内的中断函数全部添加enableInterrupts(); 以实现中断嵌套的功能
+	增加RDA5807获取RSSI功能函数
+	对DMA连接传输所用到的变量，根据ERU_DMA_INT_SERVICE来将变量放到对应的CPU中
+	

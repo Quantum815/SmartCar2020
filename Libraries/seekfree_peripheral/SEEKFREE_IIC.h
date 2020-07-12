@@ -41,13 +41,13 @@
 #define SIMIIC_DELAY_TIME	20
 
 
-typedef enum IIC       //DAC模块
+typedef enum IIC       //IIC类型枚举
 {
     SIMIIC,
     SCCB
 } IIC_type;
 
-
+extern uint16 simiic_delay_time;   //ICM等传感器应设置为20
 
 void  simiic_delay_set(uint16 time);
 void  simiic_start(void);

@@ -50,7 +50,7 @@ uint8 IIC_num;     //发送|接收数据个数
 
 
 
-static uint16 simiic_delay_time = SIMIIC_DELAY_TIME;   //ICM等传感器应设置为20
+uint16 simiic_delay_time = SIMIIC_DELAY_TIME;   //ICM等传感器应设置为20
 
 
 //-------------------------------------------------------------------------------------------------------------------

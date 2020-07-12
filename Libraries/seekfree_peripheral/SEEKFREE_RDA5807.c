@@ -43,7 +43,7 @@
 #define FM_ADDRESS	0x20>>1
 
 uint8 rda5807_config_reg[] = {
-    0xc1, 0x03,                             // Register 0x2
+    0xc0, 0x03,                             // Register 0x2
     0x00, 0x00,                             // Register 0x3
     0x0a, 0x00,        	                    // Register 0x4
     0x88, 0x0f,                             // Register 0x5
@@ -63,6 +63,12 @@ uint8 rda5807_config_reg[] = {
 void rad5807m_simiic_write(uint8 dev_add, uint8 data[], uint8 num)
 {
    	uint8 i;
+
+    uint16 temp_delay_time = 0;
+
+    temp_delay_time = simiic_delay_time;
+	simiic_delay_set(RAD5807_DELAY_TIME);//设置模拟IIC延时，因为默认速率较高
+
 	simiic_start();
     send_ch( (dev_add<<1) | 0x00);   		//发送器件地址加写位
 
@@ -70,6 +76,8 @@ void rad5807m_simiic_write(uint8 dev_add, uint8 data[], uint8 num)
 		send_ch(data[i]);   				 //发送需要写入的数据
 
 	simiic_stop();
+
+    simiic_delay_set(temp_delay_time);  //还原模拟IIC默认速率
 }
 
 
@@ -84,6 +92,11 @@ void rad5807m_simiic_write(uint8 dev_add, uint8 data[], uint8 num)
 //-------------------------------------------------------------------------------------------------------------------
 void rda5807m_simiic_read(uint8 dev_add,uint8 *dat_add,uint8 num)
 {
+
+    uint16 temp_delay_time = 0;
+    temp_delay_time = simiic_delay_time;
+	simiic_delay_set(RAD5807_DELAY_TIME);//设置模拟IIC延时，因为默认速率较高
+
     simiic_start();
 
 	send_ch( (dev_add<<1) | 0x01);  //发送器件地址加读位
@@ -96,6 +109,8 @@ void rda5807m_simiic_read(uint8 dev_add,uint8 *dat_add,uint8 num)
     *dat_add = read_ch(no_ack); //读取数据
 
 	simiic_stop();
+
+    simiic_delay_set(temp_delay_time);  //还原模拟IIC默认速率
 }
 
 
@@ -176,7 +191,22 @@ void rda5807_read_id(void)
 	rda5807m_simiic_read(FM_ADDRESS,rda5807_read_reg,10);
 }
 
+//-------------------------------------------------------------------------------------------------------------------
+//  @brief      rda5807读取RSSI(信号强度)
+//  @param      NULL
+//  @return     void
+//  @since      v1.0
+//  Sample usage:
+//-------------------------------------------------------------------------------------------------------------------
+uint8 rda5807_read_rssi(void)
+{
+	uint8 rssi;
 
+	rda5807m_simiic_read(FM_ADDRESS,rda5807_read_reg,3);
+	rssi = rda5807_read_reg[2] >> 1;
+
+	return rssi;
+}
 
 //-------------------------------------------------------------------------------------------------------------------
 //  @brief      rda5807初始化
@@ -192,19 +222,20 @@ void rda5807_init(float freq)
 
 	//iic初始化
 	simiic_init();
-	simiic_delay_set(100);//设置模拟IIC延时，因为默认速率较高
-	//复位
-	rad5807m_simiic_write(FM_ADDRESS,dat,2);
 
-	systick_delay_ms(STM0, 50);
+	systick_delay_ms(STM0, 1000);//需要保证上电后1S在操作 FM模块
 
 	while(rda5807_read_reg[8] != 0x58)
 	{
+		//复位
+		rad5807m_simiic_write(FM_ADDRESS,dat,2);
+		systick_delay_ms(STM0, 10);
 		//读取寄存器，自检。
 		rda5807m_simiic_read(FM_ADDRESS,rda5807_read_reg,10);
-		systick_delay_ms(STM0, 50);
 		//如果一直卡在这里，查看SCL和SDA是否连接好。
-		//需要设置SEEKFREE_IIC.h文件中的SIMIIC_DELAY_TIME值大于60
+		//也可以尝试  适当增加5807.h文件中的RAD5807_DELAY_TIME宏定义的数值
+		//如果SDA SCL没有串联电阻（不是上下拉哦）则可以尝试修改底层库文件
+		//将gpio_init函数中的IfxPort_PadDriver_cmosAutomotiveSpeed1改为IfxPort_PadDriver_cmosAutomotiveSpeed4
 	}
 
 	//启动
@@ -212,7 +243,7 @@ void rda5807_init(float freq)
 	//频率设置
 	rda5807_set_channel(freq);
 
-	simiic_delay_set(SIMIIC_DELAY_TIME);//还原模拟IIC默认速率
+
 }
 
 
