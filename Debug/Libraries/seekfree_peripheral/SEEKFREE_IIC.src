@@ -927,7 +927,7 @@ IIC_num:	.type	object
 	.align	2
 simiic_delay_time:	.type	object
 	.size	simiic_delay_time,2
-	.half	20
+	.half	100
 	.calls	'simiic_start','gpio_set'
 	.calls	'simiic_start','simiic_delay'
 	.calls	'simiic_stop','gpio_set'

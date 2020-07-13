@@ -46,11 +46,11 @@ extern FSM_t CarFSM;
 void RunStart(void);
 void RunStop(void);
 void FindLine(void);
-void FSMRun(void);
 
 void FSMRegist(FSM_t *fsm, FSMTable_t *fsmtable);
 void FSMStateTransfer(FSM_t *fsm, int state);
 void FSMEventHandle(FSM_t *fsm, int event);
 int ReturnFSMState(FSM_t *fsm);
+void FSMRun(void);
 
 #endif /* CODE_INC_USER_FSM_H_ */

@@ -7,22 +7,24 @@
 
 #include "..\CODE\Inc\User_fsm.h"
 
+#pragma section all "cpu0_dsram"
 FSMTable_t CarTable[] =
 {
     //{到来的事件，当前的状态，将要要执行的函数，下一个状态}
     { RUNSTART, Stop,   RunStart, GoLine },
     { RUNSTOP,  GoLine, RunStop,  Stop   },
-	{ NOEVENT, Stop,   RunStop,  Stop   },
-	{ NOEVENT, GoLine, FindLine, GoLine }
+	{ NOEVENT,  Stop,   RunStop,  Stop   },
+	{ NOEVENT,  GoLine, FindLine, GoLine }
     //如果出现新的代码加入在此
 };
-
 FSM_t CarFSM;
+#pragma section all restore
 
 //事件反应函数
 void RunStart(void)
 {
-
+	MotorUserHandle(LMotor_F,30);
+	MotorUserHandle(RMotor_F,30);
 }
 
 void RunStop(void)
@@ -35,7 +37,12 @@ void RunStop(void)
 
 void FindLine(void)
 {
-
+	if(ProcessImageFlag == 1)
+	{
+		MotorUserHandle(LMotor_F, LeftWheelDeadZone + GetPIDValue(99,MidLineFuseNum,10,0,0));
+		MotorUserHandle(RMotor_F, RightWheelDeadZone - GetPIDValue(99,MidLineFuseNum,10,0,0));
+	}
+	ProcessImageFlag=0;
 }
 
 //************************************************

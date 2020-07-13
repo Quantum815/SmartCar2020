@@ -22,16 +22,18 @@ $TC16X
 ; ..\CODE\Src\User_Gyro_I2C.c	     7  
 ; ..\CODE\Src\User_Gyro_I2C.c	     8  #include "..\CODE\Inc\User_Gyro_I2C.h"
 ; ..\CODE\Src\User_Gyro_I2C.c	     9  
-; ..\CODE\Src\User_Gyro_I2C.c	    10  uint8 GyroPtr[25];
-; ..\CODE\Src\User_Gyro_I2C.c	    11  float AX, AY, AZ, Roll_value, Pitch_value, Yaw_value;
-; ..\CODE\Src\User_Gyro_I2C.c	    12  
-; ..\CODE\Src\User_Gyro_I2C.c	    13  short CharToShort(unsigned char cData[])
+; ..\CODE\Src\User_Gyro_I2C.c	    10  #pragma section all "cpu0_dsram"
+; ..\CODE\Src\User_Gyro_I2C.c	    11  uint8 GyroPtr[24];
+; ..\CODE\Src\User_Gyro_I2C.c	    12  float AX, AY, AZ, Roll_value, Pitch_value, Yaw_value;
+; ..\CODE\Src\User_Gyro_I2C.c	    13  #pragma section all restore
+; ..\CODE\Src\User_Gyro_I2C.c	    14  
+; ..\CODE\Src\User_Gyro_I2C.c	    15  short CharToShort(unsigned char cData[])
 ; Function CharToShort
 .L4:
 CharToShort:	.type	func
 
-; ..\CODE\Src\User_Gyro_I2C.c	    14  {
-; ..\CODE\Src\User_Gyro_I2C.c	    15  	return ((short)cData[1]<<8)|cData[0];
+; ..\CODE\Src\User_Gyro_I2C.c	    16  {
+; ..\CODE\Src\User_Gyro_I2C.c	    17  	return ((short)cData[1]<<8)|cData[0];
 	ld.bu	d15,[a4]1
 .L67:
 	sha	d15,d15,#8
@@ -40,7 +42,7 @@ CharToShort:	.type	func
 	ld.bu	d15,[a4]
 .L69:
 
-; ..\CODE\Src\User_Gyro_I2C.c	    16  }
+; ..\CODE\Src\User_Gyro_I2C.c	    18  }
 	or	d2,d15
 	ret
 .L50:
@@ -56,14 +58,14 @@ __CharToShort_function_end:
 	
 	.global	GyroInit
 
-; ..\CODE\Src\User_Gyro_I2C.c	    17  
-; ..\CODE\Src\User_Gyro_I2C.c	    18  void GyroInit(void)
+; ..\CODE\Src\User_Gyro_I2C.c	    19  
+; ..\CODE\Src\User_Gyro_I2C.c	    20  void GyroInit(void)
 ; Function GyroInit
 .L6:
 GyroInit:	.type	func
 
-; ..\CODE\Src\User_Gyro_I2C.c	    19  {
-; ..\CODE\Src\User_Gyro_I2C.c	    20  	simiic_init();
+; ..\CODE\Src\User_Gyro_I2C.c	    21  {
+; ..\CODE\Src\User_Gyro_I2C.c	    22  	simiic_init();
 	j	simiic_init
 .L53:
 	
@@ -78,15 +80,15 @@ __GyroInit_function_end:
 	
 	.global	GyroReadByte
 
-; ..\CODE\Src\User_Gyro_I2C.c	    21  }
-; ..\CODE\Src\User_Gyro_I2C.c	    22  
-; ..\CODE\Src\User_Gyro_I2C.c	    23  void GyroReadByte(void)
+; ..\CODE\Src\User_Gyro_I2C.c	    23  }
+; ..\CODE\Src\User_Gyro_I2C.c	    24  
+; ..\CODE\Src\User_Gyro_I2C.c	    25  void GyroReadByte(void)
 ; Function GyroReadByte
 .L8:
 GyroReadByte:	.type	func
 
-; ..\CODE\Src\User_Gyro_I2C.c	    24  {
-; ..\CODE\Src\User_Gyro_I2C.c	    25  	simiic_read_regs(I2C_ADDR, AX_PTR, &GyroPtr[0], 24, SCCB);
+; ..\CODE\Src\User_Gyro_I2C.c	    26  {
+; ..\CODE\Src\User_Gyro_I2C.c	    27  	simiic_read_regs(I2C_ADDR, AX_PTR, &GyroPtr[0], 24, SCCB);
 	movh.a	a12,#@his(GyroPtr)
 .L78:
 	mov	d4,#80
@@ -102,8 +104,8 @@ GyroReadByte:	.type	func
 	call	simiic_read_regs
 .L81:
 
-; ..\CODE\Src\User_Gyro_I2C.c	    26  
-; ..\CODE\Src\User_Gyro_I2C.c	    27  	AX = (float)CharToShort(&GyroPtr[0])/32768.0*16;  //xÖá½ÇËÙ¶È
+; ..\CODE\Src\User_Gyro_I2C.c	    28  
+; ..\CODE\Src\User_Gyro_I2C.c	    29  	AX = (float)CharToShort(&GyroPtr[0])/32768.0*16;  //xÖá½ÇËÙ¶È
 	movh	d8,#16768
 	mov.aa	a4,a12
 .L82:
@@ -117,7 +119,7 @@ GyroReadByte:	.type	func
 	st.w	[a15]@los(AX),d15
 .L86:
 
-; ..\CODE\Src\User_Gyro_I2C.c	    28  	AY = (float)CharToShort(&GyroPtr[2])/32768.0*16;  //yÖá½ÇËÙ¶È
+; ..\CODE\Src\User_Gyro_I2C.c	    30  	AY = (float)CharToShort(&GyroPtr[2])/32768.0*16;  //yÖá½ÇËÙ¶È
 	lea	a4,[a12]2
 .L87:
 	call	CharToShort
@@ -129,7 +131,7 @@ GyroReadByte:	.type	func
 	st.w	[a15]@los(AY),d15
 .L91:
 
-; ..\CODE\Src\User_Gyro_I2C.c	    29  	AZ = (float)CharToShort(&GyroPtr[4])/32768.0*16;  //zÖá½ÇËÙ¶È
+; ..\CODE\Src\User_Gyro_I2C.c	    31  	AZ = (float)CharToShort(&GyroPtr[4])/32768.0*16;  //zÖá½ÇËÙ¶È
 	lea	a4,[a12]4
 .L92:
 	call	CharToShort
@@ -141,8 +143,8 @@ GyroReadByte:	.type	func
 	st.w	[a15]@los(AZ),d15
 .L96:
 
-; ..\CODE\Src\User_Gyro_I2C.c	    30  
-; ..\CODE\Src\User_Gyro_I2C.c	    31  	Roll_value = (float)CharToShort(&GyroPtr[18])/32768.0*180;  //xÖá¹ö¶¯½Ç
+; ..\CODE\Src\User_Gyro_I2C.c	    32  
+; ..\CODE\Src\User_Gyro_I2C.c	    33  	Roll_value = (float)CharToShort(&GyroPtr[18])/32768.0*180;  //xÖá¹ö¶¯½Ç
 	movh	d8,#17204
 	movh.a	a15,#@his(Roll_value)
 .L97:
@@ -154,7 +156,7 @@ GyroReadByte:	.type	func
 	st.w	[a15]@los(Roll_value),d15
 .L100:
 
-; ..\CODE\Src\User_Gyro_I2C.c	    32  	Pitch_value = (float)CharToShort(&GyroPtr[20])/32768.0*180;  //yÖá¸©Ñö½Ç
+; ..\CODE\Src\User_Gyro_I2C.c	    34  	Pitch_value = (float)CharToShort(&GyroPtr[20])/32768.0*180;  //yÖá¸©Ñö½Ç
 	movh.a	a13,#@his(Pitch_value)
 .L101:
 	lea	a4,[a12]20
@@ -165,7 +167,7 @@ GyroReadByte:	.type	func
 	st.w	[a13]@los(Pitch_value),d15
 .L104:
 
-; ..\CODE\Src\User_Gyro_I2C.c	    33  	Yaw_value = (float)CharToShort(&GyroPtr[22])/32768.0*180;  //zÖáÐý×ª½Ç
+; ..\CODE\Src\User_Gyro_I2C.c	    35  	Yaw_value = (float)CharToShort(&GyroPtr[22])/32768.0*180;  //zÖáÐý×ª½Ç
 	movh.a	a14,#@his(Yaw_value)
 .L105:
 	lea	a4,[a12]22
@@ -178,7 +180,7 @@ GyroReadByte:	.type	func
 	movh.a	a2,#@his(AX)
 .L109:
 
-; ..\CODE\Src\User_Gyro_I2C.c	    34  	printf("AX:%f AY:%f AZ:%f \r\nRoll_value:%f Pitch_value:%f Yaw_value:%f\r\n\r\n", AX, AY, AZ, Roll_value, Pitch_value, Yaw_value);
+; ..\CODE\Src\User_Gyro_I2C.c	    36  	printf("AX:%f AY:%f AZ:%f \r\nRoll_value:%f Pitch_value:%f Yaw_value:%f\r\n\r\n", AX, AY, AZ, Roll_value, Pitch_value, Yaw_value);
 	ld.w	d15,[a2]@los(AX)
 	st.w	[a10],d15
 .L110:
@@ -225,49 +227,49 @@ __GyroReadByte_function_end:
 	fret
 .L34:
 	; End of function
-	.sdecl	'.bss.User_Gyro_I2C.GyroPtr',data,cluster('GyroPtr')
-	.sect	'.bss.User_Gyro_I2C.GyroPtr'
+	.sdecl	'.bss.cpu0_dsram',data,cluster('GyroPtr')
+	.sect	'.bss.cpu0_dsram'
 	.global	GyroPtr
 GyroPtr:	.type	object
-	.size	GyroPtr,25
-	.space	25
-	.sdecl	'.bss.User_Gyro_I2C.AX',data,cluster('AX')
-	.sect	'.bss.User_Gyro_I2C.AX'
+	.size	GyroPtr,24
+	.space	24
+	.sdecl	'.bss.cpu0_dsram',data,cluster('AX')
+	.sect	'.bss.cpu0_dsram'
 	.global	AX
 	.align	2
 AX:	.type	object
 	.size	AX,4
 	.space	4
-	.sdecl	'.bss.User_Gyro_I2C.AY',data,cluster('AY')
-	.sect	'.bss.User_Gyro_I2C.AY'
+	.sdecl	'.bss.cpu0_dsram',data,cluster('AY')
+	.sect	'.bss.cpu0_dsram'
 	.global	AY
 	.align	2
 AY:	.type	object
 	.size	AY,4
 	.space	4
-	.sdecl	'.bss.User_Gyro_I2C.AZ',data,cluster('AZ')
-	.sect	'.bss.User_Gyro_I2C.AZ'
+	.sdecl	'.bss.cpu0_dsram',data,cluster('AZ')
+	.sect	'.bss.cpu0_dsram'
 	.global	AZ
 	.align	2
 AZ:	.type	object
 	.size	AZ,4
 	.space	4
-	.sdecl	'.bss.User_Gyro_I2C.Roll_value',data,cluster('Roll_value')
-	.sect	'.bss.User_Gyro_I2C.Roll_value'
+	.sdecl	'.bss.cpu0_dsram',data,cluster('Roll_value')
+	.sect	'.bss.cpu0_dsram'
 	.global	Roll_value
 	.align	2
 Roll_value:	.type	object
 	.size	Roll_value,4
 	.space	4
-	.sdecl	'.bss.User_Gyro_I2C.Pitch_value',data,cluster('Pitch_value')
-	.sect	'.bss.User_Gyro_I2C.Pitch_value'
+	.sdecl	'.bss.cpu0_dsram',data,cluster('Pitch_value')
+	.sect	'.bss.cpu0_dsram'
 	.global	Pitch_value
 	.align	2
 Pitch_value:	.type	object
 	.size	Pitch_value,4
 	.space	4
-	.sdecl	'.bss.User_Gyro_I2C.Yaw_value',data,cluster('Yaw_value')
-	.sect	'.bss.User_Gyro_I2C.Yaw_value'
+	.sdecl	'.bss.cpu0_dsram',data,cluster('Yaw_value')
+	.sect	'.bss.cpu0_dsram'
 	.global	Yaw_value
 	.align	2
 Yaw_value:	.type	object
@@ -34682,9 +34684,9 @@ Yaw_value:	.type	object
 	.byte	'FSMTable_t',0,47,34,2
 	.word	252085
 .L56:
-	.byte	15,25
+	.byte	15,24
 	.word	659
-	.byte	16,24,0,0
+	.byte	16,23,0,0
 	.sdecl	'.debug_abbrev',debug
 	.sect	'.debug_abbrev'
 .L13:
@@ -34796,12 +34798,12 @@ Yaw_value:	.type	object
 	.byte	2
 	.word	.L11
 	.byte	3
-	.byte	'CharToShort',0,1,13,7
+	.byte	'CharToShort',0,1,15,7
 	.word	.L49
 	.byte	1,1,1
 	.word	.L4,.L50,.L3
 	.byte	4
-	.byte	'cData',0,1,13,33
+	.byte	'cData',0,1,15,33
 	.word	.L51,.L52
 	.byte	5
 	.word	.L4,.L50
@@ -34824,7 +34826,7 @@ Yaw_value:	.type	object
 .L66:
 	.byte	5,22,7,0,5,2
 	.word	.L4
-	.byte	3,14,1,5,25,9
+	.byte	3,16,1,5,25,9
 	.half	.L67-.L4
 	.byte	1,5,35,9
 	.half	.L68-.L67
@@ -34852,7 +34854,7 @@ Yaw_value:	.type	object
 	.byte	2
 	.word	.L11
 	.byte	3
-	.byte	'GyroInit',0,1,18,6,1,1,1
+	.byte	'GyroInit',0,1,20,6,1,1,1
 	.word	.L6,.L53,.L5
 	.byte	4
 	.word	.L6,.L53
@@ -34875,7 +34877,7 @@ Yaw_value:	.type	object
 .L73:
 	.byte	5,13,7,0,5,2
 	.word	.L6
-	.byte	3,19,1,5,1,7,9
+	.byte	3,21,1,5,1,7,9
 	.half	.L24-.L6
 	.byte	3,1,0,1,1
 .L71:
@@ -34897,7 +34899,7 @@ Yaw_value:	.type	object
 	.byte	2
 	.word	.L11
 	.byte	3
-	.byte	'GyroReadByte',0,1,23,6,1,1,1
+	.byte	'GyroReadByte',0,1,25,6,1,1,1
 	.word	.L8,.L54,.L7
 	.byte	4
 	.word	.L55
@@ -34920,7 +34922,7 @@ Yaw_value:	.type	object
 .L77:
 	.byte	5,38,7,0,5,2
 	.word	.L8
-	.byte	3,24,1,5,19,9
+	.byte	3,26,1,5,19,9
 	.half	.L78-.L8
 	.byte	1,5,38,1,5,29,9
 	.half	.L79-.L78
@@ -35026,7 +35028,7 @@ Yaw_value:	.type	object
 	.byte	2
 	.word	.L11
 	.byte	3
-	.byte	'.cocofun_2',0,1,23,6,1
+	.byte	'.cocofun_2',0,1,25,6,1
 	.word	.L10,.L34,.L9
 	.byte	0
 	.sdecl	'.debug_abbrev',debug,cluster('.cocofun_2')
@@ -35047,37 +35049,37 @@ Yaw_value:	.type	object
 .L121:
 	.byte	5,7,7,0,5,2
 	.word	.L10
-	.byte	3,26,1,5,46,9
+	.byte	3,28,1,5,46,9
 	.half	.L122-.L10
 	.byte	1,9
 	.half	.L34-.L122
 	.byte	0,1,1,5,7,0,5,2
 	.word	.L10
-	.byte	3,27,1,5,46,9
+	.byte	3,29,1,5,46,9
 	.half	.L122-.L10
 	.byte	1,3,127,1,7,9
 	.half	.L34-.L122
 	.byte	0,1,1,5,7,0,5,2
 	.word	.L10
-	.byte	3,28,1,5,46,9
+	.byte	3,30,1,5,46,9
 	.half	.L122-.L10
 	.byte	1,3,126,1,7,9
 	.half	.L34-.L122
 	.byte	0,1,1,5,15,0,5,2
 	.word	.L10
-	.byte	3,30,1,5,55,9
+	.byte	3,32,1,5,55,9
 	.half	.L122-.L10
 	.byte	1,5,46,3,124,1,7,9
 	.half	.L34-.L122
 	.byte	0,1,1,5,16,0,5,2
 	.word	.L10
-	.byte	3,31,1,5,56,9
+	.byte	3,33,1,5,56,9
 	.half	.L122-.L10
 	.byte	1,5,46,3,123,1,7,9
 	.half	.L34-.L122
 	.byte	0,1,1,5,14,0,5,2
 	.word	.L10
-	.byte	3,32,1,5,54,9
+	.byte	3,34,1,5,54,9
 	.half	.L122-.L10
 	.byte	1,5,46,3,122,1,7,9
 	.half	.L34-.L122
@@ -35099,7 +35101,7 @@ Yaw_value:	.type	object
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1,2
 	.word	.L11
 	.byte	3
-	.byte	'GyroPtr',0,25,10,7
+	.byte	'GyroPtr',0,25,11,7
 	.word	.L56
 	.byte	1,5,3
 	.word	GyroPtr
@@ -35121,7 +35123,7 @@ Yaw_value:	.type	object
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1,2
 	.word	.L11
 	.byte	3
-	.byte	'AX',0,25,11,7
+	.byte	'AX',0,25,12,7
 	.word	.L57
 	.byte	1,5,3
 	.word	AX
@@ -35143,7 +35145,7 @@ Yaw_value:	.type	object
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1,2
 	.word	.L11
 	.byte	3
-	.byte	'AY',0,25,11,11
+	.byte	'AY',0,25,12,11
 	.word	.L57
 	.byte	1,5,3
 	.word	AY
@@ -35165,7 +35167,7 @@ Yaw_value:	.type	object
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1,2
 	.word	.L11
 	.byte	3
-	.byte	'AZ',0,25,11,15
+	.byte	'AZ',0,25,12,15
 	.word	.L57
 	.byte	1,5,3
 	.word	AZ
@@ -35187,7 +35189,7 @@ Yaw_value:	.type	object
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1,2
 	.word	.L11
 	.byte	3
-	.byte	'Roll_value',0,25,11,19
+	.byte	'Roll_value',0,25,12,19
 	.word	.L57
 	.byte	1,5,3
 	.word	Roll_value
@@ -35209,7 +35211,7 @@ Yaw_value:	.type	object
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1,2
 	.word	.L11
 	.byte	3
-	.byte	'Pitch_value',0,25,11,31
+	.byte	'Pitch_value',0,25,12,31
 	.word	.L57
 	.byte	1,5,3
 	.word	Pitch_value
@@ -35231,7 +35233,7 @@ Yaw_value:	.type	object
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1,2
 	.word	.L11
 	.byte	3
-	.byte	'Yaw_value',0,25,11,44
+	.byte	'Yaw_value',0,25,12,44
 	.word	.L57
 	.byte	1,5,3
 	.word	Yaw_value
@@ -35318,8 +35320,8 @@ Yaw_value:	.type	object
 	.word	.L124,.L10,.L34-.L10
 	.byte	8,18,8,19,8,20,8,21,8,22,8,23
 
-; ..\CODE\Src\User_Gyro_I2C.c	    35  	//uart_putstr(UART_3, "test");
-; ..\CODE\Src\User_Gyro_I2C.c	    36  	//uart_putchar(UART_3, Roll_value);
-; ..\CODE\Src\User_Gyro_I2C.c	    37  }
+; ..\CODE\Src\User_Gyro_I2C.c	    37  	//uart_putstr(UART_3, "test");
+; ..\CODE\Src\User_Gyro_I2C.c	    38  	//uart_putchar(UART_3, Roll_value);
+; ..\CODE\Src\User_Gyro_I2C.c	    39  }
 
 	; Module end

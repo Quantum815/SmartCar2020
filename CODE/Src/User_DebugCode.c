@@ -7,9 +7,11 @@
 
 #include "..\CODE\Inc\User_DebugCode.h"
 
+#pragma section all "cpu0_dsram"
 uint8 DebugUartRxBuff;
+#pragma section all restore
 
-void ADCReadData(void)
+/*void ADCReadData(void)
 {
     uint16 ADCValue, NumLenth = 0, temp;
     uint8 ADCStr[1000];
@@ -24,7 +26,7 @@ void ADCReadData(void)
     uart_putbuff(UART_3, ADCStr, NumLenth);
     uart_putstr(UART_3, "\r\n");
     systick_delay_ms(STM1, 100);
-}
+}*/
 
 //debug命令
 //0x01 停车  0x02启动   0x03通过串口发送数据回上位机
@@ -58,17 +60,17 @@ void UserDebug(void)
 		if(ReturnFSMState(&CarFSM) == GoLine)
 		{
 			uart_putstr(UART_0, "GoLine\r\n");
-			my_delay(3333334);
+			my_delay(4000000);
 		}
 		else if(ReturnFSMState(&CarFSM) == Stop)
 		{
 			uart_putstr(UART_0, "Stop\r\n");
-			my_delay(3333334);
+			my_delay(4000000);
 		}
 		else if(ReturnFSMState(&CarFSM) == SendBall)
 		{
 			uart_putstr(UART_0, "SendBall\r\n");
-			my_delay(3333334);
+			my_delay(4000000);
 		}
 	}
 }

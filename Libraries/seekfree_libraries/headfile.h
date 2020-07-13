@@ -79,5 +79,29 @@
 #include "..\CODE\Inc\User_OSTU.h"
 #include "..\CODE\Inc\User_PID.h"
 
+//------自定义内容
+//是否使用摄像头
+//#define USECARMERA
+
+//进程中断时间
+#define MainProcessTime 10
+#define CountDistanceTime 5
+#define CameraProcessTime 20
+
+//双核防卡死测试LED中断时间
+#define CPU0TIMES 50
+#define CPU1TIMES 25
+
+//车轮直径
+#define WHEEL_DIAMETER 62
+
+//车轮启动死区PWM占空比
+#define LeftWheelDeadZone 10
+#define RightWheelDeadZone 10
+
+//图像处理阈值
+#define CloseThresholds 130
+#define FarThresholds 130
+
 #endif
 

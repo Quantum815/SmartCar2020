@@ -202,6 +202,7 @@ void uart_mux(UARTN_enum uartn, UART_PIN_enum tx_pin, UART_PIN_enum rx_pin, uint
 			else if(UART2_RX_P10_6 == rx_pin)	*set_rx_pin = (uint32)&IfxAsclin2_RXD_P10_6_IN;
 			else if(UART2_RX_P33_8 == rx_pin)	*set_rx_pin = (uint32)&IfxAsclin2_RXE_P33_8_IN;
 			else if(UART2_RX_P02_0 == rx_pin)	*set_rx_pin = (uint32)&IfxAsclin2_RXG_P02_0_IN;
+
 			else IFX_ASSERT(IFX_VERBOSE_LEVEL_ERROR, FALSE);
 
 		}break;
@@ -328,7 +329,7 @@ void uart_putstr(UARTN_enum uartn, const int8 *str)
 //-------------------------------------------------------------------------------------------------------------------
 void uart_getchar(UARTN_enum uartn, uint8 *dat)
 {
-	while(IfxAsclin_Asc_getReadCount(uart_get_handle(uartn)) >0);
+	while(!IfxAsclin_Asc_getReadCount(uart_get_handle(uartn)));
 	*dat = IfxAsclin_Asc_blockingRead(uart_get_handle(uartn));
 }
 

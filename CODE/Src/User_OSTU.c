@@ -7,11 +7,13 @@
 
 #include "..\CODE\Inc\User_OSTU.h"
 
+#pragma section all "cpu1_dsram"
 uint16_t Threshold;                  //OSTU´ó½ò·¨¼ÆËãµÄÍ¼ÏñãĞÖµ, ·µ»ØÀàĞÍÔ­À´Îªuint8_t
+#pragma section all restore
 
 /***************************************************************
 *
-* º¯ÊıÃû³Æ£ºuint8_t GetOSTU(uint8_t tmImage[IMAGEH][IMAGEW])
+* º¯ÊıÃû³Æ£ºuint8_t GetOSTU(uint8_t tmImage[MT9V03X_H][MT9V03X_W])
 * ¹¦ÄÜËµÃ÷£ºÇóãĞÖµ´óĞ¡
 * ²ÎÊıËµÃ÷£º
 * º¯Êı·µ»Ø£ºãĞÖµ´óĞ¡
@@ -30,9 +32,8 @@ Ostu·½·¨ÓÖÃû×î´óÀà¼ä²î·½·¨£¬Í¨¹ıÍ³¼ÆÕû¸öÍ¼ÏñµÄÖ±·½Í¼ÌØĞÔÀ´ÊµÏÖÈ«¾ÖãĞÖµTµÄ×Ô¶¯Ñ¡È
 7£©½«×î´ógÏàÓ¦µÄiÖµ×÷ÎªÍ¼ÏñµÄÈ«¾ÖãĞÖµ
 È±Ïİ:OSTUËã·¨ÔÚ´¦Àí¹âÕÕ²»¾ùÔÈµÄÍ¼ÏñµÄÊ±ºò£¬Ğ§¹û»áÃ÷ÏÔ²»ºÃ£¬ÒòÎªÀûÓÃµÄÊÇÈ«¾ÖÏñËØĞÅÏ¢¡£
 ***************************************************************/
-uint16_t GetOSTU(uint8_t tmImage[IMAGEH][IMAGEW])  //º¯Êı·µ»ØÀàĞÍÔ­À´Îªuint8_t
+uint16_t GetOSTU(uint8_t tmImage[MT9V03X_H][MT9V03X_W])  //·µ»ØÖµÔ­Îªuint8_t
 {
-  int16_t i,j;
   uint32_t Amount = 0;
   uint32_t PixelBack = 0;
   uint32_t PixelIntegralBack = 0;
@@ -41,14 +42,14 @@ uint16_t GetOSTU(uint8_t tmImage[IMAGEH][IMAGEW])  //º¯Êı·µ»ØÀàĞÍÔ­À´Îªuint8_t
   int32_t PixelFore = 0;
   double OmegaBack, OmegaFore, MicroBack, MicroFore, SigmaB, Sigma; // Àà¼ä·½²î;
   int16_t MinValue, MaxValue;
-  uint16_t Threshold = 0;
+  uint8_t Threshold = 0;
   uint8_t HistoGram[256];              //
 
-  for (j = 0; j < 256; j++)  HistoGram[j] = 0; //³õÊ¼»¯»Ò¶ÈÖ±·½Í¼
+  for (int j = 0; j < 256; j++)  HistoGram[j] = 0; //³õÊ¼»¯»Ò¶ÈÖ±·½Í¼
 
-  for (j = 0; j < IMAGEH-40; j++)
+  for (int j = 0; j < MT9V03X_H-40; j++)
   {
-    for (i = 0; i < IMAGEW-8; i++)
+    for (int i = 0; i < MT9V03X_W-8; i++)
     {
       HistoGram[tmImage[j][i]]++; //Í³¼Æ»Ò¶È¼¶ÖĞÃ¿¸öÏñËØÔÚÕû·ùÍ¼ÏñÖĞµÄ¸öÊı
     }
@@ -60,15 +61,15 @@ uint16_t GetOSTU(uint8_t tmImage[IMAGEH][IMAGEW])  //º¯Êı·µ»ØÀàĞÍÔ­À´Îªuint8_t
   if (MaxValue == MinValue)     return MaxValue;         // Í¼ÏñÖĞÖ»ÓĞÒ»¸öÑÕÉ«
   if (MinValue + 1 == MaxValue)  return MinValue;        // Í¼ÏñÖĞÖ»ÓĞ¶ş¸öÑÕÉ«
 
-  for (j = MinValue; j <= MaxValue; j++)    Amount += HistoGram[j];        //  ÏñËØ×ÜÊı
+  for (int j = MinValue; j <= MaxValue; j++)    Amount += HistoGram[j];        //  ÏñËØ×ÜÊı
 
   PixelIntegral = 0;
-  for (j = MinValue; j <= MaxValue; j++)
+  for (int j = MinValue; j <= MaxValue; j++)
   {
     PixelIntegral += HistoGram[j] * j;//»Ò¶ÈÖµ×ÜÊı
   }
   SigmaB = -1;
-  for (j = MinValue; j < MaxValue; j++)
+  for (int j = MinValue; j < MaxValue; j++)
   {
     PixelBack = PixelBack + HistoGram[j];    //Ç°¾°ÏñËØµãÊı
     PixelFore = Amount - PixelBack;         //±³¾°ÏñËØµãÊı
@@ -82,27 +83,26 @@ uint16_t GetOSTU(uint8_t tmImage[IMAGEH][IMAGEW])  //º¯Êı·µ»ØÀàĞÍÔ­À´Îªuint8_t
     if (Sigma > SigmaB)                    //±éÀú×î´óµÄÀà¼ä·½²îg //ÕÒ³ö×î´óÀà¼ä·½²îÒÔ¼°¶ÔÓ¦µÄãĞÖµ
     {
       SigmaB = Sigma;
-      Threshold = j;
+      Threshold = (uint16_t)j;
     }
   }
   return Threshold;                        //·µ»Ø×î¼ÑãĞÖµ;
 }
-
 /***************************************************************
 *
-* º¯ÊıÃû³Æ£ºvoid BinaryImage(uint8_t tmImage[IMAGEH][IMAGEW])
+* º¯ÊıÃû³Æ£ºvoid BinaryImage(uint8_t tmImage[MT9V03X_H][MT9V03X_W])
 * ¹¦ÄÜËµÃ÷£ºÍ¼ÏñÊı¾İ¶şÖµ»¯
 * ²ÎÊıËµÃ÷£º
 * º¯Êı·µ»Ø£ºvoid
 * ĞŞ¸ÄÊ±¼ä£º2018Äê3ÔÂ27ÈÕ
 * ±¸ ×¢£º
 ***************************************************************/
-void BinaryImage(uint8_t tmImage[IMAGEH][IMAGEW],uint8_t ThresholdV)
+void BinaryImage(uint8_t tmImage[MT9V03X_H][MT9V03X_W],uint8_t ThresholdV)
 {
-  int i = 0, j = 0;
-  for(i = 0;i < IMAGEH;i++)
+
+  for(int i = 0;i < MT9V03X_H;i++)
   {
-    for(j = 0; j< IMAGEW;j++)
+    for(int j = 0; j< MT9V03X_W;j++)
     {
       if(tmImage[i][j] >= ThresholdV)
       {

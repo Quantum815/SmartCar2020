@@ -22,10 +22,13 @@
 #include "isr.h"
 //在isr.c的中断函数，函数定义的第二个参数固定为0，请不要更改，即使你用CPU1处理中断也不要更改，需要CPU1处理中断只需要在isr_config.h内修改对应的宏定义即可
 
+int i;
+int j;
+
 //PIT中断函数  示例
 IFX_INTERRUPT(cc60_pit_ch0_isr, 0, CCU6_0_CH0_ISR_PRIORITY)  //主程序
 {
-	//enableInterrupts();//开启中断嵌套
+	enableInterrupts();//开启中断嵌套
 	PIT_CLEAR_FLAG(CCU6_0, PIT_CH0);
 	i++;
 	if(i == CPU0TIMES)
@@ -41,7 +44,7 @@ IFX_INTERRUPT(cc60_pit_ch0_isr, 0, CCU6_0_CH0_ISR_PRIORITY)  //主程序
 
 IFX_INTERRUPT(cc60_pit_ch1_isr, 0, CCU6_0_CH1_ISR_PRIORITY)  //摄像头
 {
-	//enableInterrupts();//开启中断嵌套
+	enableInterrupts();//开启中断嵌套
 	PIT_CLEAR_FLAG(CCU6_0, PIT_CH1);
 	j++;
 	if(j == CPU1TIMES)
@@ -55,6 +58,7 @@ IFX_INTERRUPT(cc61_pit_ch0_isr, 0, CCU6_1_CH0_ISR_PRIORITY)
 {
 	enableInterrupts();//开启中断嵌套
 	PIT_CLEAR_FLAG(CCU6_1, PIT_CH0);
+	//CountDistance();
 	
 }
 
@@ -99,6 +103,7 @@ IFX_INTERRUPT(eru_ch1_ch5_isr, 0, ERU_CH1_CH5_INT_PRIO)
 //由于摄像头pclk引脚默认占用了 2通道，用于触发DMA，因此这里不再定义中断函数
 //IFX_INTERRUPT(eru_ch2_ch6_isr, 0, ERU_CH2_CH6_INT_PRIO)
 //{
+//	enableInterrupts();//开启中断嵌套
 //	if(GET_GPIO_FLAG(ERU_CH2_REQ7_P00_4))//通道2中断
 //	{
 //		CLEAR_GPIO_FLAG(ERU_CH2_REQ7_P00_4);
@@ -187,7 +192,7 @@ IFX_INTERRUPT(uart2_rx_isr, 0, UART2_RX_INT_PRIO)
 {
 	enableInterrupts();//开启中断嵌套
     IfxAsclin_Asc_isrReceive(&uart2_handle);
-    wireless_uart_callback();
+    //wireless_uart_callback();
 }
 IFX_INTERRUPT(uart2_er_isr, 0, UART2_ER_INT_PRIO)
 {

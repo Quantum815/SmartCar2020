@@ -10,17 +10,14 @@
 
 #include "headfile.h"
 
-#define CloseThresholds 112
-#define FarThresholds 112
-
-double GetMidLineNum(void);
 extern uint8 ProcessImageFlag;
 extern double MidLineFuseNum;
 
 void ImagePretreatment(void);
-void FindMedLine(void);
+void FindMidLine(void);
 void CameraProcess(void);
 void EdgePointFind(void);
+double GetMidLineNum(void);
 //extern uint8 DisplayIMAG[MT9V03X_H][MT9V03X_W];
 
 #endif /* CODE_INC_USER_IMAGE_PROCESS_H_ */

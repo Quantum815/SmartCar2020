@@ -9,8 +9,6 @@
 #define CODE_USER_CAMERA_INIT_H_
 
 #include "headfile.h"
-//#define USECARMERA
-#define CameraProcessTime 10
 
 void UserCameraInit(void);
 

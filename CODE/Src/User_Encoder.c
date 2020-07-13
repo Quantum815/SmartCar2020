@@ -7,8 +7,10 @@
 
 #include "..\CODE\Inc\User_Encoder.h"
 
+#pragma section all "cpu0_dsram"
 double CurDistance;
 double TotalDistance;
+#pragma section all restore
 
 void EncoderInit(void)
 {
@@ -24,14 +26,14 @@ void CountDistance(void)
 	encoder0 = gpt12_get(GPT12_T2);
 	encoder1 = gpt12_get(GPT12_T6);
 
-	CurLdistance = ((double)encoder0/1024)*((WHEEL_DIAMETER*3.1415)/1000);
-	CurRdistance = ((double)encoder1/1024)*((WHEEL_DIAMETER*3.1415)/1000);
+	CurLdistance = ((double)encoder0/1024)*((WHEEL_DIAMETER*3.1415)/1000)*(30/68.0);
+	CurRdistance = ((double)encoder1/1024)*((WHEEL_DIAMETER*3.1415)/1000)*(30/68.0);
 	CurDistance = (CurLdistance - CurRdistance) / 2;
 	TotalDistance += CurDistance;
 
 	//printf("L  %lf\r\n",CurLdistance);  //测试
 	//printf("R  %lf\r\n",CurRdistance);  //测试
-	printf("%lf\r\n",TotalDistance);  //测试
+	//printf("%lf\r\n",TotalDistance);  //测试
 
 	gpt12_clear(GPT12_T2);
 	gpt12_clear(GPT12_T6);
@@ -42,7 +44,7 @@ double GetDistance(void)
 	return TotalDistance;
 }
 
-double GetSpeed(void)  //主进程20ms
+double GetSpeed(void)  //主进程10ms
 {
-	return (CurDistance/0.02);
+	return (CurDistance/0.01);
 }

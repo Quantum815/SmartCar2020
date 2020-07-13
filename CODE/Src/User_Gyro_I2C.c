@@ -7,8 +7,10 @@
 
 #include "..\CODE\Inc\User_Gyro_I2C.h"
 
-uint8 GyroPtr[25];
+#pragma section all "cpu0_dsram"
+uint8 GyroPtr[24];
 float AX, AY, AZ, Roll_value, Pitch_value, Yaw_value;
+#pragma section all restore
 
 short CharToShort(unsigned char cData[])
 {

@@ -38,7 +38,7 @@
 #define SEEKFREE_SDA    P11_3                           //定义SDA引脚  可任意更改为其他IO
 
 
-#define SIMIIC_DELAY_TIME	20
+#define SIMIIC_DELAY_TIME	100
 
 
 typedef enum IIC       //IIC类型枚举

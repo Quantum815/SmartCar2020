@@ -10,7 +10,7 @@
 
 #include "headfile.h"
 
-void ADCReadData(void);
+//void ADCReadData(void);
 void UserDebug(void);
 
 #endif /* CODE_INC_USER_DEBUGCODE_H_ */

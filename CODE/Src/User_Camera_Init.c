@@ -18,8 +18,5 @@ void UserCameraInit(void)
 
 	//摄像头进程
 	pit_interrupt_ms(CCU6_0, PIT_CH1, CameraProcessTime);
-
-
-	//scc8660_csi_init(); //自动曝光on TC264不支持
 }
 

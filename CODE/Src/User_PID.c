@@ -7,24 +7,26 @@
 
 #include "..\CODE\Inc\User_PID.h"
 
+#pragma section all "cpu0_dsram"
 uint8_t PidValue;
-uint8_t OldValue;
+#pragma section all restore
 
 uint8_t GetPIDValue(uint8_t middle,uint8_t value,uint8_t kP,uint8_t kI,uint8_t kD)
 {
-	static double NowErrorValue;
-	static double IntegralErrorValue;
-	static double PreviousErrorValue;
+	static double PreviousErrorValue = 0;
+	static double NowErrorValue = 0;
+	static double IntegralErrorValue = 0;
+	static double DifferentialErrorValue = 0;
+	static uint8_t OldValue = 0;
 
 	NowErrorValue = value - middle;
 	IntegralErrorValue += NowErrorValue;
+	DifferentialErrorValue = NowErrorValue - PreviousErrorValue;
 
 	OldValue = PidValue;
-
-	PidValue = kP * NowErrorValue + kI * IntegralErrorValue + kD * (NowErrorValue - PreviousErrorValue);
+	PidValue = kP * NowErrorValue + kI * IntegralErrorValue + kD * DifferentialErrorValue;
 	PreviousErrorValue = NowErrorValue;
-
-	PidValue = 0.05 * OldValue + 0.95 * PidValue;	                       //µÍÍ¨ÂË²¨
+	PidValue = 0.1 * OldValue + 0.9 * PidValue;	                       //µÍÍ¨ÂË²¨
 
 	return PidValue;
 }

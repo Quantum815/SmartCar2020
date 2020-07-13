@@ -551,7 +551,7 @@ ov7725_reg_init:	.type	func
 	mov	d6,#2
 	call	simiic_write_reg
 .L345:
-	mov	d4,#20
+	mov	d4,#100
 	call	simiic_delay_set
 .L346:
 	mov	d2,#1

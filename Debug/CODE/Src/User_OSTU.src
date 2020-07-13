@@ -22,258 +22,255 @@ $TC16X
 ; ..\CODE\Src\User_OSTU.c	     7  
 ; ..\CODE\Src\User_OSTU.c	     8  #include "..\CODE\Inc\User_OSTU.h"
 ; ..\CODE\Src\User_OSTU.c	     9  
-; ..\CODE\Src\User_OSTU.c	    10  uint16_t Threshold;                  //OSTU大津法计算的图像阈值, 返回类型原来为uint8_t
-; ..\CODE\Src\User_OSTU.c	    11  
-; ..\CODE\Src\User_OSTU.c	    12  /***************************************************************
-; ..\CODE\Src\User_OSTU.c	    13  *
-; ..\CODE\Src\User_OSTU.c	    14  * 函数名称：uint8_t GetOSTU(uint8_t tmImage[IMAGEH][IMAGEW])
-; ..\CODE\Src\User_OSTU.c	    15  * 功能说明：求阈值大小
-; ..\CODE\Src\User_OSTU.c	    16  * 参数说明：
-; ..\CODE\Src\User_OSTU.c	    17  * 函数返回：阈值大小
-; ..\CODE\Src\User_OSTU.c	    18  * 修改时间：2018年3月27日
-; ..\CODE\Src\User_OSTU.c	    19  * 备 注：
-; ..\CODE\Src\User_OSTU.c	    20  参考：https://blog.csdn.net/zyzhangyue/article/details/45841255
-; ..\CODE\Src\User_OSTU.c	    21        https://www.cnblogs.com/moon1992/p/5092726.html
-; ..\CODE\Src\User_OSTU.c	    22        https://www.cnblogs.com/zhonghuasong/p/7250540.html
-; ..\CODE\Src\User_OSTU.c	    23  Ostu方法又名最大类间差方法，通过统计整个图像的直方图特性来实现全局阈值T的自动选取，其算法步骤为：
-; ..\CODE\Src\User_OSTU.c	    24  1) 先计算图像的直方图，即将图像所有的像素点按照0~255共256个bin，统计落在每个bin的像素点数量
-; ..\CODE\Src\User_OSTU.c	    25  2) 归一化直方图，也即将每个bin中像素点数量除以总的像素点
-; ..\CODE\Src\User_OSTU.c	    26  3) i表示分类的阈值，也即一个灰度级，从0开始迭代
-; ..\CODE\Src\User_OSTU.c	    27  4) 通过归一化的直方图，统计0~i 灰度级的像素(假设像素值在此范围的像素叫做前景像素) 所占整幅图像的比例w0，并统计前景像素的平均灰度u0；统计i~255灰度级的像素(假设像素值在此范围的像素叫做背景像素) 所占整幅图像的比例w1，并统计背景像素的平均灰度u1；
-; ..\CODE\Src\User_OSTU.c	    28  5) 计算前景像素和背景像素的方差 g = w0*w1*(u0-u1) (u0-u1)
-; ..\CODE\Src\User_OSTU.c	    29  6) i++；转到4)，直到i为256时结束迭代
-; ..\CODE\Src\User_OSTU.c	    30  7）将最大g相应的i值作为图像的全局阈值
-; ..\CODE\Src\User_OSTU.c	    31  缺陷:OSTU算法在处理光照不均匀的图像的时候，效果会明显不好，因为利用的是全局像素信息。
-; ..\CODE\Src\User_OSTU.c	    32  ***************************************************************/
-; ..\CODE\Src\User_OSTU.c	    33  uint16_t GetOSTU(uint8_t tmImage[IMAGEH][IMAGEW])  //函数返回类型原来为uint8_t
+; ..\CODE\Src\User_OSTU.c	    10  #pragma section all "cpu1_dsram"
+; ..\CODE\Src\User_OSTU.c	    11  uint16_t Threshold;                  //OSTU大津法计算的图像阈值, 返回类型原来为uint8_t
+; ..\CODE\Src\User_OSTU.c	    12  #pragma section all restore
+; ..\CODE\Src\User_OSTU.c	    13  
+; ..\CODE\Src\User_OSTU.c	    14  /***************************************************************
+; ..\CODE\Src\User_OSTU.c	    15  *
+; ..\CODE\Src\User_OSTU.c	    16  * 函数名称：uint8_t GetOSTU(uint8_t tmImage[MT9V03X_H][MT9V03X_W])
+; ..\CODE\Src\User_OSTU.c	    17  * 功能说明：求阈值大小
+; ..\CODE\Src\User_OSTU.c	    18  * 参数说明：
+; ..\CODE\Src\User_OSTU.c	    19  * 函数返回：阈值大小
+; ..\CODE\Src\User_OSTU.c	    20  * 修改时间：2018年3月27日
+; ..\CODE\Src\User_OSTU.c	    21  * 备 注：
+; ..\CODE\Src\User_OSTU.c	    22  参考：https://blog.csdn.net/zyzhangyue/article/details/45841255
+; ..\CODE\Src\User_OSTU.c	    23        https://www.cnblogs.com/moon1992/p/5092726.html
+; ..\CODE\Src\User_OSTU.c	    24        https://www.cnblogs.com/zhonghuasong/p/7250540.html
+; ..\CODE\Src\User_OSTU.c	    25  Ostu方法又名最大类间差方法，通过统计整个图像的直方图特性来实现全局阈值T的自动选取，其算法步骤为：
+; ..\CODE\Src\User_OSTU.c	    26  1) 先计算图像的直方图，即将图像所有的像素点按照0~255共256个bin，统计落在每个bin的像素点数量
+; ..\CODE\Src\User_OSTU.c	    27  2) 归一化直方图，也即将每个bin中像素点数量除以总的像素点
+; ..\CODE\Src\User_OSTU.c	    28  3) i表示分类的阈值，也即一个灰度级，从0开始迭代
+; ..\CODE\Src\User_OSTU.c	    29  4) 通过归一化的直方图，统计0~i 灰度级的像素(假设像素值在此范围的像素叫做前景像素) 所占整幅图像的比例w0，并统计前景像素的平均灰度u0；统计i~255灰度级的像素(假设像素值在此范围的像素叫做背景像素) 所占整幅图像的比例w1，并统计背景像素的平均灰度u1；
+; ..\CODE\Src\User_OSTU.c	    30  5) 计算前景像素和背景像素的方差 g = w0*w1*(u0-u1) (u0-u1)
+; ..\CODE\Src\User_OSTU.c	    31  6) i++；转到4)，直到i为256时结束迭代
+; ..\CODE\Src\User_OSTU.c	    32  7）将最大g相应的i值作为图像的全局阈值
+; ..\CODE\Src\User_OSTU.c	    33  缺陷:OSTU算法在处理光照不均匀的图像的时候，效果会明显不好，因为利用的是全局像素信息。
+; ..\CODE\Src\User_OSTU.c	    34  ***************************************************************/
+; ..\CODE\Src\User_OSTU.c	    35  uint16_t GetOSTU(uint8_t tmImage[MT9V03X_H][MT9V03X_W])  //返回值原为uint8_t
 ; Function GetOSTU
 .L27:
 GetOSTU:	.type	func
 
-; ..\CODE\Src\User_OSTU.c	    34  {
-; ..\CODE\Src\User_OSTU.c	    35    int16_t i,j;
-; ..\CODE\Src\User_OSTU.c	    36    uint32_t Amount = 0;
+; ..\CODE\Src\User_OSTU.c	    36  {
+; ..\CODE\Src\User_OSTU.c	    37    uint32_t Amount = 0;
 	mov	d5,#0
 	lea	a10,[a10]-256
-.L79:
+.L93:
 
-; ..\CODE\Src\User_OSTU.c	    37    uint32_t PixelBack = 0;
-; ..\CODE\Src\User_OSTU.c	    38    uint32_t PixelIntegralBack = 0;
-; ..\CODE\Src\User_OSTU.c	    39    uint32_t PixelIntegral = 0;
-; ..\CODE\Src\User_OSTU.c	    40    int32_t PixelIntegralFore = 0;
-; ..\CODE\Src\User_OSTU.c	    41    int32_t PixelFore = 0;
-; ..\CODE\Src\User_OSTU.c	    42    double OmegaBack, OmegaFore, MicroBack, MicroFore, SigmaB, Sigma; // 类间方差;
-; ..\CODE\Src\User_OSTU.c	    43    int16_t MinValue, MaxValue;
-; ..\CODE\Src\User_OSTU.c	    44    uint16_t Threshold = 0;
-; ..\CODE\Src\User_OSTU.c	    45    uint8_t HistoGram[256];              //
-; ..\CODE\Src\User_OSTU.c	    46  
-; ..\CODE\Src\User_OSTU.c	    47    for (j = 0; j < 256; j++)  HistoGram[j] = 0; //初始化灰度直方图
-	mov	d4,d5
-	mov.aa	a15,a10
-.L80:
+; ..\CODE\Src\User_OSTU.c	    38    uint32_t PixelBack = 0;
+; ..\CODE\Src\User_OSTU.c	    39    uint32_t PixelIntegralBack = 0;
+; ..\CODE\Src\User_OSTU.c	    40    uint32_t PixelIntegral = 0;
+; ..\CODE\Src\User_OSTU.c	    41    int32_t PixelIntegralFore = 0;
+; ..\CODE\Src\User_OSTU.c	    42    int32_t PixelFore = 0;
+; ..\CODE\Src\User_OSTU.c	    43    double OmegaBack, OmegaFore, MicroBack, MicroFore, SigmaB, Sigma; // 类间方差;
+; ..\CODE\Src\User_OSTU.c	    44    int16_t MinValue, MaxValue;
+; ..\CODE\Src\User_OSTU.c	    45    uint8_t Threshold = 0;
+; ..\CODE\Src\User_OSTU.c	    46    uint8_t HistoGram[256];              //
+; ..\CODE\Src\User_OSTU.c	    47  
+; ..\CODE\Src\User_OSTU.c	    48    for (int j = 0; j < 256; j++)  HistoGram[j] = 0; //初始化灰度直方图
 	mov	d15,d5
+	mov.aa	a15,a10
+.L119:
+	mov	d4,d5
 	lea	a2,255
-.L109:
+.L94:
 	mov	e2,d5,d5
-.L110:
-	mov	d1,#256
 .L2:
 	st.b	[a15+],d15
 	loop	a2,.L2
-.L111:
+.L72:
 
-; ..\CODE\Src\User_OSTU.c	    48  
-; ..\CODE\Src\User_OSTU.c	    49    for (j = 0; j < IMAGEH-40; j++)
+; ..\CODE\Src\User_OSTU.c	    49  
+; ..\CODE\Src\User_OSTU.c	    50    for (int j = 0; j < MT9V03X_H-40; j++)
 	lea	a15,79
 .L3:
 
-; ..\CODE\Src\User_OSTU.c	    50    {
-; ..\CODE\Src\User_OSTU.c	    51      for (i = 0; i < IMAGEW-8; i++)
+; ..\CODE\Src\User_OSTU.c	    51    {
+; ..\CODE\Src\User_OSTU.c	    52      for (int i = 0; i < MT9V03X_W-8; i++)
 	mov.aa	a2,a4
-.L112:
+.L120:
 	lea	a4,[a4]188
-.L113:
+.L121:
 	lea	a5,179
 .L4:
 
-; ..\CODE\Src\User_OSTU.c	    52      {
-; ..\CODE\Src\User_OSTU.c	    53        HistoGram[tmImage[j][i]]++; //统计灰度级中每个像素在整幅图像中的个数
+; ..\CODE\Src\User_OSTU.c	    53      {
+; ..\CODE\Src\User_OSTU.c	    54        HistoGram[tmImage[j][i]]++; //统计灰度级中每个像素在整幅图像中的个数
 	ld.bu	d15,[a2+]
-.L114:
+.L122:
 	addsc.a	a6,a10,d15,#0
 	ld.bu	d0,[a6]
-.L115:
+.L123:
 	add	d0,#1
 	st.b	[a6],d0
 	loop	a5,.L4
-.L116:
+.L76:
 	loop	a15,.L3
-.L117:
+.L74:
 
-; ..\CODE\Src\User_OSTU.c	    54      }
-; ..\CODE\Src\User_OSTU.c	    55    }
-; ..\CODE\Src\User_OSTU.c	    56  
-; ..\CODE\Src\User_OSTU.c	    57    for (MinValue = 0; MinValue < 256 && HistoGram[MinValue] == 0; MinValue++) ;        //获取最小灰度的值
+; ..\CODE\Src\User_OSTU.c	    55      }
+; ..\CODE\Src\User_OSTU.c	    56    }
+; ..\CODE\Src\User_OSTU.c	    57  
+; ..\CODE\Src\User_OSTU.c	    58    for (MinValue = 0; MinValue < 256 && HistoGram[MinValue] == 0; MinValue++) ;        //获取最小灰度的值
 	mov	d6,d5
 	mov.aa	a15,a10
-.L81:
+.L95:
+	mov	d0,#256
 	j	.L5
 .L6:
 	add	d6,#1
 	add.a	a15,#1
 .L5:
-	jge	d6,d1,.L7
-.L118:
+	jge	d6,d0,.L7
+.L124:
 	ld.bu	d15,[a15]
-.L119:
+.L125:
 	jeq	d15,#0,.L6
 .L7:
 
-; ..\CODE\Src\User_OSTU.c	    58    for (MaxValue = 255; MaxValue > MinValue && HistoGram[MinValue] == 0; MaxValue--) ; //获取最大灰度的值
+; ..\CODE\Src\User_OSTU.c	    59    for (MaxValue = 255; MaxValue > MinValue && HistoGram[MinValue] == 0; MaxValue--) ; //获取最大灰度的值
 	mov	d7,#255
 	addsc.a	a15,a10,d6,#0
-.L83:
+.L96:
 	j	.L8
 .L9:
 	add	d0,d7,#-1
 	extr	d7,d0,#0,#16
 .L8:
 	jge	d6,d7,.L10
-.L120:
+.L126:
 	ld.bu	d15,[a15]
-.L121:
+.L127:
 	jeq	d15,#0,.L9
 .L10:
 
-; ..\CODE\Src\User_OSTU.c	    59  
-; ..\CODE\Src\User_OSTU.c	    60    if (MaxValue == MinValue)     return MaxValue;         // 图像中只有一个颜色
+; ..\CODE\Src\User_OSTU.c	    60  
+; ..\CODE\Src\User_OSTU.c	    61    if (MaxValue == MinValue)     return MaxValue;         // 图像中只有一个颜色
 	jeq	d7,d6,.L11
-.L122:
+.L128:
 
-; ..\CODE\Src\User_OSTU.c	    61    if (MinValue + 1 == MaxValue)  return MinValue;        // 图像中只有二个颜色
+; ..\CODE\Src\User_OSTU.c	    62    if (MinValue + 1 == MaxValue)  return MinValue;        // 图像中只有二个颜色
 	add	d15,d6,#1
-.L123:
+.L129:
 	jne	d15,d7,.L12
 
-; ..\CODE\Src\User_OSTU.c	    62  
-; ..\CODE\Src\User_OSTU.c	    63    for (j = MinValue; j <= MaxValue; j++)    Amount += HistoGram[j];        //  像素总数
-; ..\CODE\Src\User_OSTU.c	    64  
-; ..\CODE\Src\User_OSTU.c	    65    PixelIntegral = 0;
-; ..\CODE\Src\User_OSTU.c	    66    for (j = MinValue; j <= MaxValue; j++)
-; ..\CODE\Src\User_OSTU.c	    67    {
-; ..\CODE\Src\User_OSTU.c	    68      PixelIntegral += HistoGram[j] * j;//灰度值总数
-; ..\CODE\Src\User_OSTU.c	    69    }
-; ..\CODE\Src\User_OSTU.c	    70    SigmaB = -1;
-; ..\CODE\Src\User_OSTU.c	    71    for (j = MinValue; j < MaxValue; j++)
-; ..\CODE\Src\User_OSTU.c	    72    {
-; ..\CODE\Src\User_OSTU.c	    73      PixelBack = PixelBack + HistoGram[j];    //前景像素点数
-; ..\CODE\Src\User_OSTU.c	    74      PixelFore = Amount - PixelBack;         //背景像素点数
-; ..\CODE\Src\User_OSTU.c	    75      OmegaBack = (double)PixelBack / Amount;//前景像素百分比
-; ..\CODE\Src\User_OSTU.c	    76      OmegaFore = (double)PixelFore / Amount;//背景像素百分比
-; ..\CODE\Src\User_OSTU.c	    77      PixelIntegralBack += HistoGram[j] * j;  //前景灰度值
-; ..\CODE\Src\User_OSTU.c	    78      PixelIntegralFore = PixelIntegral - PixelIntegralBack;//背景灰度值
-; ..\CODE\Src\User_OSTU.c	    79      MicroBack = (double)PixelIntegralBack / PixelBack;   //前景灰度百分比
-; ..\CODE\Src\User_OSTU.c	    80      MicroFore = (double)PixelIntegralFore / PixelFore;   //背景灰度百分比
-; ..\CODE\Src\User_OSTU.c	    81      Sigma = OmegaBack * OmegaFore * (MicroBack - MicroFore) * (MicroBack - MicroFore);//计算类间方差
-; ..\CODE\Src\User_OSTU.c	    82      if (Sigma > SigmaB)                    //遍历最大的类间方差g //找出最大类间方差以及对应的阈值
-; ..\CODE\Src\User_OSTU.c	    83      {
-; ..\CODE\Src\User_OSTU.c	    84        SigmaB = Sigma;
-; ..\CODE\Src\User_OSTU.c	    85        Threshold = j;
-; ..\CODE\Src\User_OSTU.c	    86      }
-; ..\CODE\Src\User_OSTU.c	    87    }
-; ..\CODE\Src\User_OSTU.c	    88    return Threshold;                        //返回最佳阈值;
-; ..\CODE\Src\User_OSTU.c	    89  }
+; ..\CODE\Src\User_OSTU.c	    63  
+; ..\CODE\Src\User_OSTU.c	    64    for (int j = MinValue; j <= MaxValue; j++)    Amount += HistoGram[j];        //  像素总数
+; ..\CODE\Src\User_OSTU.c	    65  
+; ..\CODE\Src\User_OSTU.c	    66    PixelIntegral = 0;
+; ..\CODE\Src\User_OSTU.c	    67    for (int j = MinValue; j <= MaxValue; j++)
+; ..\CODE\Src\User_OSTU.c	    68    {
+; ..\CODE\Src\User_OSTU.c	    69      PixelIntegral += HistoGram[j] * j;//灰度值总数
+; ..\CODE\Src\User_OSTU.c	    70    }
+; ..\CODE\Src\User_OSTU.c	    71    SigmaB = -1;
+; ..\CODE\Src\User_OSTU.c	    72    for (int j = MinValue; j < MaxValue; j++)
+; ..\CODE\Src\User_OSTU.c	    73    {
+; ..\CODE\Src\User_OSTU.c	    74      PixelBack = PixelBack + HistoGram[j];    //前景像素点数
+; ..\CODE\Src\User_OSTU.c	    75      PixelFore = Amount - PixelBack;         //背景像素点数
+; ..\CODE\Src\User_OSTU.c	    76      OmegaBack = (double)PixelBack / Amount;//前景像素百分比
+; ..\CODE\Src\User_OSTU.c	    77      OmegaFore = (double)PixelFore / Amount;//背景像素百分比
+; ..\CODE\Src\User_OSTU.c	    78      PixelIntegralBack += HistoGram[j] * j;  //前景灰度值
+; ..\CODE\Src\User_OSTU.c	    79      PixelIntegralFore = PixelIntegral - PixelIntegralBack;//背景灰度值
+; ..\CODE\Src\User_OSTU.c	    80      MicroBack = (double)PixelIntegralBack / PixelBack;   //前景灰度百分比
+; ..\CODE\Src\User_OSTU.c	    81      MicroFore = (double)PixelIntegralFore / PixelFore;   //背景灰度百分比
+; ..\CODE\Src\User_OSTU.c	    82      Sigma = OmegaBack * OmegaFore * (MicroBack - MicroFore) * (MicroBack - MicroFore);//计算类间方差
+; ..\CODE\Src\User_OSTU.c	    83      if (Sigma > SigmaB)                    //遍历最大的类间方差g //找出最大类间方差以及对应的阈值
+; ..\CODE\Src\User_OSTU.c	    84      {
+; ..\CODE\Src\User_OSTU.c	    85        SigmaB = Sigma;
+; ..\CODE\Src\User_OSTU.c	    86        Threshold = (uint16_t)j;
+; ..\CODE\Src\User_OSTU.c	    87      }
+; ..\CODE\Src\User_OSTU.c	    88    }
+; ..\CODE\Src\User_OSTU.c	    89    return Threshold;                        //返回最佳阈值;
+; ..\CODE\Src\User_OSTU.c	    90  }
 .L11:
 	extr.u	d2,d6,#0,#16
 	ret
 .L12:
 	mov	d0,d6
-	mov.aa	a2,a15
-.L84:
+	addsc.a	a15,a10,d6,#0
+.L97:
 	j	.L14
 .L15:
+	ld.bu	d1,[a15+]
+.L130:
 	add	d0,#1
-	ld.bu	d1,[a2+]
-.L85:
-	extr	d0,d0,#0,#16
-.L86:
+.L131:
 	add	d5,d1
 .L14:
 	jge	d7,d0,.L15
-.L124:
-	mov	d0,d6
-	mov.aa	a2,a15
-.L125:
-	mov	d8,#0
+.L78:
+	mov	d9,#0
+.L80:
+	mov	d1,d6
+	addsc.a	a15,a10,d6,#0
+.L98:
 	j	.L16
 .L17:
-	ld.bu	d1,[a2+]
-.L126:
-	mul	d1,d0
-.L127:
-	add	d0,#1
-.L87:
-	add	d8,d1
-.L128:
-	extr	d0,d0,#0,#16
+	ld.bu	d0,[a15+]
+.L132:
+	mul	d0,d1
+.L133:
+	add	d1,#1
+.L134:
+	add	d9,d0
 .L16:
-	jge	d7,d0,.L17
-.L129:
-	movh	d9,#49024
-.L88:
+	jge	d7,d1,.L17
+.L81:
+	movh	d8,#49024
+	addsc.a	a15,a10,d6,#0
+.L83:
 	utof	d10,d5
 	j	.L18
 .L19:
 	ld.bu	d0,[a15+]
-.L89:
-	add	d2,d0
-.L130:
-	mul	d0,d6
-.L131:
-	sub	d1,d5,d2
-.L90:
-	add	d3,d0
-.L132:
-	sub	d0,d8,d3
-.L92:
-	utof	d15,d2
-.L133:
-	itof	d1,d1
-.L91:
-	utof	d13,d3
-.L134:
-	itof	d0,d0
-.L93:
-	div.f	d11,d15,d10
-.L94:
-	div.f	d15,d13,d15
-.L95:
-	div.f	d12,d1,d10
-.L97:
-	div.f	d0,d0,d1
-.L98:
-	sub.f	d15,d15,d0
-.L96:
-	mul.f	d0,d11,d12
 .L99:
-	mul.f	d0,d0,d15
+	add	d2,d0
 .L135:
-	mul.f	d0,d0,d15
-.L100:
-	cmp.f	d15,d0,d9
+	mul	d0,d6
 .L136:
-	jz.t	d15:2,.L20
+	sub	d1,d5,d2
+.L100:
+	add	d3,d0
 .L137:
-	mov	d9,d0
+	sub	d0,d9,d3
+.L102:
+	utof	d15,d2
 .L138:
-	extr.u	d4,d6,#0,#16
+	itof	d1,d1
+.L101:
+	utof	d13,d3
+.L139:
+	itof	d0,d0
+.L103:
+	div.f	d11,d15,d10
+.L104:
+	div.f	d15,d13,d15
+.L105:
+	div.f	d12,d1,d10
+.L107:
+	div.f	d0,d0,d1
+.L108:
+	sub.f	d15,d15,d0
+.L106:
+	mul.f	d0,d11,d12
+.L109:
+	mul.f	d0,d0,d15
+.L140:
+	mul.f	d0,d0,d15
+.L110:
+	cmp.f	d15,d0,d8
+.L141:
+	jz.t	d15:2,.L20
+.L142:
+	mov	d8,d0
+.L143:
+	extr.u	d4,d6,#0,#8
 .L20:
 	add	d6,#1
-.L82:
-	extr	d6,d6,#0,#16
 .L18:
 	jlt	d6,d7,.L19
-.L139:
+.L84:
 	mov	d2,d4
 	ret
 .L47:
@@ -289,42 +286,41 @@ __GetOSTU_function_end:
 	
 	.global	BinaryImage
 
-; ..\CODE\Src\User_OSTU.c	    90  
 ; ..\CODE\Src\User_OSTU.c	    91  /***************************************************************
 ; ..\CODE\Src\User_OSTU.c	    92  *
-; ..\CODE\Src\User_OSTU.c	    93  * 函数名称：void BinaryImage(uint8_t tmImage[IMAGEH][IMAGEW])
+; ..\CODE\Src\User_OSTU.c	    93  * 函数名称：void BinaryImage(uint8_t tmImage[MT9V03X_H][MT9V03X_W])
 ; ..\CODE\Src\User_OSTU.c	    94  * 功能说明：图像数据二值化
 ; ..\CODE\Src\User_OSTU.c	    95  * 参数说明：
 ; ..\CODE\Src\User_OSTU.c	    96  * 函数返回：void
 ; ..\CODE\Src\User_OSTU.c	    97  * 修改时间：2018年3月27日
 ; ..\CODE\Src\User_OSTU.c	    98  * 备 注：
 ; ..\CODE\Src\User_OSTU.c	    99  ***************************************************************/
-; ..\CODE\Src\User_OSTU.c	   100  void BinaryImage(uint8_t tmImage[IMAGEH][IMAGEW],uint8_t ThresholdV)
+; ..\CODE\Src\User_OSTU.c	   100  void BinaryImage(uint8_t tmImage[MT9V03X_H][MT9V03X_W],uint8_t ThresholdV)
 ; Function BinaryImage
 .L29:
 BinaryImage:	.type	func
 
 ; ..\CODE\Src\User_OSTU.c	   101  {
-; ..\CODE\Src\User_OSTU.c	   102    int i = 0, j = 0;
-; ..\CODE\Src\User_OSTU.c	   103    for(i = 0;i < IMAGEH;i++)
+; ..\CODE\Src\User_OSTU.c	   102  
+; ..\CODE\Src\User_OSTU.c	   103    for(int i = 0;i < MT9V03X_H;i++)
 	lea	a15,119
 .L22:
 
 ; ..\CODE\Src\User_OSTU.c	   104    {
-; ..\CODE\Src\User_OSTU.c	   105      for(j = 0; j< IMAGEW;j++)
+; ..\CODE\Src\User_OSTU.c	   105      for(int j = 0; j< MT9V03X_W;j++)
 	mov.aa	a2,a4
-.L144:
+.L148:
 	lea	a4,[a4]188
-.L145:
+.L149:
 	lea	a5,187
 .L23:
 
 ; ..\CODE\Src\User_OSTU.c	   106      {
 ; ..\CODE\Src\User_OSTU.c	   107        if(tmImage[i][j] >= ThresholdV)
 	ld.bu	d15,[a2]
-.L146:
+.L150:
 	jlt.u	d15,d4,.L24
-.L147:
+.L151:
 
 ; ..\CODE\Src\User_OSTU.c	   108        {
 ; ..\CODE\Src\User_OSTU.c	   109          tmImage[i][j] = 0xFE;
@@ -340,24 +336,24 @@ BinaryImage:	.type	func
 .L25:
 	st.b	[a2+],d15
 	loop	a5,.L23
-.L148:
+.L91:
 	loop	a15,.L22
-.L149:
+.L89:
 
 ; ..\CODE\Src\User_OSTU.c	   114        }
 ; ..\CODE\Src\User_OSTU.c	   115      }
 ; ..\CODE\Src\User_OSTU.c	   116    }
 ; ..\CODE\Src\User_OSTU.c	   117  }
 	ret
-.L73:
+.L86:
 	
 __BinaryImage_function_end:
 	.size	BinaryImage,__BinaryImage_function_end-BinaryImage
 .L43:
 	; End of function
 	
-	.sdecl	'.bss.User_OSTU.Threshold',data,cluster('Threshold')
-	.sect	'.bss.User_OSTU.Threshold'
+	.sdecl	'.bss.cpu1_dsram',data,cluster('Threshold')
+	.sect	'.bss.cpu1_dsram'
 	.global	Threshold
 	.align	2
 Threshold:	.type	object
@@ -386,7 +382,7 @@ Threshold:	.type	object
 	.word	147
 	.byte	6,0,7
 	.byte	'__fract',0,4,128,1
-.L61:
+.L58:
 	.byte	7
 	.byte	'float',0,4,4,8
 	.byte	'Ifx__float_to_fract',0,3,1,152,2,18
@@ -400,7 +396,7 @@ Threshold:	.type	object
 	.word	290
 	.byte	3
 	.word	296
-.L53:
+.L50:
 	.byte	7
 	.byte	'unsigned int',0,4,7,4
 	.byte	'__ldmst_c',0,3,2,111,17,1,1,5
@@ -429,7 +425,7 @@ Threshold:	.type	object
 	.byte	'value',0,2,143,1,43
 	.word	384
 	.byte	6,0
-.L58:
+.L55:
 	.byte	7
 	.byte	'int',0,4,5,7
 	.byte	'unsigned int',0,4,7,11
@@ -455,7 +451,7 @@ Threshold:	.type	object
 	.byte	'B',0
 	.word	519
 	.byte	4,2,35,0,0
-.L75:
+.L68:
 	.byte	7
 	.byte	'unsigned char',0,1,8
 .L46:
@@ -6397,7 +6393,7 @@ Threshold:	.type	object
 	.byte	'alti',0,20,191,18,82
 	.word	38941
 	.byte	6,0
-.L50:
+.L65:
 	.byte	7
 	.byte	'short int',0,2,5,7
 	.byte	'long int',0,4,5,21,22,60,9,12,14
@@ -6814,7 +6810,7 @@ Threshold:	.type	object
 .L48:
 	.byte	3
 	.word	40651
-.L71:
+.L70:
 	.byte	15,128,2
 	.word	655
 	.byte	16,255,1,0,32
@@ -34736,11 +34732,11 @@ Threshold:	.type	object
 	.sdecl	'.debug_line',debug
 	.sect	'.debug_line'
 .L33:
-	.word	.L102-.L101
-.L101:
+	.word	.L112-.L111
+.L111:
 	.half	3
-	.word	.L104-.L103
-.L103:
+	.word	.L114-.L113
+.L113:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Std',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Scu\\Std',0
@@ -34811,12 +34807,12 @@ Threshold:	.type	object
 	.byte	'IfxDma.h',0,17,0,0
 	.byte	'stdint.h',0,13,0,0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\CODE\\Inc\\User_FSM.h',0,0,0,0,0
-.L104:
-.L102:
+.L114:
+.L112:
 	.sdecl	'.debug_info',debug,cluster('GetOSTU')
 	.sect	'.debug_info'
 .L34:
-	.word	600
+	.word	716
 	.half	3
 	.word	.L35
 	.byte	4,1
@@ -34827,70 +34823,94 @@ Threshold:	.type	object
 	.byte	2
 	.word	.L30
 	.byte	3
-	.byte	'GetOSTU',0,1,33,10
+	.byte	'GetOSTU',0,1,35,10
 	.word	.L46
 	.byte	1,1,1
 	.word	.L27,.L47,.L26
 	.byte	4
-	.byte	'tmImage',0,1,33,26
+	.byte	'tmImage',0,1,35,26
 	.word	.L48,.L49
 	.byte	5
 	.word	.L27,.L47
 	.byte	6
-	.byte	'i',0,1,35,11
+	.byte	'Amount',0,1,37,12
 	.word	.L50,.L51
 	.byte	6
-	.byte	'j',0,1,35,13
+	.byte	'PixelBack',0,1,38,12
 	.word	.L50,.L52
 	.byte	6
-	.byte	'Amount',0,1,36,12
-	.word	.L53,.L54
+	.byte	'PixelIntegralBack',0,1,39,12
+	.word	.L50,.L53
 	.byte	6
-	.byte	'PixelBack',0,1,37,12
-	.word	.L53,.L55
+	.byte	'PixelIntegral',0,1,40,12
+	.word	.L50,.L54
 	.byte	6
-	.byte	'PixelIntegralBack',0,1,38,12
-	.word	.L53,.L56
+	.byte	'PixelIntegralFore',0,1,41,11
+	.word	.L55,.L56
 	.byte	6
-	.byte	'PixelIntegral',0,1,39,12
-	.word	.L53,.L57
+	.byte	'PixelFore',0,1,42,11
+	.word	.L55,.L57
 	.byte	6
-	.byte	'PixelIntegralFore',0,1,40,11
+	.byte	'OmegaBack',0,1,43,10
 	.word	.L58,.L59
 	.byte	6
-	.byte	'PixelFore',0,1,41,11
+	.byte	'OmegaFore',0,1,43,21
 	.word	.L58,.L60
 	.byte	6
-	.byte	'OmegaBack',0,1,42,10
-	.word	.L61,.L62
+	.byte	'MicroBack',0,1,43,32
+	.word	.L58,.L61
 	.byte	6
-	.byte	'OmegaFore',0,1,42,21
-	.word	.L61,.L63
+	.byte	'MicroFore',0,1,43,43
+	.word	.L58,.L62
 	.byte	6
-	.byte	'MicroBack',0,1,42,32
-	.word	.L61,.L64
+	.byte	'SigmaB',0,1,43,54
+	.word	.L58,.L63
 	.byte	6
-	.byte	'MicroFore',0,1,42,43
-	.word	.L61,.L65
+	.byte	'Sigma',0,1,43,62
+	.word	.L58,.L64
 	.byte	6
-	.byte	'SigmaB',0,1,42,54
-	.word	.L61,.L66
+	.byte	'MinValue',0,1,44,11
+	.word	.L65,.L66
 	.byte	6
-	.byte	'Sigma',0,1,42,62
-	.word	.L61,.L67
+	.byte	'MaxValue',0,1,44,21
+	.word	.L65,.L67
 	.byte	6
-	.byte	'MinValue',0,1,43,11
-	.word	.L50,.L68
+	.byte	'Threshold',0,1,45,11
+	.word	.L68,.L69
 	.byte	6
-	.byte	'MaxValue',0,1,43,21
-	.word	.L50,.L69
+	.byte	'HistoGram',0,1,46,11
+	.word	.L70,.L71
+	.byte	5
+	.word	.L2,.L72
 	.byte	6
-	.byte	'Threshold',0,1,44,12
-	.word	.L46,.L70
+	.byte	'j',0,1,48,12
+	.word	.L55,.L73
+	.byte	0,5
+	.word	.L72,.L74
 	.byte	6
-	.byte	'HistoGram',0,1,45,11
-	.word	.L71,.L72
-	.byte	0,0,0
+	.byte	'j',0,1,50,12
+	.word	.L55,.L75
+	.byte	5
+	.word	.L3,.L76
+	.byte	6
+	.byte	'i',0,1,52,14
+	.word	.L55,.L77
+	.byte	0,0,5
+	.word	.L12,.L78
+	.byte	6
+	.byte	'j',0,1,64,12
+	.word	.L55,.L79
+	.byte	0,5
+	.word	.L80,.L81
+	.byte	6
+	.byte	'j',0,1,67,12
+	.word	.L55,.L82
+	.byte	0,5
+	.word	.L83,.L84
+	.byte	6
+	.byte	'j',0,1,72,12
+	.word	.L55,.L85
+	.byte	0,0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('GetOSTU')
 	.sect	'.debug_abbrev'
 .L35:
@@ -34900,160 +34920,158 @@ Threshold:	.type	object
 	.sdecl	'.debug_line',debug,cluster('GetOSTU')
 	.sect	'.debug_line'
 .L36:
-	.word	.L106-.L105
-.L105:
+	.word	.L116-.L115
+.L115:
 	.half	3
-	.word	.L108-.L107
-.L107:
+	.word	.L118-.L117
+.L117:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\CODE\\Src\\User_OSTU.c',0,0,0,0,0
-.L108:
+.L118:
 	.byte	5,19,7,0,5,2
 	.word	.L27
-	.byte	3,35,1,5,10,3,125,1,5,22,9
-	.half	.L79-.L27
-	.byte	3,11,1,5,30,3,3,1,5,19,9
-	.half	.L80-.L79
-	.byte	3,117,1,5,22,3,11,1,9
-	.half	.L109-.L80
-	.byte	3,118,1,5,19,9
-	.half	.L110-.L109
-	.byte	3,127,1,5,43,9
-	.half	.L2-.L110
-	.byte	3,11,1,5,22,1,5,28,7,9
-	.half	.L111-.L2
-	.byte	3,2,1,5,34,9
-	.half	.L3-.L111
-	.byte	3,2,1,5,31,9
-	.half	.L112-.L3
-	.byte	3,126,1,5,29,9
-	.half	.L113-.L112
+	.byte	3,36,1,5,10,3,126,1,5,23,9
+	.half	.L93-.L27
+	.byte	3,10,1,5,34,3,3,1,5,21,9
+	.half	.L119-.L93
+	.byte	3,125,1,5,26,3,3,1,5,22,9
+	.half	.L94-.L119
+	.byte	3,118,1,5,47,9
+	.half	.L2-.L94
+	.byte	3,10,1,5,26,1,5,35,7,9
+	.half	.L72-.L2
+	.byte	3,2,1,5,41,9
+	.half	.L3-.L72
+	.byte	3,2,1,5,38,9
+	.half	.L120-.L3
+	.byte	3,126,1,5,36,9
+	.half	.L121-.L120
 	.byte	3,2,1,5,27,9
-	.half	.L4-.L113
+	.half	.L4-.L121
 	.byte	3,2,1,5,16,9
-	.half	.L114-.L4
+	.half	.L122-.L4
 	.byte	1,5,31,9
-	.half	.L115-.L114
-	.byte	1,5,29,3,126,1,5,28,7,9
-	.half	.L116-.L115
+	.half	.L123-.L122
+	.byte	1,5,36,3,126,1,5,35,7,9
+	.half	.L76-.L123
 	.byte	3,126,1,5,17,7,9
-	.half	.L117-.L116
-	.byte	3,8,1,5,40,1,5,64,9
-	.half	.L81-.L117
-	.byte	1,5,74,9
-	.half	.L6-.L81
+	.half	.L74-.L76
+	.byte	3,8,1,5,40,1,5,33,9
+	.half	.L95-.L74
+	.byte	1,5,64,1,5,74,9
+	.half	.L6-.L95
 	.byte	1,5,22,9
 	.half	.L5-.L6
 	.byte	1,5,49,7,9
-	.half	.L118-.L5
+	.half	.L124-.L5
 	.byte	1,5,60,9
-	.half	.L119-.L118
+	.half	.L125-.L124
 	.byte	1,5,17,7,9
-	.half	.L7-.L119
+	.half	.L7-.L125
 	.byte	3,1,1,5,56,1,5,71,9
-	.half	.L83-.L7
+	.half	.L96-.L7
 	.byte	1,5,81,9
-	.half	.L9-.L83
+	.half	.L9-.L96
 	.byte	1,5,24,9
 	.half	.L8-.L9
 	.byte	1,5,56,7,9
-	.half	.L120-.L8
+	.half	.L126-.L8
 	.byte	1,5,67,9
-	.half	.L121-.L120
-	.byte	1,5,3,7,9
-	.half	.L10-.L121
-	.byte	3,2,1,5,16,7,9
-	.half	.L122-.L10
-	.byte	3,1,1,5,3,9
-	.half	.L123-.L122
-	.byte	1,5,41,7,9
-	.half	.L11-.L123
-	.byte	1,5,1,3,28,1,5,10,7,9
-	.half	.L12-.L11
-	.byte	3,102,1,5,40,1,5,35,9
-	.half	.L84-.L12
-	.byte	1,5,38,9
-	.half	.L15-.L84
-	.byte	1,5,64,1,5,38,9
-	.half	.L85-.L15
-	.byte	1,5,52,9
-	.half	.L86-.L85
-	.byte	1,5,35,9
-	.half	.L14-.L86
-	.byte	1,5,10,7,9
-	.half	.L124-.L14
-	.byte	3,3,1,5,40,1,5,17,9
-	.half	.L125-.L124
-	.byte	3,127,1,5,35,3,1,1,5,31,9
-	.half	.L17-.L125
-	.byte	3,2,1,5,35,9
-	.half	.L126-.L17
-	.byte	1,5,38,9
 	.half	.L127-.L126
-	.byte	3,126,1,5,19,9
-	.half	.L87-.L127
-	.byte	3,2,1,5,38,9
-	.half	.L128-.L87
-	.byte	3,126,1,5,35,9
-	.half	.L16-.L128
-	.byte	1,5,12,7,9
-	.half	.L129-.L16
-	.byte	3,4,1,5,37,9
-	.half	.L88-.L129
-	.byte	3,5,1,5,34,3,124,1,5,38,9
-	.half	.L19-.L88
-	.byte	3,2,1,5,27,9
-	.half	.L89-.L19
-	.byte	1,5,39,9
-	.half	.L130-.L89
-	.byte	3,4,1,5,24,9
+	.byte	1,5,3,7,9
+	.half	.L10-.L127
+	.byte	3,2,1,5,16,7,9
+	.half	.L128-.L10
+	.byte	3,1,1,5,3,9
+	.half	.L129-.L128
+	.byte	1,5,41,7,9
+	.half	.L11-.L129
+	.byte	1,5,1,3,28,1,5,14,7,9
+	.half	.L12-.L11
+	.byte	3,102,1,5,68,1,5,39,9
+	.half	.L97-.L12
+	.byte	1,5,68,9
+	.half	.L15-.L97
+	.byte	1,5,42,9
+	.half	.L130-.L15
+	.byte	1,5,56,9
 	.half	.L131-.L130
-	.byte	3,125,1,5,23,9
-	.half	.L90-.L131
-	.byte	3,3,1,5,39,9
-	.half	.L132-.L90
-	.byte	3,1,1,5,17,9
-	.half	.L92-.L132
-	.byte	3,125,1,9
-	.half	.L133-.L92
-	.byte	3,1,1,9
-	.half	.L91-.L133
-	.byte	3,3,1,9
-	.half	.L134-.L91
-	.byte	3,1,1,5,35,9
-	.half	.L93-.L134
-	.byte	3,123,1,5,43,9
-	.half	.L94-.L93
-	.byte	3,4,1,5,35,9
-	.half	.L95-.L94
-	.byte	3,125,1,5,43,9
-	.half	.L97-.L95
-	.byte	3,4,1,5,74,9
-	.half	.L98-.L97
-	.byte	3,1,1,5,23,9
-	.half	.L96-.L98
-	.byte	1,5,35,9
-	.half	.L99-.L96
-	.byte	1,5,61,9
+	.byte	1,5,39,9
+	.half	.L14-.L131
+	.byte	1,5,17,7,9
+	.half	.L78-.L14
+	.byte	3,2,1,5,14,9
+	.half	.L80-.L78
+	.byte	3,1,1,5,31,3,2,1,5,39,9
+	.half	.L98-.L80
+	.byte	3,126,1,5,31,9
+	.half	.L17-.L98
+	.byte	3,2,1,5,35,9
+	.half	.L132-.L17
+	.byte	1,5,42,9
+	.half	.L133-.L132
+	.byte	3,126,1,5,19,9
+	.half	.L134-.L133
+	.byte	3,2,1,5,39,9
+	.half	.L16-.L134
+	.byte	3,126,1,5,12,7,9
+	.half	.L81-.L16
+	.byte	3,4,1,5,38,3,3,1,5,37,9
+	.half	.L83-.L81
+	.byte	3,2,1,5,38,3,124,1,9
+	.half	.L19-.L83
+	.byte	3,2,1,5,27,9
+	.half	.L99-.L19
+	.byte	1,5,39,9
 	.half	.L135-.L99
+	.byte	3,4,1,5,24,9
+	.half	.L136-.L135
+	.byte	3,125,1,5,23,9
+	.half	.L100-.L136
+	.byte	3,3,1,5,39,9
+	.half	.L137-.L100
+	.byte	3,1,1,5,17,9
+	.half	.L102-.L137
+	.byte	3,125,1,9
+	.half	.L138-.L102
+	.byte	3,1,1,9
+	.half	.L101-.L138
+	.byte	3,3,1,9
+	.half	.L139-.L101
+	.byte	3,1,1,5,35,9
+	.half	.L103-.L139
+	.byte	3,123,1,5,43,9
+	.half	.L104-.L103
+	.byte	3,4,1,5,35,9
+	.half	.L105-.L104
+	.byte	3,125,1,5,43,9
+	.half	.L107-.L105
+	.byte	3,4,1,5,74,9
+	.half	.L108-.L107
+	.byte	3,1,1,5,23,9
+	.half	.L106-.L108
+	.byte	1,5,35,9
+	.half	.L109-.L106
+	.byte	1,5,61,9
+	.half	.L140-.L109
 	.byte	1,5,15,9
-	.half	.L100-.L135
+	.half	.L110-.L140
 	.byte	3,1,1,5,5,9
-	.half	.L136-.L100
+	.half	.L141-.L110
 	.byte	1,5,14,7,9
-	.half	.L137-.L136
+	.half	.L142-.L141
 	.byte	3,2,1,5,19,9
-	.half	.L138-.L137
-	.byte	3,1,1,5,37,9
-	.half	.L20-.L138
-	.byte	3,114,1,5,34,9
+	.half	.L143-.L142
+	.byte	3,1,1,5,41,9
+	.half	.L20-.L143
+	.byte	3,114,1,5,38,9
 	.half	.L18-.L20
 	.byte	1,5,3,7,9
-	.half	.L139-.L18
+	.half	.L84-.L18
 	.byte	3,17,1,5,1,3,1,1,7,9
-	.half	.L38-.L139
+	.half	.L38-.L84
 	.byte	0,1,1
-.L106:
+.L116:
 	.sdecl	'.debug_ranges',debug,cluster('GetOSTU')
 	.sect	'.debug_ranges'
 .L37:
@@ -35061,7 +35079,7 @@ Threshold:	.type	object
 	.sdecl	'.debug_info',debug,cluster('BinaryImage')
 	.sect	'.debug_info'
 .L39:
-	.word	263
+	.word	283
 	.half	3
 	.word	.L40
 	.byte	4,1
@@ -35073,22 +35091,26 @@ Threshold:	.type	object
 	.word	.L30
 	.byte	3
 	.byte	'BinaryImage',0,1,100,6,1,1,1
-	.word	.L29,.L73,.L28
+	.word	.L29,.L86,.L28
 	.byte	4
 	.byte	'tmImage',0,1,100,26
-	.word	.L48,.L74
+	.word	.L48,.L87
 	.byte	4
-	.byte	'ThresholdV',0,1,100,58
-	.word	.L75,.L76
+	.byte	'ThresholdV',0,1,100,64
+	.word	.L68,.L88
 	.byte	5
-	.word	.L29,.L73
+	.word	.L29,.L86
+	.byte	5
+	.word	.L29,.L89
 	.byte	6
-	.byte	'i',0,1,102,7
-	.word	.L58,.L77
+	.byte	'i',0,1,103,11
+	.word	.L55,.L90
+	.byte	5
+	.word	.L22,.L91
 	.byte	6
-	.byte	'j',0,1,102,14
-	.word	.L58,.L78
-	.byte	0,0,0
+	.byte	'j',0,1,105,13
+	.word	.L55,.L92
+	.byte	0,0,0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('BinaryImage')
 	.sect	'.debug_abbrev'
 .L40:
@@ -35098,40 +35120,40 @@ Threshold:	.type	object
 	.sdecl	'.debug_line',debug,cluster('BinaryImage')
 	.sect	'.debug_line'
 .L41:
-	.word	.L141-.L140
-.L140:
+	.word	.L145-.L144
+.L144:
 	.half	3
-	.word	.L143-.L142
-.L142:
+	.word	.L147-.L146
+.L146:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\CODE\\Src\\User_OSTU.c',0,0,0,0,0
-.L143:
-	.byte	5,23,7,0,5,2
+.L147:
+	.byte	5,30,7,0,5,2
 	.word	.L29
-	.byte	3,230,0,1,5,29,9
+	.byte	3,230,0,1,5,36,9
 	.half	.L22-.L29
-	.byte	3,2,1,5,25,9
-	.half	.L144-.L22
+	.byte	3,2,1,5,32,9
+	.half	.L148-.L22
 	.byte	3,126,1,9
-	.half	.L145-.L144
+	.half	.L149-.L148
 	.byte	3,2,1,5,20,9
-	.half	.L23-.L145
+	.half	.L23-.L149
 	.byte	3,2,1,5,7,9
-	.half	.L146-.L23
+	.half	.L150-.L23
 	.byte	1,5,25,7,9
-	.half	.L147-.L146
+	.half	.L151-.L150
 	.byte	3,2,1,5,29,1,5,25,9
-	.half	.L24-.L147
+	.half	.L24-.L151
 	.byte	3,4,1,5,23,9
 	.half	.L25-.L24
-	.byte	1,5,25,3,120,1,5,23,7,9
-	.half	.L148-.L25
+	.byte	1,5,32,3,120,1,5,30,7,9
+	.half	.L91-.L25
 	.byte	3,126,1,5,1,7,9
-	.half	.L149-.L148
+	.half	.L89-.L91
 	.byte	3,14,1,7,9
-	.half	.L43-.L149
+	.half	.L43-.L89
 	.byte	0,1,1
-.L141:
+.L145:
 	.sdecl	'.debug_ranges',debug,cluster('BinaryImage')
 	.sect	'.debug_ranges'
 .L42:
@@ -35148,7 +35170,7 @@ Threshold:	.type	object
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1,2
 	.word	.L30
 	.byte	3
-	.byte	'Threshold',0,23,10,10
+	.byte	'Threshold',0,23,11,10
 	.word	.L46
 	.byte	1,5,3
 	.word	Threshold
@@ -35161,36 +35183,36 @@ Threshold:	.type	object
 	.sdecl	'.debug_loc',debug,cluster('BinaryImage')
 	.sect	'.debug_loc'
 .L28:
-	.word	-1,.L29,0,.L73-.L29
+	.word	-1,.L29,0,.L86-.L29
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L76:
-	.word	-1,.L29,0,.L73-.L29
+.L88:
+	.word	-1,.L29,0,.L86-.L29
 	.half	1
 	.byte	84
 	.word	0,0
-.L77:
+.L90:
 	.word	0,0
-.L78:
+.L92:
 	.word	0,0
-.L74:
-	.word	-1,.L29,0,.L73-.L29
+.L87:
+	.word	-1,.L29,0,.L86-.L29
 	.half	1
 	.byte	100
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('GetOSTU')
 	.sect	'.debug_loc'
-.L54:
-	.word	-1,.L27,.L79-.L27,.L47-.L27
+.L51:
+	.word	-1,.L27,.L93-.L27,.L47-.L27
 	.half	1
 	.byte	85
 	.word	0,0
 .L26:
-	.word	-1,.L27,0,.L79-.L27
+	.word	-1,.L27,0,.L93-.L27
 	.half	2
 	.byte	138,0
-	.word	.L79-.L27,.L12-.L27
+	.word	.L93-.L27,.L12-.L27
 	.half	3
 	.byte	138,128,2
 	.word	.L12-.L27,.L12-.L27
@@ -35203,96 +35225,98 @@ Threshold:	.type	object
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L72:
+.L71:
 	.word	-1,.L27,0,.L47-.L27
 	.half	3
 	.byte	145,128,126
 	.word	0,0
-.L69:
-	.word	-1,.L27,.L83-.L27,.L47-.L27
+.L67:
+	.word	-1,.L27,.L96-.L27,.L47-.L27
 	.half	1
 	.byte	87
 	.word	0,0
-.L64:
-	.word	-1,.L27,.L95-.L27,.L96-.L27
+.L61:
+	.word	-1,.L27,.L105-.L27,.L106-.L27
 	.half	1
 	.byte	95
 	.word	0,0
-.L65:
-	.word	-1,.L27,.L98-.L27,.L99-.L27
-	.half	5
-	.byte	144,32,157,32,0
-	.word	0,0
-.L68:
-	.word	-1,.L27,.L81-.L27,.L82-.L27
-	.half	1
-	.byte	86
-	.word	.L18-.L27,.L47-.L27
-	.half	1
-	.byte	86
-	.word	0,0
 .L62:
-	.word	-1,.L27,.L94-.L27,.L18-.L27
-	.half	1
-	.byte	91
-	.word	0,0
-.L63:
-	.word	-1,.L27,.L97-.L27,.L18-.L27
-	.half	1
-	.byte	92
-	.word	0,0
-.L55:
-	.word	-1,.L27,.L89-.L27,.L18-.L27
-	.half	1
-	.byte	82
-	.word	0,0
-.L60:
-	.word	-1,.L27,.L90-.L27,.L91-.L27
-	.half	1
-	.byte	81
-	.word	0,0
-.L57:
-	.word	-1,.L27,.L17-.L27,.L47-.L27
-	.half	1
-	.byte	88
-	.word	0,0
-.L56:
-	.word	-1,.L27,.L90-.L27,.L18-.L27
-	.half	1
-	.byte	83
-	.word	0,0
-.L59:
-	.word	-1,.L27,.L92-.L27,.L93-.L27
-	.half	5
-	.byte	144,32,157,32,0
-	.word	0,0
-.L67:
-	.word	-1,.L27,.L100-.L27,.L18-.L27
+	.word	-1,.L27,.L108-.L27,.L109-.L27
 	.half	5
 	.byte	144,32,157,32,0
 	.word	0,0
 .L66:
-	.word	-1,.L27,.L88-.L27,.L47-.L27
+	.word	-1,.L27,.L95-.L27,.L47-.L27
+	.half	1
+	.byte	86
+	.word	0,0
+.L59:
+	.word	-1,.L27,.L104-.L27,.L18-.L27
+	.half	1
+	.byte	91
+	.word	0,0
+.L60:
+	.word	-1,.L27,.L107-.L27,.L18-.L27
+	.half	1
+	.byte	92
+	.word	0,0
+.L52:
+	.word	-1,.L27,.L99-.L27,.L18-.L27
+	.half	1
+	.byte	82
+	.word	0,0
+.L57:
+	.word	-1,.L27,.L100-.L27,.L101-.L27
+	.half	1
+	.byte	81
+	.word	0,0
+.L54:
+	.word	-1,.L27,.L80-.L27,.L47-.L27
 	.half	1
 	.byte	89
 	.word	0,0
-.L70:
-	.word	-1,.L27,.L80-.L27,.L47-.L27
+.L53:
+	.word	-1,.L27,.L100-.L27,.L18-.L27
+	.half	1
+	.byte	83
+	.word	0,0
+.L56:
+	.word	-1,.L27,.L102-.L27,.L103-.L27
+	.half	5
+	.byte	144,32,157,32,0
+	.word	0,0
+.L64:
+	.word	-1,.L27,.L110-.L27,.L18-.L27
+	.half	5
+	.byte	144,32,157,32,0
+	.word	0,0
+.L63:
+	.word	-1,.L27,.L83-.L27,.L47-.L27
+	.half	1
+	.byte	88
+	.word	0,0
+.L69:
+	.word	-1,.L27,.L94-.L27,.L47-.L27
 	.half	1
 	.byte	84
 	.word	0,0
-.L51:
+.L77:
 	.word	0,0
-.L52:
-	.word	-1,.L27,.L84-.L27,.L85-.L27
+.L73:
+	.word	0,0
+.L75:
+	.word	0,0
+.L79:
+	.word	-1,.L27,.L97-.L27,.L17-.L27
 	.half	5
 	.byte	144,32,157,32,0
-	.word	.L86-.L27,.L87-.L27
-	.half	5
-	.byte	144,32,157,32,0
-	.word	.L16-.L27,.L19-.L27
-	.half	5
-	.byte	144,32,157,32,0
+	.word	0,0
+.L82:
+	.word	-1,.L27,.L98-.L27,.L19-.L27
+	.half	1
+	.byte	81
+	.word	0,0
+.L85:
 	.word	0,0
 .L49:
 	.word	-1,.L27,0,.L47-.L27
@@ -35301,7 +35325,7 @@ Threshold:	.type	object
 	.word	0,0
 	.sdecl	'.debug_frame',debug
 	.sect	'.debug_frame'
-.L150:
+.L152:
 	.word	48
 	.word	-1
 	.byte	3,0,2,1,27,12,26,0,8,27,8,26,8,28,8,29,8,30,8,31,8,34,8,35,8,32,8,33,8,16,8,17,8,24,8,25,8,36,8,37,8,38
@@ -35309,18 +35333,18 @@ Threshold:	.type	object
 	.sdecl	'.debug_frame',debug,cluster('GetOSTU')
 	.sect	'.debug_frame'
 	.word	60
-	.word	.L150,.L27,.L47-.L27
+	.word	.L152,.L27,.L47-.L27
 	.byte	8,19,8,23,4
-	.word	(.L79-.L27)/2
+	.word	(.L93-.L27)/2
 	.byte	19,128,2,22,26,4,19,138,128,2,4
-	.word	(.L12-.L79)/2
+	.word	(.L12-.L93)/2
 	.byte	19,0,8,26,19,128,2,22,26,4,19,138,128,2,4
 	.word	(.L47-.L12)/2
 	.byte	19,0,8,26,0
 	.sdecl	'.debug_frame',debug,cluster('BinaryImage')
 	.sect	'.debug_frame'
 	.word	20
-	.word	.L150,.L29,.L73-.L29
+	.word	.L152,.L29,.L86-.L29
 	.byte	8,19,8,22,8,23,0,0
 
 ; ..\CODE\Src\User_OSTU.c	   118  
