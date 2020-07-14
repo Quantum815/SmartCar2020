@@ -23,7 +23,7 @@ void UserInit(void)
 	//DebugUARTInit();
 	//EncoderInit();
 	//MotorInit();
-	GyroInit();
+	//GyroUARTInit();
 	//ServoMotorInit();
 	//ips114_init();
 	//SetMotorPWM(LMotor_F, 0);

@@ -859,10 +859,10 @@ pit_init:	.type	func
 .L4:
 	jne	d14,#0,.L7
 .L192:
-	mov	d1,#254
+	mov	d1,#255
 	j	.L8
 .L7:
-	mov	d3,#253
+	mov	d3,#254
 	j	.L9
 .L5:
 
@@ -874,7 +874,7 @@ pit_init:	.type	func
 ; ..\Libraries\seekfree_libraries\zf_ccu6_pit.c	    86  				timerConfig.interrupt1.priority       = CCU6_1_CH0_ISR_PRIORITY;
 ; ..\Libraries\seekfree_libraries\zf_ccu6_pit.c	    87  			}
 ; ..\Libraries\seekfree_libraries\zf_ccu6_pit.c	    88  			else
-	mov	d1,#255
+	mov	d1,#253
 .L8:
 	mov	d0,#0
 	j	.L11

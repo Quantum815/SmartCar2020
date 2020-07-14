@@ -759,7 +759,7 @@ __GetMidLineNum_function_end:
 ShowMidLine:	.type	func
 
 ; ..\CODE\Src\User_ImageProcess.c	   206  {
-; ..\CODE\Src\User_ImageProcess.c	   207      uint8 ShowMidLineIMGE[MT9V03X_H][MT9V03X_W] = {0};
+; ..\CODE\Src\User_ImageProcess.c	   207      uint8 ShowMidLineIMGE[MT9V03X_H][MT9V03X_W] = {{0}};
 	mov	d15,#22559
 	lea	a10,[a10]-22560
 .L188:

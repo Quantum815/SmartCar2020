@@ -7,8 +7,97 @@
 
 #include "..\CODE\Inc\User_Uart.h"
 
+#pragma section all "cpu0_dsram"
+
+uint8 DebugUartRxBuff;
+uint8 GyroUnlockInstruction[5] = {0xff, 0xaa, 0x69, 0x88, 0xb5};  //解锁指令
+uint8 GyroAutoCalibration[5] = {0xff, 0xaa, 0x63, 0x00, 0x00};  //陀螺仪自动校准
+uint8 GyroKeepConfiguration[5] = {0xff, 0xaa, 0x00, 0x00, 0x00};  //保持配置
+
+#pragma section all restore
+
 void DebugUARTInit()
 {
 	uart_init(UART_3, 115200, UART3_TX_P15_6, UART3_RX_P15_7);
+}
+
+/*void ADCReadData(void)
+{
+    uint16 ADCValue, NumLenth = 0, temp;
+    uint8 ADCStr[1000];
+    ADCValue = adc_convert(ADC_1, ADC1_CH0_A16, ADC_12BIT);
+    temp = ADCValue;
+    while(temp != 0)
+    {
+        temp = temp / 10;
+        NumLenth++;
+    }
+    ADCStr[0] = ADCValue + '0';
+    uart_putbuff(UART_3, ADCStr, NumLenth);
+    uart_putstr(UART_3, "\r\n");
+    systick_delay_ms(STM1, 100);
+}*/
+
+//debug命令
+//0x01 停车  0x02启动   0x03通过串口发送数据回上位机
+//0x04 返回当前状态回上位机
+void UserDebug(void)
+{
+	if(DebugUartRxBuff == 0x00)
+	{
+		FSMEventHandle(&CarFSM, NOEVENT);
+	}
+    if(DebugUartRxBuff == 0x01)
+    {
+        FSMEventHandle(&CarFSM, RUNSTOP);
+        DebugUartRxBuff = 0x00;
+    }
+    else if(DebugUartRxBuff == 0x02)
+    {
+        FSMEventHandle(&CarFSM, RUNSTART);
+        DebugUartRxBuff = 0x00;
+    }
+    else if(DebugUartRxBuff == 0x03)
+    {
+        if(mt9v03x_finish_flag)
+        {
+            mt9v03x_finish_flag = 0;
+            seekfree_sendimg_03x(UART_0, mt9v03x_image[0], MT9V03X_W, MT9V03X_H);
+        }
+    }
+	else if(DebugUartRxBuff == 0x04)
+	{
+		if(ReturnFSMState(&CarFSM) == GoLine)
+		{
+			uart_putstr(UART_0, "GoLine\r\n");
+			my_delay(4000000);
+		}
+		else if(ReturnFSMState(&CarFSM) == Stop)
+		{
+			uart_putstr(UART_0, "Stop\r\n");
+			my_delay(4000000);
+		}
+		else if(ReturnFSMState(&CarFSM) == SendBall)
+		{
+			uart_putstr(UART_0, "SendBall\r\n");
+			my_delay(4000000);
+		}
+	}
+}
+
+void GyroUARTInit()
+{
+	uart_init(UART_0, 115200, UART0_TX_P14_0, UART0_RX_P14_1);
+	uart_putbuff(UART_0, GyroUnlockInstruction, 5);
+	my_delay(2000000);
+	uart_putbuff(UART_0, GyroAutoCalibration, 5);
+	my_delay(2000000);
+	uart_putbuff(UART_0, GyroKeepConfiguration, 5);
+	my_delay(2000000);
+}
+
+void GyroReadByte()
+{
+
 }
 

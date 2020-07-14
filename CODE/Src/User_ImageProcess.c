@@ -204,7 +204,7 @@ double GetMidLineNum(void)
 
 void ShowMidLine(void)
 {
-    uint8 ShowMidLineIMGE[MT9V03X_H][MT9V03X_W] = {0};
+    uint8 ShowMidLineIMGE[MT9V03X_H][MT9V03X_W] = {{0}};
     for(int i = 15; i <= (MT9V03X_H - 1) - 15; i++)
     {
 

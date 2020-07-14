@@ -5,7 +5,8 @@
  *      Author: Quantum815
  */
 
-#include "..\CODE\Inc\User_Gyro_I2C.h"
+//目前无法运行
+/*#include "..\CODE\Inc\User_Gyro_I2C.h"
 
 #pragma section all "cpu0_dsram"
 uint8 GyroPtr[24];
@@ -36,4 +37,4 @@ void GyroReadByte(void)
 	printf("AX:%f AY:%f AZ:%f \r\nRoll_value:%f Pitch_value:%f Yaw_value:%f\r\n\r\n", AX, AY, AZ, Roll_value, Pitch_value, Yaw_value);
 	//uart_putstr(UART_3, "test");
 	//uart_putchar(UART_3, Roll_value);
-}
+}*/

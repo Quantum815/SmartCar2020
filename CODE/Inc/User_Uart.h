@@ -13,5 +13,10 @@
 extern uint8 DebugUartRxBuff;
 
 void DebugUARTInit();
+//void ADCReadData(void);
+void UserDebug(void);
+
+void GyroUARTInit();
+void GyroReadByte();
 
 #endif /* CODE_INC_USER_UART_H_ */

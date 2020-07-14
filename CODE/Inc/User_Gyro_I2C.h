@@ -5,7 +5,8 @@
  *      Author: Quantum815
  */
 
-#ifndef CODE_INC_USER_GYRO_I2C_H_
+//目前无法运行
+/*#ifndef CODE_INC_USER_GYRO_I2C_H_
 #define CODE_INC_USER_GYRO_I2C_H_
 
 #include "headfile.h"

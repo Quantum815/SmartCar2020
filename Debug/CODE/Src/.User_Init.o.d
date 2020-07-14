@@ -326,8 +326,6 @@ CODE\Src\User_Init.o :	"E:\ProgramData\GithubRepositories\SmartCar2020TC264\CODE
 "E:\ProgramData\GithubRepositories\SmartCar2020TC264\CODE\Inc\User_Camera_Init.h" :
 CODE\Src\User_Init.o :	"E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\seekfree_libraries\headfile.h"
 "E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\seekfree_libraries\headfile.h" :
-CODE\Src\User_Init.o :	"E:\ProgramData\GithubRepositories\SmartCar2020TC264\CODE\Inc\User_DebugCode.h"
-"E:\ProgramData\GithubRepositories\SmartCar2020TC264\CODE\Inc\User_DebugCode.h" :
 CODE\Src\User_Init.o :	"E:\ProgramData\GithubRepositories\SmartCar2020TC264\CODE\Inc\User_Uart.h"
 "E:\ProgramData\GithubRepositories\SmartCar2020TC264\CODE\Inc\User_Uart.h" :
 CODE\Src\User_Init.o :	"E:\ProgramData\GithubRepositories\SmartCar2020TC264\CODE\Inc\User_FSM.h"
@@ -336,8 +334,6 @@ CODE\Src\User_Init.o :	"E:\ProgramData\GithubRepositories\SmartCar2020TC264\CODE
 "E:\ProgramData\GithubRepositories\SmartCar2020TC264\CODE\Inc\User_Encoder.h" :
 CODE\Src\User_Init.o :	"E:\ProgramData\GithubRepositories\SmartCar2020TC264\CODE\Inc\User_Motor.h"
 "E:\ProgramData\GithubRepositories\SmartCar2020TC264\CODE\Inc\User_Motor.h" :
-CODE\Src\User_Init.o :	"E:\ProgramData\GithubRepositories\SmartCar2020TC264\CODE\Inc\User_Gyro_I2C.h"
-"E:\ProgramData\GithubRepositories\SmartCar2020TC264\CODE\Inc\User_Gyro_I2C.h" :
 CODE\Src\User_Init.o :	"E:\ProgramData\GithubRepositories\SmartCar2020TC264\CODE\Inc\User_Image_Process.h"
 "E:\ProgramData\GithubRepositories\SmartCar2020TC264\CODE\Inc\User_Image_Process.h" :
 CODE\Src\User_Init.o :	"E:\ProgramData\GithubRepositories\SmartCar2020TC264\CODE\Inc\User_OSTU.h"

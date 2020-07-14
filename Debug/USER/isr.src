@@ -7,8 +7,8 @@
 	
 $TC16X
 	
-	.sdecl	'.text.inttab0.intvec.0fe',code
-	.sect	'.text.inttab0.intvec.0fe'
+	.sdecl	'.text.inttab0.intvec.0ff',code
+	.sect	'.text.inttab0.intvec.0ff'
 
 ; ..\USER\isr.c	     1  /*********************************************************************************************************************
 ; ..\USER\isr.c	     2   * COPYRIGHT NOTICE
@@ -2202,8 +2202,8 @@ __cc60_pit_ch0_isr_function_end:
 .L72:
 	; End of function
 	
-	.sdecl	'.text.inttab0.intvec.0fd',code
-	.sect	'.text.inttab0.intvec.0fd'
+	.sdecl	'.text.inttab0.intvec.0fe',code
+	.sect	'.text.inttab0.intvec.0fe'
 
 ; ..\USER\isr.c	    43  	i++;
 ; ..\USER\isr.c	    44  	if(i == CPU0TIMES)
@@ -4368,8 +4368,8 @@ __cc60_pit_ch1_isr_function_end:
 .L77:
 	; End of function
 	
-	.sdecl	'.text.inttab0.intvec.0ff',code
-	.sect	'.text.inttab0.intvec.0ff'
+	.sdecl	'.text.inttab0.intvec.0fd',code
+	.sect	'.text.inttab0.intvec.0fd'
 
 ; ..\USER\isr.c	    56  {
 ; ..\USER\isr.c	    57  	enableInterrupts();//¿ªÆôÖÐ¶ÏÇ¶Ì×
@@ -11616,8 +11616,8 @@ __dma_ch5_isr_function_end:
 .L107:
 	; End of function
 	
-	.sdecl	'.text.inttab0.intvec.00a',code
-	.sect	'.text.inttab0.intvec.00a'
+	.sdecl	'.text.inttab0.intvec.0f1',code
+	.sect	'.text.inttab0.intvec.0f1'
 
 ; ..\USER\isr.c	   147  	enableInterrupts();//¿ªÆôÖÐ¶ÏÇ¶Ì×
 ; ..\USER\isr.c	   148  	PIT_CLEAR_FLAG(CCU6_1, PIT_CH1);
@@ -12341,8 +12341,8 @@ __uart0_tx_isr_function_end:
 	fret
 .L172:
 	; End of function
-	.sdecl	'.text.inttab0.intvec.00b',code
-	.sect	'.text.inttab0.intvec.00b'
+	.sdecl	'.text.inttab0.intvec.0f2',code
+	.sect	'.text.inttab0.intvec.0f2'
 
 ; ..\USER\isr.c	   155  IFX_INTERRUPT(cc61_pit_ch1_isr, 0, CCU6_1_CH1_ISR_PRIORITY)
 	movh.a	a14,#@his(uart0_rx_isr)
@@ -13050,8 +13050,8 @@ __uart0_rx_isr_function_end:
 .L117:
 	; End of function
 	
-	.sdecl	'.text.inttab0.intvec.00c',code
-	.sect	'.text.inttab0.intvec.00c'
+	.sdecl	'.text.inttab0.intvec.0f3',code
+	.sect	'.text.inttab0.intvec.0f3'
 
 ; ..\USER\isr.c	   160  }
 	movh.a	a14,#@his(uart0_er_isr)
@@ -13759,8 +13759,8 @@ __uart0_er_isr_function_end:
 .L122:
 	; End of function
 	
-	.sdecl	'.text.inttab0.intvec.00d',code
-	.sect	'.text.inttab0.intvec.00d'
+	.sdecl	'.text.inttab0.intvec.0f7',code
+	.sect	'.text.inttab0.intvec.0f7'
 
 ; ..\USER\isr.c	   165  	PIT_CLEAR_FLAG(CCU6_1, PIT_CH0);
 ; ..\USER\isr.c	   166  	//CountDistance();
@@ -14483,8 +14483,8 @@ __uart1_tx_isr_function_end:
 	fret
 .L177:
 	; End of function
-	.sdecl	'.text.inttab0.intvec.00e',code
-	.sect	'.text.inttab0.intvec.00e'
+	.sdecl	'.text.inttab0.intvec.0f8',code
+	.sect	'.text.inttab0.intvec.0f8'
 
 ; ..\USER\isr.c	   172  {
 	movh.a	a14,#@his(uart1_rx_isr)
@@ -15196,8 +15196,8 @@ __uart1_rx_isr_function_end:
 .L132:
 	; End of function
 	
-	.sdecl	'.text.inttab0.intvec.00f',code
-	.sect	'.text.inttab0.intvec.00f'
+	.sdecl	'.text.inttab0.intvec.0f9',code
+	.sect	'.text.inttab0.intvec.0f9'
 
 ; ..\USER\isr.c	   178  		j = 0;
 	movh.a	a14,#@his(uart1_er_isr)
@@ -15905,8 +15905,8 @@ __uart1_er_isr_function_end:
 .L137:
 	; End of function
 	
-	.sdecl	'.text.inttab0.intvec.010',code
-	.sect	'.text.inttab0.intvec.010'
+	.sdecl	'.text.inttab0.intvec.0f4',code
+	.sect	'.text.inttab0.intvec.0f4'
 
 ; ..\USER\isr.c	   183  	j++;
 ; ..\USER\isr.c	   184  	if(j == CPU1TIMES)
@@ -16630,8 +16630,8 @@ __uart2_tx_isr_function_end:
 	fret
 .L182:
 	; End of function
-	.sdecl	'.text.inttab0.intvec.011',code
-	.sect	'.text.inttab0.intvec.011'
+	.sdecl	'.text.inttab0.intvec.0f5',code
+	.sect	'.text.inttab0.intvec.0f5'
 
 ; ..\USER\isr.c	   191  	j++;
 	movh.a	a14,#@his(uart2_rx_isr)
@@ -17340,8 +17340,8 @@ __uart2_rx_isr_function_end:
 .L147:
 	; End of function
 	
-	.sdecl	'.text.inttab0.intvec.012',code
-	.sect	'.text.inttab0.intvec.012'
+	.sdecl	'.text.inttab0.intvec.0f6',code
+	.sect	'.text.inttab0.intvec.0f6'
 
 ; ..\USER\isr.c	   197  IFX_INTERRUPT(cc60_pit_ch1_isr, 0, CCU6_0_CH1_ISR_PRIORITY)  //ÉãÏñÍ·
 	movh.a	a14,#@his(uart2_er_isr)
@@ -18049,8 +18049,8 @@ __uart2_er_isr_function_end:
 .L152:
 	; End of function
 	
-	.sdecl	'.text.inttab0.intvec.0fb',code
-	.sect	'.text.inttab0.intvec.0fb'
+	.sdecl	'.text.inttab0.intvec.0fa',code
+	.sect	'.text.inttab0.intvec.0fa'
 
 ; ..\USER\isr.c	   202  	}
 ; ..\USER\isr.c	   203  	//CameraProcess();
@@ -18774,8 +18774,8 @@ __uart3_tx_isr_function_end:
 	fret
 .L187:
 	; End of function
-	.sdecl	'.text.inttab0.intvec.0fc',code
-	.sect	'.text.inttab0.intvec.0fc'
+	.sdecl	'.text.inttab0.intvec.0fb',code
+	.sect	'.text.inttab0.intvec.0fb'
 
 ; ..\USER\isr.c	   210  	{
 	movh.a	a14,#@his(uart3_rx_isr)
@@ -19483,8 +19483,8 @@ __uart3_rx_isr_function_end:
 .L162:
 	; End of function
 	
-	.sdecl	'.text.inttab0.intvec.0fd',code
-	.sect	'.text.inttab0.intvec.0fd'
+	.sdecl	'.text.inttab0.intvec.0fc',code
+	.sect	'.text.inttab0.intvec.0fc'
 
 ; ..\USER\isr.c	   215  	PIT_CLEAR_FLAG(CCU6_0, PIT_CH0);
 	movh.a	a14,#@his(uart3_er_isr)

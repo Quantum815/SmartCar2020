@@ -27,7 +27,7 @@
 
 
 #define UART0_TX_BUFFER_SIZE 16	//定义串口0发送缓冲区大小
-#define UART0_RX_BUFFER_SIZE 16	//定义串口0接收缓冲区大小
+#define UART0_RX_BUFFER_SIZE 250	//定义串口0接收缓冲区大小
 
 #define UART1_TX_BUFFER_SIZE 16
 #define UART1_RX_BUFFER_SIZE 16
