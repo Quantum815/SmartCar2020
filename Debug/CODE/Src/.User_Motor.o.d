@@ -344,3 +344,5 @@ CODE\Src\User_Motor.o :	"E:\ProgramData\GithubRepositories\SmartCar2020TC264\COD
 "E:\ProgramData\GithubRepositories\SmartCar2020TC264\CODE\Inc\User_OSTU.h" :
 CODE\Src\User_Motor.o :	"E:\ProgramData\GithubRepositories\SmartCar2020TC264\CODE\Inc\User_PID.h"
 "E:\ProgramData\GithubRepositories\SmartCar2020TC264\CODE\Inc\User_PID.h" :
+CODE\Src\User_Motor.o :	"E:\ProgramData\GithubRepositories\SmartCar2020TC264\CODE\Inc\User_ADC.h"
+"E:\ProgramData\GithubRepositories\SmartCar2020TC264\CODE\Inc\User_ADC.h" :

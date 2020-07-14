@@ -1,3 +1,5 @@
+SmartCar2020TC264.elf : .\CODE\Src\User_ADC.o
+.\CODE\Src\User_ADC.o :
 SmartCar2020TC264.elf : .\CODE\Src\User_Camera_Init.o
 .\CODE\Src\User_Camera_Init.o :
 SmartCar2020TC264.elf : .\CODE\Src\User_DebugCode.o

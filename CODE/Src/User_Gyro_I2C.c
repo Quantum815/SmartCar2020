@@ -24,7 +24,7 @@ void GyroInit(void)
 
 void GyroReadByte(void)
 {
-	simiic_read_regs(I2C_ADDR, AX_PTR, &GyroPtr[0], 24, SCCB);
+	simiic_read_regs(I2C_ADDR, AX_PTR, GyroPtr, 24, SIMIIC);
 
 	AX = (float)CharToShort(&GyroPtr[0])/32768.0*16;  //x轴角速度
 	AY = (float)CharToShort(&GyroPtr[2])/32768.0*16;  //y轴角速度

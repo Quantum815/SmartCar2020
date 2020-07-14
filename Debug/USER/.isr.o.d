@@ -346,3 +346,5 @@ USER\isr.o :	"E:\ProgramData\GithubRepositories\SmartCar2020TC264\CODE\Inc\User_
 "E:\ProgramData\GithubRepositories\SmartCar2020TC264\CODE\Inc\User_OSTU.h" :
 USER\isr.o :	"E:\ProgramData\GithubRepositories\SmartCar2020TC264\CODE\Inc\User_PID.h"
 "E:\ProgramData\GithubRepositories\SmartCar2020TC264\CODE\Inc\User_PID.h" :
+USER\isr.o :	"E:\ProgramData\GithubRepositories\SmartCar2020TC264\CODE\Inc\User_ADC.h"
+"E:\ProgramData\GithubRepositories\SmartCar2020TC264\CODE\Inc\User_ADC.h" :

@@ -78,6 +78,7 @@
 #include "..\CODE\Inc\User_Image_Process.h"
 #include "..\CODE\Inc\User_OSTU.h"
 #include "..\CODE\Inc\User_PID.h"
+#include "..\CODE\Inc\User_ADC.h"
 
 //------自定义内容
 //是否使用摄像头

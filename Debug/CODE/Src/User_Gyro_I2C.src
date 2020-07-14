@@ -88,10 +88,10 @@ __GyroInit_function_end:
 GyroReadByte:	.type	func
 
 ; ..\CODE\Src\User_Gyro_I2C.c	    26  {
-; ..\CODE\Src\User_Gyro_I2C.c	    27  	simiic_read_regs(I2C_ADDR, AX_PTR, &GyroPtr[0], 24, SCCB);
+; ..\CODE\Src\User_Gyro_I2C.c	    27  	simiic_read_regs(I2C_ADDR, AX_PTR, GyroPtr, 24, SIMIIC);
 	movh.a	a12,#@his(GyroPtr)
 .L78:
-	mov	d4,#80
+	mov	d4,#86
 	lea	a12,[a12]@los(GyroPtr)
 .L79:
 	mov	d5,#52
@@ -100,7 +100,7 @@ GyroReadByte:	.type	func
 	mov	d6,#24
 	sub.a	a10,#24
 .L58:
-	mov	d7,#1
+	mov	d7,#0
 	call	simiic_read_regs
 .L81:
 
@@ -34920,15 +34920,15 @@ Yaw_value:	.type	object
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\CODE\\Src\\User_Gyro_I2C.c',0,0,0,0,0
 .L77:
-	.byte	5,38,7,0,5,2
+	.byte	5,37,7,0,5,2
 	.word	.L8
 	.byte	3,26,1,5,19,9
 	.half	.L78-.L8
-	.byte	1,5,38,1,5,29,9
+	.byte	1,5,37,1,5,29,9
 	.half	.L79-.L78
-	.byte	1,5,54,1,5,50,9
+	.byte	1,5,50,1,5,46,9
 	.half	.L80-.L79
-	.byte	1,5,6,3,126,1,5,54,9
+	.byte	1,5,6,3,126,1,5,50,9
 	.half	.L58-.L80
 	.byte	3,2,1,5,47,9
 	.half	.L81-.L58

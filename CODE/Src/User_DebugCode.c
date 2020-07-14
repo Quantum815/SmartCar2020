@@ -15,7 +15,7 @@ uint8 DebugUartRxBuff;
 {
     uint16 ADCValue, NumLenth = 0, temp;
     uint8 ADCStr[1000];
-    ADCValue = adc_convert(ADC_0, ADC0_CH0_A0, ADC_12BIT);
+    ADCValue = adc_convert(ADC_1, ADC1_CH0_A16, ADC_12BIT);
     temp = ADCValue;
     while(temp != 0)
     {

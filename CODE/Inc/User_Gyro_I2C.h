@@ -10,7 +10,7 @@
 
 #include "headfile.h"
 
-#define I2C_ADDR 0x50
+#define I2C_ADDR 0x56
 #define AX_PTR 0x34
 
 short CharToShort(unsigned char cData[]);

@@ -2,6 +2,7 @@
 **** Build of configuration Debug for project SmartCar2020TC264 ****
 
 "D:\\Program Files\\TASKING\\TriCore v6.3r1\\ctc\\bin\\amk" -j8 all -a 
+Compiling User_ADC.c
 Compiling User_Camera_Init.c
 Compiling User_DebugCode.c
 Compiling User_Encoder.c
@@ -14,10 +15,12 @@ Compiling User_OSTU.c
 Compiling User_PID.c
 Compiling User_Uart.c
 Compiling IfxAsclin_cfg.c
-Compiling IfxCcu6_cfg.c
 ctc W577: ["..\CODE\Src\User_FSM.c" 89/22] calling a function without a prototype
 0 errors, 1 warnings
+Compiling IfxCcu6_cfg.c
 Compiling IfxCif_cfg.c
+ctc W542: ["..\CODE\Src\User_ImageProcess.c" 207/52] missing braces around initializer
+0 errors, 1 warnings
 Compiling IfxCpu_cfg.c
 Compiling IfxDma_cfg.c
 Compiling IfxEmem_cfg.c
@@ -211,7 +214,7 @@ Compiling Cpu1_Main.c
 Compiling isr.c
 Linking to SmartCar2020TC264.elf
 
-Time consumed: 24790 ms
+Time consumed: 25597 ms
 **** End of build ****
 
 Tool info: 

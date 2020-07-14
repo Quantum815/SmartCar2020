@@ -202,4 +202,14 @@ double GetMidLineNum(void)
 	return (double)(MidLineSum/93);
 }
 
+void ShowMidLine(void)
+{
+    uint8 ShowMidLineIMGE[MT9V03X_H][MT9V03X_W] = {0};
+    for(int i = 15; i <= (MT9V03X_H - 1) - 15; i++)
+    {
 
+        ShowMidLineIMGE[i][MidLine[i]] = 255;
+    }
+    ips114_displayimage032_zoom(ShowMidLineIMGE[0], MT9V03X_W, MT9V03X_H, 240, 135);
+
+}

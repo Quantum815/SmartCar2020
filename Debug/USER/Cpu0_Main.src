@@ -753,8 +753,8 @@ core0_main:	.type	func
 
 ; ..\USER\Cpu0_Main.c	    51  		//CountDistance();
 	mov	d4,#0
-	mov	d5,#2048
-	addih	d5,d5,#12207
+	mov	d5,#25856
+	addih	d5,d5,#7629
 	call	systick_delay
 .L30:
 	j	.L2
@@ -35319,7 +35319,7 @@ __core0_main_function_end:
 	.word	.L31,.L4,.L14-.L4
 
 ; ..\USER\Cpu0_Main.c	    52      	GyroReadByte();
-; ..\USER\Cpu0_Main.c	    53      	systick_delay_ms(STM0, 800);
+; ..\USER\Cpu0_Main.c	    53      	systick_delay_ms(STM0, 500);
 ; ..\USER\Cpu0_Main.c	    54  		//ips114_showchar(50,50,'t');
 ; ..\USER\Cpu0_Main.c	    55  		//SetMotorPWM(LMotor_F, 30);
 ; ..\USER\Cpu0_Main.c	    56  		//SetMotorPWM(LMotor_B, 0);
