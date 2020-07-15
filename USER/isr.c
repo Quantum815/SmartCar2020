@@ -156,6 +156,7 @@ IFX_INTERRUPT(uart0_rx_isr, 0, UART0_RX_INT_PRIO)
 {
 	enableInterrupts();//¿ªÆôÖÐ¶ÏÇ¶Ì×
     IfxAsclin_Asc_isrReceive(&uart0_handle);
+    GyroReadByte();
 }
 IFX_INTERRUPT(uart0_er_isr, 0, UART0_ER_INT_PRIO)
 {

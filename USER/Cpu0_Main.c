@@ -45,6 +45,13 @@ void core0_main(void)
 
 	while (TRUE)
 	{
+		GyroCul();
+		//GyroI2CReadByte();
+		printf("p=%f,r=%f,y=%f\r\n",PitchAngle,RollAngle,YawAngle);
+//		for(int i =0;i<=10;i++)
+//		printf("%d   ",GYRORxBuff[i]);
+//		printf("\r\n");
+		systick_delay_ms(STM0, 100);
 		//用户在此处编写任务代码
 		//CountDistance();
     	//GyroReadByte();

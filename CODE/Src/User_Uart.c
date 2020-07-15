@@ -13,7 +13,9 @@ uint8 DebugUartRxBuff;
 uint8 GyroUnlockInstruction[5] = {0xff, 0xaa, 0x69, 0x88, 0xb5};  //解锁指令
 uint8 GyroAutoCalibration[5] = {0xff, 0xaa, 0x63, 0x00, 0x00};  //陀螺仪自动校准
 uint8 GyroKeepConfiguration[5] = {0xff, 0xaa, 0x00, 0x00, 0x00};  //保持配置
-
+uint8 GYRORxBuff[11];
+uint8 ReceiveNum=0,gyro_rx_flag=0;
+float PitchAngle,RollAngle,YawAngle;
 #pragma section all restore
 
 void DebugUARTInit()
@@ -98,6 +100,21 @@ void GyroUARTInit()
 
 void GyroReadByte()
 {
+	while(uart_query(UART_0,&GYRORxBuff[ReceiveNum]))
+	{
+
+		if(ReceiveNum==0 && GYRORxBuff[0]!=0x55)
+			ReceiveNum=0;
+		if(ReceiveNum==1 && GYRORxBuff[1]!=0x53)
+			ReceiveNum=0;
+
+        if(10 == ReceiveNum)
+        {
+        	ReceiveNum = 0;
+            gyro_rx_flag = 1;
+        }
+        ReceiveNum++;
+	}
 /*	switch(GyroRxBuffer[1])
 	{
 		case 0x50: stcTime.ucYear 		= ucRxBuffer[2];
@@ -119,4 +136,43 @@ void GyroReadByte()
 					break;
 	}*/
 }
+void GyroCul(void)
+{
+	uint8_t sum = 0;
+    uint32_t temp = 0;
+    if(gyro_rx_flag==1)
+    {
+    sum += GYRORxBuff[0];
+    sum += GYRORxBuff[1];
+    sum += GYRORxBuff[2];
+    sum += GYRORxBuff[3];
+    sum += GYRORxBuff[4];
+    sum += GYRORxBuff[5];
+    sum += GYRORxBuff[6];
+    sum += GYRORxBuff[7];
+    sum += GYRORxBuff[8];
+    sum += GYRORxBuff[9];
+    if(sum != GYRORxBuff[10])
+    {
+        printf("f**k ");
+        gyro_rx_flag=0;
+        ReceiveNum=0;
+    }
+    temp = GYRORxBuff[3];
+    temp <<= 8;
+    temp |= GYRORxBuff[2];
 
+    PitchAngle= (float)temp / (float)32768 * (float)180;
+
+    temp = GYRORxBuff[5];
+    temp <<= 8;
+    temp |= GYRORxBuff[4];
+    RollAngle = (float)temp / (float)32768 * (float)180;
+
+    temp = GYRORxBuff[7];
+    temp <<= 8;
+    temp |= GYRORxBuff[6];
+    YawAngle = (float)temp / (float)32768 * (float)180;
+    gyro_rx_flag=0;
+    }
+}

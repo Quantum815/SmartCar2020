@@ -19,4 +19,7 @@ void UserDebug(void);
 void GyroUARTInit();
 void GyroReadByte();
 
+void GyroCul(void);
+extern float PitchAngle,RollAngle,YawAngle;
+extern uint8 GYRORxBuff[11];
 #endif /* CODE_INC_USER_UART_H_ */

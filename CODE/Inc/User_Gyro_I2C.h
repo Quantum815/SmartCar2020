@@ -20,6 +20,7 @@ short CharToShort(unsigned char cData[]);
 void GyroInit(void);
 void GyroI2CReadByte(void);
 
+extern float AX, AY, AZ, Roll_value, Pitch_value, Yaw_value;
 #endif /* CODE_INC_USER_GYRO_I2C_H_ */
 
 #endif
