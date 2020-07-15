@@ -332,6 +332,8 @@ USER\Cpu1_Main.o :	"E:\ProgramData\GithubRepositories\SmartCar2020TC264\CODE\Inc
 "E:\ProgramData\GithubRepositories\SmartCar2020TC264\CODE\Inc\User_Encoder.h" :
 USER\Cpu1_Main.o :	"E:\ProgramData\GithubRepositories\SmartCar2020TC264\CODE\Inc\User_Motor.h"
 "E:\ProgramData\GithubRepositories\SmartCar2020TC264\CODE\Inc\User_Motor.h" :
+USER\Cpu1_Main.o :	"E:\ProgramData\GithubRepositories\SmartCar2020TC264\CODE\Inc\User_Gyro_I2C.h"
+"E:\ProgramData\GithubRepositories\SmartCar2020TC264\CODE\Inc\User_Gyro_I2C.h" :
 USER\Cpu1_Main.o :	"E:\ProgramData\GithubRepositories\SmartCar2020TC264\CODE\Inc\User_Image_Process.h"
 "E:\ProgramData\GithubRepositories\SmartCar2020TC264\CODE\Inc\User_Image_Process.h" :
 USER\Cpu1_Main.o :	"E:\ProgramData\GithubRepositories\SmartCar2020TC264\CODE\Inc\User_OSTU.h"

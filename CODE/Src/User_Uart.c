@@ -70,17 +70,17 @@ void UserDebug(void)
 		if(ReturnFSMState(&CarFSM) == GoLine)
 		{
 			uart_putstr(UART_0, "GoLine\r\n");
-			my_delay(4000000);
+			my_delay(3000000);
 		}
 		else if(ReturnFSMState(&CarFSM) == Stop)
 		{
 			uart_putstr(UART_0, "Stop\r\n");
-			my_delay(4000000);
+			my_delay(3000000);
 		}
 		else if(ReturnFSMState(&CarFSM) == SendBall)
 		{
 			uart_putstr(UART_0, "SendBall\r\n");
-			my_delay(4000000);
+			my_delay(3000000);
 		}
 	}
 }
@@ -89,15 +89,34 @@ void GyroUARTInit()
 {
 	uart_init(UART_0, 115200, UART0_TX_P14_0, UART0_RX_P14_1);
 	uart_putbuff(UART_0, GyroUnlockInstruction, 5);
-	my_delay(2000000);
+	systick_delay_ms(STM1, 100);
 	uart_putbuff(UART_0, GyroAutoCalibration, 5);
-	my_delay(2000000);
+	systick_delay_ms(STM1, 100);
 	uart_putbuff(UART_0, GyroKeepConfiguration, 5);
-	my_delay(2000000);
+	systick_delay_ms(STM1, 100);
 }
 
 void GyroReadByte()
 {
-
+/*	switch(GyroRxBuffer[1])
+	{
+		case 0x50: stcTime.ucYear 		= ucRxBuffer[2];
+					stcTime.ucMonth 	= ucRxBuffer[3];
+					stcTime.ucDay 		= ucRxBuffer[4];
+					stcTime.ucHour 		= ucRxBuffer[5];
+					stcTime.ucMinute 	= ucRxBuffer[6];
+					stcTime.ucSecond 	= ucRxBuffer[7];
+					stcTime.usMiliSecond=((unsigned short)ucRxBuffer[9]<<8)|ucRxBuffer[8];
+					break;
+		case 0x51:	stcAcc.a[0] = ((unsigned short)ucRxBuffer[3]<<8)|ucRxBuffer[2];
+					stcAcc.a[1] = ((unsigned short)ucRxBuffer[5]<<8)|ucRxBuffer[4];
+					stcAcc.a[2] = ((unsigned short)ucRxBuffer[7]<<8)|ucRxBuffer[6];
+					break;
+		case 0x53:	stcAngle.Angle[0] = ((unsigned short)ucRxBuffer[3]<<8)|ucRxBuffer[2];
+					stcAngle.Angle[1] = ((unsigned short)ucRxBuffer[5]<<8)|ucRxBuffer[4];
+					stcAngle.Angle[2] = ((unsigned short)ucRxBuffer[7]<<8)|ucRxBuffer[6];
+					stcAngle.T = ((unsigned short)ucRxBuffer[9]<<8)|ucRxBuffer[8];
+					break;
+	}*/
 }
 

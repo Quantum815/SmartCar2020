@@ -43,7 +43,7 @@ $TC16X
 ; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	    28  
 ; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	    29  IfxGtm_Atom_ToutMap* gtm_atom_mux(ATOM_PIN_enum atom_pin)
 ; Function gtm_atom_mux
-.L351:
+.L353:
 gtm_atom_mux:	.type	func
 
 ; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	    30  {
@@ -273,7 +273,7 @@ gtm_atom_mux:	.type	func
 ; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   239  
 ; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   240  }
 	ret
-.L402:
+.L396:
 	
 	.sdecl	'.rodata.zf_gtm_pwm..1.jmp',data,rom
 	.sect	'.rodata.zf_gtm_pwm..1.jmp'
@@ -1313,7 +1313,7 @@ gtm_atom_mux:	.type	func
 	lea	a2,[a2]@los(IfxGtm_ATOM3_7_TOUT63_P20_7_OUT)
 .L634:
 	ret
-.L400:
+.L394:
 	
 __gtm_atom_mux_function_end:
 	.size	gtm_atom_mux,__gtm_atom_mux_function_end-gtm_atom_mux
@@ -1338,10 +1338,10 @@ __gtm_atom_mux_function_end:
 ; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   250  //-------------------------------------------------------------------------------------------------------------------
 ; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   251  void gtm_pwm_init(ATOM_PIN_enum pwmch, uint32 freq, uint32 duty)
 ; Function gtm_pwm_init
-.L353:
+.L355:
 gtm_pwm_init:	.type	func
 	sub.a	a10,#56
-.L403:
+.L397:
 
 ; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   252  {
 ; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   253  	IfxGtm_Atom_Pwm_Config g_atomConfig;
@@ -1351,9 +1351,9 @@ gtm_pwm_init:	.type	func
 ; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   257  	atom_channel = gtm_atom_mux(pwmch);
 	mov	e8,d6,d5
 	call	gtm_atom_mux
-.L404:
+.L398:
 	mov.aa	a15,a2
-.L406:
+.L400:
 
 ; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   258  
 ; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   259  	switch(atom_channel->atom)
@@ -1368,25 +1368,25 @@ gtm_pwm_init:	.type	func
 	movh.a	a12,#61456
 	mov.aa	a4,a12
 	call	IfxGtm_enable
-.L405:
+.L399:
 
 ; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   268  	if(!(MODULE_GTM.CMU.CLK_EN.U & 0x2))
 	movh.a	a2,#61456
 	ld.w	d15,[a2]@los(0xf0100300)
-.L429:
+.L421:
 	jnz.t	d15:1,.L349
-.L430:
+.L422:
 
 ; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   269  	{
 ; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   270      	IfxGtm_Cmu_setClkFrequency(&MODULE_GTM, IfxGtm_Cmu_Clk_0, CLK_FREQ);
 	mov.u	d5,#38528
 	mov.aa	a4,a12
-.L431:
+.L423:
 	mov	d4,#0
-.L432:
+.L424:
 	addih	d5,d5,#19352
 	call	IfxGtm_Cmu_setClkFrequency
-.L433:
+.L425:
 
 ; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   271      	IfxGtm_Cmu_enableClocks(&MODULE_GTM, IFXGTM_CMU_CLKEN_CLK0);
 	mov	d4,#2
@@ -1399,81 +1399,86 @@ gtm_pwm_init:	.type	func
 ; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   274  
 ; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   275      IfxGtm_Atom_Pwm_initConfig(&g_atomConfig, &MODULE_GTM);
 	mov.aa	a4,a10
-.L434:
+.L426:
 	mov.aa	a5,a12
 	call	IfxGtm_Atom_Pwm_initConfig
-.L435:
+.L427:
 
 ; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   276  
 ; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   277      g_atomConfig.atom = atom_channel->atom;
 	ld.bu	d15,[a15]
-.L436:
+.L428:
 	st.b	[a10]4,d15
-.L407:
+.L401:
 
 ; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   278      g_atomConfig.atomChannel = atom_channel->channel;
 ; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   279      g_atomConfig.period = CLK_FREQ/freq;
 	utof	d0,d8
-.L408:
+.L402:
 	ld.bu	d15,[a15]1
-.L437:
+.L429:
 	st.b	[a10]5,d15
-.L438:
+.L430:
 	mov.u	d15,#38528
 	addih	d15,d15,#19352
-.L439:
+.L431:
 	div.f	d15,d15,d0
-.L409:
+.L432:
+	ftouz	d6,d15
+	st.w	[a10]8,d6
+.L433:
 
 ; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   280      g_atomConfig.pin.outputPin = atom_channel;
 ; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   281      g_atomConfig.synchronousUpdateEnabled = TRUE;
-; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   282  
-; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   283  	g_atomConfig.dutyCycle = (uint32)((uint64)duty * g_atomConfig.period / GTM_ATOM0_PWM_DUTY_MAX);
-	mov	d4,d9
-.L410:
-	mov	d5,#0
-.L440:
-	ftouz	d6,d15
-	st.w	[a10]8,d6
-.L441:
 	mov	d15,#1
 	st.a	[a10]28,a15
-.L442:
-	mov	d7,#0
+.L434:
 	st.b	[a10]18,d15
-.L443:
+.L435:
+
+; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   282  
+; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   283      switch(atom_channel->atom)
+	ld.bu	d15,[a15]
+.L436:
+	jge.u	d15,#4,.L350
+.L437:
+
+; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   284  	{
+; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   285  		case 0: g_atomConfig.dutyCycle = (uint32)((uint64)duty * g_atomConfig.period / GTM_ATOM0_PWM_DUTY_MAX); break;
+; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   286  		case 1: g_atomConfig.dutyCycle = (uint32)((uint64)duty * g_atomConfig.period / GTM_ATOM1_PWM_DUTY_MAX); break;
+; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   287  		case 2: g_atomConfig.dutyCycle = (uint32)((uint64)duty * g_atomConfig.period / GTM_ATOM2_PWM_DUTY_MAX); break;
+; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   288  		case 3: g_atomConfig.dutyCycle = (uint32)((uint64)duty * g_atomConfig.period / GTM_ATOM3_PWM_DUTY_MAX); break;
+	mov	d5,#0
+.L403:
+	mov	d4,d9
+.L404:
+	mov	d7,#0
 	call	__ll_mul64
-.L411:
+.L405:
 	mov.u	d6,#50000
 	mov	d7,#0
-.L444:
+.L438:
 	mov	e4,d3,d2
 	call	__ll_udiv64
-.L445:
+.L439:
 	st.w	[a10]12,d2
-.L446:
+.L350:
 
-; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   284      switch(atom_channel->atom)
-; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   285  	{
-; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   286  		case 0: g_atomConfig.dutyCycle = (uint32)((uint64)duty * g_atomConfig.period / GTM_ATOM0_PWM_DUTY_MAX); break;
-; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   287  		case 1: g_atomConfig.dutyCycle = (uint32)((uint64)duty * g_atomConfig.period / GTM_ATOM1_PWM_DUTY_MAX); break;
-; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   288  		case 2: g_atomConfig.dutyCycle = (uint32)((uint64)duty * g_atomConfig.period / GTM_ATOM2_PWM_DUTY_MAX); break;
-; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   289  		case 3: g_atomConfig.dutyCycle = (uint32)((uint64)duty * g_atomConfig.period / GTM_ATOM3_PWM_DUTY_MAX); break;
-; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   290  	}
-; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   291  
-; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   292  	IfxGtm_Atom_Pwm_init(&g_atomDriver, &g_atomConfig);
+; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   289  	}
+; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   290  
+; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   291  	IfxGtm_Atom_Pwm_init(&g_atomDriver, &g_atomConfig);
 	lea	a4,[a10]36
-.L447:
+.L440:
 	mov.aa	a5,a10
 	call	IfxGtm_Atom_Pwm_init
-.L448:
+.L441:
 
-; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   293      IfxGtm_Atom_Pwm_start(&g_atomDriver, TRUE);
+; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   292      IfxGtm_Atom_Pwm_start(&g_atomDriver, TRUE);
 	mov	d4,#1
 	lea	a4,[a10]36
-.L449:
+.L442:
 	j	IfxGtm_Atom_Pwm_start
-.L382:
+.L377:
 	
 __gtm_pwm_init_function_end:
 	.size	gtm_pwm_init,__gtm_pwm_init_function_end-gtm_pwm_init
@@ -1486,89 +1491,94 @@ __gtm_pwm_init_function_end:
 	
 	.global	pwm_duty
 
-; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   294  }
-; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   295  
-; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   296  //-------------------------------------------------------------------------------------------------------------------
-; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   297  //  @brief      PWM占空比设置
-; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   298  //  @param      pwmch       PWM通道号及引脚
-; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   299  //  @param      duty        PWM占空比
-; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   300  //  @return     void
-; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   301  //  Sample usage:           pwm_duty(ATOM0_CH7_P02_7, 5000);//设置占空比为百分之5000/GTM_ATOM0_PWM_DUTY_MAX*100
-; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   302  //							GTM_ATOM0_PWM_DUTY_MAX宏定义在zf_gtm_pwm.h  默认为10000
-; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   303  //-------------------------------------------------------------------------------------------------------------------
-; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   304  void pwm_duty(ATOM_PIN_enum pwmch, uint32 duty)
+; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   293  }
+; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   294  
+; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   295  //-------------------------------------------------------------------------------------------------------------------
+; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   296  //  @brief      PWM占空比设置
+; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   297  //  @param      pwmch       PWM通道号及引脚
+; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   298  //  @param      duty        PWM占空比
+; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   299  //  @return     void
+; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   300  //  Sample usage:           pwm_duty(ATOM0_CH7_P02_7, 5000);//设置占空比为百分之5000/GTM_ATOM0_PWM_DUTY_MAX*100
+; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   301  //							GTM_ATOM0_PWM_DUTY_MAX宏定义在zf_gtm_pwm.h  默认为10000
+; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   302  //-------------------------------------------------------------------------------------------------------------------
+; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   303  void pwm_duty(ATOM_PIN_enum pwmch, uint32 duty)
 ; Function pwm_duty
-.L355:
+.L357:
 pwm_duty:	.type	func
 
-; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   305  {
-; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   306  	uint32 period;
-; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   307  
-; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   308  	IfxGtm_Atom_ToutMap *atom_channel;
-; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   309  	atom_channel = gtm_atom_mux(pwmch);
+; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   304  {
+; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   305  	uint32 period;
+; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   306  
+; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   307  	IfxGtm_Atom_ToutMap *atom_channel;
+; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   308  	atom_channel = gtm_atom_mux(pwmch);
 	mov	d8,d5
 	call	gtm_atom_mux
-.L412:
+.L406:
 	mov.aa	a15,a2
-.L414:
+.L408:
 
-; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   310  
-; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   311  	period = IfxGtm_Atom_Ch_getCompareZero(&MODULE_GTM.ATOM[atom_channel->atom], atom_channel->channel);
+; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   309  
+; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   310  	period = IfxGtm_Atom_Ch_getCompareZero(&MODULE_GTM.ATOM[atom_channel->atom], atom_channel->channel);
+	ld.bu	d15,[a15]
+.L447:
 	movh.a	a12,#61457
+.L448:
+	sha	d15,d15,#11
 	lea	a12,[a12]@los(0xf010d000)
-.L454:
-	fcall	.cocofun_2
-.L455:
+.L449:
+	addsc.a	a4,a12,d15,#0
+.L450:
+	ld.b	d4,[a15]1
 	call	IfxGtm_Atom_Ch_getCompareZero
-.L413:
+.L407:
 
-; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   312  	duty = (uint32)((uint64)duty * period / GTM_ATOM0_PWM_DUTY_MAX);
+; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   311  
+; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   312  	switch(atom_channel->atom)
+	ld.bu	d15,[a15]
+.L451:
+	jge.u	d15,#4,.L351
+.L452:
+
+; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   313  	{
+; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   314  		case 0: duty = (uint32)((uint64)duty * period / GTM_ATOM0_PWM_DUTY_MAX); break;
+; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   315  		case 1: duty = (uint32)((uint64)duty * period / GTM_ATOM1_PWM_DUTY_MAX); break;
+; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   316  		case 2: duty = (uint32)((uint64)duty * period / GTM_ATOM2_PWM_DUTY_MAX); break;
+; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   317  		case 3: duty = (uint32)((uint64)duty * period / GTM_ATOM3_PWM_DUTY_MAX); break;
 	mov	d5,#0
 	mov	d4,d8
-.L417:
+.L410:
 	mov	d7,#0
-.L456:
+.L453:
 	mov	d6,d2
 	call	__ll_mul64
-.L416:
-	mov.u	d6,#50000
-	mov	d7,#0
-.L457:
+.L409:
 	mov	e4,d3,d2
+.L454:
+	mov.u	d6,#50000
+.L455:
+	mov	d7,#0
 	call	__ll_udiv64
-.L415:
+.L411:
+	mov	d8,d2
+.L351:
 
-; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   313      IfxGtm_Atom_Ch_setCompareOneShadow(&MODULE_GTM.ATOM[atom_channel->atom], atom_channel->channel, duty);
-	fcall	.cocofun_2
-.L418:
-	mov	d5,d2
-.L419:
+; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   318  	}
+; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   319      IfxGtm_Atom_Ch_setCompareOneShadow(&MODULE_GTM.ATOM[atom_channel->atom], atom_channel->channel, duty);
+	sha	d15,d15,#11
+	ld.b	d4,[a15]1
+.L456:
+	addsc.a	a4,a12,d15,#0
+.L457:
+	mov	d5,d8
+.L412:
 	j	IfxGtm_Atom_Ch_setCompareOneShadow
-.L394:
+.L389:
 	
 __pwm_duty_function_end:
 	.size	pwm_duty,__pwm_duty_function_end-pwm_duty
 .L371:
 	; End of function
 	
-	.sdecl	'.text.zf_gtm_pwm..cocofun_2',code,cluster('.cocofun_2')
-	.sect	'.text.zf_gtm_pwm..cocofun_2'
-	.align	2
-; Function .cocofun_2
-.L357:
-.cocofun_2:	.type	func
-; Function body .cocofun_2, coco_iter:0
-	ld.bu	d15,[a15]
-.L639:
-	ld.b	d4,[a15]1
-.L640:
-	sha	d15,d15,#11
-.L641:
-	addsc.a	a4,a12,d15,#0
-.L420:
-	fret
-.L381:
-	; End of function
 	.calls	'gtm_pwm_init','__ll_mul64'
 	.calls	'gtm_pwm_init','__ll_udiv64'
 	.calls	'pwm_duty','__ll_mul64'
@@ -1583,10 +1593,8 @@ __pwm_duty_function_end:
 	.calls	'pwm_duty','gtm_atom_mux'
 	.calls	'pwm_duty','IfxGtm_Atom_Ch_getCompareZero'
 	.calls	'pwm_duty','IfxGtm_Atom_Ch_setCompareOneShadow'
-	.calls	'pwm_duty','.cocofun_2'
 	.calls	'gtm_atom_mux','',0
 	.calls	'gtm_pwm_init','',56
-	.calls	'pwm_duty','',0
 	.extern	IfxGtm_enable
 	.extern	IfxGtm_Cmu_enableClocks
 	.extern	IfxGtm_Cmu_setClkFrequency
@@ -1769,7 +1777,7 @@ __pwm_duty_function_end:
 	.extern	IfxGtm_Atom_Pwm_start
 	.extern	__ll_mul64
 	.extern	__ll_udiv64
-	.calls	'.cocofun_2','',0
+	.calls	'pwm_duty','',0
 	.sdecl	'.debug_info',debug
 	.sect	'.debug_info'
 .L359:
@@ -4372,7 +4380,7 @@ __pwm_duty_function_end:
 	.byte	'IfxCpu_areInterruptsEnabled',0,3,12,139,5,20
 	.word	676
 	.byte	1,1,6,0
-.L385:
+.L380:
 	.byte	7
 	.byte	'unsigned long int',0,4,7,8
 	.byte	'IfxCpu_getPerformanceCounter',0,3,12,161,6,19
@@ -16548,7 +16556,7 @@ __pwm_duty_function_end:
 	.byte	'IfxGtm_Atom_Mode_outputCompare',0,1,18
 	.byte	'IfxGtm_Atom_Mode_outputPwm',0,2,18
 	.byte	'IfxGtm_Atom_Mode_outputSerial',0,3,0
-.L390:
+.L385:
 	.byte	30,16,181,1,9,20,14
 	.byte	'gtm',0
 	.word	99099
@@ -16632,7 +16640,7 @@ __pwm_duty_function_end:
 	.word	100490
 	.byte	1,2,35,16,0,21
 	.word	100707
-.L392:
+.L387:
 	.byte	3
 	.word	100805
 	.byte	17,5,134,1,9,1,18
@@ -16659,7 +16667,7 @@ __pwm_duty_function_end:
 	.byte	'padDriver',0
 	.word	100885
 	.byte	1,2,35,5,0
-.L388:
+.L383:
 	.byte	30,16,163,1,9,36,14
 	.byte	'gtm',0
 	.word	99099
@@ -16726,7 +16734,7 @@ __pwm_duty_function_end:
 	.byte	'immediate',0,16,219,1,79
 	.word	676
 	.byte	0
-.L383:
+.L378:
 	.byte	17,20,33,9,1,18
 	.byte	'ATOM0_CH0_P00_0',0,0,18
 	.byte	'ATOM0_CH0_P02_0',0,1,18
@@ -30081,11 +30089,11 @@ __pwm_duty_function_end:
 	.sdecl	'.debug_line',debug
 	.sect	'.debug_line'
 .L361:
-	.word	.L422-.L421
-.L421:
+	.word	.L414-.L413
+.L413:
 	.half	3
-	.word	.L424-.L423
-.L423:
+	.word	.L416-.L415
+.L415:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Std',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Scu\\Std',0
@@ -30126,8 +30134,8 @@ __pwm_duty_function_end:
 	.byte	'IfxFlash_regdef.h',0,3,0,0
 	.byte	'IfxScuCcu.h',0,2,0,0
 	.byte	'common.h',0,10,0,0,0
-.L424:
-.L422:
+.L416:
+.L414:
 	.sdecl	'.debug_info',debug,cluster('gtm_pwm_init')
 	.sect	'.debug_info'
 .L362:
@@ -30143,27 +30151,27 @@ __pwm_duty_function_end:
 	.word	.L358
 	.byte	3
 	.byte	'gtm_pwm_init',0,1,251,1,6,1,1,1
-	.word	.L353,.L382,.L352
+	.word	.L355,.L377,.L354
 	.byte	4
 	.byte	'pwmch',0,1,251,1,33
-	.word	.L383,.L384
+	.word	.L378,.L379
 	.byte	4
 	.byte	'freq',0,1,251,1,47
-	.word	.L385,.L386
+	.word	.L380,.L381
 	.byte	4
 	.byte	'duty',0,1,251,1,60
-	.word	.L385,.L387
+	.word	.L380,.L382
 	.byte	5
-	.word	.L353,.L382
+	.word	.L355,.L377
 	.byte	6
 	.byte	'g_atomConfig',0,1,253,1,25
-	.word	.L388,.L389
+	.word	.L383,.L384
 	.byte	6
 	.byte	'g_atomDriver',0,1,254,1,25
-	.word	.L390,.L391
+	.word	.L385,.L386
 	.byte	6
 	.byte	'atom_channel',0,1,128,2,23
-	.word	.L392,.L393
+	.word	.L387,.L388
 	.byte	0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('gtm_pwm_init')
 	.sect	'.debug_abbrev'
@@ -30174,88 +30182,92 @@ __pwm_duty_function_end:
 	.sdecl	'.debug_line',debug,cluster('gtm_pwm_init')
 	.sect	'.debug_line'
 .L364:
-	.word	.L426-.L425
-.L425:
+	.word	.L418-.L417
+.L417:
 	.half	3
-	.word	.L428-.L427
-.L427:
+	.word	.L420-.L419
+.L419:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\Libraries\\seekfree_libraries\\zf_gtm_pwm.c',0,0,0,0,0
-.L428:
+.L420:
 	.byte	5,6,7,0,5,2
-	.word	.L353
+	.word	.L355
 	.byte	3,250,1,1,5,30,9
-	.half	.L403-.L353
+	.half	.L397-.L355
 	.byte	3,6,1,5,15,9
-	.half	.L404-.L403
+	.half	.L398-.L397
 	.byte	1,5,17,9
-	.half	.L406-.L404
+	.half	.L400-.L398
 	.byte	3,10,1,5,28,9
-	.half	.L405-.L406
+	.half	.L399-.L400
 	.byte	3,1,1,5,6,9
-	.half	.L429-.L405
+	.half	.L421-.L399
 	.byte	1,5,64,7,9
-	.half	.L430-.L429
+	.half	.L422-.L421
 	.byte	3,2,1,5,46,9
-	.half	.L431-.L430
+	.half	.L423-.L422
 	.byte	1,5,64,9
-	.half	.L432-.L431
+	.half	.L424-.L423
 	.byte	1,5,43,9
-	.half	.L433-.L432
+	.half	.L425-.L424
 	.byte	3,1,1,5,33,9
-	.half	.L349-.L433
+	.half	.L349-.L425
 	.byte	3,4,1,5,48,9
-	.half	.L434-.L349
+	.half	.L426-.L349
 	.byte	1,5,37,9
-	.half	.L435-.L434
+	.half	.L427-.L426
 	.byte	3,2,1,5,23,9
-	.half	.L436-.L435
+	.half	.L428-.L427
 	.byte	1,5,36,9
-	.half	.L407-.L436
+	.half	.L401-.L428
 	.byte	3,2,1,5,44,9
-	.half	.L408-.L407
+	.half	.L402-.L401
 	.byte	3,127,1,5,30,9
-	.half	.L437-.L408
+	.half	.L429-.L402
 	.byte	1,5,27,9
-	.half	.L438-.L437
+	.half	.L430-.L429
 	.byte	3,1,1,5,35,9
-	.half	.L439-.L438
-	.byte	1,5,36,9
-	.half	.L409-.L439
-	.byte	3,4,1,5,35,9
-	.half	.L440-.L409
-	.byte	3,124,1,5,25,1,5,45,9
-	.half	.L441-.L440
-	.byte	3,2,1,5,32,3,127,1,5,63,9
-	.half	.L442-.L441
-	.byte	3,3,1,5,43,3,126,1,5,49,9
-	.half	.L443-.L442
-	.byte	3,2,1,5,73,9
-	.half	.L411-.L443
-	.byte	1,5,71,9
-	.half	.L444-.L411
+	.half	.L431-.L430
 	.byte	1,5,25,9
-	.half	.L445-.L444
+	.half	.L432-.L431
+	.byte	1,5,45,9
+	.half	.L433-.L432
+	.byte	3,2,1,5,32,3,127,1,5,43,9
+	.half	.L434-.L433
+	.byte	3,1,1,5,24,9
+	.half	.L435-.L434
+	.byte	3,2,1,5,5,9
+	.half	.L436-.L435
+	.byte	1,5,45,7,9
+	.half	.L437-.L436
+	.byte	3,5,1,5,72,9
+	.half	.L404-.L437
+	.byte	1,5,58,1,5,82,9
+	.half	.L405-.L404
+	.byte	1,5,80,9
+	.half	.L438-.L405
+	.byte	1,5,34,9
+	.half	.L439-.L438
 	.byte	1,5,24,9
-	.half	.L446-.L445
-	.byte	3,9,1,5,39,9
-	.half	.L447-.L446
+	.half	.L350-.L439
+	.byte	3,3,1,5,39,9
+	.half	.L440-.L350
 	.byte	1,5,42,9
-	.half	.L448-.L447
+	.half	.L441-.L440
 	.byte	3,1,1,5,28,1,5,42,9
-	.half	.L449-.L448
+	.half	.L442-.L441
 	.byte	1,5,1,7,9
-	.half	.L366-.L449
+	.half	.L366-.L442
 	.byte	3,1,0,1,1
-.L426:
+.L418:
 	.sdecl	'.debug_ranges',debug,cluster('gtm_pwm_init')
 	.sect	'.debug_ranges'
 .L365:
-	.word	-1,.L353,0,.L366-.L353,0,0
+	.word	-1,.L355,0,.L366-.L355,0,0
 	.sdecl	'.debug_info',debug,cluster('pwm_duty')
 	.sect	'.debug_info'
 .L367:
-	.word	290
+	.word	294
 	.half	3
 	.word	.L368
 	.byte	4,1
@@ -30266,74 +30278,82 @@ __pwm_duty_function_end:
 	.byte	2
 	.word	.L358
 	.byte	3
-	.byte	'pwm_duty',0,1,176,2,6,1,1,1
-	.word	.L355,.L394,.L354
+	.byte	'pwm_duty',0,1,175,2,6,1,1,1
+	.word	.L357,.L389,.L356
 	.byte	4
-	.byte	'pwmch',0,1,176,2,29
-	.word	.L383,.L395
+	.byte	'pwmch',0,1,175,2,29
+	.word	.L378,.L390
 	.byte	4
-	.byte	'duty',0,1,176,2,43
-	.word	.L385,.L396
+	.byte	'duty',0,1,175,2,43
+	.word	.L380,.L391
 	.byte	5
-	.word	.L397
+	.word	.L357,.L389
 	.byte	6
-	.byte	'period',0,1,178,2,9
-	.word	.L385,.L398
+	.byte	'period',0,1,177,2,9
+	.word	.L380,.L392
 	.byte	6
-	.byte	'atom_channel',0,1,180,2,23
-	.word	.L392,.L399
+	.byte	'atom_channel',0,1,179,2,23
+	.word	.L387,.L393
 	.byte	0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('pwm_duty')
 	.sect	'.debug_abbrev'
 .L368:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
-	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,85,6,0,0,6,52,0,3,8,58
-	.byte	15,59,15,57,15,73,16,2,6,0,0,0
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3
+	.byte	8,58,15,59,15,57,15,73,16,2,6,0,0,0
 	.sdecl	'.debug_line',debug,cluster('pwm_duty')
 	.sect	'.debug_line'
 .L369:
-	.word	.L451-.L450
-.L450:
+	.word	.L444-.L443
+.L443:
 	.half	3
-	.word	.L453-.L452
-.L452:
+	.word	.L446-.L445
+.L445:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\Libraries\\seekfree_libraries\\zf_gtm_pwm.c',0,0,0,0,0
-.L453:
+.L446:
 	.byte	5,6,7,0,5,2
-	.word	.L355
-	.byte	3,175,2,1,5,30,3,5,1,5,15,9
-	.half	.L412-.L355
-	.byte	1,5,52,9
-	.half	.L414-.L412
-	.byte	3,2,1,5,70,9
-	.half	.L454-.L414
+	.word	.L357
+	.byte	3,174,2,1,5,30,3,5,1,5,15,9
+	.half	.L406-.L357
+	.byte	1,5,70,9
+	.half	.L408-.L406
+	.byte	3,2,1,5,52,9
+	.half	.L447-.L408
+	.byte	1,5,70,9
+	.half	.L448-.L447
+	.byte	1,5,52,1,5,57,9
+	.half	.L449-.L448
 	.byte	1,5,91,9
-	.half	.L455-.L454
-	.byte	1,5,18,9
-	.half	.L413-.L455
-	.byte	3,1,1,5,33,9
-	.half	.L417-.L413
-	.byte	1,5,31,9
-	.half	.L456-.L417
-	.byte	1,5,42,9
-	.half	.L416-.L456
+	.half	.L450-.L449
+	.byte	1,5,21,9
+	.half	.L407-.L450
+	.byte	3,2,1,5,2,9
+	.half	.L451-.L407
+	.byte	1,5,27,7,9
+	.half	.L452-.L451
+	.byte	3,5,1,5,42,9
+	.half	.L410-.L452
 	.byte	1,5,40,9
-	.half	.L457-.L416
+	.half	.L453-.L410
+	.byte	1,5,51,9
+	.half	.L454-.L453
+	.byte	1,5,49,9
+	.half	.L455-.L454
 	.byte	1,5,69,9
-	.half	.L415-.L457
-	.byte	3,1,1,5,101,9
-	.half	.L418-.L415
+	.half	.L351-.L455
+	.byte	3,2,1,5,90,1,5,56,9
+	.half	.L456-.L351
+	.byte	1,5,101,9
+	.half	.L457-.L456
 	.byte	1,5,1,9
-	.half	.L371-.L418
+	.half	.L371-.L457
 	.byte	3,1,0,1,1
-.L451:
+.L444:
 	.sdecl	'.debug_ranges',debug,cluster('pwm_duty')
 	.sect	'.debug_ranges'
 .L370:
-	.word	-1,.L355,0,.L371-.L355,0,0
-.L397:
-	.word	-1,.L355,0,.L394-.L355,-1,.L357,0,.L381-.L357,0,0
+	.word	-1,.L357,0,.L371-.L357,0,0
 	.sdecl	'.debug_info',debug,cluster('gtm_atom_mux')
 	.sect	'.debug_info'
 .L372:
@@ -30349,14 +30369,14 @@ __pwm_duty_function_end:
 	.word	.L358
 	.byte	3
 	.byte	'gtm_atom_mux',0,1,29,22
-	.word	.L392
+	.word	.L387
 	.byte	1,1,1
-	.word	.L351,.L400,.L350
+	.word	.L353,.L394,.L352
 	.byte	4
 	.byte	'atom_pin',0,1,29,49
-	.word	.L383,.L401
+	.word	.L378,.L395
 	.byte	5
-	.word	.L351,.L400
+	.word	.L353,.L394
 	.byte	0,0
 	.sdecl	'.debug_abbrev',debug,cluster('gtm_atom_mux')
 	.sect	'.debug_abbrev'
@@ -30375,9 +30395,9 @@ __pwm_duty_function_end:
 	.byte	'..\\Libraries\\seekfree_libraries\\zf_gtm_pwm.c',0,0,0,0,0
 .L461:
 	.byte	5,2,7,0,5,2
-	.word	.L351
+	.word	.L353
 	.byte	3,30,1,5,19,9
-	.half	.L2-.L351
+	.half	.L2-.L353
 	.byte	3,206,1,1,5,1,9
 	.half	.L462-.L2
 	.byte	3,3,1,5,33,7,9
@@ -31075,210 +31095,122 @@ __pwm_duty_function_end:
 	.sdecl	'.debug_ranges',debug,cluster('gtm_atom_mux')
 	.sect	'.debug_ranges'
 .L375:
-	.word	-1,.L351,0,.L376-.L351,0,0
-	.sdecl	'.debug_info',debug,cluster('.cocofun_2')
-	.sect	'.debug_info'
-.L377:
-	.word	200
-	.half	3
-	.word	.L378
-	.byte	4,1
-	.byte	'..\\Libraries\\seekfree_libraries\\zf_gtm_pwm.c',0
-	.byte	'TASKING VX-toolset for TriCore: C compiler',0
-	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L380,.L379
-	.byte	2
-	.word	.L358
-	.byte	3
-	.byte	'.cocofun_2',0,1,176,2,6,1
-	.word	.L357,.L381,.L356
-	.byte	0
-	.sdecl	'.debug_abbrev',debug,cluster('.cocofun_2')
-	.sect	'.debug_abbrev'
-.L378:
-	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,0,3,8,58,15,59,15,57,15,54,15
-	.byte	17,1,18,1,64,6,0,0,0
-	.sdecl	'.debug_line',debug,cluster('.cocofun_2')
-	.sect	'.debug_line'
-.L379:
-	.word	.L636-.L635
-.L635:
-	.half	3
-	.word	.L638-.L637
-.L637:
-	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
-	.byte	'..\\Libraries\\seekfree_libraries\\zf_gtm_pwm.c',0,0,0,0,0
-.L638:
-	.byte	5,70,7,0,5,2
-	.word	.L357
-	.byte	3,182,2,1,5,91,9
-	.half	.L639-.L357
-	.byte	1,5,70,9
-	.half	.L640-.L639
-	.byte	1,5,57,9
-	.half	.L641-.L640
-	.byte	1,5,91,9
-	.half	.L420-.L641
-	.byte	1,7,9
-	.half	.L381-.L420
-	.byte	0,1,1,5,69,0,5,2
-	.word	.L357
-	.byte	3,184,2,1,5,90,9
-	.half	.L639-.L357
-	.byte	1,5,69,9
-	.half	.L640-.L639
-	.byte	1,5,56,9
-	.half	.L641-.L640
-	.byte	1,5,91,9
-	.half	.L420-.L641
-	.byte	3,126,1,7,9
-	.half	.L381-.L420
-	.byte	0,1,1
-.L636:
-	.sdecl	'.debug_ranges',debug,cluster('.cocofun_2')
-	.sect	'.debug_ranges'
-.L380:
-	.word	-1,.L357,0,.L381-.L357,0,0
-	.sdecl	'.debug_loc',debug,cluster('.cocofun_2')
-	.sect	'.debug_loc'
-.L356:
-	.word	-1,.L357,0,.L381-.L357
-	.half	2
-	.byte	138,0
-	.word	0,0
+	.word	-1,.L353,0,.L376-.L353,0,0
 	.sdecl	'.debug_loc',debug,cluster('gtm_atom_mux')
 	.sect	'.debug_loc'
-.L401:
-	.word	-1,.L351,0,.L402-.L351
+.L395:
+	.word	-1,.L353,0,.L396-.L353
 	.half	1
 	.byte	84
-	.word	.L4-.L351,.L400-.L351
+	.word	.L4-.L353,.L394-.L353
 	.half	1
 	.byte	84
 	.word	0,0
-.L350:
-	.word	-1,.L351,0,.L400-.L351
+.L352:
+	.word	-1,.L353,0,.L394-.L353
 	.half	2
 	.byte	138,0
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('gtm_pwm_init')
 	.sect	'.debug_loc'
-.L393:
-	.word	-1,.L353,.L404-.L353,.L405-.L353
+.L388:
+	.word	-1,.L355,.L398-.L355,.L399-.L355
 	.half	1
 	.byte	98
-	.word	.L406-.L353,.L382-.L353
+	.word	.L400-.L355,.L377-.L355
 	.half	1
 	.byte	111
 	.word	0,0
-.L387:
-	.word	-1,.L353,0,.L404-.L353
+.L382:
+	.word	-1,.L355,0,.L398-.L355
 	.half	1
 	.byte	86
-	.word	.L409-.L353,.L410-.L353
+	.word	.L403-.L355,.L404-.L355
 	.half	1
 	.byte	89
-	.word	.L410-.L353,.L411-.L353
+	.word	.L404-.L355,.L405-.L355
 	.half	1
 	.byte	84
 	.word	0,0
-.L386:
-	.word	-1,.L353,0,.L404-.L353
+.L381:
+	.word	-1,.L355,0,.L398-.L355
 	.half	1
 	.byte	85
-	.word	.L407-.L353,.L408-.L353
+	.word	.L401-.L355,.L402-.L355
 	.half	1
 	.byte	88
 	.word	0,0
-.L389:
-	.word	-1,.L353,0,.L382-.L353
+.L384:
+	.word	-1,.L355,0,.L377-.L355
 	.half	2
 	.byte	145,72
 	.word	0,0
-.L391:
-	.word	-1,.L353,0,.L382-.L353
+.L386:
+	.word	-1,.L355,0,.L377-.L355
 	.half	2
 	.byte	145,108
 	.word	0,0
-.L352:
-	.word	-1,.L353,0,.L403-.L353
+.L354:
+	.word	-1,.L355,0,.L397-.L355
 	.half	2
 	.byte	138,0
-	.word	.L403-.L353,.L382-.L353
+	.word	.L397-.L355,.L377-.L355
 	.half	2
 	.byte	138,56
-	.word	.L382-.L353,.L382-.L353
+	.word	.L377-.L355,.L377-.L355
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L384:
-	.word	-1,.L353,0,.L404-.L353
+.L379:
+	.word	-1,.L355,0,.L398-.L355
 	.half	1
 	.byte	84
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('pwm_duty')
 	.sect	'.debug_loc'
-.L399:
-	.word	-1,.L355,.L357-.L355,.L381-.L355
+.L393:
+	.word	-1,.L357,.L406-.L357,.L407-.L357
 	.half	1
 	.byte	98
-	.word	.L357-.L355,.L381-.L355
-	.half	1
-	.byte	111
-	.word	.L412-.L355,.L413-.L355
-	.half	1
-	.byte	98
-	.word	.L414-.L355,.L415-.L355
-	.half	1
-	.byte	111
-	.word	.L418-.L355,.L394-.L355
+	.word	.L408-.L357,.L389-.L357
 	.half	1
 	.byte	111
 	.word	0,0
-.L396:
-	.word	-1,.L355,0,.L412-.L355
+.L391:
+	.word	-1,.L357,0,.L406-.L357
 	.half	1
 	.byte	85
-	.word	.L357-.L355,.L381-.L355
+	.word	.L406-.L357,.L389-.L357
 	.half	1
 	.byte	88
-	.word	.L412-.L355,.L415-.L355
-	.half	1
-	.byte	88
-	.word	.L417-.L355,.L416-.L355
+	.word	.L410-.L357,.L409-.L357
 	.half	1
 	.byte	84
-	.word	.L418-.L355,.L419-.L355
-	.half	1
-	.byte	88
-	.word	.L420-.L355,.L381-.L355
+	.word	.L411-.L357,.L351-.L357
 	.half	1
 	.byte	82
-	.word	.L418-.L355,.L419-.L355
-	.half	1
-	.byte	82
-	.word	.L419-.L355,.L394-.L355
+	.word	.L412-.L357,.L389-.L357
 	.half	1
 	.byte	85
 	.word	0,0
-.L398:
-	.word	-1,.L355,.L413-.L355,.L416-.L355
+.L392:
+	.word	-1,.L357,.L407-.L357,.L409-.L357
 	.half	1
 	.byte	82
 	.word	0,0
-.L354:
-	.word	-1,.L355,0,.L394-.L355
+.L356:
+	.word	-1,.L357,0,.L389-.L357
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L395:
-	.word	-1,.L355,0,.L412-.L355
+.L390:
+	.word	-1,.L357,0,.L406-.L357
 	.half	1
 	.byte	84
 	.word	0,0
 	.sdecl	'.debug_frame',debug
 	.sect	'.debug_frame'
-.L642:
+.L635:
 	.word	48
 	.word	-1
 	.byte	3,0,2,1,27,12,26,0,8,27,8,26,8,28,8,29,8,30,8,31,8,34,8,35,8,32,8,33,8,16,8,17,8,24,8,25,8,36,8,37,8,38
@@ -31286,34 +31218,22 @@ __pwm_duty_function_end:
 	.sdecl	'.debug_frame',debug,cluster('gtm_atom_mux')
 	.sect	'.debug_frame'
 	.word	24
-	.word	.L642,.L351,.L400-.L351
+	.word	.L635,.L353,.L394-.L353
 	.byte	8,19,8,20,8,21,8,22,8,23,0,0
 	.sdecl	'.debug_frame',debug,cluster('gtm_pwm_init')
 	.sect	'.debug_frame'
 	.word	36
-	.word	.L642,.L353,.L382-.L353
+	.word	.L635,.L355,.L377-.L355
 	.byte	4
-	.word	(.L403-.L353)/2
+	.word	(.L397-.L355)/2
 	.byte	19,56,22,26,3,19,138,56,4
-	.word	(.L382-.L403)/2
+	.word	(.L377-.L397)/2
 	.byte	19,0,8,26,0,0
 	.sdecl	'.debug_frame',debug,cluster('pwm_duty')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L642,.L355,.L394-.L355
-	.sdecl	'.debug_frame',debug
-	.sect	'.debug_frame'
-.L643:
-	.word	52
-	.word	-1
-	.byte	3,0,2,1,40,12,26,0,9,40,27,155,0,7,26,8,28,8,29,8,30,8,31,8,34,8,35,8,32,8,33,8,16,8,17,8,24,8,25,8,36
-	.byte	8,37,8,38,8,39,0
-	.sdecl	'.debug_frame',debug,cluster('.cocofun_2')
-	.sect	'.debug_frame'
-	.word	24
-	.word	.L643,.L357,.L381-.L357
-	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.word	.L635,.L357,.L389-.L357
 
-; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   314  }
+; ..\Libraries\seekfree_libraries\zf_gtm_pwm.c	   320  }
 
 	; Module end

@@ -73,15 +73,18 @@
 #include "..\CODE\Inc\User_FSM.h"
 #include "..\CODE\Inc\User_Encoder.h"
 #include "..\CODE\Inc\User_Motor.h"
-//#include "..\CODE\Inc\User_Gyro_I2C.h"
+#include "..\CODE\Inc\User_Gyro_I2C.h"
 #include "..\CODE\Inc\User_Image_Process.h"
 #include "..\CODE\Inc\User_OSTU.h"
 #include "..\CODE\Inc\User_PID.h"
 #include "..\CODE\Inc\User_ADC.h"
 
-//------自定义内容
+//------预处理内容
 //是否使用摄像头
 //#define USECARMERA
+
+//是否使用陀螺仪I2C
+//#define USEGYROI2C
 
 //进程中断时间
 #define MainProcessTime 10
@@ -89,8 +92,8 @@
 #define CameraProcessTime 20
 
 //双核防卡死测试LED中断时间
-#define CPU0TIMES 50
-#define CPU1TIMES 25
+#define CPU0TIMES (500/MainProcessTime)
+#define CPU1TIMES (500/CameraProcessTime)
 
 //车轮直径
 #define WHEEL_DIAMETER 62

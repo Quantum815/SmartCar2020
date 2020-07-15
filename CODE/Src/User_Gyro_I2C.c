@@ -6,7 +6,9 @@
  */
 
 //目前无法运行
-/*#include "..\CODE\Inc\User_Gyro_I2C.h"
+#include "..\CODE\Inc\User_Gyro_I2C.h"
+
+#ifdef USEGYROI2C
 
 #pragma section all "cpu0_dsram"
 uint8 GyroPtr[24];
@@ -23,7 +25,7 @@ void GyroInit(void)
 	simiic_init();
 }
 
-void GyroReadByte(void)
+void GyroI2CReadByte(void)
 {
 	simiic_read_regs(I2C_ADDR, AX_PTR, GyroPtr, 24, SIMIIC);
 
@@ -37,4 +39,6 @@ void GyroReadByte(void)
 	printf("AX:%f AY:%f AZ:%f \r\nRoll_value:%f Pitch_value:%f Yaw_value:%f\r\n\r\n", AX, AY, AZ, Roll_value, Pitch_value, Yaw_value);
 	//uart_putstr(UART_3, "test");
 	//uart_putchar(UART_3, Roll_value);
-}*/
+}
+
+#endif

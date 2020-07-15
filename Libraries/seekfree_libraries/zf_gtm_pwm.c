@@ -280,7 +280,6 @@ void gtm_pwm_init(ATOM_PIN_enum pwmch, uint32 freq, uint32 duty)
     g_atomConfig.pin.outputPin = atom_channel;
     g_atomConfig.synchronousUpdateEnabled = TRUE;
 
-	g_atomConfig.dutyCycle = (uint32)((uint64)duty * g_atomConfig.period / GTM_ATOM0_PWM_DUTY_MAX);
     switch(atom_channel->atom)
 	{
 		case 0: g_atomConfig.dutyCycle = (uint32)((uint64)duty * g_atomConfig.period / GTM_ATOM0_PWM_DUTY_MAX); break;
@@ -309,6 +308,13 @@ void pwm_duty(ATOM_PIN_enum pwmch, uint32 duty)
 	atom_channel = gtm_atom_mux(pwmch);
 
 	period = IfxGtm_Atom_Ch_getCompareZero(&MODULE_GTM.ATOM[atom_channel->atom], atom_channel->channel);
-	duty = (uint32)((uint64)duty * period / GTM_ATOM0_PWM_DUTY_MAX);
+
+	switch(atom_channel->atom)
+	{
+		case 0: duty = (uint32)((uint64)duty * period / GTM_ATOM0_PWM_DUTY_MAX); break;
+		case 1: duty = (uint32)((uint64)duty * period / GTM_ATOM1_PWM_DUTY_MAX); break;
+		case 2: duty = (uint32)((uint64)duty * period / GTM_ATOM2_PWM_DUTY_MAX); break;
+		case 3: duty = (uint32)((uint64)duty * period / GTM_ATOM3_PWM_DUTY_MAX); break;
+	}
     IfxGtm_Atom_Ch_setCompareOneShadow(&MODULE_GTM.ATOM[atom_channel->atom], atom_channel->channel, duty);
 }
