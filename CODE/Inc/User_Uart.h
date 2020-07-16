@@ -12,14 +12,10 @@
 
 extern uint8 DebugUartRxBuff;
 
-void DebugUARTInit();
-//void ADCReadData(void);
-void UserDebug(void);
+void DebugUARTInit(void);
+void DebugSend(void);
 
-void GyroUARTInit();
-void GyroReadByte();
-
-void GyroCul(void);
-extern float PitchAngle,RollAngle,YawAngle;
-extern uint8 GYRORxBuff[11];
+void GyroUARTInit(void);
+void GyroUARTReadByte(void);
+void GyroCalculate(void);
 #endif /* CODE_INC_USER_UART_H_ */

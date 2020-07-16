@@ -8,8 +8,10 @@
 #include "..\CODE\Inc\User_Encoder.h"
 
 #pragma section all "cpu0_dsram"
+
 double CurDistance;
 double TotalDistance;
+
 #pragma section all restore
 
 void EncoderInit(void)

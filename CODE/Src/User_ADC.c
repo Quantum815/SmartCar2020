@@ -7,7 +7,11 @@
 
 #include "..\CODE\Inc\User_ADC.h"
 
+#pragma section all "cpu0_dsram"
+
 static uint16 ADCvalueNum[5];
+
+#pragma section all restore
 
 void ADCInit(void)
 {
@@ -25,7 +29,24 @@ void UpdateADCvalue(void)
 	ADCvalueNum[3]=adc_convert(ADC_0, ADC0_CH3_A3, ADC_12BIT);
 	ADCvalueNum[4]=adc_convert(ADC_0, ADC0_CH4_A4, ADC_12BIT);
 }
-uint16 ADCValue(uint8 num)
+
+/*void ADCReadData(void)
+{
+    uint16 ADCValue;
+    ADCValue = adc_convert(ADC_1, ADC1_CH0_A16, ADC_12BIT);
+    temp = ADCValue;
+    while(temp != 0)
+    {
+        temp = temp / 10;
+        NumLenth++;
+    }
+    ADCStr[0] = ADCValue + '0';
+    uart_putbuff(UART_3, ADCStr, NumLenth);
+    uart_putstr(UART_3, "\r\n");
+    systick_delay_ms(STM1, 100);
+}*/
+
+int16 ADCValue(uint8 num)
 {
 	if(num > 4)
 		return -1;

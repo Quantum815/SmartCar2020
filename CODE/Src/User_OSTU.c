@@ -8,7 +8,9 @@
 #include "..\CODE\Inc\User_OSTU.h"
 
 #pragma section all "cpu1_dsram"
-uint16_t Threshold;                  //OSTU大津法计算的图像阈值, 返回类型原来为uint8_t
+
+uint16_t Threshold;  //OSTU大津法计算的图像阈值, 返回类型原来为uint8_t
+
 #pragma section all restore
 
 /***************************************************************

@@ -156,7 +156,7 @@ IFX_INTERRUPT(uart0_rx_isr, 0, UART0_RX_INT_PRIO)
 {
 	enableInterrupts();//¿ªÆôÖÐ¶ÏÇ¶Ì×
     IfxAsclin_Asc_isrReceive(&uart0_handle);
-    GyroReadByte();
+    //GyroUARTReadByte();
 }
 IFX_INTERRUPT(uart0_er_isr, 0, UART0_ER_INT_PRIO)
 {
@@ -212,6 +212,7 @@ IFX_INTERRUPT(uart3_rx_isr, 0, UART3_RX_INT_PRIO)
 {
 	enableInterrupts();//¿ªÆôÖÐ¶ÏÇ¶Ì×
     IfxAsclin_Asc_isrReceive(&uart3_handle);
+    //DebugSend();
 }
 IFX_INTERRUPT(uart3_er_isr, 0, UART3_ER_INT_PRIO)
 {

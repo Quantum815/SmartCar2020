@@ -18,5 +18,8 @@ void UserCameraInit(void)
 
 	//摄像头进程
 	pit_interrupt_ms(CCU6_0, PIT_CH1, CameraProcessTime);
+
+	//各类资源与外设
+	ips114_init();
 }
 

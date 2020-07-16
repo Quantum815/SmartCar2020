@@ -12,6 +12,7 @@
 
 void ADCInit(void);
 void UpdateADCvalue(void);
-uint16 ADCValue(uint8 num);
+//void ADCReadData(void);
+int16 ADCValue(uint8 num);
 
 #endif /* CODE_INC_USER_ADC_H_ */

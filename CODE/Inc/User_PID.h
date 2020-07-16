@@ -10,6 +10,6 @@
 
 #include "headfile.h"
 
-uint8_t GetPIDValue(uint8_t middle,uint8_t value,uint8_t kP,uint8_t kI,uint8_t kD);
+double GetPIDValue(double middle, double value, double kP, double kI, double kD);
 
 #endif /* CODE_INC_USER_PID_H_ */

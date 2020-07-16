@@ -26,10 +26,10 @@ void SetServoPWM(uint8 ServoNum, uint8 PWMDuty)  //PWMDuty为百分比
 
 void MotorInit(void)
 {
-	gtm_pwm_init(ATOM1_CH5_P02_5 , 2000, 25000);
-	gtm_pwm_init(ATOM1_CH6_P02_6 , 2000, 25000);
-	gtm_pwm_init(ATOM1_CH4_P02_4 , 2000, 25000);
-	gtm_pwm_init(ATOM1_CH7_P02_7 , 2000, 25000);
+	gtm_pwm_init(ATOM1_CH5_P02_5 , 8000, 25000);
+	gtm_pwm_init(ATOM1_CH6_P02_6 , 8000, 25000);
+	gtm_pwm_init(ATOM1_CH4_P02_4 , 8000, 25000);
+	gtm_pwm_init(ATOM1_CH7_P02_7 , 8000, 25000);
 }
 
 void SetMotorPWM(Motor_State_t MotorState, uint8 PWMDuty)  //已经过驱动板测试，暂时不用更改
