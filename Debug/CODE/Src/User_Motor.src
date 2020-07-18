@@ -24,33 +24,33 @@ $TC16X
 ; ..\CODE\Src\User_Motor.c	     9  
 ; ..\CODE\Src\User_Motor.c	    10  void ServoMotorInit(void)
 ; Function ServoMotorInit
-.L22:
+.L28:
 ServoMotorInit:	.type	func
 
 ; ..\CODE\Src\User_Motor.c	    11  {
 ; ..\CODE\Src\User_Motor.c	    12  	gtm_pwm_init(ATOM0_CH0_P21_2, 50, 5000);
 	mov	d15,#5000
-.L105:
+.L112:
 	mov	d4,#4
-.L106:
+.L113:
 	mov	d5,#50
-.L107:
+.L114:
 	mov	d6,d15
 	call	gtm_pwm_init
-.L108:
+.L115:
 
 ; ..\CODE\Src\User_Motor.c	    13  	gtm_pwm_init(ATOM0_CH1_P21_3, 50, 5000);
 	mov	d4,#11
-.L109:
+.L116:
 	mov	d5,#50
-.L110:
+.L117:
 	mov	d6,d15
 	j	gtm_pwm_init
-.L67:
+.L73:
 	
 __ServoMotorInit_function_end:
 	.size	ServoMotorInit,__ServoMotorInit_function_end-ServoMotorInit
-.L41:
+.L47:
 	; End of function
 	
 	.sdecl	'.text.User_Motor.SetServoPWM',code,cluster('SetServoPWM')
@@ -61,26 +61,26 @@ __ServoMotorInit_function_end:
 
 ; ..\CODE\Src\User_Motor.c	    14  }
 ; ..\CODE\Src\User_Motor.c	    15  
-; ..\CODE\Src\User_Motor.c	    16  void SetServoPWM(uint8 ServoNum, uint8 PWMDuty)  //PWMDuty为百分比
+; ..\CODE\Src\User_Motor.c	    16  void SetServoPWM(uint8 ServoNum, float PWMDuty)  //PWMDuty为百分比
 ; Function SetServoPWM
-.L24:
+.L30:
 SetServoPWM:	.type	func
 
 ; ..\CODE\Src\User_Motor.c	    17  {
 ; ..\CODE\Src\User_Motor.c	    18  	uint32 PWMCount = 0;
 ; ..\CODE\Src\User_Motor.c	    19  	PWMCount = GTM_ATOM0_PWM_DUTY_MAX * (PWMDuty/100);
 	fcall	.cocofun_1
-.L115:
+.L122:
 
 ; ..\CODE\Src\User_Motor.c	    20  	switch(ServoNum)
 ; ..\CODE\Src\User_Motor.c	    21  	{
 ; ..\CODE\Src\User_Motor.c	    22  		case 1: pwm_duty(ATOM0_CH0_P21_2, PWMCount); break;
 	jeq	d4,#1,.L2
-.L85:
+.L92:
 
 ; ..\CODE\Src\User_Motor.c	    23  		case 2: pwm_duty(ATOM0_CH1_P21_3, PWMCount); break;
 	jeq	d4,#2,.L3
-.L116:
+.L123:
 
 ; ..\CODE\Src\User_Motor.c	    24  	}
 ; ..\CODE\Src\User_Motor.c	    25  }
@@ -92,29 +92,32 @@ SetServoPWM:	.type	func
 	mov	d4,#11
 .L5:
 	j	pwm_duty
-.L68:
+.L74:
 	
 __SetServoPWM_function_end:
 	.size	SetServoPWM,__SetServoPWM_function_end-SetServoPWM
-.L46:
+.L52:
 	; End of function
 	
 	.sdecl	'.text.User_Motor..cocofun_1',code,cluster('.cocofun_1')
 	.sect	'.text.User_Motor..cocofun_1'
 	.align	2
 ; Function .cocofun_1
-.L26:
+.L32:
 .cocofun_1:	.type	func
 ; Function body .cocofun_1, coco_iter:0
-	mov	d15,#100
-.L150:
-	div.u	e0,d5,d15
-.L151:
-	mov.u	d5,#50000
-.L84:
-	mul	d5,d0
+	movh	d15,#17096
+.L163:
+	div.f	d15,d5,d15
+.L164:
+	mov	d0,#20480
+	addih	d0,d0,#18243
+.L165:
+	mul.f	d15,d15,d0
+.L91:
+	ftouz	d5,d15
 	fret
-.L66:
+.L72:
 	; End of function
 	.sdecl	'.text.User_Motor.MotorInit',code,cluster('MotorInit')
 	.sect	'.text.User_Motor.MotorInit'
@@ -125,49 +128,49 @@ __SetServoPWM_function_end:
 ; ..\CODE\Src\User_Motor.c	    26  
 ; ..\CODE\Src\User_Motor.c	    27  void MotorInit(void)
 ; Function MotorInit
-.L28:
+.L34:
 MotorInit:	.type	func
 
 ; ..\CODE\Src\User_Motor.c	    28  {
 ; ..\CODE\Src\User_Motor.c	    29  	gtm_pwm_init(ATOM1_CH5_P02_5 , 8000, 25000);
 	mov	d15,#25000
-.L121:
+.L128:
 	mov	d8,#8000
-.L122:
+.L129:
 	mov	d4,#86
-.L123:
+.L130:
 	mov	d5,d8
 	mov	d6,d15
 	call	gtm_pwm_init
-.L124:
+.L131:
 
 ; ..\CODE\Src\User_Motor.c	    30  	gtm_pwm_init(ATOM1_CH6_P02_6 , 8000, 25000);
 	mov	d4,#92
-.L125:
+.L132:
 	mov	d5,d8
 	mov	d6,d15
 	call	gtm_pwm_init
-.L126:
+.L133:
 
 ; ..\CODE\Src\User_Motor.c	    31  	gtm_pwm_init(ATOM1_CH4_P02_4 , 8000, 25000);
 	mov	d4,#80
-.L127:
+.L134:
 	mov	d5,d8
 	mov	d6,d15
 	call	gtm_pwm_init
-.L128:
+.L135:
 
 ; ..\CODE\Src\User_Motor.c	    32  	gtm_pwm_init(ATOM1_CH7_P02_7 , 8000, 25000);
 	mov	d4,#98
-.L129:
+.L136:
 	mov	d5,d8
 	mov	d6,d15
 	j	gtm_pwm_init
-.L75:
+.L82:
 	
 __MotorInit_function_end:
 	.size	MotorInit,__MotorInit_function_end-MotorInit
-.L51:
+.L57:
 	; End of function
 	
 	.sdecl	'.text.User_Motor.SetMotorPWM',code,cluster('SetMotorPWM')
@@ -178,34 +181,34 @@ __MotorInit_function_end:
 
 ; ..\CODE\Src\User_Motor.c	    33  }
 ; ..\CODE\Src\User_Motor.c	    34  
-; ..\CODE\Src\User_Motor.c	    35  void SetMotorPWM(Motor_State_t MotorState, uint8 PWMDuty)  //已经过驱动板测试，暂时不用更改
+; ..\CODE\Src\User_Motor.c	    35  void SetMotorPWM(Motor_State_t MotorState, float PWMDuty)
 ; Function SetMotorPWM
-.L30:
+.L36:
 SetMotorPWM:	.type	func
 
 ; ..\CODE\Src\User_Motor.c	    36  {
 ; ..\CODE\Src\User_Motor.c	    37  	uint32 PWMCount = 0;
 ; ..\CODE\Src\User_Motor.c	    38  	PWMCount = GTM_ATOM1_PWM_DUTY_MAX * (PWMDuty / 100);
 	fcall	.cocofun_1
-.L86:
+.L93:
 
 ; ..\CODE\Src\User_Motor.c	    39  	switch(MotorState)
 ; ..\CODE\Src\User_Motor.c	    40  	{
 ; ..\CODE\Src\User_Motor.c	    41  		case LMotor_F: pwm_duty(ATOM1_CH5_P02_5, PWMCount); break;
 	jeq	d4,#0,.L6
-.L134:
+.L141:
 
 ; ..\CODE\Src\User_Motor.c	    42  		case LMotor_B: pwm_duty(ATOM1_CH6_P02_6, PWMCount); break;
 	jeq	d4,#1,.L7
-.L135:
+.L142:
 
 ; ..\CODE\Src\User_Motor.c	    43  		case RMotor_F: pwm_duty(ATOM1_CH4_P02_4, PWMCount); break;
 	jeq	d4,#2,.L8
-.L136:
+.L143:
 
 ; ..\CODE\Src\User_Motor.c	    44  		case RMotor_B: pwm_duty(ATOM1_CH7_P02_7, PWMCount); break;
 	jeq	d4,#3,.L9
-.L137:
+.L144:
 
 ; ..\CODE\Src\User_Motor.c	    45  	}
 ; ..\CODE\Src\User_Motor.c	    46  }
@@ -225,11 +228,11 @@ SetMotorPWM:	.type	func
 .L12:
 .L13:
 	j	pwm_duty
-.L76:
+.L83:
 	
 __SetMotorPWM_function_end:
 	.size	SetMotorPWM,__SetMotorPWM_function_end-SetMotorPWM
-.L56:
+.L62:
 	; End of function
 	
 	.sdecl	'.text.User_Motor.MotorUserHandle',code,cluster('MotorUserHandle')
@@ -239,99 +242,158 @@ __SetMotorPWM_function_end:
 	.global	MotorUserHandle
 
 ; ..\CODE\Src\User_Motor.c	    47  
-; ..\CODE\Src\User_Motor.c	    48  void MotorUserHandle(Motor_State_t Motor, uint8 PWMDuty)
+; ..\CODE\Src\User_Motor.c	    48  void MotorUserHandle(Motor_State_t Motor, float PWMDuty)
 ; Function MotorUserHandle
-.L32:
+.L38:
 MotorUserHandle:	.type	func
-	mov	d15,d5
-.L89:
+	mov	d8,d5
+.L96:
 
 ; ..\CODE\Src\User_Motor.c	    49  {
 ; ..\CODE\Src\User_Motor.c	    50      if(Motor == LMotor_F)
 	jne	d4,#0,.L14
-.L142:
+.L149:
 
 ; ..\CODE\Src\User_Motor.c	    51      {
-; ..\CODE\Src\User_Motor.c	    52  		SetMotorPWM(LMotor_B, 0);
-	mov	d4,#1
-.L87:
+; ..\CODE\Src\User_Motor.c	    52      	if(PWMDuty < 0)
 	mov	d5,#0
-	call	SetMotorPWM
-.L88:
+.L95:
+	cmp.f	d15,d8,d5
+.L150:
+	jz.t	d15:0,.L15
+.L151:
 
-; ..\CODE\Src\User_Motor.c	    53  		SetMotorPWM(LMotor_F, PWMDuty);
-	mov	d4,#0
-	j	.L15
+; ..\CODE\Src\User_Motor.c	    53      	{
+; ..\CODE\Src\User_Motor.c	    54      		SetMotorPWM(LMotor_F, 0);
+	j	.L16
 .L14:
 
-; ..\CODE\Src\User_Motor.c	    54      }
-; ..\CODE\Src\User_Motor.c	    55      else if(Motor == LMotor_B)
-	jne	d4,#1,.L16
-.L143:
+; ..\CODE\Src\User_Motor.c	    55      		SetMotorPWM(LMotor_B, PWMDuty);
+; ..\CODE\Src\User_Motor.c	    56      	}
+; ..\CODE\Src\User_Motor.c	    57      	else
+; ..\CODE\Src\User_Motor.c	    58      	{
+; ..\CODE\Src\User_Motor.c	    59  			SetMotorPWM(LMotor_B, 0);
+; ..\CODE\Src\User_Motor.c	    60  			SetMotorPWM(LMotor_F, PWMDuty);
+; ..\CODE\Src\User_Motor.c	    61      	}
+; ..\CODE\Src\User_Motor.c	    62  
+; ..\CODE\Src\User_Motor.c	    63      }
+; ..\CODE\Src\User_Motor.c	    64      else if(Motor == LMotor_B)
+	jne	d4,#1,.L17
+.L152:
 
-; ..\CODE\Src\User_Motor.c	    56      {
-; ..\CODE\Src\User_Motor.c	    57  		SetMotorPWM(LMotor_F, 0);
-	mov	d4,#0
-.L90:
-	mov	d5,d4
-	call	SetMotorPWM
-.L91:
-
-; ..\CODE\Src\User_Motor.c	    58  		SetMotorPWM(LMotor_B, PWMDuty);
-	mov	d4,#1
-	j	.L17
-.L16:
-
-; ..\CODE\Src\User_Motor.c	    59      }
-; ..\CODE\Src\User_Motor.c	    60      else if(Motor == RMotor_F)
-	jne	d4,#2,.L18
-.L144:
-
-; ..\CODE\Src\User_Motor.c	    61      {
-; ..\CODE\Src\User_Motor.c	    62  		SetMotorPWM(RMotor_B, 0);
-	mov	d4,#3
-.L92:
+; ..\CODE\Src\User_Motor.c	    65      {
+; ..\CODE\Src\User_Motor.c	    66      	if(PWMDuty < 0)
 	mov	d5,#0
-	call	SetMotorPWM
-.L93:
+.L97:
+	cmp.f	d15,d8,d5
+.L153:
+	jz.t	d15:0,.L18
+.L15:
 
-; ..\CODE\Src\User_Motor.c	    63  		SetMotorPWM(RMotor_F, PWMDuty);
-	mov	d4,#2
+; ..\CODE\Src\User_Motor.c	    67      	{
+; ..\CODE\Src\User_Motor.c	    68  			SetMotorPWM(LMotor_B, 0);
+	mov	d4,#1
+	call	SetMotorPWM
+.L94:
+
+; ..\CODE\Src\User_Motor.c	    69  			SetMotorPWM(LMotor_F, PWMDuty);
+	mov	d4,#0
 	j	.L19
 .L18:
+.L16:
 
-; ..\CODE\Src\User_Motor.c	    64  
-; ..\CODE\Src\User_Motor.c	    65      }
-; ..\CODE\Src\User_Motor.c	    66      else if(Motor == RMotor_B)
-	jne	d4,#3,.L20
-.L145:
-
-; ..\CODE\Src\User_Motor.c	    67      {
-; ..\CODE\Src\User_Motor.c	    68  		SetMotorPWM(RMotor_F, 0);
-	mov	d4,#2
-.L94:
-	mov	d5,#0
+; ..\CODE\Src\User_Motor.c	    70      	}
+; ..\CODE\Src\User_Motor.c	    71      	else
+; ..\CODE\Src\User_Motor.c	    72      	{
+; ..\CODE\Src\User_Motor.c	    73      		SetMotorPWM(LMotor_F, 0);
+	mov	d4,#0
 	call	SetMotorPWM
-.L95:
+.L98:
 
-; ..\CODE\Src\User_Motor.c	    69  		SetMotorPWM(RMotor_B, PWMDuty);
-	mov	d4,#3
-.L15:
+; ..\CODE\Src\User_Motor.c	    74      		SetMotorPWM(LMotor_B, PWMDuty);
+	mov	d4,#1
+	j	.L20
 .L17:
-.L19:
-	mov	d5,d15
-.L96:
-	j	SetMotorPWM
-.L20:
 
-; ..\CODE\Src\User_Motor.c	    70      }
-; ..\CODE\Src\User_Motor.c	    71  }
+; ..\CODE\Src\User_Motor.c	    75      	}
+; ..\CODE\Src\User_Motor.c	    76  
+; ..\CODE\Src\User_Motor.c	    77      }
+; ..\CODE\Src\User_Motor.c	    78      else if(Motor == RMotor_F)
+	jne	d4,#2,.L21
+.L154:
+
+; ..\CODE\Src\User_Motor.c	    79      {
+; ..\CODE\Src\User_Motor.c	    80      	if(PWMDuty < 0)
+	mov	d5,#0
+.L100:
+	cmp.f	d15,d8,d5
+.L155:
+	jz.t	d15:0,.L22
+.L156:
+
+; ..\CODE\Src\User_Motor.c	    81      	{
+; ..\CODE\Src\User_Motor.c	    82  			SetMotorPWM(RMotor_F, 0);
+	j	.L23
+.L21:
+
+; ..\CODE\Src\User_Motor.c	    83  			SetMotorPWM(RMotor_B, PWMDuty);
+; ..\CODE\Src\User_Motor.c	    84      	}
+; ..\CODE\Src\User_Motor.c	    85      	else
+; ..\CODE\Src\User_Motor.c	    86      	{
+; ..\CODE\Src\User_Motor.c	    87      		SetMotorPWM(RMotor_B, 0);
+; ..\CODE\Src\User_Motor.c	    88      		SetMotorPWM(RMotor_F, PWMDuty);
+; ..\CODE\Src\User_Motor.c	    89      	}
+; ..\CODE\Src\User_Motor.c	    90      }
+; ..\CODE\Src\User_Motor.c	    91      else if(Motor == RMotor_B)
+	jne	d4,#3,.L24
+.L157:
+
+; ..\CODE\Src\User_Motor.c	    92      {
+; ..\CODE\Src\User_Motor.c	    93      	if(PWMDuty < 0)
+	mov	d5,#0
+.L101:
+	cmp.f	d15,d8,d5
+.L158:
+	jz.t	d15:0,.L25
+.L22:
+
+; ..\CODE\Src\User_Motor.c	    94      	{
+; ..\CODE\Src\User_Motor.c	    95      		SetMotorPWM(RMotor_B, 0);
+	mov	d4,#3
+	call	SetMotorPWM
+.L99:
+
+; ..\CODE\Src\User_Motor.c	    96      		SetMotorPWM(RMotor_F, PWMDuty);
+	mov	d4,#2
+	j	.L26
+.L24:
+
+; ..\CODE\Src\User_Motor.c	    97      	}
+; ..\CODE\Src\User_Motor.c	    98      	else
+; ..\CODE\Src\User_Motor.c	    99      	{
+; ..\CODE\Src\User_Motor.c	   100      		SetMotorPWM(RMotor_F, 0);
+; ..\CODE\Src\User_Motor.c	   101      		SetMotorPWM(RMotor_B, PWMDuty);
+; ..\CODE\Src\User_Motor.c	   102      	}
+; ..\CODE\Src\User_Motor.c	   103      }
+; ..\CODE\Src\User_Motor.c	   104  }
 	ret
-.L81:
+.L25:
+.L23:
+	mov	d4,#2
+	call	SetMotorPWM
+.L102:
+	mov	d4,#3
+.L19:
+.L20:
+.L26:
+	mov	d5,d8
+.L103:
+	j	SetMotorPWM
+.L88:
 	
 __MotorUserHandle_function_end:
 	.size	MotorUserHandle,__MotorUserHandle_function_end-MotorUserHandle
-.L61:
+.L67:
 	; End of function
 	
 	.calls	'ServoMotorInit','gtm_pwm_init'
@@ -351,17 +413,17 @@ __MotorUserHandle_function_end:
 	.calls	'MotorUserHandle','',0
 	.sdecl	'.debug_info',debug
 	.sect	'.debug_info'
-.L34:
+.L40:
 	.word	255417
 	.half	3
-	.word	.L35
+	.word	.L41
 	.byte	4
-.L33:
+.L39:
 	.byte	1
 	.byte	'..\\CODE\\Src\\User_Motor.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L36
+	.word	.L42
 	.byte	2,1,1,3
 	.word	145
 	.byte	4
@@ -369,7 +431,9 @@ __MotorUserHandle_function_end:
 	.byte	'fun',0,1,61,43
 	.word	148
 	.byte	6,0,7
-	.byte	'__fract',0,4,128,1,7
+	.byte	'__fract',0,4,128,1
+.L77:
+	.byte	7
 	.byte	'float',0,4,4,8
 	.byte	'Ifx__float_to_fract',0,3,1,152,2,18
 	.word	193
@@ -434,7 +498,7 @@ __MotorUserHandle_function_end:
 	.byte	'B',0
 	.word	520
 	.byte	4,2,35,0,0
-.L69:
+.L75:
 	.byte	7
 	.byte	'unsigned char',0,1,8,7
 	.byte	'unsigned short int',0,2,7,11
@@ -1984,7 +2048,7 @@ __MotorUserHandle_function_end:
 	.byte	'enabled',0,8,168,7,50
 	.word	656
 	.byte	6,0
-.L73:
+.L80:
 	.byte	7
 	.byte	'unsigned long int',0,4,7,8
 	.byte	'IfxCpu_getPerformanceCounter',0,3,8,161,6,19
@@ -6975,7 +7039,7 @@ __MotorUserHandle_function_end:
 	.byte	28
 	.word	39545
 	.byte	6,0
-.L77:
+.L84:
 	.byte	33
 	.byte	'Motor_State',0,24,13,14,1,18
 	.byte	'LMotor_F',0,0,18
@@ -34886,7 +34950,7 @@ __MotorUserHandle_function_end:
 	.byte	0
 	.sdecl	'.debug_abbrev',debug
 	.sect	'.debug_abbrev'
-.L35:
+.L41:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,16,6,0,0,2,21,0,54,15,39,12,0,0,3,15,0,73,19,0,0,4,46,1,3,8,32,13
 	.byte	58,15,59,15,57,15,54,15,39,12,0,0,5,5,0,3,8,58,15,59,15,57,15,73,19,0,0,6,11,0,0,0,7,36,0,3,8,11,15,62
 	.byte	15,0,0,8,46,1,3,8,32,13,58,15,59,15,57,15,73,19,54,15,39,12,0,0,9,59,0,3,8,0,0,10,53,0,73,19,0,0,11,19
@@ -34900,12 +34964,12 @@ __MotorUserHandle_function_end:
 	.byte	15,39,12,0,0,37,21,1,73,19,54,15,39,12,0,0,0
 	.sdecl	'.debug_line',debug
 	.sect	'.debug_line'
-.L36:
-	.word	.L98-.L97
-.L97:
+.L42:
+	.word	.L105-.L104
+.L104:
 	.half	3
-	.word	.L100-.L99
-.L99:
+	.word	.L107-.L106
+.L106:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Std',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Scu\\Std',0
@@ -34978,256 +35042,256 @@ __MotorUserHandle_function_end:
 	.byte	'IfxDma_regdef.h',0,3,0,0
 	.byte	'IfxDma.h',0,18,0,0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\CODE\\Inc\\User_FSM.h',0,0,0,0,0
-.L100:
-.L98:
+.L107:
+.L105:
 	.sdecl	'.debug_info',debug,cluster('ServoMotorInit')
 	.sect	'.debug_info'
-.L37:
+.L43:
 	.word	195
 	.half	3
-	.word	.L38
+	.word	.L44
 	.byte	4,1
 	.byte	'..\\CODE\\Src\\User_Motor.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L40,.L39
+	.word	.L46,.L45
 	.byte	2
-	.word	.L33
+	.word	.L39
 	.byte	3
 	.byte	'ServoMotorInit',0,1,10,6,1,1,1
-	.word	.L22,.L67,.L21
+	.word	.L28,.L73,.L27
 	.byte	4
-	.word	.L22,.L67
+	.word	.L28,.L73
 	.byte	0,0
 	.sdecl	'.debug_abbrev',debug,cluster('ServoMotorInit')
 	.sect	'.debug_abbrev'
-.L38:
+.L44:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
 	.sdecl	'.debug_line',debug,cluster('ServoMotorInit')
 	.sect	'.debug_line'
-.L39:
-	.word	.L102-.L101
-.L101:
+.L45:
+	.word	.L109-.L108
+.L108:
 	.half	3
-	.word	.L104-.L103
-.L103:
+	.word	.L111-.L110
+.L110:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\CODE\\Src\\User_Motor.c',0,0,0,0,0
-.L104:
+.L111:
 	.byte	5,36,7,0,5,2
-	.word	.L22
+	.word	.L28
 	.byte	3,11,1,5,15,9
-	.half	.L105-.L22
+	.half	.L112-.L28
 	.byte	1,5,32,9
-	.half	.L106-.L105
+	.half	.L113-.L112
 	.byte	1,5,36,9
-	.half	.L107-.L106
+	.half	.L114-.L113
 	.byte	1,5,15,9
-	.half	.L108-.L107
+	.half	.L115-.L114
 	.byte	3,1,1,5,32,9
-	.half	.L109-.L108
+	.half	.L116-.L115
 	.byte	1,5,36,9
-	.half	.L110-.L109
+	.half	.L117-.L116
 	.byte	1,5,1,9
-	.half	.L41-.L110
+	.half	.L47-.L117
 	.byte	3,1,0,1,1
-.L102:
+.L109:
 	.sdecl	'.debug_ranges',debug,cluster('ServoMotorInit')
 	.sect	'.debug_ranges'
-.L40:
-	.word	-1,.L22,0,.L41-.L22,0,0
+.L46:
+	.word	-1,.L28,0,.L47-.L28,0,0
 	.sdecl	'.debug_info',debug,cluster('SetServoPWM')
 	.sect	'.debug_info'
-.L42:
+.L48:
 	.word	251
 	.half	3
-	.word	.L43
+	.word	.L49
 	.byte	4,1
 	.byte	'..\\CODE\\Src\\User_Motor.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L45,.L44
+	.word	.L51,.L50
 	.byte	2
-	.word	.L33
+	.word	.L39
 	.byte	3
 	.byte	'SetServoPWM',0,1,16,6,1,1,1
-	.word	.L24,.L68,.L23
+	.word	.L30,.L74,.L29
 	.byte	4
 	.byte	'ServoNum',0,1,16,24
-	.word	.L69,.L70
+	.word	.L75,.L76
 	.byte	4
 	.byte	'PWMDuty',0,1,16,40
-	.word	.L69,.L71
+	.word	.L77,.L78
 	.byte	5
-	.word	.L72
+	.word	.L79
 	.byte	6
 	.byte	'PWMCount',0,1,18,9
-	.word	.L73,.L74
+	.word	.L80,.L81
 	.byte	0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('SetServoPWM')
 	.sect	'.debug_abbrev'
-.L43:
+.L49:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,85,6,0,0,6,52,0,3,8,58
 	.byte	15,59,15,57,15,73,16,2,6,0,0,0
 	.sdecl	'.debug_line',debug,cluster('SetServoPWM')
 	.sect	'.debug_line'
-.L44:
-	.word	.L112-.L111
-.L111:
+.L50:
+	.word	.L119-.L118
+.L118:
 	.half	3
-	.word	.L114-.L113
-.L113:
+	.word	.L121-.L120
+.L120:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\CODE\\Src\\User_Motor.c',0,0,0,0,0
-.L114:
+.L121:
 	.byte	5,47,7,0,5,2
-	.word	.L24
+	.word	.L30
 	.byte	3,18,1,5,8,9
-	.half	.L115-.L24
+	.half	.L122-.L30
 	.byte	3,3,1,7,9
-	.half	.L85-.L115
+	.half	.L92-.L122
 	.byte	3,1,1,5,1,7,9
-	.half	.L116-.L85
+	.half	.L123-.L92
 	.byte	3,2,1,5,20,7,9
-	.half	.L2-.L116
+	.half	.L2-.L123
 	.byte	3,125,1,5,48,1,5,20,9
 	.half	.L3-.L2
 	.byte	3,1,1,5,37,9
 	.half	.L5-.L3
 	.byte	1,5,1,7,9
-	.half	.L46-.L5
+	.half	.L52-.L5
 	.byte	3,2,0,1,1
-.L112:
+.L119:
 	.sdecl	'.debug_ranges',debug,cluster('SetServoPWM')
 	.sect	'.debug_ranges'
-.L45:
-	.word	-1,.L24,0,.L46-.L24,0,0
-.L72:
-	.word	-1,.L24,0,.L68-.L24,-1,.L26,0,.L66-.L26,0,0
+.L51:
+	.word	-1,.L30,0,.L52-.L30,0,0
+.L79:
+	.word	-1,.L30,0,.L74-.L30,-1,.L32,0,.L72-.L32,0,0
 	.sdecl	'.debug_info',debug,cluster('MotorInit')
 	.sect	'.debug_info'
-.L47:
+.L53:
 	.word	190
 	.half	3
-	.word	.L48
+	.word	.L54
 	.byte	4,1
 	.byte	'..\\CODE\\Src\\User_Motor.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L50,.L49
+	.word	.L56,.L55
 	.byte	2
-	.word	.L33
+	.word	.L39
 	.byte	3
 	.byte	'MotorInit',0,1,27,6,1,1,1
-	.word	.L28,.L75,.L27
+	.word	.L34,.L82,.L33
 	.byte	4
-	.word	.L28,.L75
+	.word	.L34,.L82
 	.byte	0,0
 	.sdecl	'.debug_abbrev',debug,cluster('MotorInit')
 	.sect	'.debug_abbrev'
-.L48:
+.L54:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
 	.sdecl	'.debug_line',debug,cluster('MotorInit')
 	.sect	'.debug_line'
-.L49:
-	.word	.L118-.L117
-.L117:
+.L55:
+	.word	.L125-.L124
+.L124:
 	.half	3
-	.word	.L120-.L119
-.L119:
+	.word	.L127-.L126
+.L126:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\CODE\\Src\\User_Motor.c',0,0,0,0,0
-.L120:
+.L127:
 	.byte	5,39,7,0,5,2
-	.word	.L28
+	.word	.L34
 	.byte	3,28,1,5,33,9
-	.half	.L121-.L28
+	.half	.L128-.L34
 	.byte	1,5,15,9
-	.half	.L122-.L121
-	.byte	1,5,39,9
-	.half	.L123-.L122
-	.byte	1,5,15,9
-	.half	.L124-.L123
-	.byte	3,1,1,5,39,9
-	.half	.L125-.L124
-	.byte	1,5,15,9
-	.half	.L126-.L125
-	.byte	3,1,1,5,39,9
-	.half	.L127-.L126
-	.byte	1,5,15,9
-	.half	.L128-.L127
-	.byte	3,1,1,5,39,9
 	.half	.L129-.L128
+	.byte	1,5,39,9
+	.half	.L130-.L129
+	.byte	1,5,15,9
+	.half	.L131-.L130
+	.byte	3,1,1,5,39,9
+	.half	.L132-.L131
+	.byte	1,5,15,9
+	.half	.L133-.L132
+	.byte	3,1,1,5,39,9
+	.half	.L134-.L133
+	.byte	1,5,15,9
+	.half	.L135-.L134
+	.byte	3,1,1,5,39,9
+	.half	.L136-.L135
 	.byte	1,5,1,9
-	.half	.L51-.L129
+	.half	.L57-.L136
 	.byte	3,1,0,1,1
-.L118:
+.L125:
 	.sdecl	'.debug_ranges',debug,cluster('MotorInit')
 	.sect	'.debug_ranges'
-.L50:
-	.word	-1,.L28,0,.L51-.L28,0,0
+.L56:
+	.word	-1,.L34,0,.L57-.L34,0,0
 	.sdecl	'.debug_info',debug,cluster('SetMotorPWM')
 	.sect	'.debug_info'
-.L52:
+.L58:
 	.word	257
 	.half	3
-	.word	.L53
+	.word	.L59
 	.byte	4,1
 	.byte	'..\\CODE\\Src\\User_Motor.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L55,.L54
+	.word	.L61,.L60
 	.byte	2
-	.word	.L33
+	.word	.L39
 	.byte	3
 	.byte	'SetMotorPWM',0,1,35,6,1,1,1
-	.word	.L30,.L76,.L29
+	.word	.L36,.L83,.L35
 	.byte	4
 	.byte	'MotorState',0,1,35,32
-	.word	.L77,.L78
+	.word	.L84,.L85
 	.byte	4
 	.byte	'PWMDuty',0,1,35,50
-	.word	.L69,.L79
+	.word	.L77,.L86
 	.byte	5
-	.word	.L30,.L76
+	.word	.L36,.L83
 	.byte	6
 	.byte	'PWMCount',0,1,37,9
-	.word	.L73,.L80
+	.word	.L80,.L87
 	.byte	0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('SetMotorPWM')
 	.sect	'.debug_abbrev'
-.L53:
+.L59:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3
 	.byte	8,58,15,59,15,57,15,73,16,2,6,0,0,0
 	.sdecl	'.debug_line',debug,cluster('SetMotorPWM')
 	.sect	'.debug_line'
-.L54:
-	.word	.L131-.L130
-.L130:
+.L60:
+	.word	.L138-.L137
+.L137:
 	.half	3
-	.word	.L133-.L132
-.L132:
+	.word	.L140-.L139
+.L139:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\CODE\\Src\\User_Motor.c',0,0,0,0,0
-.L133:
+.L140:
 	.byte	5,49,7,0,5,2
-	.word	.L30
+	.word	.L36
 	.byte	3,37,1,5,8,9
-	.half	.L86-.L30
+	.half	.L93-.L36
 	.byte	3,3,1,7,9
-	.half	.L134-.L86
+	.half	.L141-.L93
 	.byte	3,1,1,7,9
-	.half	.L135-.L134
+	.half	.L142-.L141
 	.byte	3,1,1,7,9
-	.half	.L136-.L135
+	.half	.L143-.L142
 	.byte	3,1,1,5,1,7,9
-	.half	.L137-.L136
+	.half	.L144-.L143
 	.byte	3,2,1,5,27,7,9
-	.half	.L6-.L137
+	.half	.L6-.L144
 	.byte	3,123,1,5,55,1,5,27,9
 	.half	.L7-.L6
 	.byte	3,1,1,5,55,1,5,27,9
@@ -35237,283 +35301,305 @@ __MotorUserHandle_function_end:
 	.byte	3,1,1,5,44,9
 	.half	.L13-.L9
 	.byte	1,5,1,7,9
-	.half	.L56-.L13
+	.half	.L62-.L13
 	.byte	3,2,0,1,1
-.L131:
+.L138:
 	.sdecl	'.debug_ranges',debug,cluster('SetMotorPWM')
 	.sect	'.debug_ranges'
-.L55:
-	.word	-1,.L30,0,.L56-.L30,0,0
+.L61:
+	.word	-1,.L36,0,.L62-.L36,0,0
 	.sdecl	'.debug_info',debug,cluster('MotorUserHandle')
 	.sect	'.debug_info'
-.L57:
+.L63:
 	.word	234
 	.half	3
-	.word	.L58
+	.word	.L64
 	.byte	4,1
 	.byte	'..\\CODE\\Src\\User_Motor.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L60,.L59
+	.word	.L66,.L65
 	.byte	2
-	.word	.L33
+	.word	.L39
 	.byte	3
 	.byte	'MotorUserHandle',0,1,48,6,1,1,1
-	.word	.L32,.L81,.L31
+	.word	.L38,.L88,.L37
 	.byte	4
 	.byte	'Motor',0,1,48,36
-	.word	.L77,.L82
+	.word	.L84,.L89
 	.byte	4
 	.byte	'PWMDuty',0,1,48,49
-	.word	.L69,.L83
+	.word	.L77,.L90
 	.byte	5
-	.word	.L32,.L81
+	.word	.L38,.L88
 	.byte	0,0
 	.sdecl	'.debug_abbrev',debug,cluster('MotorUserHandle')
 	.sect	'.debug_abbrev'
-.L58:
+.L64:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
 	.sdecl	'.debug_line',debug,cluster('MotorUserHandle')
 	.sect	'.debug_line'
-.L59:
-	.word	.L139-.L138
-.L138:
+.L65:
+	.word	.L146-.L145
+.L145:
 	.half	3
-	.word	.L141-.L140
-.L140:
+	.word	.L148-.L147
+.L147:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\CODE\\Src\\User_Motor.c',0,0,0,0,0
-.L141:
+.L148:
 	.byte	5,6,7,0,5,2
-	.word	.L32
+	.word	.L38
 	.byte	3,47,1,5,5,9
-	.half	.L89-.L32
-	.byte	3,2,1,5,15,7,9
-	.half	.L142-.L89
-	.byte	3,2,1,5,25,9
-	.half	.L87-.L142
-	.byte	1,5,15,9
-	.half	.L88-.L87
-	.byte	3,1,1,5,27,3,127,1,5,10,9
-	.half	.L14-.L88
-	.byte	3,3,1,5,15,7,9
-	.half	.L143-.L14
-	.byte	3,2,1,5,25,9
-	.half	.L90-.L143
-	.byte	1,5,15,9
-	.half	.L91-.L90
-	.byte	3,1,1,5,27,3,127,1,5,10,9
-	.half	.L16-.L91
-	.byte	3,3,1,5,15,7,9
-	.half	.L144-.L16
-	.byte	3,2,1,5,25,9
-	.half	.L92-.L144
-	.byte	1,5,15,9
-	.half	.L93-.L92
-	.byte	3,1,1,5,27,3,127,1,5,10,9
-	.half	.L18-.L93
-	.byte	3,4,1,5,15,7,9
-	.half	.L145-.L18
-	.byte	3,2,1,5,25,9
-	.half	.L94-.L145
-	.byte	1,5,15,9
-	.half	.L95-.L94
-	.byte	3,1,1,5,25,9
-	.half	.L19-.L95
+	.half	.L96-.L38
+	.byte	3,2,1,5,19,7,9
+	.half	.L149-.L96
+	.byte	3,2,1,5,17,9
+	.half	.L95-.L149
+	.byte	1,5,6,9
+	.half	.L150-.L95
+	.byte	1,5,31,7,9
+	.half	.L151-.L150
+	.byte	3,2,1,5,10,9
+	.half	.L14-.L151
+	.byte	3,10,1,5,19,7,9
+	.half	.L152-.L14
+	.byte	3,2,1,5,17,9
+	.half	.L97-.L152
+	.byte	1,5,6,9
+	.half	.L153-.L97
+	.byte	1,5,16,7,9
+	.half	.L15-.L153
+	.byte	3,2,1,5,26,1,5,16,9
+	.half	.L94-.L15
+	.byte	3,1,1,5,28,3,127,1,5,19,9
+	.half	.L16-.L94
+	.byte	3,5,1,5,29,1,5,19,9
+	.half	.L98-.L16
+	.byte	3,1,1,5,6,3,125,1,5,10,9
+	.half	.L17-.L98
+	.byte	3,7,1,5,19,7,9
+	.half	.L154-.L17
+	.byte	3,2,1,5,17,9
+	.half	.L100-.L154
+	.byte	1,5,6,9
+	.half	.L155-.L100
+	.byte	1,5,28,7,9
+	.half	.L156-.L155
+	.byte	3,2,1,5,10,9
+	.half	.L21-.L156
+	.byte	3,9,1,5,19,7,9
+	.half	.L157-.L21
+	.byte	3,2,1,5,17,9
+	.half	.L101-.L157
+	.byte	1,5,6,9
+	.half	.L158-.L101
+	.byte	1,5,19,7,9
+	.half	.L22-.L158
+	.byte	3,2,1,5,29,1,5,19,9
+	.half	.L99-.L22
+	.byte	3,1,1,5,31,3,127,1,5,1,9
+	.half	.L24-.L99
+	.byte	3,9,1,5,19,7,9
+	.half	.L23-.L24
+	.byte	3,124,1,5,29,1,5,19,9
+	.half	.L102-.L23
+	.byte	3,1,1,5,29,9
+	.half	.L26-.L102
 	.byte	1,5,1,9
-	.half	.L20-.L19
-	.byte	3,2,1,7,9
-	.half	.L61-.L20
-	.byte	0,1,1
-.L139:
+	.half	.L67-.L26
+	.byte	3,3,0,1,1
+.L146:
 	.sdecl	'.debug_ranges',debug,cluster('MotorUserHandle')
 	.sect	'.debug_ranges'
-.L60:
-	.word	-1,.L32,0,.L61-.L32,0,0
+.L66:
+	.word	-1,.L38,0,.L67-.L38,0,0
 	.sdecl	'.debug_info',debug,cluster('.cocofun_1')
 	.sect	'.debug_info'
-.L62:
+.L68:
 	.word	179
 	.half	3
-	.word	.L63
+	.word	.L69
 	.byte	4,1
 	.byte	'..\\CODE\\Src\\User_Motor.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L65,.L64
+	.word	.L71,.L70
 	.byte	2
-	.word	.L33
+	.word	.L39
 	.byte	3
 	.byte	'.cocofun_1',0,1,16,6,1
-	.word	.L26,.L66,.L25
+	.word	.L32,.L72,.L31
 	.byte	0
 	.sdecl	'.debug_abbrev',debug,cluster('.cocofun_1')
 	.sect	'.debug_abbrev'
-.L63:
+.L69:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,0,3,8,58,15,59,15,57,15,54,15
 	.byte	17,1,18,1,64,6,0,0,0
 	.sdecl	'.debug_line',debug,cluster('.cocofun_1')
 	.sect	'.debug_line'
-.L64:
-	.word	.L147-.L146
-.L146:
+.L70:
+	.word	.L160-.L159
+.L159:
 	.half	3
-	.word	.L149-.L148
-.L148:
+	.word	.L162-.L161
+.L161:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\CODE\\Src\\User_Motor.c',0,0,0,0,0
-.L149:
+.L162:
 	.byte	5,47,7,0,5,2
-	.word	.L26
+	.word	.L32
 	.byte	3,18,1,5,46,9
-	.half	.L150-.L26
+	.half	.L163-.L32
 	.byte	1,5,13,9
-	.half	.L151-.L150
+	.half	.L164-.L163
 	.byte	1,5,36,9
-	.half	.L84-.L151
+	.half	.L165-.L164
 	.byte	1,9
-	.half	.L66-.L84
+	.half	.L72-.L165
 	.byte	0,1,1,5,49,0,5,2
-	.word	.L26
+	.word	.L32
 	.byte	3,37,1,5,47,9
-	.half	.L150-.L26
+	.half	.L163-.L32
 	.byte	1,5,13,9
-	.half	.L151-.L150
+	.half	.L164-.L163
 	.byte	1,5,36,9
-	.half	.L84-.L151
-	.byte	1,3,109,1,7,9
-	.half	.L66-.L84
+	.half	.L165-.L164
+	.byte	1,9
+	.half	.L91-.L165
+	.byte	3,109,1,7,9
+	.half	.L72-.L91
 	.byte	0,1,1
-.L147:
+.L160:
 	.sdecl	'.debug_ranges',debug,cluster('.cocofun_1')
 	.sect	'.debug_ranges'
-.L65:
-	.word	-1,.L26,0,.L66-.L26,0,0
+.L71:
+	.word	-1,.L32,0,.L72-.L32,0,0
 	.sdecl	'.debug_loc',debug,cluster('.cocofun_1')
 	.sect	'.debug_loc'
-.L25:
-	.word	-1,.L26,0,.L66-.L26
+.L31:
+	.word	-1,.L32,0,.L72-.L32
 	.half	2
 	.byte	138,0
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('MotorInit')
 	.sect	'.debug_loc'
-.L27:
-	.word	-1,.L28,0,.L75-.L28
+.L33:
+	.word	-1,.L34,0,.L82-.L34
 	.half	2
 	.byte	138,0
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('MotorUserHandle')
 	.sect	'.debug_loc'
-.L82:
-	.word	-1,.L32,0,.L87-.L32
+.L89:
+	.word	-1,.L38,0,.L94-.L38
 	.half	1
 	.byte	84
-	.word	.L14-.L32,.L90-.L32
+	.word	.L16-.L38,.L98-.L38
 	.half	1
 	.byte	84
-	.word	.L16-.L32,.L92-.L32
+	.word	.L17-.L38,.L99-.L38
 	.half	1
 	.byte	84
-	.word	.L18-.L32,.L94-.L32
-	.half	1
-	.byte	84
-	.word	.L20-.L32,.L81-.L32
+	.word	.L24-.L38,.L102-.L38
 	.half	1
 	.byte	84
 	.word	0,0
-.L31:
-	.word	-1,.L32,0,.L81-.L32
+.L37:
+	.word	-1,.L38,0,.L88-.L38
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L83:
-	.word	-1,.L32,0,.L88-.L32
+.L90:
+	.word	-1,.L38,0,.L95-.L38
 	.half	1
 	.byte	85
-	.word	.L89-.L32,.L81-.L32
+	.word	.L96-.L38,.L88-.L38
 	.half	1
-	.byte	95
-	.word	.L14-.L32,.L91-.L32
-	.half	1
-	.byte	85
-	.word	.L16-.L32,.L93-.L32
+	.byte	88
+	.word	.L14-.L38,.L97-.L38
 	.half	1
 	.byte	85
-	.word	.L18-.L32,.L95-.L32
+	.word	.L17-.L38,.L100-.L38
 	.half	1
 	.byte	85
-	.word	.L96-.L32,.L81-.L32
+	.word	.L21-.L38,.L101-.L38
+	.half	1
+	.byte	85
+	.word	.L24-.L38,.L23-.L38
+	.half	1
+	.byte	85
+	.word	.L103-.L38,.L88-.L38
 	.half	1
 	.byte	85
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('ServoMotorInit')
 	.sect	'.debug_loc'
-.L21:
-	.word	-1,.L22,0,.L67-.L22
+.L27:
+	.word	-1,.L28,0,.L73-.L28
 	.half	2
 	.byte	138,0
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('SetMotorPWM')
 	.sect	'.debug_loc'
-.L78:
-	.word	-1,.L30,.L26-.L30,.L66-.L30
+.L85:
+	.word	-1,.L36,.L32-.L36,.L72-.L36
 	.half	1
 	.byte	84
-	.word	.L86-.L30,.L13-.L30
+	.word	.L93-.L36,.L13-.L36
 	.half	1
 	.byte	84
 	.word	0,0
-.L80:
-	.word	-1,.L30,.L84-.L30,.L66-.L30
+.L87:
+	.word	-1,.L36,.L91-.L36,.L72-.L36
 	.half	1
 	.byte	85
-	.word	.L86-.L30,.L76-.L30
-	.half	1
-	.byte	85
-	.word	0,0
-.L79:
-	.word	-1,.L30,.L26-.L30,.L84-.L30
+	.word	.L93-.L36,.L83-.L36
 	.half	1
 	.byte	85
 	.word	0,0
-.L29:
-	.word	-1,.L30,0,.L76-.L30
+.L86:
+	.word	-1,.L36,.L32-.L36,.L72-.L36
+	.half	1
+	.byte	85
+	.word	0,0
+.L35:
+	.word	-1,.L36,0,.L83-.L36
 	.half	2
 	.byte	138,0
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('SetServoPWM')
 	.sect	'.debug_loc'
-.L74:
-	.word	-1,.L24,.L84-.L24,.L66-.L24
+.L81:
+	.word	-1,.L30,.L91-.L30,.L72-.L30
 	.half	1
 	.byte	85
-	.word	.L85-.L24,.L68-.L24
-	.half	1
-	.byte	85
-	.word	0,0
-.L71:
-	.word	-1,.L24,.L26-.L24,.L84-.L24
+	.word	.L92-.L30,.L74-.L30
 	.half	1
 	.byte	85
 	.word	0,0
-.L70:
-	.word	-1,.L24,.L26-.L24,.L66-.L24
+.L78:
+	.word	-1,.L30,.L32-.L30,.L72-.L30
+	.half	1
+	.byte	85
+	.word	0,0
+.L76:
+	.word	-1,.L30,.L32-.L30,.L72-.L30
 	.half	1
 	.byte	84
-	.word	.L85-.L24,.L5-.L24
+	.word	.L92-.L30,.L5-.L30
 	.half	1
 	.byte	84
 	.word	0,0
-.L23:
-	.word	-1,.L24,0,.L68-.L24
+.L29:
+	.word	-1,.L30,0,.L74-.L30
 	.half	2
 	.byte	138,0
 	.word	0,0
 	.sdecl	'.debug_frame',debug
 	.sect	'.debug_frame'
-.L152:
+.L166:
 	.word	48
 	.word	-1
 	.byte	3,0,2,1,27,12,26,0,8,27,8,26,8,28,8,29,8,30,8,31,8,34,8,35,8,32,8,33,8,16,8,17,8,24,8,25,8,36,8,37,8,38
@@ -35521,26 +35607,26 @@ __MotorUserHandle_function_end:
 	.sdecl	'.debug_frame',debug,cluster('ServoMotorInit')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L152,.L22,.L67-.L22
+	.word	.L166,.L28,.L73-.L28
 	.sdecl	'.debug_frame',debug,cluster('SetServoPWM')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L152,.L24,.L68-.L24
+	.word	.L166,.L30,.L74-.L30
 	.sdecl	'.debug_frame',debug,cluster('MotorInit')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L152,.L28,.L75-.L28
+	.word	.L166,.L34,.L82-.L34
 	.sdecl	'.debug_frame',debug,cluster('SetMotorPWM')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L152,.L30,.L76-.L30
+	.word	.L166,.L36,.L83-.L36
 	.sdecl	'.debug_frame',debug,cluster('MotorUserHandle')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L152,.L32,.L81-.L32
+	.word	.L166,.L38,.L88-.L38
 	.sdecl	'.debug_frame',debug
 	.sect	'.debug_frame'
-.L153:
+.L167:
 	.word	52
 	.word	-1
 	.byte	3,0,2,1,40,12,26,0,9,40,27,155,0,7,26,8,28,8,29,8,30,8,31,8,34,8,35,8,32,8,33,8,16,8,17,8,24,8,25,8,36
@@ -35548,9 +35634,9 @@ __MotorUserHandle_function_end:
 	.sdecl	'.debug_frame',debug,cluster('.cocofun_1')
 	.sect	'.debug_frame'
 	.word	24
-	.word	.L153,.L26,.L66-.L26
+	.word	.L167,.L32,.L72-.L32
 	.byte	8,18,8,19,8,20,8,21,8,22,8,23
 
-; ..\CODE\Src\User_Motor.c	    72  
+; ..\CODE\Src\User_Motor.c	   105  
 
 	; Module end

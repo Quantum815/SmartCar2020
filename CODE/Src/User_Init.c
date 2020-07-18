@@ -16,20 +16,14 @@ void UserInit(void)
 	pit_interrupt_ms(CCU6_0, PIT_CH0, MainProcessTime);
 	//距离计算
 	pit_interrupt_ms(CCU6_1, PIT_CH0, CountDistanceTime);
-	//GyroUARTInit();
-	//GyroInit();
-	//各类资源与外设
-	//adc_init(ADC_0, ADC0_CH0_A0);
 
+	//各类资源与外设
+	//ADCInit();
 	//DebugUARTInit();
 	//EncoderInit();
 	//MotorInit();
-	//GyroUARTInit();
+	GyroUARTInit();
 	//ServoMotorInit();
-	//SetMotorPWM(LMotor_F, 0);
-	//SetMotorPWM(LMotor_B, 0);
-	//SetMotorPWM(RMotor_F, 0);
-	//SetMotorPWM(RMotor_B, 0);
 }
 
 

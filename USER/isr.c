@@ -37,7 +37,8 @@ IFX_INTERRUPT(cc60_pit_ch0_isr, 0, CCU6_0_CH0_ISR_PRIORITY)  //Ö÷³ÌÐò
 		i = 0;
 	}
 	//CameraProcess();
-	//GyroReadByte();
+	//GyroUARTReadByte();
+	//GyroCalculate();
 	//FSMRun();
 }
 

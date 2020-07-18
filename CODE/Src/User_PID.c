@@ -13,6 +13,7 @@ double PidValue;
 
 #pragma section all restore
 
+
 #pragma section all "cpu0_psram"
 
 double GetPIDValue(double middle, double value, double kP, double kI, double kD)
@@ -32,10 +33,10 @@ double GetPIDValue(double middle, double value, double kP, double kI, double kD)
 
 	PreviousErrorValue = NowErrorValue;
 	PidValue = 0.1 * OldValue + 0.9 * PidValue;	                       //µÍÍ¨ÂË²¨
-	if(PidValue > 1200)
-		PidValue = 1200;
-	else if(PidValue < -1200)
-		PidValue = -1200;
+	if(PidValue > 1500)
+		PidValue = 1500;
+	else if(PidValue < -1500)
+		PidValue = -1500;
 
 	return (PidValue/100);
 }

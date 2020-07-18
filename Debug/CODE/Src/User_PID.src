@@ -28,22 +28,23 @@ $TC16X
 ; ..\CODE\Src\User_PID.c	    13  
 ; ..\CODE\Src\User_PID.c	    14  #pragma section all restore
 ; ..\CODE\Src\User_PID.c	    15  
-; ..\CODE\Src\User_PID.c	    16  #pragma section all "cpu0_psram"
-; ..\CODE\Src\User_PID.c	    17  
-; ..\CODE\Src\User_PID.c	    18  double GetPIDValue(double middle, double value, double kP, double kI, double kD)
+; ..\CODE\Src\User_PID.c	    16  
+; ..\CODE\Src\User_PID.c	    17  #pragma section all "cpu0_psram"
+; ..\CODE\Src\User_PID.c	    18  
+; ..\CODE\Src\User_PID.c	    19  double GetPIDValue(double middle, double value, double kP, double kI, double kD)
 ; Function GetPIDValue
 .L8:
 GetPIDValue:	.type	func
 
-; ..\CODE\Src\User_PID.c	    19  {
-; ..\CODE\Src\User_PID.c	    20  	static double PreviousErrorValue = 0;
-; ..\CODE\Src\User_PID.c	    21  	static double NowErrorValue = 0;
-; ..\CODE\Src\User_PID.c	    22  	static double IntegralErrorValue = 0;
-; ..\CODE\Src\User_PID.c	    23  	static double DifferentialErrorValue = 0;
-; ..\CODE\Src\User_PID.c	    24  	static double OldValue = 0;
-; ..\CODE\Src\User_PID.c	    25  
-; ..\CODE\Src\User_PID.c	    26  	NowErrorValue = value - middle;
-; ..\CODE\Src\User_PID.c	    27  	IntegralErrorValue += NowErrorValue;
+; ..\CODE\Src\User_PID.c	    20  {
+; ..\CODE\Src\User_PID.c	    21  	static double PreviousErrorValue = 0;
+; ..\CODE\Src\User_PID.c	    22  	static double NowErrorValue = 0;
+; ..\CODE\Src\User_PID.c	    23  	static double IntegralErrorValue = 0;
+; ..\CODE\Src\User_PID.c	    24  	static double DifferentialErrorValue = 0;
+; ..\CODE\Src\User_PID.c	    25  	static double OldValue = 0;
+; ..\CODE\Src\User_PID.c	    26  
+; ..\CODE\Src\User_PID.c	    27  	NowErrorValue = value - middle;
+; ..\CODE\Src\User_PID.c	    28  	IntegralErrorValue += NowErrorValue;
 	sub.f	d0,d5,d4
 	movh.a	a15,#@his(_999002_IntegralErrorValue)
 	lea	a15,[a15]@los(_999002_IntegralErrorValue)
@@ -55,16 +56,16 @@ GetPIDValue:	.type	func
 	st.w	[a15],d1
 .L39:
 
-; ..\CODE\Src\User_PID.c	    28  	DifferentialErrorValue = NowErrorValue - PreviousErrorValue;
+; ..\CODE\Src\User_PID.c	    29  	DifferentialErrorValue = NowErrorValue - PreviousErrorValue;
 	movh.a	a2,#@his(_999001_PreviousErrorValue)
 	ld.w	d1,[a2]@los(_999001_PreviousErrorValue)
 .L40:
 
-; ..\CODE\Src\User_PID.c	    29  	OldValue = PidValue;
-; ..\CODE\Src\User_PID.c	    30  
-; ..\CODE\Src\User_PID.c	    31  	PidValue = kP * NowErrorValue + kI * IntegralErrorValue + kD * DifferentialErrorValue;
-; ..\CODE\Src\User_PID.c	    32  
-; ..\CODE\Src\User_PID.c	    33  	PreviousErrorValue = NowErrorValue;
+; ..\CODE\Src\User_PID.c	    30  	OldValue = PidValue;
+; ..\CODE\Src\User_PID.c	    31  
+; ..\CODE\Src\User_PID.c	    32  	PidValue = kP * NowErrorValue + kI * IntegralErrorValue + kD * DifferentialErrorValue;
+; ..\CODE\Src\User_PID.c	    33  
+; ..\CODE\Src\User_PID.c	    34  	PreviousErrorValue = NowErrorValue;
 	st.w	[a2]@los(_999001_PreviousErrorValue),d0
 .L41:
 	sub.f	d1,d0,d1
@@ -73,7 +74,7 @@ GetPIDValue:	.type	func
 	ld.w	d4,[a15]
 .L27:
 
-; ..\CODE\Src\User_PID.c	    34  	PidValue = 0.1 * OldValue + 0.9 * PidValue;	                       //µÍÍ¨ÂË²¨
+; ..\CODE\Src\User_PID.c	    35  	PidValue = 0.1 * OldValue + 0.9 * PidValue;	                       //µÍÍ¨ÂË²¨
 	mov.u	d3,#52429
 	lea	a2,[a2]@los(PidValue)
 .L43:
@@ -92,31 +93,34 @@ GetPIDValue:	.type	func
 	mul.f	d15,d15,d0
 .L48:
 
-; ..\CODE\Src\User_PID.c	    35  	if(PidValue > 1200)
-	movh	d0,#17558
+; ..\CODE\Src\User_PID.c	    36  	if(PidValue > 1500)
+	mov.u	d0,#32768
 .L49:
 	madd.f	d1,d15,d2,d3
 .L50:
+	addih	d0,d0,#17595
+.L51:
 	cmp.f	d15,d1,d0
 	jnz.t	d15:2,.L2
-.L51:
-
-; ..\CODE\Src\User_PID.c	    36  		PidValue = 1200;
-; ..\CODE\Src\User_PID.c	    37  	else if(PidValue < -1200)
-	movh	d0,#50326
 .L52:
+
+; ..\CODE\Src\User_PID.c	    37  		PidValue = 1500;
+; ..\CODE\Src\User_PID.c	    38  	else if(PidValue < -1500)
+	mov.u	d0,#32768
+	addih	d0,d0,#50363
+.L53:
 	cmp.f	d15,d0,d1
 	and	d15,#6
 	cmovn	d0,d15,d1
 .L2:
 
-; ..\CODE\Src\User_PID.c	    38  		PidValue = -1200;
-; ..\CODE\Src\User_PID.c	    39  
-; ..\CODE\Src\User_PID.c	    40  	return (PidValue/100);
-; ..\CODE\Src\User_PID.c	    41  }
+; ..\CODE\Src\User_PID.c	    39  		PidValue = -1500;
+; ..\CODE\Src\User_PID.c	    40  
+; ..\CODE\Src\User_PID.c	    41  	return (PidValue/100);
+; ..\CODE\Src\User_PID.c	    42  }
 	movh	d15,#17096
 	st.w	[a2],d0
-.L53:
+.L54:
 	div.f	d2,d0,d15
 	ret
 .L21:
@@ -34583,34 +34587,34 @@ _999002_IntegralErrorValue:	.type	object
 	.byte	2
 	.word	.L9
 	.byte	3
-	.byte	'GetPIDValue',0,1,18,8
+	.byte	'GetPIDValue',0,1,19,8
 	.word	.L20
 	.byte	1,1,1
 	.word	.L8,.L21,.L7
 	.byte	4
-	.byte	'middle',0,1,18,27
+	.byte	'middle',0,1,19,27
 	.word	.L20,.L22
 	.byte	4
-	.byte	'value',0,1,18,42
+	.byte	'value',0,1,19,42
 	.word	.L20,.L23
 	.byte	4
-	.byte	'kP',0,1,18,56
+	.byte	'kP',0,1,19,56
 	.word	.L20,.L24
 	.byte	4
-	.byte	'kI',0,1,18,67
+	.byte	'kI',0,1,19,67
 	.word	.L20,.L25
 	.byte	4
-	.byte	'kD',0,1,18,78
+	.byte	'kD',0,1,19,78
 	.word	.L20,.L26
 	.byte	5
 	.word	.L8,.L21
 	.byte	6
-	.byte	'PreviousErrorValue',0,1,20,16
+	.byte	'PreviousErrorValue',0,1,21,16
 	.word	.L20
 	.byte	5,3
 	.word	_999001_PreviousErrorValue
 	.byte	6
-	.byte	'IntegralErrorValue',0,1,22,16
+	.byte	'IntegralErrorValue',0,1,23,16
 	.word	.L20
 	.byte	5,3
 	.word	_999002_IntegralErrorValue
@@ -34634,7 +34638,7 @@ _999002_IntegralErrorValue:	.type	object
 .L37:
 	.byte	5,24,7,0,5,2
 	.word	.L8
-	.byte	3,25,1,5,2,3,1,1,5,8,9
+	.byte	3,26,1,5,2,3,1,1,5,8,9
 	.half	.L38-.L8
 	.byte	3,119,1,5,21,9
 	.half	.L28-.L38
@@ -34664,18 +34668,20 @@ _999002_IntegralErrorValue:	.type	object
 	.half	.L48-.L47
 	.byte	3,1,1,5,28,9
 	.half	.L49-.L48
-	.byte	3,127,1,5,2,9
+	.byte	3,127,1,5,16,9
 	.half	.L50-.L49
-	.byte	3,1,1,5,21,9
+	.byte	3,1,1,5,2,9
 	.half	.L51-.L50
-	.byte	3,2,1,5,19,9
+	.byte	1,5,21,9
 	.half	.L52-.L51
+	.byte	3,2,1,5,19,9
+	.half	.L53-.L52
 	.byte	1,9
-	.half	.L2-.L52
+	.half	.L2-.L53
 	.byte	3,3,1,5,1,3,1,1,5,18,9
-	.half	.L53-.L2
+	.half	.L54-.L2
 	.byte	3,127,1,5,1,3,1,1,7,9
-	.half	.L17-.L53
+	.half	.L17-.L54
 	.byte	0,1,1
 .L35:
 	.sdecl	'.debug_ranges',debug,cluster('GetPIDValue')
@@ -34744,7 +34750,7 @@ _999002_IntegralErrorValue:	.type	object
 	.word	0,0
 	.sdecl	'.debug_frame',debug
 	.sect	'.debug_frame'
-.L54:
+.L55:
 	.word	48
 	.word	-1
 	.byte	3,0,2,1,27,12,26,0,8,27,8,26,8,28,8,29,8,30,8,31,8,34,8,35,8,32,8,33,8,16,8,17,8,24,8,25,8,36,8,37,8,38
@@ -34752,10 +34758,10 @@ _999002_IntegralErrorValue:	.type	object
 	.sdecl	'.debug_frame',debug,cluster('GetPIDValue')
 	.sect	'.debug_frame'
 	.word	24
-	.word	.L54,.L8,.L21-.L8
+	.word	.L55,.L8,.L21-.L8
 	.byte	8,19,8,20,8,21,8,22,8,23,0,0
 
-; ..\CODE\Src\User_PID.c	    42  
-; ..\CODE\Src\User_PID.c	    43  #pragma section all restore
+; ..\CODE\Src\User_PID.c	    43  
+; ..\CODE\Src\User_PID.c	    44  #pragma section all restore
 
 	; Module end

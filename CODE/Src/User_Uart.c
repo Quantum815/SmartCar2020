@@ -15,12 +15,12 @@ uint8 GyroUnlockInstruction[5] = {0xff, 0xaa, 0x69, 0x88, 0xb5};  //解锁指令
 uint8 GyroAutoCalibration[5] = {0xff, 0xaa, 0x63, 0x00, 0x00};  //陀螺仪自动校准
 uint8 GyroKeepConfiguration[5] = {0xff, 0xaa, 0x00, 0x00, 0x00};  //保持配置
 uint8 GyroRxBuff[11];
-uint8 GyroReceiveNum, GyroRxFlag;
+int8 GyroReceiveNum, GyroRxFlag;
 float PitchAngle, RollAngle, YawAngle;
 
 #pragma section all restore
 
-void DebugUARTInit()
+void DebugUARTInit(void)
 {
 	uart_init(UART_3, 115200, UART3_TX_P15_6, UART3_RX_P15_7);
 }
@@ -30,7 +30,7 @@ void DebugUARTInit()
 //0x04 返回当前状态回上位机
 void DebugSend(void)
 {
-	while(uart_query(UART_3, &DebugRxBuff))
+	if(uart_query(UART_3, &DebugRxBuff))
 	{
 		if(DebugRxBuff == 0x00)
 		{
@@ -59,45 +59,40 @@ void DebugSend(void)
 			if(ReturnFSMState(&CarFSM) == GoLine)
 			{
 				uart_putstr(UART_3, "GoLine\r\n");
-				my_delay(1000000);
+				my_delay(7000000);
 			}
 			else if(ReturnFSMState(&CarFSM) == Stop)
 			{
 				uart_putstr(UART_3, "Stop\r\n");
-				my_delay(1000000);
-			}
-			else if(ReturnFSMState(&CarFSM) == SendBall)
-			{
-				uart_putstr(UART_3, "SendBall\r\n");
-				my_delay(1000000);
+				my_delay(7000000);
 			}
 		}
 	}
 }
 
-void GyroUARTInit()
+void GyroUARTInit(void)
 {
-	uart_init(UART_0, 256000, UART0_TX_P14_0, UART0_RX_P14_1);
-	uart_putbuff(UART_0, GyroUnlockInstruction, 5);
-	systick_delay_ms(STM1, 80);
-	uart_putbuff(UART_0, GyroAutoCalibration, 5);
-	systick_delay_ms(STM1, 80);
-	uart_putbuff(UART_0, GyroKeepConfiguration, 5);
-	systick_delay_ms(STM1, 80);
+	uart_init(UART_0, 115200, UART0_TX_P14_0, UART0_RX_P14_1);
+	uart_putbuff(UART_0, &GyroUnlockInstruction[0], 5);
+	systick_delay_ms(STM1, 100);
+	uart_putbuff(UART_0, &GyroAutoCalibration[0], 5);
+	systick_delay_ms(STM1, 100);
+	uart_putbuff(UART_0, &GyroKeepConfiguration[0], 5);
+	systick_delay_ms(STM1, 100);
 }
 
-void GyroUARTReadByte()
+void GyroUARTReadByte(void)
 {
-	while(uart_query(UART_0,&GyroRxBuff[GyroReceiveNum]))
+	if(uart_query(UART_0, &GyroRxBuff[GyroReceiveNum]))
 	{
 		if(GyroReceiveNum==0 && GyroRxBuff[0]!=0x55)
-			GyroReceiveNum = 0;
+			GyroReceiveNum = -1;
 		if(GyroReceiveNum==1 && GyroRxBuff[1]!=0x53)
-			GyroReceiveNum = 0;
+			GyroReceiveNum = -1;
 
         if(10 == GyroReceiveNum)
         {
-        	GyroReceiveNum = 0;
+        	GyroReceiveNum = -1;
             GyroRxFlag = 1;
         }
         GyroReceiveNum++;
@@ -130,7 +125,6 @@ void GyroCalculate(void)
 		temp = GyroRxBuff[3];
 		temp <<= 8;
 		temp |= GyroRxBuff[2];
-
 		PitchAngle= (float)temp / (float)32768 * (float)180;
 
 		temp = GyroRxBuff[5];
@@ -143,6 +137,7 @@ void GyroCalculate(void)
 		temp |= GyroRxBuff[6];
 		YawAngle = (float)temp / (float)32768 * (float)180;
 		GyroRxFlag = 0;
+		printf("p=%f,r=%f,y=%f\r\n",PitchAngle,RollAngle,YawAngle);
     }
-	printf("p=%f,r=%f,y=%f\r\n",PitchAngle,RollAngle,YawAngle);
+
 }

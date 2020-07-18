@@ -46,14 +46,14 @@ void core0_main(void)
 	while (TRUE)
 	{
 		//GyroI2CReadByte();
-
-//		for(int i =0;i<=10;i++)
-//		printf("%d   ",GYRORxBuff[i]);
-//		printf("\r\n");
-		systick_delay_ms(STM0, 100);
+		//for(int i =0;i<=10;i++)
+		//printf("%d   ",GYRORxBuff[i]);
+		//printf("\r\n");
+		//systick_delay_ms(STM0, 1);
 		//用户在此处编写任务代码
 		//CountDistance();
-		GyroCalculate();
+		//GyroUARTReadByte();
+		//GyroCalculate();
     	//systick_delay_ms(STM0, 500);
 		//ips114_showchar(50,50,'t');
 		//SetMotorPWM(LMotor_F, 30);

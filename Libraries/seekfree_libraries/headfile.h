@@ -86,6 +86,9 @@
 //是否使用陀螺仪I2C
 //#define USEGYROI2C
 
+//是否使用图像处理
+//#define IMAGEPROCESS
+
 //进程中断时间
 #define MainProcessTime 10
 #define CountDistanceTime 5
@@ -101,10 +104,6 @@
 //车轮启动死区PWM占空比
 #define LeftWheelDeadZone 10
 #define RightWheelDeadZone 10
-
-//图像处理阈值
-#define CloseThresholds 130
-#define FarThresholds 130
 
 #endif
 

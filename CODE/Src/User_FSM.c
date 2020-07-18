@@ -11,10 +11,11 @@
 FSMTable_t CarTable[] =
 {
     //{到来的事件，当前的状态，将要要执行的函数，下一个状态}
-    { RUNSTART, Stop,   RunStart, GoLine },
-    { RUNSTOP,  GoLine, RunStop,  Stop   },
-	{ NOEVENT,  Stop,   RunStop,  Stop   },
-	{ NOEVENT,  GoLine, FindLine, GoLine }
+    { RUNSTART, Stop,   RunStart,  GoLine },
+    { RUNSTOP,  GoLine, RunStop,   Stop   },
+	{ NOEVENT,  Stop,   RunStop,   Stop   },
+//	{ NOEVENT,  GoLine, FindLine,  GoLine },
+	{ GOROUND,  GoLine, PassCross, GoLine }
     //如果出现新的代码加入在此
 };
 FSM_t CarFSM;
@@ -35,7 +36,7 @@ void RunStop(void)
 	SetMotorPWM(RMotor_B, 0);
 }
 
-void FindLine(void)
+/*void FindLine(void)
 {
 	if(ProcessImageFlag == 1)
 	{
@@ -43,6 +44,13 @@ void FindLine(void)
 		MotorUserHandle(RMotor_F, RightWheelDeadZone - GetPIDValue(99,MidLineFuseNum,10,0,0));
 	}
 	ProcessImageFlag=0;
+}*/
+
+void PassCross(void)
+{
+
+	MotorUserHandle(LMotor_F, LeftWheelDeadZone);
+    MotorUserHandle(RMotor_F, RightWheelDeadZone);
 }
 
 //************************************************
@@ -73,7 +81,7 @@ void FSMEventHandle(FSM_t *fsm, int event)
     void (*eventAction)() = NULL;  //函数指针初始化为空
     int nextState = -1;
     int size = fsm->Size;
-    int flag = 0;
+    int flag = 0;  //标识条件是否满足
     int i;
 
     //获取当前动作函数
@@ -93,7 +101,7 @@ void FSMEventHandle(FSM_t *fsm, int event)
     }
     if(!flag)
     {
-        printf("there is no match!\n");
+        //printf("there is no match!\n");
     }
 }
 

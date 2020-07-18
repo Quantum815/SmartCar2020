@@ -19,9 +19,9 @@ typedef enum Motor_State
 }Motor_State_t;
 
 void ServoMotorInit(void);
-void SetServoPWM(uint8 ServoNum, uint8 PWMDuty);
+void SetServoPWM(uint8 ServoNum, float PWMDuty);
 void MotorInit(void);
-void SetMotorPWM(Motor_State_t MotorState, uint8 PWMDuty);
-void MotorUserHandle(Motor_State_t Motor, uint8 PWMDuty);
+void SetMotorPWM(Motor_State_t MotorState, float PWMDuty);
+void MotorUserHandle(Motor_State_t Motor, float PWMDuty);
 
 #endif /* CODE_INC_USER_MOTOR_H_ */

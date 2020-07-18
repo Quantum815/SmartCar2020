@@ -13,7 +13,7 @@ void ServoMotorInit(void)
 	gtm_pwm_init(ATOM0_CH1_P21_3, 50, 5000);
 }
 
-void SetServoPWM(uint8 ServoNum, uint8 PWMDuty)  //PWMDutyÎª°Ù·Ö±È
+void SetServoPWM(uint8 ServoNum, float PWMDuty)  //PWMDutyÎª°Ù·Ö±È
 {
 	uint32 PWMCount = 0;
 	PWMCount = GTM_ATOM0_PWM_DUTY_MAX * (PWMDuty/100);
@@ -32,7 +32,7 @@ void MotorInit(void)
 	gtm_pwm_init(ATOM1_CH7_P02_7 , 8000, 25000);
 }
 
-void SetMotorPWM(Motor_State_t MotorState, uint8 PWMDuty)  //ÒÑ¾­¹ýÇý¶¯°å²âÊÔ£¬ÔÝÊ±²»ÓÃ¸ü¸Ä
+void SetMotorPWM(Motor_State_t MotorState, float PWMDuty)
 {
 	uint32 PWMCount = 0;
 	PWMCount = GTM_ATOM1_PWM_DUTY_MAX * (PWMDuty / 100);
@@ -45,28 +45,61 @@ void SetMotorPWM(Motor_State_t MotorState, uint8 PWMDuty)  //ÒÑ¾­¹ýÇý¶¯°å²âÊÔ£¬Ô
 	}
 }
 
-void MotorUserHandle(Motor_State_t Motor, uint8 PWMDuty)
+void MotorUserHandle(Motor_State_t Motor, float PWMDuty)
 {
     if(Motor == LMotor_F)
     {
-		SetMotorPWM(LMotor_B, 0);
-		SetMotorPWM(LMotor_F, PWMDuty);
+    	if(PWMDuty < 0)
+    	{
+    		SetMotorPWM(LMotor_F, 0);
+    		SetMotorPWM(LMotor_B, PWMDuty);
+    	}
+    	else
+    	{
+			SetMotorPWM(LMotor_B, 0);
+			SetMotorPWM(LMotor_F, PWMDuty);
+    	}
+
     }
     else if(Motor == LMotor_B)
     {
-		SetMotorPWM(LMotor_F, 0);
-		SetMotorPWM(LMotor_B, PWMDuty);
+    	if(PWMDuty < 0)
+    	{
+			SetMotorPWM(LMotor_B, 0);
+			SetMotorPWM(LMotor_F, PWMDuty);
+    	}
+    	else
+    	{
+    		SetMotorPWM(LMotor_F, 0);
+    		SetMotorPWM(LMotor_B, PWMDuty);
+    	}
+
     }
     else if(Motor == RMotor_F)
     {
-		SetMotorPWM(RMotor_B, 0);
-		SetMotorPWM(RMotor_F, PWMDuty);
-
+    	if(PWMDuty < 0)
+    	{
+			SetMotorPWM(RMotor_F, 0);
+			SetMotorPWM(RMotor_B, PWMDuty);
+    	}
+    	else
+    	{
+    		SetMotorPWM(RMotor_B, 0);
+    		SetMotorPWM(RMotor_F, PWMDuty);
+    	}
     }
     else if(Motor == RMotor_B)
     {
-		SetMotorPWM(RMotor_F, 0);
-		SetMotorPWM(RMotor_B, PWMDuty);
+    	if(PWMDuty < 0)
+    	{
+    		SetMotorPWM(RMotor_B, 0);
+    		SetMotorPWM(RMotor_F, PWMDuty);
+    	}
+    	else
+    	{
+    		SetMotorPWM(RMotor_F, 0);
+    		SetMotorPWM(RMotor_B, PWMDuty);
+    	}
     }
 }
 

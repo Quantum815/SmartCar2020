@@ -7,12 +7,15 @@
 
 #include <..\CODE\Inc\User_Image_Process.h>
 
+#ifdef IMAGEPROCESS
+
 #pragma section all "cpu1_dsram"
 int x1, x2, x3, x4;
+int CloseThresholds;
+int FarThresholds;
 double MidLineFuseNum;
-uint8 Rbp = 0, Lbp = 0;
 uint8 ProcessImageFlag = 0;
-uint8 DisplayIMAGE[MT9V03X_H][MT9V03X_W];
+uint8 DisplayIMAGE[MT9V03X_H][MT9V03X_W], OSTUIMAGE[15][MT9V03X_W];
 uint8 LeftLine[MT9V03X_H], RightLine[MT9V03X_H], MidLine[MT9V03X_H];
 #pragma section all "cpu1_dsram"
 
@@ -93,7 +96,7 @@ void FindMidLine(void)
                     RightLine[i] = 0;
                 }
             }
-            //DisplayIMAGE[i][(int)((x1 + x2) / 2)] = 0;
+            //DisplayIMAGEE[i][(int)((x1 + x2) / 2)] = 0;
             MidLine[i] = (int)((x1 + x2) / 2);
         }
         else
@@ -124,7 +127,7 @@ void FindMidLine(void)
                     RightLine[i] = 187;
                 }
             }
-            //DisplayIMAGE[i][(int)((x3 + x4) / 2)] = 0;
+            //DisplayIMAGEE[i][(int)((x3 + x4) / 2)] = 0;
 
             if(x4 == 188 && x3 == 0)
             {
@@ -146,24 +149,27 @@ void CameraProcess(void)
 //	if(mt9v03x_finish_flag)
 //	{
 //		mt9v03x_finish_flag=0;
-//		ips114_DisplayIMAGEe032_zoom(mt9v03x_image[0], MT9V03X_W, MT9V03X_H, 240, 135);
+//		ips114_DisplayIMAGEEe032_zoom(mt9v03x_image[0], MT9V03X_W, MT9V03X_H, 240, 135);
 //		seekfree_sendimg_03x_usb_cdc(mt9v03x_csi_image[0], MT9V03X_CSI_W, MT9V03X_CSI_H);
 //	}
+    CloseThresholds = GetOSTU(mt9v03x_image) + 15;
+    FarThresholds = GetOSTU(mt9v03x_image) + 15;
 	ImagePretreatment();
-	FindMidLine();
-	EdgePointFind();
+    FindMidLine_ADD();
+	//EdgePointFind();
 	  MidLineFuseNum=GetMidLineNum();
 	ProcessImageFlag = 1;
 //			for(int i=0;i<MT9V03X_H;i++)
 //		{
-//			DisplayIMAGE[i][(int)(LeftLine[i]+RightLine[i])/2]=0;
+//			DisplayIMAGEE[i][(int)(LeftLine[i]+RightLine[i])/2]=0;
 //		}
-//    ips114_displayimage032_zoom(DisplayIMAGE[0], MT9V03X_W, MT9V03X_H, 240, 135);
+//    ips114_DisplayIMAGEe032_zoom(DisplayIMAGEE[0], MT9V03X_W, MT9V03X_H, 240, 135);
 }
 void EdgePointFind(void)
 {
+    uint8 Rbp = 0, Lbp = 0;
 
-    for(int i = 105; i >= 20; i--)
+    for(int i = 105; i >= 15; i--)
     {
         if(RightLine[i] - RightLine[i - 1] >= 3 || RightLine[i] - RightLine[i - 1] <= -3)
             Rbp = Rbp + 1;
@@ -174,7 +180,7 @@ void EdgePointFind(void)
     {
         Rbp = 0;
         Lbp = 0;
-        for(int i = 105; i >= 20; i--)
+        for(int i = 105; i >= 15; i--)
         {
             if(RightLine[i] - RightLine[i - 1] >= 5 || RightLine[i] - RightLine[i - 1] <= -5)
             {
@@ -194,22 +200,83 @@ void EdgePointFind(void)
 
 double GetMidLineNum(void)
 {
-	long MidLineSum = 0;
-    for(int i = 13; i <= 105; i++)
+    double ClearLineSum = 0, MidLineSum = 0, LongLineSum = 0;
+    double AllLineSum = 0;
+    for(int i = 15; i <= 105; i++)
     {
-		MidLineSum += MidLine[i];
+        if(i >= 15 && i <= 45)
+            LongLineSum += MidLine[i];
+        else if(i > 55 && i < 65)
+            MidLineSum += MidLine[i];
+        else if(i >= 85 && i <= 105)
+            ClearLineSum += MidLine[i];
     }
-	return (double)(MidLineSum/93);
+    AllLineSum = LongLineSum * 0  + MidLineSum * 0  + ClearLineSum ;
+    return AllLineSum / 20;
 }
 
 void ShowMidLine(void)
 {
-    uint8 ShowMidLineIMGE[MT9V03X_H][MT9V03X_W] = {{0}};
-    for(int i = 15; i <= (MT9V03X_H - 1) - 15; i++)
+    uint8 ShowMidLineIMG[MT9V03X_H][MT9V03X_W] = {{255}};
+    for(int i = 0; i <= MT9V03X_H - 1; i++)
+    {
+        for(int j = 0; j <= MT9V03X_W - 1; j++)
+            ShowMidLineIMG[i][j] = 255;
+    }
+    for(int i = 90; i <= 105; i++)
     {
 
-        ShowMidLineIMGE[i][MidLine[i]] = 255;
+        ShowMidLineIMG[i][MidLine[i]] = 0;
     }
-    ips114_displayimage032_zoom(ShowMidLineIMGE[0], MT9V03X_W, MT9V03X_H, 240, 135);
+    ips114_displayimage032_zoom(ShowMidLineIMG[0], MT9V03X_W, MT9V03X_H, 240, 135);
 
 }
+void FindMidLine_ADD(void)
+{
+    //DisplayIMAGE
+    float CountWhitePixels = 0, FirstWhitePixels, BlackFlag = 0;
+    int AllAddsum = 0;
+    for(int i = 0; i <= MT9V03X_W - 1; i++)
+    {
+        for(int j = 0; j <= MT9V03X_W - 1; j++)
+        {
+            if(DisplayIMAGE[i][j] == 255)
+            {
+//				FirstWhitePixels=j;
+                CountWhitePixels++;
+//				if(CountWhitePixels>=20)
+//				{
+//
+//				}
+                AllAddsum += j;
+                BlackFlag = 0;
+
+            }
+            else
+            {
+                BlackFlag++;
+                if(BlackFlag == 5)
+                {
+                    if(CountWhitePixels <= 40)
+                    {
+                        AllAddsum = 0;
+                        CountWhitePixels = 0;
+                    }
+                }
+            }
+
+        }
+        MidLine[i] = (uint8)(AllAddsum / CountWhitePixels * 1.0);
+    }
+}
+
+void GetOSTUIMAGE(void)
+{
+    for(int i = 0; i < 15; i++)
+    {
+        for(int j = 0; j < MT9V03X_W; j++)
+            OSTUIMAGE[i][j] = mt9v03x_image[i + 15][j];
+    }
+}
+
+#endif
