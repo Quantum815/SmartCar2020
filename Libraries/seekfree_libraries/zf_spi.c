@@ -303,10 +303,14 @@ void spi_mosi(SPIN_enum spi_n, SPI_PIN_enum cs_pin, uint8 *modata, uint8 *midata
 			while(moudle->STATUS.B.TXFIFOLEVEL != 0);
 			IfxQspi_write8(moudle, IfxQspi_ChannelId_0, modata, 1);
 			while(moudle->STATUS.B.RXFIFOLEVEL == 0);
-			if(NULL != midata)	IfxQspi_read8(moudle,midata,1);
+			if(NULL != midata)	
+			{
+				IfxQspi_read8(moudle,midata,1);
+				midata++;
+			}
 			else				(void)moudle->RXEXIT.U;
 			modata++;
-			midata++;
+			
 			i++;
 		}
 	}

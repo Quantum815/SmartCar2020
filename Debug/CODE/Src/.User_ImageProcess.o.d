@@ -320,20 +320,22 @@ CODE\Src\User_ImageProcess.o :	"E:\ProgramData\GithubRepositories\SmartCar2020TC
 "E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\seekfree_peripheral\SEEKFREE_RDA5807.h" :
 CODE\Src\User_ImageProcess.o :	"D:\Program Files\TASKING\TriCore v6.3r1\ctc\include\stdint.h"
 "D:\Program Files\TASKING\TriCore v6.3r1\ctc\include\stdint.h" :
-CODE\Src\User_ImageProcess.o :	"E:\ProgramData\GithubRepositories\SmartCar2020TC264\CODE\Inc\User_Init.h"
-"E:\ProgramData\GithubRepositories\SmartCar2020TC264\CODE\Inc\User_Init.h" :
+CODE\Src\User_ImageProcess.o :	"E:\ProgramData\GithubRepositories\SmartCar2020TC264\CODE\Inc\User_Debug.h"
+"E:\ProgramData\GithubRepositories\SmartCar2020TC264\CODE\Inc\User_Debug.h" :
 CODE\Src\User_ImageProcess.o :	"E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\seekfree_libraries\headfile.h"
 "E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\seekfree_libraries\headfile.h" :
+CODE\Src\User_ImageProcess.o :	"E:\ProgramData\GithubRepositories\SmartCar2020TC264\CODE\Inc\User_Init.h"
+"E:\ProgramData\GithubRepositories\SmartCar2020TC264\CODE\Inc\User_Init.h" :
 CODE\Src\User_ImageProcess.o :	"E:\ProgramData\GithubRepositories\SmartCar2020TC264\CODE\Inc\User_Camera_Init.h"
 "E:\ProgramData\GithubRepositories\SmartCar2020TC264\CODE\Inc\User_Camera_Init.h" :
-CODE\Src\User_ImageProcess.o :	"E:\ProgramData\GithubRepositories\SmartCar2020TC264\CODE\Inc\User_Uart.h"
-"E:\ProgramData\GithubRepositories\SmartCar2020TC264\CODE\Inc\User_Uart.h" :
 CODE\Src\User_ImageProcess.o :	"E:\ProgramData\GithubRepositories\SmartCar2020TC264\CODE\Inc\User_FSM.h"
 "E:\ProgramData\GithubRepositories\SmartCar2020TC264\CODE\Inc\User_FSM.h" :
 CODE\Src\User_ImageProcess.o :	"E:\ProgramData\GithubRepositories\SmartCar2020TC264\CODE\Inc\User_Encoder.h"
 "E:\ProgramData\GithubRepositories\SmartCar2020TC264\CODE\Inc\User_Encoder.h" :
 CODE\Src\User_ImageProcess.o :	"E:\ProgramData\GithubRepositories\SmartCar2020TC264\CODE\Inc\User_Motor.h"
 "E:\ProgramData\GithubRepositories\SmartCar2020TC264\CODE\Inc\User_Motor.h" :
+CODE\Src\User_ImageProcess.o :	"E:\ProgramData\GithubRepositories\SmartCar2020TC264\CODE\Inc\User_Gyro_Uart.h"
+"E:\ProgramData\GithubRepositories\SmartCar2020TC264\CODE\Inc\User_Gyro_Uart.h" :
 CODE\Src\User_ImageProcess.o :	"E:\ProgramData\GithubRepositories\SmartCar2020TC264\CODE\Inc\User_Gyro_I2C.h"
 "E:\ProgramData\GithubRepositories\SmartCar2020TC264\CODE\Inc\User_Gyro_I2C.h" :
 CODE\Src\User_ImageProcess.o :	"E:\ProgramData\GithubRepositories\SmartCar2020TC264\CODE\Inc\User_Image_Process.h"

@@ -2,12 +2,16 @@ SmartCar2020TC264.elf : .\CODE\Src\User_ADC.o
 .\CODE\Src\User_ADC.o :
 SmartCar2020TC264.elf : .\CODE\Src\User_Camera_Init.o
 .\CODE\Src\User_Camera_Init.o :
+SmartCar2020TC264.elf : .\CODE\Src\User_Debug.o
+.\CODE\Src\User_Debug.o :
 SmartCar2020TC264.elf : .\CODE\Src\User_Encoder.o
 .\CODE\Src\User_Encoder.o :
 SmartCar2020TC264.elf : .\CODE\Src\User_FSM.o
 .\CODE\Src\User_FSM.o :
 SmartCar2020TC264.elf : .\CODE\Src\User_Gyro_I2C.o
 .\CODE\Src\User_Gyro_I2C.o :
+SmartCar2020TC264.elf : .\CODE\Src\User_Gyro_Uart.o
+.\CODE\Src\User_Gyro_Uart.o :
 SmartCar2020TC264.elf : .\CODE\Src\User_ImageProcess.o
 .\CODE\Src\User_ImageProcess.o :
 SmartCar2020TC264.elf : .\CODE\Src\User_Init.o
@@ -18,8 +22,6 @@ SmartCar2020TC264.elf : .\CODE\Src\User_OSTU.o
 .\CODE\Src\User_OSTU.o :
 SmartCar2020TC264.elf : .\CODE\Src\User_PID.o
 .\CODE\Src\User_PID.o :
-SmartCar2020TC264.elf : .\CODE\Src\User_Uart.o
-.\CODE\Src\User_Uart.o :
 SmartCar2020TC264.elf : .\Libraries\BaseSw\Infra\Platform\Tricore\Compilers\CompilerDcc.o
 .\Libraries\BaseSw\Infra\Platform\Tricore\Compilers\CompilerDcc.o :
 SmartCar2020TC264.elf : .\Libraries\BaseSw\Infra\Platform\Tricore\Compilers\CompilerGhs.o

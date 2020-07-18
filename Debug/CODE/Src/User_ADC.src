@@ -20,11 +20,11 @@ $TC16X
 ; ..\CODE\Src\User_ADC.c	     5   *      Author: Quantum815
 ; ..\CODE\Src\User_ADC.c	     6   */
 ; ..\CODE\Src\User_ADC.c	     7  
-; ..\CODE\Src\User_ADC.c	     8  #include "..\CODE\Inc\User_ADC.h"
+; ..\CODE\Src\User_ADC.c	     8  #include "Inc\User_ADC.h"
 ; ..\CODE\Src\User_ADC.c	     9  
 ; ..\CODE\Src\User_ADC.c	    10  #pragma section all "cpu0_dsram"
 ; ..\CODE\Src\User_ADC.c	    11  
-; ..\CODE\Src\User_ADC.c	    12  static uint16 ADCvalueNum[5];
+; ..\CODE\Src\User_ADC.c	    12  static uint16 ADCValue[5];
 ; ..\CODE\Src\User_ADC.c	    13  
 ; ..\CODE\Src\User_ADC.c	    14  #pragma section all restore
 ; ..\CODE\Src\User_ADC.c	    15  
@@ -36,35 +36,35 @@ ADCInit:	.type	func
 ; ..\CODE\Src\User_ADC.c	    17  {
 ; ..\CODE\Src\User_ADC.c	    18  	adc_init(ADC_0,ADC0_CH0_A0);
 	mov	d4,#0
-.L47:
-	mov	d5,d4
-	call	adc_init
-.L48:
-
-; ..\CODE\Src\User_ADC.c	    19  	adc_init(ADC_0,ADC0_CH1_A1);
-	mov	d4,#0
 .L49:
-	mov	d5,#1
+	mov	d5,d4
 	call	adc_init
 .L50:
 
-; ..\CODE\Src\User_ADC.c	    20  	adc_init(ADC_0,ADC0_CH2_A2);
+; ..\CODE\Src\User_ADC.c	    19  	adc_init(ADC_0,ADC0_CH1_A1);
 	mov	d4,#0
 .L51:
-	mov	d5,#2
+	mov	d5,#1
 	call	adc_init
 .L52:
 
-; ..\CODE\Src\User_ADC.c	    21  	adc_init(ADC_0,ADC0_CH3_A3);
+; ..\CODE\Src\User_ADC.c	    20  	adc_init(ADC_0,ADC0_CH2_A2);
 	mov	d4,#0
 .L53:
-	mov	d5,#3
+	mov	d5,#2
 	call	adc_init
 .L54:
 
-; ..\CODE\Src\User_ADC.c	    22  	adc_init(ADC_0,ADC0_CH4_A4);
+; ..\CODE\Src\User_ADC.c	    21  	adc_init(ADC_0,ADC0_CH3_A3);
 	mov	d4,#0
 .L55:
+	mov	d5,#3
+	call	adc_init
+.L56:
+
+; ..\CODE\Src\User_ADC.c	    22  	adc_init(ADC_0,ADC0_CH4_A4);
+	mov	d4,#0
+.L57:
 	mov	d5,#4
 	j	adc_init
 .L32:
@@ -74,148 +74,138 @@ __ADCInit_function_end:
 .L19:
 	; End of function
 	
-	.sdecl	'.text.User_ADC.UpdateADCvalue',code,cluster('UpdateADCvalue')
-	.sect	'.text.User_ADC.UpdateADCvalue'
+	.sdecl	'.text.User_ADC.UpdateADCValue',code,cluster('UpdateADCValue')
+	.sect	'.text.User_ADC.UpdateADCValue'
 	.align	2
 	
-	.global	UpdateADCvalue
+	.global	UpdateADCValue
 
 ; ..\CODE\Src\User_ADC.c	    23  }
-; ..\CODE\Src\User_ADC.c	    24  void UpdateADCvalue(void)
-; Function UpdateADCvalue
+; ..\CODE\Src\User_ADC.c	    24  void UpdateADCValue(void)
+; Function UpdateADCValue
 .L8:
-UpdateADCvalue:	.type	func
+UpdateADCValue:	.type	func
 
 ; ..\CODE\Src\User_ADC.c	    25  {
-; ..\CODE\Src\User_ADC.c	    26  	ADCvalueNum[0]=adc_convert(ADC_0, ADC0_CH0_A0, ADC_12BIT);
+; ..\CODE\Src\User_ADC.c	    26  	ADCValue[0] = adc_convert(ADC_0, ADC0_CH0_A0, ADC_12BIT);
 	mov	d4,#0
-	movh.a	a15,#@his(ADCvalueNum)
-.L60:
+	movh.a	a15,#@his(ADCValue)
+.L62:
 	mov	d5,d4
-	lea	a15,[a15]@los(ADCvalueNum)
-.L61:
+	lea	a15,[a15]@los(ADCValue)
+.L63:
 	mov	d6,#2
 	call	adc_convert
-.L62:
+.L64:
 
-; ..\CODE\Src\User_ADC.c	    27  	ADCvalueNum[1]=adc_convert(ADC_0, ADC0_CH1_A1, ADC_12BIT);
+; ..\CODE\Src\User_ADC.c	    27  	ADCValue[1] = adc_convert(ADC_0, ADC0_CH1_A1, ADC_12BIT);
 	mov	d4,#0
 	st.h	[a15],d2
-.L63:
+.L65:
 	mov	d5,#1
-.L64:
+.L66:
 	mov	d6,#2
 	call	adc_convert
-.L65:
+.L67:
 
-; ..\CODE\Src\User_ADC.c	    28  	ADCvalueNum[2]=adc_convert(ADC_0, ADC0_CH2_A2, ADC_12BIT);
+; ..\CODE\Src\User_ADC.c	    28  	ADCValue[2] = adc_convert(ADC_0, ADC0_CH2_A2, ADC_12BIT);
 	mov	d5,#2
 	st.h	[a15]2,d2
-.L66:
+.L68:
 	mov	d4,#0
-.L67:
+.L69:
 	mov	d6,d5
 	call	adc_convert
-.L68:
+.L70:
 
-; ..\CODE\Src\User_ADC.c	    29  	ADCvalueNum[3]=adc_convert(ADC_0, ADC0_CH3_A3, ADC_12BIT);
+; ..\CODE\Src\User_ADC.c	    29  	ADCValue[3] = adc_convert(ADC_0, ADC0_CH3_A3, ADC_12BIT);
 	mov	d4,#0
 	st.h	[a15]4,d2
-.L69:
+.L71:
 	mov	d5,#3
-.L70:
+.L72:
 	mov	d6,#2
 	call	adc_convert
-.L71:
+.L73:
 
-; ..\CODE\Src\User_ADC.c	    30  	ADCvalueNum[4]=adc_convert(ADC_0, ADC0_CH4_A4, ADC_12BIT);
+; ..\CODE\Src\User_ADC.c	    30  	ADCValue[4] = adc_convert(ADC_0, ADC0_CH4_A4, ADC_12BIT);
 	mov	d4,#0
 	st.h	[a15]6,d2
-.L72:
+.L74:
 	mov	d5,#4
-.L73:
+.L75:
 	mov	d6,#2
 	call	adc_convert
-.L74:
+.L76:
 	st.h	[a15]8,d2
-.L75:
+.L77:
 
 ; ..\CODE\Src\User_ADC.c	    31  }
 	ret
 .L33:
 	
-__UpdateADCvalue_function_end:
-	.size	UpdateADCvalue,__UpdateADCvalue_function_end-UpdateADCvalue
+__UpdateADCValue_function_end:
+	.size	UpdateADCValue,__UpdateADCValue_function_end-UpdateADCValue
 .L24:
 	; End of function
 	
-	.sdecl	'.text.User_ADC.ADCValue',code,cluster('ADCValue')
-	.sect	'.text.User_ADC.ADCValue'
+	.sdecl	'.text.User_ADC.ADCValueHandle',code,cluster('ADCValueHandle')
+	.sect	'.text.User_ADC.ADCValueHandle'
 	.align	2
 	
-	.global	ADCValue
+	.global	ADCValueHandle
 
 ; ..\CODE\Src\User_ADC.c	    32  
-; ..\CODE\Src\User_ADC.c	    33  /*void ADCReadData(void)
-; ..\CODE\Src\User_ADC.c	    34  {
-; ..\CODE\Src\User_ADC.c	    35      uint16 ADCValue;
-; ..\CODE\Src\User_ADC.c	    36      ADCValue = adc_convert(ADC_1, ADC1_CH0_A16, ADC_12BIT);
-; ..\CODE\Src\User_ADC.c	    37      temp = ADCValue;
-; ..\CODE\Src\User_ADC.c	    38      while(temp != 0)
-; ..\CODE\Src\User_ADC.c	    39      {
-; ..\CODE\Src\User_ADC.c	    40          temp = temp / 10;
-; ..\CODE\Src\User_ADC.c	    41          NumLenth++;
-; ..\CODE\Src\User_ADC.c	    42      }
-; ..\CODE\Src\User_ADC.c	    43      ADCStr[0] = ADCValue + '0';
-; ..\CODE\Src\User_ADC.c	    44      uart_putbuff(UART_3, ADCStr, NumLenth);
-; ..\CODE\Src\User_ADC.c	    45      uart_putstr(UART_3, "\r\n");
-; ..\CODE\Src\User_ADC.c	    46      systick_delay_ms(STM1, 100);
-; ..\CODE\Src\User_ADC.c	    47  }*/
-; ..\CODE\Src\User_ADC.c	    48  
-; ..\CODE\Src\User_ADC.c	    49  int16 ADCValue(uint8 num)
-; Function ADCValue
+; ..\CODE\Src\User_ADC.c	    33  int16 ADCValueHandle(uint8 num)
+; Function ADCValueHandle
 .L10:
-ADCValue:	.type	func
+ADCValueHandle:	.type	func
 
-; ..\CODE\Src\User_ADC.c	    50  {
-; ..\CODE\Src\User_ADC.c	    51  	if(num > 4)
-	jlt.u	d4,#5,.L2
-.L80:
+; ..\CODE\Src\User_ADC.c	    34  {
+; ..\CODE\Src\User_ADC.c	    35  	UpdateADCValue();
+	mov	d15,d4
+	call	UpdateADCValue
+.L39:
 
-; ..\CODE\Src\User_ADC.c	    52  		return -1;
-; ..\CODE\Src\User_ADC.c	    53  	return ADCvalueNum[num];
-; ..\CODE\Src\User_ADC.c	    54  }
+; ..\CODE\Src\User_ADC.c	    36  	if(num > 4)
+	jlt.u	d15,#5,.L2
+.L82:
+
+; ..\CODE\Src\User_ADC.c	    37  		return -1;
+; ..\CODE\Src\User_ADC.c	    38  	return ADCValue[num];
+; ..\CODE\Src\User_ADC.c	    39  }
 	mov	d2,#-1
 	ret
 .L2:
-	movh.a	a15,#@his(ADCvalueNum)
-	lea	a15,[a15]@los(ADCvalueNum)
-.L81:
-	addsc.a	a15,a15,d4,#1
+	movh.a	a15,#@his(ADCValue)
+	lea	a15,[a15]@los(ADCValue)
+.L83:
+	addsc.a	a15,a15,d15,#1
 	ld.hu	d15,[a15]0
-.L82:
+.L40:
 	extr	d2,d15,#0,#16
 	ret
 .L35:
 	
-__ADCValue_function_end:
-	.size	ADCValue,__ADCValue_function_end-ADCValue
+__ADCValueHandle_function_end:
+	.size	ADCValueHandle,__ADCValueHandle_function_end-ADCValueHandle
 .L29:
 	; End of function
 	
-	.sdecl	'.bss.cpu0_dsram',data,cluster('ADCvalueNum')
+	.sdecl	'.bss.cpu0_dsram',data,cluster('ADCValue')
 	.sect	'.bss.cpu0_dsram'
 	.align	2
-ADCvalueNum:	.type	object
-	.size	ADCvalueNum,10
+ADCValue:	.type	object
+	.size	ADCValue,10
 	.space	10
 	.calls	'ADCInit','adc_init'
-	.calls	'UpdateADCvalue','adc_convert'
+	.calls	'UpdateADCValue','adc_convert'
+	.calls	'ADCValueHandle','UpdateADCValue'
 	.calls	'ADCInit','',0
-	.calls	'UpdateADCvalue','',0
+	.calls	'UpdateADCValue','',0
 	.extern	adc_init
 	.extern	adc_convert
-	.calls	'ADCValue','',0
+	.calls	'ADCValueHandle','',0
 	.sdecl	'.debug_info',debug
 	.sect	'.debug_info'
 .L12:
@@ -34597,7 +34587,7 @@ ADCvalueNum:	.type	object
 	.byte	'VADC_RES_enum',0,23,80,2
 	.word	41187
 	.byte	11
-	.byte	'FSMTable',0,47,29,16,16,14
+	.byte	'FSMTable',0,47,31,16,16,14
 	.byte	'Event',0
 	.word	495
 	.byte	4,2,35,0,14
@@ -34610,7 +34600,7 @@ ADCvalueNum:	.type	object
 	.byte	'NextState',0
 	.word	495
 	.byte	4,2,35,12,0,34
-	.byte	'FSMTable_t',0,47,34,2
+	.byte	'FSMTable_t',0,47,36,2
 	.word	252577
 .L38:
 	.byte	15,10
@@ -34633,11 +34623,11 @@ ADCvalueNum:	.type	object
 	.sdecl	'.debug_line',debug
 	.sect	'.debug_line'
 .L14:
-	.word	.L40-.L39
-.L39:
-	.half	3
 	.word	.L42-.L41
 .L41:
+	.half	3
+	.word	.L44-.L43
+.L43:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Std',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Scu\\Std',0
@@ -34709,8 +34699,8 @@ ADCvalueNum:	.type	object
 	.byte	'IfxDma_regdef.h',0,3,0,0
 	.byte	'IfxDma.h',0,18,0,0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\CODE\\Inc\\User_FSM.h',0,0,0,0,0
+.L44:
 .L42:
-.L40:
 	.sdecl	'.debug_info',debug,cluster('ADCInit')
 	.sect	'.debug_info'
 .L15:
@@ -34738,22 +34728,18 @@ ADCvalueNum:	.type	object
 	.sdecl	'.debug_line',debug,cluster('ADCInit')
 	.sect	'.debug_line'
 .L17:
-	.word	.L44-.L43
-.L43:
-	.half	3
 	.word	.L46-.L45
 .L45:
+	.half	3
+	.word	.L48-.L47
+.L47:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\CODE\\Src\\User_ADC.c',0,0,0,0,0
-.L46:
+.L48:
 	.byte	5,11,7,0,5,2
 	.word	.L6
 	.byte	3,17,1,5,17,9
-	.half	.L47-.L6
-	.byte	1,5,11,9
-	.half	.L48-.L47
-	.byte	3,1,1,5,17,9
-	.half	.L49-.L48
+	.half	.L49-.L6
 	.byte	1,5,11,9
 	.half	.L50-.L49
 	.byte	3,1,1,5,17,9
@@ -34766,15 +34752,19 @@ ADCvalueNum:	.type	object
 	.half	.L54-.L53
 	.byte	3,1,1,5,17,9
 	.half	.L55-.L54
+	.byte	1,5,11,9
+	.half	.L56-.L55
+	.byte	3,1,1,5,17,9
+	.half	.L57-.L56
 	.byte	1,5,1,9
-	.half	.L19-.L55
+	.half	.L19-.L57
 	.byte	3,1,0,1,1
-.L44:
+.L46:
 	.sdecl	'.debug_ranges',debug,cluster('ADCInit')
 	.sect	'.debug_ranges'
 .L18:
 	.word	-1,.L6,0,.L19-.L6,0,0
-	.sdecl	'.debug_info',debug,cluster('UpdateADCvalue')
+	.sdecl	'.debug_info',debug,cluster('UpdateADCValue')
 	.sect	'.debug_info'
 .L20:
 	.word	193
@@ -34788,73 +34778,73 @@ ADCvalueNum:	.type	object
 	.byte	2
 	.word	.L11
 	.byte	3
-	.byte	'UpdateADCvalue',0,1,24,6,1,1,1
+	.byte	'UpdateADCValue',0,1,24,6,1,1,1
 	.word	.L8,.L33,.L7
 	.byte	4
 	.word	.L8,.L33
 	.byte	0,0
-	.sdecl	'.debug_abbrev',debug,cluster('UpdateADCvalue')
+	.sdecl	'.debug_abbrev',debug,cluster('UpdateADCValue')
 	.sect	'.debug_abbrev'
 .L21:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
-	.sdecl	'.debug_line',debug,cluster('UpdateADCvalue')
+	.sdecl	'.debug_line',debug,cluster('UpdateADCValue')
 	.sect	'.debug_line'
 .L22:
-	.word	.L57-.L56
-.L56:
-	.half	3
 	.word	.L59-.L58
 .L58:
+	.half	3
+	.word	.L61-.L60
+.L60:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\CODE\\Src\\User_ADC.c',0,0,0,0,0
-.L59:
-	.byte	5,29,7,0,5,2
+.L61:
+	.byte	5,28,7,0,5,2
 	.word	.L8
-	.byte	3,25,1,5,2,1,5,36,9
-	.half	.L60-.L8
-	.byte	1,5,2,1,5,49,9
-	.half	.L61-.L60
-	.byte	1,5,29,9
-	.half	.L62-.L61
-	.byte	3,1,1,5,16,3,127,1,5,36,9
+	.byte	3,25,1,5,2,1,5,35,9
+	.half	.L62-.L8
+	.byte	1,5,2,1,5,48,9
 	.half	.L63-.L62
-	.byte	3,1,1,5,49,9
+	.byte	1,5,28,9
 	.half	.L64-.L63
-	.byte	1,5,36,9
+	.byte	3,1,1,5,14,3,127,1,5,35,9
 	.half	.L65-.L64
-	.byte	3,1,1,5,16,3,127,1,5,29,9
+	.byte	3,1,1,5,48,9
 	.half	.L66-.L65
-	.byte	3,1,1,5,49,9
+	.byte	1,5,35,9
 	.half	.L67-.L66
-	.byte	1,5,29,9
+	.byte	3,1,1,5,14,3,127,1,5,28,9
 	.half	.L68-.L67
-	.byte	3,1,1,5,16,3,127,1,5,36,9
+	.byte	3,1,1,5,48,9
 	.half	.L69-.L68
-	.byte	3,1,1,5,49,9
+	.byte	1,5,28,9
 	.half	.L70-.L69
-	.byte	1,5,29,9
+	.byte	3,1,1,5,14,3,127,1,5,35,9
 	.half	.L71-.L70
-	.byte	3,1,1,5,16,3,127,1,5,36,9
+	.byte	3,1,1,5,48,9
 	.half	.L72-.L71
-	.byte	3,1,1,5,49,9
+	.byte	1,5,28,9
 	.half	.L73-.L72
-	.byte	1,5,16,9
+	.byte	3,1,1,5,14,3,127,1,5,35,9
 	.half	.L74-.L73
-	.byte	1,5,1,9
+	.byte	3,1,1,5,48,9
 	.half	.L75-.L74
+	.byte	1,5,14,9
+	.half	.L76-.L75
+	.byte	1,5,1,9
+	.half	.L77-.L76
 	.byte	3,1,1,7,9
-	.half	.L24-.L75
+	.half	.L24-.L77
 	.byte	0,1,1
-.L57:
-	.sdecl	'.debug_ranges',debug,cluster('UpdateADCvalue')
+.L59:
+	.sdecl	'.debug_ranges',debug,cluster('UpdateADCValue')
 	.sect	'.debug_ranges'
 .L23:
 	.word	-1,.L8,0,.L24-.L8,0,0
-	.sdecl	'.debug_info',debug,cluster('ADCValue')
+	.sdecl	'.debug_info',debug,cluster('ADCValueHandle')
 	.sect	'.debug_info'
 .L25:
-	.word	207
+	.word	213
 	.half	3
 	.word	.L26
 	.byte	4,1
@@ -34865,54 +34855,56 @@ ADCvalueNum:	.type	object
 	.byte	2
 	.word	.L11
 	.byte	3
-	.byte	'ADCValue',0,1,49,7
+	.byte	'ADCValueHandle',0,1,33,7
 	.word	.L34
 	.byte	1,1,1
 	.word	.L10,.L35,.L9
 	.byte	4
-	.byte	'num',0,1,49,22
+	.byte	'num',0,1,33,28
 	.word	.L36,.L37
 	.byte	5
 	.word	.L10,.L35
 	.byte	0,0
-	.sdecl	'.debug_abbrev',debug,cluster('ADCValue')
+	.sdecl	'.debug_abbrev',debug,cluster('ADCValueHandle')
 	.sect	'.debug_abbrev'
 .L26:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
 	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
-	.sdecl	'.debug_line',debug,cluster('ADCValue')
+	.sdecl	'.debug_line',debug,cluster('ADCValueHandle')
 	.sect	'.debug_line'
 .L27:
-	.word	.L77-.L76
-.L76:
-	.half	3
 	.word	.L79-.L78
 .L78:
+	.half	3
+	.word	.L81-.L80
+.L80:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\CODE\\Src\\User_ADC.c',0,0,0,0,0
-.L79:
-	.byte	5,2,7,0,5,2
+.L81:
+	.byte	5,7,7,0,5,2
 	.word	.L10
-	.byte	3,50,1,5,10,7,9
-	.half	.L80-.L10
+	.byte	3,32,1,5,16,3,2,1,5,2,9
+	.half	.L39-.L10
+	.byte	3,1,1,5,10,7,9
+	.half	.L82-.L39
 	.byte	3,1,1,5,1,3,2,1,5,9,7,9
-	.half	.L2-.L80
-	.byte	3,127,1,5,20,9
-	.half	.L81-.L2
+	.half	.L2-.L82
+	.byte	3,127,1,5,17,9
+	.half	.L83-.L2
 	.byte	1,5,1,9
-	.half	.L82-.L81
+	.half	.L40-.L83
 	.byte	3,1,1,7,9
-	.half	.L29-.L82
+	.half	.L29-.L40
 	.byte	0,1,1
-.L77:
-	.sdecl	'.debug_ranges',debug,cluster('ADCValue')
+.L79:
+	.sdecl	'.debug_ranges',debug,cluster('ADCValueHandle')
 	.sect	'.debug_ranges'
 .L28:
 	.word	-1,.L10,0,.L29-.L10,0,0
-	.sdecl	'.debug_info',debug,cluster('ADCvalueNum')
+	.sdecl	'.debug_info',debug,cluster('ADCValue')
 	.sect	'.debug_info'
 .L30:
-	.word	167
+	.word	164
 	.half	3
 	.word	.L31
 	.byte	4,1
@@ -34921,12 +34913,12 @@ ADCvalueNum:	.type	object
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1,2
 	.word	.L11
 	.byte	3
-	.byte	'ADCvalueNum',0,24,12,15
+	.byte	'ADCValue',0,24,12,15
 	.word	.L38
 	.byte	5,3
-	.word	ADCvalueNum
+	.word	ADCValue
 	.byte	0
-	.sdecl	'.debug_abbrev',debug,cluster('ADCvalueNum')
+	.sdecl	'.debug_abbrev',debug,cluster('ADCValue')
 	.sect	'.debug_abbrev'
 .L31:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,2,9,0,0,0
@@ -34937,7 +34929,7 @@ ADCvalueNum:	.type	object
 	.half	2
 	.byte	138,0
 	.word	0,0
-	.sdecl	'.debug_loc',debug,cluster('ADCValue')
+	.sdecl	'.debug_loc',debug,cluster('ADCValueHandle')
 	.sect	'.debug_loc'
 .L9:
 	.word	-1,.L10,0,.L35-.L10
@@ -34945,11 +34937,14 @@ ADCvalueNum:	.type	object
 	.byte	138,0
 	.word	0,0
 .L37:
-	.word	-1,.L10,0,.L35-.L10
+	.word	-1,.L10,0,.L39-.L10
 	.half	1
 	.byte	84
+	.word	.L39-.L10,.L40-.L10
+	.half	1
+	.byte	95
 	.word	0,0
-	.sdecl	'.debug_loc',debug,cluster('UpdateADCvalue')
+	.sdecl	'.debug_loc',debug,cluster('UpdateADCValue')
 	.sect	'.debug_loc'
 .L7:
 	.word	-1,.L8,0,.L33-.L8
@@ -34958,7 +34953,7 @@ ADCvalueNum:	.type	object
 	.word	0,0
 	.sdecl	'.debug_frame',debug
 	.sect	'.debug_frame'
-.L83:
+.L84:
 	.word	48
 	.word	-1
 	.byte	3,0,2,1,27,12,26,0,8,27,8,26,8,28,8,29,8,30,8,31,8,34,8,35,8,32,8,33,8,16,8,17,8,24,8,25,8,36,8,37,8,38
@@ -34966,16 +34961,15 @@ ADCvalueNum:	.type	object
 	.sdecl	'.debug_frame',debug,cluster('ADCInit')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L83,.L6,.L32-.L6
-	.sdecl	'.debug_frame',debug,cluster('UpdateADCvalue')
+	.word	.L84,.L6,.L32-.L6
+	.sdecl	'.debug_frame',debug,cluster('UpdateADCValue')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L83,.L8,.L33-.L8
-	.sdecl	'.debug_frame',debug,cluster('ADCValue')
+	.word	.L84,.L8,.L33-.L8
+	.sdecl	'.debug_frame',debug,cluster('ADCValueHandle')
 	.sect	'.debug_frame'
-	.word	24
-	.word	.L83,.L10,.L35-.L10
-	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.word	12
+	.word	.L84,.L10,.L35-.L10
 
 
 	; Module end

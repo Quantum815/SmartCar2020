@@ -11,8 +11,7 @@
 #include "headfile.h"
 
 void ADCInit(void);
-void UpdateADCvalue(void);
-//void ADCReadData(void);
-int16 ADCValue(uint8 num);
+void UpdateADCValue(void);
+int16 ADCValueHandle(uint8 num);
 
 #endif /* CODE_INC_USER_ADC_H_ */

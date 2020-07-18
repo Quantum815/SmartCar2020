@@ -862,6 +862,8 @@ pit_init:	.type	func
 	mov	d1,#255
 	j	.L8
 .L7:
+	mov	d2,#1
+.L193:
 	mov	d3,#254
 	j	.L9
 .L5:
@@ -869,7 +871,7 @@ pit_init:	.type	func
 ; ..\Libraries\seekfree_libraries\zf_ccu6_pit.c	    84  			{
 ; ..\Libraries\seekfree_libraries\zf_ccu6_pit.c	    85  				timerConfig.interrupt1.typeOfService  = CCU6_1_CH0_INT_SERVICE;
 	jne	d14,#0,.L10
-.L193:
+.L194:
 
 ; ..\Libraries\seekfree_libraries\zf_ccu6_pit.c	    86  				timerConfig.interrupt1.priority       = CCU6_1_CH0_ISR_PRIORITY;
 ; ..\Libraries\seekfree_libraries\zf_ccu6_pit.c	    87  			}
@@ -884,8 +886,12 @@ pit_init:	.type	func
 ; ..\Libraries\seekfree_libraries\zf_ccu6_pit.c	    90  				timerConfig.interrupt2.typeOfService  = CCU6_1_CH1_INT_SERVICE;
 ; ..\Libraries\seekfree_libraries\zf_ccu6_pit.c	    91  				timerConfig.interrupt2.priority       = CCU6_1_CH1_ISR_PRIORITY;
 ; ..\Libraries\seekfree_libraries\zf_ccu6_pit.c	    92  			}
+	mov	d2,#0
+.L195:
+
 ; ..\Libraries\seekfree_libraries\zf_ccu6_pit.c	    93  		}break;
 	mov	d3,#32
+.L11:
 
 ; ..\Libraries\seekfree_libraries\zf_ccu6_pit.c	    94  	}
 ; ..\Libraries\seekfree_libraries\zf_ccu6_pit.c	    95  
@@ -893,8 +899,6 @@ pit_init:	.type	func
 ; ..\Libraries\seekfree_libraries\zf_ccu6_pit.c	    97  	{
 ; ..\Libraries\seekfree_libraries\zf_ccu6_pit.c	    98  		timerConfig.timer = IfxCcu6_TimerId_t12;
 .L9:
-	mov	d2,#1
-.L11:
 .L6:
 	st.h	[a10]104,d3
 	st.b	[a10]106,d2
@@ -912,22 +916,22 @@ pit_init:	.type	func
 	call	__f_ulltof
 .L159:
 	jne	d14,#0,.L12
-.L194:
+.L196:
 	mov	d0,#7
 	st.b	[a10]96,d0
-.L195:
+.L197:
 	mov	d0,#1
 	st.b	[a10]97,d0
-.L196:
+.L198:
 	st.w	[a10]40,d12
-.L197:
+.L199:
 	mov	d1,#0
 	st.w	[a10]36,d2
-.L198:
+.L200:
 
 ; ..\Libraries\seekfree_libraries\zf_ccu6_pit.c	   105  	else
 	st.b	[a10]76,d1
-.L199:
+.L201:
 	j	.L13
 .L12:
 
@@ -938,22 +942,22 @@ pit_init:	.type	func
 ; ..\Libraries\seekfree_libraries\zf_ccu6_pit.c	   110  		timerConfig.base.t13Period 			  = timer_period;
 	mov	d0,#9
 	st.b	[a10]102,d0
-.L200:
+.L202:
 
 ; ..\Libraries\seekfree_libraries\zf_ccu6_pit.c	   111  		timerConfig.base.t13Frequency 		  = (float)timer_input_clk;
 	mov	d0,#2
 	st.b	[a10]103,d0
-.L201:
+.L203:
 
 ; ..\Libraries\seekfree_libraries\zf_ccu6_pit.c	   112  		timerConfig.clock.t13countingInputMode = IfxCcu6_CountingInputMode_internal;
 	st.w	[a10]48,d12
-.L202:
+.L204:
 
 ; ..\Libraries\seekfree_libraries\zf_ccu6_pit.c	   113  	}
 ; ..\Libraries\seekfree_libraries\zf_ccu6_pit.c	   114      timerConfig.timer12.counterValue = 0;
 	mov	d0,#0
 	st.w	[a10]44,d2
-.L203:
+.L205:
 	mov	d1,#1
 	st.b	[a10]84,d0
 .L13:
@@ -961,30 +965,30 @@ pit_init:	.type	func
 ; ..\Libraries\seekfree_libraries\zf_ccu6_pit.c	   115      timerConfig.timer13.counterValue = 0;
 ; ..\Libraries\seekfree_libraries\zf_ccu6_pit.c	   116      timerConfig.trigger.t13InSyncWithT12 = FALSE;
 	st.b	[a10]64,d1
-.L204:
+.L206:
 	mov	d0,#0
 	st.h	[a10]90,d0
-.L205:
+.L207:
 
 ; ..\Libraries\seekfree_libraries\zf_ccu6_pit.c	   117  
 	st.h	[a10]92,d0
-.L206:
+.L208:
 
 ; ..\Libraries\seekfree_libraries\zf_ccu6_pit.c	   118      IfxCcu6_Timer_initModule(&g_Ccu6Timer, &timerConfig);
 	st.b	[a10]129,d0
-.L207:
+.L209:
 
 ; ..\Libraries\seekfree_libraries\zf_ccu6_pit.c	   119  
 ; ..\Libraries\seekfree_libraries\zf_ccu6_pit.c	   120  	restoreInterrupts(interrupt_state);
 	mov.aa	a4,a10
-.L208:
+.L210:
 	lea	a5,[a10]36
 	call	IfxCcu6_Timer_initModule
 .L91:
 
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Cpu\Std\IfxCpu.h	   938      if (enabled != FALSE)      (inlined)
 	jeq	d15,#0,.L14
-.L209:
+.L211:
 
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Cpu\Std\IfxCpu.h	     1  /**
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Cpu\Std\IfxCpu.h	     2   * \file IfxCpu.h
@@ -6078,7 +6082,7 @@ pit_init:	.type	func
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Ccu6\Std\IfxCcu6.h	  2067      // remove protection and configure the suspend mode.
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Ccu6\Std\IfxCcu6.h	  2068      ocs.B.SUS_P = 1;
 	or	d15,#16
-.L210:
+.L212:
 
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Ccu6\Std\IfxCcu6.h	  2069      ocs.B.SUS   = mode;
 	insert	d15,d15,#1,#0,#4
@@ -6132,11 +6136,11 @@ pit_close:	.type	func
 ; ..\Libraries\seekfree_libraries\zf_ccu6_pit.c	   142  	g_Ccu6Timer.timer = (IfxCcu6_TimerId)(pit_ch);
 ; ..\Libraries\seekfree_libraries\zf_ccu6_pit.c	   143  
 	st.a	[a10]16,a2
-.L215:
+.L217:
 
 ; ..\Libraries\seekfree_libraries\zf_ccu6_pit.c	   144  	IfxCcu6_Timer_stop(&g_Ccu6Timer);
 	st.b	[a10]20,d15
-.L216:
+.L218:
 
 ; ..\Libraries\seekfree_libraries\zf_ccu6_pit.c	   145  }
 ; ..\Libraries\seekfree_libraries\zf_ccu6_pit.c	   146  
@@ -6185,11 +6189,11 @@ pit_start:	.type	func
 ; ..\Libraries\seekfree_libraries\zf_ccu6_pit.c	   163  	g_Ccu6Timer.timer = (IfxCcu6_TimerId)(pit_ch);
 ; ..\Libraries\seekfree_libraries\zf_ccu6_pit.c	   164  
 	st.a	[a10]16,a2
-.L221:
+.L223:
 
 ; ..\Libraries\seekfree_libraries\zf_ccu6_pit.c	   165  	IfxCcu6_Timer_start(&g_Ccu6Timer);
 	st.b	[a10]20,d15
-.L222:
+.L224:
 
 ; ..\Libraries\seekfree_libraries\zf_ccu6_pit.c	   166  }
 ; ..\Libraries\seekfree_libraries\zf_ccu6_pit.c	   167  
@@ -7704,11 +7708,11 @@ pit_disable_interrupt:	.type	func
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Ccu6\Std\IfxCcu6.h	  1470      uint32 mask = (1U << source);
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Ccu6\Std\IfxCcu6.h	  1471      ccu6->IEN.U = ccu6->IEN.U & ~(mask);
 	fcall	.cocofun_1
-.L227:
+.L229:
 	mov	d15,#-1
 .L168:
 	xor	d1,d15
-.L228:
+.L230:
 	and	d0,d1
 	st.w	[a2]176,d0
 .L124:
@@ -9206,7 +9210,7 @@ __pit_disable_interrupt_function_end:
 	ld.w	d0,[a2]176
 .L167:
 	add	d15,#7
-.L237:
+.L239:
 
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Ccu6\Std\IfxCcu6.h	     1  /**
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Ccu6\Std\IfxCcu6.h	     2   * \file IfxCcu6.h
@@ -10679,9 +10683,9 @@ __pit_disable_interrupt_function_end:
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Ccu6\Std\IfxCcu6.h	  1469  {
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Ccu6\Std\IfxCcu6.h	  1470      uint32 mask = (1U << source);
 	extr.u	d15,d15,#0,#8
-.L238:
+.L240:
 	mov	d1,#1
-.L239:
+.L241:
 	sh	d1,d1,d15
 	fret
 .L60:
@@ -27359,68 +27363,70 @@ __pit_enable_interrupt_function_end:
 	.half	.L192-.L4
 	.byte	3,3,1,5,67,3,127,1,5,43,9
 	.half	.L7-.L192
-	.byte	3,7,1,5,4,3,2,1,9
-	.half	.L5-.L7
+	.byte	3,6,1,9
+	.half	.L193-.L7
+	.byte	3,1,1,5,4,3,2,1,9
+	.half	.L5-.L193
 	.byte	3,4,1,5,43,7,9
-	.half	.L193-.L5
+	.half	.L194-.L5
 	.byte	3,3,1,9
-	.half	.L8-.L193
+	.half	.L8-.L194
 	.byte	3,127,1,5,67,1,5,43,9
 	.half	.L10-.L8
-	.byte	3,6,1,9
-	.half	.L9-.L10
-	.byte	3,127,1,5,2,9
-	.half	.L6-.L9
-	.byte	3,6,1,5,39,9
+	.byte	3,5,1,9
+	.half	.L195-.L10
+	.byte	3,1,1,5,2,9
+	.half	.L6-.L195
+	.byte	3,5,1,5,39,9
 	.half	.L158-.L6
 	.byte	3,6,1,5,2,9
 	.half	.L159-.L158
 	.byte	3,122,1,5,43,7,9
-	.half	.L194-.L159
+	.half	.L196-.L159
 	.byte	3,3,1,5,41,1,5,43,9
-	.half	.L195-.L194
-	.byte	3,1,1,5,41,1,5,35,9
-	.half	.L196-.L195
-	.byte	3,1,1,5,21,9
 	.half	.L197-.L196
-	.byte	3,125,1,5,37,3,4,1,5,42,9
-	.half	.L198-.L197
-	.byte	3,1,1,9
-	.half	.L199-.L198
-	.byte	3,123,1,5,43,9
-	.half	.L12-.L199
-	.byte	3,10,1,5,41,1,5,43,9
-	.half	.L200-.L12
 	.byte	3,1,1,5,41,1,5,35,9
+	.half	.L198-.L197
+	.byte	3,1,1,5,21,9
+	.half	.L199-.L198
+	.byte	3,125,1,5,37,3,4,1,5,42,9
+	.half	.L200-.L199
+	.byte	3,1,1,9
 	.half	.L201-.L200
-	.byte	3,1,1,5,44,9
-	.half	.L202-.L201
-	.byte	3,2,1,5,37,3,127,1,5,21,9
+	.byte	3,123,1,5,43,9
+	.half	.L12-.L201
+	.byte	3,10,1,5,41,1,5,43,9
+	.half	.L202-.L12
+	.byte	3,1,1,5,41,1,5,35,9
 	.half	.L203-.L202
-	.byte	3,124,1,5,42,3,5,1,5,41,9
-	.half	.L13-.L203
-	.byte	3,2,1,5,40,9
-	.half	.L204-.L13
-	.byte	1,5,38,1,9
+	.byte	3,1,1,5,44,9
+	.half	.L204-.L203
+	.byte	3,2,1,5,37,3,127,1,5,21,9
 	.half	.L205-.L204
-	.byte	3,1,1,5,42,9
-	.half	.L206-.L205
-	.byte	3,1,1,5,31,9
+	.byte	3,124,1,5,42,3,5,1,5,41,9
+	.half	.L13-.L205
+	.byte	3,2,1,5,40,9
+	.half	.L206-.L13
+	.byte	1,5,38,1,9
 	.half	.L207-.L206
-	.byte	3,2,1,5,45,9
+	.byte	3,1,1,5,42,9
 	.half	.L208-.L207
+	.byte	3,1,1,5,31,9
+	.half	.L209-.L208
+	.byte	3,2,1,5,45,9
+	.half	.L210-.L209
 	.byte	1,4,2,5,5,9
-	.half	.L91-.L208
+	.half	.L91-.L210
 	.byte	3,178,6,1,5,17,7,9
-	.half	.L209-.L91
+	.half	.L211-.L91
 	.byte	3,2,1,4,3,5,10,9
-	.half	.L14-.L209
+	.half	.L14-.L211
 	.byte	3,232,8,1,4,1,5,23,3,233,112,1,4,3,5,17,9
 	.half	.L160-.L14
 	.byte	3,151,15,1,9
-	.half	.L210-.L160
+	.half	.L212-.L160
 	.byte	3,1,1,9
-	.half	.L161-.L210
+	.half	.L161-.L212
 	.byte	3,1,1,4,1,5,23,9
 	.half	.L100-.L161
 	.byte	3,231,112,1,5,1,7,9
@@ -27471,14 +27477,14 @@ __pit_enable_interrupt_function_end:
 	.sdecl	'.debug_line',debug,cluster('pit_close')
 	.sect	'.debug_line'
 .L38:
-	.word	.L212-.L211
-.L211:
-	.half	3
 	.word	.L214-.L213
 .L213:
+	.half	3
+	.word	.L216-.L215
+.L215:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\Libraries\\seekfree_libraries\\zf_ccu6_pit.c',0,0,0,0,0
-.L214:
+.L216:
 	.byte	5,6,7,0,5,2
 	.word	.L18
 	.byte	3,135,1,1,5,30,9
@@ -27486,13 +27492,13 @@ __pit_enable_interrupt_function_end:
 	.byte	3,5,1,5,19,9
 	.half	.L163-.L162
 	.byte	3,2,1,5,20,9
-	.half	.L215-.L163
+	.half	.L217-.L163
 	.byte	3,1,1,5,22,9
-	.half	.L216-.L215
+	.half	.L218-.L217
 	.byte	3,2,1,5,1,9
-	.half	.L40-.L216
+	.half	.L40-.L218
 	.byte	3,1,0,1,1
-.L212:
+.L214:
 	.sdecl	'.debug_ranges',debug,cluster('pit_close')
 	.sect	'.debug_ranges'
 .L39:
@@ -27537,14 +27543,14 @@ __pit_enable_interrupt_function_end:
 	.sdecl	'.debug_line',debug,cluster('pit_start')
 	.sect	'.debug_line'
 .L43:
-	.word	.L218-.L217
-.L217:
-	.half	3
 	.word	.L220-.L219
 .L219:
+	.half	3
+	.word	.L222-.L221
+.L221:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\Libraries\\seekfree_libraries\\zf_ccu6_pit.c',0,0,0,0,0
-.L220:
+.L222:
 	.byte	5,6,7,0,5,2
 	.word	.L20
 	.byte	3,156,1,1,5,30,9
@@ -27552,13 +27558,13 @@ __pit_enable_interrupt_function_end:
 	.byte	3,5,1,5,19,9
 	.half	.L165-.L164
 	.byte	3,2,1,5,20,9
-	.half	.L221-.L165
+	.half	.L223-.L165
 	.byte	3,1,1,5,23,9
-	.half	.L222-.L221
+	.half	.L224-.L223
 	.byte	3,2,1,5,1,9
-	.half	.L45-.L222
+	.half	.L45-.L224
 	.byte	3,1,0,1,1
-.L218:
+.L220:
 	.sdecl	'.debug_ranges',debug,cluster('pit_start')
 	.sect	'.debug_ranges'
 .L44:
@@ -27609,17 +27615,17 @@ __pit_enable_interrupt_function_end:
 	.sdecl	'.debug_line',debug,cluster('pit_disable_interrupt')
 	.sect	'.debug_line'
 .L48:
-	.word	.L224-.L223
-.L223:
-	.half	3
 	.word	.L226-.L225
 .L225:
+	.half	3
+	.word	.L228-.L227
+.L227:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\Std',0
 	.byte	0
 	.byte	'..\\Libraries\\seekfree_libraries\\zf_ccu6_pit.c',0,0,0,0
 	.byte	'IfxCcu6.h',0,1,0,0,0
-.L226:
+.L228:
 	.byte	5,6,7,0,5,2
 	.word	.L22
 	.byte	3,177,1,1,5,30,9
@@ -27627,15 +27633,15 @@ __pit_enable_interrupt_function_end:
 	.byte	3,3,1,4,2,5,28,9
 	.half	.L123-.L166
 	.byte	3,138,10,1,5,33,9
-	.half	.L227-.L123
+	.half	.L229-.L123
 	.byte	1,5,31,9
-	.half	.L228-.L227
+	.half	.L230-.L229
 	.byte	1,5,17,1,4,1,5,1,9
-	.half	.L124-.L228
+	.half	.L124-.L230
 	.byte	3,248,117,1,7,9
 	.half	.L50-.L124
 	.byte	0,1,1
-.L224:
+.L226:
 	.sdecl	'.debug_ranges',debug,cluster('pit_disable_interrupt')
 	.sect	'.debug_ranges'
 .L49:
@@ -27688,17 +27694,17 @@ __pit_enable_interrupt_function_end:
 	.sdecl	'.debug_line',debug,cluster('pit_enable_interrupt')
 	.sect	'.debug_line'
 .L53:
-	.word	.L230-.L229
-.L229:
-	.half	3
 	.word	.L232-.L231
 .L231:
+	.half	3
+	.word	.L234-.L233
+.L233:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\Std',0
 	.byte	0
 	.byte	'..\\Libraries\\seekfree_libraries\\zf_ccu6_pit.c',0,0,0,0
 	.byte	'IfxCcu6.h',0,1,0,0,0
-.L232:
+.L234:
 	.byte	5,6,7,0,5,2
 	.word	.L26
 	.byte	3,192,1,1,5,30,9
@@ -27712,7 +27718,7 @@ __pit_enable_interrupt_function_end:
 	.byte	3,168,117,1,7,9
 	.half	.L55-.L137
 	.byte	0,1,1
-.L230:
+.L232:
 	.sdecl	'.debug_ranges',debug,cluster('pit_enable_interrupt')
 	.sect	'.debug_ranges'
 .L54:
@@ -27742,43 +27748,43 @@ __pit_enable_interrupt_function_end:
 	.sdecl	'.debug_line',debug,cluster('.cocofun_1')
 	.sect	'.debug_line'
 .L58:
-	.word	.L234-.L233
-.L233:
-	.half	3
 	.word	.L236-.L235
 .L235:
+	.half	3
+	.word	.L238-.L237
+.L237:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\Std',0
 	.byte	0
 	.byte	'..\\Libraries\\seekfree_libraries\\zf_ccu6_pit.c',0,0,0,0
 	.byte	'IfxCcu6.h',0,1,0,0,0
-.L236:
+.L238:
 	.byte	5,35,7,0,5,2
 	.word	.L24
 	.byte	3,181,1,1,4,2,5,28,3,137,10,1,4,1,5,46,9
 	.half	.L167-.L24
 	.byte	3,247,117,1,4,2,5,26,9
-	.half	.L237-.L167
+	.half	.L239-.L167
 	.byte	3,136,10,1,5,20,9
-	.half	.L238-.L237
+	.half	.L240-.L239
 	.byte	1,5,23,9
-	.half	.L239-.L238
+	.half	.L241-.L240
 	.byte	1,9
-	.half	.L60-.L239
+	.half	.L60-.L241
 	.byte	0,1,1,5,34,0,5,2
 	.word	.L24
 	.byte	3,196,1,1,4,2,5,28,3,217,10,1,4,1,5,45,9
 	.half	.L167-.L24
 	.byte	3,167,117,1,4,2,5,26,9
-	.half	.L237-.L167
+	.half	.L239-.L167
 	.byte	3,216,10,1,5,20,9
-	.half	.L238-.L237
+	.half	.L240-.L239
 	.byte	1,5,23,9
-	.half	.L239-.L238
+	.half	.L241-.L240
 	.byte	1,3,161,127,1,7,9
-	.half	.L60-.L239
+	.half	.L60-.L241
 	.byte	0,1,1
-.L234:
+.L236:
 	.sdecl	'.debug_ranges',debug,cluster('.cocofun_1')
 	.sect	'.debug_ranges'
 .L59:
@@ -28043,7 +28049,7 @@ __pit_enable_interrupt_function_end:
 	.word	0,0
 	.sdecl	'.debug_frame',debug
 	.sect	'.debug_frame'
-.L240:
+.L242:
 	.word	48
 	.word	-1
 	.byte	3,0,2,1,27,12,26,0,8,27,8,26,8,28,8,29,8,30,8,31,8,34,8,35,8,32,8,33,8,16,8,17,8,24,8,25,8,36,8,37,8,38
@@ -28051,7 +28057,7 @@ __pit_enable_interrupt_function_end:
 	.sdecl	'.debug_frame',debug,cluster('pit_init')
 	.sect	'.debug_frame'
 	.word	36
-	.word	.L240,.L16,.L61-.L16
+	.word	.L242,.L16,.L61-.L16
 	.byte	4
 	.word	(.L143-.L16)/2
 	.byte	19,136,1,22,26,4,19,138,136,1,4
@@ -28060,7 +28066,7 @@ __pit_enable_interrupt_function_end:
 	.sdecl	'.debug_frame',debug,cluster('pit_close')
 	.sect	'.debug_frame'
 	.word	36
-	.word	.L240,.L18,.L108-.L18
+	.word	.L242,.L18,.L108-.L18
 	.byte	4
 	.word	(.L162-.L18)/2
 	.byte	19,40,22,26,3,19,138,40,4
@@ -28069,7 +28075,7 @@ __pit_enable_interrupt_function_end:
 	.sdecl	'.debug_frame',debug,cluster('pit_start')
 	.sect	'.debug_frame'
 	.word	36
-	.word	.L240,.L20,.L113-.L20
+	.word	.L242,.L20,.L113-.L20
 	.byte	4
 	.word	(.L164-.L20)/2
 	.byte	19,40,22,26,3,19,138,40,4
@@ -28078,14 +28084,14 @@ __pit_enable_interrupt_function_end:
 	.sdecl	'.debug_frame',debug,cluster('pit_disable_interrupt')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L240,.L22,.L118-.L22
+	.word	.L242,.L22,.L118-.L22
 	.sdecl	'.debug_frame',debug,cluster('pit_enable_interrupt')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L240,.L26,.L131-.L26
+	.word	.L242,.L26,.L131-.L26
 	.sdecl	'.debug_frame',debug
 	.sect	'.debug_frame'
-.L241:
+.L243:
 	.word	52
 	.word	-1
 	.byte	3,0,2,1,40,12,26,0,9,40,27,155,0,7,26,8,28,8,29,8,30,8,31,8,34,8,35,8,32,8,33,8,16,8,17,8,24,8,25,8,36
@@ -28093,7 +28099,7 @@ __pit_enable_interrupt_function_end:
 	.sdecl	'.debug_frame',debug,cluster('.cocofun_1')
 	.sect	'.debug_frame'
 	.word	24
-	.word	.L241,.L24,.L60-.L24
+	.word	.L243,.L24,.L60-.L24
 	.byte	8,18,8,19,8,20,8,21,8,22,8,23
 
 ; ..\Libraries\seekfree_libraries\zf_ccu6_pit.c	   199  	volatile Ifx_CCU6 *module;

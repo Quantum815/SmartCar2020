@@ -10,6 +10,7 @@
 #ifdef IMAGEPROCESS
 
 #pragma section all "cpu1_dsram"
+
 int x1, x2, x3, x4;
 int CloseThresholds;
 int FarThresholds;
@@ -17,6 +18,7 @@ double MidLineFuseNum;
 uint8 ProcessImageFlag = 0;
 uint8 DisplayIMAGE[MT9V03X_H][MT9V03X_W], OSTUIMAGE[15][MT9V03X_W];
 uint8 LeftLine[MT9V03X_H], RightLine[MT9V03X_H], MidLine[MT9V03X_H];
+
 #pragma section all "cpu1_dsram"
 
 //Í¼ÏñÍ¼´¦Àí
@@ -149,21 +151,20 @@ void CameraProcess(void)
 //	if(mt9v03x_finish_flag)
 //	{
 //		mt9v03x_finish_flag=0;
-//		ips114_DisplayIMAGEEe032_zoom(mt9v03x_image[0], MT9V03X_W, MT9V03X_H, 240, 135);
-//		seekfree_sendimg_03x_usb_cdc(mt9v03x_csi_image[0], MT9V03X_CSI_W, MT9V03X_CSI_H);
+//		ips114_displayimage032_zoom(mt9v03x_image[0], MT9V03X_W, MT9V03X_H, 240, 135);
 //	}
     CloseThresholds = GetOSTU(mt9v03x_image) + 15;
     FarThresholds = GetOSTU(mt9v03x_image) + 15;
 	ImagePretreatment();
     FindMidLine_ADD();
 	//EdgePointFind();
-	  MidLineFuseNum=GetMidLineNum();
+	 MidLineFuseNum = GetMidLineNum();
 	ProcessImageFlag = 1;
 //			for(int i=0;i<MT9V03X_H;i++)
 //		{
-//			DisplayIMAGEE[i][(int)(LeftLine[i]+RightLine[i])/2]=0;
+//			DisplayIMAGE[i][(int)(LeftLine[i]+RightLine[i])/2]=0;
 //		}
-//    ips114_DisplayIMAGEe032_zoom(DisplayIMAGEE[0], MT9V03X_W, MT9V03X_H, 240, 135);
+//    ips114_displayimage032_zoom(DisplayIMAGE[0], MT9V03X_W, MT9V03X_H, 240, 135);
 }
 void EdgePointFind(void)
 {

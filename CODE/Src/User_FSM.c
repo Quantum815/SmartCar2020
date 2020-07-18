@@ -8,17 +8,23 @@
 #include "..\CODE\Inc\User_fsm.h"
 
 #pragma section all "cpu0_dsram"
+
 FSMTable_t CarTable[] =
 {
     //{到来的事件，当前的状态，将要要执行的函数，下一个状态}
-    { RUNSTART, Stop,   RunStart,  GoLine },
-    { RUNSTOP,  GoLine, RunStop,   Stop   },
-	{ NOEVENT,  Stop,   RunStop,   Stop   },
-//	{ NOEVENT,  GoLine, FindLine,  GoLine },
-	{ GOROUND,  GoLine, PassCross, GoLine }
+	{ NOEVENT,  Stop,     RunStop,   Stop    },
+    { RUNSTART, Stop,     RunStart,  GoLine  },
+	{ NOEVENT,  GoLine,   FindLine,  GoLine  },
+	{ GOCROSS,  GoLine,   PassCross, GoLine  },
+	{ INGARAGE, GoLine,   GoGarage,  InGarage},
+	{ NOEVENT,  InGarage, GoGarage,  InGarage},
+    { RUNSTOP,  InGarage, RunStop,   Stop    }
     //如果出现新的代码加入在此
 };
 FSM_t CarFSM;
+float LPWM, RPWM,PIDValue,tt;
+uint8 TenSingal,CarSingal,StartSingal;
+
 #pragma section all restore
 
 //事件反应函数
@@ -36,24 +42,83 @@ void RunStop(void)
 	SetMotorPWM(RMotor_B, 0);
 }
 
-/*void FindLine(void)
+void FindLine(void)
 {
-	if(ProcessImageFlag == 1)
-	{
-		MotorUserHandle(LMotor_F, LeftWheelDeadZone + GetPIDValue(99,MidLineFuseNum,10,0,0));
-		MotorUserHandle(RMotor_F, RightWheelDeadZone - GetPIDValue(99,MidLineFuseNum,10,0,0));
-	}
-	ProcessImageFlag=0;
-}*/
+    static float LLPWM, LRPWM;
+	float test;
+	PIDValue = (GetSpeed()/1.5) * GetPid(0.002495622262359, 1000*MidLineFuseNum, 56, 0, 22000);
+//    if(TenSingal>=5)
+//		PIDValue = 0-PIDValue;
+	LPWM = LeftWheelDeadZone + PIDValue;
+    RPWM = RightWheelDeadZone - PIDValue;
+
+
+    if(LPWM >= 40)
+        LPWM = 40;
+    else if(LPWM <= -40)
+        LPWM = -40;
+    if(RPWM >= 40)
+        RPWM = 40;
+    else if(RPWM <= -40)
+        RPWM = -40;
+		//test=GetSpeed();
+		//PRINTF("%f\r\n",test);
+		//test=GetPid(0, 1000*MidLineFuseNum, 50, 0, 3900);
+		//PRINTF("L=%f     R=%f     \r\n",LPWM,RPWM);
+		//PRINTF("%f\r\n",test);
+		//ips114_showfloat(100,0,MidLineFuseNum,4,4);
+//    if(LLPWM - LPWM >= 5 || LLPWM - LPWM <= -5)
+//    {
+//        LPWM = LLPWM + (LLPWM - LPWM);
+//    }
+//    else if(LRPWM - RPWM >= 5 || LRPWM - RPWM <= -5)
+//    {
+//        RPWM = LRPWM + (LRPWM - RPWM);
+//    }
+//    LLPWM = LPWM;
+//    LRPWM = RPWM;
+    MotorUserHandle(LMotor_F, LPWM);
+    MotorUserHandle(RMotor_F, RPWM);
+}
 
 void PassCross(void)
 {
-
-	MotorUserHandle(LMotor_F, LeftWheelDeadZone);
-    MotorUserHandle(RMotor_F, RightWheelDeadZone);
+//	float test1,test2,cut;
+//			cut=GYROPID(0.35,0,2);
+//			test1=LeftWheelDeadZone+cut;
+//			test2=RightWheelDeadZone-cut;
+//			if(test1>=40)
+//				test1=40;
+//			else if(test1<=-40)
+//			test1=-40;
+//			if(test2>=40)
+//				test2=40;
+//			else if(test2<=-40)
+//				test2=-40;
+//    MotorUserHandle(LMotor_F, test1);
+//    MotorUserHandle(RMotor_F, test2);
+//	  MotorUserHandle(LMotor_F, LeftWheelDeadZone);
+//    MotorUserHandle(RMotor_F, RightWheelDeadZone);
 }
 
-//************************************************
+void GoGarage(void)
+{
+
+}
+
+void ADCulMidLine(void)
+{
+	/*float_t Lsqrt, Rsqrt,t1,t2;
+
+		t1=ADCvalue(0);
+		t2=ADCvalue(4);
+		arm_sqrt_f32(t1,&Lsqrt);
+		arm_sqrt_f32(t2,&Rsqrt);
+		MidLineFuseNum=(Lsqrt-Rsqrt)/(t1+t2);*/
+}
+
+
+//*********************************************************
 //状态机功能函数
 //
 //函数作用：状态机注册

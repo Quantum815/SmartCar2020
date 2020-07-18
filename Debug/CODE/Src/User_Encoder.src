@@ -24,38 +24,37 @@ $TC16X
 ; ..\CODE\Src\User_Encoder.c	     9  
 ; ..\CODE\Src\User_Encoder.c	    10  #pragma section all "cpu0_dsram"
 ; ..\CODE\Src\User_Encoder.c	    11  
-; ..\CODE\Src\User_Encoder.c	    12  double CurDistance;
-; ..\CODE\Src\User_Encoder.c	    13  double TotalDistance;
-; ..\CODE\Src\User_Encoder.c	    14  
-; ..\CODE\Src\User_Encoder.c	    15  #pragma section all restore
-; ..\CODE\Src\User_Encoder.c	    16  
-; ..\CODE\Src\User_Encoder.c	    17  void EncoderInit(void)
+; ..\CODE\Src\User_Encoder.c	    12  static double CurDistance, TotalDistance;
+; ..\CODE\Src\User_Encoder.c	    13  
+; ..\CODE\Src\User_Encoder.c	    14  #pragma section all restore
+; ..\CODE\Src\User_Encoder.c	    15  
+; ..\CODE\Src\User_Encoder.c	    16  void EncoderInit(void)
 ; Function EncoderInit
 .L5:
 EncoderInit:	.type	func
 
-; ..\CODE\Src\User_Encoder.c	    18  {
-; ..\CODE\Src\User_Encoder.c	    19  	gpt12_init(GPT12_T2, GPT12_T2INB_P33_7, GPT12_T2EUDB_P33_6);
+; ..\CODE\Src\User_Encoder.c	    17  {
+; ..\CODE\Src\User_Encoder.c	    18  	gpt12_init(GPT12_T2, GPT12_T2INB_P33_7, GPT12_T2EUDB_P33_6);
 	mov	d4,#0
-.L67:
+.L75:
 	mov	d5,#1
-.L68:
+.L76:
 	mov	d6,#3
 	call	gpt12_init
-.L69:
+.L77:
 
-; ..\CODE\Src\User_Encoder.c	    20  	gpt12_init(GPT12_T6, GPT12_T6INA_P20_3, GPT12_T6EUDA_P20_0);
+; ..\CODE\Src\User_Encoder.c	    19  	gpt12_init(GPT12_T6, GPT12_T6INA_P20_3, GPT12_T6EUDA_P20_0);
 	mov	d4,#4
-.L70:
+.L78:
 	mov	d5,#17
-.L71:
+.L79:
 	mov	d6,#19
 	j	gpt12_init
-.L40:
+.L47:
 	
 __EncoderInit_function_end:
 	.size	EncoderInit,__EncoderInit_function_end-EncoderInit
-.L20:
+.L22:
 	; End of function
 	
 	.sdecl	'.text.User_Encoder.CountDistance',code,cluster('CountDistance')
@@ -64,92 +63,92 @@ __EncoderInit_function_end:
 	
 	.global	CountDistance
 
-; ..\CODE\Src\User_Encoder.c	    21  }
-; ..\CODE\Src\User_Encoder.c	    22  
-; ..\CODE\Src\User_Encoder.c	    23  void CountDistance(void)
+; ..\CODE\Src\User_Encoder.c	    20  }
+; ..\CODE\Src\User_Encoder.c	    21  
+; ..\CODE\Src\User_Encoder.c	    22  void CountDistance(void)
 ; Function CountDistance
 .L7:
 CountDistance:	.type	func
 
-; ..\CODE\Src\User_Encoder.c	    24  {
-; ..\CODE\Src\User_Encoder.c	    25  	int16 encoder0, encoder1;
-; ..\CODE\Src\User_Encoder.c	    26  	double CurLdistance, CurRdistance;
-; ..\CODE\Src\User_Encoder.c	    27  
-; ..\CODE\Src\User_Encoder.c	    28  	encoder0 = gpt12_get(GPT12_T2);
+; ..\CODE\Src\User_Encoder.c	    23  {
+; ..\CODE\Src\User_Encoder.c	    24  	int16 encoder0, encoder1;
+; ..\CODE\Src\User_Encoder.c	    25  	double CurLdistance, CurRdistance;
+; ..\CODE\Src\User_Encoder.c	    26  
+; ..\CODE\Src\User_Encoder.c	    27  	encoder0 = gpt12_get(GPT12_T2);
 	mov	d4,#0
 	call	gpt12_get
-.L50:
+.L58:
 	mov	d15,d2
-.L52:
+.L60:
 
-; ..\CODE\Src\User_Encoder.c	    29  	encoder1 = gpt12_get(GPT12_T6);
+; ..\CODE\Src\User_Encoder.c	    28  	encoder1 = gpt12_get(GPT12_T6);
 	mov	d4,#4
 	call	gpt12_get
-.L51:
+.L59:
 
-; ..\CODE\Src\User_Encoder.c	    30  
-; ..\CODE\Src\User_Encoder.c	    31  	CurLdistance = ((double)encoder0/1024)*((WHEEL_DIAMETER*3.1415)/1000)*(30/68.0);
-; ..\CODE\Src\User_Encoder.c	    32  	CurRdistance = ((double)encoder1/1024)*((WHEEL_DIAMETER*3.1415)/1000)*(30/68.0);
-; ..\CODE\Src\User_Encoder.c	    33  	CurDistance = (CurLdistance - CurRdistance) / 2;
+; ..\CODE\Src\User_Encoder.c	    29  
+; ..\CODE\Src\User_Encoder.c	    30  	CurLdistance = ((double)encoder0/1024)*((WHEEL_DIAMETER*3.1415)/1000)*(30/68.0);
+; ..\CODE\Src\User_Encoder.c	    31  	CurRdistance = ((double)encoder1/1024)*((WHEEL_DIAMETER*3.1415)/1000)*(30/68.0);
+; ..\CODE\Src\User_Encoder.c	    32  	CurDistance = (CurLdistance - CurRdistance) / 2;
 	itof	d15,d15
 	movh.a	a15,#@his(CurDistance)
-.L53:
+.L61:
 	itof	d2,d2
-.L54:
+.L62:
 	movh	d3,#14976
-.L76:
+.L84:
 	mul.f	d15,d15,d3
-.L77:
+.L85:
 	mul.f	d2,d2,d3
-.L78:
+.L86:
 	mov	d1,#29330
 	addih	d1,d1,#15943
-.L79:
+.L87:
 	mul.f	d15,d15,d1
-.L80:
+.L88:
 	mul.f	d1,d2,d1
-.L81:
+.L89:
 	mov.u	d0,#57826
 	addih	d0,d0,#16097
-.L82:
+.L90:
 	mul.f	d15,d15,d0
-.L55:
+.L63:
 	mul.f	d0,d1,d0
-.L57:
+.L65:
 
-; ..\CODE\Src\User_Encoder.c	    34  	TotalDistance += CurDistance;
-; ..\CODE\Src\User_Encoder.c	    35  
-; ..\CODE\Src\User_Encoder.c	    36  	//printf("L  %lf\r\n",CurLdistance);  //≤‚ ‘
-; ..\CODE\Src\User_Encoder.c	    37  	//printf("R  %lf\r\n",CurRdistance);  //≤‚ ‘
-; ..\CODE\Src\User_Encoder.c	    38  	//printf("%lf\r\n",TotalDistance);  //≤‚ ‘
-; ..\CODE\Src\User_Encoder.c	    39  
-; ..\CODE\Src\User_Encoder.c	    40  	gpt12_clear(GPT12_T2);
+; ..\CODE\Src\User_Encoder.c	    33  	TotalDistance += CurDistance;
+; ..\CODE\Src\User_Encoder.c	    34  
+; ..\CODE\Src\User_Encoder.c	    35  	//printf("L  %lf\r\n",CurLdistance);  //≤‚ ‘
+; ..\CODE\Src\User_Encoder.c	    36  	//printf("R  %lf\r\n",CurRdistance);  //≤‚ ‘
+; ..\CODE\Src\User_Encoder.c	    37  	//printf("%lf\r\n",TotalDistance);  //≤‚ ‘
+; ..\CODE\Src\User_Encoder.c	    38  
+; ..\CODE\Src\User_Encoder.c	    39  	gpt12_clear(GPT12_T2);
 	mov	d4,#0
-.L83:
+.L91:
 	sub.f	d15,d15,d0
-.L56:
+.L64:
 	movh	d0,#16128
-.L58:
+.L66:
 	mul.f	d15,d15,d0
 	st.w	[a15]@los(CurDistance),d15
-.L84:
+.L92:
 	movh.a	a15,#@his(TotalDistance)
 	ld.w	d0,[a15]@los(TotalDistance)
-.L85:
+.L93:
 	add.f	d15,d0,d15
 	st.w	[a15]@los(TotalDistance),d15
-.L86:
+.L94:
 	call	gpt12_clear
-.L87:
+.L95:
 
-; ..\CODE\Src\User_Encoder.c	    41  	gpt12_clear(GPT12_T6);
+; ..\CODE\Src\User_Encoder.c	    40  	gpt12_clear(GPT12_T6);
 	mov	d4,#4
 	j	gpt12_clear
-.L41:
+.L48:
 	
 __CountDistance_function_end:
 	.size	CountDistance,__CountDistance_function_end-CountDistance
-.L25:
+.L27:
 	; End of function
 	
 	.sdecl	'.text.User_Encoder.GetDistance',code,cluster('GetDistance')
@@ -158,26 +157,26 @@ __CountDistance_function_end:
 	
 	.global	GetDistance
 
-; ..\CODE\Src\User_Encoder.c	    42  }
-; ..\CODE\Src\User_Encoder.c	    43  
-; ..\CODE\Src\User_Encoder.c	    44  double GetDistance(void)
+; ..\CODE\Src\User_Encoder.c	    41  }
+; ..\CODE\Src\User_Encoder.c	    42  
+; ..\CODE\Src\User_Encoder.c	    43  double GetDistance(void)
 ; Function GetDistance
 .L9:
 GetDistance:	.type	func
 
-; ..\CODE\Src\User_Encoder.c	    45  {
-; ..\CODE\Src\User_Encoder.c	    46  	return TotalDistance;
+; ..\CODE\Src\User_Encoder.c	    44  {
+; ..\CODE\Src\User_Encoder.c	    45  	return TotalDistance;
 	movh.a	a15,#@his(TotalDistance)
 	ld.w	d2,[a15]@los(TotalDistance)
-.L92:
+.L100:
 
-; ..\CODE\Src\User_Encoder.c	    47  }
+; ..\CODE\Src\User_Encoder.c	    46  }
 	ret
-.L48:
+.L55:
 	
 __GetDistance_function_end:
 	.size	GetDistance,__GetDistance_function_end-GetDistance
-.L30:
+.L32:
 	; End of function
 	
 	.sdecl	'.text.User_Encoder.GetSpeed',code,cluster('GetSpeed')
@@ -186,41 +185,68 @@ __GetDistance_function_end:
 	
 	.global	GetSpeed
 
-; ..\CODE\Src\User_Encoder.c	    48  
-; ..\CODE\Src\User_Encoder.c	    49  double GetSpeed(void)  //÷˜Ω¯≥Ã10ms
+; ..\CODE\Src\User_Encoder.c	    47  
+; ..\CODE\Src\User_Encoder.c	    48  double GetSpeed(void)  //5ms÷–∂œæ‡¿Îº∆À„
 ; Function GetSpeed
 .L11:
 GetSpeed:	.type	func
 
-; ..\CODE\Src\User_Encoder.c	    50  {
-; ..\CODE\Src\User_Encoder.c	    51  	return (CurDistance/0.01);
+; ..\CODE\Src\User_Encoder.c	    49  {
+; ..\CODE\Src\User_Encoder.c	    50  	return (CurDistance/0.005);
 	mov.u	d0,#55050
 	movh.a	a15,#@his(CurDistance)
-.L97:
-	addih	d0,d0,#15395
+.L105:
+	addih	d0,d0,#15267
 	ld.w	d15,[a15]@los(CurDistance)
-.L98:
+.L106:
 
-; ..\CODE\Src\User_Encoder.c	    52  }
+; ..\CODE\Src\User_Encoder.c	    51  }
 	div.f	d2,d15,d0
 	ret
-.L49:
+.L56:
 	
 __GetSpeed_function_end:
 	.size	GetSpeed,__GetSpeed_function_end-GetSpeed
-.L35:
+.L37:
+	; End of function
+	
+	.sdecl	'.text.User_Encoder.CleanDistance',code,cluster('CleanDistance')
+	.sect	'.text.User_Encoder.CleanDistance'
+	.align	2
+	
+	.global	CleanDistance
+
+; ..\CODE\Src\User_Encoder.c	    52  
+; ..\CODE\Src\User_Encoder.c	    53  void CleanDistance(void)
+; Function CleanDistance
+.L13:
+CleanDistance:	.type	func
+
+; ..\CODE\Src\User_Encoder.c	    54  {
+; ..\CODE\Src\User_Encoder.c	    55  	TotalDistance = 0;
+	movh.a	a15,#@his(TotalDistance)
+.L111:
+	mov	d15,#0
+	st.w	[a15]@los(TotalDistance),d15
+.L112:
+
+; ..\CODE\Src\User_Encoder.c	    56  }
+	ret
+.L57:
+	
+__CleanDistance_function_end:
+	.size	CleanDistance,__CleanDistance_function_end-CleanDistance
+.L42:
 	; End of function
 	
 	.sdecl	'.bss.cpu0_dsram',data,cluster('CurDistance')
 	.sect	'.bss.cpu0_dsram'
-	.global	CurDistance
 	.align	2
 CurDistance:	.type	object
 	.size	CurDistance,4
 	.space	4
 	.sdecl	'.bss.cpu0_dsram',data,cluster('TotalDistance')
 	.sect	'.bss.cpu0_dsram'
-	.global	TotalDistance
 	.align	2
 TotalDistance:	.type	object
 	.size	TotalDistance,4
@@ -231,23 +257,24 @@ TotalDistance:	.type	object
 	.calls	'EncoderInit','',0
 	.calls	'CountDistance','',0
 	.calls	'GetDistance','',0
+	.calls	'GetSpeed','',0
 	.extern	gpt12_init
 	.extern	gpt12_get
 	.extern	gpt12_clear
-	.calls	'GetSpeed','',0
+	.calls	'CleanDistance','',0
 	.sdecl	'.debug_info',debug
 	.sect	'.debug_info'
-.L13:
+.L15:
 	.word	252623
 	.half	3
-	.word	.L14
+	.word	.L16
 	.byte	4
-.L12:
+.L14:
 	.byte	1
 	.byte	'..\\CODE\\Src\\User_Encoder.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L15
+	.word	.L17
 	.byte	2,1,1,3
 	.word	147
 	.byte	4
@@ -256,7 +283,7 @@ TotalDistance:	.type	object
 	.word	150
 	.byte	6,0,7
 	.byte	'__fract',0,4,128,1
-.L45:
+.L52:
 	.byte	7
 	.byte	'float',0,4,4,8
 	.byte	'Ifx__float_to_fract',0,3,1,152,2,18
@@ -6260,7 +6287,7 @@ TotalDistance:	.type	object
 	.byte	'alti',0,20,191,18,82
 	.word	38944
 	.byte	6,0
-.L42:
+.L49:
 	.byte	7
 	.byte	'short int',0,2,5,7
 	.byte	'long int',0,4,5,21,22,60,9,12,14
@@ -34603,7 +34630,7 @@ TotalDistance:	.type	object
 	.byte	'GPT_PIN_enum',0,23,57,2
 	.word	40715
 	.byte	11
-	.byte	'FSMTable',0,47,29,16,16,14
+	.byte	'FSMTable',0,47,31,16,16,14
 	.byte	'Event',0
 	.word	499
 	.byte	4,2,35,0,14
@@ -34616,12 +34643,12 @@ TotalDistance:	.type	object
 	.byte	'NextState',0
 	.word	499
 	.byte	4,2,35,12,0,34
-	.byte	'FSMTable_t',0,47,34,2
+	.byte	'FSMTable_t',0,47,36,2
 	.word	252519
 	.byte	0
 	.sdecl	'.debug_abbrev',debug
 	.sect	'.debug_abbrev'
-.L14:
+.L16:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,16,6,0,0,2,21,0,54,15,39,12,0,0,3,15,0,73,19,0,0,4,46,1,3,8,32,13
 	.byte	58,15,59,15,57,15,54,15,39,12,0,0,5,5,0,3,8,58,15,59,15,57,15,73,19,0,0,6,11,0,0,0,7,36,0,3,8,11,15,62
 	.byte	15,0,0,8,46,1,3,8,32,13,58,15,59,15,57,15,73,19,54,15,39,12,0,0,9,59,0,3,8,0,0,10,53,0,73,19,0,0,11,19
@@ -34635,12 +34662,12 @@ TotalDistance:	.type	object
 	.byte	0,54,15,0,0,36,21,1,54,15,39,12,0,0,37,21,1,73,19,54,15,39,12,0,0,0
 	.sdecl	'.debug_line',debug
 	.sect	'.debug_line'
-.L15:
-	.word	.L60-.L59
-.L59:
+.L17:
+	.word	.L68-.L67
+.L67:
 	.half	3
-	.word	.L62-.L61
-.L61:
+	.word	.L70-.L69
+.L69:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Std',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Scu\\Std',0
@@ -34712,360 +34739,414 @@ TotalDistance:	.type	object
 	.byte	'IfxDma_regdef.h',0,3,0,0
 	.byte	'IfxDma.h',0,18,0,0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\CODE\\Inc\\User_FSM.h',0,0,0,0,0
-.L62:
-.L60:
+.L70:
+.L68:
 	.sdecl	'.debug_info',debug,cluster('EncoderInit')
 	.sect	'.debug_info'
-.L16:
+.L18:
 	.word	194
 	.half	3
-	.word	.L17
+	.word	.L19
 	.byte	4,1
 	.byte	'..\\CODE\\Src\\User_Encoder.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L19,.L18
+	.word	.L21,.L20
 	.byte	2
-	.word	.L12
+	.word	.L14
 	.byte	3
-	.byte	'EncoderInit',0,1,17,6,1,1,1
-	.word	.L5,.L40,.L4
+	.byte	'EncoderInit',0,1,16,6,1,1,1
+	.word	.L5,.L47,.L4
 	.byte	4
-	.word	.L5,.L40
+	.word	.L5,.L47
 	.byte	0,0
 	.sdecl	'.debug_abbrev',debug,cluster('EncoderInit')
 	.sect	'.debug_abbrev'
-.L17:
+.L19:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
 	.sdecl	'.debug_line',debug,cluster('EncoderInit')
 	.sect	'.debug_line'
-.L18:
-	.word	.L64-.L63
-.L63:
+.L20:
+	.word	.L72-.L71
+.L71:
 	.half	3
-	.word	.L66-.L65
-.L65:
+	.word	.L74-.L73
+.L73:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\CODE\\Src\\User_Encoder.c',0,0,0,0,0
-.L66:
+.L74:
 	.byte	5,13,7,0,5,2
 	.word	.L5
-	.byte	3,18,1,5,23,9
-	.half	.L67-.L5
+	.byte	3,17,1,5,23,9
+	.half	.L75-.L5
 	.byte	1,5,42,9
-	.half	.L68-.L67
+	.half	.L76-.L75
 	.byte	1,5,13,9
-	.half	.L69-.L68
+	.half	.L77-.L76
 	.byte	3,1,1,5,23,9
-	.half	.L70-.L69
+	.half	.L78-.L77
 	.byte	1,5,42,9
-	.half	.L71-.L70
+	.half	.L79-.L78
 	.byte	1,5,1,9
-	.half	.L20-.L71
+	.half	.L22-.L79
 	.byte	3,1,0,1,1
-.L64:
+.L72:
 	.sdecl	'.debug_ranges',debug,cluster('EncoderInit')
 	.sect	'.debug_ranges'
-.L19:
-	.word	-1,.L5,0,.L20-.L5,0,0
+.L21:
+	.word	-1,.L5,0,.L22-.L5,0,0
 	.sdecl	'.debug_info',debug,cluster('CountDistance')
 	.sect	'.debug_info'
-.L21:
+.L23:
 	.word	289
 	.half	3
-	.word	.L22
+	.word	.L24
 	.byte	4,1
 	.byte	'..\\CODE\\Src\\User_Encoder.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L24,.L23
+	.word	.L26,.L25
 	.byte	2
-	.word	.L12
+	.word	.L14
 	.byte	3
-	.byte	'CountDistance',0,1,23,6,1,1,1
-	.word	.L7,.L41,.L6
+	.byte	'CountDistance',0,1,22,6,1,1,1
+	.word	.L7,.L48,.L6
 	.byte	4
-	.word	.L7,.L41
+	.word	.L7,.L48
 	.byte	5
-	.byte	'encoder0',0,1,25,8
-	.word	.L42,.L43
+	.byte	'encoder0',0,1,24,8
+	.word	.L49,.L50
 	.byte	5
-	.byte	'encoder1',0,1,25,18
-	.word	.L42,.L44
+	.byte	'encoder1',0,1,24,18
+	.word	.L49,.L51
 	.byte	5
-	.byte	'CurLdistance',0,1,26,9
-	.word	.L45,.L46
+	.byte	'CurLdistance',0,1,25,9
+	.word	.L52,.L53
 	.byte	5
-	.byte	'CurRdistance',0,1,26,23
-	.word	.L45,.L47
+	.byte	'CurRdistance',0,1,25,23
+	.word	.L52,.L54
 	.byte	0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('CountDistance')
 	.sect	'.debug_abbrev'
-.L22:
+.L24:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,1,17,1,18,1,0,0,5,52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
 	.sdecl	'.debug_line',debug,cluster('CountDistance')
 	.sect	'.debug_line'
-.L23:
-	.word	.L73-.L72
-.L72:
+.L25:
+	.word	.L81-.L80
+.L80:
 	.half	3
-	.word	.L75-.L74
-.L74:
+	.word	.L83-.L82
+.L82:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\CODE\\Src\\User_Encoder.c',0,0,0,0,0
-.L75:
+.L83:
 	.byte	5,23,7,0,5,2
 	.word	.L7
-	.byte	3,27,1,5,11,9
-	.half	.L50-.L7
+	.byte	3,26,1,5,11,9
+	.half	.L58-.L7
 	.byte	1,5,23,9
-	.half	.L52-.L50
+	.half	.L60-.L58
 	.byte	3,1,1,5,18,9
-	.half	.L51-.L52
+	.half	.L59-.L60
 	.byte	3,2,1,5,2,3,2,1,5,18,9
-	.half	.L53-.L51
+	.half	.L61-.L59
 	.byte	3,127,1,5,35,9
-	.half	.L54-.L53
+	.half	.L62-.L61
 	.byte	3,127,1,5,18,9
-	.half	.L76-.L54
+	.half	.L84-.L62
 	.byte	1,9
-	.half	.L77-.L76
-	.byte	3,1,1,5,65,9
-	.half	.L78-.L77
-	.byte	3,127,1,5,40,9
-	.half	.L79-.L78
-	.byte	1,9
-	.half	.L80-.L79
-	.byte	3,1,1,5,75,9
-	.half	.L81-.L80
-	.byte	3,127,1,5,71,9
-	.half	.L82-.L81
-	.byte	1,9
-	.half	.L55-.L82
-	.byte	3,1,1,5,14,9
-	.half	.L57-.L55
-	.byte	3,8,1,5,30,9
-	.half	.L83-.L57
-	.byte	3,121,1,5,48,9
-	.half	.L56-.L83
-	.byte	1,5,30,9
-	.half	.L58-.L56
-	.byte	1,5,14,1,5,2,9
-	.half	.L84-.L58
-	.byte	3,1,1,5,16,9
 	.half	.L85-.L84
-	.byte	1,5,14,9
+	.byte	3,1,1,5,65,9
 	.half	.L86-.L85
-	.byte	3,6,1,9
+	.byte	3,127,1,5,40,9
 	.half	.L87-.L86
+	.byte	1,9
+	.half	.L88-.L87
+	.byte	3,1,1,5,75,9
+	.half	.L89-.L88
+	.byte	3,127,1,5,71,9
+	.half	.L90-.L89
+	.byte	1,9
+	.half	.L63-.L90
+	.byte	3,1,1,5,14,9
+	.half	.L65-.L63
+	.byte	3,8,1,5,30,9
+	.half	.L91-.L65
+	.byte	3,121,1,5,48,9
+	.half	.L64-.L91
+	.byte	1,5,30,9
+	.half	.L66-.L64
+	.byte	1,5,14,1,5,2,9
+	.half	.L92-.L66
+	.byte	3,1,1,5,16,9
+	.half	.L93-.L92
+	.byte	1,5,14,9
+	.half	.L94-.L93
+	.byte	3,6,1,9
+	.half	.L95-.L94
 	.byte	3,1,1,5,1,9
-	.half	.L25-.L87
+	.half	.L27-.L95
 	.byte	3,1,0,1,1
-.L73:
+.L81:
 	.sdecl	'.debug_ranges',debug,cluster('CountDistance')
 	.sect	'.debug_ranges'
-.L24:
-	.word	-1,.L7,0,.L25-.L7,0,0
+.L26:
+	.word	-1,.L7,0,.L27-.L7,0,0
 	.sdecl	'.debug_info',debug,cluster('GetDistance')
 	.sect	'.debug_info'
-.L26:
+.L28:
 	.word	198
 	.half	3
-	.word	.L27
+	.word	.L29
 	.byte	4,1
 	.byte	'..\\CODE\\Src\\User_Encoder.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L29,.L28
+	.word	.L31,.L30
 	.byte	2
-	.word	.L12
+	.word	.L14
 	.byte	3
-	.byte	'GetDistance',0,1,44,8
-	.word	.L45
+	.byte	'GetDistance',0,1,43,8
+	.word	.L52
 	.byte	1,1,1
-	.word	.L9,.L48,.L8
+	.word	.L9,.L55,.L8
 	.byte	4
-	.word	.L9,.L48
+	.word	.L9,.L55
 	.byte	0,0
 	.sdecl	'.debug_abbrev',debug,cluster('GetDistance')
 	.sect	'.debug_abbrev'
-.L27:
+.L29:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
 	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
 	.sdecl	'.debug_line',debug,cluster('GetDistance')
 	.sect	'.debug_line'
-.L28:
-	.word	.L89-.L88
-.L88:
+.L30:
+	.word	.L97-.L96
+.L96:
 	.half	3
-	.word	.L91-.L90
-.L90:
+	.word	.L99-.L98
+.L98:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\CODE\\Src\\User_Encoder.c',0,0,0,0,0
-.L91:
+.L99:
 	.byte	5,9,7,0,5,2
 	.word	.L9
-	.byte	3,45,1,5,1,9
-	.half	.L92-.L9
+	.byte	3,44,1,5,1,9
+	.half	.L100-.L9
 	.byte	3,1,1,7,9
-	.half	.L30-.L92
+	.half	.L32-.L100
 	.byte	0,1,1
-.L89:
+.L97:
 	.sdecl	'.debug_ranges',debug,cluster('GetDistance')
 	.sect	'.debug_ranges'
-.L29:
-	.word	-1,.L9,0,.L30-.L9,0,0
+.L31:
+	.word	-1,.L9,0,.L32-.L9,0,0
 	.sdecl	'.debug_info',debug,cluster('GetSpeed')
 	.sect	'.debug_info'
-.L31:
+.L33:
 	.word	195
 	.half	3
-	.word	.L32
+	.word	.L34
 	.byte	4,1
 	.byte	'..\\CODE\\Src\\User_Encoder.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L34,.L33
+	.word	.L36,.L35
 	.byte	2
-	.word	.L12
+	.word	.L14
 	.byte	3
-	.byte	'GetSpeed',0,1,49,8
-	.word	.L45
+	.byte	'GetSpeed',0,1,48,8
+	.word	.L52
 	.byte	1,1,1
-	.word	.L11,.L49,.L10
+	.word	.L11,.L56,.L10
 	.byte	4
-	.word	.L11,.L49
+	.word	.L11,.L56
 	.byte	0,0
 	.sdecl	'.debug_abbrev',debug,cluster('GetSpeed')
 	.sect	'.debug_abbrev'
-.L32:
+.L34:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
 	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
 	.sdecl	'.debug_line',debug,cluster('GetSpeed')
 	.sect	'.debug_line'
-.L33:
-	.word	.L94-.L93
-.L93:
+.L35:
+	.word	.L102-.L101
+.L101:
 	.half	3
-	.word	.L96-.L95
-.L95:
+	.word	.L104-.L103
+.L103:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\CODE\\Src\\User_Encoder.c',0,0,0,0,0
-.L96:
+.L104:
 	.byte	5,22,7,0,5,2
 	.word	.L11
-	.byte	3,50,1,5,10,1,5,22,9
-	.half	.L97-.L11
+	.byte	3,49,1,5,10,1,5,22,9
+	.half	.L105-.L11
 	.byte	1,5,10,1,5,21,9
-	.half	.L98-.L97
+	.half	.L106-.L105
 	.byte	1,5,1,3,1,1,7,9
-	.half	.L35-.L98
+	.half	.L37-.L106
 	.byte	0,1,1
-.L94:
+.L102:
 	.sdecl	'.debug_ranges',debug,cluster('GetSpeed')
 	.sect	'.debug_ranges'
-.L34:
-	.word	-1,.L11,0,.L35-.L11,0,0
-	.sdecl	'.debug_info',debug,cluster('CurDistance')
-	.sect	'.debug_info'
 .L36:
-	.word	172
-	.half	3
-	.word	.L37
-	.byte	4,1
-	.byte	'..\\CODE\\Src\\User_Encoder.c',0
-	.byte	'TASKING VX-toolset for TriCore: C compiler',0
-	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1,2
-	.word	.L12
-	.byte	3
-	.byte	'CurDistance',0,24,12,8
-	.word	.L45
-	.byte	1,5,3
-	.word	CurDistance
-	.byte	0
-	.sdecl	'.debug_abbrev',debug,cluster('CurDistance')
-	.sect	'.debug_abbrev'
-.L37:
-	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
-	.byte	0,0,0
-	.sdecl	'.debug_info',debug,cluster('TotalDistance')
+	.word	-1,.L11,0,.L37-.L11,0,0
+	.sdecl	'.debug_info',debug,cluster('CleanDistance')
 	.sect	'.debug_info'
 .L38:
-	.word	174
+	.word	196
 	.half	3
 	.word	.L39
 	.byte	4,1
 	.byte	'..\\CODE\\Src\\User_Encoder.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
-	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1,2
-	.word	.L12
+	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
+	.word	.L41,.L40
+	.byte	2
+	.word	.L14
 	.byte	3
-	.byte	'TotalDistance',0,24,13,8
-	.word	.L45
-	.byte	1,5,3
+	.byte	'CleanDistance',0,1,53,6,1,1,1
+	.word	.L13,.L57,.L12
+	.byte	4
+	.word	.L13,.L57
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('CleanDistance')
+	.sect	'.debug_abbrev'
+.L39:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('CleanDistance')
+	.sect	'.debug_line'
+.L40:
+	.word	.L108-.L107
+.L107:
+	.half	3
+	.word	.L110-.L109
+.L109:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'..\\CODE\\Src\\User_Encoder.c',0,0,0,0,0
+.L110:
+	.byte	5,2,7,0,5,2
+	.word	.L13
+	.byte	3,54,1,5,18,9
+	.half	.L111-.L13
+	.byte	1,5,16,1,5,1,9
+	.half	.L112-.L111
+	.byte	3,1,1,7,9
+	.half	.L42-.L112
+	.byte	0,1,1
+.L108:
+	.sdecl	'.debug_ranges',debug,cluster('CleanDistance')
+	.sect	'.debug_ranges'
+.L41:
+	.word	-1,.L13,0,.L42-.L13,0,0
+	.sdecl	'.debug_info',debug,cluster('CurDistance')
+	.sect	'.debug_info'
+.L43:
+	.word	171
+	.half	3
+	.word	.L44
+	.byte	4,1
+	.byte	'..\\CODE\\Src\\User_Encoder.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1,2
+	.word	.L14
+	.byte	3
+	.byte	'CurDistance',0,24,12,15
+	.word	.L52
+	.byte	5,3
+	.word	CurDistance
+	.byte	0
+	.sdecl	'.debug_abbrev',debug,cluster('CurDistance')
+	.sect	'.debug_abbrev'
+.L44:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,2,9,0,0,0
+	.sdecl	'.debug_info',debug,cluster('TotalDistance')
+	.sect	'.debug_info'
+.L45:
+	.word	173
+	.half	3
+	.word	.L46
+	.byte	4,1
+	.byte	'..\\CODE\\Src\\User_Encoder.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1,2
+	.word	.L14
+	.byte	3
+	.byte	'TotalDistance',0,24,12,28
+	.word	.L52
+	.byte	5,3
 	.word	TotalDistance
 	.byte	0
 	.sdecl	'.debug_abbrev',debug,cluster('TotalDistance')
 	.sect	'.debug_abbrev'
-.L39:
-	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
-	.byte	0,0,0
-	.sdecl	'.debug_loc',debug,cluster('CountDistance')
+.L46:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,2,9,0,0,0
+	.sdecl	'.debug_loc',debug,cluster('CleanDistance')
 	.sect	'.debug_loc'
-.L6:
-	.word	-1,.L7,0,.L41-.L7
+.L12:
+	.word	-1,.L13,0,.L57-.L13
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L46:
-	.word	-1,.L7,.L55-.L7,.L56-.L7
+	.sdecl	'.debug_loc',debug,cluster('CountDistance')
+	.sect	'.debug_loc'
+.L6:
+	.word	-1,.L7,0,.L48-.L7
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L53:
+	.word	-1,.L7,.L63-.L7,.L64-.L7
 	.half	1
 	.byte	95
 	.word	0,0
-.L47:
-	.word	-1,.L7,.L57-.L7,.L58-.L7
+.L54:
+	.word	-1,.L7,.L65-.L7,.L66-.L7
 	.half	5
 	.byte	144,32,157,32,0
 	.word	0,0
-.L43:
-	.word	-1,.L7,.L50-.L7,.L51-.L7
+.L50:
+	.word	-1,.L7,.L58-.L7,.L59-.L7
 	.half	1
 	.byte	82
-	.word	.L52-.L7,.L53-.L7
+	.word	.L60-.L7,.L61-.L7
 	.half	1
 	.byte	95
 	.word	0,0
-.L44:
-	.word	-1,.L7,.L51-.L7,.L54-.L7
+.L51:
+	.word	-1,.L7,.L59-.L7,.L62-.L7
 	.half	1
 	.byte	82
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('EncoderInit')
 	.sect	'.debug_loc'
 .L4:
-	.word	-1,.L5,0,.L40-.L5
+	.word	-1,.L5,0,.L47-.L5
 	.half	2
 	.byte	138,0
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('GetDistance')
 	.sect	'.debug_loc'
 .L8:
-	.word	-1,.L9,0,.L48-.L9
+	.word	-1,.L9,0,.L55-.L9
 	.half	2
 	.byte	138,0
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('GetSpeed')
 	.sect	'.debug_loc'
 .L10:
-	.word	-1,.L11,0,.L49-.L11
+	.word	-1,.L11,0,.L56-.L11
 	.half	2
 	.byte	138,0
 	.word	0,0
 	.sdecl	'.debug_frame',debug
 	.sect	'.debug_frame'
-.L99:
+.L113:
 	.word	48
 	.word	-1
 	.byte	3,0,2,1,27,12,26,0,8,27,8,26,8,28,8,29,8,30,8,31,8,34,8,35,8,32,8,33,8,16,8,17,8,24,8,25,8,36,8,37,8,38
@@ -35073,20 +35154,25 @@ TotalDistance:	.type	object
 	.sdecl	'.debug_frame',debug,cluster('EncoderInit')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L99,.L5,.L40-.L5
+	.word	.L113,.L5,.L47-.L5
 	.sdecl	'.debug_frame',debug,cluster('CountDistance')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L99,.L7,.L41-.L7
+	.word	.L113,.L7,.L48-.L7
 	.sdecl	'.debug_frame',debug,cluster('GetDistance')
 	.sect	'.debug_frame'
 	.word	24
-	.word	.L99,.L9,.L48-.L9
+	.word	.L113,.L9,.L55-.L9
 	.byte	8,18,8,19,8,20,8,21,8,22,8,23
 	.sdecl	'.debug_frame',debug,cluster('GetSpeed')
 	.sect	'.debug_frame'
 	.word	24
-	.word	.L99,.L11,.L49-.L11
+	.word	.L113,.L11,.L56-.L11
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('CleanDistance')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L113,.L13,.L57-.L13
 	.byte	8,18,8,19,8,20,8,21,8,22,8,23
 
 

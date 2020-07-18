@@ -23,6 +23,8 @@ double GetMidLineNum(void);
 void ShowMidLine(void);
 void FindMidLine_ADD(void);
 void GetOSTUIMAG(void);
+extern uint8 ProcessImageFlag;
+extern double MidLineFuseNum;
 //extern uint8 DisplayIMAG[MT9V03X_H][MT9V03X_W];
 
 #endif /* CODE_INC_USER_IMAGE_PROCESS_H_ */

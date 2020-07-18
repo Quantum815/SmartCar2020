@@ -14,5 +14,6 @@ void EncoderInit(void);
 void CountDistance(void);
 double GetDistance(void);
 double GetSpeed(void);
+void CleanDistance(void);
 
 #endif /* CODE_INC_USER_ENCODER_H_ */

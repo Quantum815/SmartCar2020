@@ -23,45 +23,51 @@ $TC16X
 ; ..\CODE\Src\User_FSM.c	     8  #include "..\CODE\Inc\User_fsm.h"
 ; ..\CODE\Src\User_FSM.c	     9  
 ; ..\CODE\Src\User_FSM.c	    10  #pragma section all "cpu0_dsram"
-; ..\CODE\Src\User_FSM.c	    11  FSMTable_t CarTable[] =
-; ..\CODE\Src\User_FSM.c	    12  {
-; ..\CODE\Src\User_FSM.c	    13      //{到来的事件，当前的状态，将要要执行的函数，下一个状态}
-; ..\CODE\Src\User_FSM.c	    14      { RUNSTART, Stop,   RunStart,  GoLine },
-; ..\CODE\Src\User_FSM.c	    15      { RUNSTOP,  GoLine, RunStop,   Stop   },
-; ..\CODE\Src\User_FSM.c	    16  	{ NOEVENT,  Stop,   RunStop,   Stop   },
-; ..\CODE\Src\User_FSM.c	    17  //	{ NOEVENT,  GoLine, FindLine,  GoLine },
-; ..\CODE\Src\User_FSM.c	    18  	{ GOROUND,  GoLine, PassCross, GoLine }
-; ..\CODE\Src\User_FSM.c	    19      //如果出现新的代码加入在此
-; ..\CODE\Src\User_FSM.c	    20  };
-; ..\CODE\Src\User_FSM.c	    21  FSM_t CarFSM;
-; ..\CODE\Src\User_FSM.c	    22  #pragma section all restore
-; ..\CODE\Src\User_FSM.c	    23  
-; ..\CODE\Src\User_FSM.c	    24  //事件反应函数
-; ..\CODE\Src\User_FSM.c	    25  void RunStart(void)
+; ..\CODE\Src\User_FSM.c	    11  
+; ..\CODE\Src\User_FSM.c	    12  FSMTable_t CarTable[] =
+; ..\CODE\Src\User_FSM.c	    13  {
+; ..\CODE\Src\User_FSM.c	    14      //{到来的事件，当前的状态，将要要执行的函数，下一个状态}
+; ..\CODE\Src\User_FSM.c	    15  	{ NOEVENT,  Stop,     RunStop,   Stop    },
+; ..\CODE\Src\User_FSM.c	    16      { RUNSTART, Stop,     RunStart,  GoLine  },
+; ..\CODE\Src\User_FSM.c	    17      { RUNSTOP,  GoLine,   RunStop,   Stop    },
+; ..\CODE\Src\User_FSM.c	    18  	{ GOCROSS,  GoLine,   PassCross, GoLine  },
+; ..\CODE\Src\User_FSM.c	    19  	{ NOEVENT,  GoLine,   FindLine,  GoLine  },
+; ..\CODE\Src\User_FSM.c	    20  	{ NOEVENT,  InGarage, GoGarage,  InGarage},
+; ..\CODE\Src\User_FSM.c	    21  	{ INGARAGE, GoLine,   GoGarage,  InGarage}
+; ..\CODE\Src\User_FSM.c	    22      //如果出现新的代码加入在此
+; ..\CODE\Src\User_FSM.c	    23  };
+; ..\CODE\Src\User_FSM.c	    24  FSM_t CarFSM;
+; ..\CODE\Src\User_FSM.c	    25  float LPWM, RPWM,PIDValue,tt;
+; ..\CODE\Src\User_FSM.c	    26  uint8 TenSingal,CarSingal,StartSingal;
+; ..\CODE\Src\User_FSM.c	    27  
+; ..\CODE\Src\User_FSM.c	    28  #pragma section all restore
+; ..\CODE\Src\User_FSM.c	    29  
+; ..\CODE\Src\User_FSM.c	    30  //事件反应函数
+; ..\CODE\Src\User_FSM.c	    31  void RunStart(void)
 ; Function RunStart
 .L10:
 RunStart:	.type	func
 
-; ..\CODE\Src\User_FSM.c	    26  {
-; ..\CODE\Src\User_FSM.c	    27  	MotorUserHandle(LMotor_F,30);
+; ..\CODE\Src\User_FSM.c	    32  {
+; ..\CODE\Src\User_FSM.c	    33  	MotorUserHandle(LMotor_F,30);
 	movh	d15,#16880
-.L114:
+.L154:
 	mov	d4,#0
-.L115:
+.L155:
 	mov	d5,d15
 	call	MotorUserHandle
-.L116:
+.L156:
 
-; ..\CODE\Src\User_FSM.c	    28  	MotorUserHandle(RMotor_F,30);
+; ..\CODE\Src\User_FSM.c	    34  	MotorUserHandle(RMotor_F,30);
 	mov	d4,#2
-.L117:
+.L157:
 	mov	d5,d15
 	j	MotorUserHandle
-.L73:
+.L108:
 	
 __RunStart_function_end:
 	.size	RunStart,__RunStart_function_end-RunStart
-.L33:
+.L39:
 	; End of function
 	
 	.sdecl	'.text.User_FSM.RunStop',code,cluster('RunStop')
@@ -70,45 +76,104 @@ __RunStart_function_end:
 	
 	.global	RunStop
 
-; ..\CODE\Src\User_FSM.c	    29  }
-; ..\CODE\Src\User_FSM.c	    30  
-; ..\CODE\Src\User_FSM.c	    31  void RunStop(void)
+; ..\CODE\Src\User_FSM.c	    35  }
+; ..\CODE\Src\User_FSM.c	    36  
+; ..\CODE\Src\User_FSM.c	    37  void RunStop(void)
 ; Function RunStop
 .L12:
 RunStop:	.type	func
 
-; ..\CODE\Src\User_FSM.c	    32  {
-; ..\CODE\Src\User_FSM.c	    33  	SetMotorPWM(LMotor_F, 0);
+; ..\CODE\Src\User_FSM.c	    38  {
+; ..\CODE\Src\User_FSM.c	    39  	SetMotorPWM(LMotor_F, 0);
 	mov	d15,#0
-.L122:
+.L162:
 	mov	e4,d15,d15
 	call	SetMotorPWM
-.L123:
+.L163:
 
-; ..\CODE\Src\User_FSM.c	    34  	SetMotorPWM(LMotor_B, 0);
+; ..\CODE\Src\User_FSM.c	    40  	SetMotorPWM(LMotor_B, 0);
 	mov	d4,#1
-.L124:
+.L164:
 	mov	d5,d15
 	call	SetMotorPWM
-.L125:
+.L165:
 
-; ..\CODE\Src\User_FSM.c	    35  	SetMotorPWM(RMotor_F, 0);
+; ..\CODE\Src\User_FSM.c	    41  	SetMotorPWM(RMotor_F, 0);
 	mov	d4,#2
-.L126:
+.L166:
 	mov	d5,d15
 	call	SetMotorPWM
-.L127:
+.L167:
 
-; ..\CODE\Src\User_FSM.c	    36  	SetMotorPWM(RMotor_B, 0);
+; ..\CODE\Src\User_FSM.c	    42  	SetMotorPWM(RMotor_B, 0);
 	mov	d4,#3
-.L128:
+.L168:
 	mov	d5,d15
 	j	SetMotorPWM
-.L74:
+.L109:
 	
 __RunStop_function_end:
 	.size	RunStop,__RunStop_function_end-RunStop
-.L38:
+.L44:
+	; End of function
+	
+	.sdecl	'.text.User_FSM.FindLine',code,cluster('FindLine')
+	.sect	'.text.User_FSM.FindLine'
+	.align	2
+	
+	.global	FindLine
+
+; ..\CODE\Src\User_FSM.c	    43  }
+; ..\CODE\Src\User_FSM.c	    44  
+; ..\CODE\Src\User_FSM.c	    45  void FindLine(void)
+; Function FindLine
+.L14:
+FindLine:	.type	func
+
+; ..\CODE\Src\User_FSM.c	    46  {
+; ..\CODE\Src\User_FSM.c	    47     /* static float LLPWM, LRPWM;
+; ..\CODE\Src\User_FSM.c	    48  	float test;
+; ..\CODE\Src\User_FSM.c	    49  	PIDValue=(GetSpeed()/1.5)*GetPid(0.002495622262359, 1000*MidLineFuseNum, 56, 0, 22000);
+; ..\CODE\Src\User_FSM.c	    50  //    if(TenSingal>=5)
+; ..\CODE\Src\User_FSM.c	    51  //		PIDValue = 0-PIDValue;
+; ..\CODE\Src\User_FSM.c	    52  	LPWM = LeftWheelDeadZone + PIDValue;
+; ..\CODE\Src\User_FSM.c	    53      RPWM = RightWheelDeadZone - PIDValue;
+; ..\CODE\Src\User_FSM.c	    54  
+; ..\CODE\Src\User_FSM.c	    55  
+; ..\CODE\Src\User_FSM.c	    56      if(LPWM >= 40)
+; ..\CODE\Src\User_FSM.c	    57          LPWM = 40;
+; ..\CODE\Src\User_FSM.c	    58      else if(LPWM <= -40)
+; ..\CODE\Src\User_FSM.c	    59          LPWM = -40;
+; ..\CODE\Src\User_FSM.c	    60      if(RPWM >= 40)
+; ..\CODE\Src\User_FSM.c	    61          RPWM = 40;
+; ..\CODE\Src\User_FSM.c	    62      else if(RPWM <= -40)
+; ..\CODE\Src\User_FSM.c	    63          RPWM = -40;
+; ..\CODE\Src\User_FSM.c	    64  		//test=GetSpeed();
+; ..\CODE\Src\User_FSM.c	    65  		//PRINTF("%f\r\n",test);
+; ..\CODE\Src\User_FSM.c	    66  		//test=GetPid(0, 1000*MidLineFuseNum, 50, 0, 3900);
+; ..\CODE\Src\User_FSM.c	    67  		//PRINTF("L=%f     R=%f     \r\n",LPWM,RPWM);
+; ..\CODE\Src\User_FSM.c	    68  		//PRINTF("%f\r\n",test);
+; ..\CODE\Src\User_FSM.c	    69  		//ips114_showfloat(100,0,MidLineFuseNum,4,4);
+; ..\CODE\Src\User_FSM.c	    70  //    if(LLPWM - LPWM >= 5 || LLPWM - LPWM <= -5)
+; ..\CODE\Src\User_FSM.c	    71  //    {
+; ..\CODE\Src\User_FSM.c	    72  //        LPWM = LLPWM + (LLPWM - LPWM);
+; ..\CODE\Src\User_FSM.c	    73  //    }
+; ..\CODE\Src\User_FSM.c	    74  //    else if(LRPWM - RPWM >= 5 || LRPWM - RPWM <= -5)
+; ..\CODE\Src\User_FSM.c	    75  //    {
+; ..\CODE\Src\User_FSM.c	    76  //        RPWM = LRPWM + (LRPWM - RPWM);
+; ..\CODE\Src\User_FSM.c	    77  //    }
+; ..\CODE\Src\User_FSM.c	    78  //    LLPWM = LPWM;
+; ..\CODE\Src\User_FSM.c	    79  //    LRPWM = RPWM;
+; ..\CODE\Src\User_FSM.c	    80      MotorUserHandle(LMotor_F, LPWM);
+; ..\CODE\Src\User_FSM.c	    81      MotorUserHandle(RMotor_F, RPWM);
+; ..\CODE\Src\User_FSM.c	    82  */
+; ..\CODE\Src\User_FSM.c	    83  }
+	ret
+.L110:
+	
+__FindLine_function_end:
+	.size	FindLine,__FindLine_function_end-FindLine
+.L49:
 	; End of function
 	
 	.sdecl	'.text.User_FSM.PassCross',code,cluster('PassCross')
@@ -117,44 +182,88 @@ __RunStop_function_end:
 	
 	.global	PassCross
 
-; ..\CODE\Src\User_FSM.c	    37  }
-; ..\CODE\Src\User_FSM.c	    38  
-; ..\CODE\Src\User_FSM.c	    39  /*void FindLine(void)
-; ..\CODE\Src\User_FSM.c	    40  {
-; ..\CODE\Src\User_FSM.c	    41  	if(ProcessImageFlag == 1)
-; ..\CODE\Src\User_FSM.c	    42  	{
-; ..\CODE\Src\User_FSM.c	    43  		MotorUserHandle(LMotor_F, LeftWheelDeadZone + GetPIDValue(99,MidLineFuseNum,10,0,0));
-; ..\CODE\Src\User_FSM.c	    44  		MotorUserHandle(RMotor_F, RightWheelDeadZone - GetPIDValue(99,MidLineFuseNum,10,0,0));
-; ..\CODE\Src\User_FSM.c	    45  	}
-; ..\CODE\Src\User_FSM.c	    46  	ProcessImageFlag=0;
-; ..\CODE\Src\User_FSM.c	    47  }*/
-; ..\CODE\Src\User_FSM.c	    48  
-; ..\CODE\Src\User_FSM.c	    49  void PassCross(void)
+; ..\CODE\Src\User_FSM.c	    84  
+; ..\CODE\Src\User_FSM.c	    85  void PassCross(void)
 ; Function PassCross
-.L14:
+.L16:
 PassCross:	.type	func
 
-; ..\CODE\Src\User_FSM.c	    50  {
-; ..\CODE\Src\User_FSM.c	    51  
-; ..\CODE\Src\User_FSM.c	    52  	MotorUserHandle(LMotor_F, LeftWheelDeadZone);
-	movh	d15,#16672
-.L133:
-	mov	d4,#0
-.L134:
-	mov	d5,d15
-	call	MotorUserHandle
-.L135:
-
-; ..\CODE\Src\User_FSM.c	    53      MotorUserHandle(RMotor_F, RightWheelDeadZone);
-	mov	d4,#2
-.L136:
-	mov	d5,d15
-	j	MotorUserHandle
-.L75:
+; ..\CODE\Src\User_FSM.c	    86  {
+; ..\CODE\Src\User_FSM.c	    87  //	float test1,test2,cut;
+; ..\CODE\Src\User_FSM.c	    88  //			cut=GYROPID(0.35,0,2);
+; ..\CODE\Src\User_FSM.c	    89  //			test1=LeftWheelDeadZone+cut;
+; ..\CODE\Src\User_FSM.c	    90  //			test2=RightWheelDeadZone-cut;
+; ..\CODE\Src\User_FSM.c	    91  //			if(test1>=40)
+; ..\CODE\Src\User_FSM.c	    92  //				test1=40;
+; ..\CODE\Src\User_FSM.c	    93  //			else if(test1<=-40)
+; ..\CODE\Src\User_FSM.c	    94  //			test1=-40;
+; ..\CODE\Src\User_FSM.c	    95  //			if(test2>=40)
+; ..\CODE\Src\User_FSM.c	    96  //				test2=40;
+; ..\CODE\Src\User_FSM.c	    97  //			else if(test2<=-40)
+; ..\CODE\Src\User_FSM.c	    98  //				test2=-40;
+; ..\CODE\Src\User_FSM.c	    99  //    MotorUserHandle(LMotor_F, test1);
+; ..\CODE\Src\User_FSM.c	   100  //    MotorUserHandle(RMotor_F, test2);
+; ..\CODE\Src\User_FSM.c	   101  //	  MotorUserHandle(LMotor_F, LeftWheelDeadZone);
+; ..\CODE\Src\User_FSM.c	   102  //    MotorUserHandle(RMotor_F, RightWheelDeadZone);
+; ..\CODE\Src\User_FSM.c	   103  }
+	ret
+.L111:
 	
 __PassCross_function_end:
 	.size	PassCross,__PassCross_function_end-PassCross
-.L43:
+.L54:
+	; End of function
+	
+	.sdecl	'.text.User_FSM.GoGarage',code,cluster('GoGarage')
+	.sect	'.text.User_FSM.GoGarage'
+	.align	2
+	
+	.global	GoGarage
+
+; ..\CODE\Src\User_FSM.c	   104  
+; ..\CODE\Src\User_FSM.c	   105  void GoGarage(void)
+; Function GoGarage
+.L18:
+GoGarage:	.type	func
+
+; ..\CODE\Src\User_FSM.c	   106  {
+; ..\CODE\Src\User_FSM.c	   107  
+; ..\CODE\Src\User_FSM.c	   108  }
+	ret
+.L112:
+	
+__GoGarage_function_end:
+	.size	GoGarage,__GoGarage_function_end-GoGarage
+.L59:
+	; End of function
+	
+	.sdecl	'.text.User_FSM.ADCulMidLine',code,cluster('ADCulMidLine')
+	.sect	'.text.User_FSM.ADCulMidLine'
+	.align	2
+	
+	.global	ADCulMidLine
+
+; ..\CODE\Src\User_FSM.c	   109  
+; ..\CODE\Src\User_FSM.c	   110  void ADCulMidLine(void)
+; Function ADCulMidLine
+.L20:
+ADCulMidLine:	.type	func
+
+; ..\CODE\Src\User_FSM.c	   111  {
+; ..\CODE\Src\User_FSM.c	   112  	/*float_t Lsqrt, Rsqrt,t1,t2;
+; ..\CODE\Src\User_FSM.c	   113  
+; ..\CODE\Src\User_FSM.c	   114  		t1=ADCvalue(0);
+; ..\CODE\Src\User_FSM.c	   115  		t2=ADCvalue(4);
+; ..\CODE\Src\User_FSM.c	   116  		arm_sqrt_f32(t1,&Lsqrt);
+; ..\CODE\Src\User_FSM.c	   117  		arm_sqrt_f32(t2,&Rsqrt);
+; ..\CODE\Src\User_FSM.c	   118  		MidLineFuseNum=(Lsqrt-Rsqrt)/(t1+t2);*/
+; ..\CODE\Src\User_FSM.c	   119  }
+	ret
+.L113:
+	
+__ADCulMidLine_function_end:
+	.size	ADCulMidLine,__ADCulMidLine_function_end-ADCulMidLine
+.L64:
 	; End of function
 	
 	.sdecl	'.text.User_FSM.FSMRegist',code,cluster('FSMRegist')
@@ -163,31 +272,31 @@ __PassCross_function_end:
 	
 	.global	FSMRegist
 
-; ..\CODE\Src\User_FSM.c	    54  }
-; ..\CODE\Src\User_FSM.c	    55  
-; ..\CODE\Src\User_FSM.c	    56  //************************************************
-; ..\CODE\Src\User_FSM.c	    57  //状态机功能函数
-; ..\CODE\Src\User_FSM.c	    58  //
-; ..\CODE\Src\User_FSM.c	    59  //函数作用：状态机注册
-; ..\CODE\Src\User_FSM.c	    60  //
-; ..\CODE\Src\User_FSM.c	    61  //****************
-; ..\CODE\Src\User_FSM.c	    62  void FSMRegist(FSM_t *fsm, FSMTable_t *fsmtable)
+; ..\CODE\Src\User_FSM.c	   120  
+; ..\CODE\Src\User_FSM.c	   121  
+; ..\CODE\Src\User_FSM.c	   122  //*********************************************************
+; ..\CODE\Src\User_FSM.c	   123  //状态机功能函数
+; ..\CODE\Src\User_FSM.c	   124  //
+; ..\CODE\Src\User_FSM.c	   125  //函数作用：状态机注册
+; ..\CODE\Src\User_FSM.c	   126  //
+; ..\CODE\Src\User_FSM.c	   127  //****************
+; ..\CODE\Src\User_FSM.c	   128  void FSMRegist(FSM_t *fsm, FSMTable_t *fsmtable)
 ; Function FSMRegist
-.L16:
+.L22:
 FSMRegist:	.type	func
 
-; ..\CODE\Src\User_FSM.c	    63  {
-; ..\CODE\Src\User_FSM.c	    64      fsm->FsmTable = fsmtable;
+; ..\CODE\Src\User_FSM.c	   129  {
+; ..\CODE\Src\User_FSM.c	   130      fsm->FsmTable = fsmtable;
 	st.a	[a4]4,a5
-.L141:
+.L189:
 
-; ..\CODE\Src\User_FSM.c	    65  }
+; ..\CODE\Src\User_FSM.c	   131  }
 	ret
-.L76:
+.L114:
 	
 __FSMRegist_function_end:
 	.size	FSMRegist,__FSMRegist_function_end-FSMRegist
-.L48:
+.L69:
 	; End of function
 	
 	.sdecl	'.text.User_FSM.FSMStateTransfer',code,cluster('FSMStateTransfer')
@@ -196,29 +305,29 @@ __FSMRegist_function_end:
 	
 	.global	FSMStateTransfer
 
-; ..\CODE\Src\User_FSM.c	    66  
-; ..\CODE\Src\User_FSM.c	    67  //*****************
-; ..\CODE\Src\User_FSM.c	    68  //
-; ..\CODE\Src\User_FSM.c	    69  //函数作用：状态机状态迁移
-; ..\CODE\Src\User_FSM.c	    70  //
-; ..\CODE\Src\User_FSM.c	    71  //****************
-; ..\CODE\Src\User_FSM.c	    72  void FSMStateTransfer(FSM_t* fsm, int state)
+; ..\CODE\Src\User_FSM.c	   132  
+; ..\CODE\Src\User_FSM.c	   133  //*****************
+; ..\CODE\Src\User_FSM.c	   134  //
+; ..\CODE\Src\User_FSM.c	   135  //函数作用：状态机状态迁移
+; ..\CODE\Src\User_FSM.c	   136  //
+; ..\CODE\Src\User_FSM.c	   137  //****************
+; ..\CODE\Src\User_FSM.c	   138  void FSMStateTransfer(FSM_t* fsm, int state)
 ; Function FSMStateTransfer
-.L18:
+.L24:
 FSMStateTransfer:	.type	func
 
-; ..\CODE\Src\User_FSM.c	    73  {
-; ..\CODE\Src\User_FSM.c	    74      fsm->CurState = state;
+; ..\CODE\Src\User_FSM.c	   139  {
+; ..\CODE\Src\User_FSM.c	   140      fsm->CurState = state;
 	st.w	[a4],d4
-.L146:
+.L194:
 
-; ..\CODE\Src\User_FSM.c	    75  }
+; ..\CODE\Src\User_FSM.c	   141  }
 	ret
-.L81:
+.L119:
 	
 __FSMStateTransfer_function_end:
 	.size	FSMStateTransfer,__FSMStateTransfer_function_end-FSMStateTransfer
-.L53:
+.L74:
 	; End of function
 	
 	.sdecl	'.text.User_FSM.FSMEventHandle',code,cluster('FSMEventHandle')
@@ -227,71 +336,71 @@ __FSMStateTransfer_function_end:
 	
 	.global	FSMEventHandle
 
-; ..\CODE\Src\User_FSM.c	    76  
-; ..\CODE\Src\User_FSM.c	    77  void FSMEventHandle(FSM_t *fsm, int event)
+; ..\CODE\Src\User_FSM.c	   142  
+; ..\CODE\Src\User_FSM.c	   143  void FSMEventHandle(FSM_t *fsm, int event)
 ; Function FSMEventHandle
-.L20:
+.L26:
 FSMEventHandle:	.type	func
 	mov.aa	a12,a4
-.L99:
+.L139:
 
-; ..\CODE\Src\User_FSM.c	    78  {
-; ..\CODE\Src\User_FSM.c	    79  	FSMTable_t *fsmTable = fsm->FsmTable;
-; ..\CODE\Src\User_FSM.c	    80      int curState = fsm->CurState;
+; ..\CODE\Src\User_FSM.c	   144  {
+; ..\CODE\Src\User_FSM.c	   145  	FSMTable_t *fsmTable = fsm->FsmTable;
+; ..\CODE\Src\User_FSM.c	   146      int curState = fsm->CurState;
 	ld.w	d0,[a12]
-.L100:
+.L140:
 
-; ..\CODE\Src\User_FSM.c	    81      void (*eventAction)() = NULL;  //函数指针初始化为空
-; ..\CODE\Src\User_FSM.c	    82      int nextState = -1;
-; ..\CODE\Src\User_FSM.c	    83      int size = fsm->Size;
+; ..\CODE\Src\User_FSM.c	   147      void (*eventAction)() = NULL;  //函数指针初始化为空
+; ..\CODE\Src\User_FSM.c	   148      int nextState = -1;
+; ..\CODE\Src\User_FSM.c	   149      int size = fsm->Size;
 	ld.w	d1,[a12]8
-.L101:
+.L141:
 
-; ..\CODE\Src\User_FSM.c	    84      int flag = 0;  //标识条件是否满足
-; ..\CODE\Src\User_FSM.c	    85      int i;
-; ..\CODE\Src\User_FSM.c	    86  
-; ..\CODE\Src\User_FSM.c	    87      //获取当前动作函数
-; ..\CODE\Src\User_FSM.c	    88      for (i=0; i<size; i++)
+; ..\CODE\Src\User_FSM.c	   150      int flag = 0;  //标识条件是否满足
+; ..\CODE\Src\User_FSM.c	   151      int i;
+; ..\CODE\Src\User_FSM.c	   152  
+; ..\CODE\Src\User_FSM.c	   153      //获取当前动作函数
+; ..\CODE\Src\User_FSM.c	   154      for (i=0; i<size; i++)
 	mov	d2,#0
 	ld.a	a15,[a12]4
-.L102:
+.L142:
 	j	.L2
 .L3:
 
-; ..\CODE\Src\User_FSM.c	    89      {
-; ..\CODE\Src\User_FSM.c	    90          //当且仅当当前状态下来个指定的事件，我才执行它
-; ..\CODE\Src\User_FSM.c	    91          if (event == fsmTable[i].Event && curState == fsmTable[i].CurState)
+; ..\CODE\Src\User_FSM.c	   155      {
+; ..\CODE\Src\User_FSM.c	   156          //当且仅当当前状态下来个指定的事件，我才执行它
+; ..\CODE\Src\User_FSM.c	   157          if (event == fsmTable[i].Event && curState == fsmTable[i].CurState)
 	ld.w	d15,[a15]
-.L151:
+.L199:
 	jne	d15,d4,.L4
-.L152:
+.L200:
 	ld.w	d15,[a15]4
-.L153:
+.L201:
 	jne	d15,d0,.L5
-.L154:
+.L202:
 
-; ..\CODE\Src\User_FSM.c	    92          {
-; ..\CODE\Src\User_FSM.c	    93          	flag = 1;
-; ..\CODE\Src\User_FSM.c	    94              eventAction = fsmTable[i].EventAction;
+; ..\CODE\Src\User_FSM.c	   158          {
+; ..\CODE\Src\User_FSM.c	   159          	flag = 1;
+; ..\CODE\Src\User_FSM.c	   160              eventAction = fsmTable[i].EventAction;
 	ld.a	a2,[a15]8
-.L103:
+.L143:
 
-; ..\CODE\Src\User_FSM.c	    95              nextState = fsmTable[i].NextState;
+; ..\CODE\Src\User_FSM.c	   161              nextState = fsmTable[i].NextState;
 	ld.w	d15,[a15]12
-.L104:
+.L144:
 
-; ..\CODE\Src\User_FSM.c	    96          	if(eventAction)
+; ..\CODE\Src\User_FSM.c	   162          	if(eventAction)
 	jz.a	a2,.L6
-.L155:
+.L203:
 
-; ..\CODE\Src\User_FSM.c	    97          		eventAction();
+; ..\CODE\Src\User_FSM.c	   163          		eventAction();
 	calli	a2
 .L6:
 
-; ..\CODE\Src\User_FSM.c	    98          	FSMStateTransfer(fsm, nextState);
+; ..\CODE\Src\User_FSM.c	   164          	FSMStateTransfer(fsm, nextState);
 	mov	d4,d15
 	mov.aa	a4,a12
-.L105:
+.L145:
 	j	FSMStateTransfer
 .L5:
 .L4:
@@ -299,22 +408,22 @@ FSMEventHandle:	.type	func
 	lea	a15,[a15]16
 .L2:
 	jlt	d2,d1,.L3
-.L156:
+.L204:
 
-; ..\CODE\Src\User_FSM.c	    99              break;
-; ..\CODE\Src\User_FSM.c	   100          }
-; ..\CODE\Src\User_FSM.c	   101      }
-; ..\CODE\Src\User_FSM.c	   102      if(!flag)
-; ..\CODE\Src\User_FSM.c	   103      {
-; ..\CODE\Src\User_FSM.c	   104          //printf("there is no match!\n");
-; ..\CODE\Src\User_FSM.c	   105      }
-; ..\CODE\Src\User_FSM.c	   106  }
+; ..\CODE\Src\User_FSM.c	   165              break;
+; ..\CODE\Src\User_FSM.c	   166          }
+; ..\CODE\Src\User_FSM.c	   167      }
+; ..\CODE\Src\User_FSM.c	   168      if(!flag)
+; ..\CODE\Src\User_FSM.c	   169      {
+; ..\CODE\Src\User_FSM.c	   170          //printf("there is no match!\n");
+; ..\CODE\Src\User_FSM.c	   171      }
+; ..\CODE\Src\User_FSM.c	   172  }
 	ret
-.L85:
+.L123:
 	
 __FSMEventHandle_function_end:
 	.size	FSMEventHandle,__FSMEventHandle_function_end-FSMEventHandle
-.L58:
+.L79:
 	; End of function
 	
 	.sdecl	'.text.User_FSM.ReturnFSMState',code,cluster('ReturnFSMState')
@@ -323,24 +432,24 @@ __FSMEventHandle_function_end:
 	
 	.global	ReturnFSMState
 
-; ..\CODE\Src\User_FSM.c	   107  
-; ..\CODE\Src\User_FSM.c	   108  int ReturnFSMState(FSM_t *fsm)
+; ..\CODE\Src\User_FSM.c	   173  
+; ..\CODE\Src\User_FSM.c	   174  int ReturnFSMState(FSM_t *fsm)
 ; Function ReturnFSMState
-.L22:
+.L28:
 ReturnFSMState:	.type	func
 
-; ..\CODE\Src\User_FSM.c	   109  {
-; ..\CODE\Src\User_FSM.c	   110  	return fsm->CurState;
+; ..\CODE\Src\User_FSM.c	   175  {
+; ..\CODE\Src\User_FSM.c	   176  	return fsm->CurState;
 	ld.w	d2,[a4]
-.L161:
+.L209:
 
-; ..\CODE\Src\User_FSM.c	   111  }
+; ..\CODE\Src\User_FSM.c	   177  }
 	ret
-.L94:
+.L132:
 	
 __ReturnFSMState_function_end:
 	.size	ReturnFSMState,__ReturnFSMState_function_end-ReturnFSMState
-.L63:
+.L84:
 	; End of function
 	
 	.sdecl	'.text.User_FSM.FSMRun',code,cluster('FSMRun')
@@ -349,41 +458,41 @@ __ReturnFSMState_function_end:
 	
 	.global	FSMRun
 
-; ..\CODE\Src\User_FSM.c	   112  
-; ..\CODE\Src\User_FSM.c	   113  void FSMRun(void)
+; ..\CODE\Src\User_FSM.c	   178  
+; ..\CODE\Src\User_FSM.c	   179  void FSMRun(void)
 ; Function FSMRun
-.L24:
+.L30:
 FSMRun:	.type	func
 
-; ..\CODE\Src\User_FSM.c	   114  {
-; ..\CODE\Src\User_FSM.c	   115      FSMRegist(&CarFSM, CarTable);
+; ..\CODE\Src\User_FSM.c	   180  {
+; ..\CODE\Src\User_FSM.c	   181      FSMRegist(&CarFSM, CarTable);
 	movh.a	a15,#@his(CarFSM)
 	lea	a15,[a15]@los(CarFSM)
-.L166:
+.L214:
 	movh.a	a5,#@his(CarTable)
 	lea	a5,[a5]@los(CarTable)
 	mov.aa	a4,a15
 	call	FSMRegist
-.L167:
+.L215:
 
-; ..\CODE\Src\User_FSM.c	   116      CarFSM.CurState = Stop;
+; ..\CODE\Src\User_FSM.c	   182      CarFSM.CurState = Stop;
 	mov	d4,#0
 	st.w	[a15],d4
-.L168:
+.L216:
 
-; ..\CODE\Src\User_FSM.c	   117      CarFSM.Size = sizeof(CarTable) / sizeof(FSMTable_t);
-	mov	d15,#4
+; ..\CODE\Src\User_FSM.c	   183      CarFSM.Size = sizeof(CarTable) / sizeof(FSMTable_t);
+	mov	d15,#7
 	st.w	[a15]8,d15
-.L169:
+.L217:
 
-; ..\CODE\Src\User_FSM.c	   118      FSMEventHandle(&CarFSM, NOEVENT);
+; ..\CODE\Src\User_FSM.c	   184      FSMEventHandle(&CarFSM, NOEVENT);
 	mov.aa	a4,a15
 	j	FSMEventHandle
-.L96:
+.L134:
 	
 __FSMRun_function_end:
 	.size	FSMRun,__FSMRun_function_end-FSMRun
-.L68:
+.L89:
 	; End of function
 	
 	.sdecl	'.data.cpu0_dsram',data,cluster('CarTable')
@@ -391,15 +500,21 @@ __FSMRun_function_end:
 	.global	CarTable
 	.align	4
 CarTable:	.type	object
-	.size	CarTable,64
+	.size	CarTable,112
+	.space	8
+	.word	RunStop
+	.space	4
 	.word	1
 	.space	4
 	.word	RunStart,1,2,1
 	.word	RunStop
-	.space	12
-	.word	RunStop
 	.space	4
 	.word	3,1,PassCross,1
+	.space	4
+	.word	1,FindLine,1
+	.space	4
+	.word	2,GoGarage,2,4
+	.word	1,GoGarage,2
 	.sdecl	'.bss.cpu0_dsram',data,cluster('CarFSM')
 	.sect	'.bss.cpu0_dsram'
 	.global	CarFSM
@@ -407,19 +522,69 @@ CarTable:	.type	object
 CarFSM:	.type	object
 	.size	CarFSM,12
 	.space	12
+	.sdecl	'.bss.cpu0_dsram',data,cluster('LPWM')
+	.sect	'.bss.cpu0_dsram'
+	.global	LPWM
+	.align	2
+LPWM:	.type	object
+	.size	LPWM,4
+	.space	4
+	.sdecl	'.bss.cpu0_dsram',data,cluster('RPWM')
+	.sect	'.bss.cpu0_dsram'
+	.global	RPWM
+	.align	2
+RPWM:	.type	object
+	.size	RPWM,4
+	.space	4
+	.sdecl	'.bss.cpu0_dsram',data,cluster('PIDValue')
+	.sect	'.bss.cpu0_dsram'
+	.global	PIDValue
+	.align	2
+PIDValue:	.type	object
+	.size	PIDValue,4
+	.space	4
+	.sdecl	'.bss.cpu0_dsram',data,cluster('tt')
+	.sect	'.bss.cpu0_dsram'
+	.global	tt
+	.align	2
+tt:	.type	object
+	.size	tt,4
+	.space	4
+	.sdecl	'.bss.cpu0_dsram',data,cluster('TenSingal')
+	.sect	'.bss.cpu0_dsram'
+	.global	TenSingal
+TenSingal:	.type	object
+	.size	TenSingal,1
+	.space	1
+	.sdecl	'.bss.cpu0_dsram',data,cluster('CarSingal')
+	.sect	'.bss.cpu0_dsram'
+	.global	CarSingal
+CarSingal:	.type	object
+	.size	CarSingal,1
+	.space	1
+	.sdecl	'.bss.cpu0_dsram',data,cluster('StartSingal')
+	.sect	'.bss.cpu0_dsram'
+	.global	StartSingal
+StartSingal:	.type	object
+	.size	StartSingal,1
+	.space	1
 	.calls	'__INDIRECT__','RunStart'
 	.calls	'__INDIRECT__','RunStop'
+	.calls	'__INDIRECT__','FindLine'
 	.calls	'__INDIRECT__','PassCross'
+	.calls	'__INDIRECT__','GoGarage'
 	.calls	'RunStart','MotorUserHandle'
 	.calls	'RunStop','SetMotorPWM'
-	.calls	'PassCross','MotorUserHandle'
 	.calls	'FSMEventHandle','__INDIRECT__'
 	.calls	'FSMEventHandle','FSMStateTransfer'
 	.calls	'FSMRun','FSMRegist'
 	.calls	'FSMRun','FSMEventHandle'
 	.calls	'RunStart','',0
 	.calls	'RunStop','',0
+	.calls	'FindLine','',0
 	.calls	'PassCross','',0
+	.calls	'GoGarage','',0
+	.calls	'ADCulMidLine','',0
 	.calls	'FSMRegist','',0
 	.calls	'FSMStateTransfer','',0
 	.calls	'FSMEventHandle','',0
@@ -430,17 +595,17 @@ CarFSM:	.type	object
 	.calls	'FSMRun','',0
 	.sdecl	'.debug_info',debug
 	.sect	'.debug_info'
-.L26:
+.L32:
 	.word	252274
 	.half	3
-	.word	.L27
+	.word	.L33
 	.byte	4
-.L25:
+.L31:
 	.byte	1
 	.byte	'..\\CODE\\Src\\User_FSM.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L28
+	.word	.L34
 	.byte	2,1,1,3
 	.word	143
 	.byte	4
@@ -448,7 +613,9 @@ CarFSM:	.type	object
 	.byte	'fun',0,1,61,43
 	.word	146
 	.byte	6,0,7
-	.byte	'__fract',0,4,128,1,7
+	.byte	'__fract',0,4,128,1
+.L137:
+	.byte	7
 	.byte	'float',0,4,4,8
 	.byte	'Ifx__float_to_fract',0,3,1,152,2,18
 	.word	191
@@ -489,7 +656,7 @@ CarFSM:	.type	object
 	.byte	'value',0,2,143,1,43
 	.word	383
 	.byte	6,0
-.L83:
+.L121:
 	.byte	7
 	.byte	'int',0,4,5,7
 	.byte	'unsigned int',0,4,7,11
@@ -514,7 +681,9 @@ CarFSM:	.type	object
 	.byte	4,2,35,0,14
 	.byte	'B',0
 	.word	518
-	.byte	4,2,35,0,0,7
+	.byte	4,2,35,0,0
+.L138:
+	.byte	7
 	.byte	'unsigned char',0,1,8,7
 	.byte	'unsigned short int',0,2,7,11
 	.byte	'_Ifx_SCU_WDTCPU_CON1_Bits',0,4,250,8,16,4,12
@@ -6882,11 +7051,11 @@ CarFSM:	.type	object
 	.byte	'PWMDuty',0,23,25,49
 	.word	203
 	.byte	0,34,1
-.L89:
+.L127:
 	.byte	3
 	.word	40823
 	.byte	11
-	.byte	'FSMTable',0,24,29,16,16,14
+	.byte	'FSMTable',0,24,31,16,16,14
 	.byte	'Event',0
 	.word	495
 	.byte	4,2,35,0,14
@@ -6899,12 +7068,12 @@ CarFSM:	.type	object
 	.byte	'NextState',0
 	.word	495
 	.byte	4,2,35,12,0
-.L79:
+.L117:
 	.byte	3
 	.word	40830
-.L98:
+.L136:
 	.byte	11
-	.byte	'FSM',0,24,38,16,12,14
+	.byte	'FSM',0,24,40,16,12,14
 	.byte	'CurState',0
 	.word	495
 	.byte	4,2,35,0,14
@@ -6914,7 +7083,7 @@ CarFSM:	.type	object
 	.byte	'Size',0
 	.word	495
 	.byte	4,2,35,8,0
-.L77:
+.L115:
 	.byte	3
 	.word	40923
 	.byte	35
@@ -34800,18 +34969,18 @@ CarFSM:	.type	object
 	.byte	'Motor_State_t',0,23,19,2
 	.word	40650
 	.byte	36
-	.byte	'FSMTable_t',0,24,34,2
+	.byte	'FSMTable_t',0,24,36,2
 	.word	40830
-.L97:
-	.byte	15,64
+.L135:
+	.byte	15,112
 	.word	40830
-	.byte	16,3,0,36
-	.byte	'FSM_t',0,24,42,2
+	.byte	16,6,0,36
+	.byte	'FSM_t',0,24,44,2
 	.word	40923
 	.byte	0
 	.sdecl	'.debug_abbrev',debug
 	.sect	'.debug_abbrev'
-.L27:
+.L33:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,16,6,0,0,2,21,0,54,15,39,12,0,0,3,15,0,73,19,0,0,4,46,1,3,8,32,13
 	.byte	58,15,59,15,57,15,54,15,39,12,0,0,5,5,0,3,8,58,15,59,15,57,15,73,19,0,0,6,11,0,0,0,7,36,0,3,8,11,15,62
 	.byte	15,0,0,8,46,1,3,8,32,13,58,15,59,15,57,15,73,19,54,15,39,12,0,0,9,59,0,3,8,0,0,10,53,0,73,19,0,0,11,19
@@ -34825,12 +34994,12 @@ CarFSM:	.type	object
 	.byte	0,36,22,0,3,8,58,15,59,15,57,15,73,19,0,0,37,21,1,54,15,39,12,0,0,38,21,1,73,19,54,15,39,12,0,0,0
 	.sdecl	'.debug_line',debug
 	.sect	'.debug_line'
-.L28:
-	.word	.L107-.L106
-.L106:
+.L34:
+	.word	.L147-.L146
+.L146:
 	.half	3
-	.word	.L109-.L108
-.L108:
+	.word	.L149-.L148
+.L148:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Std',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Scu\\Std',0
@@ -34901,667 +35070,969 @@ CarFSM:	.type	object
 	.byte	'IfxDma_cfg.h',0,5,0,0
 	.byte	'IfxDma_regdef.h',0,3,0,0
 	.byte	'IfxDma.h',0,17,0,0,0
-.L109:
-.L107:
+.L149:
+.L147:
 	.sdecl	'.debug_info',debug,cluster('RunStart')
 	.sect	'.debug_info'
-.L29:
+.L35:
 	.word	187
 	.half	3
-	.word	.L30
+	.word	.L36
 	.byte	4,1
 	.byte	'..\\CODE\\Src\\User_FSM.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L32,.L31
+	.word	.L38,.L37
 	.byte	2
-	.word	.L25
+	.word	.L31
 	.byte	3
-	.byte	'RunStart',0,1,25,6,1,1,1
-	.word	.L10,.L73,.L9
+	.byte	'RunStart',0,1,31,6,1,1,1
+	.word	.L10,.L108,.L9
 	.byte	4
-	.word	.L10,.L73
+	.word	.L10,.L108
 	.byte	0,0
 	.sdecl	'.debug_abbrev',debug,cluster('RunStart')
 	.sect	'.debug_abbrev'
-.L30:
+.L36:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
 	.sdecl	'.debug_line',debug,cluster('RunStart')
 	.sect	'.debug_line'
-.L31:
-	.word	.L111-.L110
-.L110:
+.L37:
+	.word	.L151-.L150
+.L150:
 	.half	3
-	.word	.L113-.L112
-.L112:
+	.word	.L153-.L152
+.L152:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\CODE\\Src\\User_FSM.c',0,0,0,0,0
-.L113:
+.L153:
 	.byte	5,27,7,0,5,2
 	.word	.L10
-	.byte	3,26,1,5,18,9
-	.half	.L114-.L10
+	.byte	3,32,1,5,18,9
+	.half	.L154-.L10
 	.byte	1,5,27,9
-	.half	.L115-.L114
+	.half	.L155-.L154
 	.byte	1,5,18,9
-	.half	.L116-.L115
+	.half	.L156-.L155
 	.byte	3,1,1,5,27,9
-	.half	.L117-.L116
+	.half	.L157-.L156
 	.byte	1,5,1,9
-	.half	.L33-.L117
+	.half	.L39-.L157
 	.byte	3,1,0,1,1
-.L111:
+.L151:
 	.sdecl	'.debug_ranges',debug,cluster('RunStart')
 	.sect	'.debug_ranges'
-.L32:
-	.word	-1,.L10,0,.L33-.L10,0,0
+.L38:
+	.word	-1,.L10,0,.L39-.L10,0,0
 	.sdecl	'.debug_info',debug,cluster('RunStop')
 	.sect	'.debug_info'
-.L34:
+.L40:
 	.word	186
 	.half	3
-	.word	.L35
+	.word	.L41
 	.byte	4,1
 	.byte	'..\\CODE\\Src\\User_FSM.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L37,.L36
+	.word	.L43,.L42
 	.byte	2
-	.word	.L25
+	.word	.L31
 	.byte	3
-	.byte	'RunStop',0,1,31,6,1,1,1
-	.word	.L12,.L74,.L11
+	.byte	'RunStop',0,1,37,6,1,1,1
+	.word	.L12,.L109,.L11
 	.byte	4
-	.word	.L12,.L74
+	.word	.L12,.L109
 	.byte	0,0
 	.sdecl	'.debug_abbrev',debug,cluster('RunStop')
 	.sect	'.debug_abbrev'
-.L35:
+.L41:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
 	.sdecl	'.debug_line',debug,cluster('RunStop')
 	.sect	'.debug_line'
-.L36:
-	.word	.L119-.L118
-.L118:
+.L42:
+	.word	.L159-.L158
+.L158:
 	.half	3
-	.word	.L121-.L120
-.L120:
+	.word	.L161-.L160
+.L160:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\CODE\\Src\\User_FSM.c',0,0,0,0,0
-.L121:
+.L161:
 	.byte	5,24,7,0,5,2
 	.word	.L12
-	.byte	3,32,1,5,14,9
-	.half	.L122-.L12
+	.byte	3,38,1,5,14,9
+	.half	.L162-.L12
 	.byte	1,5,24,1,5,14,9
-	.half	.L123-.L122
+	.half	.L163-.L162
 	.byte	3,1,1,5,24,9
-	.half	.L124-.L123
+	.half	.L164-.L163
 	.byte	1,5,14,9
-	.half	.L125-.L124
+	.half	.L165-.L164
 	.byte	3,1,1,5,24,9
-	.half	.L126-.L125
+	.half	.L166-.L165
 	.byte	1,5,14,9
-	.half	.L127-.L126
+	.half	.L167-.L166
 	.byte	3,1,1,5,24,9
-	.half	.L128-.L127
+	.half	.L168-.L167
 	.byte	1,5,1,9
-	.half	.L38-.L128
+	.half	.L44-.L168
 	.byte	3,1,0,1,1
-.L119:
+.L159:
 	.sdecl	'.debug_ranges',debug,cluster('RunStop')
 	.sect	'.debug_ranges'
-.L37:
-	.word	-1,.L12,0,.L38-.L12,0,0
-	.sdecl	'.debug_info',debug,cluster('PassCross')
+.L43:
+	.word	-1,.L12,0,.L44-.L12,0,0
+	.sdecl	'.debug_info',debug,cluster('FindLine')
 	.sect	'.debug_info'
-.L39:
-	.word	188
+.L45:
+	.word	187
 	.half	3
-	.word	.L40
+	.word	.L46
 	.byte	4,1
 	.byte	'..\\CODE\\Src\\User_FSM.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L42,.L41
+	.word	.L48,.L47
 	.byte	2
-	.word	.L25
+	.word	.L31
 	.byte	3
-	.byte	'PassCross',0,1,49,6,1,1,1
-	.word	.L14,.L75,.L13
+	.byte	'FindLine',0,1,45,6,1,1,1
+	.word	.L14,.L110,.L13
 	.byte	4
-	.word	.L14,.L75
+	.word	.L14,.L110
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('FindLine')
+	.sect	'.debug_abbrev'
+.L46:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('FindLine')
+	.sect	'.debug_line'
+.L47:
+	.word	.L170-.L169
+.L169:
+	.half	3
+	.word	.L172-.L171
+.L171:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'..\\CODE\\Src\\User_FSM.c',0,0,0,0,0
+.L172:
+	.byte	5,1,7,0,5,2
+	.word	.L14
+	.byte	3,210,0,1,7,9
+	.half	.L49-.L14
+	.byte	0,1,1
+.L170:
+	.sdecl	'.debug_ranges',debug,cluster('FindLine')
+	.sect	'.debug_ranges'
+.L48:
+	.word	-1,.L14,0,.L49-.L14,0,0
+	.sdecl	'.debug_info',debug,cluster('PassCross')
+	.sect	'.debug_info'
+.L50:
+	.word	188
+	.half	3
+	.word	.L51
+	.byte	4,1
+	.byte	'..\\CODE\\Src\\User_FSM.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
+	.word	.L53,.L52
+	.byte	2
+	.word	.L31
+	.byte	3
+	.byte	'PassCross',0,1,85,6,1,1,1
+	.word	.L16,.L111,.L15
+	.byte	4
+	.word	.L16,.L111
 	.byte	0,0
 	.sdecl	'.debug_abbrev',debug,cluster('PassCross')
 	.sect	'.debug_abbrev'
-.L40:
+.L51:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
 	.sdecl	'.debug_line',debug,cluster('PassCross')
 	.sect	'.debug_line'
-.L41:
-	.word	.L130-.L129
-.L129:
+.L52:
+	.word	.L174-.L173
+.L173:
 	.half	3
-	.word	.L132-.L131
-.L131:
+	.word	.L176-.L175
+.L175:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\CODE\\Src\\User_FSM.c',0,0,0,0,0
-.L132:
-	.byte	5,28,7,0,5,2
-	.word	.L14
-	.byte	3,51,1,5,18,9
-	.half	.L133-.L14
-	.byte	1,5,28,9
-	.half	.L134-.L133
-	.byte	1,5,21,9
-	.half	.L135-.L134
-	.byte	3,1,1,5,31,9
-	.half	.L136-.L135
-	.byte	1,5,1,9
-	.half	.L43-.L136
-	.byte	3,1,0,1,1
-.L130:
+.L176:
+	.byte	5,1,7,0,5,2
+	.word	.L16
+	.byte	3,230,0,1,7,9
+	.half	.L54-.L16
+	.byte	0,1,1
+.L174:
 	.sdecl	'.debug_ranges',debug,cluster('PassCross')
 	.sect	'.debug_ranges'
-.L42:
-	.word	-1,.L14,0,.L43-.L14,0,0
-	.sdecl	'.debug_info',debug,cluster('FSMRegist')
+.L53:
+	.word	-1,.L16,0,.L54-.L16,0,0
+	.sdecl	'.debug_info',debug,cluster('GoGarage')
 	.sect	'.debug_info'
-.L44:
-	.word	225
+.L55:
+	.word	187
 	.half	3
-	.word	.L45
+	.word	.L56
 	.byte	4,1
 	.byte	'..\\CODE\\Src\\User_FSM.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L47,.L46
+	.word	.L58,.L57
 	.byte	2
-	.word	.L25
+	.word	.L31
 	.byte	3
-	.byte	'FSMRegist',0,1,62,6,1,1,1
-	.word	.L16,.L76,.L15
+	.byte	'GoGarage',0,1,105,6,1,1,1
+	.word	.L18,.L112,.L17
 	.byte	4
-	.byte	'fsm',0,1,62,23
-	.word	.L77,.L78
+	.word	.L18,.L112
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('GoGarage')
+	.sect	'.debug_abbrev'
+.L56:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('GoGarage')
+	.sect	'.debug_line'
+.L57:
+	.word	.L178-.L177
+.L177:
+	.half	3
+	.word	.L180-.L179
+.L179:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'..\\CODE\\Src\\User_FSM.c',0,0,0,0,0
+.L180:
+	.byte	5,1,7,0,5,2
+	.word	.L18
+	.byte	3,235,0,1,7,9
+	.half	.L59-.L18
+	.byte	0,1,1
+.L178:
+	.sdecl	'.debug_ranges',debug,cluster('GoGarage')
+	.sect	'.debug_ranges'
+.L58:
+	.word	-1,.L18,0,.L59-.L18,0,0
+	.sdecl	'.debug_info',debug,cluster('ADCulMidLine')
+	.sect	'.debug_info'
+.L60:
+	.word	191
+	.half	3
+	.word	.L61
+	.byte	4,1
+	.byte	'..\\CODE\\Src\\User_FSM.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
+	.word	.L63,.L62
+	.byte	2
+	.word	.L31
+	.byte	3
+	.byte	'ADCulMidLine',0,1,110,6,1,1,1
+	.word	.L20,.L113,.L19
 	.byte	4
-	.byte	'fsmtable',0,1,62,40
-	.word	.L79,.L80
+	.word	.L20,.L113
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('ADCulMidLine')
+	.sect	'.debug_abbrev'
+.L61:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('ADCulMidLine')
+	.sect	'.debug_line'
+.L62:
+	.word	.L182-.L181
+.L181:
+	.half	3
+	.word	.L184-.L183
+.L183:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'..\\CODE\\Src\\User_FSM.c',0,0,0,0,0
+.L184:
+	.byte	5,1,7,0,5,2
+	.word	.L20
+	.byte	3,246,0,1,7,9
+	.half	.L64-.L20
+	.byte	0,1,1
+.L182:
+	.sdecl	'.debug_ranges',debug,cluster('ADCulMidLine')
+	.sect	'.debug_ranges'
+.L63:
+	.word	-1,.L20,0,.L64-.L20,0,0
+	.sdecl	'.debug_info',debug,cluster('FSMRegist')
+	.sect	'.debug_info'
+.L65:
+	.word	228
+	.half	3
+	.word	.L66
+	.byte	4,1
+	.byte	'..\\CODE\\Src\\User_FSM.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
+	.word	.L68,.L67
+	.byte	2
+	.word	.L31
+	.byte	3
+	.byte	'FSMRegist',0,1,128,1,6,1,1,1
+	.word	.L22,.L114,.L21
+	.byte	4
+	.byte	'fsm',0,1,128,1,23
+	.word	.L115,.L116
+	.byte	4
+	.byte	'fsmtable',0,1,128,1,40
+	.word	.L117,.L118
 	.byte	5
-	.word	.L16,.L76
+	.word	.L22,.L114
 	.byte	0,0
 	.sdecl	'.debug_abbrev',debug,cluster('FSMRegist')
 	.sect	'.debug_abbrev'
-.L45:
+.L66:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
 	.sdecl	'.debug_line',debug,cluster('FSMRegist')
 	.sect	'.debug_line'
-.L46:
-	.word	.L138-.L137
-.L137:
+.L67:
+	.word	.L186-.L185
+.L185:
 	.half	3
-	.word	.L140-.L139
-.L139:
+	.word	.L188-.L187
+.L187:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\CODE\\Src\\User_FSM.c',0,0,0,0,0
-.L140:
+.L188:
 	.byte	5,19,7,0,5,2
-	.word	.L16
-	.byte	3,63,1,5,1,9
-	.half	.L141-.L16
+	.word	.L22
+	.byte	3,129,1,1,5,1,9
+	.half	.L189-.L22
 	.byte	3,1,1,7,9
-	.half	.L48-.L141
+	.half	.L69-.L189
 	.byte	0,1,1
-.L138:
+.L186:
 	.sdecl	'.debug_ranges',debug,cluster('FSMRegist')
 	.sect	'.debug_ranges'
-.L47:
-	.word	-1,.L16,0,.L48-.L16,0,0
+.L68:
+	.word	-1,.L22,0,.L69-.L22,0,0
 	.sdecl	'.debug_info',debug,cluster('FSMStateTransfer')
 	.sect	'.debug_info'
-.L49:
-	.word	229
+.L70:
+	.word	232
 	.half	3
-	.word	.L50
+	.word	.L71
 	.byte	4,1
 	.byte	'..\\CODE\\Src\\User_FSM.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L52,.L51
+	.word	.L73,.L72
 	.byte	2
-	.word	.L25
+	.word	.L31
 	.byte	3
-	.byte	'FSMStateTransfer',0,1,72,6,1,1,1
-	.word	.L18,.L81,.L17
+	.byte	'FSMStateTransfer',0,1,138,1,6,1,1,1
+	.word	.L24,.L119,.L23
 	.byte	4
-	.byte	'fsm',0,1,72,30
-	.word	.L77,.L82
+	.byte	'fsm',0,1,138,1,30
+	.word	.L115,.L120
 	.byte	4
-	.byte	'state',0,1,72,39
-	.word	.L83,.L84
+	.byte	'state',0,1,138,1,39
+	.word	.L121,.L122
 	.byte	5
-	.word	.L18,.L81
+	.word	.L24,.L119
 	.byte	0,0
 	.sdecl	'.debug_abbrev',debug,cluster('FSMStateTransfer')
 	.sect	'.debug_abbrev'
-.L50:
+.L71:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
 	.sdecl	'.debug_line',debug,cluster('FSMStateTransfer')
 	.sect	'.debug_line'
-.L51:
-	.word	.L143-.L142
-.L142:
+.L72:
+	.word	.L191-.L190
+.L190:
 	.half	3
-	.word	.L145-.L144
-.L144:
+	.word	.L193-.L192
+.L192:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\CODE\\Src\\User_FSM.c',0,0,0,0,0
-.L145:
+.L193:
 	.byte	5,19,7,0,5,2
-	.word	.L18
-	.byte	3,201,0,1,5,1,9
-	.half	.L146-.L18
+	.word	.L24
+	.byte	3,139,1,1,5,1,9
+	.half	.L194-.L24
 	.byte	3,1,1,7,9
-	.half	.L53-.L146
+	.half	.L74-.L194
 	.byte	0,1,1
-.L143:
+.L191:
 	.sdecl	'.debug_ranges',debug,cluster('FSMStateTransfer')
 	.sect	'.debug_ranges'
-.L52:
-	.word	-1,.L18,0,.L53-.L18,0,0
+.L73:
+	.word	-1,.L24,0,.L74-.L24,0,0
 	.sdecl	'.debug_info',debug,cluster('FSMEventHandle')
 	.sect	'.debug_info'
-.L54:
-	.word	326
+.L75:
+	.word	334
 	.half	3
-	.word	.L55
+	.word	.L76
 	.byte	4,1
 	.byte	'..\\CODE\\Src\\User_FSM.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L57,.L56
+	.word	.L78,.L77
 	.byte	2
-	.word	.L25
+	.word	.L31
 	.byte	3
-	.byte	'FSMEventHandle',0,1,77,6,1,1,1
-	.word	.L20,.L85,.L19
+	.byte	'FSMEventHandle',0,1,143,1,6,1,1,1
+	.word	.L26,.L123,.L25
 	.byte	4
-	.byte	'fsm',0,1,77,28
-	.word	.L77,.L86
+	.byte	'fsm',0,1,143,1,28
+	.word	.L115,.L124
 	.byte	4
-	.byte	'event',0,1,77,37
-	.word	.L83,.L87
+	.byte	'event',0,1,143,1,37
+	.word	.L121,.L125
 	.byte	5
-	.word	.L20,.L85
+	.word	.L26,.L123
 	.byte	6
-	.byte	'curState',0,1,80,9
-	.word	.L83,.L88
+	.byte	'curState',0,1,146,1,9
+	.word	.L121,.L126
 	.byte	6
-	.byte	'eventAction',0,1,81,12
-	.word	.L89,.L90
+	.byte	'eventAction',0,1,147,1,12
+	.word	.L127,.L128
 	.byte	6
-	.byte	'nextState',0,1,82,9
-	.word	.L83,.L91
+	.byte	'nextState',0,1,148,1,9
+	.word	.L121,.L129
 	.byte	6
-	.byte	'size',0,1,83,9
-	.word	.L83,.L92
+	.byte	'size',0,1,149,1,9
+	.word	.L121,.L130
 	.byte	6
-	.byte	'i',0,1,85,9
-	.word	.L83,.L93
+	.byte	'i',0,1,151,1,9
+	.word	.L121,.L131
 	.byte	0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('FSMEventHandle')
 	.sect	'.debug_abbrev'
-.L55:
+.L76:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3
 	.byte	8,58,15,59,15,57,15,73,16,2,6,0,0,0
 	.sdecl	'.debug_line',debug,cluster('FSMEventHandle')
 	.sect	'.debug_line'
-.L56:
-	.word	.L148-.L147
-.L147:
+.L77:
+	.word	.L196-.L195
+.L195:
 	.half	3
-	.word	.L150-.L149
-.L149:
+	.word	.L198-.L197
+.L197:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\CODE\\Src\\User_FSM.c',0,0,0,0,0
-.L150:
+.L198:
 	.byte	5,6,7,0,5,2
-	.word	.L20
-	.byte	3,204,0,1,5,23,9
-	.half	.L99-.L20
+	.word	.L26
+	.byte	3,142,1,1,5,23,9
+	.half	.L139-.L26
 	.byte	3,3,1,5,19,9
-	.half	.L100-.L99
+	.half	.L140-.L139
 	.byte	3,3,1,5,11,9
-	.half	.L101-.L100
+	.half	.L141-.L140
 	.byte	3,5,1,5,28,3,119,1,5,21,9
-	.half	.L102-.L101
+	.half	.L142-.L141
 	.byte	3,9,1,5,33,9
-	.half	.L3-.L102
+	.half	.L3-.L142
 	.byte	3,3,1,5,13,9
-	.half	.L151-.L3
+	.half	.L199-.L3
 	.byte	1,5,66,7,9
-	.half	.L152-.L151
+	.half	.L200-.L199
 	.byte	1,5,52,9
-	.half	.L153-.L152
+	.half	.L201-.L200
 	.byte	1,5,38,7,9
-	.half	.L154-.L153
+	.half	.L202-.L201
 	.byte	3,3,1,5,36,9
-	.half	.L103-.L154
+	.half	.L143-.L202
 	.byte	3,1,1,5,10,9
-	.half	.L104-.L103
+	.half	.L144-.L143
 	.byte	3,1,1,5,22,7,9
-	.half	.L155-.L104
+	.half	.L203-.L144
 	.byte	3,1,1,5,32,9
-	.half	.L6-.L155
+	.half	.L6-.L203
 	.byte	3,1,1,5,24,9
 	.half	.L4-.L6
 	.byte	3,118,1,5,21,9
 	.half	.L2-.L4
 	.byte	1,5,1,7,9
-	.half	.L156-.L2
+	.half	.L204-.L2
 	.byte	3,18,1,7,9
-	.half	.L58-.L156
+	.half	.L79-.L204
 	.byte	0,1,1
-.L148:
+.L196:
 	.sdecl	'.debug_ranges',debug,cluster('FSMEventHandle')
 	.sect	'.debug_ranges'
-.L57:
-	.word	-1,.L20,0,.L58-.L20,0,0
+.L78:
+	.word	-1,.L26,0,.L79-.L26,0,0
 	.sdecl	'.debug_info',debug,cluster('ReturnFSMState')
 	.sect	'.debug_info'
-.L59:
-	.word	213
+.L80:
+	.word	215
 	.half	3
-	.word	.L60
+	.word	.L81
 	.byte	4,1
 	.byte	'..\\CODE\\Src\\User_FSM.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L62,.L61
+	.word	.L83,.L82
 	.byte	2
-	.word	.L25
+	.word	.L31
 	.byte	3
-	.byte	'ReturnFSMState',0,1,108,5
-	.word	.L83
+	.byte	'ReturnFSMState',0,1,174,1,5
+	.word	.L121
 	.byte	1,1,1
-	.word	.L22,.L94,.L21
+	.word	.L28,.L132,.L27
 	.byte	4
-	.byte	'fsm',0,1,108,27
-	.word	.L77,.L95
+	.byte	'fsm',0,1,174,1,27
+	.word	.L115,.L133
 	.byte	5
-	.word	.L22,.L94
+	.word	.L28,.L132
 	.byte	0,0
 	.sdecl	'.debug_abbrev',debug,cluster('ReturnFSMState')
 	.sect	'.debug_abbrev'
-.L60:
+.L81:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
 	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
 	.sdecl	'.debug_line',debug,cluster('ReturnFSMState')
 	.sect	'.debug_line'
-.L61:
-	.word	.L158-.L157
-.L157:
+.L82:
+	.word	.L206-.L205
+.L205:
 	.half	3
-	.word	.L160-.L159
-.L159:
+	.word	.L208-.L207
+.L207:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\CODE\\Src\\User_FSM.c',0,0,0,0,0
-.L160:
+.L208:
 	.byte	5,12,7,0,5,2
-	.word	.L22
-	.byte	3,237,0,1,5,1,9
-	.half	.L161-.L22
+	.word	.L28
+	.byte	3,175,1,1,5,1,9
+	.half	.L209-.L28
 	.byte	3,1,1,7,9
-	.half	.L63-.L161
+	.half	.L84-.L209
 	.byte	0,1,1
-.L158:
+.L206:
 	.sdecl	'.debug_ranges',debug,cluster('ReturnFSMState')
 	.sect	'.debug_ranges'
-.L62:
-	.word	-1,.L22,0,.L63-.L22,0,0
+.L83:
+	.word	-1,.L28,0,.L84-.L28,0,0
 	.sdecl	'.debug_info',debug,cluster('FSMRun')
 	.sect	'.debug_info'
-.L64:
-	.word	185
+.L85:
+	.word	186
 	.half	3
-	.word	.L65
+	.word	.L86
 	.byte	4,1
 	.byte	'..\\CODE\\Src\\User_FSM.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L67,.L66
+	.word	.L88,.L87
 	.byte	2
-	.word	.L25
+	.word	.L31
 	.byte	3
-	.byte	'FSMRun',0,1,113,6,1,1,1
-	.word	.L24,.L96,.L23
+	.byte	'FSMRun',0,1,179,1,6,1,1,1
+	.word	.L30,.L134,.L29
 	.byte	4
-	.word	.L24,.L96
+	.word	.L30,.L134
 	.byte	0,0
 	.sdecl	'.debug_abbrev',debug,cluster('FSMRun')
 	.sect	'.debug_abbrev'
-.L65:
+.L86:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
 	.sdecl	'.debug_line',debug,cluster('FSMRun')
 	.sect	'.debug_line'
-.L66:
-	.word	.L163-.L162
-.L162:
+.L87:
+	.word	.L211-.L210
+.L210:
 	.half	3
-	.word	.L165-.L164
-.L164:
+	.word	.L213-.L212
+.L212:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\CODE\\Src\\User_FSM.c',0,0,0,0,0
-.L165:
+.L213:
 	.byte	5,16,7,0,5,2
-	.word	.L24
-	.byte	3,242,0,1,5,24,9
-	.half	.L166-.L24
+	.word	.L30
+	.byte	3,180,1,1,5,24,9
+	.half	.L214-.L30
 	.byte	1,5,23,9
-	.half	.L167-.L166
+	.half	.L215-.L214
 	.byte	3,1,1,5,21,1,5,36,9
-	.half	.L168-.L167
+	.half	.L216-.L215
 	.byte	3,1,1,5,17,1,5,29,9
-	.half	.L169-.L168
+	.half	.L217-.L216
 	.byte	3,1,1,5,1,9
-	.half	.L68-.L169
+	.half	.L89-.L217
 	.byte	3,1,0,1,1
-.L163:
+.L211:
 	.sdecl	'.debug_ranges',debug,cluster('FSMRun')
 	.sect	'.debug_ranges'
-.L67:
-	.word	-1,.L24,0,.L68-.L24,0,0
+.L88:
+	.word	-1,.L30,0,.L89-.L30,0,0
 	.sdecl	'.debug_info',debug,cluster('CarTable')
 	.sect	'.debug_info'
-.L69:
+.L90:
 	.word	165
 	.half	3
-	.word	.L70
+	.word	.L91
 	.byte	4,1
 	.byte	'..\\CODE\\Src\\User_FSM.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1,2
-	.word	.L25
+	.word	.L31
 	.byte	3
-	.byte	'CarTable',0,25,11,12
-	.word	.L97
+	.byte	'CarTable',0,25,12,12
+	.word	.L135
 	.byte	1,5,3
 	.word	CarTable
 	.byte	0
 	.sdecl	'.debug_abbrev',debug,cluster('CarTable')
 	.sect	'.debug_abbrev'
-.L70:
+.L91:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
 	.byte	0,0,0
 	.sdecl	'.debug_info',debug,cluster('CarFSM')
 	.sect	'.debug_info'
-.L71:
+.L92:
 	.word	163
 	.half	3
-	.word	.L72
+	.word	.L93
 	.byte	4,1
 	.byte	'..\\CODE\\Src\\User_FSM.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1,2
-	.word	.L25
+	.word	.L31
 	.byte	3
-	.byte	'CarFSM',0,25,21,7
-	.word	.L98
+	.byte	'CarFSM',0,25,24,7
+	.word	.L136
 	.byte	1,5,3
 	.word	CarFSM
 	.byte	0
 	.sdecl	'.debug_abbrev',debug,cluster('CarFSM')
 	.sect	'.debug_abbrev'
-.L72:
+.L93:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
 	.byte	0,0,0
-	.sdecl	'.debug_loc',debug,cluster('FSMEventHandle')
+	.sdecl	'.debug_info',debug,cluster('LPWM')
+	.sect	'.debug_info'
+.L94:
+	.word	161
+	.half	3
+	.word	.L95
+	.byte	4,1
+	.byte	'..\\CODE\\Src\\User_FSM.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1,2
+	.word	.L31
+	.byte	3
+	.byte	'LPWM',0,25,25,7
+	.word	.L137
+	.byte	1,5,3
+	.word	LPWM
+	.byte	0
+	.sdecl	'.debug_abbrev',debug,cluster('LPWM')
+	.sect	'.debug_abbrev'
+.L95:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
+	.byte	0,0,0
+	.sdecl	'.debug_info',debug,cluster('RPWM')
+	.sect	'.debug_info'
+.L96:
+	.word	161
+	.half	3
+	.word	.L97
+	.byte	4,1
+	.byte	'..\\CODE\\Src\\User_FSM.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1,2
+	.word	.L31
+	.byte	3
+	.byte	'RPWM',0,25,25,13
+	.word	.L137
+	.byte	1,5,3
+	.word	RPWM
+	.byte	0
+	.sdecl	'.debug_abbrev',debug,cluster('RPWM')
+	.sect	'.debug_abbrev'
+.L97:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
+	.byte	0,0,0
+	.sdecl	'.debug_info',debug,cluster('PIDValue')
+	.sect	'.debug_info'
+.L98:
+	.word	165
+	.half	3
+	.word	.L99
+	.byte	4,1
+	.byte	'..\\CODE\\Src\\User_FSM.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1,2
+	.word	.L31
+	.byte	3
+	.byte	'PIDValue',0,25,25,18
+	.word	.L137
+	.byte	1,5,3
+	.word	PIDValue
+	.byte	0
+	.sdecl	'.debug_abbrev',debug,cluster('PIDValue')
+	.sect	'.debug_abbrev'
+.L99:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
+	.byte	0,0,0
+	.sdecl	'.debug_info',debug,cluster('tt')
+	.sect	'.debug_info'
+.L100:
+	.word	159
+	.half	3
+	.word	.L101
+	.byte	4,1
+	.byte	'..\\CODE\\Src\\User_FSM.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1,2
+	.word	.L31
+	.byte	3
+	.byte	'tt',0,25,25,27
+	.word	.L137
+	.byte	1,5,3
+	.word	tt
+	.byte	0
+	.sdecl	'.debug_abbrev',debug,cluster('tt')
+	.sect	'.debug_abbrev'
+.L101:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
+	.byte	0,0,0
+	.sdecl	'.debug_info',debug,cluster('TenSingal')
+	.sect	'.debug_info'
+.L102:
+	.word	166
+	.half	3
+	.word	.L103
+	.byte	4,1
+	.byte	'..\\CODE\\Src\\User_FSM.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1,2
+	.word	.L31
+	.byte	3
+	.byte	'TenSingal',0,25,26,7
+	.word	.L138
+	.byte	1,5,3
+	.word	TenSingal
+	.byte	0
+	.sdecl	'.debug_abbrev',debug,cluster('TenSingal')
+	.sect	'.debug_abbrev'
+.L103:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
+	.byte	0,0,0
+	.sdecl	'.debug_info',debug,cluster('CarSingal')
+	.sect	'.debug_info'
+.L104:
+	.word	166
+	.half	3
+	.word	.L105
+	.byte	4,1
+	.byte	'..\\CODE\\Src\\User_FSM.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1,2
+	.word	.L31
+	.byte	3
+	.byte	'CarSingal',0,25,26,17
+	.word	.L138
+	.byte	1,5,3
+	.word	CarSingal
+	.byte	0
+	.sdecl	'.debug_abbrev',debug,cluster('CarSingal')
+	.sect	'.debug_abbrev'
+.L105:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
+	.byte	0,0,0
+	.sdecl	'.debug_info',debug,cluster('StartSingal')
+	.sect	'.debug_info'
+.L106:
+	.word	168
+	.half	3
+	.word	.L107
+	.byte	4,1
+	.byte	'..\\CODE\\Src\\User_FSM.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1,2
+	.word	.L31
+	.byte	3
+	.byte	'StartSingal',0,25,26,27
+	.word	.L138
+	.byte	1,5,3
+	.word	StartSingal
+	.byte	0
+	.sdecl	'.debug_abbrev',debug,cluster('StartSingal')
+	.sect	'.debug_abbrev'
+.L107:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
+	.byte	0,0,0
+	.sdecl	'.debug_loc',debug,cluster('ADCulMidLine')
 	.sect	'.debug_loc'
 .L19:
-	.word	-1,.L20,0,.L85-.L20
+	.word	-1,.L20,0,.L113-.L20
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L88:
-	.word	-1,.L20,.L100-.L20,.L6-.L20
+	.sdecl	'.debug_loc',debug,cluster('FSMEventHandle')
+	.sect	'.debug_loc'
+.L25:
+	.word	-1,.L26,0,.L123-.L26
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L126:
+	.word	-1,.L26,.L140-.L26,.L6-.L26
 	.half	5
 	.byte	144,32,157,32,0
-	.word	.L4-.L20,.L85-.L20
+	.word	.L4-.L26,.L123-.L26
 	.half	5
 	.byte	144,32,157,32,0
 	.word	0,0
-.L87:
-	.word	-1,.L20,0,.L6-.L20
+.L125:
+	.word	-1,.L26,0,.L6-.L26
 	.half	1
 	.byte	84
-	.word	.L4-.L20,.L85-.L20
+	.word	.L4-.L26,.L123-.L26
 	.half	1
 	.byte	84
 	.word	0,0
-.L90:
-	.word	-1,.L20,.L103-.L20,.L6-.L20
+.L128:
+	.word	-1,.L26,.L143-.L26,.L6-.L26
 	.half	1
 	.byte	98
 	.word	0,0
-.L86:
-	.word	-1,.L20,0,.L6-.L20
+.L124:
+	.word	-1,.L26,0,.L6-.L26
 	.half	1
 	.byte	100
-	.word	.L99-.L20,.L85-.L20
+	.word	.L139-.L26,.L123-.L26
 	.half	1
 	.byte	108
-	.word	.L105-.L20,.L85-.L20
+	.word	.L145-.L26,.L123-.L26
 	.half	1
 	.byte	100
 	.word	0,0
-.L93:
-	.word	-1,.L20,.L102-.L20,.L6-.L20
+.L131:
+	.word	-1,.L26,.L142-.L26,.L6-.L26
 	.half	1
 	.byte	82
-	.word	.L4-.L20,.L85-.L20
+	.word	.L4-.L26,.L123-.L26
 	.half	1
 	.byte	82
 	.word	0,0
-.L91:
-	.word	-1,.L20,.L104-.L20,.L4-.L20
+.L129:
+	.word	-1,.L26,.L144-.L26,.L4-.L26
 	.half	1
 	.byte	95
-	.word	.L105-.L20,.L4-.L20
+	.word	.L145-.L26,.L4-.L26
 	.half	1
 	.byte	84
 	.word	0,0
-.L92:
-	.word	-1,.L20,.L101-.L20,.L6-.L20
+.L130:
+	.word	-1,.L26,.L141-.L26,.L6-.L26
 	.half	1
 	.byte	81
-	.word	.L4-.L20,.L85-.L20
+	.word	.L4-.L26,.L123-.L26
 	.half	1
 	.byte	81
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('FSMRegist')
 	.sect	'.debug_loc'
-.L15:
-	.word	-1,.L16,0,.L76-.L16
+.L21:
+	.word	-1,.L22,0,.L114-.L22
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L78:
-	.word	-1,.L16,0,.L76-.L16
+.L116:
+	.word	-1,.L22,0,.L114-.L22
 	.half	1
 	.byte	100
 	.word	0,0
-.L80:
-	.word	-1,.L16,0,.L76-.L16
+.L118:
+	.word	-1,.L22,0,.L114-.L22
 	.half	1
 	.byte	101
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('FSMRun')
 	.sect	'.debug_loc'
-.L23:
-	.word	-1,.L24,0,.L96-.L24
+.L29:
+	.word	-1,.L30,0,.L134-.L30
 	.half	2
 	.byte	138,0
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('FSMStateTransfer')
 	.sect	'.debug_loc'
-.L17:
-	.word	-1,.L18,0,.L81-.L18
+.L23:
+	.word	-1,.L24,0,.L119-.L24
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L82:
-	.word	-1,.L18,0,.L81-.L18
+.L120:
+	.word	-1,.L24,0,.L119-.L24
 	.half	1
 	.byte	100
 	.word	0,0
-.L84:
-	.word	-1,.L18,0,.L81-.L18
+.L122:
+	.word	-1,.L24,0,.L119-.L24
 	.half	1
 	.byte	84
 	.word	0,0
-	.sdecl	'.debug_loc',debug,cluster('PassCross')
+	.sdecl	'.debug_loc',debug,cluster('FindLine')
 	.sect	'.debug_loc'
 .L13:
-	.word	-1,.L14,0,.L75-.L14
+	.word	-1,.L14,0,.L110-.L14
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('GoGarage')
+	.sect	'.debug_loc'
+.L17:
+	.word	-1,.L18,0,.L112-.L18
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('PassCross')
+	.sect	'.debug_loc'
+.L15:
+	.word	-1,.L16,0,.L111-.L16
 	.half	2
 	.byte	138,0
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('ReturnFSMState')
 	.sect	'.debug_loc'
-.L21:
-	.word	-1,.L22,0,.L94-.L22
+.L27:
+	.word	-1,.L28,0,.L132-.L28
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L95:
-	.word	-1,.L22,0,.L94-.L22
+.L133:
+	.word	-1,.L28,0,.L132-.L28
 	.half	1
 	.byte	100
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('RunStart')
 	.sect	'.debug_loc'
 .L9:
-	.word	-1,.L10,0,.L73-.L10
+	.word	-1,.L10,0,.L108-.L10
 	.half	2
 	.byte	138,0
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('RunStop')
 	.sect	'.debug_loc'
 .L11:
-	.word	-1,.L12,0,.L74-.L12
+	.word	-1,.L12,0,.L109-.L12
 	.half	2
 	.byte	138,0
 	.word	0,0
 	.sdecl	'.debug_frame',debug
 	.sect	'.debug_frame'
-.L170:
+.L218:
 	.word	48
 	.word	-1
 	.byte	3,0,2,1,27,12,26,0,8,27,8,26,8,28,8,29,8,30,8,31,8,34,8,35,8,32,8,33,8,16,8,17,8,24,8,25,8,36,8,37,8,38
@@ -35569,40 +36040,56 @@ CarFSM:	.type	object
 	.sdecl	'.debug_frame',debug,cluster('RunStart')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L170,.L10,.L73-.L10
+	.word	.L218,.L10,.L108-.L10
 	.sdecl	'.debug_frame',debug,cluster('RunStop')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L170,.L12,.L74-.L12
+	.word	.L218,.L12,.L109-.L12
+	.sdecl	'.debug_frame',debug,cluster('FindLine')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L218,.L14,.L110-.L14
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
 	.sdecl	'.debug_frame',debug,cluster('PassCross')
 	.sect	'.debug_frame'
-	.word	12
-	.word	.L170,.L14,.L75-.L14
+	.word	24
+	.word	.L218,.L16,.L111-.L16
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('GoGarage')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L218,.L18,.L112-.L18
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('ADCulMidLine')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L218,.L20,.L113-.L20
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
 	.sdecl	'.debug_frame',debug,cluster('FSMRegist')
 	.sect	'.debug_frame'
 	.word	20
-	.word	.L170,.L16,.L76-.L16
+	.word	.L218,.L22,.L114-.L22
 	.byte	8,18,8,19,8,22,8,23
 	.sdecl	'.debug_frame',debug,cluster('FSMStateTransfer')
 	.sect	'.debug_frame'
 	.word	24
-	.word	.L170,.L18,.L81-.L18
+	.word	.L218,.L24,.L119-.L24
 	.byte	8,18,8,19,8,21,8,22,8,23,0,0
 	.sdecl	'.debug_frame',debug,cluster('FSMEventHandle')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L170,.L20,.L85-.L20
+	.word	.L218,.L26,.L123-.L26
 	.sdecl	'.debug_frame',debug,cluster('ReturnFSMState')
 	.sect	'.debug_frame'
 	.word	24
-	.word	.L170,.L22,.L94-.L22
+	.word	.L218,.L28,.L132-.L28
 	.byte	8,18,8,19,8,21,8,22,8,23,0,0
 	.sdecl	'.debug_frame',debug,cluster('FSMRun')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L170,.L24,.L96-.L24
+	.word	.L218,.L30,.L134-.L30
 
-; ..\CODE\Src\User_FSM.c	   119  }
-; ..\CODE\Src\User_FSM.c	   120  
+; ..\CODE\Src\User_FSM.c	   185  }
+; ..\CODE\Src\User_FSM.c	   186  
 
 	; Module end

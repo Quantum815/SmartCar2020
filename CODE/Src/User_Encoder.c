@@ -9,8 +9,7 @@
 
 #pragma section all "cpu0_dsram"
 
-double CurDistance;
-double TotalDistance;
+static double CurDistance, TotalDistance;
 
 #pragma section all restore
 
@@ -46,7 +45,12 @@ double GetDistance(void)
 	return TotalDistance;
 }
 
-double GetSpeed(void)  //主进程10ms
+double GetSpeed(void)  //5ms中断距离计算
 {
-	return (CurDistance/0.01);
+	return (CurDistance/0.005);
+}
+
+void CleanDistance(void)
+{
+	TotalDistance = 0;
 }

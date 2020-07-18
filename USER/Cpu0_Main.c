@@ -49,10 +49,10 @@ void core0_main(void)
 		//for(int i =0;i<=10;i++)
 		//printf("%d   ",GYRORxBuff[i]);
 		//printf("\r\n");
-		//systick_delay_ms(STM0, 1);
-		//用户在此处编写任务代码
-		//CountDistance();
+		//systick_delay_ms(STM0, 100);
+		//DebugReadADCData();
 		//GyroUARTReadByte();
+		//CountDistance();
 		//GyroCalculate();
     	//systick_delay_ms(STM0, 500);
 		//ips114_showchar(50,50,'t');

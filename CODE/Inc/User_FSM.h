@@ -13,7 +13,8 @@
 enum CarState  //状态
 {
     Stop,
-    GoLine
+    GoLine,
+	InGarage
     //如果出现新的代码加入在此
 };
 
@@ -22,7 +23,8 @@ enum CarEvent  //事件
 	NOEVENT,
     RUNSTART,
     RUNSTOP,
-	GOROUND
+	GOCROSS,
+	INGARAGE
     //如果出现新的代码加入在此
 };
 
@@ -45,8 +47,10 @@ extern FSM_t CarFSM;
 
 void RunStart(void);
 void RunStop(void);
-//void FindLine(void);
+void FindLine(void);
 void PassCross(void);
+void GoGarage(void);
+void ADCulMidLine(void);
 
 void FSMRegist(FSM_t *fsm, FSMTable_t *fsmtable);
 void FSMStateTransfer(FSM_t *fsm, int state);

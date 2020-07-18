@@ -66,13 +66,14 @@
 #include "SEEKFREE_RDA5807.h"
 
 //------自定义头文件
-#include <stdint.h>
+#include "stdint.h"
+#include "..\CODE\Inc\User_Debug.h"
 #include "..\CODE\Inc\User_Init.h"
 #include "..\CODE\Inc\User_Camera_Init.h"
-#include "..\CODE\Inc\User_Uart.h"
 #include "..\CODE\Inc\User_FSM.h"
 #include "..\CODE\Inc\User_Encoder.h"
 #include "..\CODE\Inc\User_Motor.h"
+#include "..\CODE\Inc\User_Gyro_Uart.h"
 #include "..\CODE\Inc\User_Gyro_I2C.h"
 #include "..\CODE\Inc\User_Image_Process.h"
 #include "..\CODE\Inc\User_OSTU.h"
@@ -91,19 +92,20 @@
 
 //进程中断时间
 #define MainProcessTime 10
-#define CountDistanceTime 5
 #define CameraProcessTime 20
+#define CountDistanceTime 5
+#define LED0Time 500
 
 //双核防卡死测试LED中断时间
-#define CPU0TIMES (500/MainProcessTime)
+//#define CPU0TIMES (500/MainProcessTime)
 #define CPU1TIMES (500/CameraProcessTime)
 
 //车轮直径
 #define WHEEL_DIAMETER 62
 
 //车轮启动死区PWM占空比
-#define LeftWheelDeadZone 10
-#define RightWheelDeadZone 10
+#define LeftWheelDeadZone 8+17.5
+#define RightWheelDeadZone 5+17.5
 
 #endif
 

@@ -20,6 +20,6 @@ void UserCameraInit(void)
 	pit_interrupt_ms(CCU6_0, PIT_CH1, CameraProcessTime);
 
 	//各类资源与外设
-	//ips114_init();
+	ips114_init();
 }
 

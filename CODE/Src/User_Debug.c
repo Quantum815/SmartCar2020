@@ -1,0 +1,78 @@
+/*
+ * User_Debug.c
+ *
+ *  Created on: 2020年7月2日
+ *      Author: Quantum815
+ */
+
+#include "..\CODE\Inc\User_Debug.h"
+
+#pragma section all "cpu0_dsram"
+
+uint8 DebugRxBuff;
+uint16 DebugADCValue[5];
+
+#pragma section all restore
+
+void DebugUARTInit(void)
+{
+	uart_init(UART_3, 115200, UART3_TX_P15_6, UART3_RX_P15_7);
+}
+
+//debug命令
+//0x01 停车  0x02启动   0x03通过串口发送数据回上位机
+//0x04 返回当前状态回上位机
+void DebugSend(void)
+{
+	if(uart_query(UART_3, &DebugRxBuff))
+	{
+		if(DebugRxBuff == 0x00)
+		{
+			FSMEventHandle(&CarFSM, NOEVENT);
+		}
+		if(DebugRxBuff == 0x01)
+		{
+			FSMEventHandle(&CarFSM, RUNSTOP);
+			DebugRxBuff = 0x00;
+		}
+		else if(DebugRxBuff == 0x02)
+		{
+			FSMEventHandle(&CarFSM, RUNSTART);
+			DebugRxBuff = 0x00;
+		}
+		else if(DebugRxBuff == 0x03)
+		{
+			if(mt9v03x_finish_flag)
+			{
+				seekfree_sendimg_03x(UART_3, mt9v03x_image[0], MT9V03X_W, MT9V03X_H);
+				mt9v03x_finish_flag = 0;
+			}
+		}
+		else if(DebugRxBuff == 0x04)
+		{
+			if(ReturnFSMState(&CarFSM) == GoLine)
+			{
+				uart_putstr(UART_3, "GoLine\r\n");
+				my_delay(7000000);
+			}
+			else if(ReturnFSMState(&CarFSM) == Stop)
+			{
+				uart_putstr(UART_3, "Stop\r\n");
+				my_delay(7000000);
+			}
+		}
+	}
+}
+
+void DebugReadADCData(void)
+{
+    int num;
+	DebugADCValue[0] = adc_convert(ADC_0, ADC0_CH0_A0, ADC_12BIT);
+	DebugADCValue[1] = adc_convert(ADC_0, ADC0_CH1_A1, ADC_12BIT);
+	DebugADCValue[2] = adc_convert(ADC_0, ADC0_CH2_A2, ADC_12BIT);
+	DebugADCValue[3] = adc_convert(ADC_0, ADC0_CH3_A3, ADC_12BIT);
+	DebugADCValue[4] = adc_convert(ADC_0, ADC0_CH4_A4, ADC_12BIT);
+    for(num=0; num<5; num++)
+    	printf("%d	", DebugADCValue[num]);
+    printf("\r\n");
+}
