@@ -150,13 +150,13 @@ uart_set_interrupt_priority:	.type	func
 .L4:
 	fcall	.cocofun_3
 .L316:
-	mov	d15,#244
+	mov	d15,#253
 	st.h	[a15]32,d15
 .L412:
-	mov	d15,#245
+	mov	d15,#254
 	st.h	[a15]34,d15
 .L413:
-	mov	d15,#246
+	mov	d15,#255
 	j	.L9
 .L5:
 
@@ -164,17 +164,17 @@ uart_set_interrupt_priority:	.type	func
 ; ..\Libraries\seekfree_libraries\zf_uart.c	    89  			uart_config.interrupt.txPriority 	= UART3_TX_INT_PRIO;
 	fcall	.cocofun_3
 .L317:
-	mov	d15,#241
+	mov	d15,#244
 	st.h	[a15]32,d15
 .L414:
 
 ; ..\Libraries\seekfree_libraries\zf_uart.c	    90  			uart_config.interrupt.rxPriority 	= UART3_RX_INT_PRIO;
-	mov	d15,#242
+	mov	d15,#245
 	st.h	[a15]34,d15
 .L415:
 
 ; ..\Libraries\seekfree_libraries\zf_uart.c	    91  			uart_config.interrupt.erPriority 	= UART3_ER_INT_PRIO;
-	mov	d15,#243
+	mov	d15,#246
 
 ; ..\Libraries\seekfree_libraries\zf_uart.c	    92  			uart_config.interrupt.typeOfService = (IfxSrc_Tos)UART3_INT_SERVICE;
 ; ..\Libraries\seekfree_libraries\zf_uart.c	    93  		}break;

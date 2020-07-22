@@ -3,23 +3,16 @@
 
 "D:\\Program Files\\TASKING\\TriCore v6.3r1\\ctc\\bin\\amk" -j8 all 
 Compiling User_FSM.c
-Compiling User_Init.c
-Compiling User_Motor.c
-Compiling User_OSTU.c
-Compiling User_PID.c
-ctc E272: ["..\CODE\Src\User_FSM.c" 49/63] undeclared identifier "MidLineFuseNum"
-ctc W505: ["..\CODE\Src\User_FSM.c" 49/32] implicit declaration of function "GetPid"
-amk E452: ["CODE\Src\subdir.mk" 49/0] target 'CODE\Src\User_FSM.o' returned exit code 1
-ctc W577: ["..\CODE\Src\User_FSM.c" 49/38] calling a function without a prototype
-ctc W577: ["..\CODE\Src\User_FSM.c" 162/22] calling a function without a prototype
-1 errors, 3 warnings
-amk E451: make stopped
+ctc W577: ["..\CODE\Src\User_FSM.c" 151/22] calling a function without a prototype
+0 errors, 1 warnings
+Linking to SmartCar2020TC264.elf
 
-Time consumed: 2047 ms
+Time consumed: 11117 ms
 **** End of build ****
 
 Tool info: 
 TASKING VX-toolset for TriCore: control program v6.3r1 Build 19041558
 TASKING VX-toolset for TriCore: C compiler v6.3r1 Build 19041558 SN 99294086
 TASKING VX-toolset for TriCore: assembler v6.3r1 Build 19041558
+TASKING VX-toolset for TriCore: object linker v6.3r1 Build 19041558 SN 99294086
 TASKING program builder v6.3r1 Build 19041558

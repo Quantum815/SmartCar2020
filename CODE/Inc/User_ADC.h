@@ -10,8 +10,11 @@
 
 #include "headfile.h"
 
+extern double MidLineFuseNum;
+
 void ADCInit(void);
 void UpdateADCValue(void);
 int16 ADCValueHandle(uint8 num);
+void ADCcalculateMidLine(void);
 
 #endif /* CODE_INC_USER_ADC_H_ */

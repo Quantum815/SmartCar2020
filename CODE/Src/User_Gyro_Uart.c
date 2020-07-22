@@ -88,7 +88,7 @@ void GyroCalculate(void)
 		temp |= GyroRxBuff[6];
 		YawAngle = (double)temp / (double)32768 * (double)180;//z轴旋转角
 		GyroRxFlag = 0;
-		printf("p=%lf,r=%lf,y=%lf\r\n",PitchAngle,RollAngle,YawAngle);
+		//printf("p=%lf,r=%lf,y=%lf\r\n",PitchAngle,RollAngle,YawAngle);
     }
 }
 
@@ -147,11 +147,12 @@ double GetGyroError(void)  //获取比例误差
     }
 }
 
-double GyroPID(double Kp, double Ki, double Kd)
+void GyroPID(double Kp, double Ki, double Kd)
 {
 
     //float Kp = 35, Ki = 0.01, Kd = 95;
     double error = 0, P = 0, I = 0, D = 0, PIDValue = 0;
+    double LPWMDutyOut, RPWMDutyOut;
 	static double previousError = 0;
 
     error = GetGyroError();
@@ -159,8 +160,23 @@ double GyroPID(double Kp, double Ki, double Kd)
     P = error;
     I += error;
     D = error - previousError;
+
     PIDValue = (Kp * P) + (Ki * I) + (Kd * D);
     previousError = error;
-    //dir_out_last = 0;
-	return PIDValue;
+    PIDValue /= 1000;
+
+    LPWMDutyOut = 10.5 + PIDValue;
+    RPWMDutyOut = 10.5 - PIDValue;
+	if(LPWMDutyOut >= 40)
+		LPWMDutyOut = 40;
+	else if(LPWMDutyOut <= -40)
+		LPWMDutyOut = -40;
+	if(RPWMDutyOut >= 40)
+		RPWMDutyOut = 40;
+	else if(RPWMDutyOut <= -40)
+		RPWMDutyOut = -40;
+	MotorUserHandle(LMotor_F, LPWMDutyOut);
+	MotorUserHandle(RMotor_F, RPWMDutyOut);
+
+	//return PIDValue;
 }

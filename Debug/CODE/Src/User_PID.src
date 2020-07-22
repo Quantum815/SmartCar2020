@@ -33,7 +33,7 @@ $TC16X
 ; ..\CODE\Src\User_PID.c	    18  
 ; ..\CODE\Src\User_PID.c	    19  double GetPIDValue(double middle, double value, double kP, double kI, double kD)
 ; Function GetPIDValue
-.L8:
+.L9:
 GetPIDValue:	.type	func
 
 ; ..\CODE\Src\User_PID.c	    20  {
@@ -46,88 +46,98 @@ GetPIDValue:	.type	func
 ; ..\CODE\Src\User_PID.c	    27  	NowErrorValue = value - middle;
 ; ..\CODE\Src\User_PID.c	    28  	IntegralErrorValue += NowErrorValue;
 	sub.f	d0,d5,d4
-	movh.a	a15,#@his(_999002_IntegralErrorValue)
-	lea	a15,[a15]@los(_999002_IntegralErrorValue)
-	ld.w	d1,[a15]
-.L38:
-	ld.w	d15,[a10]
-.L28:
-	add.f	d1,d1,d0
-	st.w	[a15],d1
+	movh.a	a2,#@his(_999002_IntegralErrorValue)
+	lea	a2,[a2]@los(_999002_IntegralErrorValue)
+	ld.w	d1,[a2]
 .L39:
 
 ; ..\CODE\Src\User_PID.c	    29  	DifferentialErrorValue = NowErrorValue - PreviousErrorValue;
-	movh.a	a2,#@his(_999001_PreviousErrorValue)
-	ld.w	d1,[a2]@los(_999001_PreviousErrorValue)
+	movh.a	a4,#@his(_999001_PreviousErrorValue)
 .L40:
+	add.f	d4,d1,d0
+	ld.w	d1,[a4]@los(_999001_PreviousErrorValue)
+.L28:
+	ld.w	d15,[a10]
+.L29:
 
 ; ..\CODE\Src\User_PID.c	    30  	OldValue = PidValue;
+	sub.f	d1,d0,d1
+	movh.a	a15,#@his(PidValue)
+	lea	a15,[a15]@los(PidValue)
+.L41:
+
 ; ..\CODE\Src\User_PID.c	    31  
-; ..\CODE\Src\User_PID.c	    32  	PidValue = kP * NowErrorValue + kI * IntegralErrorValue + kD * DifferentialErrorValue;
+; ..\CODE\Src\User_PID.c	    32  	PidValue = kP * NowErrorValue + /*kI * IntegralErrorValue +*/ kD * DifferentialErrorValue;
+	mul.f	d15,d15,d1
+	ld.w	d2,[a15]
+.L30:
+
 ; ..\CODE\Src\User_PID.c	    33  
 ; ..\CODE\Src\User_PID.c	    34  	PreviousErrorValue = NowErrorValue;
-	st.w	[a2]@los(_999001_PreviousErrorValue),d0
-.L41:
-	sub.f	d1,d0,d1
-	movh.a	a2,#@his(PidValue)
+	st.w	[a4]@los(_999001_PreviousErrorValue),d0
 .L42:
-	ld.w	d4,[a15]
-.L27:
-
-; ..\CODE\Src\User_PID.c	    35  	PidValue = 0.1 * OldValue + 0.9 * PidValue;	                       //µÍÍ¨ÂË²¨
-	mov.u	d3,#52429
-	lea	a2,[a2]@los(PidValue)
+	madd.f	d1,d15,d6,d0
 .L43:
-	mul.f	d4,d7,d4
-	ld.w	d2,[a2]
-.L44:
-	addih	d3,d3,#15820
-.L45:
-	madd.f	d0,d4,d6,d0
-.L46:
-	madd.f	d15,d0,d15,d1
-.L29:
-	mov	d0,#26214
-	addih	d0,d0,#16230
-.L47:
-	mul.f	d15,d15,d0
-.L48:
 
-; ..\CODE\Src\User_PID.c	    36  	if(PidValue > 1500)
-	mov.u	d0,#32768
+; ..\CODE\Src\User_PID.c	    35  	if(IntegralErrorValue >= 100)
+	movh	d0,#17096
+.L44:
+	cmp.f	d15,d4,d0
+	and	d15,#6
+.L45:
+
+; ..\CODE\Src\User_PID.c	    36  		IntegralErrorValue = 0;
+; ..\CODE\Src\User_PID.c	    37  
+; ..\CODE\Src\User_PID.c	    38  	PidValue = 0.1 * OldValue + 0.9 * PidValue;	                       //µÍÍ¨ÂË²¨
+	mov	d3,#26214
+.L46:
+	ne	d15,d15,#0
+.L47:
+	addih	d3,d3,#16230
+.L48:
+	mul.f	d1,d1,d3
 .L49:
-	madd.f	d1,d15,d2,d3
+	cmov	d4,d15,#0
 .L50:
-	addih	d0,d0,#17595
+	mov.u	d15,#52429
+	addih	d15,d15,#15820
 .L51:
-	cmp.f	d15,d1,d0
-	jnz.t	d15:2,.L2
+	madd.f	d2,d1,d2,d15
 .L52:
 
-; ..\CODE\Src\User_PID.c	    37  		PidValue = 1500;
-; ..\CODE\Src\User_PID.c	    38  	else if(PidValue < -1500)
-	mov.u	d0,#32768
-	addih	d0,d0,#50363
+; ..\CODE\Src\User_PID.c	    39  
+; ..\CODE\Src\User_PID.c	    40  	if(PidValue > 2500)
+	mov	d1,#16384
+	addih	d1,d1,#17692
 .L53:
-	cmp.f	d15,d0,d1
-	and	d15,#6
-	cmovn	d0,d15,d1
-.L2:
-
-; ..\CODE\Src\User_PID.c	    39  		PidValue = -1500;
-; ..\CODE\Src\User_PID.c	    40  
-; ..\CODE\Src\User_PID.c	    41  	return (PidValue/100);
-; ..\CODE\Src\User_PID.c	    42  }
-	movh	d15,#17096
-	st.w	[a2],d0
+	cmp.f	d15,d2,d1
+	jnz.t	d15:2,.L3
 .L54:
-	div.f	d2,d0,d15
+
+; ..\CODE\Src\User_PID.c	    41  		PidValue = 2500;
+; ..\CODE\Src\User_PID.c	    42  	else if(PidValue < -2500)
+	mov	d1,#16384
+	addih	d1,d1,#50460
+.L55:
+	cmp.f	d15,d1,d2
+	and	d15,#6
+	cmovn	d1,d15,d2
+.L3:
+
+; ..\CODE\Src\User_PID.c	    43  		PidValue = -2500;
+; ..\CODE\Src\User_PID.c	    44  
+; ..\CODE\Src\User_PID.c	    45  	return (PidValue/100);
+; ..\CODE\Src\User_PID.c	    46  }
+	st.w	[a2],d4
+	st.w	[a15],d1
+.L56:
+	div.f	d2,d1,d0
 	ret
-.L21:
+.L22:
 	
 __GetPIDValue_function_end:
 	.size	GetPIDValue,__GetPIDValue_function_end-GetPIDValue
-.L17:
+.L18:
 	; End of function
 	
 	.sdecl	'.bss.cpu0_dsram',data,cluster('PidValue')
@@ -152,17 +162,17 @@ _999002_IntegralErrorValue:	.type	object
 	.calls	'GetPIDValue','',0
 	.sdecl	'.debug_info',debug
 	.sect	'.debug_info'
-.L10:
+.L11:
 	.word	251966
 	.half	3
-	.word	.L11
+	.word	.L12
 	.byte	4
-.L9:
+.L10:
 	.byte	1
 	.byte	'..\\CODE\\Src\\User_PID.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L12
+	.word	.L13
 	.byte	2,1,1,3
 	.word	143
 	.byte	4
@@ -171,7 +181,7 @@ _999002_IntegralErrorValue:	.type	object
 	.word	146
 	.byte	6,0,7
 	.byte	'__fract',0,4,128,1
-.L20:
+.L21:
 	.byte	7
 	.byte	'float',0,4,4,8
 	.byte	'Ifx__float_to_fract',0,3,1,152,2,18
@@ -34465,7 +34475,7 @@ _999002_IntegralErrorValue:	.type	object
 	.byte	'IfxDma_SleepMode',0,45,151,2,3
 	.word	251776
 	.byte	11
-	.byte	'FSMTable',0,46,31,16,16,14
+	.byte	'FSMTable',0,46,33,16,16,14
 	.byte	'Event',0
 	.word	495
 	.byte	4,2,35,0,14
@@ -34478,12 +34488,12 @@ _999002_IntegralErrorValue:	.type	object
 	.byte	'NextState',0
 	.word	495
 	.byte	4,2,35,12,0,32
-	.byte	'FSMTable_t',0,46,36,2
+	.byte	'FSMTable_t',0,46,38,2
 	.word	251862
 	.byte	0
 	.sdecl	'.debug_abbrev',debug
 	.sect	'.debug_abbrev'
-.L11:
+.L12:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,16,6,0,0,2,21,0,54,15,39,12,0,0,3,15,0,73,19,0,0,4,46,1,3,8,32,13
 	.byte	58,15,59,15,57,15,54,15,39,12,0,0,5,5,0,3,8,58,15,59,15,57,15,73,19,0,0,6,11,0,0,0,7,36,0,3,8,11,15,62
 	.byte	15,0,0,8,46,1,3,8,32,13,58,15,59,15,57,15,73,19,54,15,39,12,0,0,9,59,0,3,8,0,0,10,53,0,73,19,0,0,11,19
@@ -34496,12 +34506,12 @@ _999002_IntegralErrorValue:	.type	object
 	.byte	1,54,15,39,12,0,0,35,21,1,73,19,54,15,39,12,0,0,0
 	.sdecl	'.debug_line',debug
 	.sect	'.debug_line'
-.L12:
-	.word	.L31-.L30
-.L30:
+.L13:
+	.word	.L32-.L31
+.L31:
 	.half	3
-	.word	.L33-.L32
-.L32:
+	.word	.L34-.L33
+.L33:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Std',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Scu\\Std',0
@@ -34571,197 +34581,199 @@ _999002_IntegralErrorValue:	.type	object
 	.byte	'IfxDma_regdef.h',0,3,0,0
 	.byte	'IfxDma.h',0,17,0,0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\CODE\\Inc\\User_FSM.h',0,0,0,0,0
-.L33:
-.L31:
+.L34:
+.L32:
 	.sdecl	'.debug_info',debug,cluster('GetPIDValue')
 	.sect	'.debug_info'
-.L13:
+.L14:
 	.word	343
 	.half	3
-	.word	.L14
+	.word	.L15
 	.byte	4,1
 	.byte	'..\\CODE\\Src\\User_PID.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L16,.L15
+	.word	.L17,.L16
 	.byte	2
-	.word	.L9
+	.word	.L10
 	.byte	3
 	.byte	'GetPIDValue',0,1,19,8
-	.word	.L20
+	.word	.L21
 	.byte	1,1,1
-	.word	.L8,.L21,.L7
+	.word	.L9,.L22,.L8
 	.byte	4
 	.byte	'middle',0,1,19,27
-	.word	.L20,.L22
+	.word	.L21,.L23
 	.byte	4
 	.byte	'value',0,1,19,42
-	.word	.L20,.L23
+	.word	.L21,.L24
 	.byte	4
 	.byte	'kP',0,1,19,56
-	.word	.L20,.L24
+	.word	.L21,.L25
 	.byte	4
 	.byte	'kI',0,1,19,67
-	.word	.L20,.L25
+	.word	.L21,.L26
 	.byte	4
 	.byte	'kD',0,1,19,78
-	.word	.L20,.L26
+	.word	.L21,.L27
 	.byte	5
-	.word	.L8,.L21
+	.word	.L9,.L22
 	.byte	6
 	.byte	'PreviousErrorValue',0,1,21,16
-	.word	.L20
+	.word	.L21
 	.byte	5,3
 	.word	_999001_PreviousErrorValue
 	.byte	6
 	.byte	'IntegralErrorValue',0,1,23,16
-	.word	.L20
+	.word	.L21
 	.byte	5,3
 	.word	_999002_IntegralErrorValue
 	.byte	0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('GetPIDValue')
 	.sect	'.debug_abbrev'
-.L14:
+.L15:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
 	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
 	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,9,0,0,0
 	.sdecl	'.debug_line',debug,cluster('GetPIDValue')
 	.sect	'.debug_line'
-.L15:
-	.word	.L35-.L34
-.L34:
+.L16:
+	.word	.L36-.L35
+.L35:
 	.half	3
-	.word	.L37-.L36
-.L36:
+	.word	.L38-.L37
+.L37:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\CODE\\Src\\User_PID.c',0,0,0,0,0
-.L37:
+.L38:
 	.byte	5,24,7,0,5,2
-	.word	.L8
-	.byte	3,26,1,5,2,3,1,1,5,8,9
-	.half	.L38-.L8
-	.byte	3,119,1,5,21,9
-	.half	.L28-.L38
-	.byte	3,9,1,5,43,9
-	.half	.L39-.L28
+	.word	.L9
+	.byte	3,26,1,5,2,3,1,1,5,43,9
+	.half	.L39-.L9
 	.byte	3,1,1,5,21,9
 	.half	.L40-.L39
-	.byte	3,5,1,5,41,9
-	.half	.L41-.L40
-	.byte	3,123,1,5,13,3,1,1,5,39,9
-	.half	.L42-.L41
-	.byte	3,2,1,5,13,9
-	.half	.L27-.L42
-	.byte	3,3,1,3,123,1,5,37,9
-	.half	.L43-.L27
-	.byte	3,2,1,5,13,3,126,1,9
+	.byte	3,127,1,5,43,3,1,1,5,8,9
+	.half	.L28-.L40
+	.byte	3,118,1,5,41,9
+	.half	.L29-.L28
+	.byte	3,10,1,5,13,3,1,1,5,67,9
+	.half	.L41-.L29
+	.byte	3,2,1,5,13,3,126,1,5,21,9
+	.half	.L30-.L41
+	.byte	3,4,1,5,32,9
+	.half	.L42-.L30
+	.byte	3,126,1,5,27,9
+	.half	.L43-.L42
+	.byte	3,3,1,5,24,9
 	.half	.L44-.L43
-	.byte	3,5,1,5,32,9
-	.half	.L45-.L44
-	.byte	3,125,1,5,58,9
-	.half	.L46-.L45
 	.byte	1,5,30,9
-	.half	.L29-.L46
+	.half	.L45-.L44
+	.byte	3,3,1,5,24,9
+	.half	.L46-.L45
+	.byte	3,125,1,5,30,9
+	.half	.L47-.L46
 	.byte	3,3,1,5,34,9
-	.half	.L47-.L29
-	.byte	1,5,16,9
 	.half	.L48-.L47
-	.byte	3,1,1,5,28,9
+	.byte	1,5,22,9
 	.half	.L49-.L48
-	.byte	3,127,1,5,16,9
+	.byte	3,126,1,5,13,9
 	.half	.L50-.L49
-	.byte	3,1,1,5,2,9
+	.byte	3,2,1,5,28,9
 	.half	.L51-.L50
-	.byte	1,5,21,9
+	.byte	1,5,16,9
 	.half	.L52-.L51
-	.byte	3,2,1,5,19,9
+	.byte	3,2,1,5,2,9
 	.half	.L53-.L52
-	.byte	1,9
-	.half	.L2-.L53
-	.byte	3,3,1,5,1,3,1,1,5,18,9
-	.half	.L54-.L2
+	.byte	1,5,21,9
+	.half	.L54-.L53
+	.byte	3,2,1,5,19,9
+	.half	.L55-.L54
+	.byte	1,5,1,9
+	.half	.L3-.L55
+	.byte	3,4,1,5,18,9
+	.half	.L56-.L3
 	.byte	3,127,1,5,1,3,1,1,7,9
-	.half	.L17-.L54
+	.half	.L18-.L56
 	.byte	0,1,1
-.L35:
+.L36:
 	.sdecl	'.debug_ranges',debug,cluster('GetPIDValue')
 	.sect	'.debug_ranges'
-.L16:
-	.word	-1,.L8,0,.L17-.L8,0,0
+.L17:
+	.word	-1,.L9,0,.L18-.L9,0,0
 	.sdecl	'.debug_info',debug,cluster('PidValue')
 	.sect	'.debug_info'
-.L18:
+.L19:
 	.word	165
 	.half	3
-	.word	.L19
+	.word	.L20
 	.byte	4,1
 	.byte	'..\\CODE\\Src\\User_PID.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1,2
-	.word	.L9
+	.word	.L10
 	.byte	3
 	.byte	'PidValue',0,23,12,8
-	.word	.L20
+	.word	.L21
 	.byte	1,5,3
 	.word	PidValue
 	.byte	0
 	.sdecl	'.debug_abbrev',debug,cluster('PidValue')
 	.sect	'.debug_abbrev'
-.L19:
+.L20:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
 	.byte	0,0,0
 	.sdecl	'.debug_loc',debug,cluster('GetPIDValue')
 	.sect	'.debug_loc'
-.L7:
-	.word	-1,.L8,0,.L21-.L8
+.L8:
+	.word	-1,.L9,0,.L22-.L9
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L26:
-	.word	-1,.L8,0,.L21-.L8
+.L27:
+	.word	-1,.L9,0,.L22-.L9
 	.half	2
 	.byte	145,0
-	.word	0,.L21-.L8
+	.word	0,.L22-.L9
 	.half	2
 	.byte	145,0
-	.word	.L28-.L8,.L29-.L8
+	.word	.L29-.L9,.L30-.L9
 	.half	1
 	.byte	95
 	.word	0,0
-.L25:
-	.word	-1,.L8,0,.L21-.L8
+.L26:
+	.word	-1,.L9,0,.L22-.L9
 	.half	1
 	.byte	87
 	.word	0,0
-.L24:
-	.word	-1,.L8,0,.L21-.L8
+.L25:
+	.word	-1,.L9,0,.L22-.L9
 	.half	1
 	.byte	86
 	.word	0,0
-.L22:
-	.word	-1,.L8,0,.L27-.L8
+.L23:
+	.word	-1,.L9,0,.L28-.L9
 	.half	1
 	.byte	84
 	.word	0,0
-.L23:
-	.word	-1,.L8,0,.L21-.L8
+.L24:
+	.word	-1,.L9,0,.L22-.L9
 	.half	1
 	.byte	85
 	.word	0,0
 	.sdecl	'.debug_frame',debug
 	.sect	'.debug_frame'
-.L55:
+.L57:
 	.word	48
 	.word	-1
 	.byte	3,0,2,1,27,12,26,0,8,27,8,26,8,28,8,29,8,30,8,31,8,34,8,35,8,32,8,33,8,16,8,17,8,24,8,25,8,36,8,37,8,38
 	.byte	8,39
 	.sdecl	'.debug_frame',debug,cluster('GetPIDValue')
 	.sect	'.debug_frame'
-	.word	24
-	.word	.L55,.L8,.L21-.L8
-	.byte	8,19,8,20,8,21,8,22,8,23,0,0
+	.word	20
+	.word	.L57,.L9,.L22-.L9
+	.byte	8,19,8,21,8,22,8,23
 
-; ..\CODE\Src\User_PID.c	    43  
-; ..\CODE\Src\User_PID.c	    44  #pragma section all restore
+; ..\CODE\Src\User_PID.c	    47  
+; ..\CODE\Src\User_PID.c	    48  #pragma section all restore
 
 	; Module end

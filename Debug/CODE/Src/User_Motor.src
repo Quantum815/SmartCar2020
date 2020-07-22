@@ -132,28 +132,28 @@ __SetServoPWM_function_end:
 MotorInit:	.type	func
 
 ; ..\CODE\Src\User_Motor.c	    28  {
-; ..\CODE\Src\User_Motor.c	    29  	gtm_pwm_init(ATOM1_CH5_P02_5 , 8000, 25000);
+; ..\CODE\Src\User_Motor.c	    29  	gtm_pwm_init(ATOM1_CH4_P02_4 , 8000, 25000);
 	mov	d15,#25000
 .L128:
 	mov	d8,#8000
 .L129:
-	mov	d4,#86
+	mov	d4,#80
 .L130:
 	mov	d5,d8
 	mov	d6,d15
 	call	gtm_pwm_init
 .L131:
 
-; ..\CODE\Src\User_Motor.c	    30  	gtm_pwm_init(ATOM1_CH6_P02_6 , 8000, 25000);
-	mov	d4,#92
+; ..\CODE\Src\User_Motor.c	    30  	gtm_pwm_init(ATOM1_CH5_P02_5 , 8000, 25000);
+	mov	d4,#86
 .L132:
 	mov	d5,d8
 	mov	d6,d15
 	call	gtm_pwm_init
 .L133:
 
-; ..\CODE\Src\User_Motor.c	    31  	gtm_pwm_init(ATOM1_CH4_P02_4 , 8000, 25000);
-	mov	d4,#80
+; ..\CODE\Src\User_Motor.c	    31  	gtm_pwm_init(ATOM1_CH6_P02_6 , 8000, 25000);
+	mov	d4,#92
 .L134:
 	mov	d5,d8
 	mov	d6,d15
@@ -194,19 +194,19 @@ SetMotorPWM:	.type	func
 
 ; ..\CODE\Src\User_Motor.c	    39  	switch(MotorState)
 ; ..\CODE\Src\User_Motor.c	    40  	{
-; ..\CODE\Src\User_Motor.c	    41  		case LMotor_F: pwm_duty(ATOM1_CH5_P02_5, PWMCount); break;
+; ..\CODE\Src\User_Motor.c	    41  		case LMotor_F: pwm_duty(ATOM1_CH7_P02_7, PWMCount); break;
 	jeq	d4,#0,.L6
 .L141:
 
-; ..\CODE\Src\User_Motor.c	    42  		case LMotor_B: pwm_duty(ATOM1_CH6_P02_6, PWMCount); break;
+; ..\CODE\Src\User_Motor.c	    42  		case LMotor_B: pwm_duty(ATOM1_CH4_P02_4, PWMCount); break;
 	jeq	d4,#1,.L7
 .L142:
 
-; ..\CODE\Src\User_Motor.c	    43  		case RMotor_F: pwm_duty(ATOM1_CH4_P02_4, PWMCount); break;
+; ..\CODE\Src\User_Motor.c	    43  		case RMotor_F: pwm_duty(ATOM1_CH6_P02_6, PWMCount); break;
 	jeq	d4,#2,.L8
 .L143:
 
-; ..\CODE\Src\User_Motor.c	    44  		case RMotor_B: pwm_duty(ATOM1_CH7_P02_7, PWMCount); break;
+; ..\CODE\Src\User_Motor.c	    44  		case RMotor_B: pwm_duty(ATOM1_CH5_P02_5, PWMCount); break;
 	jeq	d4,#3,.L9
 .L144:
 
@@ -214,16 +214,16 @@ SetMotorPWM:	.type	func
 ; ..\CODE\Src\User_Motor.c	    46  }
 	ret
 .L6:
-	mov	d4,#86
+	mov	d4,#98
 	j	.L11
 .L7:
-	mov	d4,#92
+	mov	d4,#80
 	j	.L12
 .L8:
-	mov	d4,#80
+	mov	d4,#92
 	j	.L13
 .L9:
-	mov	d4,#98
+	mov	d4,#86
 .L11:
 .L12:
 .L13:
@@ -34929,7 +34929,7 @@ __MotorUserHandle_function_end:
 	.byte	'IfxDma_SleepMode',0,47,151,2,3
 	.word	255205
 	.byte	11
-	.byte	'FSMTable',0,48,31,16,16,14
+	.byte	'FSMTable',0,48,33,16,16,14
 	.byte	'Event',0
 	.word	497
 	.byte	4,2,35,0,14
@@ -34942,7 +34942,7 @@ __MotorUserHandle_function_end:
 	.byte	'NextState',0
 	.word	497
 	.byte	4,2,35,12,0,34
-	.byte	'FSMTable_t',0,48,36,2
+	.byte	'FSMTable_t',0,48,38,2
 	.word	255291
 	.byte	34
 	.byte	'Motor_State_t',0,24,19,2

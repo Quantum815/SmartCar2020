@@ -7,6 +7,9 @@
 
 #include "..\CODE\Inc\User_Debug.h"
 
+//#define DEBUGADCMODE_A
+#define DEBUGADCMODE_B
+
 #pragma section all "cpu0_dsram"
 
 uint8 DebugRxBuff;
@@ -66,13 +69,26 @@ void DebugSend(void)
 
 void DebugReadADCData(void)
 {
+    UpdateADCValue();
+
+#ifdef DEBUGADCMODE_A
     int num;
-	DebugADCValue[0] = adc_convert(ADC_0, ADC0_CH0_A0, ADC_12BIT);
-	DebugADCValue[1] = adc_convert(ADC_0, ADC0_CH1_A1, ADC_12BIT);
-	DebugADCValue[2] = adc_convert(ADC_0, ADC0_CH2_A2, ADC_12BIT);
-	DebugADCValue[3] = adc_convert(ADC_0, ADC0_CH3_A3, ADC_12BIT);
-	DebugADCValue[4] = adc_convert(ADC_0, ADC0_CH4_A4, ADC_12BIT);
+	DebugADCValue[0] = ADCValueHandle(0);
+	DebugADCValue[1] = ADCValueHandle(1);
+	DebugADCValue[2] = ADCValueHandle(2);
+	DebugADCValue[3] = ADCValueHandle(3);
+	DebugADCValue[4] = ADCValueHandle(4);
     for(num=0; num<5; num++)
     	printf("%d	", DebugADCValue[num]);
     printf("\r\n");
+#endif
+
+#ifdef DEBUGADCMODE_B
+	ips114_showfloat(0,0,ADCValueHandle(0),4,4);
+	ips114_showfloat(0,1,ADCValueHandle(1),4,4);
+	ips114_showfloat(0,2,ADCValueHandle(2),4,4);
+	ips114_showfloat(0,3,ADCValueHandle(3),4,4);
+	ips114_showfloat(0,4,ADCValueHandle(4),4,4);
+	systick_delay_ms(STM0, 20);
+#endif
 }

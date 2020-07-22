@@ -19,19 +19,19 @@ FSMTable_t CarTable[] =
 	{ INGARAGE, GoLine,   GoGarage,  InGarage},
 	{ NOEVENT,  InGarage, GoGarage,  InGarage},
     { RUNSTOP,  InGarage, RunStop,   Stop    }
-    //如果出现新的代码加入在此
 };
 FSM_t CarFSM;
-float LPWM, RPWM,PIDValue,tt;
-uint8 TenSingal,CarSingal,StartSingal;
+double MidLineFuseNum;
+float LPWM, RPWM, PIDValue, tt;
+uint8 StartSingal;
 
 #pragma section all restore
 
 //事件反应函数
 void RunStart(void)
 {
-	MotorUserHandle(LMotor_F,30);
-	MotorUserHandle(RMotor_F,30);
+	MotorUserHandle(LMotor_F,20);
+	MotorUserHandle(RMotor_F,20);
 }
 
 void RunStop(void)
@@ -44,27 +44,27 @@ void RunStop(void)
 
 void FindLine(void)
 {
-    static float LLPWM, LRPWM;
-	float test;
-	PIDValue = (GetSpeed()/1.5) * GetPid(0.002495622262359, 1000*MidLineFuseNum, 56, 0, 22000);
+    //static float LastLPWM, LastRPWM;
+	//float test;
+	PIDValue = (GetSpeed()) * GetPIDValue(0.001560, MidLineFuseNum*1000, FINDLINE_P, FINDLINE_I, FINDLINE_D);
+	printf("%f\r\n",PIDValue);
 //    if(TenSingal>=5)
 //		PIDValue = 0-PIDValue;
 	LPWM = LeftWheelDeadZone + PIDValue;
-    RPWM = RightWheelDeadZone - PIDValue;
+    RPWM = RightWheelDeadZone + PIDValue;
 
-
-    if(LPWM >= 40)
-        LPWM = 40;
-    else if(LPWM <= -40)
-        LPWM = -40;
-    if(RPWM >= 40)
-        RPWM = 40;
-    else if(RPWM <= -40)
-        RPWM = -40;
+    if(LPWM >= 50)
+        LPWM = 50;
+    else if(LPWM <= -50)
+        LPWM = -50;
+    if(RPWM >= 50)
+        RPWM = 50;
+    else if(RPWM <= -50)
+        RPWM = -50;
 		//test=GetSpeed();
 		//PRINTF("%f\r\n",test);
 		//test=GetPid(0, 1000*MidLineFuseNum, 50, 0, 3900);
-		//PRINTF("L=%f     R=%f     \r\n",LPWM,RPWM);
+	//printf("LPWM=%f     RPWM=%f\r\n",LPWM,RPWM);
 		//PRINTF("%f\r\n",test);
 		//ips114_showfloat(100,0,MidLineFuseNum,4,4);
 //    if(LLPWM - LPWM >= 5 || LLPWM - LPWM <= -5)
@@ -104,17 +104,6 @@ void PassCross(void)
 void GoGarage(void)
 {
 
-}
-
-void ADCulMidLine(void)
-{
-	/*float_t Lsqrt, Rsqrt,t1,t2;
-
-		t1=ADCvalue(0);
-		t2=ADCvalue(4);
-		arm_sqrt_f32(t1,&Lsqrt);
-		arm_sqrt_f32(t2,&Rsqrt);
-		MidLineFuseNum=(Lsqrt-Rsqrt)/(t1+t2);*/
 }
 
 
@@ -180,6 +169,11 @@ void FSMRun(void)
     FSMRegist(&CarFSM, CarTable);
     CarFSM.CurState = Stop;
     CarFSM.Size = sizeof(CarTable) / sizeof(FSMTable_t);
+    if(StartSingal == 0)
+    {
+        CarFSM.CurState = GoLine;
+    	StartSingal = 1;
+    }
     FSMEventHandle(&CarFSM, NOEVENT);
 }
 

@@ -26,9 +26,9 @@ void SetServoPWM(uint8 ServoNum, float PWMDuty)  //PWMDuty为百分比
 
 void MotorInit(void)
 {
+	gtm_pwm_init(ATOM1_CH4_P02_4 , 8000, 25000);
 	gtm_pwm_init(ATOM1_CH5_P02_5 , 8000, 25000);
 	gtm_pwm_init(ATOM1_CH6_P02_6 , 8000, 25000);
-	gtm_pwm_init(ATOM1_CH4_P02_4 , 8000, 25000);
 	gtm_pwm_init(ATOM1_CH7_P02_7 , 8000, 25000);
 }
 
@@ -38,10 +38,10 @@ void SetMotorPWM(Motor_State_t MotorState, float PWMDuty)
 	PWMCount = GTM_ATOM1_PWM_DUTY_MAX * (PWMDuty / 100);
 	switch(MotorState)
 	{
-		case LMotor_F: pwm_duty(ATOM1_CH5_P02_5, PWMCount); break;
-		case LMotor_B: pwm_duty(ATOM1_CH6_P02_6, PWMCount); break;
-		case RMotor_F: pwm_duty(ATOM1_CH4_P02_4, PWMCount); break;
-		case RMotor_B: pwm_duty(ATOM1_CH7_P02_7, PWMCount); break;
+		case LMotor_F: pwm_duty(ATOM1_CH7_P02_7, PWMCount); break;
+		case LMotor_B: pwm_duty(ATOM1_CH4_P02_4, PWMCount); break;
+		case RMotor_F: pwm_duty(ATOM1_CH6_P02_6, PWMCount); break;
+		case RMotor_B: pwm_duty(ATOM1_CH5_P02_5, PWMCount); break;
 	}
 }
 

@@ -60,37 +60,37 @@ spi_mux:	.type	func
 ; ..\Libraries\seekfree_libraries\zf_spi.c	    34  	set_pin->mrstMode = IfxPort_InputMode_pullDown;
 	mov	d0,#8
 	st.b	[a15]20,d0
-.L560:
+.L561:
 
 ; ..\Libraries\seekfree_libraries\zf_spi.c	    35  	set_pin->mtsrMode = IfxPort_OutputMode_pushPull;
 	mov	d0,#128
 	st.b	[a15]12,d0
-.L561:
+.L562:
 
 ; ..\Libraries\seekfree_libraries\zf_spi.c	    36  	set_pin->sclkMode = IfxPort_OutputMode_pushPull;
 	st.b	[a15]4,d0
-.L562:
+.L563:
 
 ; ..\Libraries\seekfree_libraries\zf_spi.c	    37  	set_pin->pinDriver = IfxPort_PadDriver_cmosAutomotiveSpeed1;
 	mov	d1,#0
 	st.b	[a15]21,d1
-.L563:
+.L564:
 
 ; ..\Libraries\seekfree_libraries\zf_spi.c	    38  
 ; ..\Libraries\seekfree_libraries\zf_spi.c	    39  	set_cs->driver = IfxPort_PadDriver_cmosAutomotiveSpeed1;
 	st.b	[a12]5,d1
-.L564:
+.L565:
 
 ; ..\Libraries\seekfree_libraries\zf_spi.c	    40  	set_cs->mode = IfxPort_OutputMode_pushPull;
 	st.b	[a12]4,d0
-.L565:
+.L566:
 
 ; ..\Libraries\seekfree_libraries\zf_spi.c	    41  
 ; ..\Libraries\seekfree_libraries\zf_spi.c	    42  	switch(spi_n)
 ; ..\Libraries\seekfree_libraries\zf_spi.c	    43  	{
 ; ..\Libraries\seekfree_libraries\zf_spi.c	    44  		case SPI_0:
 	jeq	d1,d4,.L2
-.L566:
+.L567:
 
 ; ..\Libraries\seekfree_libraries\zf_spi.c	    45  		{
 ; ..\Libraries\seekfree_libraries\zf_spi.c	    46  			if		(SPI0_SCLK_P20_11 == sck_pin)	set_pin->sclk = &IfxQspi0_SCLK_P20_11_OUT;
@@ -121,7 +121,7 @@ spi_mux:	.type	func
 ; ..\Libraries\seekfree_libraries\zf_spi.c	    71  
 ; ..\Libraries\seekfree_libraries\zf_spi.c	    72  		case SPI_1:
 	jeq	d4,#1,.L3
-.L567:
+.L568:
 
 ; ..\Libraries\seekfree_libraries\zf_spi.c	    73  		{
 ; ..\Libraries\seekfree_libraries\zf_spi.c	    74  			if		(SPI1_SCLK_P10_2 == sck_pin)	set_pin->sclk = &IfxQspi1_SCLK_P10_2_OUT;
@@ -154,7 +154,7 @@ spi_mux:	.type	func
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   101  
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   102  		case SPI_2:
 	jeq	d4,#2,.L4
-.L568:
+.L569:
 
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   103  		{
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   104  			if		(SPI2_SCLK_P13_0  == sck_pin)	set_pin->sclk = &IfxQspi2_SCLKN_P13_0_OUT;
@@ -192,7 +192,7 @@ spi_mux:	.type	func
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   136  
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   137  		case SPI_3:
 	jeq	d4,#3,.L5
-.L569:
+.L570:
 
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   138  		{
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   139  			if		(SPI3_SCLK_P02_7  == sck_pin)	set_pin->sclk = &IfxQspi3_SCLK_P02_7_OUT;
@@ -243,19 +243,19 @@ spi_mux:	.type	func
 	ret
 .L2:
 	jne	d5,#0,.L7
-.L570:
+.L571:
 	movh.a	a2,#@his(IfxQspi0_SCLK_P20_11_OUT)
 	lea	a2,[a2]@los(IfxQspi0_SCLK_P20_11_OUT)
-.L571:
+.L572:
 	j	.L8
 .L7:
 	jne	d5,#1,.L9
-.L572:
+.L573:
 	movh.a	a2,#@his(IfxQspi0_SCLK_P20_13_OUT)
 	lea	a2,[a2]@los(IfxQspi0_SCLK_P20_13_OUT)
 .L8:
 	st.a	[a15],a2
-.L573:
+.L574:
 	j	.L10
 .L9:
 	fcall	.cocofun_2
@@ -269,7 +269,7 @@ spi_mux:	.type	func
 .L344:
 	movh.a	a2,#@his(IfxQspi0_MTSR_P20_12_OUT)
 	lea	a2,[a2]@los(IfxQspi0_MTSR_P20_12_OUT)
-.L574:
+.L575:
 	j	.L12
 .L11:
 	jne	d9,#7,.L13
@@ -278,7 +278,7 @@ spi_mux:	.type	func
 	lea	a2,[a2]@los(IfxQspi0_MTSR_P20_14_OUT)
 .L12:
 	st.a	[a15]8,a2
-.L575:
+.L576:
 	j	.L14
 .L13:
 	fcall	.cocofun_2
@@ -292,9 +292,9 @@ spi_mux:	.type	func
 .L347:
 	movh.a	a2,#@his(IfxQspi0_MRSTA_P20_12_IN)
 	lea	a2,[a2]@los(IfxQspi0_MRSTA_P20_12_IN)
-.L576:
-	st.a	[a15]16,a2
 .L577:
+	st.a	[a15]16,a2
+.L578:
 	j	.L16
 .L15:
 	fcall	.cocofun_2
@@ -303,136 +303,136 @@ spi_mux:	.type	func
 	call	assert
 .L16:
 	mov	d0,#18
-.L578:
-	jne	d15,d0,.L17
 .L579:
+	jne	d15,d0,.L17
+.L580:
 	movh.a	a15,#@his(IfxQspi0_SLSO0_P20_8_OUT)
 .L349:
 	lea	a15,[a15]@los(IfxQspi0_SLSO0_P20_8_OUT)
-.L580:
+.L581:
 	j	.L18
 .L17:
 	mov	d0,#24
-.L581:
-	jne	d15,d0,.L19
 .L582:
+	jne	d15,d0,.L19
+.L583:
 	movh.a	a15,#@his(IfxQspi0_SLSO1_P20_9_OUT)
 .L350:
 	lea	a15,[a15]@los(IfxQspi0_SLSO1_P20_9_OUT)
-.L583:
+.L584:
 	j	.L20
 .L19:
 	mov	d0,#30
-.L584:
-	jne	d15,d0,.L21
 .L585:
+	jne	d15,d0,.L21
+.L586:
 	movh.a	a15,#@his(IfxQspi0_SLSO2_P20_13_OUT)
 .L351:
 	lea	a15,[a15]@los(IfxQspi0_SLSO2_P20_13_OUT)
-.L586:
+.L587:
 	j	.L22
 .L21:
 	mov	d0,#36
-.L587:
-	jne	d15,d0,.L23
 .L588:
+	jne	d15,d0,.L23
+.L589:
 	movh.a	a15,#@his(IfxQspi0_SLSO3_P11_10_OUT)
 .L352:
 	lea	a15,[a15]@los(IfxQspi0_SLSO3_P11_10_OUT)
-.L589:
+.L590:
 	j	.L24
 .L23:
 	mov	d0,#42
-.L590:
-	jne	d15,d0,.L25
 .L591:
+	jne	d15,d0,.L25
+.L592:
 	movh.a	a15,#@his(IfxQspi0_SLSO4_P11_11_OUT)
 .L353:
 	lea	a15,[a15]@los(IfxQspi0_SLSO4_P11_11_OUT)
-.L592:
+.L593:
 	j	.L26
 .L25:
 	mov	d0,#48
-.L593:
-	jne	d15,d0,.L27
 .L594:
+	jne	d15,d0,.L27
+.L595:
 	movh.a	a15,#@his(IfxQspi0_SLSO5_P11_2_OUT)
 .L354:
 	lea	a15,[a15]@los(IfxQspi0_SLSO5_P11_2_OUT)
-.L595:
+.L596:
 	j	.L28
 .L27:
 	mov	d0,#54
-.L596:
-	jne	d15,d0,.L29
 .L597:
+	jne	d15,d0,.L29
+.L598:
 	movh.a	a15,#@his(IfxQspi0_SLSO6_P20_10_OUT)
 .L355:
 	lea	a15,[a15]@los(IfxQspi0_SLSO6_P20_10_OUT)
-.L598:
+.L599:
 	j	.L30
 .L29:
 	mov	d0,#60
-.L599:
-	jne	d15,d0,.L31
 .L600:
+	jne	d15,d0,.L31
+.L601:
 	movh.a	a15,#@his(IfxQspi0_SLSO7_P33_5_OUT)
 .L356:
 	lea	a15,[a15]@los(IfxQspi0_SLSO7_P33_5_OUT)
-.L601:
+.L602:
 	j	.L32
 .L31:
 	mov	d0,#66
-.L602:
-	jne	d15,d0,.L33
 .L603:
+	jne	d15,d0,.L33
+.L604:
 	movh.a	a15,#@his(IfxQspi0_SLSO8_P20_6_OUT)
 .L357:
 	lea	a15,[a15]@los(IfxQspi0_SLSO8_P20_6_OUT)
-.L604:
+.L605:
 	j	.L34
 .L33:
 	mov	d0,#72
-.L605:
-	jne	d15,d0,.L35
 .L606:
+	jne	d15,d0,.L35
+.L607:
 	movh.a	a15,#@his(IfxQspi0_SLSO9_P20_3_OUT)
 .L358:
 	lea	a15,[a15]@los(IfxQspi0_SLSO9_P20_3_OUT)
-.L607:
+.L608:
 	j	.L36
 .L35:
 	mov	d0,#96
-.L608:
-	jne	d15,d0,.L37
 .L609:
+	jne	d15,d0,.L37
+.L610:
 	movh.a	a15,#@his(IfxQspi0_SLSO13_P15_0_OUT)
 .L359:
 	lea	a15,[a15]@los(IfxQspi0_SLSO13_P15_0_OUT)
-.L610:
+.L611:
 	j	.L38
 .L37:
 	mov	d4,#68
 	j	.L39
 .L3:
 	mov	d0,#102
-.L611:
-	jne	d5,d0,.L40
 .L612:
+	jne	d5,d0,.L40
+.L613:
 	movh.a	a2,#@his(IfxQspi1_SCLK_P10_2_OUT)
 	lea	a2,[a2]@los(IfxQspi1_SCLK_P10_2_OUT)
-.L613:
+.L614:
 	j	.L41
 .L40:
 	mov	d0,#103
-.L614:
-	jne	d5,d0,.L42
 .L615:
+	jne	d5,d0,.L42
+.L616:
 	movh.a	a2,#@his(IfxQspi1_SCLK_P11_6_OUT)
 	lea	a2,[a2]@los(IfxQspi1_SCLK_P11_6_OUT)
 .L41:
 	st.a	[a15],a2
-.L616:
+.L617:
 	j	.L43
 .L42:
 	fcall	.cocofun_2
@@ -448,7 +448,7 @@ spi_mux:	.type	func
 .L363:
 	movh.a	a2,#@his(IfxQspi1_MTSR_P10_1_OUT)
 	lea	a2,[a2]@los(IfxQspi1_MTSR_P10_1_OUT)
-.L617:
+.L618:
 	j	.L45
 .L44:
 	mov	d0,#109
@@ -457,7 +457,7 @@ spi_mux:	.type	func
 .L365:
 	movh.a	a2,#@his(IfxQspi1_MTSR_P10_3_OUT)
 	lea	a2,[a2]@los(IfxQspi1_MTSR_P10_3_OUT)
-.L618:
+.L619:
 	j	.L47
 .L46:
 	mov	d0,#110
@@ -466,7 +466,7 @@ spi_mux:	.type	func
 .L367:
 	movh.a	a2,#@his(IfxQspi1_MTSR_P10_4_OUT)
 	lea	a2,[a2]@los(IfxQspi1_MTSR_P10_4_OUT)
-.L619:
+.L620:
 	j	.L49
 .L48:
 	mov	d0,#111
@@ -479,7 +479,7 @@ spi_mux:	.type	func
 .L47:
 .L45:
 	st.a	[a15]8,a2
-.L620:
+.L621:
 	j	.L51
 .L50:
 	fcall	.cocofun_2
@@ -493,7 +493,7 @@ spi_mux:	.type	func
 .L371:
 	movh.a	a2,#@his(IfxQspi1_MRSTA_P10_1_IN)
 	lea	a2,[a2]@los(IfxQspi1_MRSTA_P10_1_IN)
-.L621:
+.L622:
 	j	.L53
 .L52:
 	mov	d0,#115
@@ -504,7 +504,7 @@ spi_mux:	.type	func
 	lea	a2,[a2]@los(IfxQspi1_MRSTB_P11_3_IN)
 .L53:
 	st.a	[a15]16,a2
-.L622:
+.L623:
 	j	.L55
 .L54:
 	fcall	.cocofun_2
@@ -513,158 +513,158 @@ spi_mux:	.type	func
 	call	assert
 .L55:
 	mov	d0,#120
-.L623:
-	jne	d15,d0,.L56
 .L624:
+	jne	d15,d0,.L56
+.L625:
 	movh.a	a15,#@his(IfxQspi1_SLSO0_P20_8_OUT)
 .L374:
 	lea	a15,[a15]@los(IfxQspi1_SLSO0_P20_8_OUT)
-.L625:
+.L626:
 	j	.L57
 .L56:
 	mov	d0,#126
-.L626:
-	jne	d15,d0,.L58
 .L627:
+	jne	d15,d0,.L58
+.L628:
 	movh.a	a15,#@his(IfxQspi1_SLSO1_P20_9_OUT)
 .L375:
 	lea	a15,[a15]@los(IfxQspi1_SLSO1_P20_9_OUT)
-.L628:
+.L629:
 	j	.L59
 .L58:
 	mov	d0,#132
-.L629:
-	jne	d15,d0,.L60
 .L630:
+	jne	d15,d0,.L60
+.L631:
 	movh.a	a15,#@his(IfxQspi1_SLSO2_P20_13_OUT)
 .L376:
 	lea	a15,[a15]@los(IfxQspi1_SLSO2_P20_13_OUT)
-.L631:
+.L632:
 	j	.L61
 .L60:
 	mov	d0,#138
-.L632:
-	jne	d15,d0,.L62
 .L633:
+	jne	d15,d0,.L62
+.L634:
 	movh.a	a15,#@his(IfxQspi1_SLSO3_P11_10_OUT)
 .L377:
 	lea	a15,[a15]@los(IfxQspi1_SLSO3_P11_10_OUT)
-.L634:
+.L635:
 	j	.L63
 .L62:
 	mov	d0,#144
-.L635:
-	jne	d15,d0,.L64
 .L636:
+	jne	d15,d0,.L64
+.L637:
 	movh.a	a15,#@his(IfxQspi1_SLSO4_P11_11_OUT)
 .L378:
 	lea	a15,[a15]@los(IfxQspi1_SLSO4_P11_11_OUT)
-.L637:
+.L638:
 	j	.L65
 .L64:
 	mov	d0,#150
-.L638:
-	jne	d15,d0,.L66
 .L639:
+	jne	d15,d0,.L66
+.L640:
 	movh.a	a15,#@his(IfxQspi1_SLSO5_P11_2_OUT)
 .L379:
 	lea	a15,[a15]@los(IfxQspi1_SLSO5_P11_2_OUT)
-.L640:
+.L641:
 	j	.L67
 .L66:
 	mov	d0,#156
-.L641:
-	jne	d15,d0,.L68
 .L642:
+	jne	d15,d0,.L68
+.L643:
 	movh.a	a15,#@his(IfxQspi1_SLSO6_P33_10_OUT)
 .L380:
 	lea	a15,[a15]@los(IfxQspi1_SLSO6_P33_10_OUT)
-.L643:
+.L644:
 	j	.L69
 .L68:
 	mov	d0,#162
-.L644:
-	jne	d15,d0,.L70
 .L645:
+	jne	d15,d0,.L70
+.L646:
 	movh.a	a15,#@his(IfxQspi1_SLSO7_P33_5_OUT)
 .L381:
 	lea	a15,[a15]@los(IfxQspi1_SLSO7_P33_5_OUT)
-.L646:
+.L647:
 	j	.L71
 .L70:
 	mov	d0,#168
-.L647:
-	jne	d15,d0,.L72
 .L648:
+	jne	d15,d0,.L72
+.L649:
 	movh.a	a15,#@his(IfxQspi1_SLSO8_P10_4_OUT)
 .L382:
 	lea	a15,[a15]@los(IfxQspi1_SLSO8_P10_4_OUT)
-.L649:
+.L650:
 	j	.L73
 .L72:
 	mov	d0,#174
-.L650:
-	jne	d15,d0,.L74
 .L651:
+	jne	d15,d0,.L74
+.L652:
 	movh.a	a15,#@his(IfxQspi1_SLSO9_P10_5_OUT)
 .L383:
 	lea	a15,[a15]@los(IfxQspi1_SLSO9_P10_5_OUT)
-.L652:
+.L653:
 	j	.L75
 .L74:
 	mov	d0,#180
-.L653:
-	jne	d15,d0,.L76
 .L654:
+	jne	d15,d0,.L76
+.L655:
 	movh.a	a15,#@his(IfxQspi1_SLSO10_P10_0_OUT)
 .L384:
 	lea	a15,[a15]@los(IfxQspi1_SLSO10_P10_0_OUT)
-.L655:
+.L656:
 	j	.L77
 .L76:
 	mov	d4,#99
 	j	.L78
 .L4:
 	mov	d0,#204
-.L656:
-	jne	d5,d0,.L79
 .L657:
+	jne	d5,d0,.L79
+.L658:
 	movh.a	a2,#@his(IfxQspi2_SCLKN_P13_0_OUT)
 	lea	a2,[a2]@los(IfxQspi2_SCLKN_P13_0_OUT)
-.L658:
+.L659:
 	j	.L80
 .L79:
 	mov	d0,#205
-.L659:
-	jne	d5,d0,.L81
 .L660:
+	jne	d5,d0,.L81
+.L661:
 	movh.a	a2,#@his(IfxQspi2_SCLKP_P13_1_OUT)
 	lea	a2,[a2]@los(IfxQspi2_SCLKP_P13_1_OUT)
-.L661:
+.L662:
 	j	.L82
 .L81:
 	mov	d0,#206
-.L662:
-	jne	d5,d0,.L83
 .L663:
+	jne	d5,d0,.L83
+.L664:
 	movh.a	a2,#@his(IfxQspi2_SCLK_P15_3_OUT)
 	lea	a2,[a2]@los(IfxQspi2_SCLK_P15_3_OUT)
-.L664:
+.L665:
 	j	.L84
 .L83:
 	mov	d0,#207
-.L665:
-	jne	d5,d0,.L85
 .L666:
+	jne	d5,d0,.L85
+.L667:
 	movh.a	a2,#@his(IfxQspi2_SCLK_P15_6_OUT)
 	lea	a2,[a2]@los(IfxQspi2_SCLK_P15_6_OUT)
-.L667:
+.L668:
 	j	.L86
 .L85:
 	mov	d0,#208
-.L668:
-	jne	d5,d0,.L87
 .L669:
+	jne	d5,d0,.L87
+.L670:
 	movh.a	a2,#@his(IfxQspi2_SCLK_P15_8_OUT)
 	lea	a2,[a2]@los(IfxQspi2_SCLK_P15_8_OUT)
 .L86:
@@ -672,7 +672,7 @@ spi_mux:	.type	func
 .L82:
 .L80:
 	st.a	[a15],a2
-.L670:
+.L671:
 	j	.L88
 .L87:
 	fcall	.cocofun_2
@@ -688,7 +688,7 @@ spi_mux:	.type	func
 .L388:
 	movh.a	a2,#@his(IfxQspi2_MTSRN_P13_2_OUT)
 	lea	a2,[a2]@los(IfxQspi2_MTSRN_P13_2_OUT)
-.L671:
+.L672:
 	j	.L90
 .L89:
 	mov	d0,#211
@@ -697,7 +697,7 @@ spi_mux:	.type	func
 .L390:
 	movh.a	a2,#@his(IfxQspi2_MTSRP_P13_3_OUT)
 	lea	a2,[a2]@los(IfxQspi2_MTSRP_P13_3_OUT)
-.L672:
+.L673:
 	j	.L92
 .L91:
 	mov	d0,#212
@@ -706,7 +706,7 @@ spi_mux:	.type	func
 .L392:
 	movh.a	a2,#@his(IfxQspi2_MTSR_P15_5_OUT)
 	lea	a2,[a2]@los(IfxQspi2_MTSR_P15_5_OUT)
-.L673:
+.L674:
 	j	.L94
 .L93:
 	mov	d0,#213
@@ -719,7 +719,7 @@ spi_mux:	.type	func
 .L92:
 .L90:
 	st.a	[a15]8,a2
-.L674:
+.L675:
 	j	.L96
 .L95:
 	fcall	.cocofun_2
@@ -733,7 +733,7 @@ spi_mux:	.type	func
 .L396:
 	movh.a	a2,#@his(IfxQspi2_MRSTE_P15_2_IN)
 	lea	a2,[a2]@los(IfxQspi2_MRSTE_P15_2_IN)
-.L675:
+.L676:
 	j	.L98
 .L97:
 	mov	d0,#217
@@ -742,7 +742,7 @@ spi_mux:	.type	func
 .L398:
 	movh.a	a2,#@his(IfxQspi2_MRSTA_P15_4_IN)
 	lea	a2,[a2]@los(IfxQspi2_MRSTA_P15_4_IN)
-.L676:
+.L677:
 	j	.L100
 .L99:
 	mov	d0,#218
@@ -751,7 +751,7 @@ spi_mux:	.type	func
 .L400:
 	movh.a	a2,#@his(IfxQspi2_MRSTB_P15_7_IN)
 	lea	a2,[a2]@los(IfxQspi2_MRSTB_P15_7_IN)
-.L677:
+.L678:
 	j	.L102
 .L101:
 	mov	d0,#219
@@ -760,7 +760,7 @@ spi_mux:	.type	func
 .L402:
 	movh.a	a2,#@his(IfxQspi2_MRSTCN_P21_2_IN)
 	lea	a2,[a2]@los(IfxQspi2_MRSTCN_P21_2_IN)
-.L678:
+.L679:
 	j	.L104
 .L103:
 	mov	d0,#220
@@ -774,7 +774,7 @@ spi_mux:	.type	func
 .L100:
 .L98:
 	st.a	[a15]16,a2
-.L679:
+.L680:
 	j	.L106
 .L105:
 	fcall	.cocofun_2
@@ -783,157 +783,157 @@ spi_mux:	.type	func
 	call	assert
 .L106:
 	mov	d0,#222
-.L680:
-	jne	d15,d0,.L107
 .L681:
+	jne	d15,d0,.L107
+.L682:
 	movh.a	a15,#@his(IfxQspi2_SLSO0_P15_2_OUT)
 .L405:
 	lea	a15,[a15]@los(IfxQspi2_SLSO0_P15_2_OUT)
-.L682:
+.L683:
 	j	.L108
 .L107:
 	mov	d0,#228
-.L683:
-	jne	d15,d0,.L109
 .L684:
+	jne	d15,d0,.L109
+.L685:
 	movh.a	a15,#@his(IfxQspi2_SLSO1_P14_2_OUT)
 .L406:
 	lea	a15,[a15]@los(IfxQspi2_SLSO1_P14_2_OUT)
-.L685:
+.L686:
 	j	.L110
 .L109:
 	mov	d0,#234
-.L686:
-	jne	d15,d0,.L111
 .L687:
+	jne	d15,d0,.L111
+.L688:
 	movh.a	a15,#@his(IfxQspi2_SLSO2_P14_6_OUT)
 .L407:
 	lea	a15,[a15]@los(IfxQspi2_SLSO2_P14_6_OUT)
-.L688:
+.L689:
 	j	.L112
 .L111:
 	mov	d0,#240
-.L689:
-	jne	d15,d0,.L113
 .L690:
+	jne	d15,d0,.L113
+.L691:
 	movh.a	a15,#@his(IfxQspi2_SLSO3_P14_3_OUT)
 .L408:
 	lea	a15,[a15]@los(IfxQspi2_SLSO3_P14_3_OUT)
-.L691:
+.L692:
 	j	.L114
 .L113:
 	mov	d0,#246
-.L692:
-	jne	d15,d0,.L115
 .L693:
+	jne	d15,d0,.L115
+.L694:
 	movh.a	a15,#@his(IfxQspi2_SLSO4_P14_7_OUT)
 .L409:
 	lea	a15,[a15]@los(IfxQspi2_SLSO4_P14_7_OUT)
-.L694:
+.L695:
 	j	.L116
 .L115:
 	mov	d0,#252
-.L695:
-	jne	d15,d0,.L117
 .L696:
+	jne	d15,d0,.L117
+.L697:
 	movh.a	a15,#@his(IfxQspi2_SLSO5_P15_1_OUT)
 .L410:
 	lea	a15,[a15]@los(IfxQspi2_SLSO5_P15_1_OUT)
-.L697:
+.L698:
 	j	.L118
 .L117:
 	mov	d0,#258
-.L698:
-	jne	d15,d0,.L119
 .L699:
+	jne	d15,d0,.L119
+.L700:
 	movh.a	a15,#@his(IfxQspi2_SLSO6_P33_13_OUT)
 .L411:
 	lea	a15,[a15]@los(IfxQspi2_SLSO6_P33_13_OUT)
-.L700:
+.L701:
 	j	.L120
 .L119:
 	mov	d0,#264
-.L701:
-	jne	d15,d0,.L121
 .L702:
+	jne	d15,d0,.L121
+.L703:
 	movh.a	a15,#@his(IfxQspi2_SLSO7_P20_10_OUT)
 .L412:
 	lea	a15,[a15]@los(IfxQspi2_SLSO7_P20_10_OUT)
-.L703:
+.L704:
 	j	.L122
 .L121:
 	mov	d0,#270
-.L704:
-	jne	d15,d0,.L123
 .L705:
+	jne	d15,d0,.L123
+.L706:
 	movh.a	a15,#@his(IfxQspi2_SLSO8_P20_6_OUT)
 .L413:
 	lea	a15,[a15]@los(IfxQspi2_SLSO8_P20_6_OUT)
-.L706:
+.L707:
 	j	.L124
 .L123:
 	mov	d0,#276
-.L707:
-	jne	d15,d0,.L125
 .L708:
+	jne	d15,d0,.L125
+.L709:
 	movh.a	a15,#@his(IfxQspi2_SLSO9_P20_3_OUT)
 .L414:
 	lea	a15,[a15]@los(IfxQspi2_SLSO9_P20_3_OUT)
-.L709:
+.L710:
 	j	.L126
 .L125:
 	mov	d4,#134
 	j	.L127
 .L5:
 	mov	d0,#306
-.L710:
-	jne	d5,d0,.L128
 .L711:
+	jne	d5,d0,.L128
+.L712:
 	movh.a	a2,#@his(IfxQspi3_SCLK_P02_7_OUT)
 	lea	a2,[a2]@los(IfxQspi3_SCLK_P02_7_OUT)
-.L712:
+.L713:
 	j	.L129
 .L128:
 	mov	d0,#307
-.L713:
-	jne	d5,d0,.L130
 .L714:
+	jne	d5,d0,.L130
+.L715:
 	movh.a	a2,#@his(IfxQspi3_SCLK_P10_8_OUT)
 	lea	a2,[a2]@los(IfxQspi3_SCLK_P10_8_OUT)
-.L715:
+.L716:
 	j	.L131
 .L130:
 	mov	d0,#308
-.L716:
-	jne	d5,d0,.L132
 .L717:
+	jne	d5,d0,.L132
+.L718:
 	movh.a	a2,#@his(IfxQspi3_SCLKN_P22_0_OUT)
 	lea	a2,[a2]@los(IfxQspi3_SCLKN_P22_0_OUT)
-.L718:
+.L719:
 	j	.L133
 .L132:
 	mov	d0,#309
-.L719:
-	jne	d5,d0,.L134
 .L720:
+	jne	d5,d0,.L134
+.L721:
 	movh.a	a2,#@his(IfxQspi3_SCLKP_P22_1_OUT)
 	lea	a2,[a2]@los(IfxQspi3_SCLKP_P22_1_OUT)
-.L721:
+.L722:
 	j	.L135
 .L134:
 	mov	d0,#310
-.L722:
-	jne	d5,d0,.L136
 .L723:
+	jne	d5,d0,.L136
+.L724:
 	movh.a	a2,#@his(IfxQspi3_SCLK_P22_3_OUT)
 	lea	a2,[a2]@los(IfxQspi3_SCLK_P22_3_OUT)
-.L724:
+.L725:
 	j	.L137
 .L136:
 	mov	d0,#311
-.L725:
-	jne	d5,d0,.L138
 .L726:
+	jne	d5,d0,.L138
+.L727:
 	movh.a	a2,#@his(IfxQspi3_SCLK_P33_11_OUT)
 	lea	a2,[a2]@los(IfxQspi3_SCLK_P33_11_OUT)
 .L137:
@@ -942,7 +942,7 @@ spi_mux:	.type	func
 .L131:
 .L129:
 	st.a	[a15],a2
-.L727:
+.L728:
 	j	.L139
 .L138:
 	fcall	.cocofun_2
@@ -958,7 +958,7 @@ spi_mux:	.type	func
 .L418:
 	movh.a	a2,#@his(IfxQspi3_MTSR_P02_6_OUT)
 	lea	a2,[a2]@los(IfxQspi3_MTSR_P02_6_OUT)
-.L728:
+.L729:
 	j	.L141
 .L140:
 	mov	d0,#313
@@ -967,7 +967,7 @@ spi_mux:	.type	func
 .L420:
 	movh.a	a2,#@his(IfxQspi3_MTSR_P10_6_OUT)
 	lea	a2,[a2]@los(IfxQspi3_MTSR_P10_6_OUT)
-.L729:
+.L730:
 	j	.L143
 .L142:
 	mov	d0,#314
@@ -976,7 +976,7 @@ spi_mux:	.type	func
 .L422:
 	movh.a	a2,#@his(IfxQspi3_MTSR_P22_0_OUT)
 	lea	a2,[a2]@los(IfxQspi3_MTSR_P22_0_OUT)
-.L730:
+.L731:
 	j	.L145
 .L144:
 	mov	d0,#315
@@ -985,7 +985,7 @@ spi_mux:	.type	func
 .L424:
 	movh.a	a2,#@his(IfxQspi3_MTSRN_P22_2_OUT)
 	lea	a2,[a2]@los(IfxQspi3_MTSRN_P22_2_OUT)
-.L731:
+.L732:
 	j	.L147
 .L146:
 	mov	d0,#316
@@ -994,7 +994,7 @@ spi_mux:	.type	func
 .L426:
 	movh.a	a2,#@his(IfxQspi3_MTSRP_P22_3_OUT)
 	lea	a2,[a2]@los(IfxQspi3_MTSRP_P22_3_OUT)
-.L732:
+.L733:
 	j	.L149
 .L148:
 	mov	d0,#317
@@ -1009,7 +1009,7 @@ spi_mux:	.type	func
 .L143:
 .L141:
 	st.a	[a15]8,a2
-.L733:
+.L734:
 	j	.L151
 .L150:
 	fcall	.cocofun_2
@@ -1023,7 +1023,7 @@ spi_mux:	.type	func
 .L430:
 	movh.a	a2,#@his(IfxQspi3_MRSTA_P02_5_IN)
 	lea	a2,[a2]@los(IfxQspi3_MRSTA_P02_5_IN)
-.L734:
+.L735:
 	j	.L153
 .L152:
 	mov	d0,#319
@@ -1032,7 +1032,7 @@ spi_mux:	.type	func
 .L432:
 	movh.a	a2,#@his(IfxQspi3_MRSTB_P10_7_IN)
 	lea	a2,[a2]@los(IfxQspi3_MRSTB_P10_7_IN)
-.L735:
+.L736:
 	j	.L155
 .L154:
 	mov	d0,#320
@@ -1041,7 +1041,7 @@ spi_mux:	.type	func
 .L434:
 	movh.a	a2,#@his(IfxQspi3_MRSTE_P22_1_IN)
 	lea	a2,[a2]@los(IfxQspi3_MRSTE_P22_1_IN)
-.L736:
+.L737:
 	j	.L157
 .L156:
 	mov	d0,#321
@@ -1050,7 +1050,7 @@ spi_mux:	.type	func
 .L436:
 	movh.a	a2,#@his(IfxQspi3_MRSTFN_P21_2_IN)
 	lea	a2,[a2]@los(IfxQspi3_MRSTFN_P21_2_IN)
-.L737:
+.L738:
 	j	.L159
 .L158:
 	mov	d0,#322
@@ -1059,7 +1059,7 @@ spi_mux:	.type	func
 .L438:
 	movh.a	a2,#@his(IfxQspi3_MRSTFP_P21_3_IN)
 	lea	a2,[a2]@los(IfxQspi3_MRSTFP_P21_3_IN)
-.L738:
+.L739:
 	j	.L161
 .L160:
 	mov	d0,#323
@@ -1074,7 +1074,7 @@ spi_mux:	.type	func
 .L155:
 .L153:
 	st.a	[a15]16,a2
-.L739:
+.L740:
 	j	.L163
 .L162:
 	fcall	.cocofun_2
@@ -1083,169 +1083,169 @@ spi_mux:	.type	func
 	call	assert
 .L163:
 	mov	d0,#324
-.L740:
-	jne	d15,d0,.L164
 .L741:
+	jne	d15,d0,.L164
+.L742:
 	movh.a	a15,#@his(IfxQspi3_SLSO0_P02_4_OUT)
 .L444:
 	lea	a15,[a15]@los(IfxQspi3_SLSO0_P02_4_OUT)
-.L742:
+.L743:
 	j	.L165
 .L164:
 	mov	d0,#330
-.L743:
-	jne	d15,d0,.L166
 .L744:
+	jne	d15,d0,.L166
+.L745:
 	movh.a	a15,#@his(IfxQspi3_SLSO1_P02_0_OUT)
 .L445:
 	lea	a15,[a15]@los(IfxQspi3_SLSO1_P02_0_OUT)
-.L745:
+.L746:
 	j	.L167
 .L166:
 	mov	d0,#331
-.L746:
-	jne	d15,d0,.L168
 .L747:
+	jne	d15,d0,.L168
+.L748:
 	movh.a	a15,#@his(IfxQspi3_SLSO1_P33_9_OUT)
 .L446:
 	lea	a15,[a15]@los(IfxQspi3_SLSO1_P33_9_OUT)
-.L748:
+.L749:
 	j	.L169
 .L168:
 	mov	d0,#336
-.L749:
-	jne	d15,d0,.L170
 .L750:
+	jne	d15,d0,.L170
+.L751:
 	movh.a	a15,#@his(IfxQspi3_SLSO2_P02_1_OUT)
 .L447:
 	lea	a15,[a15]@los(IfxQspi3_SLSO2_P02_1_OUT)
-.L751:
+.L752:
 	j	.L171
 .L170:
 	mov	d0,#337
-.L752:
-	jne	d15,d0,.L172
 .L753:
+	jne	d15,d0,.L172
+.L754:
 	movh.a	a15,#@his(IfxQspi3_SLSO2_P33_8_OUT)
 .L448:
 	lea	a15,[a15]@los(IfxQspi3_SLSO2_P33_8_OUT)
-.L754:
+.L755:
 	j	.L173
 .L172:
 	mov	d0,#342
-.L755:
-	jne	d15,d0,.L174
 .L756:
+	jne	d15,d0,.L174
+.L757:
 	movh.a	a15,#@his(IfxQspi3_SLSO3_P02_2_OUT)
 .L449:
 	lea	a15,[a15]@los(IfxQspi3_SLSO3_P02_2_OUT)
-.L757:
+.L758:
 	j	.L175
 .L174:
 	mov	d0,#348
-.L758:
-	jne	d15,d0,.L176
 .L759:
+	jne	d15,d0,.L176
+.L760:
 	movh.a	a15,#@his(IfxQspi3_SLSO4_P02_3_OUT)
 .L450:
 	lea	a15,[a15]@los(IfxQspi3_SLSO4_P02_3_OUT)
-.L760:
+.L761:
 	j	.L177
 .L176:
 	mov	d0,#349
-.L761:
-	jne	d15,d0,.L178
 .L762:
+	jne	d15,d0,.L178
+.L763:
 	movh.a	a15,#@his(IfxQspi3_SLSO4_P23_5_OUT)
 .L451:
 	lea	a15,[a15]@los(IfxQspi3_SLSO4_P23_5_OUT)
-.L763:
+.L764:
 	j	.L179
 .L178:
 	mov	d0,#354
-.L764:
-	jne	d15,d0,.L180
 .L765:
+	jne	d15,d0,.L180
+.L766:
 	movh.a	a15,#@his(IfxQspi3_SLSO5_P02_8_OUT)
 .L452:
 	lea	a15,[a15]@los(IfxQspi3_SLSO5_P02_8_OUT)
-.L766:
+.L767:
 	j	.L181
 .L180:
 	mov	d0,#355
-.L767:
-	jne	d15,d0,.L182
 .L768:
+	jne	d15,d0,.L182
+.L769:
 	movh.a	a15,#@his(IfxQspi3_SLSO5_P23_4_OUT)
 .L453:
 	lea	a15,[a15]@los(IfxQspi3_SLSO5_P23_4_OUT)
-.L769:
+.L770:
 	j	.L183
 .L182:
 	mov	d0,#360
-.L770:
-	jne	d15,d0,.L184
 .L771:
+	jne	d15,d0,.L184
+.L772:
 	movh.a	a15,#@his(IfxQspi3_SLSO6_P00_8_OUT)
 .L454:
 	lea	a15,[a15]@los(IfxQspi3_SLSO6_P00_8_OUT)
-.L772:
+.L773:
 	j	.L185
 .L184:
 	mov	d0,#366
-.L773:
-	jne	d15,d0,.L186
 .L774:
+	jne	d15,d0,.L186
+.L775:
 	movh.a	a15,#@his(IfxQspi3_SLSO7_P00_9_OUT)
 .L455:
 	lea	a15,[a15]@los(IfxQspi3_SLSO7_P00_9_OUT)
-.L775:
+.L776:
 	j	.L187
 .L186:
 	mov	d0,#367
-.L776:
-	jne	d15,d0,.L188
 .L777:
+	jne	d15,d0,.L188
+.L778:
 	movh.a	a15,#@his(IfxQspi3_SLSO7_P33_7_OUT)
 .L456:
 	lea	a15,[a15]@los(IfxQspi3_SLSO7_P33_7_OUT)
-.L778:
+.L779:
 	j	.L189
 .L188:
 	mov	d0,#372
-.L779:
-	jne	d15,d0,.L190
 .L780:
+	jne	d15,d0,.L190
+.L781:
 	movh.a	a15,#@his(IfxQspi3_SLSO8_P10_5_OUT)
 .L457:
 	lea	a15,[a15]@los(IfxQspi3_SLSO8_P10_5_OUT)
-.L781:
+.L782:
 	j	.L191
 .L190:
 	mov	d0,#390
-.L782:
-	jne	d15,d0,.L192
 .L783:
+	jne	d15,d0,.L192
+.L784:
 	movh.a	a15,#@his(IfxQspi3_SLSO11_P33_10_OUT)
 .L458:
 	lea	a15,[a15]@los(IfxQspi3_SLSO11_P33_10_OUT)
-.L784:
+.L785:
 	j	.L193
 .L192:
 	mov	d0,#396
-.L785:
-	jne	d15,d0,.L194
 .L786:
+	jne	d15,d0,.L194
+.L787:
 	movh.a	a15,#@his(IfxQspi3_SLSO12_P22_2_OUT)
 .L459:
 	lea	a15,[a15]@los(IfxQspi3_SLSO12_P22_2_OUT)
-.L787:
+.L788:
 	j	.L195
 .L194:
 	mov	d0,#402
-.L788:
-	jne	d15,d0,.L196
 .L789:
+	jne	d15,d0,.L196
+.L790:
 	movh.a	a15,#@his(IfxQspi3_SLSO13_P23_1_OUT)
 .L460:
 	lea	a15,[a15]@los(IfxQspi3_SLSO13_P23_1_OUT)
@@ -1298,7 +1298,7 @@ spi_mux:	.type	func
 .L20:
 .L18:
 	st.a	[a12],a15
-.L790:
+.L791:
 	ret
 .L196:
 	mov	d4,#180
@@ -1327,7 +1327,7 @@ __spi_mux_function_end:
 	movh.a	a5,#@his(_999001___func__)
 .L343:
 	lea	a5,[a5]@los(_999001___func__)
-.L800:
+.L801:
 	fret
 .L258:
 	; End of function
@@ -1341,7 +1341,7 @@ __spi_mux_function_end:
 	movh.a	a4,#@his(.1.str)
 .L341:
 	lea	a4,[a4]@los(.1.str)
-.L795:
+.L796:
 	fret
 .L253:
 	; End of function
@@ -4117,7 +4117,7 @@ spi_mosi:	.type	func
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Qspi\Std\IfxQspi.h	  1224      bacon.B.LAST       = 1;
 	insert	d15,d15,#1,#0,#1
 
-; ..\Libraries\seekfree_libraries\zf_spi.c	   296  .U);//发送数据后CS继续保持为低
+; ..\Libraries\seekfree_libraries\zf_spi.c	   296  	else			IfxQspi_writeBasicConfigurationEndStream(moudle, bacon.U);	//每发送一个字节CS信号拉高一次
 .L207:
 
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Qspi\Std\IfxQspi.h	     1  /**
@@ -5349,20 +5349,20 @@ spi_mosi:	.type	func
 	st.w	[a15]96,d15
 .L313:
 
-; ..\Libraries\seekfree_libraries\zf_spi.c	   297  .U);//发送数据后CS继续保持为低
-; ..\Libraries\seekfree_libraries\zf_spi.c	   298  	else			IfxQspi_writeBasicConfigurationEndStream(moudle, bacon.U);	//每发送一个字节CS信号拉高一次
+; ..\Libraries\seekfree_libraries\zf_spi.c	   297  
+; ..\Libraries\seekfree_libraries\zf_spi.c	   298  	if(len>1)
 	jlt.u	d9,#2,.L208
 .L543:
 
-; ..\Libraries\seekfree_libraries\zf_spi.c	   299  
-; ..\Libraries\seekfree_libraries\zf_spi.c	   300  	if(len>1)
+; ..\Libraries\seekfree_libraries\zf_spi.c	   299  	{
+; ..\Libraries\seekfree_libraries\zf_spi.c	   300  		i = 0;
 	mov	d8,#0
 
-; ..\Libraries\seekfree_libraries\zf_spi.c	   301  	{
+; ..\Libraries\seekfree_libraries\zf_spi.c	   301  		while(i < (len-1))
 .L209:
 
-; ..\Libraries\seekfree_libraries\zf_spi.c	   302  		i = 0;
-; ..\Libraries\seekfree_libraries\zf_spi.c	   303  		while(i < (len-1))
+; ..\Libraries\seekfree_libraries\zf_spi.c	   302  		{
+; ..\Libraries\seekfree_libraries\zf_spi.c	   303  			while(moudle->STATUS.B.TXFIFOLEVEL != 0);
 .L210:
 	ld.bu	d15,[a15]66
 	and	d15,#7
@@ -5370,7 +5370,7 @@ spi_mosi:	.type	func
 	jne	d15,#0,.L210
 .L545:
 
-; ..\Libraries\seekfree_libraries\zf_spi.c	   304  		{
+; ..\Libraries\seekfree_libraries\zf_spi.c	   304  			IfxQspi_write8(moudle, IfxQspi_ChannelId_0, modata, 1);
 	mov	d4,#0
 	mov.aa	a4,a15
 .L477:
@@ -5380,13 +5380,16 @@ spi_mosi:	.type	func
 	call	IfxQspi_write8
 .L546:
 
-; ..\Libraries\seekfree_libraries\zf_spi.c	   305  			while(moudle->STATUS.B.TXFIFOLEVEL != 0);
+; ..\Libraries\seekfree_libraries\zf_spi.c	   305  			while(moudle->STATUS.B.RXFIFOLEVEL == 0);
 	fcall	.cocofun_4
 .L478:
 
-; ..\Libraries\seekfree_libraries\zf_spi.c	   306  			IfxQspi_write8(moudle, IfxQspi_ChannelId_0, modata, 1);
+; ..\Libraries\seekfree_libraries\zf_spi.c	   306  			if(NULL != midata)	
 	jeq.a	a2,a13,.L212
 .L547:
+
+; ..\Libraries\seekfree_libraries\zf_spi.c	   307  			{
+; ..\Libraries\seekfree_libraries\zf_spi.c	   308  				IfxQspi_read8(moudle,midata,1);
 	mov	d4,#1
 	mov.aa	a4,a15
 .L480:
@@ -5394,31 +5397,35 @@ spi_mosi:	.type	func
 .L482:
 	call	IfxQspi_read8
 .L481:
+
+; ..\Libraries\seekfree_libraries\zf_spi.c	   309  				midata++;
+	add.a	a13,#1
+.L548:
 	j	.L213
 .L212:
 
-; ..\Libraries\seekfree_libraries\zf_spi.c	   307  			while(moudle->STATUS.B.RXFIFOLEVEL == 0);
+; ..\Libraries\seekfree_libraries\zf_spi.c	   310  			}
+; ..\Libraries\seekfree_libraries\zf_spi.c	   311  			else				(void)moudle->RXEXIT.U;
 	ld.w	d15,[a15]144
 .L213:
 
-; ..\Libraries\seekfree_libraries\zf_spi.c	   308  			if(NULL != midata)	IfxQspi_read8(moudle,midata,1);
+; ..\Libraries\seekfree_libraries\zf_spi.c	   312  			modata++;
 	add	d15,d9,#-1
 	add.a	a12,#1
-.L548:
-
-; ..\Libraries\seekfree_libraries\zf_spi.c	   309  			else				(void)moudle->RXEXIT.U;
-; ..\Libraries\seekfree_libraries\zf_spi.c	   310  			modata++;
-	add	d8,#1
-	add.a	a13,#1
 .L549:
+
+; ..\Libraries\seekfree_libraries\zf_spi.c	   313  			
+; ..\Libraries\seekfree_libraries\zf_spi.c	   314  			i++;
+	add	d8,#1
+.L550:
 	jlt.u	d8,d15,.L209
 .L208:
 
-; ..\Libraries\seekfree_libraries\zf_spi.c	   311  			midata++;
-; ..\Libraries\seekfree_libraries\zf_spi.c	   312  			i++;
-; ..\Libraries\seekfree_libraries\zf_spi.c	   313  		}
-; ..\Libraries\seekfree_libraries\zf_spi.c	   314  	}
-; ..\Libraries\seekfree_libraries\zf_spi.c	   315  
+; ..\Libraries\seekfree_libraries\zf_spi.c	   315  		}
+; ..\Libraries\seekfree_libraries\zf_spi.c	   316  	}
+; ..\Libraries\seekfree_libraries\zf_spi.c	   317  
+; ..\Libraries\seekfree_libraries\zf_spi.c	   318  	//发送最后一个数据
+; ..\Libraries\seekfree_libraries\zf_spi.c	   319  	if(continuous)	IfxQspi_writeBasicConfigurationEndStream(moudle, bacon.U);
 	jeq	d10,#0,.L214
 .L320:
 
@@ -6652,9 +6659,9 @@ spi_mosi:	.type	func
 	st.w	[a15]96,d11
 .L214:
 
-; ..\Libraries\seekfree_libraries\zf_spi.c	   316  i++;
+; ..\Libraries\seekfree_libraries\zf_spi.c	   320  	IfxQspi_writeTransmitFifo(moudle, *modata);
 	ld.bu	d15,[a12]
-.L550:
+.L551:
 
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Qspi\Std\IfxQspi.h	     1  /**
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Qspi\Std\IfxQspi.h	     2   * \file IfxQspi.h
@@ -7903,22 +7910,22 @@ spi_mosi:	.type	func
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Qspi\Std\IfxQspi.h	  1245      qspi->DATAENTRY[0].U = data;
 	st.w	[a15]100,d15
 
-; ..\Libraries\seekfree_libraries\zf_spi.c	   317  data++;
+; ..\Libraries\seekfree_libraries\zf_spi.c	   321  	while(moudle->STATUS.B.TXFIFOLEVEL != 0);
 .L215:
 	ld.bu	d15,[a15]66
 	and	d15,#7
-.L551:
-	jne	d15,#0,.L215
 .L552:
-
-; ..\Libraries\seekfree_libraries\zf_spi.c	   318  			i++;
-; ..\Libraries\seekfree_libraries\zf_spi.c	   319  		}
-	fcall	.cocofun_4
+	jne	d15,#0,.L215
 .L553:
 
-; ..\Libraries\seekfree_libraries\zf_spi.c	   320  	}
-	jeq.a	a2,a13,.L217
+; ..\Libraries\seekfree_libraries\zf_spi.c	   322  
+; ..\Libraries\seekfree_libraries\zf_spi.c	   323  	while(moudle->STATUS.B.RXFIFOLEVEL == 0);
+	fcall	.cocofun_4
 .L554:
+
+; ..\Libraries\seekfree_libraries\zf_spi.c	   324  	if(NULL != midata)	IfxQspi_read8(moudle,midata,1);
+	jeq.a	a2,a13,.L217
+.L555:
 	mov	d4,#1
 	mov.aa	a4,a15
 .L487:
@@ -7927,11 +7934,11 @@ spi_mosi:	.type	func
 	j	IfxQspi_read8
 .L217:
 
-; ..\Libraries\seekfree_libraries\zf_spi.c	   321  
+; ..\Libraries\seekfree_libraries\zf_spi.c	   325  	else				(void)moudle->RXEXIT.U;
 	ld.w	d15,[a15]144
-.L555:
+.L556:
 
-; ..\Libraries\seekfree_libraries\zf_spi.c	   322  	//发送最后一个数据
+; ..\Libraries\seekfree_libraries\zf_spi.c	   326  }
 	ret
 .L291:
 	
@@ -7949,11 +7956,11 @@ __spi_mosi_function_end:
 .L211:
 	ld.bu	d15,[a15]66
 	extr.u	d15,d15,#3,#3
-.L805:
-	jeq	d15,#0,.L211
 .L806:
-	mov.a	a2,#0
+	jeq	d15,#0,.L211
 .L807:
+	mov.a	a2,#0
+.L808:
 	fret
 .L263:
 	; End of function
@@ -25223,42 +25230,44 @@ _999001___func__:	.type	object
 	.half	.L546-.L545
 	.byte	3,1,1,5,4,9
 	.half	.L478-.L546
-	.byte	3,1,1,5,51,7,9
+	.byte	3,1,1,5,33,7,9
 	.half	.L547-.L478
-	.byte	1,5,53,9
+	.byte	3,2,1,5,11,9
 	.half	.L481-.L547
-	.byte	1,5,32,9
-	.half	.L212-.L481
-	.byte	3,1,1,5,17,9
+	.byte	3,1,1,5,35,9
+	.half	.L548-.L481
+	.byte	3,127,1,5,32,9
+	.half	.L212-.L548
+	.byte	3,3,1,5,17,9
 	.half	.L213-.L212
-	.byte	3,122,1,5,10,3,7,1,5,5,9
-	.half	.L548-.L213
-	.byte	3,2,1,5,10,3,127,1,5,20,9
-	.half	.L549-.L548
-	.byte	3,120,1,5,2,7,9
-	.half	.L208-.L549
-	.byte	3,14,1,4,2,5,24,7,9
+	.byte	3,118,1,5,10,3,11,1,5,5,9
+	.half	.L549-.L213
+	.byte	3,2,1,5,20,9
+	.half	.L550-.L549
+	.byte	3,115,1,5,2,7,9
+	.half	.L208-.L550
+	.byte	3,18,1,4,2,5,24,7,9
 	.half	.L320-.L208
-	.byte	3,141,7,1,3,2,1,4,1,5,36,9
+	.byte	3,137,7,1,3,2,1,4,1,5,36,9
 	.half	.L214-.L320
-	.byte	3,242,120,1,4,2,5,26,9
-	.half	.L550-.L214
-	.byte	3,161,7,1,4,1,5,24,9
-	.half	.L215-.L550
-	.byte	3,224,120,1,5,41,9
-	.half	.L551-.L215
+	.byte	3,246,120,1,4,2,5,26,9
+	.half	.L551-.L214
+	.byte	3,157,7,1,4,1,5,24,9
+	.half	.L215-.L551
+	.byte	3,228,120,1,5,41,9
+	.half	.L552-.L215
 	.byte	1,7,9
-	.half	.L552-.L551
-	.byte	3,2,1,5,2,9
 	.half	.L553-.L552
-	.byte	3,1,1,5,49,7,9
+	.byte	3,2,1,5,2,9
 	.half	.L554-.L553
+	.byte	3,1,1,5,49,7,9
+	.half	.L555-.L554
 	.byte	1,5,30,9
-	.half	.L217-.L554
+	.half	.L217-.L555
 	.byte	3,1,1,5,1,9
-	.half	.L555-.L217
+	.half	.L556-.L217
 	.byte	3,1,1,7,9
-	.half	.L243-.L555
+	.half	.L243-.L556
 	.byte	0,1,1
 .L522:
 	.sdecl	'.debug_ranges',debug,cluster('spi_mosi')
@@ -25321,70 +25330,70 @@ _999001___func__:	.type	object
 	.sdecl	'.debug_line',debug,cluster('spi_mux')
 	.sect	'.debug_line'
 .L246:
-	.word	.L557-.L556
-.L556:
+	.word	.L558-.L557
+.L557:
 	.half	3
-	.word	.L559-.L558
-.L558:
+	.word	.L560-.L559
+.L559:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\Libraries\\seekfree_libraries\\zf_spi.c',0,0,0,0,0
-.L559:
+.L560:
 	.byte	5,6,7,0,5,2
 	.word	.L220
 	.byte	3,31,1,5,22,9
 	.half	.L443-.L220
 	.byte	3,2,1,5,20,1,5,22,9
-	.half	.L560-.L443
+	.half	.L561-.L443
 	.byte	3,1,1,5,20,1,9
-	.half	.L561-.L560
-	.byte	3,1,1,5,23,9
 	.half	.L562-.L561
-	.byte	3,1,1,5,21,1,5,17,9
+	.byte	3,1,1,5,23,9
 	.half	.L563-.L562
-	.byte	3,2,1,5,15,9
+	.byte	3,1,1,5,21,1,5,17,9
 	.half	.L564-.L563
-	.byte	3,1,1,5,8,9
+	.byte	3,2,1,5,15,9
 	.half	.L565-.L564
-	.byte	3,4,1,7,9
+	.byte	3,1,1,5,8,9
 	.half	.L566-.L565
-	.byte	3,28,1,7,9
+	.byte	3,4,1,7,9
 	.half	.L567-.L566
-	.byte	3,30,1,7,9
+	.byte	3,28,1,7,9
 	.half	.L568-.L567
-	.byte	3,35,1,5,1,7,9
+	.byte	3,30,1,7,9
 	.half	.L569-.L568
+	.byte	3,35,1,5,1,7,9
+	.half	.L570-.L569
 	.byte	3,46,1,5,4,7,9
-	.half	.L2-.L569
+	.half	.L2-.L570
 	.byte	3,247,126,1,5,55,7,9
-	.half	.L570-.L2
+	.half	.L571-.L2
 	.byte	1,5,79,9
-	.half	.L571-.L570
+	.half	.L572-.L571
 	.byte	1,5,9,9
-	.half	.L7-.L571
+	.half	.L7-.L572
 	.byte	3,1,1,5,59,7,9
-	.half	.L572-.L7
+	.half	.L573-.L7
 	.byte	1,5,56,9
-	.half	.L8-.L572
+	.half	.L8-.L573
 	.byte	1,5,83,9
-	.half	.L573-.L8
+	.half	.L574-.L8
 	.byte	1,5,9,9
-	.half	.L9-.L573
+	.half	.L9-.L574
 	.byte	3,1,1,5,4,9
 	.half	.L10-.L9
 	.byte	3,2,1,5,56,7,9
 	.half	.L344-.L10
 	.byte	1,5,80,9
-	.half	.L574-.L344
+	.half	.L575-.L344
 	.byte	1,5,9,9
-	.half	.L11-.L574
+	.half	.L11-.L575
 	.byte	3,1,1,5,60,7,9
 	.half	.L345-.L11
 	.byte	1,5,57,9
 	.half	.L12-.L345
 	.byte	1,5,84,9
-	.half	.L575-.L12
+	.half	.L576-.L12
 	.byte	1,5,9,9
-	.half	.L13-.L575
+	.half	.L13-.L576
 	.byte	3,1,1,9
 	.half	.L14-.L13
 	.byte	3,2,1,5,4,9
@@ -25392,121 +25401,121 @@ _999001___func__:	.type	object
 	.byte	1,5,56,7,9
 	.half	.L347-.L346
 	.byte	1,5,53,9
-	.half	.L576-.L347
+	.half	.L577-.L347
 	.byte	1,5,80,9
-	.half	.L577-.L576
+	.half	.L578-.L577
 	.byte	1,5,9,9
-	.half	.L15-.L577
+	.half	.L15-.L578
 	.byte	3,1,1,9
 	.half	.L16-.L15
 	.byte	3,2,1,5,4,9
-	.half	.L578-.L16
+	.half	.L579-.L16
 	.byte	1,5,52,7,9
-	.half	.L579-.L578
-	.byte	1,5,76,9
 	.half	.L580-.L579
+	.byte	1,5,76,9
+	.half	.L581-.L580
 	.byte	1,5,13,9
-	.half	.L17-.L580
+	.half	.L17-.L581
 	.byte	3,1,1,5,9,9
-	.half	.L581-.L17
+	.half	.L582-.L17
 	.byte	1,5,56,7,9
-	.half	.L582-.L581
-	.byte	1,5,80,9
 	.half	.L583-.L582
+	.byte	1,5,80,9
+	.half	.L584-.L583
 	.byte	1,5,13,9
-	.half	.L19-.L583
+	.half	.L19-.L584
 	.byte	3,1,1,5,9,9
-	.half	.L584-.L19
+	.half	.L585-.L19
 	.byte	1,5,56,7,9
-	.half	.L585-.L584
-	.byte	1,5,81,9
 	.half	.L586-.L585
-	.byte	1,5,13,9
-	.half	.L21-.L586
-	.byte	3,1,1,5,9,9
-	.half	.L587-.L21
-	.byte	1,5,56,7,9
-	.half	.L588-.L587
 	.byte	1,5,81,9
+	.half	.L587-.L586
+	.byte	1,5,13,9
+	.half	.L21-.L587
+	.byte	3,1,1,5,9,9
+	.half	.L588-.L21
+	.byte	1,5,56,7,9
 	.half	.L589-.L588
-	.byte	1,5,13,9
-	.half	.L23-.L589
-	.byte	3,1,1,5,9,9
-	.half	.L590-.L23
-	.byte	1,5,56,7,9
-	.half	.L591-.L590
 	.byte	1,5,81,9
+	.half	.L590-.L589
+	.byte	1,5,13,9
+	.half	.L23-.L590
+	.byte	3,1,1,5,9,9
+	.half	.L591-.L23
+	.byte	1,5,56,7,9
 	.half	.L592-.L591
+	.byte	1,5,81,9
+	.half	.L593-.L592
 	.byte	1,5,13,9
-	.half	.L25-.L592
+	.half	.L25-.L593
 	.byte	3,1,1,5,9,9
-	.half	.L593-.L25
+	.half	.L594-.L25
 	.byte	1,5,56,7,9
-	.half	.L594-.L593
-	.byte	1,5,80,9
 	.half	.L595-.L594
+	.byte	1,5,80,9
+	.half	.L596-.L595
 	.byte	1,5,13,9
-	.half	.L27-.L595
+	.half	.L27-.L596
 	.byte	3,1,1,5,9,9
-	.half	.L596-.L27
+	.half	.L597-.L27
 	.byte	1,5,56,7,9
-	.half	.L597-.L596
-	.byte	1,5,81,9
 	.half	.L598-.L597
-	.byte	1,5,13,9
-	.half	.L29-.L598
-	.byte	3,1,1,5,9,9
-	.half	.L599-.L29
-	.byte	1,5,56,7,9
-	.half	.L600-.L599
-	.byte	1,5,80,9
-	.half	.L601-.L600
-	.byte	1,5,13,9
-	.half	.L31-.L601
-	.byte	3,1,1,5,9,9
-	.half	.L602-.L31
-	.byte	1,5,56,7,9
-	.half	.L603-.L602
-	.byte	1,5,80,9
-	.half	.L604-.L603
-	.byte	1,5,13,9
-	.half	.L33-.L604
-	.byte	3,1,1,5,9,9
-	.half	.L605-.L33
-	.byte	1,5,56,7,9
-	.half	.L606-.L605
-	.byte	1,5,80,9
-	.half	.L607-.L606
-	.byte	1,5,13,9
-	.half	.L35-.L607
-	.byte	3,1,1,5,9,9
-	.half	.L608-.L35
-	.byte	1,5,56,7,9
-	.half	.L609-.L608
 	.byte	1,5,81,9
+	.half	.L599-.L598
+	.byte	1,5,13,9
+	.half	.L29-.L599
+	.byte	3,1,1,5,9,9
+	.half	.L600-.L29
+	.byte	1,5,56,7,9
+	.half	.L601-.L600
+	.byte	1,5,80,9
+	.half	.L602-.L601
+	.byte	1,5,13,9
+	.half	.L31-.L602
+	.byte	3,1,1,5,9,9
+	.half	.L603-.L31
+	.byte	1,5,56,7,9
+	.half	.L604-.L603
+	.byte	1,5,80,9
+	.half	.L605-.L604
+	.byte	1,5,13,9
+	.half	.L33-.L605
+	.byte	3,1,1,5,9,9
+	.half	.L606-.L33
+	.byte	1,5,56,7,9
+	.half	.L607-.L606
+	.byte	1,5,80,9
+	.half	.L608-.L607
+	.byte	1,5,13,9
+	.half	.L35-.L608
+	.byte	3,1,1,5,9,9
+	.half	.L609-.L35
+	.byte	1,5,56,7,9
 	.half	.L610-.L609
+	.byte	1,5,81,9
+	.half	.L611-.L610
 	.byte	1,5,9,9
-	.half	.L37-.L610
+	.half	.L37-.L611
 	.byte	3,1,1,5,4,3,2,1,5,9,9
 	.half	.L3-.L37
 	.byte	3,4,1,5,4,9
-	.half	.L611-.L3
+	.half	.L612-.L3
 	.byte	1,5,54,7,9
-	.half	.L612-.L611
-	.byte	1,5,77,9
 	.half	.L613-.L612
+	.byte	1,5,77,9
+	.half	.L614-.L613
 	.byte	1,5,13,9
-	.half	.L40-.L613
+	.half	.L40-.L614
 	.byte	3,1,1,5,9,9
-	.half	.L614-.L40
+	.half	.L615-.L40
 	.byte	1,5,58,7,9
-	.half	.L615-.L614
+	.half	.L616-.L615
 	.byte	1,5,55,9
-	.half	.L41-.L615
+	.half	.L41-.L616
 	.byte	1,5,81,9
-	.half	.L616-.L41
+	.half	.L617-.L41
 	.byte	1,5,9,9
-	.half	.L42-.L616
+	.half	.L42-.L617
 	.byte	3,1,1,9
 	.half	.L43-.L42
 	.byte	3,2,1,5,4,9
@@ -25514,25 +25523,25 @@ _999001___func__:	.type	object
 	.byte	1,5,55,7,9
 	.half	.L363-.L362
 	.byte	1,5,78,9
-	.half	.L617-.L363
+	.half	.L618-.L363
 	.byte	1,5,13,9
-	.half	.L44-.L617
+	.half	.L44-.L618
 	.byte	3,1,1,5,9,9
 	.half	.L364-.L44
 	.byte	1,5,59,7,9
 	.half	.L365-.L364
 	.byte	1,5,82,9
-	.half	.L618-.L365
+	.half	.L619-.L365
 	.byte	1,5,13,9
-	.half	.L46-.L618
+	.half	.L46-.L619
 	.byte	3,1,1,5,9,9
 	.half	.L366-.L46
 	.byte	1,5,59,7,9
 	.half	.L367-.L366
 	.byte	1,5,82,9
-	.half	.L619-.L367
+	.half	.L620-.L367
 	.byte	1,5,13,9
-	.half	.L48-.L619
+	.half	.L48-.L620
 	.byte	3,1,1,5,9,9
 	.half	.L368-.L48
 	.byte	1,5,59,7,9
@@ -25540,9 +25549,9 @@ _999001___func__:	.type	object
 	.byte	1,5,56,9
 	.half	.L45-.L369
 	.byte	1,5,82,9
-	.half	.L620-.L45
+	.half	.L621-.L45
 	.byte	1,5,9,9
-	.half	.L50-.L620
+	.half	.L50-.L621
 	.byte	3,1,1,9
 	.half	.L51-.L50
 	.byte	3,2,1,5,4,9
@@ -25550,9 +25559,9 @@ _999001___func__:	.type	object
 	.byte	1,5,55,7,9
 	.half	.L371-.L370
 	.byte	1,5,78,9
-	.half	.L621-.L371
+	.half	.L622-.L371
 	.byte	1,5,13,9
-	.half	.L52-.L621
+	.half	.L52-.L622
 	.byte	3,1,1,5,9,9
 	.half	.L372-.L52
 	.byte	1,5,59,7,9
@@ -25560,143 +25569,143 @@ _999001___func__:	.type	object
 	.byte	1,5,56,9
 	.half	.L53-.L373
 	.byte	1,5,82,9
-	.half	.L622-.L53
+	.half	.L623-.L53
 	.byte	1,5,9,9
-	.half	.L54-.L622
+	.half	.L54-.L623
 	.byte	3,1,1,9
 	.half	.L55-.L54
 	.byte	3,2,1,5,4,9
-	.half	.L623-.L55
+	.half	.L624-.L55
 	.byte	1,5,52,7,9
-	.half	.L624-.L623
-	.byte	1,5,76,9
 	.half	.L625-.L624
+	.byte	1,5,76,9
+	.half	.L626-.L625
 	.byte	1,5,13,9
-	.half	.L56-.L625
+	.half	.L56-.L626
 	.byte	3,1,1,5,9,9
-	.half	.L626-.L56
+	.half	.L627-.L56
 	.byte	1,5,56,7,9
-	.half	.L627-.L626
-	.byte	1,5,80,9
 	.half	.L628-.L627
+	.byte	1,5,80,9
+	.half	.L629-.L628
 	.byte	1,5,13,9
-	.half	.L58-.L628
+	.half	.L58-.L629
 	.byte	3,1,1,5,9,9
-	.half	.L629-.L58
+	.half	.L630-.L58
 	.byte	1,5,56,7,9
-	.half	.L630-.L629
-	.byte	1,5,81,9
 	.half	.L631-.L630
-	.byte	1,5,13,9
-	.half	.L60-.L631
-	.byte	3,1,1,5,9,9
-	.half	.L632-.L60
-	.byte	1,5,56,7,9
-	.half	.L633-.L632
 	.byte	1,5,81,9
+	.half	.L632-.L631
+	.byte	1,5,13,9
+	.half	.L60-.L632
+	.byte	3,1,1,5,9,9
+	.half	.L633-.L60
+	.byte	1,5,56,7,9
 	.half	.L634-.L633
-	.byte	1,5,13,9
-	.half	.L62-.L634
-	.byte	3,1,1,5,9,9
-	.half	.L635-.L62
-	.byte	1,5,56,7,9
-	.half	.L636-.L635
 	.byte	1,5,81,9
+	.half	.L635-.L634
+	.byte	1,5,13,9
+	.half	.L62-.L635
+	.byte	3,1,1,5,9,9
+	.half	.L636-.L62
+	.byte	1,5,56,7,9
 	.half	.L637-.L636
+	.byte	1,5,81,9
+	.half	.L638-.L637
 	.byte	1,5,13,9
-	.half	.L64-.L637
+	.half	.L64-.L638
 	.byte	3,1,1,5,9,9
-	.half	.L638-.L64
+	.half	.L639-.L64
 	.byte	1,5,56,7,9
-	.half	.L639-.L638
-	.byte	1,5,80,9
 	.half	.L640-.L639
+	.byte	1,5,80,9
+	.half	.L641-.L640
 	.byte	1,5,13,9
-	.half	.L66-.L640
+	.half	.L66-.L641
 	.byte	3,1,1,5,9,9
-	.half	.L641-.L66
+	.half	.L642-.L66
 	.byte	1,5,56,7,9
-	.half	.L642-.L641
-	.byte	1,5,81,9
 	.half	.L643-.L642
-	.byte	1,5,13,9
-	.half	.L68-.L643
-	.byte	3,1,1,5,9,9
-	.half	.L644-.L68
-	.byte	1,5,56,7,9
-	.half	.L645-.L644
-	.byte	1,5,80,9
-	.half	.L646-.L645
-	.byte	1,5,13,9
-	.half	.L70-.L646
-	.byte	3,1,1,5,9,9
-	.half	.L647-.L70
-	.byte	1,5,56,7,9
-	.half	.L648-.L647
-	.byte	1,5,80,9
-	.half	.L649-.L648
-	.byte	1,5,13,9
-	.half	.L72-.L649
-	.byte	3,1,1,5,9,9
-	.half	.L650-.L72
-	.byte	1,5,56,7,9
-	.half	.L651-.L650
-	.byte	1,5,80,9
-	.half	.L652-.L651
-	.byte	1,5,13,9
-	.half	.L74-.L652
-	.byte	3,1,1,5,9,9
-	.half	.L653-.L74
-	.byte	1,5,56,7,9
-	.half	.L654-.L653
 	.byte	1,5,81,9
+	.half	.L644-.L643
+	.byte	1,5,13,9
+	.half	.L68-.L644
+	.byte	3,1,1,5,9,9
+	.half	.L645-.L68
+	.byte	1,5,56,7,9
+	.half	.L646-.L645
+	.byte	1,5,80,9
+	.half	.L647-.L646
+	.byte	1,5,13,9
+	.half	.L70-.L647
+	.byte	3,1,1,5,9,9
+	.half	.L648-.L70
+	.byte	1,5,56,7,9
+	.half	.L649-.L648
+	.byte	1,5,80,9
+	.half	.L650-.L649
+	.byte	1,5,13,9
+	.half	.L72-.L650
+	.byte	3,1,1,5,9,9
+	.half	.L651-.L72
+	.byte	1,5,56,7,9
+	.half	.L652-.L651
+	.byte	1,5,80,9
+	.half	.L653-.L652
+	.byte	1,5,13,9
+	.half	.L74-.L653
+	.byte	3,1,1,5,9,9
+	.half	.L654-.L74
+	.byte	1,5,56,7,9
 	.half	.L655-.L654
+	.byte	1,5,81,9
+	.half	.L656-.L655
 	.byte	1,5,9,9
-	.half	.L76-.L655
+	.half	.L76-.L656
 	.byte	3,1,1,5,4,3,1,1,5,9,9
 	.half	.L4-.L76
 	.byte	3,4,1,5,4,9
-	.half	.L656-.L4
+	.half	.L657-.L4
 	.byte	1,5,55,7,9
-	.half	.L657-.L656
-	.byte	1,5,79,9
 	.half	.L658-.L657
+	.byte	1,5,79,9
+	.half	.L659-.L658
 	.byte	1,5,13,9
-	.half	.L79-.L658
+	.half	.L79-.L659
 	.byte	3,1,1,5,9,9
-	.half	.L659-.L79
+	.half	.L660-.L79
 	.byte	1,5,59,7,9
-	.half	.L660-.L659
-	.byte	1,5,83,9
 	.half	.L661-.L660
+	.byte	1,5,83,9
+	.half	.L662-.L661
 	.byte	1,5,13,9
-	.half	.L81-.L661
+	.half	.L81-.L662
 	.byte	3,1,1,5,9,9
-	.half	.L662-.L81
+	.half	.L663-.L81
 	.byte	1,5,59,7,9
-	.half	.L663-.L662
-	.byte	1,5,82,9
 	.half	.L664-.L663
-	.byte	1,5,13,9
-	.half	.L83-.L664
-	.byte	3,1,1,5,9,9
-	.half	.L665-.L83
-	.byte	1,5,59,7,9
-	.half	.L666-.L665
 	.byte	1,5,82,9
+	.half	.L665-.L664
+	.byte	1,5,13,9
+	.half	.L83-.L665
+	.byte	3,1,1,5,9,9
+	.half	.L666-.L83
+	.byte	1,5,59,7,9
 	.half	.L667-.L666
-	.byte	1,5,13,9
-	.half	.L85-.L667
-	.byte	3,1,1,5,9,9
-	.half	.L668-.L85
-	.byte	1,5,59,7,9
-	.half	.L669-.L668
-	.byte	1,5,56,9
-	.half	.L80-.L669
 	.byte	1,5,82,9
-	.half	.L670-.L80
+	.half	.L668-.L667
+	.byte	1,5,13,9
+	.half	.L85-.L668
+	.byte	3,1,1,5,9,9
+	.half	.L669-.L85
+	.byte	1,5,59,7,9
+	.half	.L670-.L669
+	.byte	1,5,56,9
+	.half	.L80-.L670
+	.byte	1,5,82,9
+	.half	.L671-.L80
 	.byte	1,5,9,9
-	.half	.L87-.L670
+	.half	.L87-.L671
 	.byte	3,1,1,9
 	.half	.L88-.L87
 	.byte	3,2,1,5,4,9
@@ -25704,25 +25713,25 @@ _999001___func__:	.type	object
 	.byte	1,5,56,7,9
 	.half	.L388-.L387
 	.byte	1,5,80,9
-	.half	.L671-.L388
+	.half	.L672-.L388
 	.byte	1,5,13,9
-	.half	.L89-.L671
+	.half	.L89-.L672
 	.byte	3,1,1,5,9,9
 	.half	.L389-.L89
 	.byte	1,5,60,7,9
 	.half	.L390-.L389
 	.byte	1,5,84,9
-	.half	.L672-.L390
+	.half	.L673-.L390
 	.byte	1,5,13,9
-	.half	.L91-.L672
+	.half	.L91-.L673
 	.byte	3,1,1,5,9,9
 	.half	.L391-.L91
 	.byte	1,5,60,7,9
 	.half	.L392-.L391
 	.byte	1,5,83,9
-	.half	.L673-.L392
+	.half	.L674-.L392
 	.byte	1,5,13,9
-	.half	.L93-.L673
+	.half	.L93-.L674
 	.byte	3,1,1,5,9,9
 	.half	.L393-.L93
 	.byte	1,5,60,7,9
@@ -25730,9 +25739,9 @@ _999001___func__:	.type	object
 	.byte	1,5,57,9
 	.half	.L90-.L394
 	.byte	1,5,83,9
-	.half	.L674-.L90
+	.half	.L675-.L90
 	.byte	1,5,9,9
-	.half	.L95-.L674
+	.half	.L95-.L675
 	.byte	3,1,1,9
 	.half	.L96-.L95
 	.byte	3,2,1,5,4,9
@@ -25740,33 +25749,33 @@ _999001___func__:	.type	object
 	.byte	1,5,56,7,9
 	.half	.L396-.L395
 	.byte	1,5,79,9
-	.half	.L675-.L396
+	.half	.L676-.L396
 	.byte	1,5,13,9
-	.half	.L97-.L675
+	.half	.L97-.L676
 	.byte	3,1,1,5,9,9
 	.half	.L397-.L97
 	.byte	1,5,60,7,9
 	.half	.L398-.L397
 	.byte	1,5,83,9
-	.half	.L676-.L398
+	.half	.L677-.L398
 	.byte	1,5,13,9
-	.half	.L99-.L676
+	.half	.L99-.L677
 	.byte	3,1,1,5,9,9
 	.half	.L399-.L99
 	.byte	1,5,60,7,9
 	.half	.L400-.L399
 	.byte	1,5,83,9
-	.half	.L677-.L400
+	.half	.L678-.L400
 	.byte	1,5,13,9
-	.half	.L101-.L677
+	.half	.L101-.L678
 	.byte	3,1,1,5,9,9
 	.half	.L401-.L101
 	.byte	1,5,60,7,9
 	.half	.L402-.L401
 	.byte	1,5,84,9
-	.half	.L678-.L402
+	.half	.L679-.L402
 	.byte	1,5,13,9
-	.half	.L103-.L678
+	.half	.L103-.L679
 	.byte	3,1,1,5,9,9
 	.half	.L403-.L103
 	.byte	1,5,60,7,9
@@ -25774,143 +25783,143 @@ _999001___func__:	.type	object
 	.byte	1,5,57,9
 	.half	.L98-.L404
 	.byte	1,5,84,9
-	.half	.L679-.L98
+	.half	.L680-.L98
 	.byte	1,5,9,9
-	.half	.L105-.L679
+	.half	.L105-.L680
 	.byte	3,1,1,9
 	.half	.L106-.L105
 	.byte	3,2,1,5,4,9
-	.half	.L680-.L106
+	.half	.L681-.L106
 	.byte	1,5,52,7,9
-	.half	.L681-.L680
-	.byte	1,5,76,9
 	.half	.L682-.L681
+	.byte	1,5,76,9
+	.half	.L683-.L682
 	.byte	1,5,13,9
-	.half	.L107-.L682
+	.half	.L107-.L683
 	.byte	3,1,1,5,9,9
-	.half	.L683-.L107
+	.half	.L684-.L107
 	.byte	1,5,56,7,9
-	.half	.L684-.L683
-	.byte	1,5,80,9
 	.half	.L685-.L684
-	.byte	1,5,13,9
-	.half	.L109-.L685
-	.byte	3,1,1,5,9,9
-	.half	.L686-.L109
-	.byte	1,5,56,7,9
-	.half	.L687-.L686
 	.byte	1,5,80,9
+	.half	.L686-.L685
+	.byte	1,5,13,9
+	.half	.L109-.L686
+	.byte	3,1,1,5,9,9
+	.half	.L687-.L109
+	.byte	1,5,56,7,9
 	.half	.L688-.L687
-	.byte	1,5,13,9
-	.half	.L111-.L688
-	.byte	3,1,1,5,9,9
-	.half	.L689-.L111
-	.byte	1,5,56,7,9
-	.half	.L690-.L689
 	.byte	1,5,80,9
+	.half	.L689-.L688
+	.byte	1,5,13,9
+	.half	.L111-.L689
+	.byte	3,1,1,5,9,9
+	.half	.L690-.L111
+	.byte	1,5,56,7,9
 	.half	.L691-.L690
-	.byte	1,5,13,9
-	.half	.L113-.L691
-	.byte	3,1,1,5,9,9
-	.half	.L692-.L113
-	.byte	1,5,56,7,9
-	.half	.L693-.L692
 	.byte	1,5,80,9
+	.half	.L692-.L691
+	.byte	1,5,13,9
+	.half	.L113-.L692
+	.byte	3,1,1,5,9,9
+	.half	.L693-.L113
+	.byte	1,5,56,7,9
 	.half	.L694-.L693
-	.byte	1,5,13,9
-	.half	.L115-.L694
-	.byte	3,1,1,5,9,9
-	.half	.L695-.L115
-	.byte	1,5,56,7,9
-	.half	.L696-.L695
 	.byte	1,5,80,9
+	.half	.L695-.L694
+	.byte	1,5,13,9
+	.half	.L115-.L695
+	.byte	3,1,1,5,9,9
+	.half	.L696-.L115
+	.byte	1,5,56,7,9
 	.half	.L697-.L696
+	.byte	1,5,80,9
+	.half	.L698-.L697
 	.byte	1,5,13,9
-	.half	.L117-.L697
+	.half	.L117-.L698
 	.byte	3,1,1,5,9,9
-	.half	.L698-.L117
+	.half	.L699-.L117
 	.byte	1,5,56,7,9
-	.half	.L699-.L698
-	.byte	1,5,81,9
 	.half	.L700-.L699
-	.byte	1,5,13,9
-	.half	.L119-.L700
-	.byte	3,1,1,5,9,9
-	.half	.L701-.L119
-	.byte	1,5,56,7,9
-	.half	.L702-.L701
 	.byte	1,5,81,9
+	.half	.L701-.L700
+	.byte	1,5,13,9
+	.half	.L119-.L701
+	.byte	3,1,1,5,9,9
+	.half	.L702-.L119
+	.byte	1,5,56,7,9
 	.half	.L703-.L702
+	.byte	1,5,81,9
+	.half	.L704-.L703
 	.byte	1,5,13,9
-	.half	.L121-.L703
+	.half	.L121-.L704
 	.byte	3,1,1,5,9,9
-	.half	.L704-.L121
+	.half	.L705-.L121
 	.byte	1,5,56,7,9
-	.half	.L705-.L704
-	.byte	1,5,80,9
 	.half	.L706-.L705
-	.byte	1,5,13,9
-	.half	.L123-.L706
-	.byte	3,1,1,5,9,9
-	.half	.L707-.L123
-	.byte	1,5,56,7,9
-	.half	.L708-.L707
 	.byte	1,5,80,9
+	.half	.L707-.L706
+	.byte	1,5,13,9
+	.half	.L123-.L707
+	.byte	3,1,1,5,9,9
+	.half	.L708-.L123
+	.byte	1,5,56,7,9
 	.half	.L709-.L708
+	.byte	1,5,80,9
+	.half	.L710-.L709
 	.byte	1,5,9,9
-	.half	.L125-.L709
+	.half	.L125-.L710
 	.byte	3,1,1,5,4,3,1,1,5,9,9
 	.half	.L5-.L125
 	.byte	3,4,1,5,4,9
-	.half	.L710-.L5
+	.half	.L711-.L5
 	.byte	1,5,55,7,9
-	.half	.L711-.L710
-	.byte	1,5,78,9
 	.half	.L712-.L711
+	.byte	1,5,78,9
+	.half	.L713-.L712
 	.byte	1,5,13,9
-	.half	.L128-.L712
+	.half	.L128-.L713
 	.byte	3,1,1,5,9,9
-	.half	.L713-.L128
+	.half	.L714-.L128
 	.byte	1,5,59,7,9
-	.half	.L714-.L713
-	.byte	1,5,82,9
 	.half	.L715-.L714
-	.byte	1,5,13,9
-	.half	.L130-.L715
-	.byte	3,1,1,5,9,9
-	.half	.L716-.L130
-	.byte	1,5,59,7,9
-	.half	.L717-.L716
-	.byte	1,5,83,9
-	.half	.L718-.L717
-	.byte	1,5,13,9
-	.half	.L132-.L718
-	.byte	3,1,1,5,9,9
-	.half	.L719-.L132
-	.byte	1,5,59,7,9
-	.half	.L720-.L719
-	.byte	1,5,83,9
-	.half	.L721-.L720
-	.byte	1,5,13,9
-	.half	.L134-.L721
-	.byte	3,1,1,5,9,9
-	.half	.L722-.L134
-	.byte	1,5,59,7,9
-	.half	.L723-.L722
 	.byte	1,5,82,9
-	.half	.L724-.L723
+	.half	.L716-.L715
 	.byte	1,5,13,9
-	.half	.L136-.L724
+	.half	.L130-.L716
 	.byte	3,1,1,5,9,9
-	.half	.L725-.L136
+	.half	.L717-.L130
 	.byte	1,5,59,7,9
-	.half	.L726-.L725
-	.byte	1,5,56,9
-	.half	.L129-.L726
+	.half	.L718-.L717
 	.byte	1,5,83,9
-	.half	.L727-.L129
+	.half	.L719-.L718
+	.byte	1,5,13,9
+	.half	.L132-.L719
+	.byte	3,1,1,5,9,9
+	.half	.L720-.L132
+	.byte	1,5,59,7,9
+	.half	.L721-.L720
+	.byte	1,5,83,9
+	.half	.L722-.L721
+	.byte	1,5,13,9
+	.half	.L134-.L722
+	.byte	3,1,1,5,9,9
+	.half	.L723-.L134
+	.byte	1,5,59,7,9
+	.half	.L724-.L723
+	.byte	1,5,82,9
+	.half	.L725-.L724
+	.byte	1,5,13,9
+	.half	.L136-.L725
+	.byte	3,1,1,5,9,9
+	.half	.L726-.L136
+	.byte	1,5,59,7,9
+	.half	.L727-.L726
+	.byte	1,5,56,9
+	.half	.L129-.L727
+	.byte	1,5,83,9
+	.half	.L728-.L129
 	.byte	1,5,9,9
-	.half	.L138-.L727
+	.half	.L138-.L728
 	.byte	3,1,1,9
 	.half	.L139-.L138
 	.byte	3,2,1,5,4,9
@@ -25918,41 +25927,41 @@ _999001___func__:	.type	object
 	.byte	1,5,56,7,9
 	.half	.L418-.L417
 	.byte	1,5,79,9
-	.half	.L728-.L418
+	.half	.L729-.L418
 	.byte	1,5,13,9
-	.half	.L140-.L728
+	.half	.L140-.L729
 	.byte	3,1,1,5,9,9
 	.half	.L419-.L140
 	.byte	1,5,60,7,9
 	.half	.L420-.L419
 	.byte	1,5,83,9
-	.half	.L729-.L420
+	.half	.L730-.L420
 	.byte	1,5,13,9
-	.half	.L142-.L729
+	.half	.L142-.L730
 	.byte	3,1,1,5,9,9
 	.half	.L421-.L142
 	.byte	1,5,60,7,9
 	.half	.L422-.L421
 	.byte	1,5,83,9
-	.half	.L730-.L422
+	.half	.L731-.L422
 	.byte	1,5,13,9
-	.half	.L144-.L730
+	.half	.L144-.L731
 	.byte	3,1,1,5,9,9
 	.half	.L423-.L144
 	.byte	1,5,60,7,9
 	.half	.L424-.L423
 	.byte	1,5,84,9
-	.half	.L731-.L424
+	.half	.L732-.L424
 	.byte	1,5,13,9
-	.half	.L146-.L731
+	.half	.L146-.L732
 	.byte	3,1,1,5,9,9
 	.half	.L425-.L146
 	.byte	1,5,60,7,9
 	.half	.L426-.L425
 	.byte	1,5,84,9
-	.half	.L732-.L426
+	.half	.L733-.L426
 	.byte	1,5,13,9
-	.half	.L148-.L732
+	.half	.L148-.L733
 	.byte	3,1,1,5,9,9
 	.half	.L427-.L148
 	.byte	1,5,60,7,9
@@ -25960,9 +25969,9 @@ _999001___func__:	.type	object
 	.byte	1,5,57,9
 	.half	.L141-.L428
 	.byte	1,5,84,9
-	.half	.L733-.L141
+	.half	.L734-.L141
 	.byte	1,5,9,9
-	.half	.L150-.L733
+	.half	.L150-.L734
 	.byte	3,1,1,9
 	.half	.L151-.L150
 	.byte	3,2,1,5,4,9
@@ -25970,41 +25979,41 @@ _999001___func__:	.type	object
 	.byte	1,5,56,7,9
 	.half	.L430-.L429
 	.byte	1,5,79,9
-	.half	.L734-.L430
+	.half	.L735-.L430
 	.byte	1,5,13,9
-	.half	.L152-.L734
+	.half	.L152-.L735
 	.byte	3,1,1,5,9,9
 	.half	.L431-.L152
 	.byte	1,5,60,7,9
 	.half	.L432-.L431
 	.byte	1,5,83,9
-	.half	.L735-.L432
+	.half	.L736-.L432
 	.byte	1,5,13,9
-	.half	.L154-.L735
+	.half	.L154-.L736
 	.byte	3,1,1,5,9,9
 	.half	.L433-.L154
 	.byte	1,5,60,7,9
 	.half	.L434-.L433
 	.byte	1,5,83,9
-	.half	.L736-.L434
+	.half	.L737-.L434
 	.byte	1,5,13,9
-	.half	.L156-.L736
+	.half	.L156-.L737
 	.byte	3,1,1,5,9,9
 	.half	.L435-.L156
 	.byte	1,5,60,7,9
 	.half	.L436-.L435
 	.byte	1,5,84,9
-	.half	.L737-.L436
+	.half	.L738-.L436
 	.byte	1,5,13,9
-	.half	.L158-.L737
+	.half	.L158-.L738
 	.byte	3,1,1,5,9,9
 	.half	.L437-.L158
 	.byte	1,5,60,7,9
 	.half	.L438-.L437
 	.byte	1,5,84,9
-	.half	.L738-.L438
+	.half	.L739-.L438
 	.byte	1,5,13,9
-	.half	.L160-.L738
+	.half	.L160-.L739
 	.byte	3,1,1,5,9,9
 	.half	.L439-.L160
 	.byte	1,5,61,7,9
@@ -26012,153 +26021,153 @@ _999001___func__:	.type	object
 	.byte	1,5,58,9
 	.half	.L153-.L440
 	.byte	1,5,85,9
-	.half	.L739-.L153
+	.half	.L740-.L153
 	.byte	1,5,9,9
-	.half	.L162-.L739
+	.half	.L162-.L740
 	.byte	3,1,1,9
 	.half	.L163-.L162
 	.byte	3,2,1,5,4,9
-	.half	.L740-.L163
+	.half	.L741-.L163
 	.byte	1,5,52,7,9
-	.half	.L741-.L740
-	.byte	1,5,76,9
 	.half	.L742-.L741
+	.byte	1,5,76,9
+	.half	.L743-.L742
 	.byte	1,5,13,9
-	.half	.L164-.L742
+	.half	.L164-.L743
 	.byte	3,1,1,5,9,9
-	.half	.L743-.L164
+	.half	.L744-.L164
 	.byte	1,5,56,7,9
-	.half	.L744-.L743
-	.byte	1,5,80,9
 	.half	.L745-.L744
-	.byte	1,5,13,9
-	.half	.L166-.L745
-	.byte	3,1,1,5,9,9
-	.half	.L746-.L166
-	.byte	1,5,56,7,9
-	.half	.L747-.L746
 	.byte	1,5,80,9
+	.half	.L746-.L745
+	.byte	1,5,13,9
+	.half	.L166-.L746
+	.byte	3,1,1,5,9,9
+	.half	.L747-.L166
+	.byte	1,5,56,7,9
 	.half	.L748-.L747
-	.byte	1,5,13,9
-	.half	.L168-.L748
-	.byte	3,1,1,5,9,9
-	.half	.L749-.L168
-	.byte	1,5,56,7,9
-	.half	.L750-.L749
 	.byte	1,5,80,9
+	.half	.L749-.L748
+	.byte	1,5,13,9
+	.half	.L168-.L749
+	.byte	3,1,1,5,9,9
+	.half	.L750-.L168
+	.byte	1,5,56,7,9
 	.half	.L751-.L750
-	.byte	1,5,13,9
-	.half	.L170-.L751
-	.byte	3,1,1,5,9,9
-	.half	.L752-.L170
-	.byte	1,5,56,7,9
-	.half	.L753-.L752
 	.byte	1,5,80,9
+	.half	.L752-.L751
+	.byte	1,5,13,9
+	.half	.L170-.L752
+	.byte	3,1,1,5,9,9
+	.half	.L753-.L170
+	.byte	1,5,56,7,9
 	.half	.L754-.L753
-	.byte	1,5,13,9
-	.half	.L172-.L754
-	.byte	3,1,1,5,9,9
-	.half	.L755-.L172
-	.byte	1,5,56,7,9
-	.half	.L756-.L755
 	.byte	1,5,80,9
+	.half	.L755-.L754
+	.byte	1,5,13,9
+	.half	.L172-.L755
+	.byte	3,1,1,5,9,9
+	.half	.L756-.L172
+	.byte	1,5,56,7,9
 	.half	.L757-.L756
-	.byte	1,5,13,9
-	.half	.L174-.L757
-	.byte	3,1,1,5,9,9
-	.half	.L758-.L174
-	.byte	1,5,56,7,9
-	.half	.L759-.L758
 	.byte	1,5,80,9
+	.half	.L758-.L757
+	.byte	1,5,13,9
+	.half	.L174-.L758
+	.byte	3,1,1,5,9,9
+	.half	.L759-.L174
+	.byte	1,5,56,7,9
 	.half	.L760-.L759
-	.byte	1,5,13,9
-	.half	.L176-.L760
-	.byte	3,1,1,5,9,9
-	.half	.L761-.L176
-	.byte	1,5,56,7,9
-	.half	.L762-.L761
 	.byte	1,5,80,9
+	.half	.L761-.L760
+	.byte	1,5,13,9
+	.half	.L176-.L761
+	.byte	3,1,1,5,9,9
+	.half	.L762-.L176
+	.byte	1,5,56,7,9
 	.half	.L763-.L762
-	.byte	1,5,13,9
-	.half	.L178-.L763
-	.byte	3,1,1,5,9,9
-	.half	.L764-.L178
-	.byte	1,5,56,7,9
-	.half	.L765-.L764
 	.byte	1,5,80,9
+	.half	.L764-.L763
+	.byte	1,5,13,9
+	.half	.L178-.L764
+	.byte	3,1,1,5,9,9
+	.half	.L765-.L178
+	.byte	1,5,56,7,9
 	.half	.L766-.L765
-	.byte	1,5,13,9
-	.half	.L180-.L766
-	.byte	3,1,1,5,9,9
-	.half	.L767-.L180
-	.byte	1,5,56,7,9
-	.half	.L768-.L767
 	.byte	1,5,80,9
+	.half	.L767-.L766
+	.byte	1,5,13,9
+	.half	.L180-.L767
+	.byte	3,1,1,5,9,9
+	.half	.L768-.L180
+	.byte	1,5,56,7,9
 	.half	.L769-.L768
-	.byte	1,5,13,9
-	.half	.L182-.L769
-	.byte	3,1,1,5,9,9
-	.half	.L770-.L182
-	.byte	1,5,56,7,9
-	.half	.L771-.L770
 	.byte	1,5,80,9
+	.half	.L770-.L769
+	.byte	1,5,13,9
+	.half	.L182-.L770
+	.byte	3,1,1,5,9,9
+	.half	.L771-.L182
+	.byte	1,5,56,7,9
 	.half	.L772-.L771
-	.byte	1,5,13,9
-	.half	.L184-.L772
-	.byte	3,1,1,5,9,9
-	.half	.L773-.L184
-	.byte	1,5,56,7,9
-	.half	.L774-.L773
 	.byte	1,5,80,9
+	.half	.L773-.L772
+	.byte	1,5,13,9
+	.half	.L184-.L773
+	.byte	3,1,1,5,9,9
+	.half	.L774-.L184
+	.byte	1,5,56,7,9
 	.half	.L775-.L774
-	.byte	1,5,13,9
-	.half	.L186-.L775
-	.byte	3,1,1,5,9,9
-	.half	.L776-.L186
-	.byte	1,5,56,7,9
-	.half	.L777-.L776
 	.byte	1,5,80,9
+	.half	.L776-.L775
+	.byte	1,5,13,9
+	.half	.L186-.L776
+	.byte	3,1,1,5,9,9
+	.half	.L777-.L186
+	.byte	1,5,56,7,9
 	.half	.L778-.L777
-	.byte	1,5,13,9
-	.half	.L188-.L778
-	.byte	3,1,1,5,9,9
-	.half	.L779-.L188
-	.byte	1,5,56,7,9
-	.half	.L780-.L779
 	.byte	1,5,80,9
+	.half	.L779-.L778
+	.byte	1,5,13,9
+	.half	.L188-.L779
+	.byte	3,1,1,5,9,9
+	.half	.L780-.L188
+	.byte	1,5,56,7,9
 	.half	.L781-.L780
+	.byte	1,5,80,9
+	.half	.L782-.L781
 	.byte	1,5,13,9
-	.half	.L190-.L781
+	.half	.L190-.L782
 	.byte	3,1,1,5,9,9
-	.half	.L782-.L190
+	.half	.L783-.L190
 	.byte	1,5,56,7,9
-	.half	.L783-.L782
-	.byte	1,5,82,9
 	.half	.L784-.L783
+	.byte	1,5,82,9
+	.half	.L785-.L784
 	.byte	1,5,13,9
-	.half	.L192-.L784
+	.half	.L192-.L785
 	.byte	3,1,1,5,9,9
-	.half	.L785-.L192
+	.half	.L786-.L192
 	.byte	1,5,56,7,9
-	.half	.L786-.L785
-	.byte	1,5,81,9
 	.half	.L787-.L786
+	.byte	1,5,81,9
+	.half	.L788-.L787
 	.byte	1,5,13,9
-	.half	.L194-.L787
+	.half	.L194-.L788
 	.byte	3,1,1,5,9,9
-	.half	.L788-.L194
+	.half	.L789-.L194
 	.byte	1,5,56,7,9
-	.half	.L789-.L788
+	.half	.L790-.L789
 	.byte	1,5,53,9
-	.half	.L18-.L789
+	.half	.L18-.L790
 	.byte	1,5,1,9
-	.half	.L790-.L18
+	.half	.L791-.L18
 	.byte	3,4,1,5,9,7,9
-	.half	.L196-.L790
+	.half	.L196-.L791
 	.byte	3,125,1,5,1,9
 	.half	.L248-.L196
 	.byte	3,3,0,1,1
-.L557:
+.L558:
 	.sdecl	'.debug_ranges',debug,cluster('spi_mux')
 	.sect	'.debug_ranges'
 .L247:
@@ -26190,14 +26199,14 @@ _999001___func__:	.type	object
 	.sdecl	'.debug_line',debug,cluster('.cocofun_2')
 	.sect	'.debug_line'
 .L251:
-	.word	.L792-.L791
-.L791:
+	.word	.L793-.L792
+.L792:
 	.half	3
-	.word	.L794-.L793
-.L793:
+	.word	.L795-.L794
+.L794:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\Libraries\\seekfree_libraries\\zf_spi.c',0,0,0,0,0
-.L794:
+.L795:
 	.byte	5,9,7,0,5,2
 	.word	.L224
 	.byte	3,47,1,9
@@ -26205,77 +26214,77 @@ _999001___func__:	.type	object
 	.byte	0,1,1,5,9,0,5,2
 	.word	.L224
 	.byte	3,51,1,9
-	.half	.L795-.L224
+	.half	.L796-.L224
 	.byte	3,124,1,7,9
-	.half	.L253-.L795
+	.half	.L253-.L796
 	.byte	0,1,1,5,9,0,5,2
 	.word	.L224
 	.byte	3,54,1,9
-	.half	.L795-.L224
+	.half	.L796-.L224
 	.byte	3,121,1,7,9
-	.half	.L253-.L795
+	.half	.L253-.L796
 	.byte	0,1,1,5,9,0,5,2
 	.word	.L224
 	.byte	3,203,0,1,9
-	.half	.L795-.L224
+	.half	.L796-.L224
 	.byte	3,100,1,7,9
-	.half	.L253-.L795
+	.half	.L253-.L796
 	.byte	0,1,1,5,9,0,5,2
 	.word	.L224
 	.byte	3,209,0,1,9
-	.half	.L795-.L224
+	.half	.L796-.L224
 	.byte	3,94,1,7,9
-	.half	.L253-.L795
+	.half	.L253-.L796
 	.byte	0,1,1,5,9,0,5,2
 	.word	.L224
 	.byte	3,213,0,1,9
-	.half	.L795-.L224
+	.half	.L796-.L224
 	.byte	3,90,1,7,9
-	.half	.L253-.L795
+	.half	.L253-.L796
 	.byte	0,1,1,5,9,0,5,2
 	.word	.L224
 	.byte	3,236,0,1,9
-	.half	.L795-.L224
+	.half	.L796-.L224
 	.byte	3,67,1,7,9
-	.half	.L253-.L795
+	.half	.L253-.L796
 	.byte	0,1,1,5,9,0,5,2
 	.word	.L224
 	.byte	3,242,0,1,9
-	.half	.L795-.L224
+	.half	.L796-.L224
 	.byte	3,189,127,1,7,9
-	.half	.L253-.L795
+	.half	.L253-.L796
 	.byte	0,1,1,5,9,0,5,2
 	.word	.L224
 	.byte	3,249,0,1,9
-	.half	.L795-.L224
+	.half	.L796-.L224
 	.byte	3,182,127,1,7,9
-	.half	.L253-.L795
+	.half	.L253-.L796
 	.byte	0,1,1,5,9,0,5,2
 	.word	.L224
 	.byte	3,144,1,1,9
-	.half	.L795-.L224
+	.half	.L796-.L224
 	.byte	3,159,127,1,7,9
-	.half	.L253-.L795
+	.half	.L253-.L796
 	.byte	0,1,1,5,9,0,5,2
 	.word	.L224
 	.byte	3,152,1,1,9
-	.half	.L795-.L224
+	.half	.L796-.L224
 	.byte	3,151,127,1,7,9
-	.half	.L253-.L795
+	.half	.L253-.L796
 	.byte	0,1,1,5,9,0,5,2
 	.word	.L224
 	.byte	3,160,1,1,9
-	.half	.L795-.L224
+	.half	.L796-.L224
 	.byte	3,143,127,1,7,9
-	.half	.L253-.L795
+	.half	.L253-.L796
 	.byte	0,1,1,5,9,0,5,2
 	.word	.L224
 	.byte	3,179,1,1,9
-	.half	.L795-.L224
+	.half	.L796-.L224
 	.byte	3,252,126,1,7,9
-	.half	.L253-.L795
+	.half	.L253-.L796
 	.byte	0,1,1
-.L792:
+.L793:
 	.sdecl	'.debug_ranges',debug,cluster('.cocofun_2')
 	.sect	'.debug_ranges'
 .L252:
@@ -26305,14 +26314,14 @@ _999001___func__:	.type	object
 	.sdecl	'.debug_line',debug,cluster('.cocofun_3')
 	.sect	'.debug_line'
 .L256:
-	.word	.L797-.L796
-.L796:
+	.word	.L798-.L797
+.L797:
 	.half	3
-	.word	.L799-.L798
-.L798:
+	.word	.L800-.L799
+.L799:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\Libraries\\seekfree_libraries\\zf_spi.c',0,0,0,0,0
-.L799:
+.L800:
 	.byte	5,9,7,0,5,2
 	.word	.L222
 	.byte	3,47,1,9
@@ -26320,77 +26329,77 @@ _999001___func__:	.type	object
 	.byte	0,1,1,5,9,0,5,2
 	.word	.L222
 	.byte	3,51,1,9
-	.half	.L800-.L222
+	.half	.L801-.L222
 	.byte	3,124,1,7,9
-	.half	.L258-.L800
+	.half	.L258-.L801
 	.byte	0,1,1,5,9,0,5,2
 	.word	.L222
 	.byte	3,54,1,9
-	.half	.L800-.L222
+	.half	.L801-.L222
 	.byte	3,121,1,7,9
-	.half	.L258-.L800
+	.half	.L258-.L801
 	.byte	0,1,1,5,9,0,5,2
 	.word	.L222
 	.byte	3,203,0,1,9
-	.half	.L800-.L222
+	.half	.L801-.L222
 	.byte	3,100,1,7,9
-	.half	.L258-.L800
+	.half	.L258-.L801
 	.byte	0,1,1,5,9,0,5,2
 	.word	.L222
 	.byte	3,209,0,1,9
-	.half	.L800-.L222
+	.half	.L801-.L222
 	.byte	3,94,1,7,9
-	.half	.L258-.L800
+	.half	.L258-.L801
 	.byte	0,1,1,5,9,0,5,2
 	.word	.L222
 	.byte	3,213,0,1,9
-	.half	.L800-.L222
+	.half	.L801-.L222
 	.byte	3,90,1,7,9
-	.half	.L258-.L800
+	.half	.L258-.L801
 	.byte	0,1,1,5,9,0,5,2
 	.word	.L222
 	.byte	3,236,0,1,9
-	.half	.L800-.L222
+	.half	.L801-.L222
 	.byte	3,67,1,7,9
-	.half	.L258-.L800
+	.half	.L258-.L801
 	.byte	0,1,1,5,9,0,5,2
 	.word	.L222
 	.byte	3,242,0,1,9
-	.half	.L800-.L222
+	.half	.L801-.L222
 	.byte	3,189,127,1,7,9
-	.half	.L258-.L800
+	.half	.L258-.L801
 	.byte	0,1,1,5,9,0,5,2
 	.word	.L222
 	.byte	3,249,0,1,9
-	.half	.L800-.L222
+	.half	.L801-.L222
 	.byte	3,182,127,1,7,9
-	.half	.L258-.L800
+	.half	.L258-.L801
 	.byte	0,1,1,5,9,0,5,2
 	.word	.L222
 	.byte	3,144,1,1,9
-	.half	.L800-.L222
+	.half	.L801-.L222
 	.byte	3,159,127,1,7,9
-	.half	.L258-.L800
+	.half	.L258-.L801
 	.byte	0,1,1,5,9,0,5,2
 	.word	.L222
 	.byte	3,152,1,1,9
-	.half	.L800-.L222
+	.half	.L801-.L222
 	.byte	3,151,127,1,7,9
-	.half	.L258-.L800
+	.half	.L258-.L801
 	.byte	0,1,1,5,9,0,5,2
 	.word	.L222
 	.byte	3,160,1,1,9
-	.half	.L800-.L222
+	.half	.L801-.L222
 	.byte	3,143,127,1,7,9
-	.half	.L258-.L800
+	.half	.L258-.L801
 	.byte	0,1,1,5,9,0,5,2
 	.word	.L222
 	.byte	3,179,1,1,9
-	.half	.L800-.L222
+	.half	.L801-.L222
 	.byte	3,252,126,1,7,9
-	.half	.L258-.L800
+	.half	.L258-.L801
 	.byte	0,1,1
-.L797:
+.L798:
 	.sdecl	'.debug_ranges',debug,cluster('.cocofun_3')
 	.sect	'.debug_ranges'
 .L257:
@@ -26420,34 +26429,34 @@ _999001___func__:	.type	object
 	.sdecl	'.debug_line',debug,cluster('.cocofun_4')
 	.sect	'.debug_line'
 .L261:
-	.word	.L802-.L801
-.L801:
+	.word	.L803-.L802
+.L802:
 	.half	3
-	.word	.L804-.L803
-.L803:
+	.word	.L805-.L804
+.L804:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\Libraries\\seekfree_libraries\\zf_spi.c',0,0,0,0,0
-.L804:
+.L805:
 	.byte	5,26,7,0,5,2
 	.word	.L211
 	.byte	3,176,2,1,5,43,9
-	.half	.L805-.L211
+	.half	.L806-.L211
 	.byte	1,5,7,7,9
-	.half	.L806-.L805
+	.half	.L807-.L806
 	.byte	3,1,1,9
-	.half	.L263-.L806
+	.half	.L263-.L807
 	.byte	0,1,1,5,24,0,5,2
 	.word	.L211
-	.byte	3,190,2,1,5,41,9
-	.half	.L805-.L211
+	.byte	3,194,2,1,5,41,9
+	.half	.L806-.L211
 	.byte	1,5,5,7,9
-	.half	.L806-.L805
-	.byte	3,1,1,5,7,9
 	.half	.L807-.L806
-	.byte	3,114,1,7,9
-	.half	.L263-.L807
+	.byte	3,1,1,5,7,9
+	.half	.L808-.L807
+	.byte	3,110,1,7,9
+	.half	.L263-.L808
 	.byte	0,1,1
-.L802:
+.L803:
 	.sdecl	'.debug_ranges',debug,cluster('.cocofun_4')
 	.sect	'.debug_ranges'
 .L262:
@@ -27135,7 +27144,7 @@ _999001___func__:	.type	object
 	.word	0,0
 	.sdecl	'.debug_frame',debug
 	.sect	'.debug_frame'
-.L808:
+.L809:
 	.word	48
 	.word	-1
 	.byte	3,0,2,1,27,12,26,0,8,27,8,26,8,28,8,29,8,30,8,31,8,34,8,35,8,32,8,33,8,16,8,17,8,24,8,25,8,36,8,37,8,38
@@ -27143,11 +27152,11 @@ _999001___func__:	.type	object
 	.sdecl	'.debug_frame',debug,cluster('spi_mux')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L808,.L220,.L328-.L220
+	.word	.L809,.L220,.L328-.L220
 	.sdecl	'.debug_frame',debug,cluster('spi_init')
 	.sect	'.debug_frame'
 	.word	36
-	.word	.L808,.L226,.L264-.L226
+	.word	.L809,.L226,.L264-.L226
 	.byte	4
 	.word	(.L462-.L226)/2
 	.byte	19,160,2,22,26,4,19,138,160,2,4
@@ -27156,10 +27165,10 @@ _999001___func__:	.type	object
 	.sdecl	'.debug_frame',debug,cluster('spi_mosi')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L808,.L228,.L291-.L228
+	.word	.L809,.L228,.L291-.L228
 	.sdecl	'.debug_frame',debug
 	.sect	'.debug_frame'
-.L809:
+.L810:
 	.word	52
 	.word	-1
 	.byte	3,0,2,1,40,12,26,0,9,40,27,155,0,7,26,8,28,8,29,8,30,8,31,8,34,8,35,8,32,8,33,8,16,8,17,8,24,8,25,8,36
@@ -27167,22 +27176,22 @@ _999001___func__:	.type	object
 	.sdecl	'.debug_frame',debug,cluster('.cocofun_3')
 	.sect	'.debug_frame'
 	.word	24
-	.word	.L809,.L222,.L258-.L222
+	.word	.L810,.L222,.L258-.L222
 	.byte	8,18,8,19,8,20,8,21,8,22,8,23
 	.sdecl	'.debug_frame',debug,cluster('.cocofun_2')
 	.sect	'.debug_frame'
 	.word	24
-	.word	.L809,.L224,.L253-.L224
+	.word	.L810,.L224,.L253-.L224
 	.byte	8,18,8,19,8,20,8,21,8,22,8,23
 	.sdecl	'.debug_frame',debug,cluster('.cocofun_4')
 	.sect	'.debug_frame'
 	.word	24
-	.word	.L809,.L211,.L263-.L211
+	.word	.L810,.L211,.L263-.L211
 	.byte	8,18,8,19,8,20,8,21,8,22,8,23
 
-; ..\Libraries\seekfree_libraries\zf_spi.c	   323  	if(continuous)	IfxQspi_writeBasicConfigurationEndStream(moudle, bacon.U);
-; ..\Libraries\seekfree_libraries\zf_spi.c	   324  	IfxQspi_writeTransmitFifo(moudle, *modata);
-; ..\Libraries\seekfree_libraries\zf_spi.c	   325  	while(moudle->STATUS.B.TXFIFOLEVEL != 0);
-; ..\Libraries\seekfree_libraries\zf_spi.c	   326  
-; ..\Libraries\seekfree_libraries\zf_spi.c	   327  	while(moudle->STATUS.B.RXFIFOLEVEL == 0);
+; ..\Libraries\seekfree_libraries\zf_spi.c	   327  
+; ..\Libraries\seekfree_libraries\zf_spi.c	   328  
+; ..\Libraries\seekfree_libraries\zf_spi.c	   329  
+; ..\Libraries\seekfree_libraries\zf_spi.c	   330  
+
 	; Module end

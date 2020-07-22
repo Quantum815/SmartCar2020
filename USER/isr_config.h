@@ -42,16 +42,16 @@
 
 //------------PIT中断参数相关定义------------
 #define CCU6_0_CH0_INT_SERVICE	0	//定义CCU6_0 PIT通道0中断服务类型，即中断是由谁响应处理 0:CPU0 1:CPU1 3:DMA  不可设置为其他值
-#define CCU6_0_CH0_ISR_PRIORITY 255	//定义CCU6_0 PIT通道0中断优先级 优先级范围1-255 越大优先级越高 与平时使用的单片机不一样
+#define CCU6_0_CH0_ISR_PRIORITY 240	//定义CCU6_0 PIT通道0中断优先级 优先级范围1-255 越大优先级越高 与平时使用的单片机不一样
 
 #define CCU6_0_CH1_INT_SERVICE	1
-#define CCU6_0_CH1_ISR_PRIORITY 254
+#define CCU6_0_CH1_ISR_PRIORITY 242
 
 #define CCU6_1_CH0_INT_SERVICE	0
-#define CCU6_1_CH0_ISR_PRIORITY 253
+#define CCU6_1_CH0_ISR_PRIORITY 243
 
 #define CCU6_1_CH1_INT_SERVICE	0
-#define CCU6_1_CH1_ISR_PRIORITY 32
+#define CCU6_1_CH1_ISR_PRIORITY 241
 
 
 
@@ -90,14 +90,14 @@
 #define UART1_ER_INT_PRIO  249
 
 #define	UART2_INT_SERVICE  0    //双车通讯
-#define UART2_TX_INT_PRIO  244
-#define UART2_RX_INT_PRIO  245
-#define UART2_ER_INT_PRIO  246
+#define UART2_TX_INT_PRIO  253
+#define UART2_RX_INT_PRIO  254
+#define UART2_ER_INT_PRIO  255
 
 #define	UART3_INT_SERVICE  0    //调试
-#define UART3_TX_INT_PRIO  241
-#define UART3_RX_INT_PRIO  242
-#define UART3_ER_INT_PRIO  243
+#define UART3_TX_INT_PRIO  244
+#define UART3_RX_INT_PRIO  245
+#define UART3_ER_INT_PRIO  246
 
 
 #endif

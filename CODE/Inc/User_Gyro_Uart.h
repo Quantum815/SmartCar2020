@@ -16,6 +16,6 @@ void GyroCalculate(void);
 void ManageYawAngle(void);
 void GyroYawAngleInit(void);
 double GetGyroError(void);  //ªÒ»°±»¿˝ŒÛ≤Ó
-double GyroPID(double Kp, double Ki, double Kd);
+void GyroPID(double Kp, double Ki, double Kd);
 
 #endif /* CODE_INC_USER_GYRO_UART_H_ */

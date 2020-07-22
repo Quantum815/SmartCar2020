@@ -104,8 +104,13 @@
 #define WHEEL_DIAMETER 62
 
 //车轮启动死区PWM占空比
-#define LeftWheelDeadZone 8+17.5
-#define RightWheelDeadZone 5+17.5
+#define LeftWheelDeadZone 6+7
+#define RightWheelDeadZone 7+7
+
+//巡线PID
+#define FINDLINE_P 20
+#define FINDLINE_I 0
+#define FINDLINE_D 2000
 
 #endif
 

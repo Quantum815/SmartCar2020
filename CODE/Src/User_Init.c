@@ -21,14 +21,15 @@ void UserInit(void)
 	//各类资源与外设
 	ADCInit();
 	//DebugUARTInit();
-	//EncoderInit();
-	//MotorInit();
+	EncoderInit();
+	MotorInit();
 	//GyroUARTInit();
 	//SetMotorPWM(LMotor_F, 1);
 	//SetMotorPWM(LMotor_B, 1);
 	//SetMotorPWM(RMotor_F, 1);
 	//SetMotorPWM(RMotor_B, 1);
-	//CleanDistance();
+	CleanDistance();
+	ips114_init();
 	//InitGyroYawAngle();
 }
 

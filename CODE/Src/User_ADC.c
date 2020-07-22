@@ -32,8 +32,16 @@ void UpdateADCValue(void)
 
 int16 ADCValueHandle(uint8 num)
 {
-	UpdateADCValue();
 	if(num > 4)
 		return -1;
 	return ADCValue[num];
+}
+
+void ADCcalculateMidLine(void)
+{
+	float Lsqrt, Rsqrt;
+	Lsqrt = sqrt(ADCValueHandle(0));
+	Rsqrt = sqrt(ADCValueHandle(4));
+	MidLineFuseNum = (Lsqrt-Rsqrt)/(ADCValueHandle(0)+ADCValueHandle(4));
+	printf("%lf\r\n", MidLineFuseNum);
 }

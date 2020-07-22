@@ -321,11 +321,11 @@ ips114_init:	.type	func
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IPS114_SPI.c	   111      if      (IPS114_DISPLAY_DIR==0)	ips114_writeData(0x00);
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IPS114_SPI.c	   112      else if (IPS114_DISPLAY_DIR==1)	ips114_writeData(0xC0);
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IPS114_SPI.c	   113      else if (IPS114_DISPLAY_DIR==2)	ips114_writeData(0x70);
-; ..\Libraries\seekfree_peripheral\SEEKFREE_IPS114_SPI.c	   114      else                           	ips114_writeData(0xA0);
-	mov	d4,#160
+	mov	d4,#112
 	call	ips114_writeData
 .L639:
 
+; ..\Libraries\seekfree_peripheral\SEEKFREE_IPS114_SPI.c	   114      else                           	ips114_writeData(0xA0);
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IPS114_SPI.c	   115      
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IPS114_SPI.c	   116      ips114_writeIndex(0x3A); 
 	mov	d4,#58
@@ -692,52 +692,52 @@ ips114_set_region:	.type	func
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IPS114_SPI.c	   216  	else if(IPS114_DISPLAY_DIR==2)
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IPS114_SPI.c	   217  	{
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IPS114_SPI.c	   218  		ips114_writeIndex(0x2a);//列地址设置
-; ..\Libraries\seekfree_peripheral\SEEKFREE_IPS114_SPI.c	   219  		ips114_writedata_16bit(x1+40);
-; ..\Libraries\seekfree_peripheral\SEEKFREE_IPS114_SPI.c	   220  		ips114_writedata_16bit(x2+40);
-; ..\Libraries\seekfree_peripheral\SEEKFREE_IPS114_SPI.c	   221  		ips114_writeIndex(0x2b);//行地址设置
-; ..\Libraries\seekfree_peripheral\SEEKFREE_IPS114_SPI.c	   222  		ips114_writedata_16bit(y1+53);
-; ..\Libraries\seekfree_peripheral\SEEKFREE_IPS114_SPI.c	   223  		ips114_writedata_16bit(y2+53);
-; ..\Libraries\seekfree_peripheral\SEEKFREE_IPS114_SPI.c	   224  		ips114_writeIndex(0x2c);//储存器写
-; ..\Libraries\seekfree_peripheral\SEEKFREE_IPS114_SPI.c	   225  	}
-; ..\Libraries\seekfree_peripheral\SEEKFREE_IPS114_SPI.c	   226  	else
-; ..\Libraries\seekfree_peripheral\SEEKFREE_IPS114_SPI.c	   227  	{
-; ..\Libraries\seekfree_peripheral\SEEKFREE_IPS114_SPI.c	   228  		ips114_writeIndex(0x2a);//列地址设置
 	mov	d4,#42
 	call	ips114_writeIndex
 .L447:
 
-; ..\Libraries\seekfree_peripheral\SEEKFREE_IPS114_SPI.c	   229  		ips114_writedata_16bit(x1+40);
+; ..\Libraries\seekfree_peripheral\SEEKFREE_IPS114_SPI.c	   219  		ips114_writedata_16bit(x1+40);
 	add	d15,d15,#40
 .L449:
 	extr.u	d4,d15,#0,#16
 	call	ips114_writedata_16bit
 .L451:
 
-; ..\Libraries\seekfree_peripheral\SEEKFREE_IPS114_SPI.c	   230  		ips114_writedata_16bit(x2+40);
+; ..\Libraries\seekfree_peripheral\SEEKFREE_IPS114_SPI.c	   220  		ips114_writedata_16bit(x2+40);
 	add	d15,d9,#40
 .L452:
 	extr.u	d4,d15,#0,#16
 	call	ips114_writedata_16bit
 .L940:
 
-; ..\Libraries\seekfree_peripheral\SEEKFREE_IPS114_SPI.c	   231  		ips114_writeIndex(0x2b);//行地址设置
+; ..\Libraries\seekfree_peripheral\SEEKFREE_IPS114_SPI.c	   221  		ips114_writeIndex(0x2b);//行地址设置
 	mov	d4,#43
 	call	ips114_writeIndex
 .L453:
 
-; ..\Libraries\seekfree_peripheral\SEEKFREE_IPS114_SPI.c	   232  		ips114_writedata_16bit(y1+52);
-	add	d15,d8,#52
+; ..\Libraries\seekfree_peripheral\SEEKFREE_IPS114_SPI.c	   222  		ips114_writedata_16bit(y1+53);
+	add	d15,d8,#53
 .L454:
 	extr.u	d4,d15,#0,#16
 	call	ips114_writedata_16bit
 .L941:
 
-; ..\Libraries\seekfree_peripheral\SEEKFREE_IPS114_SPI.c	   233  		ips114_writedata_16bit(y2+52);
-	add	d15,d10,#52
+; ..\Libraries\seekfree_peripheral\SEEKFREE_IPS114_SPI.c	   223  		ips114_writedata_16bit(y2+53);
+	add	d15,d10,#53
 	extr.u	d4,d15,#0,#16
 	call	ips114_writedata_16bit
 .L942:
 
+; ..\Libraries\seekfree_peripheral\SEEKFREE_IPS114_SPI.c	   224  		ips114_writeIndex(0x2c);//储存器写
+; ..\Libraries\seekfree_peripheral\SEEKFREE_IPS114_SPI.c	   225  	}
+; ..\Libraries\seekfree_peripheral\SEEKFREE_IPS114_SPI.c	   226  	else
+; ..\Libraries\seekfree_peripheral\SEEKFREE_IPS114_SPI.c	   227  	{
+; ..\Libraries\seekfree_peripheral\SEEKFREE_IPS114_SPI.c	   228  		ips114_writeIndex(0x2a);//列地址设置
+; ..\Libraries\seekfree_peripheral\SEEKFREE_IPS114_SPI.c	   229  		ips114_writedata_16bit(x1+40);
+; ..\Libraries\seekfree_peripheral\SEEKFREE_IPS114_SPI.c	   230  		ips114_writedata_16bit(x2+40);
+; ..\Libraries\seekfree_peripheral\SEEKFREE_IPS114_SPI.c	   231  		ips114_writeIndex(0x2b);//行地址设置
+; ..\Libraries\seekfree_peripheral\SEEKFREE_IPS114_SPI.c	   232  		ips114_writedata_16bit(y1+52);
+; ..\Libraries\seekfree_peripheral\SEEKFREE_IPS114_SPI.c	   233  		ips114_writedata_16bit(y2+52);
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IPS114_SPI.c	   234  		ips114_writeIndex(0x2c);//储存器写
 	mov	d4,#44
 	j	ips114_writeIndex
@@ -8812,9 +8812,9 @@ _999002___func__:	.type	object
 	.half	.L637-.L636
 	.byte	3,2,1,5,54,9
 	.half	.L638-.L637
-	.byte	3,5,1,5,23,9
+	.byte	3,4,1,5,23,9
 	.half	.L639-.L638
-	.byte	3,2,1,5,22,9
+	.byte	3,3,1,5,22,9
 	.half	.L640-.L639
 	.byte	3,1,1,5,23,9
 	.half	.L641-.L640
@@ -10949,7 +10949,7 @@ _999002___func__:	.type	object
 	.word	.L75
 	.byte	3,193,1,1,5,21,9
 	.half	.L450-.L75
-	.byte	3,34,1,5,28,9
+	.byte	3,24,1,5,28,9
 	.half	.L447-.L450
 	.byte	3,1,1,9
 	.half	.L451-.L447
@@ -10961,7 +10961,7 @@ _999002___func__:	.type	object
 	.half	.L941-.L453
 	.byte	3,1,1,5,21,9
 	.half	.L942-.L941
-	.byte	3,1,1,5,1,9
+	.byte	3,11,1,5,1,9
 	.half	.L237-.L942
 	.byte	3,2,0,1,1
 .L937:

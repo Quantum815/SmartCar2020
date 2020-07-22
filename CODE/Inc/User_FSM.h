@@ -10,6 +10,8 @@
 
 #include "headfile.h"
 
+extern double MidLineFuseNum;
+
 enum CarState  //״̬
 {
     Stop,

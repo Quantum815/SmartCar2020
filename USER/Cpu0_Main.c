@@ -50,16 +50,26 @@ void core0_main(void)
 		//printf("%d   ",GYRORxBuff[i]);
 		//printf("\r\n");
 		//systick_delay_ms(STM0, 100);
+		//UpdateADCValue();
+		//ADCcalculateMidLine();
 		//DebugReadADCData();
 		//GyroUARTReadByte();
 		//CountDistance();
 		//GyroCalculate();
-    	//systick_delay_ms(STM0, 500);
+    	//systick_delay_ms(STM0, 20);
+		//DebugReadADCData();
+    	//ADCcalculateMidLine();
+
+
 		//ips114_showchar(50,50,'t');
-		//SetMotorPWM(LMotor_F, 30);
-		//SetMotorPWM(LMotor_B, 0);
-		//SetMotorPWM(RMotor_F, 0);
-		//SetMotorPWM(RMotor_B, 0);
+		//MotorUserHandle(LMotor_F, 20);
+		//systick_delay_ms(STM0, 2000);
+		//MotorUserHandle(RMotor_F, 20);
+		//systick_delay_ms(STM0, 2000);
+		//MotorUserHandle(RMotor_F, 7);
+		//systick_delay_ms(STM0, 2000);
+		//MotorUserHandle(RMotor_B, 20);
+		//systick_delay_ms(STM0, 2000);
 		//uart_putstr(UART_0, "xxxxx");
 	}
 }

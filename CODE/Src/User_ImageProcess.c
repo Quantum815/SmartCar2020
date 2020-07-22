@@ -14,7 +14,6 @@
 int x1, x2, x3, x4;
 int CloseThresholds;
 int FarThresholds;
-double MidLineFuseNum;
 uint8 ProcessImageFlag = 0;
 uint8 DisplayIMAGE[MT9V03X_H][MT9V03X_W], OSTUIMAGE[15][MT9V03X_W];
 uint8 LeftLine[MT9V03X_H], RightLine[MT9V03X_H], MidLine[MT9V03X_H];
@@ -68,16 +67,17 @@ void ImagePretreatment(void)
 }
 void FindMidLine(void)
 {
-    for (int i = 0; i <= MT9V03X_H - 1; i++)
+
+    for (int i = (MT9V03X_H - 1) - 15; i >= 15; i--)
     {
-        if(i <= 10)
+        if(i >= (MT9V03X_H - 1) - 20)
         {
             for (int j = 0; j <= MT9V03X_W - 1; j++)
             {
-                if (DisplayIMAGE[i][j] == 0)
+                if (DisplayIMAGE[i][j] == 255)
                 {
                     x1 = j;
-                    LeftLine[i] = (uint8)j;
+                    LeftLine[i] = j;
                     break;
                 }
                 else if(j == 187)
@@ -87,10 +87,10 @@ void FindMidLine(void)
             }
             for(int k = MT9V03X_W; k >= 0; k--)
             {
-                if(DisplayIMAGE[i][k] == 0)
+                if(DisplayIMAGE[i][k] == 255)
                 {
                     x2 = k;
-                    RightLine[i] = (uint8)k;
+                    RightLine[i] = k;
                     break;
                 }
                 else if(k == 0)
@@ -98,7 +98,7 @@ void FindMidLine(void)
                     RightLine[i] = 0;
                 }
             }
-            //DisplayIMAGEE[i][(int)((x1 + x2) / 2)] = 0;
+            //DisplayIMAG[i][(int)((x1 + x2) / 2)] = 0;
             MidLine[i] = (int)((x1 + x2) / 2);
         }
         else
@@ -107,7 +107,7 @@ void FindMidLine(void)
             {
                 if (DisplayIMAGE[i][f] == 0)
                 {
-                    LeftLine[i] = (uint8)f;
+                    LeftLine[i] = f;
                     x3 = f;
                     break;
                 }
@@ -121,7 +121,7 @@ void FindMidLine(void)
                 if (DisplayIMAGE[i][g] == 0)
                 {
                     x4 = g;
-                    RightLine[i] = (uint8)g;
+                    RightLine[i] = g;
                     break;
                 }
                 else if(g == 187)
@@ -129,7 +129,7 @@ void FindMidLine(void)
                     RightLine[i] = 187;
                 }
             }
-            //DisplayIMAGEE[i][(int)((x3 + x4) / 2)] = 0;
+            //DisplayIMAG[i][(int)((x3 + x4) / 2)] = 0;
 
             if(x4 == 188 && x3 == 0)
             {

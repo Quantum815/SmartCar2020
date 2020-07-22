@@ -34320,7 +34320,7 @@ $TC16X
 	.byte	'IfxDma_SleepMode',0,45,151,2,3
 	.word	251785
 	.byte	11
-	.byte	'FSMTable',0,46,31,16,16,14
+	.byte	'FSMTable',0,46,33,16,16,14
 	.byte	'Event',0
 	.word	504
 	.byte	4,2,35,0,14
@@ -34333,7 +34333,7 @@ $TC16X
 	.byte	'NextState',0
 	.word	504
 	.byte	4,2,35,12,0,32
-	.byte	'FSMTable_t',0,46,36,2
+	.byte	'FSMTable_t',0,46,38,2
 	.word	251871
 	.byte	0
 	.sdecl	'.debug_abbrev',debug
@@ -34445,70 +34445,70 @@ $TC16X
 ; ..\CODE\Src\User_ImageProcess.c	    14  int x1, x2, x3, x4;
 ; ..\CODE\Src\User_ImageProcess.c	    15  int CloseThresholds;
 ; ..\CODE\Src\User_ImageProcess.c	    16  int FarThresholds;
-; ..\CODE\Src\User_ImageProcess.c	    17  double MidLineFuseNum;
-; ..\CODE\Src\User_ImageProcess.c	    18  uint8 ProcessImageFlag = 0;
-; ..\CODE\Src\User_ImageProcess.c	    19  uint8 DisplayIMAGE[MT9V03X_H][MT9V03X_W], OSTUIMAGE[15][MT9V03X_W];
-; ..\CODE\Src\User_ImageProcess.c	    20  uint8 LeftLine[MT9V03X_H], RightLine[MT9V03X_H], MidLine[MT9V03X_H];
-; ..\CODE\Src\User_ImageProcess.c	    21  
-; ..\CODE\Src\User_ImageProcess.c	    22  #pragma section all "cpu1_dsram"
-; ..\CODE\Src\User_ImageProcess.c	    23  
-; ..\CODE\Src\User_ImageProcess.c	    24  //Í¼ÏñÍ¼´¦Àí
-; ..\CODE\Src\User_ImageProcess.c	    25  void ImagePretreatment(void)
-; ..\CODE\Src\User_ImageProcess.c	    26  {
-; ..\CODE\Src\User_ImageProcess.c	    27      for (int i = 0; i <= MT9V03X_H - 1; i++)
-; ..\CODE\Src\User_ImageProcess.c	    28      {
-; ..\CODE\Src\User_ImageProcess.c	    29          for(int j = 0; j <= MT9V03X_W-1; j++)
-; ..\CODE\Src\User_ImageProcess.c	    30          {
-; ..\CODE\Src\User_ImageProcess.c	    31  
-; ..\CODE\Src\User_ImageProcess.c	    32              if((i<=50 && (j<=50 || j>=138)) || (i>=70 && (j<=50 || j>=138)))
-; ..\CODE\Src\User_ImageProcess.c	    33              {
-; ..\CODE\Src\User_ImageProcess.c	    34                  DisplayIMAGE[i][j] = mt9v03x_image[i][j] + 0;
-; ..\CODE\Src\User_ImageProcess.c	    35              }
-; ..\CODE\Src\User_ImageProcess.c	    36  
-; ..\CODE\Src\User_ImageProcess.c	    37          }
-; ..\CODE\Src\User_ImageProcess.c	    38      }
-; ..\CODE\Src\User_ImageProcess.c	    39      for(int i = 15; i <= (MT9V03X_H-1)-15; i++)
-; ..\CODE\Src\User_ImageProcess.c	    40      {
-; ..\CODE\Src\User_ImageProcess.c	    41          for(int j = 0; j <= MT9V03X_W-1; j++)
-; ..\CODE\Src\User_ImageProcess.c	    42          {
-; ..\CODE\Src\User_ImageProcess.c	    43              if(i >= 50)
-; ..\CODE\Src\User_ImageProcess.c	    44              {
-; ..\CODE\Src\User_ImageProcess.c	    45                  if(mt9v03x_image[i][j] <= CloseThresholds)
-; ..\CODE\Src\User_ImageProcess.c	    46                  {
-; ..\CODE\Src\User_ImageProcess.c	    47                      DisplayIMAGE[i][j] = 0;  //°×
-; ..\CODE\Src\User_ImageProcess.c	    48                  }
-; ..\CODE\Src\User_ImageProcess.c	    49                  else
-; ..\CODE\Src\User_ImageProcess.c	    50                  {
-; ..\CODE\Src\User_ImageProcess.c	    51                      DisplayIMAGE[i][j] = 255;  //ºÚ
-; ..\CODE\Src\User_ImageProcess.c	    52                  }
-; ..\CODE\Src\User_ImageProcess.c	    53              }
-; ..\CODE\Src\User_ImageProcess.c	    54              else
-; ..\CODE\Src\User_ImageProcess.c	    55              {
-; ..\CODE\Src\User_ImageProcess.c	    56                  if(mt9v03x_image[i][j] <= FarThresholds)
-; ..\CODE\Src\User_ImageProcess.c	    57                  {
-; ..\CODE\Src\User_ImageProcess.c	    58                      DisplayIMAGE[i][j] = 0;
-; ..\CODE\Src\User_ImageProcess.c	    59                  }
-; ..\CODE\Src\User_ImageProcess.c	    60                  else
-; ..\CODE\Src\User_ImageProcess.c	    61                  {
-; ..\CODE\Src\User_ImageProcess.c	    62                      DisplayIMAGE[i][j] = 255;
-; ..\CODE\Src\User_ImageProcess.c	    63                  }
-; ..\CODE\Src\User_ImageProcess.c	    64              }
-; ..\CODE\Src\User_ImageProcess.c	    65          }
-; ..\CODE\Src\User_ImageProcess.c	    66      }
-; ..\CODE\Src\User_ImageProcess.c	    67  
-; ..\CODE\Src\User_ImageProcess.c	    68  }
-; ..\CODE\Src\User_ImageProcess.c	    69  void FindMidLine(void)
-; ..\CODE\Src\User_ImageProcess.c	    70  {
-; ..\CODE\Src\User_ImageProcess.c	    71      for (int i = 0; i <= MT9V03X_H - 1; i++)
+; ..\CODE\Src\User_ImageProcess.c	    17  uint8 ProcessImageFlag = 0;
+; ..\CODE\Src\User_ImageProcess.c	    18  uint8 DisplayIMAGE[MT9V03X_H][MT9V03X_W], OSTUIMAGE[15][MT9V03X_W];
+; ..\CODE\Src\User_ImageProcess.c	    19  uint8 LeftLine[MT9V03X_H], RightLine[MT9V03X_H], MidLine[MT9V03X_H];
+; ..\CODE\Src\User_ImageProcess.c	    20  
+; ..\CODE\Src\User_ImageProcess.c	    21  #pragma section all "cpu1_dsram"
+; ..\CODE\Src\User_ImageProcess.c	    22  
+; ..\CODE\Src\User_ImageProcess.c	    23  //Í¼ÏñÍ¼´¦Àí
+; ..\CODE\Src\User_ImageProcess.c	    24  void ImagePretreatment(void)
+; ..\CODE\Src\User_ImageProcess.c	    25  {
+; ..\CODE\Src\User_ImageProcess.c	    26      for (int i = 0; i <= MT9V03X_H - 1; i++)
+; ..\CODE\Src\User_ImageProcess.c	    27      {
+; ..\CODE\Src\User_ImageProcess.c	    28          for(int j = 0; j <= MT9V03X_W-1; j++)
+; ..\CODE\Src\User_ImageProcess.c	    29          {
+; ..\CODE\Src\User_ImageProcess.c	    30  
+; ..\CODE\Src\User_ImageProcess.c	    31              if((i<=50 && (j<=50 || j>=138)) || (i>=70 && (j<=50 || j>=138)))
+; ..\CODE\Src\User_ImageProcess.c	    32              {
+; ..\CODE\Src\User_ImageProcess.c	    33                  DisplayIMAGE[i][j] = mt9v03x_image[i][j] + 0;
+; ..\CODE\Src\User_ImageProcess.c	    34              }
+; ..\CODE\Src\User_ImageProcess.c	    35  
+; ..\CODE\Src\User_ImageProcess.c	    36          }
+; ..\CODE\Src\User_ImageProcess.c	    37      }
+; ..\CODE\Src\User_ImageProcess.c	    38      for(int i = 15; i <= (MT9V03X_H-1)-15; i++)
+; ..\CODE\Src\User_ImageProcess.c	    39      {
+; ..\CODE\Src\User_ImageProcess.c	    40          for(int j = 0; j <= MT9V03X_W-1; j++)
+; ..\CODE\Src\User_ImageProcess.c	    41          {
+; ..\CODE\Src\User_ImageProcess.c	    42              if(i >= 50)
+; ..\CODE\Src\User_ImageProcess.c	    43              {
+; ..\CODE\Src\User_ImageProcess.c	    44                  if(mt9v03x_image[i][j] <= CloseThresholds)
+; ..\CODE\Src\User_ImageProcess.c	    45                  {
+; ..\CODE\Src\User_ImageProcess.c	    46                      DisplayIMAGE[i][j] = 0;  //°×
+; ..\CODE\Src\User_ImageProcess.c	    47                  }
+; ..\CODE\Src\User_ImageProcess.c	    48                  else
+; ..\CODE\Src\User_ImageProcess.c	    49                  {
+; ..\CODE\Src\User_ImageProcess.c	    50                      DisplayIMAGE[i][j] = 255;  //ºÚ
+; ..\CODE\Src\User_ImageProcess.c	    51                  }
+; ..\CODE\Src\User_ImageProcess.c	    52              }
+; ..\CODE\Src\User_ImageProcess.c	    53              else
+; ..\CODE\Src\User_ImageProcess.c	    54              {
+; ..\CODE\Src\User_ImageProcess.c	    55                  if(mt9v03x_image[i][j] <= FarThresholds)
+; ..\CODE\Src\User_ImageProcess.c	    56                  {
+; ..\CODE\Src\User_ImageProcess.c	    57                      DisplayIMAGE[i][j] = 0;
+; ..\CODE\Src\User_ImageProcess.c	    58                  }
+; ..\CODE\Src\User_ImageProcess.c	    59                  else
+; ..\CODE\Src\User_ImageProcess.c	    60                  {
+; ..\CODE\Src\User_ImageProcess.c	    61                      DisplayIMAGE[i][j] = 255;
+; ..\CODE\Src\User_ImageProcess.c	    62                  }
+; ..\CODE\Src\User_ImageProcess.c	    63              }
+; ..\CODE\Src\User_ImageProcess.c	    64          }
+; ..\CODE\Src\User_ImageProcess.c	    65      }
+; ..\CODE\Src\User_ImageProcess.c	    66  
+; ..\CODE\Src\User_ImageProcess.c	    67  }
+; ..\CODE\Src\User_ImageProcess.c	    68  void FindMidLine(void)
+; ..\CODE\Src\User_ImageProcess.c	    69  {
+; ..\CODE\Src\User_ImageProcess.c	    70  
+; ..\CODE\Src\User_ImageProcess.c	    71      for (int i = (MT9V03X_H - 1) - 15; i >= 15; i--)
 ; ..\CODE\Src\User_ImageProcess.c	    72      {
-; ..\CODE\Src\User_ImageProcess.c	    73          if(i <= 10)
+; ..\CODE\Src\User_ImageProcess.c	    73          if(i >= (MT9V03X_H - 1) - 20)
 ; ..\CODE\Src\User_ImageProcess.c	    74          {
 ; ..\CODE\Src\User_ImageProcess.c	    75              for (int j = 0; j <= MT9V03X_W - 1; j++)
 ; ..\CODE\Src\User_ImageProcess.c	    76              {
-; ..\CODE\Src\User_ImageProcess.c	    77                  if (DisplayIMAGE[i][j] == 0)
+; ..\CODE\Src\User_ImageProcess.c	    77                  if (DisplayIMAGE[i][j] == 255)
 ; ..\CODE\Src\User_ImageProcess.c	    78                  {
 ; ..\CODE\Src\User_ImageProcess.c	    79                      x1 = j;
-; ..\CODE\Src\User_ImageProcess.c	    80                      LeftLine[i] = (uint8)j;
+; ..\CODE\Src\User_ImageProcess.c	    80                      LeftLine[i] = j;
 ; ..\CODE\Src\User_ImageProcess.c	    81                      break;
 ; ..\CODE\Src\User_ImageProcess.c	    82                  }
 ; ..\CODE\Src\User_ImageProcess.c	    83                  else if(j == 187)
@@ -34518,10 +34518,10 @@ $TC16X
 ; ..\CODE\Src\User_ImageProcess.c	    87              }
 ; ..\CODE\Src\User_ImageProcess.c	    88              for(int k = MT9V03X_W; k >= 0; k--)
 ; ..\CODE\Src\User_ImageProcess.c	    89              {
-; ..\CODE\Src\User_ImageProcess.c	    90                  if(DisplayIMAGE[i][k] == 0)
+; ..\CODE\Src\User_ImageProcess.c	    90                  if(DisplayIMAGE[i][k] == 255)
 ; ..\CODE\Src\User_ImageProcess.c	    91                  {
 ; ..\CODE\Src\User_ImageProcess.c	    92                      x2 = k;
-; ..\CODE\Src\User_ImageProcess.c	    93                      RightLine[i] = (uint8)k;
+; ..\CODE\Src\User_ImageProcess.c	    93                      RightLine[i] = k;
 ; ..\CODE\Src\User_ImageProcess.c	    94                      break;
 ; ..\CODE\Src\User_ImageProcess.c	    95                  }
 ; ..\CODE\Src\User_ImageProcess.c	    96                  else if(k == 0)
@@ -34529,7 +34529,7 @@ $TC16X
 ; ..\CODE\Src\User_ImageProcess.c	    98                      RightLine[i] = 0;
 ; ..\CODE\Src\User_ImageProcess.c	    99                  }
 ; ..\CODE\Src\User_ImageProcess.c	   100              }
-; ..\CODE\Src\User_ImageProcess.c	   101              //DisplayIMAGEE[i][(int)((x1 + x2) / 2)] = 0;
+; ..\CODE\Src\User_ImageProcess.c	   101              //DisplayIMAG[i][(int)((x1 + x2) / 2)] = 0;
 ; ..\CODE\Src\User_ImageProcess.c	   102              MidLine[i] = (int)((x1 + x2) / 2);
 ; ..\CODE\Src\User_ImageProcess.c	   103          }
 ; ..\CODE\Src\User_ImageProcess.c	   104          else
@@ -34538,7 +34538,7 @@ $TC16X
 ; ..\CODE\Src\User_ImageProcess.c	   107              {
 ; ..\CODE\Src\User_ImageProcess.c	   108                  if (DisplayIMAGE[i][f] == 0)
 ; ..\CODE\Src\User_ImageProcess.c	   109                  {
-; ..\CODE\Src\User_ImageProcess.c	   110                      LeftLine[i] = (uint8)f;
+; ..\CODE\Src\User_ImageProcess.c	   110                      LeftLine[i] = f;
 ; ..\CODE\Src\User_ImageProcess.c	   111                      x3 = f;
 ; ..\CODE\Src\User_ImageProcess.c	   112                      break;
 ; ..\CODE\Src\User_ImageProcess.c	   113                  }
@@ -34552,7 +34552,7 @@ $TC16X
 ; ..\CODE\Src\User_ImageProcess.c	   121                  if (DisplayIMAGE[i][g] == 0)
 ; ..\CODE\Src\User_ImageProcess.c	   122                  {
 ; ..\CODE\Src\User_ImageProcess.c	   123                      x4 = g;
-; ..\CODE\Src\User_ImageProcess.c	   124                      RightLine[i] = (uint8)g;
+; ..\CODE\Src\User_ImageProcess.c	   124                      RightLine[i] = g;
 ; ..\CODE\Src\User_ImageProcess.c	   125                      break;
 ; ..\CODE\Src\User_ImageProcess.c	   126                  }
 ; ..\CODE\Src\User_ImageProcess.c	   127                  else if(g == 187)
@@ -34560,7 +34560,7 @@ $TC16X
 ; ..\CODE\Src\User_ImageProcess.c	   129                      RightLine[i] = 187;
 ; ..\CODE\Src\User_ImageProcess.c	   130                  }
 ; ..\CODE\Src\User_ImageProcess.c	   131              }
-; ..\CODE\Src\User_ImageProcess.c	   132              //DisplayIMAGEE[i][(int)((x3 + x4) / 2)] = 0;
+; ..\CODE\Src\User_ImageProcess.c	   132              //DisplayIMAG[i][(int)((x3 + x4) / 2)] = 0;
 ; ..\CODE\Src\User_ImageProcess.c	   133  
 ; ..\CODE\Src\User_ImageProcess.c	   134              if(x4 == 188 && x3 == 0)
 ; ..\CODE\Src\User_ImageProcess.c	   135              {
