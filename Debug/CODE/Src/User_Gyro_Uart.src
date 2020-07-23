@@ -1,6 +1,6 @@
 	; Module start
 	.compiler_version	"TASKING VX-toolset for TriCore: C compiler v6.3r1 Build 19041558 SN 99294086"
-	.compiler_invocation	"ctc --dep-file=CODE\\Src\\.User_Gyro_Uart.o.d --fp-model=c,f,l,n,r,S,T,z -D__CPU__=tc26x -D__CPU_TC26X__ --core=tc1.6.x --iso=99 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\CODE -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Build -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Impl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Lib -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Lib\\DataHandling -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Lib\\InternalMux -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_PinMap -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Asc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Lin -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Spi -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\Icu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\PwmBc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\PwmHl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\TimerWithTrigger -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\TPwm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cif -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cif\\Cam -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cif\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\CStart -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Irq -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Trap -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dma -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dma\\Dma -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dma\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc\\Dsadc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc\\Rdc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dts -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dts\\Dts -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dts\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Emem -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Emem\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eray -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eray\\Eray -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eray\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eth -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eth\\Phy_Pef7071 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eth\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fce -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fce\\Crc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fce\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fft -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fft\\Fft -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fft\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Flash -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Flash\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gpt12 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gpt12\\IncrEnc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gpt12\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom\\Pwm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom\\PwmHl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tim -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tim\\In -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom\\Pwm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom\\PwmHl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Trig -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Hssl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Hssl\\Hssl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Hssl\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\I2c -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\I2c\\I2c -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\I2c\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Iom -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Iom\\Driver -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Iom\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Msc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Msc\\Msc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Msc\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Mtu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Mtu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Multican -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Multican\\Can -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Multican\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Port -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Port\\Io -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Port\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5\\Psi5 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5s -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5s\\Psi5s -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5s\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi\\SpiMaster -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi\\SpiSlave -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Scu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Scu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Sent -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Sent\\Sent -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Sent\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Smu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Smu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Src -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Src\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Stm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Stm\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Stm\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Vadc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Vadc\\Adc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Vadc\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Platform -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Platform\\Tricore -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Platform\\Tricore\\Compilers -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Sfr -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Sfr\\TC26B -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Sfr\\TC26B\\_Reg -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Service -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Service\\CpuGeneric -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\seekfree_libraries -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\seekfree_libraries\\common -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\seekfree_peripheral -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\USER -g2 -wW557 --make-target=CODE\\Src\\User_Gyro_Uart.o -t4 --language=-gcc,-volatile,+strings,-kanji --default-near-size=0 -O2 --default-a1-size=0 --default-a0-size=0 --source --align=0 --compact-max-size=200 --switch=auto --error-limit=42 -o CODE\\Src\\User_Gyro_Uart.src ..\\CODE\\Src\\User_Gyro_Uart.c"
+	.compiler_invocation	"ctc --dep-file=CODE\\Src\\.User_Gyro_Uart.o.d --fp-model=c,f,l,n,r,S,T,z -D__CPU__=tc26x -D__CPU_TC26X__ --core=tc1.6.x --iso=99 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\CODE -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Build -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Impl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Lib -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Lib\\DataHandling -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Lib\\InternalMux -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_PinMap -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Asc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Lin -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Spi -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\Icu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\PwmBc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\PwmHl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\TimerWithTrigger -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\TPwm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cif -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cif\\Cam -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cif\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\CStart -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Irq -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Trap -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dma -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dma\\Dma -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dma\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc\\Dsadc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc\\Rdc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dts -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dts\\Dts -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dts\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Emem -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Emem\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eray -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eray\\Eray -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eray\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eth -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eth\\Phy_Pef7071 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eth\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fce -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fce\\Crc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fce\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fft -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fft\\Fft -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fft\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Flash -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Flash\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gpt12 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gpt12\\IncrEnc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gpt12\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom\\Pwm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom\\PwmHl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tim -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tim\\In -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom\\Pwm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom\\PwmHl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Trig -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Hssl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Hssl\\Hssl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Hssl\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\I2c -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\I2c\\I2c -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\I2c\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Iom -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Iom\\Driver -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Iom\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Msc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Msc\\Msc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Msc\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Mtu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Mtu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Multican -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Multican\\Can -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Multican\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Port -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Port\\Io -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Port\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5\\Psi5 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5s -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5s\\Psi5s -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5s\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi\\SpiMaster -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi\\SpiSlave -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Scu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Scu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Sent -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Sent\\Sent -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Sent\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Smu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Smu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Src -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Src\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Stm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Stm\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Stm\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Vadc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Vadc\\Adc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Vadc\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Platform -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Platform\\Tricore -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Platform\\Tricore\\Compilers -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Sfr -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Sfr\\TC26B -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Sfr\\TC26B\\_Reg -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Service -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Service\\CpuGeneric -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\seekfree_libraries -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\seekfree_libraries\\common -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\seekfree_peripheral -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\USER -g2 -wW557 --make-target=CODE\\Src\\User_Gyro_Uart.o -t4 --language=-gcc,-volatile,+strings,-kanji --default-near-size=0 -O1 --default-a1-size=0 --default-a0-size=0 --source --align=0 --switch=auto --error-limit=42 -o CODE\\Src\\User_Gyro_Uart.src ..\\CODE\\Src\\User_Gyro_Uart.c"
 	.compiler_name		"ctc"
 	;source	'..\\CODE\\Src\\User_Gyro_Uart.c'
 
@@ -41,66 +41,70 @@ GyroUARTInit:	.type	func
 ; ..\CODE\Src\User_Gyro_Uart.c	    22  {
 ; ..\CODE\Src\User_Gyro_Uart.c	    23  	uart_init(UART_0, 115200, UART0_TX_P14_0, UART0_RX_P14_1);
 	mov	d4,#0
-.L167:
+.L168:
 	mov.u	d5,#49664
 	addih	d5,d5,#1
-.L168:
-	mov	d6,d4
 .L169:
+	mov	d6,d4
+.L170:
 	mov	d7,#4
 	call	uart_init
-.L170:
+.L171:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    24  	uart_putbuff(UART_0, &GyroUnlockInstruction[0], 5);
 	mov	d4,#0
+.L172:
 	movh.a	a4,#@his(GyroUnlockInstruction)
 	lea	a4,[a4]@los(GyroUnlockInstruction)
-.L171:
+.L173:
 	mov	d5,#5
 	call	uart_putbuff
-.L172:
+.L174:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    25  	systick_delay_ms(STM1, 100);
-	mov.u	d15,#57600
-	addih	d15,d15,#1525
 	mov	d4,#1
-	mov	d5,d15
+	mov.u	d5,#57600
+	addih	d5,d5,#1525
 	call	systick_delay
-.L173:
+.L175:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    26  	uart_putbuff(UART_0, &GyroAutoCalibration[0], 5);
 	mov	d4,#0
+.L176:
 	movh.a	a4,#@his(GyroAutoCalibration)
 	lea	a4,[a4]@los(GyroAutoCalibration)
-.L174:
-	mov	d5,#5
-	call	uart_putbuff
-.L175:
-
-; ..\CODE\Src\User_Gyro_Uart.c	    27  	systick_delay_ms(STM1, 100);
-	mov	d4,#1
-	mov	d5,d15
-	call	systick_delay
-.L176:
-
-; ..\CODE\Src\User_Gyro_Uart.c	    28  	uart_putbuff(UART_0, &GyroKeepConfiguration[0], 5);
-	mov	d4,#0
-	movh.a	a4,#@his(GyroKeepConfiguration)
-	lea	a4,[a4]@los(GyroKeepConfiguration)
 .L177:
 	mov	d5,#5
 	call	uart_putbuff
 .L178:
 
+; ..\CODE\Src\User_Gyro_Uart.c	    27  	systick_delay_ms(STM1, 100);
+	mov	d4,#1
+	mov.u	d5,#57600
+	addih	d5,d5,#1525
+	call	systick_delay
+.L179:
+
+; ..\CODE\Src\User_Gyro_Uart.c	    28  	uart_putbuff(UART_0, &GyroKeepConfiguration[0], 5);
+	mov	d4,#0
+.L180:
+	movh.a	a4,#@his(GyroKeepConfiguration)
+	lea	a4,[a4]@los(GyroKeepConfiguration)
+.L181:
+	mov	d5,#5
+	call	uart_putbuff
+.L182:
+
 ; ..\CODE\Src\User_Gyro_Uart.c	    29  	systick_delay_ms(STM1, 100);
 	mov	d4,#1
-	mov	d5,d15
+	mov.u	d5,#57600
+	addih	d5,d5,#1525
 	j	systick_delay
-.L110:
+.L103:
 	
 __GyroUARTInit_function_end:
 	.size	GyroUARTInit,__GyroUARTInit_function_end-GyroUARTInit
-.L54:
+.L52:
 	; End of function
 	
 	.sdecl	'.text.User_Gyro_Uart.GyroUARTReadByte',code,cluster('GyroUARTReadByte')
@@ -118,26 +122,22 @@ GyroUARTReadByte:	.type	func
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    33  {
 ; ..\CODE\Src\User_Gyro_Uart.c	    34  	while(uart_query(UART_0, &GyroRxBuff[GyroReceiveNum]))
-	movh.a	a15,#@his(GyroRxBuff)
-	lea	a15,[a15]@los(GyroRxBuff)
-.L183:
-	movh.a	a12,#@his(GyroReceiveNum)
-	lea	a12,[a12]@los(GyroReceiveNum)
-.L184:
-	mov	d8,#0
 	j	.L2
 .L3:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    35  	{
 ; ..\CODE\Src\User_Gyro_Uart.c	    36  		if(GyroReceiveNum==0 && GyroRxBuff[0]!=0x55)
-	ld.b	d15,[a12]0
+	movh.a	a15,#@his(GyroReceiveNum)
+	ld.bu	d15,[a15]@los(GyroReceiveNum)
 	jne	d15,#0,.L4
-.L185:
-	ld.bu	d0,[a15]
-.L186:
-	mov	d1,#85
 .L187:
-	jne	d0,d1,.L5
+	movh.a	a15,#@his(GyroRxBuff)
+.L188:
+	ld.bu	d0,[a15]@los(GyroRxBuff)
+.L189:
+	mov	d15,#85
+.L190:
+	jne	d15,d0,.L5
 .L4:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    37  		{
@@ -145,21 +145,27 @@ GyroUARTReadByte:	.type	func
 ; ..\CODE\Src\User_Gyro_Uart.c	    39  			continue;
 ; ..\CODE\Src\User_Gyro_Uart.c	    40  		}
 ; ..\CODE\Src\User_Gyro_Uart.c	    41  		if(GyroReceiveNum==1 && GyroRxBuff[1]!=0x53)
-	mov	d0,#1
-.L188:
+	movh.a	a15,#@his(GyroReceiveNum)
+	ld.bu	d15,[a15]@los(GyroReceiveNum)
 	jne	d15,#1,.L6
-.L189:
-	ld.bu	d1,[a15]1
-.L190:
-	mov	d2,#83
 .L191:
-	jeq	d1,d2,.L7
+	movh.a	a15,#@his(GyroRxBuff+1)
+.L192:
+	ld.bu	d0,[a15]@los(GyroRxBuff+1)
+.L193:
+	mov	d15,#83
+.L194:
+	jeq	d15,d0,.L7
 .L5:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    42  		{
 ; ..\CODE\Src\User_Gyro_Uart.c	    43  			GyroReceiveNum = 0;
-	st.b	[a12],d8
-.L192:
+	movh.a	a15,#@his(GyroReceiveNum)
+.L195:
+	mov	d15,#0
+.L196:
+	st.b	[a15]@los(GyroReceiveNum),d15
+.L197:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    44  			continue;
 	j	.L8
@@ -168,21 +174,28 @@ GyroUARTReadByte:	.type	func
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    45  		}
 ; ..\CODE\Src\User_Gyro_Uart.c	    46          if(10 == GyroReceiveNum)
-	mov	d1,#10
-.L193:
-	jne	d15,d1,.L9
-.L194:
+	movh.a	a15,#@his(GyroReceiveNum)
+	ld.b	d0,[a15]@los(GyroReceiveNum)
+.L198:
+	mov	d15,#10
+.L199:
+	jne	d15,d0,.L9
+.L200:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    47          {
 ; ..\CODE\Src\User_Gyro_Uart.c	    48          	GyroReceiveNum = 0;
-	st.b	[a12],d8
-.L195:
+	mov	d15,#0
+.L201:
+	st.b	[a15]@los(GyroReceiveNum),d15
+.L202:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    49              GyroRxFlag = 1;
 	movh.a	a15,#@his(GyroRxFlag)
-.L196:
-	st.b	[a15]@los(GyroRxFlag),d0
-.L197:
+.L203:
+	mov	d15,#1
+.L204:
+	st.b	[a15]@los(GyroRxFlag),d15
+.L205:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    50              break;
 ; ..\CODE\Src\User_Gyro_Uart.c	    51          }
@@ -191,25 +204,32 @@ GyroUARTReadByte:	.type	func
 ; ..\CODE\Src\User_Gyro_Uart.c	    54  }
 	ret
 .L9:
+	movh.a	a15,#@his(GyroReceiveNum)
+	ld.b	d15,[a15]@los(GyroReceiveNum)
+.L206:
 	add	d15,#1
-	st.b	[a12],d15
+	st.b	[a15]@los(GyroReceiveNum),d15
 .L8:
 .L2:
 	mov	d4,#0
-.L198:
-	ld.b	d15,[a12]0
-.L199:
+.L207:
+	movh.a	a15,#@his(GyroReceiveNum)
+	ld.b	d15,[a15]@los(GyroReceiveNum)
+.L208:
+	movh.a	a15,#@his(GyroRxBuff)
+	lea	a15,[a15]@los(GyroRxBuff)
+.L209:
 	addsc.a	a4,a15,d15,#0
 	call	uart_query
-.L200:
+.L210:
 	jne	d2,#0,.L3
-.L201:
+.L211:
 	ret
-.L111:
+.L104:
 	
 __GyroUARTReadByte_function_end:
 	.size	GyroUARTReadByte,__GyroUARTReadByte_function_end-GyroUARTReadByte
-.L59:
+.L57:
 	; End of function
 	
 	.sdecl	'.text.User_Gyro_Uart.GyroCalculate',code,cluster('GyroCalculate')
@@ -225,85 +245,127 @@ GyroCalculate:	.type	func
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    56  {
 ; ..\CODE\Src\User_Gyro_Uart.c	    57  	uint8 sum = 0;
+	mov	d1,#0
+.L130:
+
 ; ..\CODE\Src\User_Gyro_Uart.c	    58      short temp = 0;
 ; ..\CODE\Src\User_Gyro_Uart.c	    59  
 ; ..\CODE\Src\User_Gyro_Uart.c	    60      if(GyroRxFlag == 1)
-	movh.a	a12,#@his(GyroRxFlag)
-	lea	a12,[a12]@los(GyroRxFlag)
-	ld.bu	d15,[a12]
-.L206:
+	movh.a	a15,#@his(GyroRxFlag)
+	ld.bu	d15,[a15]@los(GyroRxFlag)
+.L216:
 	jne	d15,#1,.L11
-.L207:
+.L217:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    61      {
 ; ..\CODE\Src\User_Gyro_Uart.c	    62  		sum += GyroRxBuff[0];
-; ..\CODE\Src\User_Gyro_Uart.c	    63  		sum += GyroRxBuff[1];
-; ..\CODE\Src\User_Gyro_Uart.c	    64  		sum += GyroRxBuff[2];
-; ..\CODE\Src\User_Gyro_Uart.c	    65  		sum += GyroRxBuff[3];
-; ..\CODE\Src\User_Gyro_Uart.c	    66  		sum += GyroRxBuff[4];
-; ..\CODE\Src\User_Gyro_Uart.c	    67  		sum += GyroRxBuff[5];
-; ..\CODE\Src\User_Gyro_Uart.c	    68  		sum += GyroRxBuff[6];
-; ..\CODE\Src\User_Gyro_Uart.c	    69  		sum += GyroRxBuff[7];
 	movh.a	a15,#@his(GyroRxBuff)
-	lea	a15,[a15]@los(GyroRxBuff)
-.L208:
-	ld.bu	d6,[a15]2
-.L209:
-	ld.bu	d15,[a15]1
-.L210:
-	ld.bu	d5,[a15]3
-.L211:
-	add	d0,d15,d6
-	ld.bu	d4,[a15]4
-.L212:
-	add	d0,d5
-	ld.bu	d3,[a15]5
-.L213:
-	add	d0,d4
-	ld.bu	d2,[a15]6
-.L214:
-	add	d0,d3
-	ld.bu	d1,[a15]7
-.L215:
+.L218:
+	ld.bu	d15,[a15]@los(GyroRxBuff)
+.L219:
+
+; ..\CODE\Src\User_Gyro_Uart.c	    63  		sum += GyroRxBuff[1];
+	movh.a	a15,#@his(GyroRxBuff+1)
+.L220:
+	ld.bu	d0,[a15]@los(GyroRxBuff+1)
+.L221:
+	add	d15,d0
+.L222:
+
+; ..\CODE\Src\User_Gyro_Uart.c	    64  		sum += GyroRxBuff[2];
+	movh.a	a15,#@his(GyroRxBuff+2)
+.L223:
+	ld.bu	d0,[a15]@los(GyroRxBuff+2)
+.L224:
+	add	d15,d0
+.L225:
+
+; ..\CODE\Src\User_Gyro_Uart.c	    65  		sum += GyroRxBuff[3];
+	movh.a	a15,#@his(GyroRxBuff+3)
+.L226:
+	ld.bu	d0,[a15]@los(GyroRxBuff+3)
+.L227:
+	add	d15,d0
+.L228:
+
+; ..\CODE\Src\User_Gyro_Uart.c	    66  		sum += GyroRxBuff[4];
+	movh.a	a15,#@his(GyroRxBuff+4)
+.L229:
+	ld.bu	d0,[a15]@los(GyroRxBuff+4)
+.L230:
+	add	d15,d0
+.L231:
+
+; ..\CODE\Src\User_Gyro_Uart.c	    67  		sum += GyroRxBuff[5];
+	movh.a	a15,#@his(GyroRxBuff+5)
+.L232:
+	ld.bu	d0,[a15]@los(GyroRxBuff+5)
+.L233:
+	add	d15,d0
+.L234:
+
+; ..\CODE\Src\User_Gyro_Uart.c	    68  		sum += GyroRxBuff[6];
+	movh.a	a15,#@his(GyroRxBuff+6)
+.L235:
+	ld.bu	d0,[a15]@los(GyroRxBuff+6)
+.L236:
+	add	d15,d0
+.L237:
+
+; ..\CODE\Src\User_Gyro_Uart.c	    69  		sum += GyroRxBuff[7];
+	movh.a	a15,#@his(GyroRxBuff+7)
+.L238:
+	ld.bu	d0,[a15]@los(GyroRxBuff+7)
+.L239:
+	add	d15,d0
+.L240:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    70  		sum += GyroRxBuff[8];
-	add	d0,d2
-	ld.bu	d15,[a15]8
-.L216:
-	add	d0,d1
-	ld.bu	d7,[a15]
-.L217:
+	movh.a	a15,#@his(GyroRxBuff+8)
+.L241:
+	ld.bu	d0,[a15]@los(GyroRxBuff+8)
+.L242:
+	add	d15,d0
+.L243:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    71  		sum += GyroRxBuff[9];
-	add	d0,d15
-	ld.bu	d15,[a15]9
-.L218:
+	movh.a	a15,#@his(GyroRxBuff+9)
+.L244:
+	ld.bu	d0,[a15]@los(GyroRxBuff+9)
+.L245:
+	add	d15,d0
+.L246:
+	add	d1,d15
+.L131:
+	extr.u	d15,d1,#0,#8
+.L132:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    72  		if(sum != GyroRxBuff[10])
-	add	d0,d15
-	ld.bu	d15,[a15]10
-.L219:
-	add	d7,d0
-	extr.u	d0,d7,#0,#8
-.L220:
+	movh.a	a15,#@his(GyroRxBuff+10)
+.L247:
+	ld.bu	d0,[a15]@los(GyroRxBuff+10)
+.L248:
 	jeq	d15,d0,.L12
-.L221:
+.L249:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    73  		{
 ; ..\CODE\Src\User_Gyro_Uart.c	    74  			printf("RECEIVE ERROR!");
 	movh.a	a4,#@his(.1.str)
 	lea	a4,[a4]@los(.1.str)
 	call	printf
-.L222:
+.L250:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    75  			GyroRxFlag = 0;
+	movh.a	a15,#@his(GyroRxFlag)
+.L251:
 	mov	d15,#0
-	st.b	[a12],d15
-.L223:
+.L133:
+	st.b	[a15]@los(GyroRxFlag),d15
+.L252:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    76  			GyroReceiveNum = 0;
 	movh.a	a15,#@his(GyroReceiveNum)
-.L224:
+.L253:
 	st.b	[a15]@los(GyroReceiveNum),d15
 .L11:
 
@@ -326,68 +388,93 @@ GyroCalculate:	.type	func
 ; ..\CODE\Src\User_Gyro_Uart.c	    93  }
 	ret
 .L12:
-	sha	d15,d5,#8
-	movh.a	a15,#@his(PitchAngle)
-.L225:
-	extr	d15,d15,#0,#16
-.L226:
-	movh	d0,#17204
-.L227:
-	movh	d5,#14336
-.L133:
-	or	d6,d15
-.L228:
-	itof	d15,d6
-	fcall	.cocofun_2
+	movh.a	a15,#@his(GyroRxBuff+3)
+.L254:
+	ld.bu	d15,[a15]@los(GyroRxBuff+3)
 .L134:
-	st.w	[a15]@los(PitchAngle),d15
+	sha	d15,d15,#8
+	extr	d15,d15,#0,#16
+.L255:
+	movh.a	a15,#@his(GyroRxBuff+2)
+.L256:
+	ld.bu	d0,[a15]@los(GyroRxBuff+2)
 .L135:
-	sha	d15,d3,#8
-	extr	d15,d15,#0,#16
-.L137:
-	or	d4,d15
-	movh.a	a15,#@his(RollAngle)
+	or	d15,d0
+.L257:
+	movh.a	a15,#@his(PitchAngle)
+.L258:
+	itof	d15,d15
 .L136:
-	itof	d15,d4
-	fcall	.cocofun_2
-.L229:
-	st.w	[a15]@los(RollAngle),d15
-.L230:
-	sha	d15,d1,#8
+	movh	d1,#14336
+.L259:
+	mul.f	d15,d15,d1
+.L260:
+	movh	d2,#17204
+.L261:
+	mul.f	d15,d15,d2
+.L262:
+	st.w	[a15]@los(PitchAngle),d15
+.L263:
+	movh.a	a15,#@his(GyroRxBuff+5)
+.L264:
+	ld.bu	d15,[a15]@los(GyroRxBuff+5)
+.L265:
+	sha	d15,d15,#8
 	extr	d15,d15,#0,#16
-.L139:
-	or	d2,d15
-	movh.a	a15,#@his(YawAngle)
+.L266:
+	movh.a	a15,#@his(GyroRxBuff+4)
+.L267:
+	ld.bu	d0,[a15]@los(GyroRxBuff+4)
+.L137:
+	or	d15,d0
+.L268:
+	movh.a	a15,#@his(RollAngle)
+.L269:
+	itof	d15,d15
 .L138:
-	itof	d15,d2
-	fcall	.cocofun_2
-.L231:
+	mul.f	d15,d15,d1
+.L270:
+	mul.f	d15,d15,d2
+.L271:
+	st.w	[a15]@los(RollAngle),d15
+.L272:
+	movh.a	a15,#@his(GyroRxBuff+7)
+.L273:
+	ld.bu	d15,[a15]@los(GyroRxBuff+7)
+.L274:
+	sha	d15,d15,#8
+	extr	d15,d15,#0,#16
+.L275:
+	movh.a	a15,#@his(GyroRxBuff+6)
+.L276:
+	ld.bu	d0,[a15]@los(GyroRxBuff+6)
+.L139:
+	or	d15,d0
+.L277:
+	movh.a	a15,#@his(YawAngle)
+.L278:
+	itof	d15,d15
+.L140:
+	mul.f	d15,d15,d1
+.L279:
+	mul.f	d15,d15,d2
+.L280:
 	st.w	[a15]@los(YawAngle),d15
-.L232:
+.L281:
+	movh.a	a15,#@his(GyroRxFlag)
+.L282:
 	mov	d15,#0
-	st.b	[a12],d15
-.L233:
+.L283:
+	st.b	[a15]@los(GyroRxFlag),d15
+.L284:
 	ret
-.L112:
+.L105:
 	
 __GyroCalculate_function_end:
 	.size	GyroCalculate,__GyroCalculate_function_end-GyroCalculate
-.L64:
+.L62:
 	; End of function
 	
-	.sdecl	'.text.User_Gyro_Uart..cocofun_2',code,cluster('.cocofun_2')
-	.sect	'.text.User_Gyro_Uart..cocofun_2'
-	.align	2
-; Function .cocofun_2
-.L37:
-.cocofun_2:	.type	func
-; Function body .cocofun_2, coco_iter:0
-	mul.f	d15,d15,d5
-.L288:
-	mul.f	d15,d15,d0
-	fret
-.L89:
-	; End of function
 	.sdecl	'.text.User_Gyro_Uart.ManageYawAngle',code,cluster('ManageYawAngle')
 	.sect	'.text.User_Gyro_Uart.ManageYawAngle'
 	.align	2
@@ -397,36 +484,36 @@ __GyroCalculate_function_end:
 ; ..\CODE\Src\User_Gyro_Uart.c	    94  
 ; ..\CODE\Src\User_Gyro_Uart.c	    95  void ManageYawAngle(void)
 ; Function ManageYawAngle
-.L39:
+.L37:
 ManageYawAngle:	.type	func
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    96  {
 ; ..\CODE\Src\User_Gyro_Uart.c	    97      if(YawAngle < 0)
 	movh.a	a15,#@his(YawAngle)
-	lea	a15,[a15]@los(YawAngle)
-	ld.w	d0,[a15]
-.L238:
+	ld.w	d0,[a15]@los(YawAngle)
+.L289:
 	mov	d15,#0
-.L239:
+.L290:
 	cmp.f	d15,d0,d15
-.L240:
+.L291:
 	jz.t	d15:0,.L14
-.L241:
+.L292:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    98      	YawAngle = YawAngle + 360;
 	movh	d15,#17332
-.L242:
+.L293:
 	add.f	d15,d0,d15
-	st.w	[a15],d15
+.L294:
+	st.w	[a15]@los(YawAngle),d15
 .L14:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    99  }
 	ret
-.L116:
+.L110:
 	
 __ManageYawAngle_function_end:
 	.size	ManageYawAngle,__ManageYawAngle_function_end-ManageYawAngle
-.L69:
+.L67:
 	; End of function
 	
 	.sdecl	'.text.User_Gyro_Uart.GyroYawAngleInit',code,cluster('GyroYawAngleInit')
@@ -438,26 +525,26 @@ __ManageYawAngle_function_end:
 ; ..\CODE\Src\User_Gyro_Uart.c	   100  
 ; ..\CODE\Src\User_Gyro_Uart.c	   101  void GyroYawAngleInit(void)
 ; Function GyroYawAngleInit
-.L41:
+.L39:
 GyroYawAngleInit:	.type	func
 
 ; ..\CODE\Src\User_Gyro_Uart.c	   102  {
 ; ..\CODE\Src\User_Gyro_Uart.c	   103  	NowGyroYawAngle = YawAngle;
 	movh.a	a15,#@his(NowGyroYawAngle)
-.L247:
+.L299:
 	movh.a	a2,#@his(YawAngle)
 	ld.w	d15,[a2]@los(YawAngle)
-.L248:
+.L300:
 	st.w	[a15]@los(NowGyroYawAngle),d15
-.L249:
+.L301:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	   104  }
 	ret
-.L117:
+.L111:
 	
 __GyroYawAngleInit_function_end:
 	.size	GyroYawAngleInit,__GyroYawAngleInit_function_end-GyroYawAngleInit
-.L74:
+.L72:
 	; End of function
 	
 	.sdecl	'.text.User_Gyro_Uart.GetGyroError',code,cluster('GetGyroError')
@@ -469,50 +556,51 @@ __GyroYawAngleInit_function_end:
 ; ..\CODE\Src\User_Gyro_Uart.c	   105  
 ; ..\CODE\Src\User_Gyro_Uart.c	   106  double GetGyroError(void)  //»ñÈ¡±ÈÀýÎó²î
 ; Function GetGyroError
-.L43:
+.L41:
 GetGyroError:	.type	func
 
 ; ..\CODE\Src\User_Gyro_Uart.c	   107  {
 ; ..\CODE\Src\User_Gyro_Uart.c	   108  	double TempIn,TempOut;
 ; ..\CODE\Src\User_Gyro_Uart.c	   109  
 ; ..\CODE\Src\User_Gyro_Uart.c	   110  	TempIn = YawAngle - NowGyroYawAngle;
-	movh.a	a15,#@his(NowGyroYawAngle)
-	ld.w	d0,[a15]@los(NowGyroYawAngle)
-.L254:
 	movh.a	a15,#@his(YawAngle)
-	ld.w	d1,[a15]@los(YawAngle)
-.L255:
+	ld.w	d0,[a15]@los(YawAngle)
+.L306:
+	movh.a	a15,#@his(NowGyroYawAngle)
+	ld.w	d1,[a15]@los(NowGyroYawAngle)
+.L307:
+	sub.f	d15,d0,d1
+.L141:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	   111  	//arm_abs_f32(&TempI,&TempO,1);
 ; ..\CODE\Src\User_Gyro_Uart.c	   112  	TempOut = fabs(TempIn);
+	insert	d15,d15,#0,#31,#1
+.L142:
+
 ; ..\CODE\Src\User_Gyro_Uart.c	   113  
 ; ..\CODE\Src\User_Gyro_Uart.c	   114      if (NowGyroYawAngle < 180)
-	movh	d3,#17204
-.L256:
-	sub.f	d2,d1,d0
-.L257:
-	cmp.f	d4,d0,d3
-.L258:
-	insert	d15,d2,#0,#31,#1
-.L140:
-	jz.t	d4:0,.L15
-.L259:
+	movh	d2,#17204
+.L308:
+	cmp.f	d3,d1,d2
+.L309:
+	jz.t	d3:0,.L15
+.L310:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	   115      {
 ; ..\CODE\Src\User_Gyro_Uart.c	   116          if (YawAngle > 180)
-	cmp.f	d4,d1,d3
-.L260:
-	jz.t	d4:2,.L20
-.L261:
+	cmp.f	d3,d0,d2
+.L311:
+	jz.t	d3:2,.L16
+.L312:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	   117          {
 ; ..\CODE\Src\User_Gyro_Uart.c	   118              if (TempOut <= 180)
-	cmp.f	d15,d15,d3
-.L141:
+	cmp.f	d15,d15,d2
+.L143:
 	and	d15,#3
-.L262:
-	jne	d15,#0,.L20
-.L263:
+.L313:
+	jne	d15,#0,.L17
+.L314:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	   119              {
 ; ..\CODE\Src\User_Gyro_Uart.c	   120                  return (YawAngle - NowGyroYawAngle);
@@ -520,12 +608,14 @@ GetGyroError:	.type	func
 ; ..\CODE\Src\User_Gyro_Uart.c	   122              else
 ; ..\CODE\Src\User_Gyro_Uart.c	   123  
 ; ..\CODE\Src\User_Gyro_Uart.c	   124                  return (-(NowGyroYawAngle + 360 - YawAngle));
-	sub.f	d15,d0,d1
-.L264:
+	sub.f	d15,d1,d0
+.L315:
 	movh	d0,#17332
-.L265:
+.L316:
 	add.f	d15,d15,d0
-.L266:
+.L317:
+	insn.t	d2,d15:31,d15:31
+.L318:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	   125          }
 ; ..\CODE\Src\User_Gyro_Uart.c	   126          else
@@ -551,25 +641,45 @@ GetGyroError:	.type	func
 ; ..\CODE\Src\User_Gyro_Uart.c	   146              return ((YawAngle + 360) - NowGyroYawAngle);
 ; ..\CODE\Src\User_Gyro_Uart.c	   147      }
 ; ..\CODE\Src\User_Gyro_Uart.c	   148  }
-	insn.t	d2,d15:31,d15:31
 	ret
 .L15:
-	cmp.f	d15,d15,d3
-.L142:
+	movh	d0,#17204
+.L319:
+	cmp.f	d15,d15,d0
+.L144:
 	and	d15,#3
-.L267:
-	jne	d15,#0,.L20
-.L268:
-	movh	d15,#17332
-.L269:
-	add.f	d2,d2,d15
-.L20:
+.L320:
+	jeq	d15,#0,.L19
+.L17:
+.L16:
+	movh.a	a15,#@his(YawAngle)
+	ld.w	d15,[a15]@los(YawAngle)
+.L321:
+	movh.a	a15,#@his(NowGyroYawAngle)
+	ld.w	d0,[a15]@los(NowGyroYawAngle)
+.L322:
+	sub.f	d2,d15,d0
+.L323:
 	ret
-.L119:
+.L19:
+	movh.a	a15,#@his(YawAngle)
+	ld.w	d15,[a15]@los(YawAngle)
+.L324:
+	movh.a	a15,#@his(NowGyroYawAngle)
+	ld.w	d0,[a15]@los(NowGyroYawAngle)
+.L325:
+	sub.f	d15,d15,d0
+.L326:
+	movh	d0,#17332
+.L327:
+	add.f	d2,d15,d0
+.L328:
+	ret
+.L113:
 	
 __GetGyroError_function_end:
 	.size	GetGyroError,__GetGyroError_function_end-GetGyroError
-.L79:
+.L77:
 	; End of function
 	
 	.sdecl	'.text.User_Gyro_Uart.GyroPID',code,cluster('GyroPID')
@@ -581,117 +691,135 @@ __GetGyroError_function_end:
 ; ..\CODE\Src\User_Gyro_Uart.c	   149  
 ; ..\CODE\Src\User_Gyro_Uart.c	   150  void GyroPID(double Kp, double Ki, double Kd)
 ; Function GyroPID
-.L45:
+.L43:
 GyroPID:	.type	func
 	mov	d15,d4
-.L144:
+.L146:
+	mov	d8,d5
+.L148:
+	mov	d10,d6
+.L150:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	   151  {
 ; ..\CODE\Src\User_Gyro_Uart.c	   152  
 ; ..\CODE\Src\User_Gyro_Uart.c	   153      //float Kp = 35, Ki = 0.01, Kd = 95;
 ; ..\CODE\Src\User_Gyro_Uart.c	   154      double error = 0, P = 0, I = 0, D = 0, PIDValue = 0;
+	mov	d9,#0
+.L151:
+
 ; ..\CODE\Src\User_Gyro_Uart.c	   155      double LPWMDutyOut, RPWMDutyOut;
 ; ..\CODE\Src\User_Gyro_Uart.c	   156  	static double previousError = 0;
 ; ..\CODE\Src\User_Gyro_Uart.c	   157  
 ; ..\CODE\Src\User_Gyro_Uart.c	   158      error = GetGyroError();
-	mov	e8,d6,d5
 	call	GetGyroError
-.L143:
+.L145:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	   159      //printf("%f\n", error);
 ; ..\CODE\Src\User_Gyro_Uart.c	   160      P = error;
 ; ..\CODE\Src\User_Gyro_Uart.c	   161      I += error;
+	add.f	d0,d9,d2
+.L152:
+
 ; ..\CODE\Src\User_Gyro_Uart.c	   162      D = error - previousError;
 	movh.a	a15,#@his(_999001_previousError)
-	ld.w	d0,[a15]@los(_999001_previousError)
-.L147:
+	ld.w	d1,[a15]@los(_999001_previousError)
+.L333:
+	sub.f	d1,d2,d1
+.L155:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	   163  
 ; ..\CODE\Src\User_Gyro_Uart.c	   164      PIDValue = (Kp * P) + (Ki * I) + (Kd * D);
+	mul.f	d0,d8,d0
+.L154:
+	madd.f	d15,d0,d15,d2
+.L147:
+	madd.f	d15,d15,d10,d1
+.L156:
+
 ; ..\CODE\Src\User_Gyro_Uart.c	   165      previousError = error;
-	add.f	d15,d15,d8
 	st.w	[a15]@los(_999001_previousError),d2
-.L145:
-	sub.f	d0,d2,d0
-.L148:
+.L334:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	   166      PIDValue /= 1000;
+	movh	d0,#17530
+.L335:
+	div.f	d15,d15,d0
+.L336:
+
 ; ..\CODE\Src\User_Gyro_Uart.c	   167  
 ; ..\CODE\Src\User_Gyro_Uart.c	   168      LPWMDutyOut = 10.5 + PIDValue;
-; ..\CODE\Src\User_Gyro_Uart.c	   169      RPWMDutyOut = 10.5 - PIDValue;
-; ..\CODE\Src\User_Gyro_Uart.c	   170  	if(LPWMDutyOut >= 40)
-	movh	d8,#16928
-.L150:
-	mul.f	d0,d9,d0
-.L149:
-	madd.f	d15,d0,d15,d2
-.L274:
-	movh	d0,#17530
-.L275:
-	div.f	d15,d15,d0
-.L152:
 	movh	d0,#16680
-.L276:
+.L337:
 	add.f	d5,d15,d0
-.L153:
-	sub.f	d1,d0,d15
-.L154:
-	cmp.f	d15,d5,d8
-.L151:
+.L158:
+
+; ..\CODE\Src\User_Gyro_Uart.c	   169      RPWMDutyOut = 10.5 - PIDValue;
+	sub.f	d8,d0,d15
+.L149:
+
+; ..\CODE\Src\User_Gyro_Uart.c	   170  	if(LPWMDutyOut >= 40)
+	movh	d15,#16928
+.L157:
+	cmp.f	d15,d5,d15
 	and	d15,#6
-.L277:
+.L338:
 	jne	d15,#0,.L22
-.L278:
+.L339:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	   171  		LPWMDutyOut = 40;
 ; ..\CODE\Src\User_Gyro_Uart.c	   172  	else if(LPWMDutyOut <= -40)
 	movh	d0,#49696
-.L279:
+.L340:
 	cmp.f	d15,d0,d5
 	and	d15,#6
-.L280:
 	cmov	d5,d15,d0
+.L341:
 	j	.L25
 .L22:
-	mov	d5,d8
+	movh	d5,#16928
 .L25:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	   173  		LPWMDutyOut = -40;
 ; ..\CODE\Src\User_Gyro_Uart.c	   174  	if(RPWMDutyOut >= 40)
-	cmp.f	d15,d1,d8
-.L155:
+	movh	d15,#16928
+.L342:
+	cmp.f	d15,d8,d15
 	and	d15,#6
-.L281:
+.L343:
 	jne	d15,#0,.L26
-.L282:
+.L344:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	   175  		RPWMDutyOut = 40;
 ; ..\CODE\Src\User_Gyro_Uart.c	   176  	else if(RPWMDutyOut <= -40)
-	movh	d8,#49696
-.L283:
-	cmp.f	d15,d8,d1
+	movh	d0,#49696
+.L345:
+	cmp.f	d15,d0,d8
 	and	d15,#6
-.L156:
-	cmovn	d8,d15,d1
+	cmov	d8,d15,d0
+.L346:
+	j	.L29
 .L26:
+	movh	d8,#16928
+.L29:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	   177  		RPWMDutyOut = -40;
 ; ..\CODE\Src\User_Gyro_Uart.c	   178  	MotorUserHandle(LMotor_F, LPWMDutyOut);
 	mov	d4,#0
+.L347:
 	call	MotorUserHandle
-.L146:
+.L153:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	   179  	MotorUserHandle(RMotor_F, RPWMDutyOut);
 	mov	d4,#2
-.L157:
+.L348:
 	mov	d5,d8
-.L158:
+.L159:
 	j	MotorUserHandle
-.L121:
+.L116:
 	
 __GyroPID_function_end:
 	.size	GyroPID,__GyroPID_function_end-GyroPID
-.L84:
+.L82:
 	; End of function
 	
 	.sdecl	'.data.cpu0_dsram',data,cluster('GyroUnlockInstruction')
@@ -783,11 +911,9 @@ _999001_previousError:	.type	object
 	.calls	'GyroCalculate','printf'
 	.calls	'GyroPID','GetGyroError'
 	.calls	'GyroPID','MotorUserHandle'
-	.calls	'GyroCalculate','.cocofun_2'
 	.calls	'GyroUARTInit','',0
 	.calls	'GyroUARTReadByte','',0
 	.calls	'GyroCalculate','',0
-	.calls	'.cocofun_2','',0
 	.calls	'ManageYawAngle','',0
 	.calls	'GyroYawAngleInit','',0
 	.calls	'GetGyroError','',0
@@ -801,17 +927,17 @@ _999001_previousError:	.type	object
 	.calls	'GyroPID','',0
 	.sdecl	'.debug_info',debug
 	.sect	'.debug_info'
-.L47:
+.L45:
 	.word	253394
 	.half	3
-	.word	.L48
+	.word	.L46
 	.byte	4
-.L46:
+.L44:
 	.byte	1
 	.byte	'..\\CODE\\Src\\User_Gyro_Uart.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L49
+	.word	.L47
 	.byte	2,1,1,3
 	.word	149
 	.byte	4
@@ -820,7 +946,7 @@ _999001_previousError:	.type	object
 	.word	152
 	.byte	6,0,7
 	.byte	'__fract',0,4,128,1
-.L118:
+.L112:
 	.byte	7
 	.byte	'float',0,4,4,8
 	.byte	'Ifx__float_to_fract',0,3,1,152,2,18
@@ -885,7 +1011,9 @@ _999001_previousError:	.type	object
 	.byte	4,2,35,0,14
 	.byte	'B',0
 	.word	524
-	.byte	4,2,35,0,0,7
+	.byte	4,2,35,0,0
+.L106:
+	.byte	7
 	.byte	'unsigned char',0,1,8,7
 	.byte	'unsigned short int',0,2,7,11
 	.byte	'_Ifx_SCU_WDTCPU_CON1_Bits',0,4,250,8,16,4,12
@@ -6824,7 +6952,7 @@ _999001_previousError:	.type	object
 	.byte	'alti',0,20,191,18,82
 	.word	38946
 	.byte	6,0
-.L114:
+.L108:
 	.byte	7
 	.byte	'short int',0,2,5,7
 	.byte	'long int',0,4,5,21,22,60,9,12,14
@@ -6904,7 +7032,7 @@ _999001_previousError:	.type	object
 	.byte	'd',0
 	.word	209
 	.byte	0
-.L132:
+.L129:
 	.byte	7
 	.byte	'char',0,1,6,22
 	.word	39693
@@ -35251,7 +35379,7 @@ _999001_previousError:	.type	object
 	.byte	'IfxDma_SleepMode',0,48,151,2,3
 	.word	253164
 	.byte	11
-	.byte	'FSMTable',0,49,33,16,16,14
+	.byte	'FSMTable',0,49,30,16,16,14
 	.byte	'Event',0
 	.word	501
 	.byte	4,2,35,0,14
@@ -35264,22 +35392,22 @@ _999001_previousError:	.type	object
 	.byte	'NextState',0
 	.word	501
 	.byte	4,2,35,12,0,38
-	.byte	'FSMTable_t',0,49,38,2
+	.byte	'FSMTable_t',0,49,35,2
 	.word	253250
 	.byte	38
 	.byte	'Motor_State_t',0,26,19,2
 	.word	41870
-.L130:
+.L127:
 	.byte	15,5
 	.word	660
 	.byte	16,4,0
-.L131:
+.L128:
 	.byte	15,11
 	.word	660
 	.byte	16,10,0,0
 	.sdecl	'.debug_abbrev',debug
 	.sect	'.debug_abbrev'
-.L48:
+.L46:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,16,6,0,0,2,21,0,54,15,39,12,0,0,3,15,0,73,19,0,0,4,46,1,3,8,32,13
 	.byte	58,15,59,15,57,15,54,15,39,12,0,0,5,5,0,3,8,58,15,59,15,57,15,73,19,0,0,6,11,0,0,0,7,36,0,3,8,11,15,62
 	.byte	15,0,0,8,46,1,3,8,32,13,58,15,59,15,57,15,73,19,54,15,39,12,0,0,9,59,0,3,8,0,0,10,53,0,73,19,0,0,11,19
@@ -35294,12 +35422,12 @@ _999001_previousError:	.type	object
 	.byte	57,15,73,19,0,0,39,21,0,54,15,0,0,40,21,1,54,15,39,12,0,0,41,21,1,73,19,54,15,39,12,0,0,0
 	.sdecl	'.debug_line',debug
 	.sect	'.debug_line'
-.L49:
-	.word	.L160-.L159
-.L159:
+.L47:
+	.word	.L161-.L160
+.L160:
 	.half	3
-	.word	.L162-.L161
-.L161:
+	.word	.L163-.L162
+.L162:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Std',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Scu\\Std',0
@@ -35373,1045 +35501,1132 @@ _999001_previousError:	.type	object
 	.byte	'IfxDma_regdef.h',0,3,0,0
 	.byte	'IfxDma.h',0,18,0,0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\CODE\\Inc\\User_FSM.h',0,0,0,0,0
-.L162:
-.L160:
+.L163:
+.L161:
 	.sdecl	'.debug_info',debug,cluster('GyroUARTInit')
 	.sect	'.debug_info'
-.L50:
+.L48:
 	.word	197
 	.half	3
-	.word	.L51
+	.word	.L49
 	.byte	4,1
 	.byte	'..\\CODE\\Src\\User_Gyro_Uart.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L53,.L52
+	.word	.L51,.L50
 	.byte	2
-	.word	.L46
+	.word	.L44
 	.byte	3
 	.byte	'GyroUARTInit',0,1,21,6,1,1,1
-	.word	.L31,.L110,.L30
+	.word	.L31,.L103,.L30
 	.byte	4
-	.word	.L31,.L110
+	.word	.L31,.L103
 	.byte	0,0
 	.sdecl	'.debug_abbrev',debug,cluster('GyroUARTInit')
 	.sect	'.debug_abbrev'
-.L51:
+.L49:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
 	.sdecl	'.debug_line',debug,cluster('GyroUARTInit')
 	.sect	'.debug_line'
-.L52:
-	.word	.L164-.L163
-.L163:
+.L50:
+	.word	.L165-.L164
+.L164:
 	.half	3
-	.word	.L166-.L165
-.L165:
+	.word	.L167-.L166
+.L166:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\CODE\\Src\\User_Gyro_Uart.c',0,0,0,0,0
-.L166:
+.L167:
 	.byte	5,12,7,0,5,2
 	.word	.L31
 	.byte	3,22,1,5,20,9
-	.half	.L167-.L31
+	.half	.L168-.L31
 	.byte	1,5,28,9
-	.half	.L168-.L167
-	.byte	1,5,44,9
 	.half	.L169-.L168
-	.byte	1,5,15,9
+	.byte	1,5,44,9
 	.half	.L170-.L169
-	.byte	3,1,1,5,24,1,5,50,9
+	.byte	1,5,15,9
 	.half	.L171-.L170
-	.byte	1,5,2,9
+	.byte	3,1,1,5,24,9
 	.half	.L172-.L171
-	.byte	3,1,1,5,15,9
+	.byte	1,5,50,9
 	.half	.L173-.L172
-	.byte	3,1,1,5,24,1,5,48,9
-	.half	.L174-.L173
 	.byte	1,5,2,9
-	.half	.L175-.L174
+	.half	.L174-.L173
 	.byte	3,1,1,5,15,9
+	.half	.L175-.L174
+	.byte	3,1,1,5,24,9
 	.half	.L176-.L175
-	.byte	3,1,1,5,24,1,5,50,9
+	.byte	1,5,48,9
 	.half	.L177-.L176
 	.byte	1,5,2,9
 	.half	.L178-.L177
+	.byte	3,1,1,5,15,9
+	.half	.L179-.L178
+	.byte	3,1,1,5,24,9
+	.half	.L180-.L179
+	.byte	1,5,50,9
+	.half	.L181-.L180
+	.byte	1,5,2,9
+	.half	.L182-.L181
 	.byte	3,1,1,5,1,9
-	.half	.L54-.L178
+	.half	.L52-.L182
 	.byte	3,1,0,1,1
-.L164:
+.L165:
 	.sdecl	'.debug_ranges',debug,cluster('GyroUARTInit')
 	.sect	'.debug_ranges'
-.L53:
-	.word	-1,.L31,0,.L54-.L31,0,0
+.L51:
+	.word	-1,.L31,0,.L52-.L31,0,0
 	.sdecl	'.debug_info',debug,cluster('GyroUARTReadByte')
 	.sect	'.debug_info'
-.L55:
+.L53:
 	.word	201
 	.half	3
-	.word	.L56
+	.word	.L54
 	.byte	4,1
 	.byte	'..\\CODE\\Src\\User_Gyro_Uart.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L58,.L57
+	.word	.L56,.L55
 	.byte	2
-	.word	.L46
+	.word	.L44
 	.byte	3
 	.byte	'GyroUARTReadByte',0,1,32,6,1,1,1
-	.word	.L33,.L111,.L32
+	.word	.L33,.L104,.L32
 	.byte	4
-	.word	.L33,.L111
+	.word	.L33,.L104
 	.byte	0,0
 	.sdecl	'.debug_abbrev',debug,cluster('GyroUARTReadByte')
 	.sect	'.debug_abbrev'
-.L56:
+.L54:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
 	.sdecl	'.debug_line',debug,cluster('GyroUARTReadByte')
 	.sect	'.debug_line'
-.L57:
-	.word	.L180-.L179
-.L179:
+.L55:
+	.word	.L184-.L183
+.L183:
 	.half	3
-	.word	.L182-.L181
-.L181:
+	.word	.L186-.L185
+.L185:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\CODE\\Src\\User_Gyro_Uart.c',0,0,0,0,0
-.L182:
-	.byte	5,28,7,0,5,2
+.L186:
+	.byte	5,55,7,0,5,2
 	.word	.L33
-	.byte	3,33,1,5,39,9
-	.half	.L183-.L33
-	.byte	1,5,55,9
-	.half	.L184-.L183
-	.byte	1,5,6,9
-	.half	.L3-.L184
-	.byte	3,2,1,5,37,9
-	.half	.L185-.L3
+	.byte	3,33,1,5,6,9
+	.half	.L3-.L33
+	.byte	3,2,1,5,27,9
+	.half	.L187-.L3
+	.byte	1,5,37,9
+	.half	.L188-.L187
 	.byte	1,5,42,9
-	.half	.L186-.L185
-	.byte	1,5,40,9
-	.half	.L187-.L186
-	.byte	1,5,22,7,9
-	.half	.L4-.L187
-	.byte	3,5,1,5,6,9
-	.half	.L188-.L4
-	.byte	1,5,37,7,9
 	.half	.L189-.L188
-	.byte	1,5,42,9
-	.half	.L190-.L189
 	.byte	1,5,40,9
-	.half	.L191-.L190
-	.byte	1,5,19,7,9
-	.half	.L5-.L191
-	.byte	3,2,1,5,4,9
-	.half	.L192-.L5
-	.byte	3,1,1,5,12,9
-	.half	.L6-.L192
-	.byte	3,2,1,5,9,9
-	.half	.L193-.L6
-	.byte	1,5,25,7,9
+	.half	.L190-.L189
+	.byte	1,5,6,7,9
+	.half	.L4-.L190
+	.byte	3,5,1,5,27,9
+	.half	.L191-.L4
+	.byte	1,5,37,9
+	.half	.L192-.L191
+	.byte	1,5,42,9
+	.half	.L193-.L192
+	.byte	1,5,40,9
 	.half	.L194-.L193
-	.byte	3,2,1,5,13,9
-	.half	.L195-.L194
-	.byte	3,1,1,5,24,9
+	.byte	1,5,4,7,9
+	.half	.L5-.L194
+	.byte	3,2,1,5,21,9
+	.half	.L195-.L5
+	.byte	1,5,19,9
 	.half	.L196-.L195
-	.byte	1,5,1,9
+	.byte	1,5,4,9
 	.half	.L197-.L196
-	.byte	3,5,1,5,23,7,9
-	.half	.L9-.L197
-	.byte	3,126,1,5,19,9
-	.half	.L2-.L9
-	.byte	3,110,1,5,39,9
-	.half	.L198-.L2
-	.byte	1,5,38,9
+	.byte	3,1,1,5,18,9
+	.half	.L6-.L197
+	.byte	3,2,1,5,12,9
+	.half	.L198-.L6
+	.byte	1,5,9,9
 	.half	.L199-.L198
-	.byte	1,5,55,9
+	.byte	1,5,27,7,9
 	.half	.L200-.L199
-	.byte	1,5,1,7,9
+	.byte	3,2,1,5,25,9
 	.half	.L201-.L200
+	.byte	1,5,13,9
+	.half	.L202-.L201
+	.byte	3,1,1,5,26,9
+	.half	.L203-.L202
+	.byte	1,5,24,9
+	.half	.L204-.L203
+	.byte	1,5,1,9
+	.half	.L205-.L204
+	.byte	3,5,1,5,9,7,9
+	.half	.L9-.L205
+	.byte	3,126,1,5,23,9
+	.half	.L206-.L9
+	.byte	1,5,19,9
+	.half	.L2-.L206
+	.byte	3,110,1,5,39,9
+	.half	.L207-.L2
+	.byte	1,5,28,9
+	.half	.L208-.L207
+	.byte	1,5,38,9
+	.half	.L209-.L208
+	.byte	1,5,55,9
+	.half	.L210-.L209
+	.byte	1,5,1,7,9
+	.half	.L211-.L210
 	.byte	3,20,1,7,9
-	.half	.L59-.L201
+	.half	.L57-.L211
 	.byte	0,1,1
-.L180:
+.L184:
 	.sdecl	'.debug_ranges',debug,cluster('GyroUARTReadByte')
 	.sect	'.debug_ranges'
-.L58:
-	.word	-1,.L33,0,.L59-.L33,0,0
+.L56:
+	.word	-1,.L33,0,.L57-.L33,0,0
 	.sdecl	'.debug_info',debug,cluster('GyroCalculate')
 	.sect	'.debug_info'
-.L60:
-	.word	212
+.L58:
+	.word	232
 	.half	3
-	.word	.L61
+	.word	.L59
 	.byte	4,1
 	.byte	'..\\CODE\\Src\\User_Gyro_Uart.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L63,.L62
+	.word	.L61,.L60
 	.byte	2
-	.word	.L46
+	.word	.L44
 	.byte	3
 	.byte	'GyroCalculate',0,1,55,6,1,1,1
-	.word	.L35,.L112,.L34
+	.word	.L35,.L105,.L34
 	.byte	4
-	.word	.L113
+	.word	.L35,.L105
+	.byte	5
+	.byte	'sum',0,1,57,8
+	.word	.L106,.L107
 	.byte	5
 	.byte	'temp',0,1,58,11
-	.word	.L114,.L115
+	.word	.L108,.L109
 	.byte	0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('GyroCalculate')
 	.sect	'.debug_abbrev'
-.L61:
+.L59:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
-	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,1,85,6,0,0,5,52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,1,17,1,18,1,0,0,5,52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
 	.sdecl	'.debug_line',debug,cluster('GyroCalculate')
 	.sect	'.debug_line'
-.L62:
-	.word	.L203-.L202
-.L202:
+.L60:
+	.word	.L213-.L212
+.L212:
 	.half	3
-	.word	.L205-.L204
-.L204:
+	.word	.L215-.L214
+.L214:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\CODE\\Src\\User_Gyro_Uart.c',0,0,0,0,0
-.L205:
-	.byte	5,8,7,0,5,2
+.L215:
+	.byte	5,12,7,0,5,2
 	.word	.L35
-	.byte	3,59,1,5,5,9
-	.half	.L206-.L35
+	.byte	3,56,1,5,8,9
+	.half	.L130-.L35
+	.byte	3,3,1,5,5,9
+	.half	.L216-.L130
 	.byte	1,5,10,7,9
-	.half	.L207-.L206
-	.byte	3,9,1,5,20,9
-	.half	.L208-.L207
-	.byte	3,123,1,9
-	.half	.L209-.L208
-	.byte	3,127,1,9
-	.half	.L210-.L209
-	.byte	3,2,1,5,7,9
-	.half	.L211-.L210
-	.byte	3,127,1,5,20,3,2,1,5,7,9
-	.half	.L212-.L211
-	.byte	3,127,1,5,20,3,2,1,5,7,9
-	.half	.L213-.L212
-	.byte	3,127,1,5,20,3,2,1,5,7,9
-	.half	.L214-.L213
-	.byte	3,127,1,5,20,3,2,1,5,7,9
-	.half	.L215-.L214
-	.byte	3,127,1,5,20,3,2,1,5,7,9
-	.half	.L216-.L215
-	.byte	3,127,1,5,20,3,121,1,5,7,9
 	.half	.L217-.L216
-	.byte	3,8,1,5,20,3,1,1,5,7,9
+	.byte	3,2,1,5,20,9
 	.half	.L218-.L217
-	.byte	1,5,23,3,1,1,5,7,9
+	.byte	1,5,10,9
 	.half	.L219-.L218
-	.byte	3,119,1,5,3,9
+	.byte	3,1,1,5,20,9
 	.half	.L220-.L219
-	.byte	3,9,1,5,11,7,9
+	.byte	1,5,7,9
 	.half	.L221-.L220
-	.byte	3,2,1,5,17,9
+	.byte	1,5,10,9
 	.half	.L222-.L221
-	.byte	3,1,1,5,15,1,5,4,9
+	.byte	3,1,1,5,20,9
 	.half	.L223-.L222
-	.byte	3,1,1,5,19,9
+	.byte	1,5,7,9
 	.half	.L224-.L223
-	.byte	1,5,1,9
-	.half	.L11-.L224
-	.byte	3,17,1,5,24,7,9
-	.half	.L12-.L11
-	.byte	3,114,1,5,3,3,2,1,5,24,9
-	.half	.L225-.L12
-	.byte	3,126,1,5,46,9
+	.byte	1,5,10,9
+	.half	.L225-.L224
+	.byte	3,1,1,5,20,9
 	.half	.L226-.L225
-	.byte	3,2,1,5,30,9
+	.byte	1,5,7,9
 	.half	.L227-.L226
-	.byte	1,5,8,9
-	.half	.L133-.L227
-	.byte	3,127,1,5,15,9
-	.half	.L228-.L133
-	.byte	3,1,1,5,13,9
-	.half	.L134-.L228
-	.byte	1,5,24,9
-	.half	.L135-.L134
-	.byte	3,2,1,5,8,9
-	.half	.L137-.L135
-	.byte	3,1,1,5,3,3,1,1,5,15,9
-	.half	.L136-.L137
-	.byte	1,5,13,9
-	.half	.L229-.L136
-	.byte	1,5,24,9
+	.byte	1,5,10,9
+	.half	.L228-.L227
+	.byte	3,1,1,5,20,9
+	.half	.L229-.L228
+	.byte	1,5,7,9
 	.half	.L230-.L229
-	.byte	3,2,1,5,8,9
-	.half	.L139-.L230
-	.byte	3,1,1,5,3,3,1,1,5,14,9
-	.half	.L138-.L139
-	.byte	1,5,12,9
-	.half	.L231-.L138
-	.byte	1,5,16,9
+	.byte	1,5,10,9
+	.half	.L231-.L230
+	.byte	3,1,1,5,20,9
 	.half	.L232-.L231
-	.byte	3,1,1,5,14,1,5,1,9
+	.byte	1,5,7,9
 	.half	.L233-.L232
+	.byte	1,5,10,9
+	.half	.L234-.L233
+	.byte	3,1,1,5,20,9
+	.half	.L235-.L234
+	.byte	1,5,7,9
+	.half	.L236-.L235
+	.byte	1,5,10,9
+	.half	.L237-.L236
+	.byte	3,1,1,5,20,9
+	.half	.L238-.L237
+	.byte	1,5,7,9
+	.half	.L239-.L238
+	.byte	1,5,10,9
+	.half	.L240-.L239
+	.byte	3,1,1,5,20,9
+	.half	.L241-.L240
+	.byte	1,5,7,9
+	.half	.L242-.L241
+	.byte	1,5,10,9
+	.half	.L243-.L242
+	.byte	3,1,1,5,20,9
+	.half	.L244-.L243
+	.byte	1,5,7,9
+	.half	.L245-.L244
+	.byte	1,9
+	.half	.L246-.L245
+	.byte	3,119,1,5,13,9
+	.half	.L132-.L246
+	.byte	3,10,1,5,23,9
+	.half	.L247-.L132
+	.byte	1,5,3,9
+	.half	.L248-.L247
+	.byte	1,5,11,7,9
+	.half	.L249-.L248
+	.byte	3,2,1,5,4,9
+	.half	.L250-.L249
+	.byte	3,1,1,5,17,9
+	.half	.L251-.L250
+	.byte	1,5,15,9
+	.half	.L133-.L251
+	.byte	1,5,4,9
+	.half	.L252-.L133
+	.byte	3,1,1,5,19,9
+	.half	.L253-.L252
+	.byte	1,5,1,9
+	.half	.L11-.L253
+	.byte	3,17,1,5,10,7,9
+	.half	.L12-.L11
+	.byte	3,114,1,5,20,9
+	.half	.L254-.L12
+	.byte	1,5,24,9
+	.half	.L134-.L254
+	.byte	1,5,11,9
+	.half	.L255-.L134
+	.byte	3,1,1,5,21,9
+	.half	.L256-.L255
+	.byte	1,5,8,9
+	.half	.L135-.L256
+	.byte	1,5,3,9
+	.half	.L257-.L135
+	.byte	3,1,1,5,15,9
+	.half	.L258-.L257
+	.byte	1,5,30,9
+	.half	.L136-.L258
+	.byte	1,5,15,9
+	.half	.L259-.L136
+	.byte	1,5,46,9
+	.half	.L260-.L259
+	.byte	1,5,44,9
+	.half	.L261-.L260
+	.byte	1,5,13,9
+	.half	.L262-.L261
+	.byte	1,5,10,9
+	.half	.L263-.L262
+	.byte	3,2,1,5,20,9
+	.half	.L264-.L263
+	.byte	1,5,24,9
+	.half	.L265-.L264
+	.byte	1,5,11,9
+	.half	.L266-.L265
+	.byte	3,1,1,5,21,9
+	.half	.L267-.L266
+	.byte	1,5,8,9
+	.half	.L137-.L267
+	.byte	1,5,3,9
+	.half	.L268-.L137
+	.byte	3,1,1,5,15,9
+	.half	.L269-.L268
+	.byte	1,5,44,9
+	.half	.L270-.L269
+	.byte	1,5,13,9
+	.half	.L271-.L270
+	.byte	1,5,10,9
+	.half	.L272-.L271
+	.byte	3,2,1,5,20,9
+	.half	.L273-.L272
+	.byte	1,5,24,9
+	.half	.L274-.L273
+	.byte	1,5,11,9
+	.half	.L275-.L274
+	.byte	3,1,1,5,21,9
+	.half	.L276-.L275
+	.byte	1,5,8,9
+	.half	.L139-.L276
+	.byte	1,5,3,9
+	.half	.L277-.L139
+	.byte	3,1,1,5,14,9
+	.half	.L278-.L277
+	.byte	1,5,43,9
+	.half	.L279-.L278
+	.byte	1,5,12,9
+	.half	.L280-.L279
+	.byte	1,5,3,9
+	.half	.L281-.L280
+	.byte	3,1,1,5,16,9
+	.half	.L282-.L281
+	.byte	1,5,14,9
+	.half	.L283-.L282
+	.byte	1,5,1,9
+	.half	.L284-.L283
 	.byte	3,3,1,7,9
-	.half	.L64-.L233
+	.half	.L62-.L284
 	.byte	0,1,1
-.L203:
+.L213:
 	.sdecl	'.debug_ranges',debug,cluster('GyroCalculate')
 	.sect	'.debug_ranges'
-.L63:
-	.word	-1,.L35,0,.L64-.L35,0,0
-.L113:
-	.word	-1,.L35,0,.L112-.L35,-1,.L37,0,.L89-.L37,0,0
+.L61:
+	.word	-1,.L35,0,.L62-.L35,0,0
 	.sdecl	'.debug_info',debug,cluster('ManageYawAngle')
 	.sect	'.debug_info'
-.L65:
+.L63:
 	.word	199
 	.half	3
-	.word	.L66
+	.word	.L64
 	.byte	4,1
 	.byte	'..\\CODE\\Src\\User_Gyro_Uart.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L68,.L67
+	.word	.L66,.L65
 	.byte	2
-	.word	.L46
+	.word	.L44
 	.byte	3
 	.byte	'ManageYawAngle',0,1,95,6,1,1,1
-	.word	.L39,.L116,.L38
+	.word	.L37,.L110,.L36
 	.byte	4
-	.word	.L39,.L116
+	.word	.L37,.L110
 	.byte	0,0
 	.sdecl	'.debug_abbrev',debug,cluster('ManageYawAngle')
 	.sect	'.debug_abbrev'
-.L66:
+.L64:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
 	.sdecl	'.debug_line',debug,cluster('ManageYawAngle')
 	.sect	'.debug_line'
-.L67:
-	.word	.L235-.L234
-.L234:
+.L65:
+	.word	.L286-.L285
+.L285:
 	.half	3
-	.word	.L237-.L236
-.L236:
+	.word	.L288-.L287
+.L287:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\CODE\\Src\\User_Gyro_Uart.c',0,0,0,0,0
-.L237:
+.L288:
 	.byte	5,8,7,0,5,2
-	.word	.L39
+	.word	.L37
 	.byte	3,224,0,1,5,19,9
-	.half	.L238-.L39
+	.half	.L289-.L37
 	.byte	1,5,17,9
-	.half	.L239-.L238
+	.half	.L290-.L289
 	.byte	1,5,5,9
-	.half	.L240-.L239
+	.half	.L291-.L290
 	.byte	1,5,28,7,9
-	.half	.L241-.L240
+	.half	.L292-.L291
 	.byte	3,1,1,5,26,9
-	.half	.L242-.L241
-	.byte	1,5,15,1,5,1,9
-	.half	.L14-.L242
+	.half	.L293-.L292
+	.byte	1,5,15,9
+	.half	.L294-.L293
+	.byte	1,5,1,9
+	.half	.L14-.L294
 	.byte	3,1,1,7,9
-	.half	.L69-.L14
+	.half	.L67-.L14
 	.byte	0,1,1
-.L235:
+.L286:
 	.sdecl	'.debug_ranges',debug,cluster('ManageYawAngle')
 	.sect	'.debug_ranges'
-.L68:
-	.word	-1,.L39,0,.L69-.L39,0,0
+.L66:
+	.word	-1,.L37,0,.L67-.L37,0,0
 	.sdecl	'.debug_info',debug,cluster('GyroYawAngleInit')
 	.sect	'.debug_info'
-.L70:
+.L68:
 	.word	201
 	.half	3
-	.word	.L71
+	.word	.L69
 	.byte	4,1
 	.byte	'..\\CODE\\Src\\User_Gyro_Uart.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L73,.L72
+	.word	.L71,.L70
 	.byte	2
-	.word	.L46
+	.word	.L44
 	.byte	3
 	.byte	'GyroYawAngleInit',0,1,101,6,1,1,1
-	.word	.L41,.L117,.L40
+	.word	.L39,.L111,.L38
 	.byte	4
-	.word	.L41,.L117
+	.word	.L39,.L111
 	.byte	0,0
 	.sdecl	'.debug_abbrev',debug,cluster('GyroYawAngleInit')
 	.sect	'.debug_abbrev'
-.L71:
+.L69:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
 	.sdecl	'.debug_line',debug,cluster('GyroYawAngleInit')
 	.sect	'.debug_line'
-.L72:
-	.word	.L244-.L243
-.L243:
+.L70:
+	.word	.L296-.L295
+.L295:
 	.half	3
-	.word	.L246-.L245
-.L245:
+	.word	.L298-.L297
+.L297:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\CODE\\Src\\User_Gyro_Uart.c',0,0,0,0,0
-.L246:
+.L298:
 	.byte	5,2,7,0,5,2
-	.word	.L41
+	.word	.L39
 	.byte	3,230,0,1,5,20,9
-	.half	.L247-.L41
+	.half	.L299-.L39
 	.byte	1,5,18,9
-	.half	.L248-.L247
+	.half	.L300-.L299
 	.byte	1,5,1,9
-	.half	.L249-.L248
+	.half	.L301-.L300
 	.byte	3,1,1,7,9
-	.half	.L74-.L249
+	.half	.L72-.L301
 	.byte	0,1,1
-.L244:
+.L296:
 	.sdecl	'.debug_ranges',debug,cluster('GyroYawAngleInit')
 	.sect	'.debug_ranges'
-.L73:
-	.word	-1,.L41,0,.L74-.L41,0,0
+.L71:
+	.word	-1,.L39,0,.L72-.L39,0,0
 	.sdecl	'.debug_info',debug,cluster('GetGyroError')
 	.sect	'.debug_info'
-.L75:
-	.word	222
+.L73:
+	.word	241
 	.half	3
-	.word	.L76
+	.word	.L74
 	.byte	4,1
 	.byte	'..\\CODE\\Src\\User_Gyro_Uart.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L78,.L77
+	.word	.L76,.L75
 	.byte	2
-	.word	.L46
+	.word	.L44
 	.byte	3
 	.byte	'GetGyroError',0,1,106,8
-	.word	.L118
+	.word	.L112
 	.byte	1,1,1
-	.word	.L43,.L119,.L42
+	.word	.L41,.L113,.L40
 	.byte	4
-	.word	.L43,.L119
+	.word	.L41,.L113
+	.byte	5
+	.byte	'TempIn',0,1,108,9
+	.word	.L112,.L114
 	.byte	5
 	.byte	'TempOut',0,1,108,16
-	.word	.L118,.L120
+	.word	.L112,.L115
 	.byte	0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('GetGyroError')
 	.sect	'.debug_abbrev'
-.L76:
+.L74:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
 	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,11,1,17,1,18,1,0,0,5,52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
 	.sdecl	'.debug_line',debug,cluster('GetGyroError')
 	.sect	'.debug_line'
-.L77:
-	.word	.L251-.L250
-.L250:
+.L75:
+	.word	.L303-.L302
+.L302:
 	.half	3
-	.word	.L253-.L252
-.L252:
+	.word	.L305-.L304
+.L304:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\CODE\\Src\\User_Gyro_Uart.c',0,0,0,0,0
-.L253:
-	.byte	5,22,7,0,5,2
-	.word	.L43
-	.byte	3,237,0,1,5,11,9
-	.half	.L254-.L43
-	.byte	1,5,27,9
-	.half	.L255-.L254
-	.byte	3,4,1,5,20,9
-	.half	.L256-.L255
-	.byte	3,124,1,5,25,9
-	.half	.L257-.L256
-	.byte	3,4,1,5,12,9
-	.half	.L258-.L257
-	.byte	3,126,1,5,5,9
-	.half	.L140-.L258
-	.byte	3,2,1,5,22,7,9
-	.half	.L259-.L140
+.L305:
+	.byte	5,11,7,0,5,2
+	.word	.L41
+	.byte	3,237,0,1,5,22,9
+	.half	.L306-.L41
+	.byte	1,5,20,9
+	.half	.L307-.L306
+	.byte	1,5,12,9
+	.half	.L141-.L307
+	.byte	3,2,1,5,27,9
+	.half	.L142-.L141
+	.byte	3,2,1,5,25,9
+	.half	.L308-.L142
+	.byte	1,5,5,9
+	.half	.L309-.L308
+	.byte	1,5,22,7,9
+	.half	.L310-.L309
 	.byte	3,2,1,5,9,9
-	.half	.L260-.L259
+	.half	.L311-.L310
 	.byte	1,5,25,7,9
-	.half	.L261-.L260
+	.half	.L312-.L311
 	.byte	3,2,1,5,13,9
-	.half	.L262-.L261
+	.half	.L313-.L312
 	.byte	1,5,27,7,9
-	.half	.L263-.L262
+	.half	.L314-.L313
 	.byte	3,6,1,5,45,9
-	.half	.L264-.L263
+	.half	.L315-.L314
 	.byte	1,5,27,9
-	.half	.L265-.L264
+	.half	.L316-.L315
 	.byte	1,5,25,9
-	.half	.L266-.L265
-	.byte	1,5,1,3,24,1,5,26,7,9
-	.half	.L15-.L266
-	.byte	3,121,1,5,14,9
-	.half	.L267-.L15
-	.byte	1,5,33,7,9
-	.half	.L268-.L267
-	.byte	3,5,1,5,22,9
-	.half	.L269-.L268
+	.half	.L317-.L316
 	.byte	1,5,1,9
-	.half	.L20-.L269
+	.half	.L318-.L317
+	.byte	3,24,1,5,29,7,9
+	.half	.L15-.L318
+	.byte	3,121,1,5,26,9
+	.half	.L319-.L15
+	.byte	1,5,14,9
+	.half	.L320-.L319
+	.byte	1,5,21,7,9
+	.half	.L16-.L320
+	.byte	3,2,1,5,32,9
+	.half	.L321-.L16
+	.byte	1,5,30,9
+	.half	.L322-.L321
+	.byte	1,5,1,9
+	.half	.L323-.L322
+	.byte	3,5,1,5,22,7,9
+	.half	.L19-.L323
+	.byte	3,126,1,5,40,9
+	.half	.L324-.L19
+	.byte	1,5,22,9
+	.half	.L325-.L324
+	.byte	1,5,33,9
+	.half	.L326-.L325
+	.byte	1,5,22,9
+	.half	.L327-.L326
+	.byte	1,5,1,9
+	.half	.L328-.L327
 	.byte	3,2,1,7,9
-	.half	.L79-.L20
+	.half	.L77-.L328
 	.byte	0,1,1
-.L251:
+.L303:
 	.sdecl	'.debug_ranges',debug,cluster('GetGyroError')
 	.sect	'.debug_ranges'
-.L78:
-	.word	-1,.L43,0,.L79-.L43,0,0
+.L76:
+	.word	-1,.L41,0,.L77-.L41,0,0
 	.sdecl	'.debug_info',debug,cluster('GyroPID')
 	.sect	'.debug_info'
-.L80:
-	.word	377
+.L78:
+	.word	407
 	.half	3
-	.word	.L81
+	.word	.L79
 	.byte	4,1
 	.byte	'..\\CODE\\Src\\User_Gyro_Uart.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L83,.L82
+	.word	.L81,.L80
 	.byte	2
-	.word	.L46
+	.word	.L44
 	.byte	3
 	.byte	'GyroPID',0,1,150,1,6,1,1,1
-	.word	.L45,.L121,.L44
+	.word	.L43,.L116,.L42
 	.byte	4
 	.byte	'Kp',0,1,150,1,21
-	.word	.L118,.L122
+	.word	.L112,.L117
 	.byte	4
 	.byte	'Ki',0,1,150,1,32
-	.word	.L118,.L123
+	.word	.L112,.L118
 	.byte	4
 	.byte	'Kd',0,1,150,1,43
-	.word	.L118,.L124
+	.word	.L112,.L119
 	.byte	5
-	.word	.L45,.L121
+	.word	.L43,.L116
 	.byte	6
 	.byte	'error',0,1,154,1,12
-	.word	.L118,.L125
+	.word	.L112,.L120
+	.byte	6
+	.byte	'P',0,1,154,1,23
+	.word	.L112,.L121
+	.byte	6
+	.byte	'I',0,1,154,1,30
+	.word	.L112,.L122
 	.byte	6
 	.byte	'D',0,1,154,1,37
-	.word	.L118,.L126
+	.word	.L112,.L123
 	.byte	6
 	.byte	'PIDValue',0,1,154,1,44
-	.word	.L118,.L127
+	.word	.L112,.L124
 	.byte	6
 	.byte	'LPWMDutyOut',0,1,155,1,12
-	.word	.L118,.L128
+	.word	.L112,.L125
 	.byte	6
 	.byte	'RPWMDutyOut',0,1,155,1,25
-	.word	.L118,.L129
+	.word	.L112,.L126
 	.byte	7
 	.byte	'previousError',0,1,156,1,16
-	.word	.L118
+	.word	.L112
 	.byte	5,3
 	.word	_999001_previousError
 	.byte	0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('GyroPID')
 	.sect	'.debug_abbrev'
-.L81:
+.L79:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3
 	.byte	8,58,15,59,15,57,15,73,16,2,6,0,0,7,52,0,3,8,58,15,59,15,57,15,73,16,2,9,0,0,0
 	.sdecl	'.debug_line',debug,cluster('GyroPID')
 	.sect	'.debug_line'
-.L82:
-	.word	.L271-.L270
-.L270:
+.L80:
+	.word	.L330-.L329
+.L329:
 	.half	3
-	.word	.L273-.L272
-.L272:
+	.word	.L332-.L331
+.L331:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\CODE\\Src\\User_Gyro_Uart.c',0,0,0,0,0
-.L273:
+.L332:
 	.byte	5,6,7,0,5,2
-	.word	.L45
-	.byte	3,149,1,1,5,25,9
-	.half	.L144-.L45
-	.byte	3,8,1,5,17,9
-	.half	.L143-.L144
+	.word	.L43
+	.byte	3,149,1,1,5,32,9
+	.half	.L150-.L43
 	.byte	3,4,1,5,25,9
-	.half	.L147-.L143
-	.byte	3,2,1,5,19,3,1,1,5,15,9
-	.half	.L145-.L147
-	.byte	3,125,1,5,20,9
-	.half	.L148-.L145
-	.byte	3,8,1,5,42,9
-	.half	.L150-.L148
-	.byte	3,122,1,5,36,9
-	.half	.L149-.L150
-	.byte	1,5,17,9
-	.half	.L274-.L149
-	.byte	3,2,1,5,14,9
-	.half	.L275-.L274
+	.half	.L151-.L150
+	.byte	3,4,1,5,7,9
+	.half	.L145-.L151
+	.byte	3,3,1,5,17,9
+	.half	.L152-.L145
+	.byte	3,1,1,5,15,9
+	.half	.L333-.L152
+	.byte	1,5,31,9
+	.half	.L155-.L333
+	.byte	3,2,1,5,25,9
+	.half	.L154-.L155
+	.byte	1,5,36,9
+	.half	.L147-.L154
 	.byte	1,5,19,9
-	.half	.L152-.L275
-	.byte	3,2,1,5,24,9
-	.half	.L276-.L152
-	.byte	1,9
-	.half	.L153-.L276
+	.half	.L156-.L147
 	.byte	3,1,1,5,17,9
-	.half	.L154-.L153
-	.byte	3,1,1,5,2,9
-	.half	.L277-.L154
-	.byte	1,5,25,7,9
-	.half	.L278-.L277
-	.byte	3,2,1,5,22,9
-	.half	.L279-.L278
+	.half	.L334-.L156
+	.byte	3,1,1,5,14,9
+	.half	.L335-.L334
 	.byte	1,5,19,9
-	.half	.L280-.L279
-	.byte	3,127,1,5,15,9
-	.half	.L22-.L280
-	.byte	1,5,17,9
-	.half	.L25-.L22
-	.byte	3,3,1,5,2,9
-	.half	.L281-.L25
+	.half	.L336-.L335
+	.byte	3,2,1,5,24,9
+	.half	.L337-.L336
+	.byte	1,9
+	.half	.L158-.L337
+	.byte	3,1,1,5,20,9
+	.half	.L149-.L158
+	.byte	3,1,1,5,17,9
+	.half	.L157-.L149
+	.byte	1,5,2,9
+	.half	.L338-.L157
 	.byte	1,5,25,7,9
-	.half	.L282-.L281
+	.half	.L339-.L338
 	.byte	3,2,1,5,22,9
-	.half	.L283-.L282
+	.half	.L340-.L339
+	.byte	1,5,19,9
+	.half	.L341-.L340
+	.byte	3,127,1,5,17,9
+	.half	.L22-.L341
+	.byte	1,5,20,9
+	.half	.L25-.L22
+	.byte	3,3,1,5,17,9
+	.half	.L342-.L25
+	.byte	1,5,2,9
+	.half	.L343-.L342
+	.byte	1,5,25,7,9
+	.half	.L344-.L343
+	.byte	3,2,1,5,22,9
+	.half	.L345-.L344
+	.byte	1,5,19,9
+	.half	.L346-.L345
+	.byte	3,127,1,5,17,9
+	.half	.L26-.L346
 	.byte	1,5,18,9
-	.half	.L26-.L283
-	.byte	3,2,1,5,28,1,5,18,9
-	.half	.L146-.L26
+	.half	.L29-.L26
+	.byte	3,3,1,5,28,9
+	.half	.L347-.L29
+	.byte	1,5,18,9
+	.half	.L153-.L347
 	.byte	3,1,1,5,28,9
-	.half	.L157-.L146
+	.half	.L348-.L153
 	.byte	1,5,1,9
-	.half	.L84-.L157
+	.half	.L82-.L348
 	.byte	3,3,0,1,1
-.L271:
+.L330:
 	.sdecl	'.debug_ranges',debug,cluster('GyroPID')
 	.sect	'.debug_ranges'
-.L83:
-	.word	-1,.L45,0,.L84-.L45,0,0
-	.sdecl	'.debug_info',debug,cluster('.cocofun_2')
-	.sect	'.debug_info'
-.L85:
-	.word	183
-	.half	3
-	.word	.L86
-	.byte	4,1
-	.byte	'..\\CODE\\Src\\User_Gyro_Uart.c',0
-	.byte	'TASKING VX-toolset for TriCore: C compiler',0
-	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L88,.L87
-	.byte	2
-	.word	.L46
-	.byte	3
-	.byte	'.cocofun_2',0,1,55,6,1
-	.word	.L37,.L89,.L36
-	.byte	0
-	.sdecl	'.debug_abbrev',debug,cluster('.cocofun_2')
-	.sect	'.debug_abbrev'
-.L86:
-	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,0,3,8,58,15,59,15,57,15,54,15
-	.byte	17,1,18,1,64,6,0,0,0
-	.sdecl	'.debug_line',debug,cluster('.cocofun_2')
-	.sect	'.debug_line'
-.L87:
-	.word	.L285-.L284
-.L284:
-	.half	3
-	.word	.L287-.L286
-.L286:
-	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
-	.byte	'..\\CODE\\Src\\User_Gyro_Uart.c',0,0,0,0,0
-.L287:
-	.byte	5,15,7,0,5,2
-	.word	.L37
-	.byte	3,208,0,1,5,44,9
-	.half	.L288-.L37
-	.byte	1,9
-	.half	.L89-.L288
-	.byte	0,1,1,5,15,0,5,2
-	.word	.L37
-	.byte	3,212,0,1,5,44,9
-	.half	.L288-.L37
-	.byte	1,3,124,1,7,9
-	.half	.L89-.L288
-	.byte	0,1,1,5,14,0,5,2
-	.word	.L37
-	.byte	3,216,0,1,5,43,9
-	.half	.L288-.L37
-	.byte	1,5,44,3,120,1,7,9
-	.half	.L89-.L288
-	.byte	0,1,1
-.L285:
-	.sdecl	'.debug_ranges',debug,cluster('.cocofun_2')
-	.sect	'.debug_ranges'
-.L88:
-	.word	-1,.L37,0,.L89-.L37,0,0
+.L81:
+	.word	-1,.L43,0,.L82-.L43,0,0
 	.sdecl	'.debug_info',debug,cluster('GyroUnlockInstruction')
 	.sect	'.debug_info'
-.L90:
+.L83:
 	.word	184
 	.half	3
-	.word	.L91
+	.word	.L84
 	.byte	4,1
 	.byte	'..\\CODE\\Src\\User_Gyro_Uart.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1,2
-	.word	.L46
+	.word	.L44
 	.byte	3
 	.byte	'GyroUnlockInstruction',0,27,12,7
-	.word	.L130
+	.word	.L127
 	.byte	1,5,3
 	.word	GyroUnlockInstruction
 	.byte	0
 	.sdecl	'.debug_abbrev',debug,cluster('GyroUnlockInstruction')
 	.sect	'.debug_abbrev'
-.L91:
+.L84:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
 	.byte	0,0,0
 	.sdecl	'.debug_info',debug,cluster('GyroAutoCalibration')
 	.sect	'.debug_info'
-.L92:
+.L85:
 	.word	182
 	.half	3
-	.word	.L93
+	.word	.L86
 	.byte	4,1
 	.byte	'..\\CODE\\Src\\User_Gyro_Uart.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1,2
-	.word	.L46
+	.word	.L44
 	.byte	3
 	.byte	'GyroAutoCalibration',0,27,13,7
-	.word	.L130
+	.word	.L127
 	.byte	1,5,3
 	.word	GyroAutoCalibration
 	.byte	0
 	.sdecl	'.debug_abbrev',debug,cluster('GyroAutoCalibration')
 	.sect	'.debug_abbrev'
-.L93:
+.L86:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
 	.byte	0,0,0
 	.sdecl	'.debug_info',debug,cluster('GyroKeepConfiguration')
 	.sect	'.debug_info'
-.L94:
+.L87:
 	.word	184
 	.half	3
-	.word	.L95
+	.word	.L88
 	.byte	4,1
 	.byte	'..\\CODE\\Src\\User_Gyro_Uart.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1,2
-	.word	.L46
+	.word	.L44
 	.byte	3
 	.byte	'GyroKeepConfiguration',0,27,14,7
-	.word	.L130
+	.word	.L127
 	.byte	1,5,3
 	.word	GyroKeepConfiguration
 	.byte	0
 	.sdecl	'.debug_abbrev',debug,cluster('GyroKeepConfiguration')
 	.sect	'.debug_abbrev'
-.L95:
+.L88:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
 	.byte	0,0,0
 	.sdecl	'.debug_info',debug,cluster('GyroRxBuff')
 	.sect	'.debug_info'
-.L96:
+.L89:
 	.word	173
 	.half	3
-	.word	.L97
+	.word	.L90
 	.byte	4,1
 	.byte	'..\\CODE\\Src\\User_Gyro_Uart.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1,2
-	.word	.L46
+	.word	.L44
 	.byte	3
 	.byte	'GyroRxBuff',0,27,15,7
-	.word	.L131
+	.word	.L128
 	.byte	1,5,3
 	.word	GyroRxBuff
 	.byte	0
 	.sdecl	'.debug_abbrev',debug,cluster('GyroRxBuff')
 	.sect	'.debug_abbrev'
-.L97:
+.L90:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
 	.byte	0,0,0
 	.sdecl	'.debug_info',debug,cluster('GyroReceiveNum')
 	.sect	'.debug_info'
-.L98:
+.L91:
 	.word	177
 	.half	3
-	.word	.L99
+	.word	.L92
 	.byte	4,1
 	.byte	'..\\CODE\\Src\\User_Gyro_Uart.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1,2
-	.word	.L46
+	.word	.L44
 	.byte	3
 	.byte	'GyroReceiveNum',0,27,16,6
-	.word	.L132
+	.word	.L129
 	.byte	1,5,3
 	.word	GyroReceiveNum
 	.byte	0
 	.sdecl	'.debug_abbrev',debug,cluster('GyroReceiveNum')
 	.sect	'.debug_abbrev'
-.L99:
+.L92:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
 	.byte	0,0,0
 	.sdecl	'.debug_info',debug,cluster('GyroRxFlag')
 	.sect	'.debug_info'
-.L100:
+.L93:
 	.word	173
 	.half	3
-	.word	.L101
+	.word	.L94
 	.byte	4,1
 	.byte	'..\\CODE\\Src\\User_Gyro_Uart.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1,2
-	.word	.L46
+	.word	.L44
 	.byte	3
 	.byte	'GyroRxFlag',0,27,16,22
-	.word	.L132
+	.word	.L129
 	.byte	1,5,3
 	.word	GyroRxFlag
 	.byte	0
 	.sdecl	'.debug_abbrev',debug,cluster('GyroRxFlag')
 	.sect	'.debug_abbrev'
-.L101:
+.L94:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
 	.byte	0,0,0
 	.sdecl	'.debug_info',debug,cluster('PitchAngle')
 	.sect	'.debug_info'
-.L102:
+.L95:
 	.word	173
 	.half	3
-	.word	.L103
+	.word	.L96
 	.byte	4,1
 	.byte	'..\\CODE\\Src\\User_Gyro_Uart.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1,2
-	.word	.L46
+	.word	.L44
 	.byte	3
 	.byte	'PitchAngle',0,27,17,8
-	.word	.L118
+	.word	.L112
 	.byte	1,5,3
 	.word	PitchAngle
 	.byte	0
 	.sdecl	'.debug_abbrev',debug,cluster('PitchAngle')
 	.sect	'.debug_abbrev'
-.L103:
+.L96:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
 	.byte	0,0,0
 	.sdecl	'.debug_info',debug,cluster('RollAngle')
 	.sect	'.debug_info'
-.L104:
+.L97:
 	.word	172
 	.half	3
-	.word	.L105
+	.word	.L98
 	.byte	4,1
 	.byte	'..\\CODE\\Src\\User_Gyro_Uart.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1,2
-	.word	.L46
+	.word	.L44
 	.byte	3
 	.byte	'RollAngle',0,27,17,20
-	.word	.L118
+	.word	.L112
 	.byte	1,5,3
 	.word	RollAngle
 	.byte	0
 	.sdecl	'.debug_abbrev',debug,cluster('RollAngle')
 	.sect	'.debug_abbrev'
-.L105:
+.L98:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
 	.byte	0,0,0
 	.sdecl	'.debug_info',debug,cluster('YawAngle')
 	.sect	'.debug_info'
-.L106:
+.L99:
 	.word	171
 	.half	3
-	.word	.L107
+	.word	.L100
 	.byte	4,1
 	.byte	'..\\CODE\\Src\\User_Gyro_Uart.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1,2
-	.word	.L46
+	.word	.L44
 	.byte	3
 	.byte	'YawAngle',0,27,17,31
-	.word	.L118
+	.word	.L112
 	.byte	1,5,3
 	.word	YawAngle
 	.byte	0
 	.sdecl	'.debug_abbrev',debug,cluster('YawAngle')
 	.sect	'.debug_abbrev'
-.L107:
+.L100:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
 	.byte	0,0,0
 	.sdecl	'.debug_info',debug,cluster('NowGyroYawAngle')
 	.sect	'.debug_info'
-.L108:
+.L101:
 	.word	178
 	.half	3
-	.word	.L109
+	.word	.L102
 	.byte	4,1
 	.byte	'..\\CODE\\Src\\User_Gyro_Uart.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1,2
-	.word	.L46
+	.word	.L44
 	.byte	3
 	.byte	'NowGyroYawAngle',0,27,17,41
-	.word	.L118
+	.word	.L112
 	.byte	1,5,3
 	.word	NowGyroYawAngle
 	.byte	0
 	.sdecl	'.debug_abbrev',debug,cluster('NowGyroYawAngle')
 	.sect	'.debug_abbrev'
-.L109:
+.L102:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
 	.byte	0,0,0
-	.sdecl	'.debug_loc',debug,cluster('.cocofun_2')
-	.sect	'.debug_loc'
-.L36:
-	.word	-1,.L37,0,.L89-.L37
-	.half	2
-	.byte	138,0
-	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('GetGyroError')
 	.sect	'.debug_loc'
-.L42:
-	.word	-1,.L43,0,.L119-.L43
+.L40:
+	.word	-1,.L41,0,.L113-.L41
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L120:
-	.word	-1,.L43,.L140-.L43,.L141-.L43
+.L114:
+	.word	-1,.L41,.L141-.L41,.L142-.L41
 	.half	1
 	.byte	95
-	.word	.L15-.L43,.L142-.L43
+	.word	0,0
+.L115:
+	.word	-1,.L41,.L142-.L41,.L143-.L41
+	.half	1
+	.byte	95
+	.word	.L15-.L41,.L144-.L41
 	.half	1
 	.byte	95
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('GyroCalculate')
 	.sect	'.debug_loc'
 .L34:
-	.word	-1,.L35,0,.L112-.L35
+	.word	-1,.L35,0,.L105-.L35
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L115:
-	.word	-1,.L35,.L133-.L35,.L134-.L35
+.L107:
+	.word	-1,.L35,.L130-.L35,.L131-.L35
 	.half	1
-	.byte	86
-	.word	.L37-.L35,.L89-.L35
+	.byte	81
+	.word	.L132-.L35,.L133-.L35
 	.half	1
-	.byte	86
-	.word	.L135-.L35,.L136-.L35
+	.byte	95
+	.word	.L12-.L35,.L134-.L35
 	.half	1
-	.byte	86
-	.word	.L37-.L35,.L89-.L35
+	.byte	95
+	.word	0,0
+.L109:
+	.word	-1,.L35,.L135-.L35,.L136-.L35
 	.half	1
-	.byte	84
+	.byte	95
 	.word	.L137-.L35,.L138-.L35
 	.half	1
-	.byte	84
-	.word	.L37-.L35,.L89-.L35
+	.byte	95
+	.word	.L139-.L35,.L140-.L35
 	.half	1
-	.byte	82
-	.word	.L139-.L35,.L112-.L35
-	.half	1
-	.byte	82
+	.byte	95
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('GyroPID')
 	.sect	'.debug_loc'
-.L126:
-	.word	-1,.L45,.L148-.L45,.L149-.L45
-	.half	5
-	.byte	144,32,157,32,0
+.L123:
+	.word	-1,.L43,.L155-.L43,.L153-.L43
+	.half	1
+	.byte	81
 	.word	0,0
-.L44:
-	.word	-1,.L45,0,.L121-.L45
+.L42:
+	.word	-1,.L43,0,.L116-.L43
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L124:
-	.word	-1,.L45,0,.L143-.L45
-	.half	1
-	.byte	86
-	.word	.L150-.L45,.L149-.L45
+.L122:
+	.word	-1,.L43,.L151-.L43,.L152-.L43
 	.half	1
 	.byte	89
+	.word	.L152-.L43,.L154-.L43
+	.half	5
+	.byte	144,32,157,32,0
 	.word	0,0
-.L123:
-	.word	-1,.L45,0,.L143-.L45
+.L119:
+	.word	-1,.L43,0,.L145-.L43
+	.half	1
+	.byte	86
+	.word	.L150-.L43,.L116-.L43
+	.half	1
+	.byte	90
+	.word	0,0
+.L118:
+	.word	-1,.L43,0,.L145-.L43
 	.half	1
 	.byte	85
-	.word	.L147-.L45,.L145-.L45
+	.word	.L148-.L43,.L149-.L43
 	.half	1
 	.byte	88
 	.word	0,0
-.L122:
-	.word	-1,.L45,0,.L143-.L45
+.L117:
+	.word	-1,.L43,0,.L145-.L43
 	.half	1
 	.byte	84
-	.word	.L144-.L45,.L145-.L45
+	.word	.L146-.L43,.L147-.L43
 	.half	1
 	.byte	95
 	.word	0,0
-.L128:
-	.word	-1,.L45,.L153-.L45,.L146-.L45
+.L125:
+	.word	-1,.L43,.L158-.L43,.L153-.L43
 	.half	1
 	.byte	85
 	.word	0,0
-.L127:
-	.word	-1,.L45,.L152-.L45,.L151-.L45
+.L121:
+	.word	0,0
+.L124:
+	.word	-1,.L43,.L156-.L43,.L157-.L43
 	.half	1
 	.byte	95
 	.word	0,0
-.L129:
-	.word	-1,.L45,.L150-.L45,.L151-.L45
+.L126:
+	.word	-1,.L43,.L149-.L43,.L116-.L43
 	.half	1
 	.byte	88
-	.word	.L154-.L45,.L26-.L45
+	.word	.L159-.L43,.L116-.L43
 	.half	1
-	.byte	81
-	.word	.L22-.L45,.L155-.L45
-	.half	1
-	.byte	88
-	.word	.L156-.L45,.L26-.L45
-	.half	1
-	.byte	88
-	.word	.L157-.L45,.L158-.L45
-	.half	1
-	.byte	88
+	.byte	85
 	.word	0,0
-.L125:
-	.word	-1,.L45,.L143-.L45,.L146-.L45
+.L120:
+	.word	-1,.L43,.L145-.L43,.L153-.L43
 	.half	1
 	.byte	82
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('GyroUARTInit')
 	.sect	'.debug_loc'
 .L30:
-	.word	-1,.L31,0,.L110-.L31
+	.word	-1,.L31,0,.L103-.L31
 	.half	2
 	.byte	138,0
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('GyroUARTReadByte')
 	.sect	'.debug_loc'
 .L32:
-	.word	-1,.L33,0,.L111-.L33
+	.word	-1,.L33,0,.L104-.L33
 	.half	2
 	.byte	138,0
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('GyroYawAngleInit')
 	.sect	'.debug_loc'
-.L40:
-	.word	-1,.L41,0,.L117-.L41
+.L38:
+	.word	-1,.L39,0,.L111-.L39
 	.half	2
 	.byte	138,0
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('ManageYawAngle')
 	.sect	'.debug_loc'
-.L38:
-	.word	-1,.L39,0,.L116-.L39
+.L36:
+	.word	-1,.L37,0,.L110-.L37
 	.half	2
 	.byte	138,0
 	.word	0,0
 	.sdecl	'.debug_frame',debug
 	.sect	'.debug_frame'
-.L289:
+.L349:
 	.word	48
 	.word	-1
 	.byte	3,0,2,1,27,12,26,0,8,27,8,26,8,28,8,29,8,30,8,31,8,34,8,35,8,32,8,33,8,16,8,17,8,24,8,25,8,36,8,37,8,38
@@ -36419,46 +36634,34 @@ _999001_previousError:	.type	object
 	.sdecl	'.debug_frame',debug,cluster('GyroUARTInit')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L289,.L31,.L110-.L31
+	.word	.L349,.L31,.L103-.L31
 	.sdecl	'.debug_frame',debug,cluster('GyroUARTReadByte')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L289,.L33,.L111-.L33
+	.word	.L349,.L33,.L104-.L33
 	.sdecl	'.debug_frame',debug,cluster('GyroCalculate')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L289,.L35,.L112-.L35
+	.word	.L349,.L35,.L105-.L35
 	.sdecl	'.debug_frame',debug,cluster('ManageYawAngle')
 	.sect	'.debug_frame'
 	.word	24
-	.word	.L289,.L39,.L116-.L39
+	.word	.L349,.L37,.L110-.L37
 	.byte	8,18,8,19,8,20,8,21,8,22,8,23
 	.sdecl	'.debug_frame',debug,cluster('GyroYawAngleInit')
 	.sect	'.debug_frame'
 	.word	24
-	.word	.L289,.L41,.L117-.L41
+	.word	.L349,.L39,.L111-.L39
 	.byte	8,19,8,20,8,21,8,22,8,23,0,0
 	.sdecl	'.debug_frame',debug,cluster('GetGyroError')
 	.sect	'.debug_frame'
 	.word	24
-	.word	.L289,.L43,.L119-.L43
+	.word	.L349,.L41,.L113-.L41
 	.byte	8,18,8,19,8,20,8,21,8,22,8,23
 	.sdecl	'.debug_frame',debug,cluster('GyroPID')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L289,.L45,.L121-.L45
-	.sdecl	'.debug_frame',debug
-	.sect	'.debug_frame'
-.L290:
-	.word	52
-	.word	-1
-	.byte	3,0,2,1,40,12,26,0,9,40,27,155,0,7,26,8,28,8,29,8,30,8,31,8,34,8,35,8,32,8,33,8,16,8,17,8,24,8,25,8,36
-	.byte	8,37,8,38,8,39,0
-	.sdecl	'.debug_frame',debug,cluster('.cocofun_2')
-	.sect	'.debug_frame'
-	.word	24
-	.word	.L290,.L37,.L89-.L37
-	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.word	.L349,.L43,.L116-.L43
 
 ; ..\CODE\Src\User_Gyro_Uart.c	   180  
 ; ..\CODE\Src\User_Gyro_Uart.c	   181  	//return PIDValue;

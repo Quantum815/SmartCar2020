@@ -1,6 +1,6 @@
 	; Module start
 	.compiler_version	"TASKING VX-toolset for TriCore: C compiler v6.3r1 Build 19041558 SN 99294086"
-	.compiler_invocation	"ctc --dep-file=Libraries\\BaseSw\\Service\\CpuGeneric\\If\\.SpiIf.o.d --fp-model=c,f,l,n,r,S,T,z -D__CPU__=tc26x -D__CPU_TC26X__ --core=tc1.6.x --iso=99 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\CODE -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Build -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Impl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Lib -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Lib\\DataHandling -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Lib\\InternalMux -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_PinMap -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Asc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Lin -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Spi -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\Icu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\PwmBc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\PwmHl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\TimerWithTrigger -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\TPwm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cif -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cif\\Cam -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cif\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\CStart -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Irq -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Trap -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dma -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dma\\Dma -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dma\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc\\Dsadc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc\\Rdc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dts -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dts\\Dts -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dts\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Emem -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Emem\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eray -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eray\\Eray -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eray\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eth -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eth\\Phy_Pef7071 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eth\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fce -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fce\\Crc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fce\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fft -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fft\\Fft -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fft\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Flash -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Flash\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gpt12 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gpt12\\IncrEnc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gpt12\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom\\Pwm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom\\PwmHl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tim -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tim\\In -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom\\Pwm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom\\PwmHl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Trig -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Hssl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Hssl\\Hssl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Hssl\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\I2c -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\I2c\\I2c -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\I2c\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Iom -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Iom\\Driver -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Iom\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Msc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Msc\\Msc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Msc\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Mtu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Mtu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Multican -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Multican\\Can -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Multican\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Port -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Port\\Io -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Port\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5\\Psi5 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5s -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5s\\Psi5s -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5s\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi\\SpiMaster -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi\\SpiSlave -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Scu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Scu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Sent -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Sent\\Sent -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Sent\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Smu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Smu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Src -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Src\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Stm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Stm\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Stm\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Vadc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Vadc\\Adc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Vadc\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Platform -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Platform\\Tricore -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Platform\\Tricore\\Compilers -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Sfr -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Sfr\\TC26B -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Sfr\\TC26B\\_Reg -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Service -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Service\\CpuGeneric -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\seekfree_libraries -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\seekfree_libraries\\common -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\seekfree_peripheral -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\USER -g2 -wW557 --make-target=Libraries\\BaseSw\\Service\\CpuGeneric\\If\\SpiIf.o -t4 --language=-gcc,-volatile,+strings,-kanji --default-near-size=0 -O2 --default-a1-size=0 --default-a0-size=0 --source --align=0 --compact-max-size=200 --switch=auto --error-limit=42 -o Libraries\\BaseSw\\Service\\CpuGeneric\\If\\SpiIf.src ..\\Libraries\\BaseSw\\Service\\CpuGeneric\\If\\SpiIf.c"
+	.compiler_invocation	"ctc --dep-file=Libraries\\BaseSw\\Service\\CpuGeneric\\If\\.SpiIf.o.d --fp-model=c,f,l,n,r,S,T,z -D__CPU__=tc26x -D__CPU_TC26X__ --core=tc1.6.x --iso=99 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\CODE -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Build -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Impl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Lib -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Lib\\DataHandling -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Lib\\InternalMux -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_PinMap -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Asc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Lin -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Spi -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\Icu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\PwmBc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\PwmHl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\TimerWithTrigger -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\TPwm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cif -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cif\\Cam -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cif\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\CStart -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Irq -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Trap -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dma -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dma\\Dma -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dma\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc\\Dsadc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc\\Rdc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dts -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dts\\Dts -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dts\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Emem -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Emem\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eray -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eray\\Eray -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eray\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eth -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eth\\Phy_Pef7071 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eth\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fce -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fce\\Crc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fce\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fft -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fft\\Fft -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fft\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Flash -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Flash\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gpt12 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gpt12\\IncrEnc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gpt12\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom\\Pwm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom\\PwmHl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tim -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tim\\In -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom\\Pwm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom\\PwmHl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Trig -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Hssl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Hssl\\Hssl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Hssl\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\I2c -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\I2c\\I2c -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\I2c\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Iom -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Iom\\Driver -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Iom\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Msc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Msc\\Msc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Msc\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Mtu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Mtu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Multican -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Multican\\Can -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Multican\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Port -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Port\\Io -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Port\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5\\Psi5 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5s -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5s\\Psi5s -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5s\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi\\SpiMaster -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi\\SpiSlave -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Scu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Scu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Sent -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Sent\\Sent -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Sent\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Smu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Smu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Src -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Src\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Stm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Stm\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Stm\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Vadc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Vadc\\Adc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Vadc\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Platform -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Platform\\Tricore -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Platform\\Tricore\\Compilers -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Sfr -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Sfr\\TC26B -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Sfr\\TC26B\\_Reg -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Service -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Service\\CpuGeneric -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\seekfree_libraries -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\seekfree_libraries\\common -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\seekfree_peripheral -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\USER -g2 -wW557 --make-target=Libraries\\BaseSw\\Service\\CpuGeneric\\If\\SpiIf.o -t4 --language=-gcc,-volatile,+strings,-kanji --default-near-size=0 -O1 --default-a1-size=0 --default-a0-size=0 --source --align=0 --switch=auto --error-limit=42 -o Libraries\\BaseSw\\Service\\CpuGeneric\\If\\SpiIf.src ..\\Libraries\\BaseSw\\Service\\CpuGeneric\\If\\SpiIf.c"
 	.compiler_name		"ctc"
 	;source	'..\\Libraries\\BaseSw\\Service\\CpuGeneric\\If\\SpiIf.c'
 
@@ -67,38 +67,39 @@ SpiIf_initConfig:	.type	func
 ; ..\Libraries\BaseSw\Service\CpuGeneric\If\SpiIf.c	    48  {
 ; ..\Libraries\BaseSw\Service\CpuGeneric\If\SpiIf.c	    49      config->mode            = SpiIf_Mode_master;
 	mov	d15,#0
-	st.b	[a4],d15
 .L38:
+	st.b	[a4],d15
+.L39:
 
 ; ..\Libraries\BaseSw\Service\CpuGeneric\If\SpiIf.c	    50      config->rxPriority      = 0;
 	st.h	[a4]2,d15
-.L39:
+.L40:
 
 ; ..\Libraries\BaseSw\Service\CpuGeneric\If\SpiIf.c	    51      config->txPriority      = 0;
 	st.h	[a4]4,d15
-.L40:
+.L41:
 
 ; ..\Libraries\BaseSw\Service\CpuGeneric\If\SpiIf.c	    52      config->erPriority      = 0;
 	st.h	[a4]6,d15
-.L41:
+.L42:
 
 ; ..\Libraries\BaseSw\Service\CpuGeneric\If\SpiIf.c	    53      config->isrProvider     = IfxSrc_Tos_cpu0;
 	st.b	[a4]8,d15
-.L42:
+.L43:
 
 ; ..\Libraries\BaseSw\Service\CpuGeneric\If\SpiIf.c	    54      config->bufferSize      = 0;
 	st.h	[a4]10,d15
-.L43:
+.L44:
 
 ; ..\Libraries\BaseSw\Service\CpuGeneric\If\SpiIf.c	    55      config->buffer          = NULL_PTR;
 	mov.a	a15,#0
-.L44:
-	st.a	[a4]12,a15
 .L45:
+	st.a	[a4]12,a15
+.L46:
 
 ; ..\Libraries\BaseSw\Service\CpuGeneric\If\SpiIf.c	    56      config->maximumBaudrate = 0;
 	st.w	[a4]16,d15
-.L46:
+.L47:
 
 ; ..\Libraries\BaseSw\Service\CpuGeneric\If\SpiIf.c	    57  }
 	ret
@@ -125,21 +126,22 @@ SpiIf_initChannelConfig:	.type	func
 ; ..\Libraries\BaseSw\Service\CpuGeneric\If\SpiIf.c	    61  {
 ; ..\Libraries\BaseSw\Service\CpuGeneric\If\SpiIf.c	    62      config->driver               = driver;
 	st.a	[a4],a5
-.L51:
+.L52:
 
 ; ..\Libraries\BaseSw\Service\CpuGeneric\If\SpiIf.c	    63      config->baudrate             = 0;
 	mov	d0,#0
+.L53:
 	st.w	[a4]4,d0
-.L52:
+.L54:
 
 ; ..\Libraries\BaseSw\Service\CpuGeneric\If\SpiIf.c	    64      config->mode.enabled         = 1;
 	ld.hu	d15,[a4]8
-.L53:
+.L55:
 	mov	d1,#547
-.L54:
+.L56:
 	insert	d15,d15,d1,#0,#13
 	st.h	[a4]8,d15
-.L55:
+.L57:
 
 ; ..\Libraries\BaseSw\Service\CpuGeneric\If\SpiIf.c	    65      config->mode.autoCS          = 1;
 ; ..\Libraries\BaseSw\Service\CpuGeneric\If\SpiIf.c	    66      config->mode.loopback        = 0;
@@ -150,30 +152,30 @@ SpiIf_initChannelConfig:	.type	func
 ; ..\Libraries\BaseSw\Service\CpuGeneric\If\SpiIf.c	    71      config->mode.csActiveLevel   = Ifx_ActiveState_low;
 ; ..\Libraries\BaseSw\Service\CpuGeneric\If\SpiIf.c	    72      config->mode.csLeadDelay     = SpiIf_SlsoTiming_0;
 	st.w	[a4]14,d0
-.L56:
+.L58:
 
 ; ..\Libraries\BaseSw\Service\CpuGeneric\If\SpiIf.c	    73      config->mode.csTrailDelay    = SpiIf_SlsoTiming_0;
 	st.w	[a4]18,d0
-.L57:
+.L59:
 
 ; ..\Libraries\BaseSw\Service\CpuGeneric\If\SpiIf.c	    74      config->mode.csInactiveDelay = SpiIf_SlsoTiming_0;
 	st.w	[a4]10,d0
-.L58:
+.L60:
 
 ; ..\Libraries\BaseSw\Service\CpuGeneric\If\SpiIf.c	    75      config->mode.parityCheck     = 0;
 	ld.bu	d15,[a4]9
-.L59:
+.L61:
 	insert	d15,d15,#0,#5,#2
 	st.b	[a4]9,d15
-.L60:
+.L62:
 
 ; ..\Libraries\BaseSw\Service\CpuGeneric\If\SpiIf.c	    76      config->mode.parityMode      = Ifx_ParityMode_even;
 ; ..\Libraries\BaseSw\Service\CpuGeneric\If\SpiIf.c	    77      config->errorChecks.baudrate = 0;
 	ld.bu	d15,[a4]24
-.L61:
+.L63:
 	insert	d15,d15,#0,#0,#4
 	st.b	[a4]24,d15
-.L62:
+.L64:
 
 ; ..\Libraries\BaseSw\Service\CpuGeneric\If\SpiIf.c	    78      config->errorChecks.phase    = 0;
 ; ..\Libraries\BaseSw\Service\CpuGeneric\If\SpiIf.c	    79      config->errorChecks.receive  = 0;
@@ -1845,9 +1847,9 @@ __SpiIf_initChannelConfig_function_end:
 .L37:
 	.byte	5,31,7,0,5,2
 	.word	.L3
-	.byte	3,48,1,5,29,1,9
+	.byte	3,48,1,5,29,9
 	.half	.L38-.L3
-	.byte	3,1,1,9
+	.byte	1,9
 	.half	.L39-.L38
 	.byte	3,1,1,9
 	.half	.L40-.L39
@@ -1855,16 +1857,18 @@ __SpiIf_initChannelConfig_function_end:
 	.half	.L41-.L40
 	.byte	3,1,1,9
 	.half	.L42-.L41
-	.byte	3,1,1,5,31,9
+	.byte	3,1,1,9
 	.half	.L43-.L42
-	.byte	3,1,1,5,29,9
+	.byte	3,1,1,5,31,9
 	.half	.L44-.L43
-	.byte	1,9
+	.byte	3,1,1,5,29,9
 	.half	.L45-.L44
-	.byte	3,1,1,5,1,9
+	.byte	1,9
 	.half	.L46-.L45
+	.byte	3,1,1,5,1,9
+	.half	.L47-.L46
 	.byte	3,1,1,7,9
-	.half	.L14-.L46
+	.half	.L14-.L47
 	.byte	0,1,1
 .L35:
 	.sdecl	'.debug_ranges',debug,cluster('SpiIf_initConfig')
@@ -1904,44 +1908,46 @@ __SpiIf_initChannelConfig_function_end:
 	.sdecl	'.debug_line',debug,cluster('SpiIf_initChannelConfig')
 	.sect	'.debug_line'
 .L17:
-	.word	.L48-.L47
-.L47:
+	.word	.L49-.L48
+.L48:
 	.half	3
-	.word	.L50-.L49
-.L49:
+	.word	.L51-.L50
+.L50:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\Libraries\\BaseSw\\Service\\CpuGeneric\\If\\SpiIf.c',0,0,0,0,0
-.L50:
+.L51:
 	.byte	5,34,7,0,5,2
 	.word	.L5
 	.byte	3,61,1,5,36,9
-	.half	.L51-.L5
-	.byte	3,1,1,5,34,1,5,11,9
-	.half	.L52-.L51
-	.byte	3,1,1,5,36,9
-	.half	.L53-.L52
-	.byte	1,5,34,9
-	.half	.L54-.L53
-	.byte	1,9
-	.half	.L55-.L54
-	.byte	3,8,1,9
-	.half	.L56-.L55
-	.byte	3,1,1,9
-	.half	.L57-.L56
-	.byte	3,1,1,5,11,9
-	.half	.L58-.L57
+	.half	.L52-.L5
 	.byte	3,1,1,5,34,9
-	.half	.L59-.L58
+	.half	.L53-.L52
 	.byte	1,5,11,9
+	.half	.L54-.L53
+	.byte	3,1,1,5,36,9
+	.half	.L55-.L54
+	.byte	1,5,34,9
+	.half	.L56-.L55
+	.byte	1,9
+	.half	.L57-.L56
+	.byte	3,8,1,9
+	.half	.L58-.L57
+	.byte	3,1,1,9
+	.half	.L59-.L58
+	.byte	3,1,1,5,11,9
 	.half	.L60-.L59
-	.byte	3,2,1,5,34,9
+	.byte	3,1,1,5,34,9
 	.half	.L61-.L60
-	.byte	1,5,1,9
+	.byte	1,5,11,9
 	.half	.L62-.L61
+	.byte	3,2,1,5,34,9
+	.half	.L63-.L62
+	.byte	1,5,1,9
+	.half	.L64-.L63
 	.byte	3,4,1,7,9
-	.half	.L19-.L62
+	.half	.L19-.L64
 	.byte	0,1,1
-.L48:
+.L49:
 	.sdecl	'.debug_ranges',debug,cluster('SpiIf_initChannelConfig')
 	.sect	'.debug_ranges'
 .L18:
@@ -1977,7 +1983,7 @@ __SpiIf_initChannelConfig_function_end:
 	.word	0,0
 	.sdecl	'.debug_frame',debug
 	.sect	'.debug_frame'
-.L63:
+.L65:
 	.word	48
 	.word	-1
 	.byte	3,0,2,1,27,12,26,0,8,27,8,26,8,28,8,29,8,30,8,31,8,34,8,35,8,32,8,33,8,16,8,17,8,24,8,25,8,36,8,37,8,38
@@ -1985,12 +1991,12 @@ __SpiIf_initChannelConfig_function_end:
 	.sdecl	'.debug_frame',debug,cluster('SpiIf_initConfig')
 	.sect	'.debug_frame'
 	.word	24
-	.word	.L63,.L3,.L20-.L3
+	.word	.L65,.L3,.L20-.L3
 	.byte	8,18,8,19,8,21,8,22,8,23,0,0
 	.sdecl	'.debug_frame',debug,cluster('SpiIf_initChannelConfig')
 	.sect	'.debug_frame'
 	.word	20
-	.word	.L63,.L5,.L23-.L5
+	.word	.L65,.L5,.L23-.L5
 	.byte	8,18,8,19,8,22,8,23
 
 

@@ -1,6 +1,6 @@
 	; Module start
 	.compiler_version	"TASKING VX-toolset for TriCore: C compiler v6.3r1 Build 19041558 SN 99294086"
-	.compiler_invocation	"ctc --dep-file=CODE\\Src\\.User_Motor.o.d --fp-model=c,f,l,n,r,S,T,z -D__CPU__=tc26x -D__CPU_TC26X__ --core=tc1.6.x --iso=99 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\CODE -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Build -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Impl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Lib -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Lib\\DataHandling -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Lib\\InternalMux -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_PinMap -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Asc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Lin -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Spi -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\Icu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\PwmBc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\PwmHl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\TimerWithTrigger -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\TPwm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cif -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cif\\Cam -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cif\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\CStart -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Irq -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Trap -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dma -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dma\\Dma -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dma\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc\\Dsadc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc\\Rdc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dts -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dts\\Dts -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dts\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Emem -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Emem\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eray -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eray\\Eray -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eray\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eth -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eth\\Phy_Pef7071 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eth\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fce -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fce\\Crc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fce\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fft -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fft\\Fft -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fft\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Flash -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Flash\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gpt12 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gpt12\\IncrEnc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gpt12\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom\\Pwm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom\\PwmHl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tim -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tim\\In -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom\\Pwm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom\\PwmHl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Trig -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Hssl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Hssl\\Hssl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Hssl\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\I2c -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\I2c\\I2c -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\I2c\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Iom -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Iom\\Driver -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Iom\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Msc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Msc\\Msc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Msc\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Mtu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Mtu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Multican -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Multican\\Can -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Multican\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Port -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Port\\Io -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Port\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5\\Psi5 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5s -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5s\\Psi5s -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5s\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi\\SpiMaster -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi\\SpiSlave -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Scu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Scu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Sent -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Sent\\Sent -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Sent\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Smu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Smu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Src -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Src\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Stm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Stm\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Stm\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Vadc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Vadc\\Adc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Vadc\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Platform -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Platform\\Tricore -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Platform\\Tricore\\Compilers -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Sfr -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Sfr\\TC26B -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Sfr\\TC26B\\_Reg -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Service -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Service\\CpuGeneric -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\seekfree_libraries -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\seekfree_libraries\\common -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\seekfree_peripheral -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\USER -g2 -wW557 --make-target=CODE\\Src\\User_Motor.o -t4 --language=-gcc,-volatile,+strings,-kanji --default-near-size=0 -O2 --default-a1-size=0 --default-a0-size=0 --source --align=0 --compact-max-size=200 --switch=auto --error-limit=42 -o CODE\\Src\\User_Motor.src ..\\CODE\\Src\\User_Motor.c"
+	.compiler_invocation	"ctc --dep-file=CODE\\Src\\.User_Motor.o.d --fp-model=c,f,l,n,r,S,T,z -D__CPU__=tc26x -D__CPU_TC26X__ --core=tc1.6.x --iso=99 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\CODE -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Build -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Impl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Lib -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Lib\\DataHandling -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Lib\\InternalMux -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_PinMap -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Asc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Lin -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Spi -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\Icu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\PwmBc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\PwmHl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\TimerWithTrigger -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\TPwm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cif -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cif\\Cam -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cif\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\CStart -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Irq -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Trap -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dma -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dma\\Dma -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dma\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc\\Dsadc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc\\Rdc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dts -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dts\\Dts -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dts\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Emem -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Emem\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eray -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eray\\Eray -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eray\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eth -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eth\\Phy_Pef7071 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eth\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fce -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fce\\Crc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fce\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fft -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fft\\Fft -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fft\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Flash -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Flash\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gpt12 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gpt12\\IncrEnc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gpt12\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom\\Pwm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom\\PwmHl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tim -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tim\\In -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom\\Pwm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom\\PwmHl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Trig -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Hssl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Hssl\\Hssl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Hssl\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\I2c -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\I2c\\I2c -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\I2c\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Iom -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Iom\\Driver -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Iom\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Msc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Msc\\Msc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Msc\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Mtu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Mtu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Multican -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Multican\\Can -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Multican\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Port -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Port\\Io -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Port\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5\\Psi5 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5s -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5s\\Psi5s -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5s\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi\\SpiMaster -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi\\SpiSlave -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Scu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Scu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Sent -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Sent\\Sent -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Sent\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Smu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Smu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Src -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Src\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Stm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Stm\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Stm\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Vadc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Vadc\\Adc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Vadc\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Platform -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Platform\\Tricore -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Platform\\Tricore\\Compilers -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Sfr -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Sfr\\TC26B -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Sfr\\TC26B\\_Reg -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Service -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Service\\CpuGeneric -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\seekfree_libraries -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\seekfree_libraries\\common -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\seekfree_peripheral -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\USER -g2 -wW557 --make-target=CODE\\Src\\User_Motor.o -t4 --language=-gcc,-volatile,+strings,-kanji --default-near-size=0 -O1 --default-a1-size=0 --default-a0-size=0 --source --align=0 --switch=auto --error-limit=42 -o CODE\\Src\\User_Motor.src ..\\CODE\\Src\\User_Motor.c"
 	.compiler_name		"ctc"
 	;source	'..\\CODE\\Src\\User_Motor.c'
 
@@ -29,28 +29,26 @@ ServoMotorInit:	.type	func
 
 ; ..\CODE\Src\User_Motor.c	    11  {
 ; ..\CODE\Src\User_Motor.c	    12  	gtm_pwm_init(ATOM0_CH0_P21_2, 50, 5000);
-	mov	d15,#5000
-.L112:
 	mov	d4,#4
-.L113:
+.L107:
 	mov	d5,#50
-.L114:
-	mov	d6,d15
+.L108:
+	mov	d6,#5000
 	call	gtm_pwm_init
-.L115:
+.L109:
 
 ; ..\CODE\Src\User_Motor.c	    13  	gtm_pwm_init(ATOM0_CH1_P21_3, 50, 5000);
 	mov	d4,#11
-.L116:
+.L110:
 	mov	d5,#50
-.L117:
-	mov	d6,d15
+.L111:
+	mov	d6,#5000
 	j	gtm_pwm_init
-.L73:
+.L66:
 	
 __ServoMotorInit_function_end:
 	.size	ServoMotorInit,__ServoMotorInit_function_end-ServoMotorInit
-.L47:
+.L45:
 	; End of function
 	
 	.sdecl	'.text.User_Motor.SetServoPWM',code,cluster('SetServoPWM')
@@ -69,56 +67,45 @@ SetServoPWM:	.type	func
 ; ..\CODE\Src\User_Motor.c	    17  {
 ; ..\CODE\Src\User_Motor.c	    18  	uint32 PWMCount = 0;
 ; ..\CODE\Src\User_Motor.c	    19  	PWMCount = GTM_ATOM0_PWM_DUTY_MAX * (PWMDuty/100);
-	fcall	.cocofun_1
-.L122:
+	movh	d15,#17096
+.L116:
+	div.f	d15,d5,d15
+.L117:
+	mov	d0,#20480
+	addih	d0,d0,#18243
+.L118:
+	mul.f	d15,d15,d0
+	ftouz	d5,d15
+.L83:
 
 ; ..\CODE\Src\User_Motor.c	    20  	switch(ServoNum)
 ; ..\CODE\Src\User_Motor.c	    21  	{
 ; ..\CODE\Src\User_Motor.c	    22  		case 1: pwm_duty(ATOM0_CH0_P21_2, PWMCount); break;
 	jeq	d4,#1,.L2
-.L92:
+.L119:
 
 ; ..\CODE\Src\User_Motor.c	    23  		case 2: pwm_duty(ATOM0_CH1_P21_3, PWMCount); break;
 	jeq	d4,#2,.L3
-.L123:
+.L120:
 
 ; ..\CODE\Src\User_Motor.c	    24  	}
 ; ..\CODE\Src\User_Motor.c	    25  }
 	ret
 .L2:
 	mov	d4,#4
+.L84:
 	j	.L5
 .L3:
 	mov	d4,#11
 .L5:
 	j	pwm_duty
-.L74:
+.L67:
 	
 __SetServoPWM_function_end:
 	.size	SetServoPWM,__SetServoPWM_function_end-SetServoPWM
-.L52:
+.L50:
 	; End of function
 	
-	.sdecl	'.text.User_Motor..cocofun_1',code,cluster('.cocofun_1')
-	.sect	'.text.User_Motor..cocofun_1'
-	.align	2
-; Function .cocofun_1
-.L32:
-.cocofun_1:	.type	func
-; Function body .cocofun_1, coco_iter:0
-	movh	d15,#17096
-.L163:
-	div.f	d15,d5,d15
-.L164:
-	mov	d0,#20480
-	addih	d0,d0,#18243
-.L165:
-	mul.f	d15,d15,d0
-.L91:
-	ftouz	d5,d15
-	fret
-.L72:
-	; End of function
 	.sdecl	'.text.User_Motor.MotorInit',code,cluster('MotorInit')
 	.sect	'.text.User_Motor.MotorInit'
 	.align	2
@@ -128,49 +115,49 @@ __SetServoPWM_function_end:
 ; ..\CODE\Src\User_Motor.c	    26  
 ; ..\CODE\Src\User_Motor.c	    27  void MotorInit(void)
 ; Function MotorInit
-.L34:
+.L32:
 MotorInit:	.type	func
 
 ; ..\CODE\Src\User_Motor.c	    28  {
 ; ..\CODE\Src\User_Motor.c	    29  	gtm_pwm_init(ATOM1_CH4_P02_4 , 8000, 25000);
-	mov	d15,#25000
-.L128:
-	mov	d8,#8000
-.L129:
 	mov	d4,#80
-.L130:
-	mov	d5,d8
-	mov	d6,d15
+.L125:
+	mov	d5,#8000
+.L126:
+	mov	d6,#25000
 	call	gtm_pwm_init
-.L131:
+.L127:
 
 ; ..\CODE\Src\User_Motor.c	    30  	gtm_pwm_init(ATOM1_CH5_P02_5 , 8000, 25000);
 	mov	d4,#86
-.L132:
-	mov	d5,d8
-	mov	d6,d15
+.L128:
+	mov	d5,#8000
+.L129:
+	mov	d6,#25000
 	call	gtm_pwm_init
-.L133:
+.L130:
 
 ; ..\CODE\Src\User_Motor.c	    31  	gtm_pwm_init(ATOM1_CH6_P02_6 , 8000, 25000);
 	mov	d4,#92
-.L134:
-	mov	d5,d8
-	mov	d6,d15
+.L131:
+	mov	d5,#8000
+.L132:
+	mov	d6,#25000
 	call	gtm_pwm_init
-.L135:
+.L133:
 
 ; ..\CODE\Src\User_Motor.c	    32  	gtm_pwm_init(ATOM1_CH7_P02_7 , 8000, 25000);
 	mov	d4,#98
-.L136:
-	mov	d5,d8
-	mov	d6,d15
+.L134:
+	mov	d5,#8000
+.L135:
+	mov	d6,#25000
 	j	gtm_pwm_init
-.L82:
+.L74:
 	
 __MotorInit_function_end:
 	.size	MotorInit,__MotorInit_function_end-MotorInit
-.L57:
+.L55:
 	; End of function
 	
 	.sdecl	'.text.User_Motor.SetMotorPWM',code,cluster('SetMotorPWM')
@@ -183,44 +170,55 @@ __MotorInit_function_end:
 ; ..\CODE\Src\User_Motor.c	    34  
 ; ..\CODE\Src\User_Motor.c	    35  void SetMotorPWM(Motor_State_t MotorState, float PWMDuty)
 ; Function SetMotorPWM
-.L36:
+.L34:
 SetMotorPWM:	.type	func
 
 ; ..\CODE\Src\User_Motor.c	    36  {
 ; ..\CODE\Src\User_Motor.c	    37  	uint32 PWMCount = 0;
 ; ..\CODE\Src\User_Motor.c	    38  	PWMCount = GTM_ATOM1_PWM_DUTY_MAX * (PWMDuty / 100);
-	fcall	.cocofun_1
-.L93:
+	movh	d15,#17096
+.L140:
+	div.f	d15,d5,d15
+.L141:
+	mov	d0,#20480
+	addih	d0,d0,#18243
+.L142:
+	mul.f	d15,d15,d0
+	ftouz	d5,d15
+.L86:
 
 ; ..\CODE\Src\User_Motor.c	    39  	switch(MotorState)
 ; ..\CODE\Src\User_Motor.c	    40  	{
 ; ..\CODE\Src\User_Motor.c	    41  		case LMotor_F: pwm_duty(ATOM1_CH7_P02_7, PWMCount); break;
 	jeq	d4,#0,.L6
-.L141:
+.L143:
 
 ; ..\CODE\Src\User_Motor.c	    42  		case LMotor_B: pwm_duty(ATOM1_CH4_P02_4, PWMCount); break;
 	jeq	d4,#1,.L7
-.L142:
+.L144:
 
 ; ..\CODE\Src\User_Motor.c	    43  		case RMotor_F: pwm_duty(ATOM1_CH6_P02_6, PWMCount); break;
 	jeq	d4,#2,.L8
-.L143:
+.L145:
 
 ; ..\CODE\Src\User_Motor.c	    44  		case RMotor_B: pwm_duty(ATOM1_CH5_P02_5, PWMCount); break;
 	jeq	d4,#3,.L9
-.L144:
+.L146:
 
 ; ..\CODE\Src\User_Motor.c	    45  	}
 ; ..\CODE\Src\User_Motor.c	    46  }
 	ret
 .L6:
 	mov	d4,#98
+.L85:
 	j	.L11
 .L7:
 	mov	d4,#80
+.L87:
 	j	.L12
 .L8:
 	mov	d4,#92
+.L88:
 	j	.L13
 .L9:
 	mov	d4,#86
@@ -228,11 +226,11 @@ SetMotorPWM:	.type	func
 .L12:
 .L13:
 	j	pwm_duty
-.L83:
+.L75:
 	
 __SetMotorPWM_function_end:
 	.size	SetMotorPWM,__SetMotorPWM_function_end-SetMotorPWM
-.L62:
+.L60:
 	; End of function
 	
 	.sdecl	'.text.User_Motor.MotorUserHandle',code,cluster('MotorUserHandle')
@@ -244,24 +242,24 @@ __SetMotorPWM_function_end:
 ; ..\CODE\Src\User_Motor.c	    47  
 ; ..\CODE\Src\User_Motor.c	    48  void MotorUserHandle(Motor_State_t Motor, float PWMDuty)
 ; Function MotorUserHandle
-.L38:
+.L36:
 MotorUserHandle:	.type	func
 	mov	d8,d5
-.L96:
+.L91:
 
 ; ..\CODE\Src\User_Motor.c	    49  {
 ; ..\CODE\Src\User_Motor.c	    50      if(Motor == LMotor_F)
 	jne	d4,#0,.L14
-.L149:
+.L151:
 
 ; ..\CODE\Src\User_Motor.c	    51      {
 ; ..\CODE\Src\User_Motor.c	    52      	if(PWMDuty < 0)
-	mov	d5,#0
-.L95:
-	cmp.f	d15,d8,d5
-.L150:
+	mov	d15,#0
+.L152:
+	cmp.f	d15,d8,d15
+.L153:
 	jz.t	d15:0,.L15
-.L151:
+.L154:
 
 ; ..\CODE\Src\User_Motor.c	    53      	{
 ; ..\CODE\Src\User_Motor.c	    54      		SetMotorPWM(LMotor_F, 0);
@@ -279,25 +277,29 @@ MotorUserHandle:	.type	func
 ; ..\CODE\Src\User_Motor.c	    63      }
 ; ..\CODE\Src\User_Motor.c	    64      else if(Motor == LMotor_B)
 	jne	d4,#1,.L17
-.L152:
+.L155:
 
 ; ..\CODE\Src\User_Motor.c	    65      {
 ; ..\CODE\Src\User_Motor.c	    66      	if(PWMDuty < 0)
-	mov	d5,#0
-.L97:
-	cmp.f	d15,d8,d5
-.L153:
+	mov	d15,#0
+.L156:
+	cmp.f	d15,d8,d15
+.L157:
 	jz.t	d15:0,.L18
 .L15:
 
 ; ..\CODE\Src\User_Motor.c	    67      	{
 ; ..\CODE\Src\User_Motor.c	    68  			SetMotorPWM(LMotor_B, 0);
 	mov	d4,#1
+.L89:
+	mov	d5,#0
+.L90:
 	call	SetMotorPWM
-.L94:
+.L158:
 
 ; ..\CODE\Src\User_Motor.c	    69  			SetMotorPWM(LMotor_F, PWMDuty);
 	mov	d4,#0
+.L159:
 	j	.L19
 .L18:
 .L16:
@@ -307,11 +309,15 @@ MotorUserHandle:	.type	func
 ; ..\CODE\Src\User_Motor.c	    72      	{
 ; ..\CODE\Src\User_Motor.c	    73      		SetMotorPWM(LMotor_F, 0);
 	mov	d4,#0
+.L92:
+	mov	d5,d4
+.L93:
 	call	SetMotorPWM
-.L98:
+.L160:
 
 ; ..\CODE\Src\User_Motor.c	    74      		SetMotorPWM(LMotor_B, PWMDuty);
 	mov	d4,#1
+.L161:
 	j	.L20
 .L17:
 
@@ -320,16 +326,16 @@ MotorUserHandle:	.type	func
 ; ..\CODE\Src\User_Motor.c	    77      }
 ; ..\CODE\Src\User_Motor.c	    78      else if(Motor == RMotor_F)
 	jne	d4,#2,.L21
-.L154:
+.L162:
 
 ; ..\CODE\Src\User_Motor.c	    79      {
 ; ..\CODE\Src\User_Motor.c	    80      	if(PWMDuty < 0)
-	mov	d5,#0
-.L100:
-	cmp.f	d15,d8,d5
-.L155:
+	mov	d15,#0
+.L163:
+	cmp.f	d15,d8,d15
+.L164:
 	jz.t	d15:0,.L22
-.L156:
+.L165:
 
 ; ..\CODE\Src\User_Motor.c	    81      	{
 ; ..\CODE\Src\User_Motor.c	    82  			SetMotorPWM(RMotor_F, 0);
@@ -346,25 +352,29 @@ MotorUserHandle:	.type	func
 ; ..\CODE\Src\User_Motor.c	    90      }
 ; ..\CODE\Src\User_Motor.c	    91      else if(Motor == RMotor_B)
 	jne	d4,#3,.L24
-.L157:
+.L166:
 
 ; ..\CODE\Src\User_Motor.c	    92      {
 ; ..\CODE\Src\User_Motor.c	    93      	if(PWMDuty < 0)
-	mov	d5,#0
-.L101:
-	cmp.f	d15,d8,d5
-.L158:
+	mov	d15,#0
+.L167:
+	cmp.f	d15,d8,d15
+.L168:
 	jz.t	d15:0,.L25
 .L22:
 
 ; ..\CODE\Src\User_Motor.c	    94      	{
 ; ..\CODE\Src\User_Motor.c	    95      		SetMotorPWM(RMotor_B, 0);
 	mov	d4,#3
+.L94:
+	mov	d5,#0
+.L95:
 	call	SetMotorPWM
-.L99:
+.L169:
 
 ; ..\CODE\Src\User_Motor.c	    96      		SetMotorPWM(RMotor_F, PWMDuty);
 	mov	d4,#2
+.L170:
 	j	.L26
 .L24:
 
@@ -380,20 +390,23 @@ MotorUserHandle:	.type	func
 .L25:
 .L23:
 	mov	d4,#2
+.L96:
+	mov	d5,#0
+.L97:
 	call	SetMotorPWM
-.L102:
+.L171:
 	mov	d4,#3
 .L19:
 .L20:
 .L26:
 	mov	d5,d8
-.L103:
+.L98:
 	j	SetMotorPWM
-.L88:
+.L80:
 	
 __MotorUserHandle_function_end:
 	.size	MotorUserHandle,__MotorUserHandle_function_end-MotorUserHandle
-.L67:
+.L65:
 	; End of function
 	
 	.calls	'ServoMotorInit','gtm_pwm_init'
@@ -401,11 +414,8 @@ __MotorUserHandle_function_end:
 	.calls	'MotorInit','gtm_pwm_init'
 	.calls	'SetMotorPWM','pwm_duty'
 	.calls	'MotorUserHandle','SetMotorPWM'
-	.calls	'SetServoPWM','.cocofun_1'
-	.calls	'SetMotorPWM','.cocofun_1'
 	.calls	'ServoMotorInit','',0
 	.calls	'SetServoPWM','',0
-	.calls	'.cocofun_1','',0
 	.calls	'MotorInit','',0
 	.calls	'SetMotorPWM','',0
 	.extern	gtm_pwm_init
@@ -413,17 +423,17 @@ __MotorUserHandle_function_end:
 	.calls	'MotorUserHandle','',0
 	.sdecl	'.debug_info',debug
 	.sect	'.debug_info'
-.L40:
+.L38:
 	.word	255417
 	.half	3
-	.word	.L41
+	.word	.L39
 	.byte	4
-.L39:
+.L37:
 	.byte	1
 	.byte	'..\\CODE\\Src\\User_Motor.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L42
+	.word	.L40
 	.byte	2,1,1,3
 	.word	145
 	.byte	4
@@ -432,7 +442,7 @@ __MotorUserHandle_function_end:
 	.word	148
 	.byte	6,0,7
 	.byte	'__fract',0,4,128,1
-.L77:
+.L70:
 	.byte	7
 	.byte	'float',0,4,4,8
 	.byte	'Ifx__float_to_fract',0,3,1,152,2,18
@@ -498,7 +508,7 @@ __MotorUserHandle_function_end:
 	.byte	'B',0
 	.word	520
 	.byte	4,2,35,0,0
-.L75:
+.L68:
 	.byte	7
 	.byte	'unsigned char',0,1,8,7
 	.byte	'unsigned short int',0,2,7,11
@@ -2048,7 +2058,7 @@ __MotorUserHandle_function_end:
 	.byte	'enabled',0,8,168,7,50
 	.word	656
 	.byte	6,0
-.L80:
+.L72:
 	.byte	7
 	.byte	'unsigned long int',0,4,7,8
 	.byte	'IfxCpu_getPerformanceCounter',0,3,8,161,6,19
@@ -7039,7 +7049,7 @@ __MotorUserHandle_function_end:
 	.byte	28
 	.word	39545
 	.byte	6,0
-.L84:
+.L76:
 	.byte	33
 	.byte	'Motor_State',0,24,13,14,1,18
 	.byte	'LMotor_F',0,0,18
@@ -34929,7 +34939,7 @@ __MotorUserHandle_function_end:
 	.byte	'IfxDma_SleepMode',0,47,151,2,3
 	.word	255205
 	.byte	11
-	.byte	'FSMTable',0,48,33,16,16,14
+	.byte	'FSMTable',0,48,30,16,16,14
 	.byte	'Event',0
 	.word	497
 	.byte	4,2,35,0,14
@@ -34942,7 +34952,7 @@ __MotorUserHandle_function_end:
 	.byte	'NextState',0
 	.word	497
 	.byte	4,2,35,12,0,34
-	.byte	'FSMTable_t',0,48,38,2
+	.byte	'FSMTable_t',0,48,35,2
 	.word	255291
 	.byte	34
 	.byte	'Motor_State_t',0,24,19,2
@@ -34950,7 +34960,7 @@ __MotorUserHandle_function_end:
 	.byte	0
 	.sdecl	'.debug_abbrev',debug
 	.sect	'.debug_abbrev'
-.L41:
+.L39:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,16,6,0,0,2,21,0,54,15,39,12,0,0,3,15,0,73,19,0,0,4,46,1,3,8,32,13
 	.byte	58,15,59,15,57,15,54,15,39,12,0,0,5,5,0,3,8,58,15,59,15,57,15,73,19,0,0,6,11,0,0,0,7,36,0,3,8,11,15,62
 	.byte	15,0,0,8,46,1,3,8,32,13,58,15,59,15,57,15,73,19,54,15,39,12,0,0,9,59,0,3,8,0,0,10,53,0,73,19,0,0,11,19
@@ -34964,12 +34974,12 @@ __MotorUserHandle_function_end:
 	.byte	15,39,12,0,0,37,21,1,73,19,54,15,39,12,0,0,0
 	.sdecl	'.debug_line',debug
 	.sect	'.debug_line'
-.L42:
-	.word	.L105-.L104
-.L104:
+.L40:
+	.word	.L100-.L99
+.L99:
 	.half	3
-	.word	.L107-.L106
-.L106:
+	.word	.L102-.L101
+.L101:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Std',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Scu\\Std',0
@@ -35042,564 +35052,527 @@ __MotorUserHandle_function_end:
 	.byte	'IfxDma_regdef.h',0,3,0,0
 	.byte	'IfxDma.h',0,18,0,0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\CODE\\Inc\\User_FSM.h',0,0,0,0,0
-.L107:
-.L105:
+.L102:
+.L100:
 	.sdecl	'.debug_info',debug,cluster('ServoMotorInit')
 	.sect	'.debug_info'
-.L43:
+.L41:
 	.word	195
 	.half	3
-	.word	.L44
+	.word	.L42
 	.byte	4,1
 	.byte	'..\\CODE\\Src\\User_Motor.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L46,.L45
+	.word	.L44,.L43
 	.byte	2
-	.word	.L39
+	.word	.L37
 	.byte	3
 	.byte	'ServoMotorInit',0,1,10,6,1,1,1
-	.word	.L28,.L73,.L27
+	.word	.L28,.L66,.L27
 	.byte	4
-	.word	.L28,.L73
+	.word	.L28,.L66
 	.byte	0,0
 	.sdecl	'.debug_abbrev',debug,cluster('ServoMotorInit')
 	.sect	'.debug_abbrev'
-.L44:
+.L42:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
 	.sdecl	'.debug_line',debug,cluster('ServoMotorInit')
 	.sect	'.debug_line'
-.L45:
-	.word	.L109-.L108
-.L108:
+.L43:
+	.word	.L104-.L103
+.L103:
 	.half	3
-	.word	.L111-.L110
-.L110:
+	.word	.L106-.L105
+.L105:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\CODE\\Src\\User_Motor.c',0,0,0,0,0
-.L111:
-	.byte	5,36,7,0,5,2
+.L106:
+	.byte	5,15,7,0,5,2
 	.word	.L28
-	.byte	3,11,1,5,15,9
-	.half	.L112-.L28
-	.byte	1,5,32,9
-	.half	.L113-.L112
+	.byte	3,11,1,5,32,9
+	.half	.L107-.L28
 	.byte	1,5,36,9
-	.half	.L114-.L113
+	.half	.L108-.L107
 	.byte	1,5,15,9
-	.half	.L115-.L114
+	.half	.L109-.L108
 	.byte	3,1,1,5,32,9
-	.half	.L116-.L115
+	.half	.L110-.L109
 	.byte	1,5,36,9
-	.half	.L117-.L116
+	.half	.L111-.L110
 	.byte	1,5,1,9
-	.half	.L47-.L117
+	.half	.L45-.L111
 	.byte	3,1,0,1,1
-.L109:
+.L104:
 	.sdecl	'.debug_ranges',debug,cluster('ServoMotorInit')
 	.sect	'.debug_ranges'
-.L46:
-	.word	-1,.L28,0,.L47-.L28,0,0
+.L44:
+	.word	-1,.L28,0,.L45-.L28,0,0
 	.sdecl	'.debug_info',debug,cluster('SetServoPWM')
 	.sect	'.debug_info'
-.L48:
-	.word	251
+.L46:
+	.word	255
 	.half	3
-	.word	.L49
+	.word	.L47
 	.byte	4,1
 	.byte	'..\\CODE\\Src\\User_Motor.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L51,.L50
+	.word	.L49,.L48
 	.byte	2
-	.word	.L39
+	.word	.L37
 	.byte	3
 	.byte	'SetServoPWM',0,1,16,6,1,1,1
-	.word	.L30,.L74,.L29
+	.word	.L30,.L67,.L29
 	.byte	4
 	.byte	'ServoNum',0,1,16,24
-	.word	.L75,.L76
+	.word	.L68,.L69
 	.byte	4
 	.byte	'PWMDuty',0,1,16,40
-	.word	.L77,.L78
+	.word	.L70,.L71
 	.byte	5
-	.word	.L79
+	.word	.L30,.L67
 	.byte	6
 	.byte	'PWMCount',0,1,18,9
-	.word	.L80,.L81
+	.word	.L72,.L73
 	.byte	0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('SetServoPWM')
 	.sect	'.debug_abbrev'
-.L49:
+.L47:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
-	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,85,6,0,0,6,52,0,3,8,58
-	.byte	15,59,15,57,15,73,16,2,6,0,0,0
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3
+	.byte	8,58,15,59,15,57,15,73,16,2,6,0,0,0
 	.sdecl	'.debug_line',debug,cluster('SetServoPWM')
 	.sect	'.debug_line'
-.L50:
-	.word	.L119-.L118
-.L118:
+.L48:
+	.word	.L113-.L112
+.L112:
 	.half	3
-	.word	.L121-.L120
-.L120:
+	.word	.L115-.L114
+.L114:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\CODE\\Src\\User_Motor.c',0,0,0,0,0
-.L121:
+.L115:
 	.byte	5,47,7,0,5,2
 	.word	.L30
-	.byte	3,18,1,5,8,9
-	.half	.L122-.L30
+	.byte	3,18,1,5,46,9
+	.half	.L116-.L30
+	.byte	1,5,13,9
+	.half	.L117-.L116
+	.byte	1,5,36,9
+	.half	.L118-.L117
+	.byte	1,5,8,9
+	.half	.L83-.L118
 	.byte	3,3,1,7,9
-	.half	.L92-.L122
+	.half	.L119-.L83
 	.byte	3,1,1,5,1,7,9
-	.half	.L123-.L92
+	.half	.L120-.L119
 	.byte	3,2,1,5,20,7,9
-	.half	.L2-.L123
-	.byte	3,125,1,5,48,1,5,20,9
-	.half	.L3-.L2
+	.half	.L2-.L120
+	.byte	3,125,1,5,48,9
+	.half	.L84-.L2
+	.byte	1,5,20,9
+	.half	.L3-.L84
 	.byte	3,1,1,5,37,9
 	.half	.L5-.L3
 	.byte	1,5,1,7,9
-	.half	.L52-.L5
+	.half	.L50-.L5
 	.byte	3,2,0,1,1
-.L119:
+.L113:
 	.sdecl	'.debug_ranges',debug,cluster('SetServoPWM')
 	.sect	'.debug_ranges'
-.L51:
-	.word	-1,.L30,0,.L52-.L30,0,0
-.L79:
-	.word	-1,.L30,0,.L74-.L30,-1,.L32,0,.L72-.L32,0,0
+.L49:
+	.word	-1,.L30,0,.L50-.L30,0,0
 	.sdecl	'.debug_info',debug,cluster('MotorInit')
 	.sect	'.debug_info'
-.L53:
+.L51:
 	.word	190
 	.half	3
-	.word	.L54
+	.word	.L52
 	.byte	4,1
 	.byte	'..\\CODE\\Src\\User_Motor.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L56,.L55
+	.word	.L54,.L53
 	.byte	2
-	.word	.L39
+	.word	.L37
 	.byte	3
 	.byte	'MotorInit',0,1,27,6,1,1,1
-	.word	.L34,.L82,.L33
+	.word	.L32,.L74,.L31
 	.byte	4
-	.word	.L34,.L82
+	.word	.L32,.L74
 	.byte	0,0
 	.sdecl	'.debug_abbrev',debug,cluster('MotorInit')
 	.sect	'.debug_abbrev'
-.L54:
+.L52:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
 	.sdecl	'.debug_line',debug,cluster('MotorInit')
 	.sect	'.debug_line'
-.L55:
-	.word	.L125-.L124
-.L124:
+.L53:
+	.word	.L122-.L121
+.L121:
 	.half	3
-	.word	.L127-.L126
-.L126:
+	.word	.L124-.L123
+.L123:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\CODE\\Src\\User_Motor.c',0,0,0,0,0
-.L127:
-	.byte	5,39,7,0,5,2
-	.word	.L34
+.L124:
+	.byte	5,15,7,0,5,2
+	.word	.L32
 	.byte	3,28,1,5,33,9
-	.half	.L128-.L34
-	.byte	1,5,15,9
-	.half	.L129-.L128
+	.half	.L125-.L32
 	.byte	1,5,39,9
-	.half	.L130-.L129
+	.half	.L126-.L125
 	.byte	1,5,15,9
+	.half	.L127-.L126
+	.byte	3,1,1,5,33,9
+	.half	.L128-.L127
+	.byte	1,5,39,9
+	.half	.L129-.L128
+	.byte	1,5,15,9
+	.half	.L130-.L129
+	.byte	3,1,1,5,33,9
 	.half	.L131-.L130
-	.byte	3,1,1,5,39,9
+	.byte	1,5,39,9
 	.half	.L132-.L131
 	.byte	1,5,15,9
 	.half	.L133-.L132
-	.byte	3,1,1,5,39,9
+	.byte	3,1,1,5,33,9
 	.half	.L134-.L133
-	.byte	1,5,15,9
+	.byte	1,5,39,9
 	.half	.L135-.L134
-	.byte	3,1,1,5,39,9
-	.half	.L136-.L135
 	.byte	1,5,1,9
-	.half	.L57-.L136
+	.half	.L55-.L135
 	.byte	3,1,0,1,1
-.L125:
+.L122:
 	.sdecl	'.debug_ranges',debug,cluster('MotorInit')
 	.sect	'.debug_ranges'
-.L56:
-	.word	-1,.L34,0,.L57-.L34,0,0
+.L54:
+	.word	-1,.L32,0,.L55-.L32,0,0
 	.sdecl	'.debug_info',debug,cluster('SetMotorPWM')
 	.sect	'.debug_info'
-.L58:
+.L56:
 	.word	257
 	.half	3
-	.word	.L59
+	.word	.L57
 	.byte	4,1
 	.byte	'..\\CODE\\Src\\User_Motor.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L61,.L60
+	.word	.L59,.L58
 	.byte	2
-	.word	.L39
+	.word	.L37
 	.byte	3
 	.byte	'SetMotorPWM',0,1,35,6,1,1,1
-	.word	.L36,.L83,.L35
+	.word	.L34,.L75,.L33
 	.byte	4
 	.byte	'MotorState',0,1,35,32
-	.word	.L84,.L85
+	.word	.L76,.L77
 	.byte	4
 	.byte	'PWMDuty',0,1,35,50
-	.word	.L77,.L86
+	.word	.L70,.L78
 	.byte	5
-	.word	.L36,.L83
+	.word	.L34,.L75
 	.byte	6
 	.byte	'PWMCount',0,1,37,9
-	.word	.L80,.L87
+	.word	.L72,.L79
 	.byte	0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('SetMotorPWM')
 	.sect	'.debug_abbrev'
-.L59:
+.L57:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3
 	.byte	8,58,15,59,15,57,15,73,16,2,6,0,0,0
 	.sdecl	'.debug_line',debug,cluster('SetMotorPWM')
 	.sect	'.debug_line'
-.L60:
-	.word	.L138-.L137
-.L137:
+.L58:
+	.word	.L137-.L136
+.L136:
 	.half	3
-	.word	.L140-.L139
-.L139:
+	.word	.L139-.L138
+.L138:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\CODE\\Src\\User_Motor.c',0,0,0,0,0
-.L140:
+.L139:
 	.byte	5,49,7,0,5,2
-	.word	.L36
-	.byte	3,37,1,5,8,9
-	.half	.L93-.L36
-	.byte	3,3,1,7,9
-	.half	.L141-.L93
-	.byte	3,1,1,7,9
+	.word	.L34
+	.byte	3,37,1,5,47,9
+	.half	.L140-.L34
+	.byte	1,5,13,9
+	.half	.L141-.L140
+	.byte	1,5,36,9
 	.half	.L142-.L141
+	.byte	1,5,8,9
+	.half	.L86-.L142
+	.byte	3,3,1,7,9
+	.half	.L143-.L86
 	.byte	3,1,1,7,9
-	.half	.L143-.L142
-	.byte	3,1,1,5,1,7,9
 	.half	.L144-.L143
+	.byte	3,1,1,7,9
+	.half	.L145-.L144
+	.byte	3,1,1,5,1,7,9
+	.half	.L146-.L145
 	.byte	3,2,1,5,27,7,9
-	.half	.L6-.L144
-	.byte	3,123,1,5,55,1,5,27,9
-	.half	.L7-.L6
-	.byte	3,1,1,5,55,1,5,27,9
-	.half	.L8-.L7
-	.byte	3,1,1,5,55,1,5,27,9
-	.half	.L9-.L8
+	.half	.L6-.L146
+	.byte	3,123,1,5,55,9
+	.half	.L85-.L6
+	.byte	1,5,27,9
+	.half	.L7-.L85
+	.byte	3,1,1,5,55,9
+	.half	.L87-.L7
+	.byte	1,5,27,9
+	.half	.L8-.L87
+	.byte	3,1,1,5,55,9
+	.half	.L88-.L8
+	.byte	1,5,27,9
+	.half	.L9-.L88
 	.byte	3,1,1,5,44,9
 	.half	.L13-.L9
 	.byte	1,5,1,7,9
-	.half	.L62-.L13
+	.half	.L60-.L13
 	.byte	3,2,0,1,1
-.L138:
+.L137:
 	.sdecl	'.debug_ranges',debug,cluster('SetMotorPWM')
 	.sect	'.debug_ranges'
-.L61:
-	.word	-1,.L36,0,.L62-.L36,0,0
+.L59:
+	.word	-1,.L34,0,.L60-.L34,0,0
 	.sdecl	'.debug_info',debug,cluster('MotorUserHandle')
 	.sect	'.debug_info'
-.L63:
+.L61:
 	.word	234
 	.half	3
-	.word	.L64
+	.word	.L62
 	.byte	4,1
 	.byte	'..\\CODE\\Src\\User_Motor.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L66,.L65
+	.word	.L64,.L63
 	.byte	2
-	.word	.L39
+	.word	.L37
 	.byte	3
 	.byte	'MotorUserHandle',0,1,48,6,1,1,1
-	.word	.L38,.L88,.L37
+	.word	.L36,.L80,.L35
 	.byte	4
 	.byte	'Motor',0,1,48,36
-	.word	.L84,.L89
+	.word	.L76,.L81
 	.byte	4
 	.byte	'PWMDuty',0,1,48,49
-	.word	.L77,.L90
+	.word	.L70,.L82
 	.byte	5
-	.word	.L38,.L88
+	.word	.L36,.L80
 	.byte	0,0
 	.sdecl	'.debug_abbrev',debug,cluster('MotorUserHandle')
 	.sect	'.debug_abbrev'
-.L64:
+.L62:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
 	.sdecl	'.debug_line',debug,cluster('MotorUserHandle')
 	.sect	'.debug_line'
-.L65:
-	.word	.L146-.L145
-.L145:
-	.half	3
+.L63:
 	.word	.L148-.L147
 .L147:
+	.half	3
+	.word	.L150-.L149
+.L149:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\CODE\\Src\\User_Motor.c',0,0,0,0,0
-.L148:
+.L150:
 	.byte	5,6,7,0,5,2
-	.word	.L38
+	.word	.L36
 	.byte	3,47,1,5,5,9
-	.half	.L96-.L38
+	.half	.L91-.L36
 	.byte	3,2,1,5,19,7,9
-	.half	.L149-.L96
+	.half	.L151-.L91
 	.byte	3,2,1,5,17,9
-	.half	.L95-.L149
+	.half	.L152-.L151
 	.byte	1,5,6,9
-	.half	.L150-.L95
+	.half	.L153-.L152
 	.byte	1,5,31,7,9
-	.half	.L151-.L150
+	.half	.L154-.L153
 	.byte	3,2,1,5,10,9
-	.half	.L14-.L151
+	.half	.L14-.L154
 	.byte	3,10,1,5,19,7,9
-	.half	.L152-.L14
+	.half	.L155-.L14
 	.byte	3,2,1,5,17,9
-	.half	.L97-.L152
-	.byte	1,5,6,9
-	.half	.L153-.L97
-	.byte	1,5,16,7,9
-	.half	.L15-.L153
-	.byte	3,2,1,5,26,1,5,16,9
-	.half	.L94-.L15
-	.byte	3,1,1,5,28,3,127,1,5,19,9
-	.half	.L16-.L94
-	.byte	3,5,1,5,29,1,5,19,9
-	.half	.L98-.L16
-	.byte	3,1,1,5,6,3,125,1,5,10,9
-	.half	.L17-.L98
-	.byte	3,7,1,5,19,7,9
-	.half	.L154-.L17
-	.byte	3,2,1,5,17,9
-	.half	.L100-.L154
-	.byte	1,5,6,9
-	.half	.L155-.L100
-	.byte	1,5,28,7,9
 	.half	.L156-.L155
-	.byte	3,2,1,5,10,9
-	.half	.L21-.L156
-	.byte	3,9,1,5,19,7,9
-	.half	.L157-.L21
-	.byte	3,2,1,5,17,9
-	.half	.L101-.L157
 	.byte	1,5,6,9
-	.half	.L158-.L101
+	.half	.L157-.L156
+	.byte	1,5,16,7,9
+	.half	.L15-.L157
+	.byte	3,2,1,5,26,9
+	.half	.L89-.L15
+	.byte	1,5,16,9
+	.half	.L158-.L89
+	.byte	3,1,1,5,28,9
+	.half	.L159-.L158
+	.byte	3,127,1,5,19,9
+	.half	.L16-.L159
+	.byte	3,5,1,5,29,9
+	.half	.L92-.L16
+	.byte	1,5,19,9
+	.half	.L160-.L92
+	.byte	3,1,1,5,6,9
+	.half	.L161-.L160
+	.byte	3,125,1,5,10,9
+	.half	.L17-.L161
+	.byte	3,7,1,5,19,7,9
+	.half	.L162-.L17
+	.byte	3,2,1,5,17,9
+	.half	.L163-.L162
+	.byte	1,5,6,9
+	.half	.L164-.L163
+	.byte	1,5,28,7,9
+	.half	.L165-.L164
+	.byte	3,2,1,5,10,9
+	.half	.L21-.L165
+	.byte	3,9,1,5,19,7,9
+	.half	.L166-.L21
+	.byte	3,2,1,5,17,9
+	.half	.L167-.L166
+	.byte	1,5,6,9
+	.half	.L168-.L167
 	.byte	1,5,19,7,9
-	.half	.L22-.L158
-	.byte	3,2,1,5,29,1,5,19,9
-	.half	.L99-.L22
-	.byte	3,1,1,5,31,3,127,1,5,1,9
-	.half	.L24-.L99
+	.half	.L22-.L168
+	.byte	3,2,1,5,29,9
+	.half	.L94-.L22
+	.byte	1,5,19,9
+	.half	.L169-.L94
+	.byte	3,1,1,5,31,9
+	.half	.L170-.L169
+	.byte	3,127,1,5,1,9
+	.half	.L24-.L170
 	.byte	3,9,1,5,19,7,9
 	.half	.L23-.L24
-	.byte	3,124,1,5,29,1,5,19,9
-	.half	.L102-.L23
+	.byte	3,124,1,5,29,9
+	.half	.L96-.L23
+	.byte	1,5,19,9
+	.half	.L171-.L96
 	.byte	3,1,1,5,29,9
-	.half	.L26-.L102
+	.half	.L26-.L171
 	.byte	1,5,1,9
-	.half	.L67-.L26
+	.half	.L65-.L26
 	.byte	3,3,0,1,1
-.L146:
+.L148:
 	.sdecl	'.debug_ranges',debug,cluster('MotorUserHandle')
 	.sect	'.debug_ranges'
-.L66:
-	.word	-1,.L38,0,.L67-.L38,0,0
-	.sdecl	'.debug_info',debug,cluster('.cocofun_1')
-	.sect	'.debug_info'
-.L68:
-	.word	179
-	.half	3
-	.word	.L69
-	.byte	4,1
-	.byte	'..\\CODE\\Src\\User_Motor.c',0
-	.byte	'TASKING VX-toolset for TriCore: C compiler',0
-	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L71,.L70
-	.byte	2
-	.word	.L39
-	.byte	3
-	.byte	'.cocofun_1',0,1,16,6,1
-	.word	.L32,.L72,.L31
-	.byte	0
-	.sdecl	'.debug_abbrev',debug,cluster('.cocofun_1')
-	.sect	'.debug_abbrev'
-.L69:
-	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,0,3,8,58,15,59,15,57,15,54,15
-	.byte	17,1,18,1,64,6,0,0,0
-	.sdecl	'.debug_line',debug,cluster('.cocofun_1')
-	.sect	'.debug_line'
-.L70:
-	.word	.L160-.L159
-.L159:
-	.half	3
-	.word	.L162-.L161
-.L161:
-	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
-	.byte	'..\\CODE\\Src\\User_Motor.c',0,0,0,0,0
-.L162:
-	.byte	5,47,7,0,5,2
-	.word	.L32
-	.byte	3,18,1,5,46,9
-	.half	.L163-.L32
-	.byte	1,5,13,9
-	.half	.L164-.L163
-	.byte	1,5,36,9
-	.half	.L165-.L164
-	.byte	1,9
-	.half	.L72-.L165
-	.byte	0,1,1,5,49,0,5,2
-	.word	.L32
-	.byte	3,37,1,5,47,9
-	.half	.L163-.L32
-	.byte	1,5,13,9
-	.half	.L164-.L163
-	.byte	1,5,36,9
-	.half	.L165-.L164
-	.byte	1,9
-	.half	.L91-.L165
-	.byte	3,109,1,7,9
-	.half	.L72-.L91
-	.byte	0,1,1
-.L160:
-	.sdecl	'.debug_ranges',debug,cluster('.cocofun_1')
-	.sect	'.debug_ranges'
-.L71:
-	.word	-1,.L32,0,.L72-.L32,0,0
-	.sdecl	'.debug_loc',debug,cluster('.cocofun_1')
-	.sect	'.debug_loc'
-.L31:
-	.word	-1,.L32,0,.L72-.L32
-	.half	2
-	.byte	138,0
-	.word	0,0
+.L64:
+	.word	-1,.L36,0,.L65-.L36,0,0
 	.sdecl	'.debug_loc',debug,cluster('MotorInit')
 	.sect	'.debug_loc'
-.L33:
-	.word	-1,.L34,0,.L82-.L34
+.L31:
+	.word	-1,.L32,0,.L74-.L32
 	.half	2
 	.byte	138,0
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('MotorUserHandle')
 	.sect	'.debug_loc'
-.L89:
-	.word	-1,.L38,0,.L94-.L38
+.L81:
+	.word	-1,.L36,0,.L89-.L36
 	.half	1
 	.byte	84
-	.word	.L16-.L38,.L98-.L38
+	.word	.L16-.L36,.L92-.L36
 	.half	1
 	.byte	84
-	.word	.L17-.L38,.L99-.L38
+	.word	.L17-.L36,.L94-.L36
 	.half	1
 	.byte	84
-	.word	.L24-.L38,.L102-.L38
+	.word	.L24-.L36,.L96-.L36
 	.half	1
 	.byte	84
 	.word	0,0
-.L37:
-	.word	-1,.L38,0,.L88-.L38
+.L35:
+	.word	-1,.L36,0,.L80-.L36
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L90:
-	.word	-1,.L38,0,.L95-.L38
+.L82:
+	.word	-1,.L36,0,.L90-.L36
 	.half	1
 	.byte	85
-	.word	.L96-.L38,.L88-.L38
+	.word	.L91-.L36,.L80-.L36
 	.half	1
 	.byte	88
-	.word	.L14-.L38,.L97-.L38
+	.word	.L16-.L36,.L93-.L36
 	.half	1
 	.byte	85
-	.word	.L17-.L38,.L100-.L38
+	.word	.L17-.L36,.L95-.L36
 	.half	1
 	.byte	85
-	.word	.L21-.L38,.L101-.L38
+	.word	.L24-.L36,.L97-.L36
 	.half	1
 	.byte	85
-	.word	.L24-.L38,.L23-.L38
-	.half	1
-	.byte	85
-	.word	.L103-.L38,.L88-.L38
+	.word	.L98-.L36,.L80-.L36
 	.half	1
 	.byte	85
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('ServoMotorInit')
 	.sect	'.debug_loc'
 .L27:
-	.word	-1,.L28,0,.L73-.L28
+	.word	-1,.L28,0,.L66-.L28
 	.half	2
 	.byte	138,0
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('SetMotorPWM')
 	.sect	'.debug_loc'
-.L85:
-	.word	-1,.L36,.L32-.L36,.L72-.L36
+.L77:
+	.word	-1,.L34,0,.L85-.L34
 	.half	1
 	.byte	84
-	.word	.L93-.L36,.L13-.L36
+	.word	.L7-.L34,.L87-.L34
+	.half	1
+	.byte	84
+	.word	.L8-.L34,.L88-.L34
+	.half	1
+	.byte	84
+	.word	.L9-.L34,.L13-.L34
 	.half	1
 	.byte	84
 	.word	0,0
-.L87:
-	.word	-1,.L36,.L91-.L36,.L72-.L36
-	.half	1
-	.byte	85
-	.word	.L93-.L36,.L83-.L36
+.L79:
+	.word	-1,.L34,.L86-.L34,.L75-.L34
 	.half	1
 	.byte	85
 	.word	0,0
-.L86:
-	.word	-1,.L36,.L32-.L36,.L72-.L36
+.L78:
+	.word	-1,.L34,0,.L86-.L34
 	.half	1
 	.byte	85
 	.word	0,0
-.L35:
-	.word	-1,.L36,0,.L83-.L36
+.L33:
+	.word	-1,.L34,0,.L75-.L34
 	.half	2
 	.byte	138,0
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('SetServoPWM')
 	.sect	'.debug_loc'
-.L81:
-	.word	-1,.L30,.L91-.L30,.L72-.L30
-	.half	1
-	.byte	85
-	.word	.L92-.L30,.L74-.L30
+.L73:
+	.word	-1,.L30,.L83-.L30,.L67-.L30
 	.half	1
 	.byte	85
 	.word	0,0
-.L78:
-	.word	-1,.L30,.L32-.L30,.L72-.L30
+.L71:
+	.word	-1,.L30,0,.L83-.L30
 	.half	1
 	.byte	85
 	.word	0,0
-.L76:
-	.word	-1,.L30,.L32-.L30,.L72-.L30
+.L69:
+	.word	-1,.L30,0,.L84-.L30
 	.half	1
 	.byte	84
-	.word	.L92-.L30,.L5-.L30
+	.word	.L3-.L30,.L5-.L30
 	.half	1
 	.byte	84
 	.word	0,0
 .L29:
-	.word	-1,.L30,0,.L74-.L30
+	.word	-1,.L30,0,.L67-.L30
 	.half	2
 	.byte	138,0
 	.word	0,0
 	.sdecl	'.debug_frame',debug
 	.sect	'.debug_frame'
-.L166:
+.L172:
 	.word	48
 	.word	-1
 	.byte	3,0,2,1,27,12,26,0,8,27,8,26,8,28,8,29,8,30,8,31,8,34,8,35,8,32,8,33,8,16,8,17,8,24,8,25,8,36,8,37,8,38
@@ -35607,35 +35580,23 @@ __MotorUserHandle_function_end:
 	.sdecl	'.debug_frame',debug,cluster('ServoMotorInit')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L166,.L28,.L73-.L28
+	.word	.L172,.L28,.L66-.L28
 	.sdecl	'.debug_frame',debug,cluster('SetServoPWM')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L166,.L30,.L74-.L30
+	.word	.L172,.L30,.L67-.L30
 	.sdecl	'.debug_frame',debug,cluster('MotorInit')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L166,.L34,.L82-.L34
+	.word	.L172,.L32,.L74-.L32
 	.sdecl	'.debug_frame',debug,cluster('SetMotorPWM')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L166,.L36,.L83-.L36
+	.word	.L172,.L34,.L75-.L34
 	.sdecl	'.debug_frame',debug,cluster('MotorUserHandle')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L166,.L38,.L88-.L38
-	.sdecl	'.debug_frame',debug
-	.sect	'.debug_frame'
-.L167:
-	.word	52
-	.word	-1
-	.byte	3,0,2,1,40,12,26,0,9,40,27,155,0,7,26,8,28,8,29,8,30,8,31,8,34,8,35,8,32,8,33,8,16,8,17,8,24,8,25,8,36
-	.byte	8,37,8,38,8,39,0
-	.sdecl	'.debug_frame',debug,cluster('.cocofun_1')
-	.sect	'.debug_frame'
-	.word	24
-	.word	.L167,.L32,.L72-.L32
-	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.word	.L172,.L36,.L80-.L36
 
 ; ..\CODE\Src\User_Motor.c	   105  
 

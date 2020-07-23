@@ -28,12 +28,12 @@ void CountDistance(void)
 	encoder1 = gpt12_get(GPT12_T6);
 
 	CurLdistance = ((double)encoder0/1024)*((WHEEL_DIAMETER*3.1415)/1000)*(30/68.0);
-	CurRdistance = ((double)encoder1/1024)*((WHEEL_DIAMETER*3.1415)/1000)*(30/68.0);
-	CurDistance = (CurLdistance - CurRdistance) / 2;
+	CurRdistance = -((double)encoder1/1024)*((WHEEL_DIAMETER*3.1415)/1000)*(30/68.0);
+	CurDistance = (CurLdistance + CurRdistance) / 2;
 	TotalDistance += CurDistance;
 
-	//printf("L  %lf\r\n",CurLdistance);  //≤‚ ‘
-	//printf("R  %lf\r\n",CurRdistance);  //≤‚ ‘
+	//printf("L  %lf	",CurLdistance);  //≤‚ ‘
+	//printf("R  %lf	",CurRdistance);  //≤‚ ‘
 	//printf("%lf\r\n",TotalDistance);  //≤‚ ‘
 
 	gpt12_clear(GPT12_T2);

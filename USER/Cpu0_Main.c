@@ -45,26 +45,26 @@ void core0_main(void)
 
 	while (TRUE)
 	{
+		//FindLine();
 		//GyroI2CReadByte();
 		//for(int i =0;i<=10;i++)
 		//printf("%d   ",GYRORxBuff[i]);
 		//printf("\r\n");
 		//systick_delay_ms(STM0, 100);
 		//UpdateADCValue();
-		//ADCcalculateMidLine();
 		//DebugReadADCData();
 		//GyroUARTReadByte();
 		//CountDistance();
 		//GyroCalculate();
-    	//systick_delay_ms(STM0, 20);
-		//DebugReadADCData();
     	//ADCcalculateMidLine();
+    	//systick_delay_ms(STM0, 20);
+    	//CountDistance();
 
 
 		//ips114_showchar(50,50,'t');
-		//MotorUserHandle(LMotor_F, 20);
+		//MotorUserHandle(LMotor_B, 20);
 		//systick_delay_ms(STM0, 2000);
-		//MotorUserHandle(RMotor_F, 20);
+		//MotorUserHandle(RMotor_B, 20);
 		//systick_delay_ms(STM0, 2000);
 		//MotorUserHandle(RMotor_F, 7);
 		//systick_delay_ms(STM0, 2000);

@@ -1,6 +1,6 @@
 	; Module start
 	.compiler_version	"TASKING VX-toolset for TriCore: C compiler v6.3r1 Build 19041558 SN 99294086"
-	.compiler_invocation	"ctc --dep-file=CODE\\Src\\.User_OSTU.o.d --fp-model=c,f,l,n,r,S,T,z -D__CPU__=tc26x -D__CPU_TC26X__ --core=tc1.6.x --iso=99 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\CODE -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Build -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Impl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Lib -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Lib\\DataHandling -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Lib\\InternalMux -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_PinMap -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Asc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Lin -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Spi -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\Icu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\PwmBc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\PwmHl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\TimerWithTrigger -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\TPwm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cif -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cif\\Cam -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cif\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\CStart -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Irq -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Trap -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dma -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dma\\Dma -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dma\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc\\Dsadc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc\\Rdc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dts -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dts\\Dts -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dts\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Emem -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Emem\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eray -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eray\\Eray -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eray\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eth -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eth\\Phy_Pef7071 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eth\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fce -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fce\\Crc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fce\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fft -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fft\\Fft -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fft\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Flash -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Flash\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gpt12 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gpt12\\IncrEnc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gpt12\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom\\Pwm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom\\PwmHl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tim -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tim\\In -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom\\Pwm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom\\PwmHl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Trig -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Hssl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Hssl\\Hssl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Hssl\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\I2c -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\I2c\\I2c -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\I2c\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Iom -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Iom\\Driver -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Iom\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Msc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Msc\\Msc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Msc\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Mtu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Mtu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Multican -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Multican\\Can -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Multican\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Port -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Port\\Io -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Port\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5\\Psi5 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5s -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5s\\Psi5s -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5s\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi\\SpiMaster -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi\\SpiSlave -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Scu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Scu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Sent -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Sent\\Sent -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Sent\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Smu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Smu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Src -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Src\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Stm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Stm\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Stm\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Vadc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Vadc\\Adc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Vadc\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Platform -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Platform\\Tricore -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Platform\\Tricore\\Compilers -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Sfr -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Sfr\\TC26B -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Sfr\\TC26B\\_Reg -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Service -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Service\\CpuGeneric -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\seekfree_libraries -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\seekfree_libraries\\common -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\seekfree_peripheral -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\USER -g2 -wW557 --make-target=CODE\\Src\\User_OSTU.o -t4 --language=-gcc,-volatile,+strings,-kanji --default-near-size=0 -O2 --default-a1-size=0 --default-a0-size=0 --source --align=0 --compact-max-size=200 --switch=auto --error-limit=42 -o CODE\\Src\\User_OSTU.src ..\\CODE\\Src\\User_OSTU.c"
+	.compiler_invocation	"ctc --dep-file=CODE\\Src\\.User_OSTU.o.d --fp-model=c,f,l,n,r,S,T,z -D__CPU__=tc26x -D__CPU_TC26X__ --core=tc1.6.x --iso=99 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\CODE -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Build -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Impl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Lib -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Lib\\DataHandling -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Lib\\InternalMux -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_PinMap -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Asc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Lin -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Spi -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\Icu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\PwmBc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\PwmHl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\TimerWithTrigger -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\TPwm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cif -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cif\\Cam -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cif\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\CStart -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Irq -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Trap -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dma -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dma\\Dma -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dma\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc\\Dsadc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc\\Rdc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dts -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dts\\Dts -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dts\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Emem -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Emem\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eray -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eray\\Eray -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eray\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eth -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eth\\Phy_Pef7071 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eth\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fce -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fce\\Crc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fce\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fft -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fft\\Fft -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fft\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Flash -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Flash\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gpt12 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gpt12\\IncrEnc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gpt12\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom\\Pwm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom\\PwmHl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tim -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tim\\In -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom\\Pwm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom\\PwmHl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Trig -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Hssl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Hssl\\Hssl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Hssl\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\I2c -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\I2c\\I2c -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\I2c\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Iom -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Iom\\Driver -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Iom\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Msc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Msc\\Msc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Msc\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Mtu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Mtu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Multican -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Multican\\Can -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Multican\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Port -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Port\\Io -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Port\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5\\Psi5 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5s -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5s\\Psi5s -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5s\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi\\SpiMaster -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi\\SpiSlave -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Scu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Scu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Sent -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Sent\\Sent -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Sent\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Smu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Smu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Src -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Src\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Stm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Stm\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Stm\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Vadc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Vadc\\Adc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Vadc\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Platform -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Platform\\Tricore -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Platform\\Tricore\\Compilers -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Sfr -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Sfr\\TC26B -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Sfr\\TC26B\\_Reg -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Service -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Service\\CpuGeneric -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\seekfree_libraries -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\seekfree_libraries\\common -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\seekfree_peripheral -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\USER -g2 -wW557 --make-target=CODE\\Src\\User_OSTU.o -t4 --language=-gcc,-volatile,+strings,-kanji --default-near-size=0 -O1 --default-a1-size=0 --default-a0-size=0 --source --align=0 --switch=auto --error-limit=42 -o CODE\\Src\\User_OSTU.src ..\\CODE\\Src\\User_OSTU.c"
 	.compiler_name		"ctc"
 	;source	'..\\CODE\\Src\\User_OSTU.c'
 
@@ -51,16 +51,20 @@ $TC16X
 ; ..\CODE\Src\User_OSTU.c	    36  ***************************************************************/
 ; ..\CODE\Src\User_OSTU.c	    37  uint16_t GetOSTU(uint8_t tmImage[MT9V03X_H][MT9V03X_W])  //返回值原为uint8_t
 ; Function GetOSTU
-.L27:
+.L33:
 GetOSTU:	.type	func
+	lea	a10,[a10]-256
+.L100:
 
 ; ..\CODE\Src\User_OSTU.c	    38  {
 ; ..\CODE\Src\User_OSTU.c	    39    uint32_t Amount = 0;
-	mov	d5,#0
-	lea	a10,[a10]-256
-.L93:
+	mov	d3,#0
+.L101:
 
 ; ..\CODE\Src\User_OSTU.c	    40    uint32_t PixelBack = 0;
+	mov	e4,d3,d3
+.L134:
+
 ; ..\CODE\Src\User_OSTU.c	    41    uint32_t PixelIntegralBack = 0;
 ; ..\CODE\Src\User_OSTU.c	    42    uint32_t PixelIntegral = 0;
 ; ..\CODE\Src\User_OSTU.c	    43    int32_t PixelIntegralFore = 0;
@@ -68,94 +72,115 @@ GetOSTU:	.type	func
 ; ..\CODE\Src\User_OSTU.c	    45    double OmegaBack, OmegaFore, MicroBack, MicroFore, SigmaB, Sigma; // 类间方差;
 ; ..\CODE\Src\User_OSTU.c	    46    int16_t MinValue, MaxValue;
 ; ..\CODE\Src\User_OSTU.c	    47    uint8_t Threshold = 0;
+	mov	d6,d3
+.L78:
+
 ; ..\CODE\Src\User_OSTU.c	    48    uint8_t HistoGram[256];              //
 ; ..\CODE\Src\User_OSTU.c	    49  
 ; ..\CODE\Src\User_OSTU.c	    50    for (int j = 0; j < 256; j++)  HistoGram[j] = 0; //初始化灰度直方图
-	mov	d15,d5
-	mov.aa	a15,a10
-.L119:
-	mov	d4,d5
-	lea	a2,255
-.L94:
-	mov	e2,d5,d5
+	mov	d15,d3
+.L102:
+	j	.L2
+.L3:
+	addsc.a	a15,a10,d15,#0
+.L135:
+	mov	d0,#0
+.L136:
+	st.b	[a15],d0
+.L137:
+	add	d15,#1
 .L2:
-	st.b	[a15+],d15
-	loop	a2,.L2
-.L72:
+	mov	d0,#256
+.L138:
+	jlt	d15,d0,.L3
+.L79:
 
 ; ..\CODE\Src\User_OSTU.c	    51  
 ; ..\CODE\Src\User_OSTU.c	    52    for (int j = 0; j < MT9V03X_H-40; j++)
-	lea	a15,79
-.L3:
+	mov	d0,d3
+.L103:
+	j	.L4
+.L5:
 
 ; ..\CODE\Src\User_OSTU.c	    53    {
 ; ..\CODE\Src\User_OSTU.c	    54      for (int i = 0; i < MT9V03X_W-8; i++)
-	mov.aa	a2,a4
-.L120:
-	lea	a4,[a4]188
-.L121:
-	lea	a5,179
-.L4:
+	mov	d1,#0
+.L105:
+	j	.L6
+.L7:
 
 ; ..\CODE\Src\User_OSTU.c	    55      {
 ; ..\CODE\Src\User_OSTU.c	    56        HistoGram[tmImage[j][i]]++; //统计灰度级中每个像素在整幅图像中的个数
-	ld.bu	d15,[a2+]
-.L122:
-	addsc.a	a6,a10,d15,#0
-	ld.bu	d0,[a6]
-.L123:
+	mul	d15,d0,#188
+	addsc.a	a15,a4,d15,#0
+.L139:
+	addsc.a	a15,a15,d1,#0
+	ld.bu	d15,[a15]
+.L140:
+	addsc.a	a15,a10,d15,#0
+	ld.bu	d2,[a15]
+.L141:
+	add	d2,#1
+	st.b	[a15],d2
+.L142:
+	add	d1,#1
+.L6:
+	mov	d15,#180
+.L143:
+	jlt	d1,d15,.L7
+.L83:
 	add	d0,#1
-	st.b	[a6],d0
-	loop	a5,.L4
-.L76:
-	loop	a15,.L3
-.L74:
+.L4:
+	mov	d15,#80
+.L144:
+	jlt	d0,d15,.L5
+.L81:
 
 ; ..\CODE\Src\User_OSTU.c	    57      }
 ; ..\CODE\Src\User_OSTU.c	    58    }
 ; ..\CODE\Src\User_OSTU.c	    59  
 ; ..\CODE\Src\User_OSTU.c	    60    for (MinValue = 0; MinValue < 256 && HistoGram[MinValue] == 0; MinValue++) ;        //获取最小灰度的值
-	mov	d6,d5
-	mov.aa	a15,a10
-.L95:
+	mov	d1,d3
+.L106:
 	mov	d0,#256
-	j	.L5
-.L6:
-	add	d6,#1
-	add.a	a15,#1
-.L5:
-	jge	d6,d0,.L7
-.L124:
-	ld.bu	d15,[a15]
-.L125:
-	jeq	d15,#0,.L6
-.L7:
-
-; ..\CODE\Src\User_OSTU.c	    61    for (MaxValue = 255; MaxValue > MinValue && HistoGram[MinValue] == 0; MaxValue--) ; //获取最大灰度的值
-	mov	d7,#255
-	addsc.a	a15,a10,d6,#0
-.L96:
+.L104:
 	j	.L8
 .L9:
-	add	d0,d7,#-1
-	extr	d7,d0,#0,#16
+	add	d1,#1
 .L8:
-	jge	d6,d7,.L10
-.L126:
+	jge	d1,d0,.L10
+.L145:
+	addsc.a	a15,a10,d1,#0
 	ld.bu	d15,[a15]
-.L127:
+.L146:
 	jeq	d15,#0,.L9
 .L10:
 
+; ..\CODE\Src\User_OSTU.c	    61    for (MaxValue = 255; MaxValue > MinValue && HistoGram[MinValue] == 0; MaxValue--) ; //获取最大灰度的值
+	mov	d8,#255
+.L107:
+	j	.L11
+.L12:
+	add	d0,d8,#-1
+	extr	d8,d0,#0,#16
+.L11:
+	jge	d1,d8,.L13
+.L147:
+	addsc.a	a15,a10,d1,#0
+	ld.bu	d15,[a15]
+.L148:
+	jeq	d15,#0,.L12
+.L13:
+
 ; ..\CODE\Src\User_OSTU.c	    62  
 ; ..\CODE\Src\User_OSTU.c	    63    if (MaxValue == MinValue)     return MaxValue;         // 图像中只有一个颜色
-	jeq	d7,d6,.L11
-.L128:
+	jeq	d8,d1,.L15
+.L149:
 
 ; ..\CODE\Src\User_OSTU.c	    64    if (MinValue + 1 == MaxValue)  return MinValue;        // 图像中只有二个颜色
-	add	d15,d6,#1
-.L129:
-	jne	d15,d7,.L12
+	add	d15,d1,#1
+.L150:
+	jne	d15,d8,.L16
 
 ; ..\CODE\Src\User_OSTU.c	    65  
 ; ..\CODE\Src\User_OSTU.c	    66    for (int j = MinValue; j <= MaxValue; j++)    Amount += HistoGram[j];        //  像素总数
@@ -185,101 +210,104 @@ GetOSTU:	.type	func
 ; ..\CODE\Src\User_OSTU.c	    90    }
 ; ..\CODE\Src\User_OSTU.c	    91    return Threshold;                        //返回最佳阈值;
 ; ..\CODE\Src\User_OSTU.c	    92  }
-.L11:
-	extr.u	d2,d6,#0,#16
-	ret
-.L12:
-	mov	d0,d6
-	addsc.a	a15,a10,d6,#0
-.L97:
-	j	.L14
 .L15:
-	ld.bu	d1,[a15+]
-.L130:
-	add	d0,#1
-.L131:
-	add	d5,d1
-.L14:
-	jge	d7,d0,.L15
-.L78:
-	mov	d9,#0
-.L80:
-	mov	d1,d6
-	addsc.a	a15,a10,d6,#0
-.L98:
-	j	.L16
-.L17:
-	ld.bu	d0,[a15+]
-.L132:
-	mul	d0,d1
-.L133:
-	add	d1,#1
-.L134:
-	add	d9,d0
+	extr.u	d2,d1,#0,#16
+.L151:
+	ret
 .L16:
-	jge	d7,d1,.L17
-.L81:
-	movh	d8,#49024
-	addsc.a	a15,a10,d6,#0
-.L83:
-	utof	d10,d5
+	mov	d15,d1
+.L108:
 	j	.L18
 .L19:
-	ld.bu	d0,[a15+]
-.L99:
-	add	d2,d0
-.L135:
-	mul	d0,d6
-.L136:
-	sub	d1,d5,d2
-.L100:
+	addsc.a	a15,a10,d15,#0
+	ld.bu	d0,[a15]
+.L152:
 	add	d3,d0
-.L137:
-	sub	d0,d9,d3
-.L102:
-	utof	d15,d2
-.L138:
-	itof	d1,d1
-.L101:
-	utof	d13,d3
-.L139:
-	itof	d0,d0
-.L103:
-	div.f	d11,d15,d10
-.L104:
-	div.f	d15,d13,d15
-.L105:
-	div.f	d12,d1,d10
-.L107:
-	div.f	d0,d0,d1
-.L108:
-	sub.f	d15,d15,d0
-.L106:
-	mul.f	d0,d11,d12
-.L109:
-	mul.f	d0,d0,d15
-.L140:
-	mul.f	d0,d0,d15
-.L110:
-	cmp.f	d15,d0,d8
-.L141:
-	jz.t	d15:2,.L20
-.L142:
-	mov	d8,d0
-.L143:
-	extr.u	d4,d6,#0,#8
-.L20:
-	add	d6,#1
+.L153:
+	add	d15,#1
 .L18:
-	jlt	d6,d7,.L19
-.L84:
-	mov	d2,d4
+	jge	d8,d15,.L19
+.L85:
+	mov	d9,#0
+.L87:
+	mov	d15,d1
+.L109:
+	j	.L20
+.L21:
+	addsc.a	a15,a10,d15,#0
+	ld.bu	d0,[a15]
+.L154:
+	mul	d0,d15
+.L155:
+	add	d9,d0
+.L156:
+	add	d15,#1
+.L20:
+	jge	d8,d15,.L21
+.L88:
+	movh	d10,#49024
+.L90:
+	j	.L22
+.L23:
+	addsc.a	a15,a10,d1,#0
+	ld.bu	d0,[a15]
+.L110:
+	add	d4,d0
+.L157:
+	sub	d2,d3,d4
+.L111:
+	utof	d15,d4
+.L158:
+	utof	d7,d3
+.L159:
+	div.f	d11,d15,d7
+.L113:
+	itof	d12,d2
+.L160:
+	div.f	d7,d12,d7
+.L114:
+	mul	d0,d1
+.L115:
+	add	d5,d0
+.L161:
+	sub	d0,d9,d5
+.L116:
+	utof	d2,d5
+.L112:
+	div.f	d15,d2,d15
+.L118:
+	itof	d0,d0
+.L117:
+	div.f	d0,d0,d12
+.L120:
+	mul.f	d2,d11,d7
+.L162:
+	sub.f	d15,d15,d0
+.L119:
+	mul.f	d0,d2,d15
+.L121:
+	mul.f	d0,d0,d15
+.L122:
+	cmp.f	d15,d0,d10
+.L163:
+	jz.t	d15:2,.L24
+.L164:
+	mov	d10,d0
+.L165:
+	extr.u	d6,d1,#0,#8
+.L24:
+	add	d1,#1
+.L22:
+	jlt	d1,d8,.L23
+.L91:
+	mov	d2,d6
+.L123:
 	ret
-.L47:
+.L53:
 	
 __GetOSTU_function_end:
 	.size	GetOSTU,__GetOSTU_function_end-GetOSTU
-.L38:
+.L44:
 	; End of function
 	
 	.sdecl	'.text.User_OSTU.BinaryImage',code,cluster('BinaryImage')
@@ -299,59 +327,78 @@ __GetOSTU_function_end:
 ; ..\CODE\Src\User_OSTU.c	   101  ***************************************************************/
 ; ..\CODE\Src\User_OSTU.c	   102  void BinaryImage(uint8_t tmImage[MT9V03X_H][MT9V03X_W],uint8_t ThresholdV)
 ; Function BinaryImage
-.L29:
+.L35:
 BinaryImage:	.type	func
 
 ; ..\CODE\Src\User_OSTU.c	   103  {
 ; ..\CODE\Src\User_OSTU.c	   104  
 ; ..\CODE\Src\User_OSTU.c	   105    for(int i = 0;i < MT9V03X_H;i++)
-	lea	a15,119
-.L22:
+	mov	d0,#0
+.L124:
+	j	.L26
+.L27:
 
 ; ..\CODE\Src\User_OSTU.c	   106    {
 ; ..\CODE\Src\User_OSTU.c	   107      for(int j = 0; j< MT9V03X_W;j++)
-	mov.aa	a2,a4
-.L148:
-	lea	a4,[a4]188
-.L149:
-	lea	a5,187
-.L23:
+	mov	d1,#0
+.L125:
+	j	.L28
+.L29:
 
 ; ..\CODE\Src\User_OSTU.c	   108      {
 ; ..\CODE\Src\User_OSTU.c	   109        if(tmImage[i][j] >= ThresholdV)
-	ld.bu	d15,[a2]
-.L150:
-	jlt.u	d15,d4,.L24
-.L151:
+	mul	d15,d0,#188
+	addsc.a	a15,a4,d15,#0
+.L170:
+	addsc.a	a15,a15,d1,#0
+	ld.bu	d15,[a15]
+.L171:
+	jlt.u	d15,d4,.L30
+.L172:
 
 ; ..\CODE\Src\User_OSTU.c	   110        {
 ; ..\CODE\Src\User_OSTU.c	   111          tmImage[i][j] = 0xFE;
 	mov	d15,#254
-	j	.L25
-.L24:
+.L173:
+	j	.L31
+.L30:
 
 ; ..\CODE\Src\User_OSTU.c	   112        }
 ; ..\CODE\Src\User_OSTU.c	   113        else
 ; ..\CODE\Src\User_OSTU.c	   114        {
 ; ..\CODE\Src\User_OSTU.c	   115          tmImage[i][j] = 0X00;
+	mul	d15,d0,#188
+	addsc.a	a15,a4,d15,#0
+.L174:
+	addsc.a	a15,a15,d1,#0
+.L175:
 	mov	d15,#0
-.L25:
-	st.b	[a2+],d15
-	loop	a5,.L23
-.L91:
-	loop	a15,.L22
-.L89:
+.L31:
+	st.b	[a15],d15
+.L176:
+	add	d1,#1
+.L28:
+	mov	d15,#188
+.L177:
+	jlt	d1,d15,.L29
+.L98:
+	add	d0,#1
+.L26:
+	mov	d15,#120
+.L178:
+	jlt	d0,d15,.L27
+.L96:
 
 ; ..\CODE\Src\User_OSTU.c	   116        }
 ; ..\CODE\Src\User_OSTU.c	   117      }
 ; ..\CODE\Src\User_OSTU.c	   118    }
 ; ..\CODE\Src\User_OSTU.c	   119  }
 	ret
-.L86:
+.L93:
 	
 __BinaryImage_function_end:
 	.size	BinaryImage,__BinaryImage_function_end-BinaryImage
-.L43:
+.L49:
 	; End of function
 	
 	.sdecl	'.bss.cpu1_dsram',data,cluster('Threshold')
@@ -365,17 +412,17 @@ Threshold:	.type	object
 	.calls	'BinaryImage','',0
 	.sdecl	'.debug_info',debug
 	.sect	'.debug_info'
-.L31:
+.L37:
 	.word	252029
 	.half	3
-	.word	.L32
+	.word	.L38
 	.byte	4
-.L30:
+.L36:
 	.byte	1
 	.byte	'..\\CODE\\Src\\User_OSTU.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L33
+	.word	.L39
 	.byte	2,1,1,3
 	.word	144
 	.byte	4
@@ -384,7 +431,7 @@ Threshold:	.type	object
 	.word	147
 	.byte	6,0,7
 	.byte	'__fract',0,4,128,1
-.L58:
+.L64:
 	.byte	7
 	.byte	'float',0,4,4,8
 	.byte	'Ifx__float_to_fract',0,3,1,152,2,18
@@ -398,7 +445,7 @@ Threshold:	.type	object
 	.word	290
 	.byte	3
 	.word	296
-.L50:
+.L56:
 	.byte	7
 	.byte	'unsigned int',0,4,7,4
 	.byte	'__ldmst_c',0,3,2,111,17,1,1,5
@@ -427,7 +474,7 @@ Threshold:	.type	object
 	.byte	'value',0,2,143,1,43
 	.word	384
 	.byte	6,0
-.L55:
+.L61:
 	.byte	7
 	.byte	'int',0,4,5,7
 	.byte	'unsigned int',0,4,7,11
@@ -453,10 +500,10 @@ Threshold:	.type	object
 	.byte	'B',0
 	.word	519
 	.byte	4,2,35,0,0
-.L68:
+.L74:
 	.byte	7
 	.byte	'unsigned char',0,1,8
-.L46:
+.L52:
 	.byte	7
 	.byte	'unsigned short int',0,2,7,11
 	.byte	'_Ifx_SCU_WDTCPU_CON1_Bits',0,4,250,8,16,4,12
@@ -6395,7 +6442,7 @@ Threshold:	.type	object
 	.byte	'alti',0,20,191,18,82
 	.word	38941
 	.byte	6,0
-.L65:
+.L71:
 	.byte	7
 	.byte	'short int',0,2,5,7
 	.byte	'long int',0,4,5,21,22,60,9,12,14
@@ -6809,10 +6856,10 @@ Threshold:	.type	object
 	.byte	6,0,15,188,1
 	.word	655
 	.byte	16,187,1,0
-.L48:
+.L54:
 	.byte	3
 	.word	40651
-.L70:
+.L76:
 	.byte	15,128,2
 	.word	655
 	.byte	16,255,1,0,32
@@ -34702,7 +34749,7 @@ Threshold:	.type	object
 	.byte	'uint16_t',0,46,246,1,41
 	.word	672
 	.byte	11
-	.byte	'FSMTable',0,47,33,16,16,14
+	.byte	'FSMTable',0,47,30,16,16,14
 	.byte	'Event',0
 	.word	496
 	.byte	4,2,35,0,14
@@ -34715,12 +34762,12 @@ Threshold:	.type	object
 	.byte	'NextState',0
 	.word	496
 	.byte	4,2,35,12,0,32
-	.byte	'FSMTable_t',0,47,38,2
+	.byte	'FSMTable_t',0,47,35,2
 	.word	251925
 	.byte	0
 	.sdecl	'.debug_abbrev',debug
 	.sect	'.debug_abbrev'
-.L32:
+.L38:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,16,6,0,0,2,21,0,54,15,39,12,0,0,3,15,0,73,19,0,0,4,46,1,3,8,32,13
 	.byte	58,15,59,15,57,15,54,15,39,12,0,0,5,5,0,3,8,58,15,59,15,57,15,73,19,0,0,6,11,0,0,0,7,36,0,3,8,11,15,62
 	.byte	15,0,0,8,46,1,3,8,32,13,58,15,59,15,57,15,73,19,54,15,39,12,0,0,9,59,0,3,8,0,0,10,53,0,73,19,0,0,11,19
@@ -34733,12 +34780,12 @@ Threshold:	.type	object
 	.byte	1,54,15,39,12,0,0,35,21,1,73,19,54,15,39,12,0,0,0
 	.sdecl	'.debug_line',debug
 	.sect	'.debug_line'
-.L33:
-	.word	.L112-.L111
-.L111:
+.L39:
+	.word	.L127-.L126
+.L126:
 	.half	3
-	.word	.L114-.L113
-.L113:
+	.word	.L129-.L128
+.L128:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Std',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Scu\\Std',0
@@ -34809,545 +34856,615 @@ Threshold:	.type	object
 	.byte	'IfxDma.h',0,17,0,0
 	.byte	'stdint.h',0,13,0,0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\CODE\\Inc\\User_FSM.h',0,0,0,0,0
-.L114:
-.L112:
+.L129:
+.L127:
 	.sdecl	'.debug_info',debug,cluster('GetOSTU')
 	.sect	'.debug_info'
-.L34:
+.L40:
 	.word	716
 	.half	3
-	.word	.L35
+	.word	.L41
 	.byte	4,1
 	.byte	'..\\CODE\\Src\\User_OSTU.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L37,.L36
+	.word	.L43,.L42
 	.byte	2
-	.word	.L30
+	.word	.L36
 	.byte	3
 	.byte	'GetOSTU',0,1,37,10
-	.word	.L46
+	.word	.L52
 	.byte	1,1,1
-	.word	.L27,.L47,.L26
+	.word	.L33,.L53,.L32
 	.byte	4
 	.byte	'tmImage',0,1,37,26
-	.word	.L48,.L49
+	.word	.L54,.L55
 	.byte	5
-	.word	.L27,.L47
+	.word	.L33,.L53
 	.byte	6
 	.byte	'Amount',0,1,39,12
-	.word	.L50,.L51
+	.word	.L56,.L57
 	.byte	6
 	.byte	'PixelBack',0,1,40,12
-	.word	.L50,.L52
+	.word	.L56,.L58
 	.byte	6
 	.byte	'PixelIntegralBack',0,1,41,12
-	.word	.L50,.L53
+	.word	.L56,.L59
 	.byte	6
 	.byte	'PixelIntegral',0,1,42,12
-	.word	.L50,.L54
+	.word	.L56,.L60
 	.byte	6
 	.byte	'PixelIntegralFore',0,1,43,11
-	.word	.L55,.L56
+	.word	.L61,.L62
 	.byte	6
 	.byte	'PixelFore',0,1,44,11
-	.word	.L55,.L57
+	.word	.L61,.L63
 	.byte	6
 	.byte	'OmegaBack',0,1,45,10
-	.word	.L58,.L59
+	.word	.L64,.L65
 	.byte	6
 	.byte	'OmegaFore',0,1,45,21
-	.word	.L58,.L60
+	.word	.L64,.L66
 	.byte	6
 	.byte	'MicroBack',0,1,45,32
-	.word	.L58,.L61
+	.word	.L64,.L67
 	.byte	6
 	.byte	'MicroFore',0,1,45,43
-	.word	.L58,.L62
+	.word	.L64,.L68
 	.byte	6
 	.byte	'SigmaB',0,1,45,54
-	.word	.L58,.L63
+	.word	.L64,.L69
 	.byte	6
 	.byte	'Sigma',0,1,45,62
-	.word	.L58,.L64
+	.word	.L64,.L70
 	.byte	6
 	.byte	'MinValue',0,1,46,11
-	.word	.L65,.L66
+	.word	.L71,.L72
 	.byte	6
 	.byte	'MaxValue',0,1,46,21
-	.word	.L65,.L67
+	.word	.L71,.L73
 	.byte	6
 	.byte	'Threshold',0,1,47,11
-	.word	.L68,.L69
+	.word	.L74,.L75
 	.byte	6
 	.byte	'HistoGram',0,1,48,11
-	.word	.L70,.L71
+	.word	.L76,.L77
 	.byte	5
-	.word	.L2,.L72
+	.word	.L78,.L79
 	.byte	6
 	.byte	'j',0,1,50,12
-	.word	.L55,.L73
+	.word	.L61,.L80
 	.byte	0,5
-	.word	.L72,.L74
+	.word	.L79,.L81
 	.byte	6
 	.byte	'j',0,1,52,12
-	.word	.L55,.L75
+	.word	.L61,.L82
 	.byte	5
-	.word	.L3,.L76
+	.word	.L5,.L83
 	.byte	6
 	.byte	'i',0,1,54,14
-	.word	.L55,.L77
+	.word	.L61,.L84
 	.byte	0,0,5
-	.word	.L12,.L78
+	.word	.L16,.L85
 	.byte	6
 	.byte	'j',0,1,66,12
-	.word	.L55,.L79
+	.word	.L61,.L86
 	.byte	0,5
-	.word	.L80,.L81
+	.word	.L87,.L88
 	.byte	6
 	.byte	'j',0,1,69,12
-	.word	.L55,.L82
+	.word	.L61,.L89
 	.byte	0,5
-	.word	.L83,.L84
+	.word	.L90,.L91
 	.byte	6
 	.byte	'j',0,1,74,12
-	.word	.L55,.L85
+	.word	.L61,.L92
 	.byte	0,0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('GetOSTU')
 	.sect	'.debug_abbrev'
-.L35:
+.L41:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
 	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
 	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
 	.sdecl	'.debug_line',debug,cluster('GetOSTU')
 	.sect	'.debug_line'
-.L36:
-	.word	.L116-.L115
-.L115:
+.L42:
+	.word	.L131-.L130
+.L130:
 	.half	3
-	.word	.L118-.L117
-.L117:
+	.word	.L133-.L132
+.L132:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\CODE\\Src\\User_OSTU.c',0,0,0,0,0
-.L118:
-	.byte	5,19,7,0,5,2
-	.word	.L27
-	.byte	3,38,1,5,10,3,126,1,5,23,9
-	.half	.L93-.L27
-	.byte	3,10,1,5,34,3,3,1,5,21,9
-	.half	.L119-.L93
-	.byte	3,125,1,5,26,3,3,1,5,22,9
-	.half	.L94-.L119
-	.byte	3,118,1,5,47,9
-	.half	.L2-.L94
-	.byte	3,10,1,5,26,1,5,35,7,9
-	.half	.L72-.L2
-	.byte	3,2,1,5,41,9
-	.half	.L3-.L72
-	.byte	3,2,1,5,38,9
-	.half	.L120-.L3
-	.byte	3,126,1,5,36,9
-	.half	.L121-.L120
-	.byte	3,2,1,5,27,9
-	.half	.L4-.L121
-	.byte	3,2,1,5,16,9
-	.half	.L122-.L4
-	.byte	1,5,31,9
-	.half	.L123-.L122
-	.byte	1,5,36,3,126,1,5,35,7,9
-	.half	.L76-.L123
-	.byte	3,126,1,5,17,7,9
-	.half	.L74-.L76
-	.byte	3,8,1,5,40,1,5,33,9
-	.half	.L95-.L74
-	.byte	1,5,64,1,5,74,9
-	.half	.L6-.L95
-	.byte	1,5,22,9
-	.half	.L5-.L6
-	.byte	1,5,49,7,9
-	.half	.L124-.L5
-	.byte	1,5,60,9
-	.half	.L125-.L124
-	.byte	1,5,17,7,9
-	.half	.L7-.L125
-	.byte	3,1,1,5,56,1,5,71,9
-	.half	.L96-.L7
-	.byte	1,5,81,9
-	.half	.L9-.L96
-	.byte	1,5,24,9
-	.half	.L8-.L9
-	.byte	1,5,56,7,9
-	.half	.L126-.L8
-	.byte	1,5,67,9
-	.half	.L127-.L126
-	.byte	1,5,3,7,9
-	.half	.L10-.L127
-	.byte	3,2,1,5,16,7,9
-	.half	.L128-.L10
-	.byte	3,1,1,5,3,9
-	.half	.L129-.L128
-	.byte	1,5,41,7,9
-	.half	.L11-.L129
-	.byte	1,5,1,3,28,1,5,14,7,9
-	.half	.L12-.L11
-	.byte	3,102,1,5,68,1,5,39,9
-	.half	.L97-.L12
-	.byte	1,5,68,9
-	.half	.L15-.L97
-	.byte	1,5,42,9
-	.half	.L130-.L15
-	.byte	1,5,56,9
-	.half	.L131-.L130
-	.byte	1,5,39,9
-	.half	.L14-.L131
-	.byte	1,5,17,7,9
-	.half	.L78-.L14
-	.byte	3,2,1,5,14,9
-	.half	.L80-.L78
-	.byte	3,1,1,5,31,3,2,1,5,39,9
-	.half	.L98-.L80
-	.byte	3,126,1,5,31,9
-	.half	.L17-.L98
-	.byte	3,2,1,5,35,9
-	.half	.L132-.L17
-	.byte	1,5,42,9
-	.half	.L133-.L132
-	.byte	3,126,1,5,19,9
-	.half	.L134-.L133
-	.byte	3,2,1,5,39,9
-	.half	.L16-.L134
-	.byte	3,126,1,5,12,7,9
-	.half	.L81-.L16
-	.byte	3,4,1,5,38,3,3,1,5,37,9
-	.half	.L83-.L81
-	.byte	3,2,1,5,38,3,124,1,9
-	.half	.L19-.L83
-	.byte	3,2,1,5,27,9
-	.half	.L99-.L19
-	.byte	1,5,39,9
-	.half	.L135-.L99
-	.byte	3,4,1,5,24,9
+.L133:
+	.byte	5,10,7,0,5,2
+	.word	.L33
+	.byte	3,36,1,5,19,9
+	.half	.L100-.L33
+	.byte	3,2,1,5,22,9
+	.half	.L101-.L100
+	.byte	3,1,1,5,21,9
+	.half	.L134-.L101
+	.byte	3,7,1,5,14,9
+	.half	.L78-.L134
+	.byte	3,3,1,5,26,9
+	.half	.L102-.L78
+	.byte	1,5,43,9
+	.half	.L3-.L102
+	.byte	1,5,49,9
+	.half	.L135-.L3
+	.byte	1,5,47,9
 	.half	.L136-.L135
-	.byte	3,125,1,5,23,9
-	.half	.L100-.L136
-	.byte	3,3,1,5,39,9
-	.half	.L137-.L100
-	.byte	3,1,1,5,17,9
-	.half	.L102-.L137
-	.byte	3,125,1,9
-	.half	.L138-.L102
-	.byte	3,1,1,9
-	.half	.L101-.L138
-	.byte	3,3,1,9
-	.half	.L139-.L101
-	.byte	3,1,1,5,35,9
-	.half	.L103-.L139
-	.byte	3,123,1,5,43,9
-	.half	.L104-.L103
-	.byte	3,4,1,5,35,9
-	.half	.L105-.L104
-	.byte	3,125,1,5,43,9
-	.half	.L107-.L105
-	.byte	3,4,1,5,74,9
-	.half	.L108-.L107
-	.byte	3,1,1,5,23,9
-	.half	.L106-.L108
-	.byte	1,5,35,9
-	.half	.L109-.L106
-	.byte	1,5,61,9
-	.half	.L140-.L109
-	.byte	1,5,15,9
-	.half	.L110-.L140
-	.byte	3,1,1,5,5,9
-	.half	.L141-.L110
+	.byte	1,5,29,9
+	.half	.L137-.L136
+	.byte	1,5,23,9
+	.half	.L2-.L137
+	.byte	1,5,26,9
+	.half	.L138-.L2
 	.byte	1,5,14,7,9
+	.half	.L79-.L138
+	.byte	3,2,1,5,35,9
+	.half	.L103-.L79
+	.byte	1,5,16,9
+	.half	.L5-.L103
+	.byte	3,2,1,5,36,9
+	.half	.L105-.L5
+	.byte	1,5,24,9
+	.half	.L7-.L105
+	.byte	3,2,1,5,27,9
+	.half	.L139-.L7
+	.byte	1,5,16,9
+	.half	.L140-.L139
+	.byte	1,5,31,9
+	.half	.L141-.L140
+	.byte	1,5,39,9
 	.half	.L142-.L141
-	.byte	3,2,1,5,19,9
-	.half	.L143-.L142
-	.byte	3,1,1,5,41,9
-	.half	.L20-.L143
-	.byte	3,114,1,5,38,9
-	.half	.L18-.L20
+	.byte	3,126,1,5,34,9
+	.half	.L6-.L142
+	.byte	1,5,36,9
+	.half	.L143-.L6
+	.byte	1,5,38,7,9
+	.half	.L83-.L143
+	.byte	3,126,1,5,32,9
+	.half	.L4-.L83
+	.byte	1,5,35,9
+	.half	.L144-.L4
+	.byte	1,5,17,7,9
+	.half	.L81-.L144
+	.byte	3,8,1,5,33,9
+	.half	.L106-.L81
+	.byte	1,5,64,9
+	.half	.L104-.L106
+	.byte	1,5,74,9
+	.half	.L9-.L104
+	.byte	1,5,22,9
+	.half	.L8-.L9
+	.byte	1,5,49,7,9
+	.half	.L145-.L8
+	.byte	1,5,60,9
+	.half	.L146-.L145
+	.byte	1,5,17,7,9
+	.half	.L10-.L146
+	.byte	3,1,1,5,71,9
+	.half	.L107-.L10
+	.byte	1,5,81,9
+	.half	.L12-.L107
+	.byte	1,5,24,9
+	.half	.L11-.L12
+	.byte	1,5,56,7,9
+	.half	.L147-.L11
+	.byte	1,5,67,9
+	.half	.L148-.L147
 	.byte	1,5,3,7,9
-	.half	.L84-.L18
-	.byte	3,17,1,5,1,3,1,1,7,9
-	.half	.L38-.L84
+	.half	.L13-.L148
+	.byte	3,2,1,5,16,7,9
+	.half	.L149-.L13
+	.byte	3,1,1,5,3,9
+	.half	.L150-.L149
+	.byte	1,5,41,7,9
+	.half	.L15-.L150
+	.byte	1,5,1,9
+	.half	.L151-.L15
+	.byte	3,28,1,5,14,7,9
+	.half	.L16-.L151
+	.byte	3,102,1,5,39,9
+	.half	.L108-.L16
+	.byte	1,5,68,9
+	.half	.L19-.L108
+	.byte	1,5,56,9
+	.half	.L152-.L19
+	.byte	1,5,42,9
+	.half	.L153-.L152
+	.byte	1,5,39,9
+	.half	.L18-.L153
+	.byte	1,5,17,7,9
+	.half	.L85-.L18
+	.byte	3,2,1,5,14,9
+	.half	.L87-.L85
+	.byte	3,1,1,5,39,9
+	.half	.L109-.L87
+	.byte	1,5,31,9
+	.half	.L21-.L109
+	.byte	3,2,1,5,35,9
+	.half	.L154-.L21
+	.byte	1,5,19,9
+	.half	.L155-.L154
+	.byte	1,5,42,9
+	.half	.L156-.L155
+	.byte	3,126,1,5,39,9
+	.half	.L20-.L156
+	.byte	1,5,12,7,9
+	.half	.L88-.L20
+	.byte	3,4,1,5,38,9
+	.half	.L90-.L88
+	.byte	3,1,1,9
+	.half	.L23-.L90
+	.byte	3,2,1,5,27,9
+	.half	.L110-.L23
+	.byte	1,5,24,9
+	.half	.L157-.L110
+	.byte	3,1,1,5,17,9
+	.half	.L111-.L157
+	.byte	3,1,1,5,37,9
+	.half	.L158-.L111
+	.byte	1,5,35,9
+	.half	.L159-.L158
+	.byte	1,5,17,9
+	.half	.L113-.L159
+	.byte	3,1,1,5,35,9
+	.half	.L160-.L113
+	.byte	1,5,39,9
+	.half	.L114-.L160
+	.byte	3,1,1,5,23,9
+	.half	.L115-.L114
+	.byte	1,5,39,9
+	.half	.L161-.L115
+	.byte	3,1,1,5,17,9
+	.half	.L116-.L161
+	.byte	3,1,1,5,43,9
+	.half	.L112-.L116
+	.byte	1,5,17,9
+	.half	.L118-.L112
+	.byte	3,1,1,5,43,9
+	.half	.L117-.L118
+	.byte	1,5,23,9
+	.half	.L120-.L117
+	.byte	3,1,1,5,48,9
+	.half	.L162-.L120
+	.byte	1,5,35,9
+	.half	.L119-.L162
+	.byte	1,5,61,9
+	.half	.L121-.L119
+	.byte	1,5,15,9
+	.half	.L122-.L121
+	.byte	3,1,1,5,5,9
+	.half	.L163-.L122
+	.byte	1,5,14,7,9
+	.half	.L164-.L163
+	.byte	3,2,1,5,19,9
+	.half	.L165-.L164
+	.byte	3,1,1,5,41,9
+	.half	.L24-.L165
+	.byte	3,114,1,5,38,9
+	.half	.L22-.L24
+	.byte	1,5,3,7,9
+	.half	.L91-.L22
+	.byte	3,17,1,5,1,9
+	.half	.L123-.L91
+	.byte	3,1,1,7,9
+	.half	.L44-.L123
 	.byte	0,1,1
-.L116:
+.L131:
 	.sdecl	'.debug_ranges',debug,cluster('GetOSTU')
 	.sect	'.debug_ranges'
-.L37:
-	.word	-1,.L27,0,.L38-.L27,0,0
+.L43:
+	.word	-1,.L33,0,.L44-.L33,0,0
 	.sdecl	'.debug_info',debug,cluster('BinaryImage')
 	.sect	'.debug_info'
-.L39:
+.L45:
 	.word	283
 	.half	3
-	.word	.L40
+	.word	.L46
 	.byte	4,1
 	.byte	'..\\CODE\\Src\\User_OSTU.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L42,.L41
+	.word	.L48,.L47
 	.byte	2
-	.word	.L30
+	.word	.L36
 	.byte	3
 	.byte	'BinaryImage',0,1,102,6,1,1,1
-	.word	.L29,.L86,.L28
+	.word	.L35,.L93,.L34
 	.byte	4
 	.byte	'tmImage',0,1,102,26
-	.word	.L48,.L87
+	.word	.L54,.L94
 	.byte	4
 	.byte	'ThresholdV',0,1,102,64
-	.word	.L68,.L88
+	.word	.L74,.L95
 	.byte	5
-	.word	.L29,.L86
+	.word	.L35,.L93
 	.byte	5
-	.word	.L29,.L89
+	.word	.L35,.L96
 	.byte	6
 	.byte	'i',0,1,105,11
-	.word	.L55,.L90
+	.word	.L61,.L97
 	.byte	5
-	.word	.L22,.L91
+	.word	.L27,.L98
 	.byte	6
 	.byte	'j',0,1,107,13
-	.word	.L55,.L92
+	.word	.L61,.L99
 	.byte	0,0,0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('BinaryImage')
 	.sect	'.debug_abbrev'
-.L40:
+.L46:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3
 	.byte	8,58,15,59,15,57,15,73,16,2,6,0,0,0
 	.sdecl	'.debug_line',debug,cluster('BinaryImage')
 	.sect	'.debug_line'
-.L41:
-	.word	.L145-.L144
-.L144:
+.L47:
+	.word	.L167-.L166
+.L166:
 	.half	3
-	.word	.L147-.L146
-.L146:
+	.word	.L169-.L168
+.L168:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\CODE\\Src\\User_OSTU.c',0,0,0,0,0
-.L147:
-	.byte	5,30,7,0,5,2
-	.word	.L29
-	.byte	3,232,0,1,5,36,9
-	.half	.L22-.L29
+.L169:
+	.byte	5,13,7,0,5,2
+	.word	.L35
+	.byte	3,232,0,1,5,30,9
+	.half	.L124-.L35
+	.byte	1,5,15,9
+	.half	.L27-.L124
 	.byte	3,2,1,5,32,9
-	.half	.L148-.L22
-	.byte	3,126,1,9
-	.half	.L149-.L148
+	.half	.L125-.L27
+	.byte	1,5,17,9
+	.half	.L29-.L125
 	.byte	3,2,1,5,20,9
-	.half	.L23-.L149
-	.byte	3,2,1,5,7,9
-	.half	.L150-.L23
+	.half	.L170-.L29
+	.byte	1,5,7,9
+	.half	.L171-.L170
 	.byte	1,5,25,7,9
-	.half	.L151-.L150
-	.byte	3,2,1,5,29,1,5,25,9
-	.half	.L24-.L151
-	.byte	3,4,1,5,23,9
-	.half	.L25-.L24
-	.byte	1,5,32,3,120,1,5,30,7,9
-	.half	.L91-.L25
-	.byte	3,126,1,5,1,7,9
-	.half	.L89-.L91
+	.half	.L172-.L171
+	.byte	3,2,1,5,29,9
+	.half	.L173-.L172
+	.byte	1,5,16,9
+	.half	.L30-.L173
+	.byte	3,4,1,5,19,9
+	.half	.L174-.L30
+	.byte	1,5,25,9
+	.half	.L175-.L174
+	.byte	1,5,23,9
+	.half	.L31-.L175
+	.byte	1,5,34,9
+	.half	.L176-.L31
+	.byte	3,120,1,5,23,9
+	.half	.L28-.L176
+	.byte	1,5,32,9
+	.half	.L177-.L28
+	.byte	1,7,9
+	.half	.L98-.L177
+	.byte	3,126,1,5,21,9
+	.half	.L26-.L98
+	.byte	1,5,30,9
+	.half	.L178-.L26
+	.byte	1,5,1,7,9
+	.half	.L96-.L178
 	.byte	3,14,1,7,9
-	.half	.L43-.L89
+	.half	.L49-.L96
 	.byte	0,1,1
-.L145:
+.L167:
 	.sdecl	'.debug_ranges',debug,cluster('BinaryImage')
 	.sect	'.debug_ranges'
-.L42:
-	.word	-1,.L29,0,.L43-.L29,0,0
+.L48:
+	.word	-1,.L35,0,.L49-.L35,0,0
 	.sdecl	'.debug_info',debug,cluster('Threshold')
 	.sect	'.debug_info'
-.L44:
+.L50:
 	.word	167
 	.half	3
-	.word	.L45
+	.word	.L51
 	.byte	4,1
 	.byte	'..\\CODE\\Src\\User_OSTU.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1,2
-	.word	.L30
+	.word	.L36
 	.byte	3
 	.byte	'Threshold',0,23,12,10
-	.word	.L46
+	.word	.L52
 	.byte	1,5,3
 	.word	Threshold
 	.byte	0
 	.sdecl	'.debug_abbrev',debug,cluster('Threshold')
 	.sect	'.debug_abbrev'
-.L45:
+.L51:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
 	.byte	0,0,0
 	.sdecl	'.debug_loc',debug,cluster('BinaryImage')
 	.sect	'.debug_loc'
-.L28:
-	.word	-1,.L29,0,.L86-.L29
+.L34:
+	.word	-1,.L35,0,.L93-.L35
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L88:
-	.word	-1,.L29,0,.L86-.L29
+.L95:
+	.word	-1,.L35,0,.L93-.L35
 	.half	1
 	.byte	84
 	.word	0,0
-.L90:
+.L97:
+	.word	-1,.L35,.L124-.L35,.L93-.L35
+	.half	5
+	.byte	144,32,157,32,0
 	.word	0,0
-.L92:
+.L99:
+	.word	-1,.L35,.L125-.L35,.L26-.L35
+	.half	1
+	.byte	81
 	.word	0,0
-.L87:
-	.word	-1,.L29,0,.L86-.L29
+.L94:
+	.word	-1,.L35,0,.L93-.L35
 	.half	1
 	.byte	100
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('GetOSTU')
 	.sect	'.debug_loc'
-.L51:
-	.word	-1,.L27,.L93-.L27,.L47-.L27
-	.half	1
-	.byte	85
-	.word	0,0
-.L26:
-	.word	-1,.L27,0,.L93-.L27
-	.half	2
-	.byte	138,0
-	.word	.L93-.L27,.L12-.L27
-	.half	3
-	.byte	138,128,2
-	.word	.L12-.L27,.L12-.L27
-	.half	2
-	.byte	138,0
-	.word	.L12-.L27,.L47-.L27
-	.half	3
-	.byte	138,128,2
-	.word	.L47-.L27,.L47-.L27
-	.half	2
-	.byte	138,0
-	.word	0,0
-.L71:
-	.word	-1,.L27,0,.L47-.L27
-	.half	3
-	.byte	145,128,126
-	.word	0,0
-.L67:
-	.word	-1,.L27,.L96-.L27,.L47-.L27
-	.half	1
-	.byte	87
-	.word	0,0
-.L61:
-	.word	-1,.L27,.L105-.L27,.L106-.L27
-	.half	1
-	.byte	95
-	.word	0,0
-.L62:
-	.word	-1,.L27,.L108-.L27,.L109-.L27
-	.half	5
-	.byte	144,32,157,32,0
-	.word	0,0
-.L66:
-	.word	-1,.L27,.L95-.L27,.L47-.L27
-	.half	1
-	.byte	86
-	.word	0,0
-.L59:
-	.word	-1,.L27,.L104-.L27,.L18-.L27
-	.half	1
-	.byte	91
-	.word	0,0
-.L60:
-	.word	-1,.L27,.L107-.L27,.L18-.L27
-	.half	1
-	.byte	92
-	.word	0,0
-.L52:
-	.word	-1,.L27,.L99-.L27,.L18-.L27
-	.half	1
-	.byte	82
-	.word	0,0
 .L57:
-	.word	-1,.L27,.L100-.L27,.L101-.L27
-	.half	1
-	.byte	81
-	.word	0,0
-.L54:
-	.word	-1,.L27,.L80-.L27,.L47-.L27
-	.half	1
-	.byte	89
-	.word	0,0
-.L53:
-	.word	-1,.L27,.L100-.L27,.L18-.L27
+	.word	-1,.L33,.L101-.L33,.L53-.L33
 	.half	1
 	.byte	83
 	.word	0,0
-.L56:
-	.word	-1,.L27,.L102-.L27,.L103-.L27
-	.half	5
-	.byte	144,32,157,32,0
+.L32:
+	.word	-1,.L33,0,.L100-.L33
+	.half	2
+	.byte	138,0
+	.word	.L100-.L33,.L16-.L33
+	.half	3
+	.byte	138,128,2
+	.word	.L16-.L33,.L16-.L33
+	.half	2
+	.byte	138,0
+	.word	.L16-.L33,.L53-.L33
+	.half	3
+	.byte	138,128,2
+	.word	.L53-.L33,.L53-.L33
+	.half	2
+	.byte	138,0
 	.word	0,0
-.L64:
-	.word	-1,.L27,.L110-.L27,.L18-.L27
-	.half	5
-	.byte	144,32,157,32,0
+.L77:
+	.word	-1,.L33,0,.L53-.L33
+	.half	3
+	.byte	145,128,126
 	.word	0,0
-.L63:
-	.word	-1,.L27,.L83-.L27,.L47-.L27
+.L73:
+	.word	-1,.L33,.L107-.L33,.L53-.L33
 	.half	1
 	.byte	88
 	.word	0,0
-.L69:
-	.word	-1,.L27,.L94-.L27,.L47-.L27
+.L67:
+	.word	-1,.L33,.L118-.L33,.L119-.L33
 	.half	1
-	.byte	84
+	.byte	95
 	.word	0,0
-.L77:
-	.word	0,0
-.L73:
-	.word	0,0
-.L75:
-	.word	0,0
-.L79:
-	.word	-1,.L27,.L97-.L27,.L17-.L27
+.L68:
+	.word	-1,.L33,.L120-.L33,.L121-.L33
 	.half	5
 	.byte	144,32,157,32,0
 	.word	0,0
-.L82:
-	.word	-1,.L27,.L98-.L27,.L19-.L27
+.L72:
+	.word	-1,.L33,.L106-.L33,.L53-.L33
 	.half	1
 	.byte	81
 	.word	0,0
-.L85:
+.L65:
+	.word	-1,.L33,.L113-.L33,.L22-.L33
+	.half	1
+	.byte	91
 	.word	0,0
-.L49:
-	.word	-1,.L27,0,.L47-.L27
+.L66:
+	.word	-1,.L33,.L114-.L33,.L22-.L33
+	.half	1
+	.byte	87
+	.word	0,0
+.L58:
+	.word	-1,.L33,.L110-.L33,.L22-.L33
+	.half	1
+	.byte	84
+	.word	0,0
+.L63:
+	.word	-1,.L33,.L111-.L33,.L112-.L33
+	.half	1
+	.byte	82
+	.word	0,0
+.L60:
+	.word	-1,.L33,.L87-.L33,.L53-.L33
+	.half	1
+	.byte	89
+	.word	0,0
+.L59:
+	.word	-1,.L33,.L115-.L33,.L22-.L33
+	.half	1
+	.byte	85
+	.word	0,0
+.L62:
+	.word	-1,.L33,.L116-.L33,.L117-.L33
+	.half	5
+	.byte	144,32,157,32,0
+	.word	0,0
+.L70:
+	.word	-1,.L33,.L122-.L33,.L22-.L33
+	.half	5
+	.byte	144,32,157,32,0
+	.word	0,0
+.L69:
+	.word	-1,.L33,.L90-.L33,.L53-.L33
+	.half	1
+	.byte	90
+	.word	0,0
+.L75:
+	.word	-1,.L33,.L78-.L33,.L53-.L33
+	.half	1
+	.byte	86
+	.word	.L123-.L33,.L53-.L33
+	.half	1
+	.byte	82
+	.word	0,0
+.L84:
+	.word	-1,.L33,.L105-.L33,.L4-.L33
+	.half	1
+	.byte	81
+	.word	0,0
+.L80:
+	.word	-1,.L33,.L102-.L33,.L5-.L33
+	.half	1
+	.byte	95
+	.word	0,0
+.L82:
+	.word	-1,.L33,.L103-.L33,.L104-.L33
+	.half	5
+	.byte	144,32,157,32,0
+	.word	0,0
+.L86:
+	.word	-1,.L33,.L108-.L33,.L109-.L33
+	.half	1
+	.byte	95
+	.word	0,0
+.L89:
+	.word	-1,.L33,.L109-.L33,.L23-.L33
+	.half	1
+	.byte	95
+	.word	0,0
+.L92:
+	.word	0,0
+.L55:
+	.word	-1,.L33,0,.L53-.L33
 	.half	1
 	.byte	100
 	.word	0,0
 	.sdecl	'.debug_frame',debug
 	.sect	'.debug_frame'
-.L152:
+.L179:
 	.word	48
 	.word	-1
 	.byte	3,0,2,1,27,12,26,0,8,27,8,26,8,28,8,29,8,30,8,31,8,34,8,35,8,32,8,33,8,16,8,17,8,24,8,25,8,36,8,37,8,38
 	.byte	8,39
 	.sdecl	'.debug_frame',debug,cluster('GetOSTU')
 	.sect	'.debug_frame'
-	.word	60
-	.word	.L152,.L27,.L47-.L27
-	.byte	8,19,8,23,4
-	.word	(.L93-.L27)/2
+	.word	68
+	.word	.L179,.L33,.L53-.L33
+	.byte	8,18,8,19,8,21,8,22,8,23,4
+	.word	(.L100-.L33)/2
 	.byte	19,128,2,22,26,4,19,138,128,2,4
-	.word	(.L12-.L93)/2
+	.word	(.L16-.L100)/2
 	.byte	19,0,8,26,19,128,2,22,26,4,19,138,128,2,4
-	.word	(.L47-.L12)/2
-	.byte	19,0,8,26,0
+	.word	(.L53-.L16)/2
+	.byte	19,0,8,26,0,0,0
 	.sdecl	'.debug_frame',debug,cluster('BinaryImage')
 	.sect	'.debug_frame'
-	.word	20
-	.word	.L152,.L29,.L86-.L29
-	.byte	8,19,8,22,8,23,0,0
+	.word	24
+	.word	.L179,.L35,.L93-.L35
+	.byte	8,18,8,19,8,21,8,22,8,23,0,0
 
 ; ..\CODE\Src\User_OSTU.c	   120  
 

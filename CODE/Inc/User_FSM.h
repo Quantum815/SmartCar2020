@@ -17,7 +17,6 @@ enum CarState  //状态
     Stop,
     GoLine,
 	InGarage
-    //如果出现新的代码加入在此
 };
 
 enum CarEvent  //事件
@@ -25,9 +24,7 @@ enum CarEvent  //事件
 	NOEVENT,
     RUNSTART,
     RUNSTOP,
-	GOCROSS,
-	INGARAGE
-    //如果出现新的代码加入在此
+	FINDZEBRA
 };
 
 typedef struct FSMTable{
@@ -50,9 +47,7 @@ extern FSM_t CarFSM;
 void RunStart(void);
 void RunStop(void);
 void FindLine(void);
-void PassCross(void);
 void GoGarage(void);
-void ADCulMidLine(void);
 
 void FSMRegist(FSM_t *fsm, FSMTable_t *fsmtable);
 void FSMStateTransfer(FSM_t *fsm, int state);

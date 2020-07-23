@@ -1,6 +1,6 @@
 	; Module start
 	.compiler_version	"TASKING VX-toolset for TriCore: C compiler v6.3r1 Build 19041558 SN 99294086"
-	.compiler_invocation	"ctc --dep-file=Libraries\\seekfree_peripheral\\.SEEKFREE_IIC.o.d --fp-model=c,f,l,n,r,S,T,z -D__CPU__=tc26x -D__CPU_TC26X__ --core=tc1.6.x --iso=99 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\CODE -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Build -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Impl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Lib -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Lib\\DataHandling -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Lib\\InternalMux -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_PinMap -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Asc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Lin -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Spi -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\Icu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\PwmBc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\PwmHl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\TimerWithTrigger -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\TPwm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cif -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cif\\Cam -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cif\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\CStart -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Irq -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Trap -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dma -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dma\\Dma -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dma\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc\\Dsadc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc\\Rdc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dts -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dts\\Dts -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dts\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Emem -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Emem\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eray -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eray\\Eray -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eray\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eth -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eth\\Phy_Pef7071 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eth\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fce -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fce\\Crc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fce\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fft -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fft\\Fft -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fft\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Flash -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Flash\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gpt12 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gpt12\\IncrEnc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gpt12\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom\\Pwm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom\\PwmHl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tim -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tim\\In -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom\\Pwm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom\\PwmHl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Trig -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Hssl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Hssl\\Hssl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Hssl\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\I2c -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\I2c\\I2c -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\I2c\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Iom -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Iom\\Driver -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Iom\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Msc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Msc\\Msc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Msc\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Mtu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Mtu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Multican -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Multican\\Can -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Multican\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Port -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Port\\Io -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Port\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5\\Psi5 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5s -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5s\\Psi5s -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5s\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi\\SpiMaster -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi\\SpiSlave -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Scu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Scu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Sent -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Sent\\Sent -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Sent\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Smu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Smu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Src -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Src\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Stm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Stm\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Stm\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Vadc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Vadc\\Adc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Vadc\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Platform -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Platform\\Tricore -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Platform\\Tricore\\Compilers -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Sfr -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Sfr\\TC26B -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Sfr\\TC26B\\_Reg -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Service -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Service\\CpuGeneric -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\seekfree_libraries -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\seekfree_libraries\\common -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\seekfree_peripheral -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\USER -g2 -wW557 --make-target=Libraries\\seekfree_peripheral\\SEEKFREE_IIC.o -t4 --language=-gcc,-volatile,+strings,-kanji --default-near-size=0 -O2 --default-a1-size=0 --default-a0-size=0 --source --align=0 --compact-max-size=200 --switch=auto --error-limit=42 -o Libraries\\seekfree_peripheral\\SEEKFREE_IIC.src ..\\Libraries\\seekfree_peripheral\\SEEKFREE_IIC.c"
+	.compiler_invocation	"ctc --dep-file=Libraries\\seekfree_peripheral\\.SEEKFREE_IIC.o.d --fp-model=c,f,l,n,r,S,T,z -D__CPU__=tc26x -D__CPU_TC26X__ --core=tc1.6.x --iso=99 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\CODE -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Build -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Impl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Lib -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Lib\\DataHandling -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Lib\\InternalMux -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_PinMap -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Asc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Lin -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Spi -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\Icu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\PwmBc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\PwmHl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\TimerWithTrigger -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\TPwm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cif -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cif\\Cam -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cif\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\CStart -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Irq -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Trap -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dma -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dma\\Dma -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dma\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc\\Dsadc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc\\Rdc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dts -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dts\\Dts -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dts\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Emem -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Emem\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eray -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eray\\Eray -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eray\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eth -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eth\\Phy_Pef7071 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eth\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fce -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fce\\Crc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fce\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fft -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fft\\Fft -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fft\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Flash -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Flash\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gpt12 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gpt12\\IncrEnc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gpt12\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom\\Pwm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom\\PwmHl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tim -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tim\\In -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom\\Pwm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom\\PwmHl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Trig -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Hssl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Hssl\\Hssl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Hssl\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\I2c -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\I2c\\I2c -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\I2c\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Iom -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Iom\\Driver -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Iom\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Msc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Msc\\Msc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Msc\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Mtu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Mtu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Multican -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Multican\\Can -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Multican\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Port -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Port\\Io -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Port\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5\\Psi5 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5s -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5s\\Psi5s -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5s\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi\\SpiMaster -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi\\SpiSlave -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Scu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Scu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Sent -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Sent\\Sent -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Sent\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Smu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Smu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Src -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Src\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Stm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Stm\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Stm\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Vadc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Vadc\\Adc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Vadc\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Platform -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Platform\\Tricore -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Platform\\Tricore\\Compilers -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Sfr -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Sfr\\TC26B -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Sfr\\TC26B\\_Reg -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Service -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Service\\CpuGeneric -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\seekfree_libraries -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\seekfree_libraries\\common -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\seekfree_peripheral -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\USER -g2 -wW557 --make-target=Libraries\\seekfree_peripheral\\SEEKFREE_IIC.o -t4 --language=-gcc,-volatile,+strings,-kanji --default-near-size=0 -O1 --default-a1-size=0 --default-a0-size=0 --source --align=0 --switch=auto --error-limit=42 -o Libraries\\seekfree_peripheral\\SEEKFREE_IIC.src ..\\Libraries\\seekfree_peripheral\\SEEKFREE_IIC.c"
 	.compiler_name		"ctc"
 	;source	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_IIC.c'
 
@@ -76,23 +76,23 @@ $TC16X
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	    61  //-------------------------------------------------------------------------------------------------------------------
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	    62  void simiic_delay_set(uint16 time)
 ; Function simiic_delay_set
-.L18:
+.L20:
 simiic_delay_set:	.type	func
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	    63  {
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	    64      simiic_delay_time = time;           //ICM等传感器应设置为100
 	movh.a	a15,#@his(simiic_delay_time)
-.L190:
+.L211:
 	st.h	[a15]@los(simiic_delay_time),d4
-.L191:
+.L212:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	    65  }
 	ret
-.L115:
+.L117:
 	
 __simiic_delay_set_function_end:
 	.size	simiic_delay_set,__simiic_delay_set_function_end-simiic_delay_set
-.L49:
+.L51:
 	; End of function
 	
 	.sdecl	'.text.SEEKFREE_IIC.simiic_delay',code,cluster('simiic_delay')
@@ -109,7 +109,7 @@ __simiic_delay_set_function_end:
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	    71  //-------------------------------------------------------------------------------------------------------------------
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	    72  void simiic_delay(void)
 ; Function simiic_delay
-.L20:
+.L22:
 simiic_delay:	.type	func
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	    73  {
@@ -118,11 +118,11 @@ simiic_delay:	.type	func
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	    76  	while(delay_time--);
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	    77  }
 	ret
-.L146:
+.L148:
 	
 __simiic_delay_function_end:
 	.size	simiic_delay,__simiic_delay_function_end-simiic_delay
-.L94:
+.L96:
 	; End of function
 	
 	.sdecl	'.text.SEEKFREE_IIC.simiic_start',code,cluster('simiic_start')
@@ -136,47 +136,45 @@ __simiic_delay_function_end:
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	    80  //内部使用，用户无需调用
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	    81  void simiic_start(void)
 ; Function simiic_start
-.L22:
+.L24:
 simiic_start:	.type	func
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	    82  {
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	    83  	SDA1();
-	mov	d15,#355
+	mov	d4,#355
 	mov	d5,#1
-	mov	d4,d15
 	call	gpio_set
-.L196:
+.L217:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	    84  	SCL1();
-	mov	d8,#354
+	mov	d4,#354
 	mov	d5,#1
-	mov	d4,d8
 	call	gpio_set
-.L197:
+.L218:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	    85  	simiic_delay();
 	call	simiic_delay
-.L198:
+.L219:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	    86  	SDA0();
+	mov	d4,#355
 	mov	d5,#0
-	mov	d4,d15
 	call	gpio_set
-.L199:
+.L220:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	    87  	simiic_delay();
 	call	simiic_delay
-.L200:
+.L221:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	    88  	SCL0();
+	mov	d4,#354
 	mov	d5,#0
-	mov	d4,d8
 	j	gpio_set
-.L118:
+.L120:
 	
 __simiic_start_function_end:
 	.size	simiic_start,__simiic_start_function_end-simiic_start
-.L54:
+.L56:
 	; End of function
 	
 	.sdecl	'.text.SEEKFREE_IIC.simiic_stop',code,cluster('simiic_stop')
@@ -190,51 +188,49 @@ __simiic_start_function_end:
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	    91  //内部使用，用户无需调用
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	    92  void simiic_stop(void)
 ; Function simiic_stop
-.L24:
+.L26:
 simiic_stop:	.type	func
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	    93  {
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	    94  	SDA0();
-	mov	d15,#355
+	mov	d4,#355
 	mov	d5,#0
-	mov	d4,d15
 	call	gpio_set
-.L205:
+.L226:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	    95  	SCL0();
-	mov	d8,#354
+	mov	d4,#354
 	mov	d5,#0
-	mov	d4,d8
 	call	gpio_set
-.L206:
+.L227:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	    96  	simiic_delay();
 	call	simiic_delay
-.L207:
+.L228:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	    97  	SCL1();
+	mov	d4,#354
 	mov	d5,#1
-	mov	d4,d8
 	call	gpio_set
-.L208:
+.L229:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	    98  	simiic_delay();
 	call	simiic_delay
-.L209:
+.L230:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	    99  	SDA1();
+	mov	d4,#355
 	mov	d5,#1
-	mov	d4,d15
 	call	gpio_set
-.L210:
+.L231:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   100  	simiic_delay();
 	j	simiic_delay
-.L119:
+.L121:
 	
 __simiic_stop_function_end:
 	.size	simiic_stop,__simiic_stop_function_end-simiic_stop
-.L59:
+.L61:
 	; End of function
 	
 	.sdecl	'.text.SEEKFREE_IIC.simiic_sendack',code,cluster('simiic_sendack')
@@ -249,55 +245,62 @@ __simiic_stop_function_end:
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   104  //内部使用，用户无需调用
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   105  void simiic_sendack(unsigned char ack_dat)
 ; Function simiic_sendack
-.L26:
+.L28:
 simiic_sendack:	.type	func
 	mov	d15,d4
-.L152:
+.L154:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   106  {
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   107      SCL0();
-	mov	d8,#354
+	mov	d4,#354
+.L153:
 	mov	d5,#0
-	mov	d4,d8
 	call	gpio_set
-.L151:
+.L307:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   108  	simiic_delay();
 	call	simiic_delay
-.L285:
-	mov	d4,#355
-.L286:
+.L308:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   109  	if(ack_dat) SDA0();
+	jeq	d15,#0,.L2
+.L309:
+	mov	d5,#0
+.L310:
+	j	.L3
+.L2:
+
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   110      else    	SDA1();
-	eq	d5,d15,#0
+	mov	d5,#1
+.L3:
+	mov	d4,#355
 	call	gpio_set
-.L287:
+.L311:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   111  
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   112      SCL1();
+	mov	d4,#354
 	mov	d5,#1
-	mov	d4,d8
 	call	gpio_set
-.L288:
+.L312:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   113      simiic_delay();
 	call	simiic_delay
-.L289:
+.L313:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   114      SCL0();
+	mov	d4,#354
 	mov	d5,#0
-	mov	d4,d8
 	call	gpio_set
-.L290:
+.L314:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   115      simiic_delay();
 	j	simiic_delay
-.L147:
+.L149:
 	
 __simiic_sendack_function_end:
 	.size	simiic_sendack,__simiic_sendack_function_end-simiic_sendack
-.L99:
+.L101:
 	; End of function
 	
 	.sdecl	'.text.SEEKFREE_IIC.sccb_waitack',code,cluster('sccb_waitack')
@@ -310,90 +313,91 @@ __simiic_sendack_function_end:
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   118  
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   119  static int sccb_waitack(void)
 ; Function sccb_waitack
-.L28:
+.L30:
 sccb_waitack:	.type	func
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   120  {
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   121      SCL0();
-	mov	d15,#354
+	mov	d4,#354
 	mov	d5,#0
-	mov	d4,d15
 	call	gpio_set
-.L295:
+.L319:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   122  	DIR_IN();
-	mov	d8,#355
+	mov	d4,#355
 	mov	d5,#0
 	mov	d6,d5
-	mov	d4,d8
 	call	gpio_dir
-.L296:
+.L320:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   123  	simiic_delay();
 	call	simiic_delay
-.L297:
+.L321:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   124  	
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   125  	SCL1();
+	mov	d4,#354
 	mov	d5,#1
-	mov	d4,d15
 	call	gpio_set
-.L298:
+.L322:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   126      simiic_delay();
 	call	simiic_delay
-.L299:
+.L323:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   127  	
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   128      if(SDA)           //应答为高电平，异常，通信失败
-	mov	d4,d8
+	mov	d4,#355
 	call	gpio_get
-.L300:
+.L324:
 	jeq	d2,#0,.L4
-.L301:
+.L325:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   129      {
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   130          DIR_OUT();
+	mov	d4,#355
 	mov	d5,#1
 	mov	d6,#3
-	mov	d4,d8
 	call	gpio_dir
-.L302:
+.L326:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   131          SCL0();
+	mov	d4,#354
 	mov	d5,#0
-	mov	d4,d15
 	call	gpio_set
-.L303:
+.L327:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   132          return 0;
+	mov	d2,#0
+.L328:
+
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   133      }
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   134      DIR_OUT();
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   135      SCL0();
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   136  	simiic_delay();
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   137      return 1;
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   138  }
-	mov	d2,#0
 	ret
 .L4:
+	mov	d4,#355
 	mov	d5,#1
 	mov	d6,#3
-	mov	d4,d8
 	call	gpio_dir
-.L304:
+.L329:
+	mov	d4,#354
 	mov	d5,#0
-	mov	d4,d15
 	call	gpio_set
-.L305:
+.L330:
 	call	simiic_delay
-.L306:
+.L331:
 	mov	d2,#1
+.L332:
 	ret
-.L150:
+.L152:
 	
 __sccb_waitack_function_end:
 	.size	sccb_waitack,__sccb_waitack_function_end-sccb_waitack
-.L104:
+.L106:
 	; End of function
 	
 	.sdecl	'.text.SEEKFREE_IIC.send_ch',code,cluster('send_ch')
@@ -409,70 +413,74 @@ __sccb_waitack_function_end:
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   143  //内部使用，用户无需调用
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   144  void send_ch(uint8 c)
 ; Function send_ch
-.L30:
+.L32:
 send_ch:	.type	func
 	mov	d8,d4
-.L153:
+.L155:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   145  {
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   146  	uint8 i = 8;
 	mov	d15,#8
+.L157:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   147      while(i--)
-.L7:
+	j	.L7
+.L8:
 	add	d15,#-1
-.L155:
-	extr.u	d15,d15,#0,#8
-.L156:
+.L236:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   148      {
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   149          if(c & 0x80)	SDA1();//SDA 输出数据
-	and	d0,d8,#128
-	ne	d5,d0,#0
-.L215:
+	jz.t	d8:7,.L9
+.L237:
+	mov	d5,#1
+.L238:
+	j	.L10
+.L9:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   150          else			SDA0();
+	mov	d5,#0
+.L10:
 	mov	d4,#355
 	call	gpio_set
-.L216:
+.L239:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   151          c <<= 1;
 	sha	d8,#1
-.L154:
+.L156:
+	extr.u	d8,d8,#0,#8
+.L158:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   152          simiic_delay();
-	extr.u	d8,d8,#0,#8
 	call	simiic_delay
-.L157:
+.L240:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   153          SCL1();                //SCL 拉高，采集信号
-	mov	d5,#1
-.L217:
 	mov	d4,#354
+	mov	d5,#1
 	call	gpio_set
-.L218:
+.L241:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   154          simiic_delay();
 	call	simiic_delay
-.L219:
+.L242:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   155          SCL0();                //SCL 时钟线拉低
-	mov	d5,#0
-.L220:
 	mov	d4,#354
+	mov	d5,#0
 	call	gpio_set
-.L221:
-	jne	d15,#0,.L7
-.L222:
+.L7:
+	jne	d15,#0,.L8
+.L243:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   156      }
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   157  	sccb_waitack();
 	j	sccb_waitack
-.L120:
+.L122:
 	
 __send_ch_function_end:
 	.size	send_ch,__send_ch_function_end-send_ch
-.L64:
+.L66:
 	; End of function
 	
 	.sdecl	'.text.SEEKFREE_IIC.read_ch',code,cluster('read_ch')
@@ -488,124 +496,135 @@ __send_ch_function_end:
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   162  //内部使用，用户无需调用
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   163  uint8 read_ch(uint8 ack_x)
 ; Function read_ch
-.L32:
+.L34:
 read_ch:	.type	func
 	mov	d8,d4
-.L159:
+.L160:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   164  {
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   165      uint8 i;
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   166      uint8 c;
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   167      c=0;
 	mov	d15,#0
-.L160:
+.L161:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   168      SCL0();
-	mov	d9,#354
-	mov	e4,d15,d9
+	mov	d4,#354
+.L159:
+	mov	d5,d15
+.L163:
 	call	gpio_set
-.L158:
+.L164:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   169      simiic_delay();
 	call	simiic_delay
-.L227:
+.L248:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   170      SDA1();             
-	mov	d10,#355
+	mov	d4,#355
 	mov	d5,#1
-	mov	d4,d10
 	call	gpio_set
-.L228:
+.L249:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   171      DIR_IN();           //置数据线为输入方式
+	mov	d4,#355
 	mov	d5,#0
 	mov	d6,d5
-	mov	d4,d10
 	call	gpio_dir
-.L229:
+.L250:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   172      for(i=0;i<8;i++)
-	mov.a	a15,#7
-.L10:
+	mov	d9,#0
+.L165:
+	j	.L11
+.L12:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   173      {
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   174          simiic_delay();
 	call	simiic_delay
-.L230:
+.L251:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   175          SCL0();         //置时钟线为低，准备接收数据位
+	mov	d4,#354
 	mov	d5,#0
-	mov	d4,d9
 	call	gpio_set
-.L231:
+.L252:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   176          simiic_delay();
 	call	simiic_delay
-.L232:
+.L253:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   177          SCL1();         //置时钟线为高，使数据线上数据有效
+	mov	d4,#354
 	mov	d5,#1
-	mov	d4,d9
 	call	gpio_set
-.L233:
+.L254:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   178          simiic_delay();
 	call	simiic_delay
-.L234:
+.L255:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   179          c<<=1;
 	sha	d15,#1
-.L161:
-	extr.u	d15,d15,#0,#8
 .L162:
+	extr.u	d15,d15,#0,#8
+.L166:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   180          if(SDA) 
-	mov	d4,d10
+	mov	d4,#355
 	call	gpio_get
-.L235:
+.L256:
+	ne	d0,d2,#0
+.L257:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   181          {
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   182              c+=1;   //读数据位，将接收的数据存c
-	cadd	d15,d2,d15,#1
-.L163:
+	add	d15,d0
+.L167:
 	extr.u	d15,d15,#0,#8
-	loop	a15,.L10
-.L164:
+.L168:
+	add	d9,#1
+.L11:
+	jlt.u	d9,#8,.L12
+.L258:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   183          }
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   184      }
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   185      DIR_OUT();
+	mov	d4,#355
 	mov	d5,#1
 	mov	d6,#3
-	mov	d4,d10
 	call	gpio_dir
-.L236:
+.L259:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   186  	SCL0();
+	mov	d4,#354
 	mov	d5,#0
-	mov	d4,d9
 	call	gpio_set
-.L237:
+.L260:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   187  	simiic_delay();
 	call	simiic_delay
-.L238:
+.L261:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   188  	simiic_sendack(ack_x);
 	mov	d4,d8
+.L169:
 	call	simiic_sendack
-.L239:
+.L170:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   189  	
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   190      return c;
-; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   191  }
 	mov	d2,d15
+.L171:
+
+; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   191  }
 	ret
-.L124:
+.L126:
 	
 __read_ch_function_end:
 	.size	read_ch,__read_ch_function_end-read_ch
-.L69:
+.L71:
 	; End of function
 	
 	.sdecl	'.text.SEEKFREE_IIC.simiic_write_reg',code,cluster('simiic_write_reg')
@@ -626,41 +645,44 @@ __read_ch_function_end:
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   201  //-------------------------------------------------------------------------------------------------------------------
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   202  void simiic_write_reg(uint8 dev_add, uint8 reg, uint8 dat)
 ; Function simiic_write_reg
-.L34:
+.L36:
 simiic_write_reg:	.type	func
 	mov	d15,d4
-.L166:
+.L173:
+	mov	e8,d6,d5
+.L266:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   203  {
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   204  	simiic_start();
-	mov	e8,d6,d5
 	call	simiic_start
-.L165:
+.L172:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   205      send_ch( (dev_add<<1) | 0x00);   //发送器件地址加写位
 	sha	d15,#1
-.L167:
+.L174:
 	extr.u	d4,d15,#0,#8
 	call	send_ch
-.L168:
+.L175:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   206  	send_ch( reg );   				 //发送从机寄存器地址
 	mov	d4,d8
+.L176:
 	call	send_ch
-.L169:
+.L177:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   207  	send_ch( dat );   				 //发送需要写入的数据
 	mov	d4,d9
+.L178:
 	call	send_ch
-.L170:
+.L179:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   208  	simiic_stop();
 	j	simiic_stop
-.L128:
+.L130:
 	
 __simiic_write_reg_function_end:
 	.size	simiic_write_reg,__simiic_write_reg_function_end-simiic_write_reg
-.L74:
+.L76:
 	; End of function
 	
 	.sdecl	'.text.SEEKFREE_IIC.simiic_read_reg',code,cluster('simiic_read_reg')
@@ -683,67 +705,73 @@ __simiic_write_reg_function_end:
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   220  //-------------------------------------------------------------------------------------------------------------------
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   221  uint8 simiic_read_reg(uint8 dev_add, uint8 reg, IIC_type type)
 ; Function simiic_read_reg
-.L36:
+.L38:
 simiic_read_reg:	.type	func
 	mov	e8,d5,d4
-.L248:
+	mov	d15,d6
+.L181:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   222  {
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   223  	uint8 dat;
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   224  	simiic_start();
-	mov	d10,d6
 	call	simiic_start
-.L171:
+.L180:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   225      send_ch( (dev_add<<1) | 0x00);  //发送器件地址加写位
-	sha	d8,#1
-.L249:
-	extr.u	d15,d8,#0,#8
-	mov	d4,d15
+	sha	d0,d8,#1
+.L183:
+	extr.u	d4,d0,#0,#8
 	call	send_ch
-.L172:
+.L184:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   226  	send_ch( reg );   				//发送从机寄存器地址
 	mov	d4,d9
+.L185:
 	call	send_ch
-.L173:
+.L186:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   227  	if(type == SCCB)simiic_stop();
-	jne	d10,#1,.L12
-.L250:
+	jne	d15,#1,.L14
+.L271:
 	call	simiic_stop
-.L12:
+.L14:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   228  	
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   229  	simiic_start();
 	call	simiic_start
-.L251:
+.L272:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   230  	send_ch( (dev_add<<1) | 0x01);  //发送器件地址加读位
+	sha	d8,#1
+	extr.u	d15,d8,#0,#8
+.L182:
 	or	d4,d15,#1
 	call	send_ch
-.L252:
+.L273:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   231  	dat = read_ch(no_ack);   				//读取数据
 	mov	d4,#0
 	call	read_ch
-.L174:
+.L187:
+	mov	d15,d2
+.L189:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   232  	simiic_stop();
-	mov	d15,d2
 	call	simiic_stop
-.L175:
+.L188:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   233  	
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   234  	return dat;
-; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   235  }
 	mov	d2,d15
+.L190:
+
+; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   235  }
 	ret
-.L132:
+.L134:
 	
 __simiic_read_reg_function_end:
 	.size	simiic_read_reg,__simiic_read_reg_function_end-simiic_read_reg
-.L79:
+.L81:
 	; End of function
 	
 	.sdecl	'.text.SEEKFREE_IIC.simiic_read_regs',code,cluster('simiic_read_regs')
@@ -766,85 +794,93 @@ __simiic_read_reg_function_end:
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   247  //-------------------------------------------------------------------------------------------------------------------
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   248  void simiic_read_regs(uint8 dev_add, uint8 reg, uint8 *dat_add, uint8 num, IIC_type type)
 ; Function simiic_read_regs
-.L38:
+.L40:
 simiic_read_regs:	.type	func
 	mov	d8,d4
-.L177:
+.L192:
 	mov	d10,d5
+.L194:
 	mov.aa	a15,a4
-.L179:
+.L195:
 	mov	d9,d6
-.L180:
+.L196:
+	mov	d15,d7
+.L198:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   249  {
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   250  	simiic_start();
-	mov	d11,d7
 	call	simiic_start
-.L176:
+.L191:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   251      send_ch( (dev_add<<1) | 0x00);  //发送器件地址加写位
-	sha	d8,#1
-.L178:
-	extr.u	d15,d8,#0,#8
-	mov	d4,d15
+	sha	d0,d8,#1
+.L278:
+	extr.u	d4,d0,#0,#8
 	call	send_ch
-.L257:
+.L279:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   252  	send_ch( reg );   				//发送从机寄存器地址
 	mov	d4,d10
+.L200:
 	call	send_ch
-.L258:
+.L201:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   253  	if(type == SCCB)simiic_stop();
-	jne	d11,#1,.L14
-.L259:
+	jne	d15,#1,.L16
+.L280:
 	call	simiic_stop
-.L14:
+.L16:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   254  	
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   255  	simiic_start();
 	call	simiic_start
-.L260:
+.L281:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   256  	send_ch( (dev_add<<1) | 0x01);  //发送器件地址加读位
+	sha	d8,#1
+.L193:
+	extr.u	d15,d8,#0,#8
+.L199:
 	or	d4,d15,#1
 	call	send_ch
-.L261:
+.L282:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   257      while(--num)
 	add	d9,#-1
-.L181:
+.L197:
 	extr.u	d15,d9,#0,#8
-	j	.L15
-.L16:
+.L202:
+	j	.L17
+.L18:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   258      {
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   259          *dat_add = read_ch(ack); //读取数据
 	mov	d4,#1
 	call	read_ch
-.L262:
-	add	d15,#-1
+.L283:
 	st.b	[a15+],d2
-.L15:
-	jne	d15,#0,.L16
-.L263:
+.L284:
+	add	d15,#-1
+.L17:
+	jne	d15,#0,.L18
+.L285:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   260          dat_add++;
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   261      }
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   262      *dat_add = read_ch(no_ack); //读取数据
 	mov	d4,#0
 	call	read_ch
-.L264:
+.L286:
 	st.b	[a15],d2
-.L265:
+.L287:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   263  	simiic_stop();
 	j	simiic_stop
-.L138:
+.L140:
 	
 __simiic_read_regs_function_end:
 	.size	simiic_read_regs,__simiic_read_regs_function_end-simiic_read_regs
-.L84:
+.L86:
 	; End of function
 	
 	.sdecl	'.text.SEEKFREE_IIC.simiic_init',code,cluster('simiic_init')
@@ -865,35 +901,35 @@ __simiic_read_regs_function_end:
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   273  //-------------------------------------------------------------------------------------------------------------------
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   274  void simiic_init(void)
 ; Function simiic_init
-.L40:
+.L42:
 simiic_init:	.type	func
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   275  {
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   276  	gpio_init (SEEKFREE_SCL, GPO, 1, PUSHPULL);
 	mov	d4,#354
-.L270:
+.L292:
 	mov	d5,#1
-.L271:
+.L293:
 	mov	d6,d5
-.L272:
+.L294:
 	mov	d7,#3
 	call	gpio_init
-.L273:
+.L295:
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   277  	gpio_init (SEEKFREE_SDA, GPO, 1, PUSHPULL);
 	mov	d4,#355
-.L274:
+.L296:
 	mov	d5,#1
-.L275:
+.L297:
 	mov	d6,d5
-.L276:
+.L298:
 	mov	d7,#3
 	j	gpio_init
-.L145:
+.L147:
 	
 __simiic_init_function_end:
 	.size	simiic_init,__simiic_init_function_end-simiic_init
-.L89:
+.L91:
 	; End of function
 	
 	.sdecl	'.bss.SEEKFREE_IIC.IIC_ad_main',data,cluster('IIC_ad_main')
@@ -976,17 +1012,17 @@ simiic_delay_time:	.type	object
 	.calls	'simiic_init','',0
 	.sdecl	'.debug_info',debug
 	.sect	'.debug_info'
-.L42:
+.L44:
 	.word	38589
 	.half	3
-	.word	.L43
+	.word	.L45
 	.byte	4
-.L41:
+.L43:
 	.byte	1
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_IIC.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L44
+	.word	.L46
 	.byte	2,1,1,3
 	.word	168
 	.byte	4
@@ -1020,13 +1056,13 @@ simiic_delay_time:	.type	object
 	.word	282
 	.byte	6,0,7
 	.byte	'unsigned int',0,4,7
-.L149:
+.L151:
 	.byte	7
 	.byte	'int',0,4,5
-.L121:
+.L123:
 	.byte	7
 	.byte	'unsigned char',0,1,8
-.L116:
+.L118:
 	.byte	7
 	.byte	'unsigned short int',0,2,7,10
 	.byte	'_Ifx_P_OUT_Bits',0,4,143,3,16,4,11
@@ -2687,12 +2723,12 @@ simiic_delay_time:	.type	object
 	.byte	'pinconf',0,5,56,61
 	.word	10538
 	.byte	0
-.L135:
+.L137:
 	.byte	28
 	.byte	'IIC',0,7,44,14,1,18
 	.byte	'SIMIIC',0,0,18
 	.byte	'SCCB',0,1,0
-.L141:
+.L143:
 	.byte	3
 	.word	423
 	.byte	7
@@ -6639,7 +6675,7 @@ simiic_delay_time:	.type	object
 	.byte	0
 	.sdecl	'.debug_abbrev',debug
 	.sect	'.debug_abbrev'
-.L43:
+.L45:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,16,6,0,0,2,21,0,54,15,39,12,0,0,3,15,0,73,19,0,0,4,46,1,3,8,32,13
 	.byte	58,15,59,15,57,15,54,15,39,12,0,0,5,5,0,3,8,58,15,59,15,57,15,73,19,0,0,6,11,0,0,0,7,36,0,3,8,11,15,62
 	.byte	15,0,0,8,46,1,3,8,32,13,58,15,59,15,57,15,73,19,54,15,39,12,0,0,9,59,0,3,8,0,0,10,19,1,3,8,58,15,59,15
@@ -6652,12 +6688,12 @@ simiic_delay_time:	.type	object
 	.byte	73,19,0,0,30,21,0,54,15,0,0,0
 	.sdecl	'.debug_line',debug
 	.sect	'.debug_line'
-.L44:
-	.word	.L183-.L182
-.L182:
+.L46:
+	.word	.L204-.L203
+.L203:
 	.half	3
-	.word	.L185-.L184
-.L184:
+	.word	.L206-.L205
+.L205:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Std',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Port\\Std',0
@@ -6678,455 +6714,291 @@ simiic_delay_time:	.type	object
 	.byte	'Ifx_Types.h',0,1,0,0
 	.byte	'IfxScu_cfg.h',0,6,0,0
 	.byte	'IfxScu_regdef.h',0,3,0,0,0
-.L185:
-.L183:
+.L206:
+.L204:
 	.sdecl	'.debug_info',debug,cluster('simiic_delay_set')
 	.sect	'.debug_info'
-.L45:
+.L47:
 	.word	237
 	.half	3
-	.word	.L46
+	.word	.L48
 	.byte	4,1
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_IIC.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L48,.L47
+	.word	.L50,.L49
 	.byte	2
-	.word	.L41
+	.word	.L43
 	.byte	3
 	.byte	'simiic_delay_set',0,1,62,6,1,1,1
-	.word	.L18,.L115,.L17
+	.word	.L20,.L117,.L19
 	.byte	4
 	.byte	'time',0,1,62,30
-	.word	.L116,.L117
+	.word	.L118,.L119
 	.byte	5
-	.word	.L18,.L115
+	.word	.L20,.L117
 	.byte	0,0
 	.sdecl	'.debug_abbrev',debug,cluster('simiic_delay_set')
 	.sect	'.debug_abbrev'
-.L46:
+.L48:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
 	.sdecl	'.debug_line',debug,cluster('simiic_delay_set')
 	.sect	'.debug_line'
-.L47:
-	.word	.L187-.L186
-.L186:
+.L49:
+	.word	.L208-.L207
+.L207:
 	.half	3
-	.word	.L189-.L188
-.L188:
+	.word	.L210-.L209
+.L209:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_IIC.c',0,0,0,0,0
-.L189:
+.L210:
 	.byte	5,5,7,0,5,2
-	.word	.L18
+	.word	.L20
 	.byte	3,63,1,5,23,9
-	.half	.L190-.L18
+	.half	.L211-.L20
 	.byte	1,5,1,9
-	.half	.L191-.L190
+	.half	.L212-.L211
 	.byte	3,1,1,7,9
-	.half	.L49-.L191
+	.half	.L51-.L212
 	.byte	0,1,1
-.L187:
+.L208:
 	.sdecl	'.debug_ranges',debug,cluster('simiic_delay_set')
 	.sect	'.debug_ranges'
-.L48:
-	.word	-1,.L18,0,.L49-.L18,0,0
+.L50:
+	.word	-1,.L20,0,.L51-.L20,0,0
 	.sdecl	'.debug_info',debug,cluster('simiic_start')
 	.sect	'.debug_info'
-.L50:
+.L52:
 	.word	216
 	.half	3
-	.word	.L51
+	.word	.L53
 	.byte	4,1
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_IIC.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L53,.L52
+	.word	.L55,.L54
 	.byte	2
-	.word	.L41
+	.word	.L43
 	.byte	3
 	.byte	'simiic_start',0,1,81,6,1,1,1
-	.word	.L22,.L118,.L21
+	.word	.L24,.L120,.L23
 	.byte	4
-	.word	.L22,.L118
+	.word	.L24,.L120
 	.byte	0,0
 	.sdecl	'.debug_abbrev',debug,cluster('simiic_start')
 	.sect	'.debug_abbrev'
-.L51:
+.L53:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
 	.sdecl	'.debug_line',debug,cluster('simiic_start')
 	.sect	'.debug_line'
-.L52:
-	.word	.L193-.L192
-.L192:
+.L54:
+	.word	.L214-.L213
+.L213:
 	.half	3
-	.word	.L195-.L194
-.L194:
+	.word	.L216-.L215
+.L215:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_IIC.c',0,0,0,0,0
-.L195:
+.L216:
 	.byte	5,2,7,0,5,2
-	.word	.L22
+	.word	.L24
 	.byte	3,210,0,1,9
-	.half	.L196-.L22
+	.half	.L217-.L24
 	.byte	3,1,1,5,14,9
-	.half	.L197-.L196
+	.half	.L218-.L217
 	.byte	3,1,1,5,2,9
-	.half	.L198-.L197
+	.half	.L219-.L218
 	.byte	3,1,1,5,14,9
-	.half	.L199-.L198
+	.half	.L220-.L219
 	.byte	3,1,1,5,2,9
-	.half	.L200-.L199
+	.half	.L221-.L220
 	.byte	3,1,1,5,1,9
-	.half	.L54-.L200
+	.half	.L56-.L221
 	.byte	3,1,0,1,1
-.L193:
+.L214:
 	.sdecl	'.debug_ranges',debug,cluster('simiic_start')
 	.sect	'.debug_ranges'
-.L53:
-	.word	-1,.L22,0,.L54-.L22,0,0
+.L55:
+	.word	-1,.L24,0,.L56-.L24,0,0
 	.sdecl	'.debug_info',debug,cluster('simiic_stop')
 	.sect	'.debug_info'
-.L55:
+.L57:
 	.word	215
 	.half	3
-	.word	.L56
+	.word	.L58
 	.byte	4,1
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_IIC.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L58,.L57
+	.word	.L60,.L59
 	.byte	2
-	.word	.L41
+	.word	.L43
 	.byte	3
 	.byte	'simiic_stop',0,1,92,6,1,1,1
-	.word	.L24,.L119,.L23
+	.word	.L26,.L121,.L25
 	.byte	4
-	.word	.L24,.L119
+	.word	.L26,.L121
 	.byte	0,0
 	.sdecl	'.debug_abbrev',debug,cluster('simiic_stop')
 	.sect	'.debug_abbrev'
-.L56:
+.L58:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
 	.sdecl	'.debug_line',debug,cluster('simiic_stop')
 	.sect	'.debug_line'
-.L57:
-	.word	.L202-.L201
-.L201:
+.L59:
+	.word	.L223-.L222
+.L222:
 	.half	3
-	.word	.L204-.L203
-.L203:
+	.word	.L225-.L224
+.L224:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_IIC.c',0,0,0,0,0
-.L204:
+.L225:
 	.byte	5,2,7,0,5,2
-	.word	.L24
+	.word	.L26
 	.byte	3,221,0,1,9
-	.half	.L205-.L24
+	.half	.L226-.L26
 	.byte	3,1,1,5,14,9
-	.half	.L206-.L205
+	.half	.L227-.L226
 	.byte	3,1,1,5,2,9
-	.half	.L207-.L206
+	.half	.L228-.L227
 	.byte	3,1,1,5,14,9
-	.half	.L208-.L207
+	.half	.L229-.L228
 	.byte	3,1,1,5,2,9
-	.half	.L209-.L208
+	.half	.L230-.L229
 	.byte	3,1,1,5,14,9
-	.half	.L210-.L209
+	.half	.L231-.L230
 	.byte	3,1,1,5,1,7,9
-	.half	.L59-.L210
+	.half	.L61-.L231
 	.byte	3,1,0,1,1
-.L202:
+.L223:
 	.sdecl	'.debug_ranges',debug,cluster('simiic_stop')
 	.sect	'.debug_ranges'
-.L58:
-	.word	-1,.L24,0,.L59-.L24,0,0
+.L60:
+	.word	-1,.L26,0,.L61-.L26,0,0
 	.sdecl	'.debug_info',debug,cluster('send_ch')
 	.sect	'.debug_info'
-.L60:
+.L62:
 	.word	243
 	.half	3
-	.word	.L61
+	.word	.L63
 	.byte	4,1
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_IIC.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L63,.L62
+	.word	.L65,.L64
 	.byte	2
-	.word	.L41
+	.word	.L43
 	.byte	3
 	.byte	'send_ch',0,1,144,1,6,1,1,1
-	.word	.L30,.L120,.L29
+	.word	.L32,.L122,.L31
 	.byte	4
 	.byte	'c',0,1,144,1,20
-	.word	.L121,.L122
+	.word	.L123,.L124
 	.byte	5
-	.word	.L30,.L120
+	.word	.L32,.L122
 	.byte	6
 	.byte	'i',0,1,146,1,8
-	.word	.L121,.L123
+	.word	.L123,.L125
 	.byte	0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('send_ch')
 	.sect	'.debug_abbrev'
-.L61:
+.L63:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3
 	.byte	8,58,15,59,15,57,15,73,16,2,6,0,0,0
 	.sdecl	'.debug_line',debug,cluster('send_ch')
 	.sect	'.debug_line'
-.L62:
-	.word	.L212-.L211
-.L211:
+.L64:
+	.word	.L233-.L232
+.L232:
 	.half	3
-	.word	.L214-.L213
-.L213:
+	.word	.L235-.L234
+.L234:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_IIC.c',0,0,0,0,0
-.L214:
+.L235:
 	.byte	5,6,7,0,5,2
-	.word	.L30
+	.word	.L32
 	.byte	3,143,1,1,5,10,9
-	.half	.L153-.L30
-	.byte	3,2,1,5,12,9
-	.half	.L7-.L153
-	.byte	3,1,1,5,9,9
-	.half	.L156-.L7
-	.byte	3,2,1,5,10,9
-	.half	.L215-.L156
-	.byte	3,125,1,5,16,3,4,1,5,11,9
-	.half	.L216-.L215
+	.half	.L155-.L32
+	.byte	3,2,1,5,14,9
+	.half	.L157-.L155
+	.byte	3,1,1,5,12,9
+	.half	.L8-.L157
+	.byte	1,5,9,9
+	.half	.L236-.L8
+	.byte	3,2,1,5,22,7,9
+	.half	.L237-.L236
+	.byte	1,5,28,9
+	.half	.L238-.L237
+	.byte	1,5,16,9
+	.half	.L9-.L238
+	.byte	3,1,1,5,11,9
+	.half	.L239-.L9
 	.byte	3,1,1,5,21,9
-	.half	.L154-.L216
+	.half	.L158-.L239
 	.byte	3,1,1,5,9,9
-	.half	.L157-.L154
-	.byte	3,1,1,5,10,9
-	.half	.L217-.L157
-	.byte	3,121,1,5,9,3,7,1,5,21,9
-	.half	.L218-.L217
+	.half	.L240-.L158
+	.byte	3,1,1,5,21,9
+	.half	.L241-.L240
 	.byte	3,1,1,5,9,9
-	.half	.L219-.L218
-	.byte	3,1,1,5,10,9
-	.half	.L220-.L219
-	.byte	3,119,1,5,9,3,9,1,5,14,9
-	.half	.L221-.L220
+	.half	.L242-.L241
+	.byte	3,1,1,5,14,9
+	.half	.L7-.L242
 	.byte	3,120,1,7,9
-	.half	.L222-.L221
+	.half	.L243-.L7
 	.byte	3,10,1,5,1,7,9
-	.half	.L64-.L222
+	.half	.L66-.L243
 	.byte	3,1,0,1,1
-.L212:
+.L233:
 	.sdecl	'.debug_ranges',debug,cluster('send_ch')
 	.sect	'.debug_ranges'
-.L63:
-	.word	-1,.L30,0,.L64-.L30,0,0
+.L65:
+	.word	-1,.L32,0,.L66-.L32,0,0
 	.sdecl	'.debug_info',debug,cluster('read_ch')
 	.sect	'.debug_info'
-.L65:
+.L67:
 	.word	266
 	.half	3
-	.word	.L66
+	.word	.L68
 	.byte	4,1
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_IIC.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L68,.L67
+	.word	.L70,.L69
 	.byte	2
-	.word	.L41
+	.word	.L43
 	.byte	3
 	.byte	'read_ch',0,1,163,1,7
-	.word	.L121
+	.word	.L123
 	.byte	1,1,1
-	.word	.L32,.L124,.L31
+	.word	.L34,.L126,.L33
 	.byte	4
 	.byte	'ack_x',0,1,163,1,21
-	.word	.L121,.L125
+	.word	.L123,.L127
 	.byte	5
-	.word	.L32,.L124
+	.word	.L34,.L126
 	.byte	6
 	.byte	'i',0,1,165,1,11
-	.word	.L121,.L126
+	.word	.L123,.L128
 	.byte	6
 	.byte	'c',0,1,166,1,11
-	.word	.L121,.L127
+	.word	.L123,.L129
 	.byte	0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('read_ch')
 	.sect	'.debug_abbrev'
-.L66:
+.L68:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
 	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
 	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
 	.sdecl	'.debug_line',debug,cluster('read_ch')
 	.sect	'.debug_line'
-.L67:
-	.word	.L224-.L223
-.L223:
-	.half	3
-	.word	.L226-.L225
-.L225:
-	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
-	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_IIC.c',0,0,0,0,0
-.L226:
-	.byte	5,7,7,0,5,2
-	.word	.L32
-	.byte	3,162,1,1,5,6,9
-	.half	.L159-.L32
-	.byte	3,4,1,5,5,9
-	.half	.L160-.L159
-	.byte	3,1,1,5,17,9
-	.half	.L158-.L160
-	.byte	3,1,1,5,5,9
-	.half	.L227-.L158
-	.byte	3,1,1,9
-	.half	.L228-.L227
-	.byte	3,1,1,5,16,9
-	.half	.L229-.L228
-	.byte	3,1,1,5,21,9
-	.half	.L10-.L229
-	.byte	3,2,1,5,9,9
-	.half	.L230-.L10
-	.byte	3,1,1,5,21,9
-	.half	.L231-.L230
-	.byte	3,1,1,5,9,9
-	.half	.L232-.L231
-	.byte	3,1,1,5,21,9
-	.half	.L233-.L232
-	.byte	3,1,1,5,10,9
-	.half	.L234-.L233
-	.byte	3,1,1,5,12,9
-	.half	.L162-.L234
-	.byte	3,1,1,5,14,9
-	.half	.L235-.L162
-	.byte	3,2,1,5,16,9
-	.half	.L163-.L235
-	.byte	3,118,1,5,5,7,9
-	.half	.L164-.L163
-	.byte	3,13,1,5,2,9
-	.half	.L236-.L164
-	.byte	3,1,1,5,14,9
-	.half	.L237-.L236
-	.byte	3,1,1,5,17,9
-	.half	.L238-.L237
-	.byte	3,1,1,5,5,9
-	.half	.L239-.L238
-	.byte	3,2,1,5,1,3,1,1,7,9
-	.half	.L69-.L239
-	.byte	0,1,1
-.L224:
-	.sdecl	'.debug_ranges',debug,cluster('read_ch')
-	.sect	'.debug_ranges'
-.L68:
-	.word	-1,.L32,0,.L69-.L32,0,0
-	.sdecl	'.debug_info',debug,cluster('simiic_write_reg')
-	.sect	'.debug_info'
-.L70:
-	.word	276
-	.half	3
-	.word	.L71
-	.byte	4,1
-	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_IIC.c',0
-	.byte	'TASKING VX-toolset for TriCore: C compiler',0
-	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L73,.L72
-	.byte	2
-	.word	.L41
-	.byte	3
-	.byte	'simiic_write_reg',0,1,202,1,6,1,1,1
-	.word	.L34,.L128,.L33
-	.byte	4
-	.byte	'dev_add',0,1,202,1,29
-	.word	.L121,.L129
-	.byte	4
-	.byte	'reg',0,1,202,1,44
-	.word	.L121,.L130
-	.byte	4
-	.byte	'dat',0,1,202,1,55
-	.word	.L121,.L131
-	.byte	5
-	.word	.L34,.L128
-	.byte	0,0
-	.sdecl	'.debug_abbrev',debug,cluster('simiic_write_reg')
-	.sect	'.debug_abbrev'
-.L71:
-	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
-	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
-	.sdecl	'.debug_line',debug,cluster('simiic_write_reg')
-	.sect	'.debug_line'
-.L72:
-	.word	.L241-.L240
-.L240:
-	.half	3
-	.word	.L243-.L242
-.L242:
-	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
-	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_IIC.c',0,0,0,0,0
-.L243:
-	.byte	5,6,7,0,5,2
-	.word	.L34
-	.byte	3,201,1,1,5,14,9
-	.half	.L166-.L34
-	.byte	3,2,1,5,22,9
-	.half	.L165-.L166
-	.byte	3,1,1,5,27,9
-	.half	.L167-.L165
-	.byte	1,5,11,9
-	.half	.L168-.L167
-	.byte	3,1,1,9
-	.half	.L169-.L168
-	.byte	3,1,1,5,13,9
-	.half	.L170-.L169
-	.byte	3,1,1,5,1,7,9
-	.half	.L74-.L170
-	.byte	3,1,0,1,1
-.L241:
-	.sdecl	'.debug_ranges',debug,cluster('simiic_write_reg')
-	.sect	'.debug_ranges'
-.L73:
-	.word	-1,.L34,0,.L74-.L34,0,0
-	.sdecl	'.debug_info',debug,cluster('simiic_read_reg')
-	.sect	'.debug_info'
-.L75:
-	.word	298
-	.half	3
-	.word	.L76
-	.byte	4,1
-	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_IIC.c',0
-	.byte	'TASKING VX-toolset for TriCore: C compiler',0
-	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L78,.L77
-	.byte	2
-	.word	.L41
-	.byte	3
-	.byte	'simiic_read_reg',0,1,221,1,7
-	.word	.L121
-	.byte	1,1,1
-	.word	.L36,.L132,.L35
-	.byte	4
-	.byte	'dev_add',0,1,221,1,29
-	.word	.L121,.L133
-	.byte	4
-	.byte	'reg',0,1,221,1,44
-	.word	.L121,.L134
-	.byte	4
-	.byte	'type',0,1,221,1,58
-	.word	.L135,.L136
-	.byte	5
-	.word	.L36,.L132
-	.byte	6
-	.byte	'dat',0,1,223,1,8
-	.word	.L121,.L137
-	.byte	0,0,0
-	.sdecl	'.debug_abbrev',debug,cluster('simiic_read_reg')
-	.sect	'.debug_abbrev'
-.L76:
-	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
-	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
-	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
-	.sdecl	'.debug_line',debug,cluster('simiic_read_reg')
-	.sect	'.debug_line'
-.L77:
+.L69:
 	.word	.L245-.L244
 .L244:
 	.half	3
@@ -7136,459 +7008,629 @@ simiic_delay_time:	.type	object
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_IIC.c',0,0,0,0,0
 .L247:
 	.byte	5,7,7,0,5,2
-	.word	.L36
-	.byte	3,220,1,1,5,14,9
-	.half	.L248-.L36
-	.byte	3,3,1,5,22,9
-	.half	.L171-.L248
-	.byte	3,1,1,5,27,9
-	.half	.L249-.L171
-	.byte	1,5,11,9
-	.half	.L172-.L249
-	.byte	3,1,1,5,2,9
-	.half	.L173-.L172
-	.byte	3,1,1,5,29,7,9
-	.half	.L250-.L173
-	.byte	1,5,14,9
-	.half	.L12-.L250
-	.byte	3,2,1,5,24,9
-	.half	.L251-.L12
+	.word	.L34
+	.byte	3,162,1,1,5,6,9
+	.half	.L160-.L34
+	.byte	3,4,1,5,5,9
+	.half	.L161-.L160
+	.byte	3,1,1,5,17,9
+	.half	.L164-.L161
+	.byte	3,1,1,5,5,9
+	.half	.L248-.L164
+	.byte	3,1,1,9
+	.half	.L249-.L248
+	.byte	3,1,1,5,10,9
+	.half	.L250-.L249
 	.byte	3,1,1,5,16,9
+	.half	.L165-.L250
+	.byte	1,5,21,9
+	.half	.L12-.L165
+	.byte	3,2,1,5,9,9
+	.half	.L251-.L12
+	.byte	3,1,1,5,21,9
 	.half	.L252-.L251
-	.byte	3,1,1,5,6,9
-	.half	.L174-.L252
-	.byte	1,5,13,3,1,1,5,2,9
-	.half	.L175-.L174
-	.byte	3,2,1,5,1,3,1,1,7,9
-	.half	.L79-.L175
+	.byte	3,1,1,5,9,9
+	.half	.L253-.L252
+	.byte	3,1,1,5,21,9
+	.half	.L254-.L253
+	.byte	3,1,1,5,10,9
+	.half	.L255-.L254
+	.byte	3,1,1,5,12,9
+	.half	.L166-.L255
+	.byte	3,1,1,5,9,9
+	.half	.L256-.L166
+	.byte	1,5,14,9
+	.half	.L257-.L256
+	.byte	3,2,1,5,18,9
+	.half	.L168-.L257
+	.byte	3,118,1,5,16,9
+	.half	.L11-.L168
+	.byte	1,5,5,7,9
+	.half	.L258-.L11
+	.byte	3,13,1,5,2,9
+	.half	.L259-.L258
+	.byte	3,1,1,5,14,9
+	.half	.L260-.L259
+	.byte	3,1,1,5,17,9
+	.half	.L261-.L260
+	.byte	3,1,1,5,5,9
+	.half	.L170-.L261
+	.byte	3,2,1,5,1,9
+	.half	.L171-.L170
+	.byte	3,1,1,7,9
+	.half	.L71-.L171
 	.byte	0,1,1
 .L245:
-	.sdecl	'.debug_ranges',debug,cluster('simiic_read_reg')
+	.sdecl	'.debug_ranges',debug,cluster('read_ch')
 	.sect	'.debug_ranges'
-.L78:
-	.word	-1,.L36,0,.L79-.L36,0,0
-	.sdecl	'.debug_info',debug,cluster('simiic_read_regs')
+.L70:
+	.word	-1,.L34,0,.L71-.L34,0,0
+	.sdecl	'.debug_info',debug,cluster('simiic_write_reg')
 	.sect	'.debug_info'
-.L80:
-	.word	315
+.L72:
+	.word	276
 	.half	3
-	.word	.L81
+	.word	.L73
 	.byte	4,1
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_IIC.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L83,.L82
+	.word	.L75,.L74
 	.byte	2
-	.word	.L41
+	.word	.L43
+	.byte	3
+	.byte	'simiic_write_reg',0,1,202,1,6,1,1,1
+	.word	.L36,.L130,.L35
+	.byte	4
+	.byte	'dev_add',0,1,202,1,29
+	.word	.L123,.L131
+	.byte	4
+	.byte	'reg',0,1,202,1,44
+	.word	.L123,.L132
+	.byte	4
+	.byte	'dat',0,1,202,1,55
+	.word	.L123,.L133
+	.byte	5
+	.word	.L36,.L130
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('simiic_write_reg')
+	.sect	'.debug_abbrev'
+.L73:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('simiic_write_reg')
+	.sect	'.debug_line'
+.L74:
+	.word	.L263-.L262
+.L262:
+	.half	3
+	.word	.L265-.L264
+.L264:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_IIC.c',0,0,0,0,0
+.L265:
+	.byte	5,6,7,0,5,2
+	.word	.L36
+	.byte	3,201,1,1,5,14,9
+	.half	.L266-.L36
+	.byte	3,2,1,5,22,9
+	.half	.L172-.L266
+	.byte	3,1,1,5,27,9
+	.half	.L174-.L172
+	.byte	1,5,11,9
+	.half	.L175-.L174
+	.byte	3,1,1,9
+	.half	.L177-.L175
+	.byte	3,1,1,5,13,9
+	.half	.L179-.L177
+	.byte	3,1,1,5,1,7,9
+	.half	.L76-.L179
+	.byte	3,1,0,1,1
+.L263:
+	.sdecl	'.debug_ranges',debug,cluster('simiic_write_reg')
+	.sect	'.debug_ranges'
+.L75:
+	.word	-1,.L36,0,.L76-.L36,0,0
+	.sdecl	'.debug_info',debug,cluster('simiic_read_reg')
+	.sect	'.debug_info'
+.L77:
+	.word	298
+	.half	3
+	.word	.L78
+	.byte	4,1
+	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_IIC.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
+	.word	.L80,.L79
+	.byte	2
+	.word	.L43
+	.byte	3
+	.byte	'simiic_read_reg',0,1,221,1,7
+	.word	.L123
+	.byte	1,1,1
+	.word	.L38,.L134,.L37
+	.byte	4
+	.byte	'dev_add',0,1,221,1,29
+	.word	.L123,.L135
+	.byte	4
+	.byte	'reg',0,1,221,1,44
+	.word	.L123,.L136
+	.byte	4
+	.byte	'type',0,1,221,1,58
+	.word	.L137,.L138
+	.byte	5
+	.word	.L38,.L134
+	.byte	6
+	.byte	'dat',0,1,223,1,8
+	.word	.L123,.L139
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('simiic_read_reg')
+	.sect	'.debug_abbrev'
+.L78:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
+	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('simiic_read_reg')
+	.sect	'.debug_line'
+.L79:
+	.word	.L268-.L267
+.L267:
+	.half	3
+	.word	.L270-.L269
+.L269:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_IIC.c',0,0,0,0,0
+.L270:
+	.byte	5,7,7,0,5,2
+	.word	.L38
+	.byte	3,220,1,1,5,14,9
+	.half	.L181-.L38
+	.byte	3,3,1,5,22,9
+	.half	.L180-.L181
+	.byte	3,1,1,5,27,9
+	.half	.L183-.L180
+	.byte	1,5,11,9
+	.half	.L184-.L183
+	.byte	3,1,1,5,2,9
+	.half	.L186-.L184
+	.byte	3,1,1,5,29,7,9
+	.half	.L271-.L186
+	.byte	1,5,14,9
+	.half	.L14-.L271
+	.byte	3,2,1,5,19,9
+	.half	.L272-.L14
+	.byte	3,1,1,5,24,9
+	.half	.L182-.L272
+	.byte	1,5,16,9
+	.half	.L273-.L182
+	.byte	3,1,1,5,6,9
+	.half	.L187-.L273
+	.byte	1,5,13,9
+	.half	.L189-.L187
+	.byte	3,1,1,5,2,9
+	.half	.L188-.L189
+	.byte	3,2,1,5,1,9
+	.half	.L190-.L188
+	.byte	3,1,1,7,9
+	.half	.L81-.L190
+	.byte	0,1,1
+.L268:
+	.sdecl	'.debug_ranges',debug,cluster('simiic_read_reg')
+	.sect	'.debug_ranges'
+.L80:
+	.word	-1,.L38,0,.L81-.L38,0,0
+	.sdecl	'.debug_info',debug,cluster('simiic_read_regs')
+	.sect	'.debug_info'
+.L82:
+	.word	315
+	.half	3
+	.word	.L83
+	.byte	4,1
+	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_IIC.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
+	.word	.L85,.L84
+	.byte	2
+	.word	.L43
 	.byte	3
 	.byte	'simiic_read_regs',0,1,248,1,6,1,1,1
-	.word	.L38,.L138,.L37
+	.word	.L40,.L140,.L39
 	.byte	4
 	.byte	'dev_add',0,1,248,1,29
-	.word	.L121,.L139
+	.word	.L123,.L141
 	.byte	4
 	.byte	'reg',0,1,248,1,44
-	.word	.L121,.L140
+	.word	.L123,.L142
 	.byte	4
 	.byte	'dat_add',0,1,248,1,56
-	.word	.L141,.L142
+	.word	.L143,.L144
 	.byte	4
 	.byte	'num',0,1,248,1,71
-	.word	.L121,.L143
+	.word	.L123,.L145
 	.byte	4
 	.byte	'type',0,1,248,1,85
-	.word	.L135,.L144
+	.word	.L137,.L146
 	.byte	5
-	.word	.L38,.L138
+	.word	.L40,.L140
 	.byte	0,0
 	.sdecl	'.debug_abbrev',debug,cluster('simiic_read_regs')
 	.sect	'.debug_abbrev'
-.L81:
+.L83:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
 	.sdecl	'.debug_line',debug,cluster('simiic_read_regs')
 	.sect	'.debug_line'
-.L82:
-	.word	.L254-.L253
-.L253:
+.L84:
+	.word	.L275-.L274
+.L274:
 	.half	3
-	.word	.L256-.L255
-.L255:
+	.word	.L277-.L276
+.L276:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_IIC.c',0,0,0,0,0
-.L256:
+.L277:
 	.byte	5,6,7,0,5,2
-	.word	.L38
+	.word	.L40
 	.byte	3,247,1,1,5,14,9
-	.half	.L180-.L38
+	.half	.L198-.L40
 	.byte	3,2,1,5,22,9
-	.half	.L176-.L180
+	.half	.L191-.L198
 	.byte	3,1,1,5,27,9
-	.half	.L178-.L176
+	.half	.L278-.L191
 	.byte	1,5,11,9
-	.half	.L257-.L178
+	.half	.L279-.L278
 	.byte	3,1,1,5,2,9
-	.half	.L258-.L257
+	.half	.L201-.L279
 	.byte	3,1,1,5,29,7,9
-	.half	.L259-.L258
+	.half	.L280-.L201
 	.byte	1,5,14,9
-	.half	.L14-.L259
-	.byte	3,2,1,5,24,9
-	.half	.L260-.L14
-	.byte	3,1,1,5,11,9
-	.half	.L261-.L260
+	.half	.L16-.L280
+	.byte	3,2,1,5,19,9
+	.half	.L281-.L16
+	.byte	3,1,1,5,24,9
+	.half	.L199-.L281
+	.byte	1,5,11,9
+	.half	.L282-.L199
 	.byte	3,1,1,5,16,9
-	.half	.L181-.L261
+	.half	.L202-.L282
 	.byte	1,5,28,9
-	.half	.L16-.L181
-	.byte	3,2,1,5,11,9
-	.half	.L262-.L16
-	.byte	3,126,1,5,18,3,2,1,5,16,9
-	.half	.L15-.L262
-	.byte	3,126,1,5,24,7,9
-	.half	.L263-.L15
+	.half	.L18-.L202
+	.byte	3,2,1,5,18,9
+	.half	.L283-.L18
+	.byte	1,5,11,9
+	.half	.L284-.L283
+	.byte	3,126,1,5,16,9
+	.half	.L17-.L284
+	.byte	1,5,24,7,9
+	.half	.L285-.L17
 	.byte	3,5,1,5,14,9
-	.half	.L264-.L263
+	.half	.L286-.L285
 	.byte	1,5,13,9
-	.half	.L265-.L264
+	.half	.L287-.L286
 	.byte	3,1,1,5,1,7,9
-	.half	.L84-.L265
+	.half	.L86-.L287
 	.byte	3,1,0,1,1
-.L254:
+.L275:
 	.sdecl	'.debug_ranges',debug,cluster('simiic_read_regs')
 	.sect	'.debug_ranges'
-.L83:
-	.word	-1,.L38,0,.L84-.L38,0,0
+.L85:
+	.word	-1,.L40,0,.L86-.L40,0,0
 	.sdecl	'.debug_info',debug,cluster('simiic_init')
 	.sect	'.debug_info'
-.L85:
+.L87:
 	.word	216
 	.half	3
-	.word	.L86
+	.word	.L88
 	.byte	4,1
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_IIC.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L88,.L87
+	.word	.L90,.L89
 	.byte	2
-	.word	.L41
+	.word	.L43
 	.byte	3
 	.byte	'simiic_init',0,1,146,2,6,1,1,1
-	.word	.L40,.L145,.L39
+	.word	.L42,.L147,.L41
 	.byte	4
-	.word	.L40,.L145
+	.word	.L42,.L147
 	.byte	0,0
 	.sdecl	'.debug_abbrev',debug,cluster('simiic_init')
 	.sect	'.debug_abbrev'
-.L86:
+.L88:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
 	.sdecl	'.debug_line',debug,cluster('simiic_init')
 	.sect	'.debug_line'
-.L87:
-	.word	.L267-.L266
-.L266:
+.L89:
+	.word	.L289-.L288
+.L288:
 	.half	3
-	.word	.L269-.L268
-.L268:
+	.word	.L291-.L290
+.L290:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_IIC.c',0,0,0,0,0
-.L269:
+.L291:
 	.byte	5,13,7,0,5,2
-	.word	.L40
+	.word	.L42
 	.byte	3,147,2,1,5,27,9
-	.half	.L270-.L40
+	.half	.L292-.L42
 	.byte	1,5,32,9
-	.half	.L271-.L270
+	.half	.L293-.L292
 	.byte	1,5,35,9
-	.half	.L272-.L271
+	.half	.L294-.L293
 	.byte	1,5,13,9
-	.half	.L273-.L272
+	.half	.L295-.L294
 	.byte	3,1,1,5,27,9
-	.half	.L274-.L273
+	.half	.L296-.L295
 	.byte	1,5,32,9
-	.half	.L275-.L274
+	.half	.L297-.L296
 	.byte	1,5,35,9
-	.half	.L276-.L275
+	.half	.L298-.L297
 	.byte	1,5,1,9
-	.half	.L89-.L276
+	.half	.L91-.L298
 	.byte	3,1,0,1,1
-.L267:
+.L289:
 	.sdecl	'.debug_ranges',debug,cluster('simiic_init')
 	.sect	'.debug_ranges'
-.L88:
-	.word	-1,.L40,0,.L89-.L40,0,0
+.L90:
+	.word	-1,.L42,0,.L91-.L42,0,0
 	.sdecl	'.debug_info',debug,cluster('simiic_delay')
 	.sect	'.debug_info'
-.L90:
+.L92:
 	.word	216
 	.half	3
-	.word	.L91
+	.word	.L93
 	.byte	4,1
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_IIC.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L93,.L92
+	.word	.L95,.L94
 	.byte	2
-	.word	.L41
+	.word	.L43
 	.byte	3
 	.byte	'simiic_delay',0,1,72,6,1,1,1
-	.word	.L20,.L146,.L19
+	.word	.L22,.L148,.L21
 	.byte	4
-	.word	.L20,.L146
+	.word	.L22,.L148
 	.byte	0,0
 	.sdecl	'.debug_abbrev',debug,cluster('simiic_delay')
 	.sect	'.debug_abbrev'
-.L91:
+.L93:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
 	.sdecl	'.debug_line',debug,cluster('simiic_delay')
 	.sect	'.debug_line'
-.L92:
-	.word	.L278-.L277
-.L277:
+.L94:
+	.word	.L300-.L299
+.L299:
 	.half	3
-	.word	.L280-.L279
-.L279:
+	.word	.L302-.L301
+.L301:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_IIC.c',0,0,0,0,0
-.L280:
+.L302:
 	.byte	5,1,7,0,5,2
-	.word	.L20
+	.word	.L22
 	.byte	3,204,0,1,7,9
-	.half	.L94-.L20
+	.half	.L96-.L22
 	.byte	0,1,1
-.L278:
+.L300:
 	.sdecl	'.debug_ranges',debug,cluster('simiic_delay')
 	.sect	'.debug_ranges'
-.L93:
-	.word	-1,.L20,0,.L94-.L20,0,0
+.L95:
+	.word	-1,.L22,0,.L96-.L22,0,0
 	.sdecl	'.debug_info',debug,cluster('simiic_sendack')
 	.sect	'.debug_info'
-.L95:
+.L97:
 	.word	238
 	.half	3
-	.word	.L96
+	.word	.L98
 	.byte	4,1
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_IIC.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L98,.L97
+	.word	.L100,.L99
 	.byte	2
-	.word	.L41
+	.word	.L43
 	.byte	3
 	.byte	'simiic_sendack',0,1,105,6,1,1,1
-	.word	.L26,.L147,.L25
+	.word	.L28,.L149,.L27
 	.byte	4
 	.byte	'ack_dat',0,1,105,35
-	.word	.L121,.L148
+	.word	.L123,.L150
 	.byte	5
-	.word	.L26,.L147
+	.word	.L28,.L149
 	.byte	0,0
 	.sdecl	'.debug_abbrev',debug,cluster('simiic_sendack')
 	.sect	'.debug_abbrev'
-.L96:
+.L98:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
 	.sdecl	'.debug_line',debug,cluster('simiic_sendack')
 	.sect	'.debug_line'
-.L97:
-	.word	.L282-.L281
-.L281:
+.L99:
+	.word	.L304-.L303
+.L303:
 	.half	3
-	.word	.L284-.L283
-.L283:
+	.word	.L306-.L305
+.L305:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_IIC.c',0,0,0,0,0
-.L284:
+.L306:
 	.byte	5,6,7,0,5,2
-	.word	.L26
+	.word	.L28
 	.byte	3,232,0,1,5,5,9
-	.half	.L152-.L26
+	.half	.L154-.L28
 	.byte	3,2,1,5,14,9
-	.half	.L151-.L152
-	.byte	3,1,1,5,11,9
-	.half	.L285-.L151
-	.byte	3,127,1,5,2,9
-	.half	.L286-.L285
-	.byte	3,2,1,5,14,3,1,1,5,5,9
-	.half	.L287-.L286
-	.byte	3,2,1,5,17,9
-	.half	.L288-.L287
+	.half	.L307-.L154
+	.byte	3,1,1,5,2,9
+	.half	.L308-.L307
+	.byte	3,1,1,5,14,7,9
+	.half	.L309-.L308
+	.byte	1,5,20,9
+	.half	.L310-.L309
+	.byte	1,5,14,9
+	.half	.L2-.L310
 	.byte	3,1,1,5,5,9
-	.half	.L289-.L288
+	.half	.L311-.L2
+	.byte	3,2,1,5,17,9
+	.half	.L312-.L311
+	.byte	3,1,1,5,5,9
+	.half	.L313-.L312
 	.byte	3,1,1,5,17,9
-	.half	.L290-.L289
+	.half	.L314-.L313
 	.byte	3,1,1,5,1,7,9
-	.half	.L99-.L290
+	.half	.L101-.L314
 	.byte	3,1,0,1,1
-.L282:
+.L304:
 	.sdecl	'.debug_ranges',debug,cluster('simiic_sendack')
 	.sect	'.debug_ranges'
-.L98:
-	.word	-1,.L26,0,.L99-.L26,0,0
+.L100:
+	.word	-1,.L28,0,.L101-.L28,0,0
 	.sdecl	'.debug_info',debug,cluster('sccb_waitack')
 	.sect	'.debug_info'
-.L100:
+.L102:
 	.word	219
 	.half	3
-	.word	.L101
+	.word	.L103
 	.byte	4,1
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_IIC.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L103,.L102
+	.word	.L105,.L104
 	.byte	2
-	.word	.L41
+	.word	.L43
 	.byte	3
 	.byte	'sccb_waitack',0,1,119,12
-	.word	.L149
+	.word	.L151
 	.byte	1,1
-	.word	.L28,.L150,.L27
+	.word	.L30,.L152,.L29
 	.byte	4
-	.word	.L28,.L150
+	.word	.L30,.L152
 	.byte	0,0
 	.sdecl	'.debug_abbrev',debug,cluster('sccb_waitack')
 	.sect	'.debug_abbrev'
-.L101:
+.L103:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
 	.byte	54,15,39,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
 	.sdecl	'.debug_line',debug,cluster('sccb_waitack')
 	.sect	'.debug_line'
-.L102:
-	.word	.L292-.L291
-.L291:
+.L104:
+	.word	.L316-.L315
+.L315:
 	.half	3
-	.word	.L294-.L293
-.L293:
+	.word	.L318-.L317
+.L317:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_IIC.c',0,0,0,0,0
-.L294:
+.L318:
 	.byte	5,5,7,0,5,2
-	.word	.L28
+	.word	.L30
 	.byte	3,248,0,1,5,2,9
-	.half	.L295-.L28
+	.half	.L319-.L30
 	.byte	3,1,1,5,14,9
-	.half	.L296-.L295
+	.half	.L320-.L319
 	.byte	3,1,1,5,2,9
-	.half	.L297-.L296
+	.half	.L321-.L320
 	.byte	3,2,1,5,17,9
-	.half	.L298-.L297
+	.half	.L322-.L321
 	.byte	3,1,1,5,8,9
-	.half	.L299-.L298
+	.half	.L323-.L322
 	.byte	3,2,1,5,5,9
-	.half	.L300-.L299
+	.half	.L324-.L323
 	.byte	1,5,9,7,9
-	.half	.L301-.L300
+	.half	.L325-.L324
 	.byte	3,2,1,9
-	.half	.L302-.L301
+	.half	.L326-.L325
 	.byte	3,1,1,5,16,9
-	.half	.L303-.L302
-	.byte	3,1,1,5,1,3,6,1,5,5,7,9
-	.half	.L4-.L303
+	.half	.L327-.L326
+	.byte	3,1,1,5,1,9
+	.half	.L328-.L327
+	.byte	3,6,1,5,5,7,9
+	.half	.L4-.L328
 	.byte	3,124,1,9
-	.half	.L304-.L4
+	.half	.L329-.L4
 	.byte	3,1,1,5,14,9
-	.half	.L305-.L304
+	.half	.L330-.L329
 	.byte	3,1,1,5,12,9
-	.half	.L306-.L305
-	.byte	3,1,1,5,1,3,1,1,7,9
-	.half	.L104-.L306
+	.half	.L331-.L330
+	.byte	3,1,1,5,1,9
+	.half	.L332-.L331
+	.byte	3,1,1,7,9
+	.half	.L106-.L332
 	.byte	0,1,1
-.L292:
+.L316:
 	.sdecl	'.debug_ranges',debug,cluster('sccb_waitack')
 	.sect	'.debug_ranges'
-.L103:
-	.word	-1,.L28,0,.L104-.L28,0,0
+.L105:
+	.word	-1,.L30,0,.L106-.L30,0,0
 	.sdecl	'.debug_info',debug,cluster('simiic_delay_time')
 	.sect	'.debug_info'
-.L105:
-	.word	199
-	.half	3
-	.word	.L106
-	.byte	4,1
-	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_IIC.c',0
-	.byte	'TASKING VX-toolset for TriCore: C compiler',0
-	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1,2
-	.word	.L41
-	.byte	3
-	.byte	'simiic_delay_time',0,8,53,8
-	.word	.L116
-	.byte	1,5,3
-	.word	simiic_delay_time
-	.byte	0
-	.sdecl	'.debug_abbrev',debug,cluster('simiic_delay_time')
-	.sect	'.debug_abbrev'
-.L106:
-	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
-	.byte	0,0,0
-	.sdecl	'.debug_info',debug,cluster('IIC_ad_main')
-	.sect	'.debug_info'
 .L107:
-	.word	193
+	.word	199
 	.half	3
 	.word	.L108
 	.byte	4,1
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_IIC.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1,2
-	.word	.L41
+	.word	.L43
 	.byte	3
-	.byte	'IIC_ad_main',0,8,43,7
-	.word	.L121
+	.byte	'simiic_delay_time',0,8,53,8
+	.word	.L118
 	.byte	1,5,3
-	.word	IIC_ad_main
+	.word	simiic_delay_time
 	.byte	0
-	.sdecl	'.debug_abbrev',debug,cluster('IIC_ad_main')
+	.sdecl	'.debug_abbrev',debug,cluster('simiic_delay_time')
 	.sect	'.debug_abbrev'
 .L108:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
 	.byte	0,0,0
-	.sdecl	'.debug_info',debug,cluster('IIC_ad_sub')
+	.sdecl	'.debug_info',debug,cluster('IIC_ad_main')
 	.sect	'.debug_info'
 .L109:
-	.word	192
+	.word	193
 	.half	3
 	.word	.L110
 	.byte	4,1
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_IIC.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1,2
-	.word	.L41
+	.word	.L43
 	.byte	3
-	.byte	'IIC_ad_sub',0,8,44,7
-	.word	.L121
+	.byte	'IIC_ad_main',0,8,43,7
+	.word	.L123
 	.byte	1,5,3
-	.word	IIC_ad_sub
+	.word	IIC_ad_main
 	.byte	0
-	.sdecl	'.debug_abbrev',debug,cluster('IIC_ad_sub')
+	.sdecl	'.debug_abbrev',debug,cluster('IIC_ad_main')
 	.sect	'.debug_abbrev'
 .L110:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
 	.byte	0,0,0
-	.sdecl	'.debug_info',debug,cluster('IIC_buf')
+	.sdecl	'.debug_info',debug,cluster('IIC_ad_sub')
 	.sect	'.debug_info'
 .L111:
-	.word	189
+	.word	192
 	.half	3
 	.word	.L112
 	.byte	4,1
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_IIC.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1,2
-	.word	.L41
+	.word	.L43
 	.byte	3
-	.byte	'IIC_buf',0,8,45,8
-	.word	.L141
+	.byte	'IIC_ad_sub',0,8,44,7
+	.word	.L123
 	.byte	1,5,3
-	.word	IIC_buf
+	.word	IIC_ad_sub
 	.byte	0
-	.sdecl	'.debug_abbrev',debug,cluster('IIC_buf')
+	.sdecl	'.debug_abbrev',debug,cluster('IIC_ad_sub')
 	.sect	'.debug_abbrev'
 .L112:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
 	.byte	0,0,0
-	.sdecl	'.debug_info',debug,cluster('IIC_num')
+	.sdecl	'.debug_info',debug,cluster('IIC_buf')
 	.sect	'.debug_info'
 .L113:
 	.word	189
@@ -7598,254 +7640,303 @@ simiic_delay_time:	.type	object
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_IIC.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1,2
-	.word	.L41
+	.word	.L43
+	.byte	3
+	.byte	'IIC_buf',0,8,45,8
+	.word	.L143
+	.byte	1,5,3
+	.word	IIC_buf
+	.byte	0
+	.sdecl	'.debug_abbrev',debug,cluster('IIC_buf')
+	.sect	'.debug_abbrev'
+.L114:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
+	.byte	0,0,0
+	.sdecl	'.debug_info',debug,cluster('IIC_num')
+	.sect	'.debug_info'
+.L115:
+	.word	189
+	.half	3
+	.word	.L116
+	.byte	4,1
+	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_IIC.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1,2
+	.word	.L43
 	.byte	3
 	.byte	'IIC_num',0,8,46,7
-	.word	.L121
+	.word	.L123
 	.byte	1,5,3
 	.word	IIC_num
 	.byte	0
 	.sdecl	'.debug_abbrev',debug,cluster('IIC_num')
 	.sect	'.debug_abbrev'
-.L114:
+.L116:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
 	.byte	0,0,0
 	.sdecl	'.debug_loc',debug,cluster('read_ch')
 	.sect	'.debug_loc'
-.L125:
-	.word	-1,.L32,0,.L158-.L32
+.L127:
+	.word	-1,.L34,0,.L159-.L34
 	.half	1
 	.byte	84
-	.word	.L159-.L32,.L124-.L32
+	.word	.L160-.L34,.L126-.L34
 	.half	1
 	.byte	88
+	.word	.L169-.L34,.L170-.L34
+	.half	1
+	.byte	84
 	.word	0,0
-.L127:
-	.word	-1,.L32,.L160-.L32,.L161-.L32
+.L129:
+	.word	-1,.L34,.L161-.L34,.L162-.L34
 	.half	1
 	.byte	95
-	.word	.L162-.L32,.L163-.L32
+	.word	.L163-.L34,.L164-.L34
+	.half	1
+	.byte	85
+	.word	.L166-.L34,.L167-.L34
 	.half	1
 	.byte	95
-	.word	.L164-.L32,.L124-.L32
+	.word	.L168-.L34,.L126-.L34
 	.half	1
 	.byte	95
+	.word	.L171-.L34,.L126-.L34
+	.half	1
+	.byte	82
 	.word	0,0
-.L126:
+.L128:
+	.word	-1,.L34,.L165-.L34,.L126-.L34
+	.half	1
+	.byte	89
 	.word	0,0
-.L31:
-	.word	-1,.L32,0,.L124-.L32
+.L33:
+	.word	-1,.L34,0,.L126-.L34
 	.half	2
 	.byte	138,0
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('sccb_waitack')
 	.sect	'.debug_loc'
-.L27:
-	.word	-1,.L28,0,.L150-.L28
+.L29:
+	.word	-1,.L30,0,.L152-.L30
 	.half	2
 	.byte	138,0
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('send_ch')
 	.sect	'.debug_loc'
-.L122:
-	.word	-1,.L30,0,.L7-.L30
+.L124:
+	.word	-1,.L32,0,.L8-.L32
 	.half	1
 	.byte	84
-	.word	.L153-.L30,.L154-.L30
+	.word	.L155-.L32,.L156-.L32
 	.half	1
 	.byte	88
-	.word	.L157-.L30,.L120-.L30
+	.word	.L158-.L32,.L122-.L32
 	.half	1
 	.byte	88
 	.word	0,0
-.L123:
-	.word	-1,.L30,.L7-.L30,.L155-.L30
-	.half	1
-	.byte	95
-	.word	.L156-.L30,.L120-.L30
+.L125:
+	.word	-1,.L32,.L157-.L32,.L122-.L32
 	.half	1
 	.byte	95
 	.word	0,0
-.L29:
-	.word	-1,.L30,0,.L120-.L30
+.L31:
+	.word	-1,.L32,0,.L122-.L32
 	.half	2
 	.byte	138,0
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('simiic_delay')
 	.sect	'.debug_loc'
-.L19:
-	.word	-1,.L20,0,.L146-.L20
+.L21:
+	.word	-1,.L22,0,.L148-.L22
 	.half	2
 	.byte	138,0
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('simiic_delay_set')
 	.sect	'.debug_loc'
-.L17:
-	.word	-1,.L18,0,.L115-.L18
+.L19:
+	.word	-1,.L20,0,.L117-.L20
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L117:
-	.word	-1,.L18,0,.L115-.L18
+.L119:
+	.word	-1,.L20,0,.L117-.L20
 	.half	1
 	.byte	84
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('simiic_init')
 	.sect	'.debug_loc'
-.L39:
-	.word	-1,.L40,0,.L145-.L40
+.L41:
+	.word	-1,.L42,0,.L147-.L42
 	.half	2
 	.byte	138,0
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('simiic_read_reg')
 	.sect	'.debug_loc'
-.L137:
-	.word	-1,.L36,.L174-.L36,.L175-.L36
+.L139:
+	.word	-1,.L38,.L187-.L38,.L188-.L38
 	.half	1
 	.byte	82
-	.word	.L175-.L36,.L132-.L36
+	.word	.L189-.L38,.L134-.L38
 	.half	1
 	.byte	95
+	.word	.L190-.L38,.L134-.L38
+	.half	1
+	.byte	82
 	.word	0,0
-.L133:
-	.word	-1,.L36,0,.L171-.L36
+.L135:
+	.word	-1,.L38,0,.L180-.L38
 	.half	1
 	.byte	84
-	.word	0,0
-.L134:
-	.word	-1,.L36,0,.L171-.L36
-	.half	1
-	.byte	85
-	.word	.L172-.L36,.L173-.L36
-	.half	1
-	.byte	89
-	.word	0,0
-.L35:
-	.word	-1,.L36,0,.L132-.L36
-	.half	2
-	.byte	138,0
-	.word	0,0
-.L136:
-	.word	-1,.L36,0,.L171-.L36
-	.half	1
-	.byte	86
-	.word	.L171-.L36,.L132-.L36
-	.half	1
-	.byte	90
-	.word	0,0
-	.sdecl	'.debug_loc',debug,cluster('simiic_read_regs')
-	.sect	'.debug_loc'
-.L142:
-	.word	-1,.L38,0,.L176-.L38
-	.half	1
-	.byte	100
-	.word	.L179-.L38,.L138-.L38
-	.half	1
-	.byte	111
-	.word	0,0
-.L139:
-	.word	-1,.L38,0,.L176-.L38
-	.half	1
-	.byte	84
-	.word	.L177-.L38,.L178-.L38
+	.word	.L180-.L38,.L183-.L38
 	.half	1
 	.byte	88
 	.word	0,0
-.L143:
-	.word	-1,.L38,0,.L176-.L38
-	.half	1
-	.byte	86
-	.word	.L180-.L38,.L181-.L38
-	.half	1
-	.byte	89
-	.word	.L16-.L38,.L138-.L38
-	.half	1
-	.byte	95
-	.word	0,0
-.L140:
-	.word	-1,.L38,0,.L176-.L38
+.L136:
+	.word	-1,.L38,0,.L180-.L38
 	.half	1
 	.byte	85
-	.word	.L179-.L38,.L138-.L38
+	.word	.L184-.L38,.L185-.L38
 	.half	1
-	.byte	90
+	.byte	89
+	.word	.L185-.L38,.L186-.L38
+	.half	1
+	.byte	84
 	.word	0,0
 .L37:
-	.word	-1,.L38,0,.L138-.L38
+	.word	-1,.L38,0,.L134-.L38
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L144:
-	.word	-1,.L38,0,.L176-.L38
+.L138:
+	.word	-1,.L38,0,.L180-.L38
 	.half	1
-	.byte	87
-	.word	.L176-.L38,.L138-.L38
-	.half	1
-	.byte	91
-	.word	0,0
-	.sdecl	'.debug_loc',debug,cluster('simiic_sendack')
-	.sect	'.debug_loc'
-.L148:
-	.word	-1,.L26,0,.L151-.L26
-	.half	1
-	.byte	84
-	.word	.L152-.L26,.L147-.L26
+	.byte	86
+	.word	.L181-.L38,.L182-.L38
 	.half	1
 	.byte	95
 	.word	0,0
-.L25:
-	.word	-1,.L26,0,.L147-.L26
+	.sdecl	'.debug_loc',debug,cluster('simiic_read_regs')
+	.sect	'.debug_loc'
+.L144:
+	.word	-1,.L40,0,.L191-.L40
+	.half	1
+	.byte	100
+	.word	.L195-.L40,.L140-.L40
+	.half	1
+	.byte	111
+	.word	0,0
+.L141:
+	.word	-1,.L40,0,.L191-.L40
+	.half	1
+	.byte	84
+	.word	.L192-.L40,.L193-.L40
+	.half	1
+	.byte	88
+	.word	0,0
+.L145:
+	.word	-1,.L40,0,.L191-.L40
+	.half	1
+	.byte	86
+	.word	.L196-.L40,.L197-.L40
+	.half	1
+	.byte	89
+	.word	.L202-.L40,.L140-.L40
+	.half	1
+	.byte	95
+	.word	0,0
+.L142:
+	.word	-1,.L40,0,.L191-.L40
+	.half	1
+	.byte	85
+	.word	.L194-.L40,.L140-.L40
+	.half	1
+	.byte	90
+	.word	.L200-.L40,.L201-.L40
+	.half	1
+	.byte	84
+	.word	0,0
+.L39:
+	.word	-1,.L40,0,.L140-.L40
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L146:
+	.word	-1,.L40,0,.L191-.L40
+	.half	1
+	.byte	87
+	.word	.L198-.L40,.L199-.L40
+	.half	1
+	.byte	95
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('simiic_sendack')
+	.sect	'.debug_loc'
+.L150:
+	.word	-1,.L28,0,.L153-.L28
+	.half	1
+	.byte	84
+	.word	.L154-.L28,.L149-.L28
+	.half	1
+	.byte	95
+	.word	0,0
+.L27:
+	.word	-1,.L28,0,.L149-.L28
 	.half	2
 	.byte	138,0
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('simiic_start')
 	.sect	'.debug_loc'
-.L21:
-	.word	-1,.L22,0,.L118-.L22
+.L23:
+	.word	-1,.L24,0,.L120-.L24
 	.half	2
 	.byte	138,0
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('simiic_stop')
 	.sect	'.debug_loc'
-.L23:
-	.word	-1,.L24,0,.L119-.L24
+.L25:
+	.word	-1,.L26,0,.L121-.L26
 	.half	2
 	.byte	138,0
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('simiic_write_reg')
 	.sect	'.debug_loc'
-.L131:
-	.word	-1,.L34,0,.L165-.L34
+.L133:
+	.word	-1,.L36,0,.L172-.L36
 	.half	1
 	.byte	86
-	.word	.L169-.L34,.L170-.L34
+	.word	.L177-.L36,.L178-.L36
 	.half	1
 	.byte	89
-	.word	0,0
-.L129:
-	.word	-1,.L34,0,.L165-.L34
+	.word	.L178-.L36,.L179-.L36
 	.half	1
 	.byte	84
-	.word	.L166-.L34,.L167-.L34
+	.word	0,0
+.L131:
+	.word	-1,.L36,0,.L172-.L36
+	.half	1
+	.byte	84
+	.word	.L173-.L36,.L174-.L36
 	.half	1
 	.byte	95
 	.word	0,0
-.L130:
-	.word	-1,.L34,0,.L165-.L34
+.L132:
+	.word	-1,.L36,0,.L172-.L36
 	.half	1
 	.byte	85
-	.word	.L168-.L34,.L169-.L34
+	.word	.L175-.L36,.L176-.L36
 	.half	1
 	.byte	88
+	.word	.L176-.L36,.L177-.L36
+	.half	1
+	.byte	84
 	.word	0,0
-.L33:
-	.word	-1,.L34,0,.L128-.L34
+.L35:
+	.word	-1,.L36,0,.L130-.L36
 	.half	2
 	.byte	138,0
 	.word	0,0
 	.sdecl	'.debug_frame',debug
 	.sect	'.debug_frame'
-.L307:
+.L333:
 	.word	48
 	.word	-1
 	.byte	3,0,2,1,27,12,26,0,8,27,8,26,8,28,8,29,8,30,8,31,8,34,8,35,8,32,8,33,8,16,8,17,8,24,8,25,8,36,8,37,8,38
@@ -7853,53 +7944,53 @@ simiic_delay_time:	.type	object
 	.sdecl	'.debug_frame',debug,cluster('simiic_delay_set')
 	.sect	'.debug_frame'
 	.word	24
-	.word	.L307,.L18,.L115-.L18
+	.word	.L333,.L20,.L117-.L20
 	.byte	8,18,8,19,8,20,8,21,8,22,8,23
 	.sdecl	'.debug_frame',debug,cluster('simiic_delay')
 	.sect	'.debug_frame'
 	.word	24
-	.word	.L307,.L20,.L146-.L20
+	.word	.L333,.L22,.L148-.L22
 	.byte	8,18,8,19,8,20,8,21,8,22,8,23
 	.sdecl	'.debug_frame',debug,cluster('simiic_start')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L307,.L22,.L118-.L22
+	.word	.L333,.L24,.L120-.L24
 	.sdecl	'.debug_frame',debug,cluster('simiic_stop')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L307,.L24,.L119-.L24
+	.word	.L333,.L26,.L121-.L26
 	.sdecl	'.debug_frame',debug,cluster('simiic_sendack')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L307,.L26,.L147-.L26
+	.word	.L333,.L28,.L149-.L28
 	.sdecl	'.debug_frame',debug,cluster('sccb_waitack')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L307,.L28,.L150-.L28
+	.word	.L333,.L30,.L152-.L30
 	.sdecl	'.debug_frame',debug,cluster('send_ch')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L307,.L30,.L120-.L30
+	.word	.L333,.L32,.L122-.L32
 	.sdecl	'.debug_frame',debug,cluster('read_ch')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L307,.L32,.L124-.L32
+	.word	.L333,.L34,.L126-.L34
 	.sdecl	'.debug_frame',debug,cluster('simiic_write_reg')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L307,.L34,.L128-.L34
+	.word	.L333,.L36,.L130-.L36
 	.sdecl	'.debug_frame',debug,cluster('simiic_read_reg')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L307,.L36,.L132-.L36
+	.word	.L333,.L38,.L134-.L38
 	.sdecl	'.debug_frame',debug,cluster('simiic_read_regs')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L307,.L38,.L138-.L38
+	.word	.L333,.L40,.L140-.L40
 	.sdecl	'.debug_frame',debug,cluster('simiic_init')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L307,.L40,.L145-.L40
+	.word	.L333,.L42,.L147-.L42
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   278  }
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_IIC.c	   279  

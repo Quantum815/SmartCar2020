@@ -1,6 +1,6 @@
 	; Module start
 	.compiler_version	"TASKING VX-toolset for TriCore: C compiler v6.3r1 Build 19041558 SN 99294086"
-	.compiler_invocation	"ctc --dep-file=Libraries\\seekfree_libraries\\.zf_spi.o.d --fp-model=c,f,l,n,r,S,T,z -D__CPU__=tc26x -D__CPU_TC26X__ --core=tc1.6.x --iso=99 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\CODE -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Build -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Impl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Lib -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Lib\\DataHandling -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Lib\\InternalMux -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_PinMap -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Asc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Lin -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Spi -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\Icu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\PwmBc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\PwmHl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\TimerWithTrigger -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\TPwm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cif -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cif\\Cam -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cif\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\CStart -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Irq -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Trap -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dma -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dma\\Dma -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dma\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc\\Dsadc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc\\Rdc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dts -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dts\\Dts -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dts\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Emem -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Emem\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eray -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eray\\Eray -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eray\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eth -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eth\\Phy_Pef7071 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eth\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fce -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fce\\Crc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fce\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fft -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fft\\Fft -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fft\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Flash -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Flash\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gpt12 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gpt12\\IncrEnc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gpt12\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom\\Pwm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom\\PwmHl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tim -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tim\\In -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom\\Pwm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom\\PwmHl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Trig -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Hssl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Hssl\\Hssl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Hssl\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\I2c -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\I2c\\I2c -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\I2c\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Iom -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Iom\\Driver -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Iom\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Msc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Msc\\Msc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Msc\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Mtu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Mtu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Multican -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Multican\\Can -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Multican\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Port -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Port\\Io -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Port\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5\\Psi5 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5s -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5s\\Psi5s -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5s\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi\\SpiMaster -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi\\SpiSlave -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Scu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Scu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Sent -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Sent\\Sent -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Sent\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Smu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Smu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Src -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Src\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Stm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Stm\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Stm\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Vadc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Vadc\\Adc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Vadc\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Platform -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Platform\\Tricore -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Platform\\Tricore\\Compilers -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Sfr -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Sfr\\TC26B -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Sfr\\TC26B\\_Reg -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Service -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Service\\CpuGeneric -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\seekfree_libraries -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\seekfree_libraries\\common -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\seekfree_peripheral -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\USER -g2 -wW557 --make-target=Libraries\\seekfree_libraries\\zf_spi.o -t4 --language=-gcc,-volatile,+strings,-kanji --default-near-size=0 -O2 --default-a1-size=0 --default-a0-size=0 --source --align=0 --compact-max-size=200 --switch=auto --error-limit=42 -o Libraries\\seekfree_libraries\\zf_spi.src ..\\Libraries\\seekfree_libraries\\zf_spi.c"
+	.compiler_invocation	"ctc --dep-file=Libraries\\seekfree_libraries\\.zf_spi.o.d --fp-model=c,f,l,n,r,S,T,z -D__CPU__=tc26x -D__CPU_TC26X__ --core=tc1.6.x --iso=99 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\CODE -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Build -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Impl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Lib -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Lib\\DataHandling -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Lib\\InternalMux -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_PinMap -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Asc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Lin -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Spi -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\Icu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\PwmBc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\PwmHl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\TimerWithTrigger -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\TPwm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cif -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cif\\Cam -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cif\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\CStart -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Irq -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Trap -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dma -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dma\\Dma -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dma\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc\\Dsadc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc\\Rdc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dts -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dts\\Dts -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dts\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Emem -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Emem\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eray -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eray\\Eray -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eray\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eth -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eth\\Phy_Pef7071 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eth\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fce -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fce\\Crc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fce\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fft -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fft\\Fft -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fft\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Flash -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Flash\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gpt12 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gpt12\\IncrEnc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gpt12\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom\\Pwm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom\\PwmHl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tim -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tim\\In -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom\\Pwm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom\\PwmHl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Trig -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Hssl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Hssl\\Hssl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Hssl\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\I2c -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\I2c\\I2c -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\I2c\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Iom -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Iom\\Driver -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Iom\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Msc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Msc\\Msc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Msc\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Mtu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Mtu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Multican -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Multican\\Can -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Multican\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Port -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Port\\Io -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Port\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5\\Psi5 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5s -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5s\\Psi5s -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5s\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi\\SpiMaster -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi\\SpiSlave -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Scu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Scu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Sent -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Sent\\Sent -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Sent\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Smu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Smu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Src -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Src\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Stm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Stm\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Stm\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Vadc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Vadc\\Adc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Vadc\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Platform -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Platform\\Tricore -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Platform\\Tricore\\Compilers -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Sfr -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Sfr\\TC26B -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Infra\\Sfr\\TC26B\\_Reg -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Service -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Service\\CpuGeneric -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\seekfree_libraries -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\seekfree_libraries\\common -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\seekfree_peripheral -IE:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\USER -g2 -wW557 --make-target=Libraries\\seekfree_libraries\\zf_spi.o -t4 --language=-gcc,-volatile,+strings,-kanji --default-near-size=0 -O1 --default-a1-size=0 --default-a0-size=0 --source --align=0 --switch=auto --error-limit=42 -o Libraries\\seekfree_libraries\\zf_spi.src ..\\Libraries\\seekfree_libraries\\zf_spi.c"
 	.compiler_name		"ctc"
 	;source	'..\\Libraries\\seekfree_libraries\\zf_spi.c'
 
@@ -46,51 +46,54 @@ $TC16X
 ; ..\Libraries\seekfree_libraries\zf_spi.c	    31  
 ; ..\Libraries\seekfree_libraries\zf_spi.c	    32  void spi_mux(SPIN_enum spi_n, SPI_PIN_enum sck_pin, SPI_PIN_enum mosi_pin, SPI_PIN_enum miso_pin, SPI_PIN_enum cs_pin, IfxQspi_SpiMaster_Pins *set_pin, IfxQspi_SpiMaster_Output *set_cs)
 ; Function spi_mux
-.L220:
+.L221:
 spi_mux:	.type	func
 	mov	e8,d6,d7
 	ld.h	d15,[a10]
-.L441:
+.L324:
 	mov.aa	a15,a4
-.L348:
+.L325:
 	mov.aa	a12,a5
-.L443:
+.L327:
 
 ; ..\Libraries\seekfree_libraries\zf_spi.c	    33  {
 ; ..\Libraries\seekfree_libraries\zf_spi.c	    34  	set_pin->mrstMode = IfxPort_InputMode_pullDown;
 	mov	d0,#8
+.L563:
 	st.b	[a15]20,d0
-.L561:
+.L564:
 
 ; ..\Libraries\seekfree_libraries\zf_spi.c	    35  	set_pin->mtsrMode = IfxPort_OutputMode_pushPull;
 	mov	d0,#128
+.L565:
 	st.b	[a15]12,d0
-.L562:
+.L566:
 
 ; ..\Libraries\seekfree_libraries\zf_spi.c	    36  	set_pin->sclkMode = IfxPort_OutputMode_pushPull;
 	st.b	[a15]4,d0
-.L563:
+.L567:
 
 ; ..\Libraries\seekfree_libraries\zf_spi.c	    37  	set_pin->pinDriver = IfxPort_PadDriver_cmosAutomotiveSpeed1;
 	mov	d1,#0
+.L568:
 	st.b	[a15]21,d1
-.L564:
+.L569:
 
 ; ..\Libraries\seekfree_libraries\zf_spi.c	    38  
 ; ..\Libraries\seekfree_libraries\zf_spi.c	    39  	set_cs->driver = IfxPort_PadDriver_cmosAutomotiveSpeed1;
 	st.b	[a12]5,d1
-.L565:
+.L570:
 
 ; ..\Libraries\seekfree_libraries\zf_spi.c	    40  	set_cs->mode = IfxPort_OutputMode_pushPull;
 	st.b	[a12]4,d0
-.L566:
+.L571:
 
 ; ..\Libraries\seekfree_libraries\zf_spi.c	    41  
 ; ..\Libraries\seekfree_libraries\zf_spi.c	    42  	switch(spi_n)
 ; ..\Libraries\seekfree_libraries\zf_spi.c	    43  	{
 ; ..\Libraries\seekfree_libraries\zf_spi.c	    44  		case SPI_0:
 	jeq	d1,d4,.L2
-.L567:
+.L572:
 
 ; ..\Libraries\seekfree_libraries\zf_spi.c	    45  		{
 ; ..\Libraries\seekfree_libraries\zf_spi.c	    46  			if		(SPI0_SCLK_P20_11 == sck_pin)	set_pin->sclk = &IfxQspi0_SCLK_P20_11_OUT;
@@ -121,7 +124,7 @@ spi_mux:	.type	func
 ; ..\Libraries\seekfree_libraries\zf_spi.c	    71  
 ; ..\Libraries\seekfree_libraries\zf_spi.c	    72  		case SPI_1:
 	jeq	d4,#1,.L3
-.L568:
+.L573:
 
 ; ..\Libraries\seekfree_libraries\zf_spi.c	    73  		{
 ; ..\Libraries\seekfree_libraries\zf_spi.c	    74  			if		(SPI1_SCLK_P10_2 == sck_pin)	set_pin->sclk = &IfxQspi1_SCLK_P10_2_OUT;
@@ -154,7 +157,7 @@ spi_mux:	.type	func
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   101  
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   102  		case SPI_2:
 	jeq	d4,#2,.L4
-.L569:
+.L574:
 
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   103  		{
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   104  			if		(SPI2_SCLK_P13_0  == sck_pin)	set_pin->sclk = &IfxQspi2_SCLKN_P13_0_OUT;
@@ -192,7 +195,7 @@ spi_mux:	.type	func
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   136  
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   137  		case SPI_3:
 	jeq	d4,#3,.L5
-.L570:
+.L575:
 
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   138  		{
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   139  			if		(SPI3_SCLK_P02_7  == sck_pin)	set_pin->sclk = &IfxQspi3_SCLK_P02_7_OUT;
@@ -243,428 +246,444 @@ spi_mux:	.type	func
 	ret
 .L2:
 	jne	d5,#0,.L7
-.L571:
+.L576:
 	movh.a	a2,#@his(IfxQspi0_SCLK_P20_11_OUT)
 	lea	a2,[a2]@los(IfxQspi0_SCLK_P20_11_OUT)
-.L572:
+.L577:
 	j	.L8
 .L7:
 	jne	d5,#1,.L9
-.L573:
+.L578:
 	movh.a	a2,#@his(IfxQspi0_SCLK_P20_13_OUT)
 	lea	a2,[a2]@los(IfxQspi0_SCLK_P20_13_OUT)
 .L8:
 	st.a	[a15],a2
-.L574:
+.L579:
 	j	.L10
 .L9:
-	fcall	.cocofun_2
-.L340:
+	movh.a	a4,#@his(.1.str)
+.L322:
+	lea	a4,[a4]@los(.1.str)
 	mov	d4,#48
-	fcall	.cocofun_3
-.L342:
+.L323:
+	movh.a	a5,#@his(_999001___func__)
+.L321:
+	lea	a5,[a5]@los(_999001___func__)
 	call	assert
 .L10:
 	jne	d9,#6,.L11
-.L344:
+.L328:
 	movh.a	a2,#@his(IfxQspi0_MTSR_P20_12_OUT)
 	lea	a2,[a2]@los(IfxQspi0_MTSR_P20_12_OUT)
-.L575:
+.L580:
 	j	.L12
 .L11:
 	jne	d9,#7,.L13
-.L345:
+.L329:
 	movh.a	a2,#@his(IfxQspi0_MTSR_P20_14_OUT)
 	lea	a2,[a2]@los(IfxQspi0_MTSR_P20_14_OUT)
 .L12:
 	st.a	[a15]8,a2
-.L576:
+.L581:
 	j	.L14
 .L13:
-	fcall	.cocofun_2
+	movh.a	a4,#@his(.1.str)
+	lea	a4,[a4]@los(.1.str)
 	mov	d4,#52
-	fcall	.cocofun_3
+	movh.a	a5,#@his(_999001___func__)
+	lea	a5,[a5]@los(_999001___func__)
 	call	assert
 .L14:
 	mov	d0,#12
-.L346:
+.L330:
 	jne	d8,d0,.L15
-.L347:
+.L331:
 	movh.a	a2,#@his(IfxQspi0_MRSTA_P20_12_IN)
 	lea	a2,[a2]@los(IfxQspi0_MRSTA_P20_12_IN)
-.L577:
+.L582:
 	st.a	[a15]16,a2
-.L578:
+.L583:
 	j	.L16
 .L15:
-	fcall	.cocofun_2
+	movh.a	a4,#@his(.1.str)
+	lea	a4,[a4]@los(.1.str)
 	mov	d4,#55
-	fcall	.cocofun_3
+	movh.a	a5,#@his(_999001___func__)
+	lea	a5,[a5]@los(_999001___func__)
 	call	assert
 .L16:
 	mov	d0,#18
-.L579:
+.L584:
 	jne	d15,d0,.L17
-.L580:
+.L585:
 	movh.a	a15,#@his(IfxQspi0_SLSO0_P20_8_OUT)
-.L349:
+.L326:
 	lea	a15,[a15]@los(IfxQspi0_SLSO0_P20_8_OUT)
-.L581:
+.L586:
 	j	.L18
 .L17:
 	mov	d0,#24
-.L582:
+.L587:
 	jne	d15,d0,.L19
-.L583:
+.L588:
 	movh.a	a15,#@his(IfxQspi0_SLSO1_P20_9_OUT)
-.L350:
+.L332:
 	lea	a15,[a15]@los(IfxQspi0_SLSO1_P20_9_OUT)
-.L584:
+.L589:
 	j	.L20
 .L19:
 	mov	d0,#30
-.L585:
+.L590:
 	jne	d15,d0,.L21
-.L586:
+.L591:
 	movh.a	a15,#@his(IfxQspi0_SLSO2_P20_13_OUT)
-.L351:
+.L333:
 	lea	a15,[a15]@los(IfxQspi0_SLSO2_P20_13_OUT)
-.L587:
+.L592:
 	j	.L22
 .L21:
 	mov	d0,#36
-.L588:
+.L593:
 	jne	d15,d0,.L23
-.L589:
+.L594:
 	movh.a	a15,#@his(IfxQspi0_SLSO3_P11_10_OUT)
-.L352:
+.L334:
 	lea	a15,[a15]@los(IfxQspi0_SLSO3_P11_10_OUT)
-.L590:
+.L595:
 	j	.L24
 .L23:
 	mov	d0,#42
-.L591:
+.L596:
 	jne	d15,d0,.L25
-.L592:
+.L597:
 	movh.a	a15,#@his(IfxQspi0_SLSO4_P11_11_OUT)
-.L353:
+.L335:
 	lea	a15,[a15]@los(IfxQspi0_SLSO4_P11_11_OUT)
-.L593:
+.L598:
 	j	.L26
 .L25:
 	mov	d0,#48
-.L594:
+.L599:
 	jne	d15,d0,.L27
-.L595:
+.L600:
 	movh.a	a15,#@his(IfxQspi0_SLSO5_P11_2_OUT)
-.L354:
+.L336:
 	lea	a15,[a15]@los(IfxQspi0_SLSO5_P11_2_OUT)
-.L596:
+.L601:
 	j	.L28
 .L27:
 	mov	d0,#54
-.L597:
+.L602:
 	jne	d15,d0,.L29
-.L598:
+.L603:
 	movh.a	a15,#@his(IfxQspi0_SLSO6_P20_10_OUT)
-.L355:
+.L337:
 	lea	a15,[a15]@los(IfxQspi0_SLSO6_P20_10_OUT)
-.L599:
+.L604:
 	j	.L30
 .L29:
 	mov	d0,#60
-.L600:
+.L605:
 	jne	d15,d0,.L31
-.L601:
+.L606:
 	movh.a	a15,#@his(IfxQspi0_SLSO7_P33_5_OUT)
-.L356:
+.L338:
 	lea	a15,[a15]@los(IfxQspi0_SLSO7_P33_5_OUT)
-.L602:
+.L607:
 	j	.L32
 .L31:
 	mov	d0,#66
-.L603:
+.L608:
 	jne	d15,d0,.L33
-.L604:
+.L609:
 	movh.a	a15,#@his(IfxQspi0_SLSO8_P20_6_OUT)
-.L357:
+.L339:
 	lea	a15,[a15]@los(IfxQspi0_SLSO8_P20_6_OUT)
-.L605:
+.L610:
 	j	.L34
 .L33:
 	mov	d0,#72
-.L606:
+.L611:
 	jne	d15,d0,.L35
-.L607:
+.L612:
 	movh.a	a15,#@his(IfxQspi0_SLSO9_P20_3_OUT)
-.L358:
+.L340:
 	lea	a15,[a15]@los(IfxQspi0_SLSO9_P20_3_OUT)
-.L608:
+.L613:
 	j	.L36
 .L35:
 	mov	d0,#96
-.L609:
+.L614:
 	jne	d15,d0,.L37
-.L610:
+.L615:
 	movh.a	a15,#@his(IfxQspi0_SLSO13_P15_0_OUT)
-.L359:
+.L341:
 	lea	a15,[a15]@los(IfxQspi0_SLSO13_P15_0_OUT)
-.L611:
+.L616:
 	j	.L38
 .L37:
 	mov	d4,#68
+.L617:
 	j	.L39
 .L3:
 	mov	d0,#102
-.L612:
+.L618:
 	jne	d5,d0,.L40
-.L613:
+.L619:
 	movh.a	a2,#@his(IfxQspi1_SCLK_P10_2_OUT)
 	lea	a2,[a2]@los(IfxQspi1_SCLK_P10_2_OUT)
-.L614:
+.L620:
 	j	.L41
 .L40:
 	mov	d0,#103
-.L615:
+.L621:
 	jne	d5,d0,.L42
-.L616:
+.L622:
 	movh.a	a2,#@his(IfxQspi1_SCLK_P11_6_OUT)
 	lea	a2,[a2]@los(IfxQspi1_SCLK_P11_6_OUT)
 .L41:
 	st.a	[a15],a2
-.L617:
+.L623:
 	j	.L43
 .L42:
-	fcall	.cocofun_2
-.L360:
+	movh.a	a4,#@his(.1.str)
+.L344:
+	lea	a4,[a4]@los(.1.str)
 	mov	d4,#76
-	fcall	.cocofun_3
-.L361:
+.L345:
+	movh.a	a5,#@his(_999001___func__)
+.L343:
+	lea	a5,[a5]@los(_999001___func__)
 	call	assert
 .L43:
 	mov	d0,#108
-.L362:
+.L346:
 	jne	d9,d0,.L44
-.L363:
+.L347:
 	movh.a	a2,#@his(IfxQspi1_MTSR_P10_1_OUT)
 	lea	a2,[a2]@los(IfxQspi1_MTSR_P10_1_OUT)
-.L618:
+.L624:
 	j	.L45
 .L44:
 	mov	d0,#109
-.L364:
+.L348:
 	jne	d9,d0,.L46
-.L365:
+.L349:
 	movh.a	a2,#@his(IfxQspi1_MTSR_P10_3_OUT)
 	lea	a2,[a2]@los(IfxQspi1_MTSR_P10_3_OUT)
-.L619:
+.L625:
 	j	.L47
 .L46:
 	mov	d0,#110
-.L366:
+.L350:
 	jne	d9,d0,.L48
-.L367:
+.L351:
 	movh.a	a2,#@his(IfxQspi1_MTSR_P10_4_OUT)
 	lea	a2,[a2]@los(IfxQspi1_MTSR_P10_4_OUT)
-.L620:
+.L626:
 	j	.L49
 .L48:
 	mov	d0,#111
-.L368:
+.L352:
 	jne	d9,d0,.L50
-.L369:
+.L353:
 	movh.a	a2,#@his(IfxQspi1_MTSR_P11_9_OUT)
 	lea	a2,[a2]@los(IfxQspi1_MTSR_P11_9_OUT)
 .L49:
 .L47:
 .L45:
 	st.a	[a15]8,a2
-.L621:
+.L627:
 	j	.L51
 .L50:
-	fcall	.cocofun_2
+	movh.a	a4,#@his(.1.str)
+	lea	a4,[a4]@los(.1.str)
 	mov	d4,#82
-	fcall	.cocofun_3
+	movh.a	a5,#@his(_999001___func__)
+	lea	a5,[a5]@los(_999001___func__)
 	call	assert
 .L51:
 	mov	d0,#114
-.L370:
+.L354:
 	jne	d8,d0,.L52
-.L371:
+.L355:
 	movh.a	a2,#@his(IfxQspi1_MRSTA_P10_1_IN)
 	lea	a2,[a2]@los(IfxQspi1_MRSTA_P10_1_IN)
-.L622:
+.L628:
 	j	.L53
 .L52:
 	mov	d0,#115
-.L372:
+.L356:
 	jne	d8,d0,.L54
-.L373:
+.L357:
 	movh.a	a2,#@his(IfxQspi1_MRSTB_P11_3_IN)
 	lea	a2,[a2]@los(IfxQspi1_MRSTB_P11_3_IN)
 .L53:
 	st.a	[a15]16,a2
-.L623:
+.L629:
 	j	.L55
 .L54:
-	fcall	.cocofun_2
+	movh.a	a4,#@his(.1.str)
+	lea	a4,[a4]@los(.1.str)
 	mov	d4,#86
-	fcall	.cocofun_3
+	movh.a	a5,#@his(_999001___func__)
+	lea	a5,[a5]@los(_999001___func__)
 	call	assert
 .L55:
 	mov	d0,#120
-.L624:
+.L630:
 	jne	d15,d0,.L56
-.L625:
+.L631:
 	movh.a	a15,#@his(IfxQspi1_SLSO0_P20_8_OUT)
-.L374:
+.L342:
 	lea	a15,[a15]@los(IfxQspi1_SLSO0_P20_8_OUT)
-.L626:
+.L632:
 	j	.L57
 .L56:
 	mov	d0,#126
-.L627:
+.L633:
 	jne	d15,d0,.L58
-.L628:
+.L634:
 	movh.a	a15,#@his(IfxQspi1_SLSO1_P20_9_OUT)
-.L375:
+.L358:
 	lea	a15,[a15]@los(IfxQspi1_SLSO1_P20_9_OUT)
-.L629:
+.L635:
 	j	.L59
 .L58:
 	mov	d0,#132
-.L630:
+.L636:
 	jne	d15,d0,.L60
-.L631:
+.L637:
 	movh.a	a15,#@his(IfxQspi1_SLSO2_P20_13_OUT)
-.L376:
+.L359:
 	lea	a15,[a15]@los(IfxQspi1_SLSO2_P20_13_OUT)
-.L632:
+.L638:
 	j	.L61
 .L60:
 	mov	d0,#138
-.L633:
+.L639:
 	jne	d15,d0,.L62
-.L634:
+.L640:
 	movh.a	a15,#@his(IfxQspi1_SLSO3_P11_10_OUT)
-.L377:
+.L360:
 	lea	a15,[a15]@los(IfxQspi1_SLSO3_P11_10_OUT)
-.L635:
+.L641:
 	j	.L63
 .L62:
 	mov	d0,#144
-.L636:
+.L642:
 	jne	d15,d0,.L64
-.L637:
+.L643:
 	movh.a	a15,#@his(IfxQspi1_SLSO4_P11_11_OUT)
-.L378:
+.L361:
 	lea	a15,[a15]@los(IfxQspi1_SLSO4_P11_11_OUT)
-.L638:
+.L644:
 	j	.L65
 .L64:
 	mov	d0,#150
-.L639:
+.L645:
 	jne	d15,d0,.L66
-.L640:
+.L646:
 	movh.a	a15,#@his(IfxQspi1_SLSO5_P11_2_OUT)
-.L379:
+.L362:
 	lea	a15,[a15]@los(IfxQspi1_SLSO5_P11_2_OUT)
-.L641:
+.L647:
 	j	.L67
 .L66:
 	mov	d0,#156
-.L642:
+.L648:
 	jne	d15,d0,.L68
-.L643:
+.L649:
 	movh.a	a15,#@his(IfxQspi1_SLSO6_P33_10_OUT)
-.L380:
+.L363:
 	lea	a15,[a15]@los(IfxQspi1_SLSO6_P33_10_OUT)
-.L644:
+.L650:
 	j	.L69
 .L68:
 	mov	d0,#162
-.L645:
+.L651:
 	jne	d15,d0,.L70
-.L646:
+.L652:
 	movh.a	a15,#@his(IfxQspi1_SLSO7_P33_5_OUT)
-.L381:
+.L364:
 	lea	a15,[a15]@los(IfxQspi1_SLSO7_P33_5_OUT)
-.L647:
+.L653:
 	j	.L71
 .L70:
 	mov	d0,#168
-.L648:
+.L654:
 	jne	d15,d0,.L72
-.L649:
+.L655:
 	movh.a	a15,#@his(IfxQspi1_SLSO8_P10_4_OUT)
-.L382:
+.L365:
 	lea	a15,[a15]@los(IfxQspi1_SLSO8_P10_4_OUT)
-.L650:
+.L656:
 	j	.L73
 .L72:
 	mov	d0,#174
-.L651:
+.L657:
 	jne	d15,d0,.L74
-.L652:
+.L658:
 	movh.a	a15,#@his(IfxQspi1_SLSO9_P10_5_OUT)
-.L383:
+.L366:
 	lea	a15,[a15]@los(IfxQspi1_SLSO9_P10_5_OUT)
-.L653:
+.L659:
 	j	.L75
 .L74:
 	mov	d0,#180
-.L654:
+.L660:
 	jne	d15,d0,.L76
-.L655:
+.L661:
 	movh.a	a15,#@his(IfxQspi1_SLSO10_P10_0_OUT)
-.L384:
+.L367:
 	lea	a15,[a15]@los(IfxQspi1_SLSO10_P10_0_OUT)
-.L656:
+.L662:
 	j	.L77
 .L76:
 	mov	d4,#99
+.L663:
 	j	.L78
 .L4:
 	mov	d0,#204
-.L657:
+.L664:
 	jne	d5,d0,.L79
-.L658:
+.L665:
 	movh.a	a2,#@his(IfxQspi2_SCLKN_P13_0_OUT)
 	lea	a2,[a2]@los(IfxQspi2_SCLKN_P13_0_OUT)
-.L659:
+.L666:
 	j	.L80
 .L79:
 	mov	d0,#205
-.L660:
+.L667:
 	jne	d5,d0,.L81
-.L661:
+.L668:
 	movh.a	a2,#@his(IfxQspi2_SCLKP_P13_1_OUT)
 	lea	a2,[a2]@los(IfxQspi2_SCLKP_P13_1_OUT)
-.L662:
+.L669:
 	j	.L82
 .L81:
 	mov	d0,#206
-.L663:
+.L670:
 	jne	d5,d0,.L83
-.L664:
+.L671:
 	movh.a	a2,#@his(IfxQspi2_SCLK_P15_3_OUT)
 	lea	a2,[a2]@los(IfxQspi2_SCLK_P15_3_OUT)
-.L665:
+.L672:
 	j	.L84
 .L83:
 	mov	d0,#207
-.L666:
+.L673:
 	jne	d5,d0,.L85
-.L667:
+.L674:
 	movh.a	a2,#@his(IfxQspi2_SCLK_P15_6_OUT)
 	lea	a2,[a2]@los(IfxQspi2_SCLK_P15_6_OUT)
-.L668:
+.L675:
 	j	.L86
 .L85:
 	mov	d0,#208
-.L669:
+.L676:
 	jne	d5,d0,.L87
-.L670:
+.L677:
 	movh.a	a2,#@his(IfxQspi2_SCLK_P15_8_OUT)
 	lea	a2,[a2]@los(IfxQspi2_SCLK_P15_8_OUT)
 .L86:
@@ -672,101 +691,106 @@ spi_mux:	.type	func
 .L82:
 .L80:
 	st.a	[a15],a2
-.L671:
+.L678:
 	j	.L88
 .L87:
-	fcall	.cocofun_2
-.L385:
+	movh.a	a4,#@his(.1.str)
+.L370:
+	lea	a4,[a4]@los(.1.str)
 	mov	d4,#109
-	fcall	.cocofun_3
-.L386:
+.L371:
+	movh.a	a5,#@his(_999001___func__)
+.L369:
+	lea	a5,[a5]@los(_999001___func__)
 	call	assert
 .L88:
 	mov	d0,#210
-.L387:
+.L372:
 	jne	d9,d0,.L89
-.L388:
+.L373:
 	movh.a	a2,#@his(IfxQspi2_MTSRN_P13_2_OUT)
 	lea	a2,[a2]@los(IfxQspi2_MTSRN_P13_2_OUT)
-.L672:
+.L679:
 	j	.L90
 .L89:
 	mov	d0,#211
-.L389:
+.L374:
 	jne	d9,d0,.L91
-.L390:
+.L375:
 	movh.a	a2,#@his(IfxQspi2_MTSRP_P13_3_OUT)
 	lea	a2,[a2]@los(IfxQspi2_MTSRP_P13_3_OUT)
-.L673:
+.L680:
 	j	.L92
 .L91:
 	mov	d0,#212
-.L391:
+.L376:
 	jne	d9,d0,.L93
-.L392:
+.L377:
 	movh.a	a2,#@his(IfxQspi2_MTSR_P15_5_OUT)
 	lea	a2,[a2]@los(IfxQspi2_MTSR_P15_5_OUT)
-.L674:
+.L681:
 	j	.L94
 .L93:
 	mov	d0,#213
-.L393:
+.L378:
 	jne	d9,d0,.L95
-.L394:
+.L379:
 	movh.a	a2,#@his(IfxQspi2_MTSR_P15_6_OUT)
 	lea	a2,[a2]@los(IfxQspi2_MTSR_P15_6_OUT)
 .L94:
 .L92:
 .L90:
 	st.a	[a15]8,a2
-.L675:
+.L682:
 	j	.L96
 .L95:
-	fcall	.cocofun_2
+	movh.a	a4,#@his(.1.str)
+	lea	a4,[a4]@los(.1.str)
 	mov	d4,#115
-	fcall	.cocofun_3
+	movh.a	a5,#@his(_999001___func__)
+	lea	a5,[a5]@los(_999001___func__)
 	call	assert
 .L96:
 	mov	d0,#216
-.L395:
+.L380:
 	jne	d8,d0,.L97
-.L396:
+.L381:
 	movh.a	a2,#@his(IfxQspi2_MRSTE_P15_2_IN)
 	lea	a2,[a2]@los(IfxQspi2_MRSTE_P15_2_IN)
-.L676:
+.L683:
 	j	.L98
 .L97:
 	mov	d0,#217
-.L397:
+.L382:
 	jne	d8,d0,.L99
-.L398:
+.L383:
 	movh.a	a2,#@his(IfxQspi2_MRSTA_P15_4_IN)
 	lea	a2,[a2]@los(IfxQspi2_MRSTA_P15_4_IN)
-.L677:
+.L684:
 	j	.L100
 .L99:
 	mov	d0,#218
-.L399:
+.L384:
 	jne	d8,d0,.L101
-.L400:
+.L385:
 	movh.a	a2,#@his(IfxQspi2_MRSTB_P15_7_IN)
 	lea	a2,[a2]@los(IfxQspi2_MRSTB_P15_7_IN)
-.L678:
+.L685:
 	j	.L102
 .L101:
 	mov	d0,#219
-.L401:
+.L386:
 	jne	d8,d0,.L103
-.L402:
+.L387:
 	movh.a	a2,#@his(IfxQspi2_MRSTCN_P21_2_IN)
 	lea	a2,[a2]@los(IfxQspi2_MRSTCN_P21_2_IN)
-.L679:
+.L686:
 	j	.L104
 .L103:
 	mov	d0,#220
-.L403:
+.L388:
 	jne	d8,d0,.L105
-.L404:
+.L389:
 	movh.a	a2,#@his(IfxQspi2_MRSTCP_P21_3_IN)
 	lea	a2,[a2]@los(IfxQspi2_MRSTCP_P21_3_IN)
 .L104:
@@ -774,166 +798,169 @@ spi_mux:	.type	func
 .L100:
 .L98:
 	st.a	[a15]16,a2
-.L680:
+.L687:
 	j	.L106
 .L105:
-	fcall	.cocofun_2
+	movh.a	a4,#@his(.1.str)
+	lea	a4,[a4]@los(.1.str)
 	mov	d4,#122
-	fcall	.cocofun_3
+	movh.a	a5,#@his(_999001___func__)
+	lea	a5,[a5]@los(_999001___func__)
 	call	assert
 .L106:
 	mov	d0,#222
-.L681:
+.L688:
 	jne	d15,d0,.L107
-.L682:
+.L689:
 	movh.a	a15,#@his(IfxQspi2_SLSO0_P15_2_OUT)
-.L405:
+.L368:
 	lea	a15,[a15]@los(IfxQspi2_SLSO0_P15_2_OUT)
-.L683:
+.L690:
 	j	.L108
 .L107:
 	mov	d0,#228
-.L684:
+.L691:
 	jne	d15,d0,.L109
-.L685:
+.L692:
 	movh.a	a15,#@his(IfxQspi2_SLSO1_P14_2_OUT)
-.L406:
+.L390:
 	lea	a15,[a15]@los(IfxQspi2_SLSO1_P14_2_OUT)
-.L686:
+.L693:
 	j	.L110
 .L109:
 	mov	d0,#234
-.L687:
+.L694:
 	jne	d15,d0,.L111
-.L688:
+.L695:
 	movh.a	a15,#@his(IfxQspi2_SLSO2_P14_6_OUT)
-.L407:
+.L391:
 	lea	a15,[a15]@los(IfxQspi2_SLSO2_P14_6_OUT)
-.L689:
+.L696:
 	j	.L112
 .L111:
 	mov	d0,#240
-.L690:
+.L697:
 	jne	d15,d0,.L113
-.L691:
+.L698:
 	movh.a	a15,#@his(IfxQspi2_SLSO3_P14_3_OUT)
-.L408:
+.L392:
 	lea	a15,[a15]@los(IfxQspi2_SLSO3_P14_3_OUT)
-.L692:
+.L699:
 	j	.L114
 .L113:
 	mov	d0,#246
-.L693:
+.L700:
 	jne	d15,d0,.L115
-.L694:
+.L701:
 	movh.a	a15,#@his(IfxQspi2_SLSO4_P14_7_OUT)
-.L409:
+.L393:
 	lea	a15,[a15]@los(IfxQspi2_SLSO4_P14_7_OUT)
-.L695:
+.L702:
 	j	.L116
 .L115:
 	mov	d0,#252
-.L696:
+.L703:
 	jne	d15,d0,.L117
-.L697:
+.L704:
 	movh.a	a15,#@his(IfxQspi2_SLSO5_P15_1_OUT)
-.L410:
+.L394:
 	lea	a15,[a15]@los(IfxQspi2_SLSO5_P15_1_OUT)
-.L698:
+.L705:
 	j	.L118
 .L117:
 	mov	d0,#258
-.L699:
+.L706:
 	jne	d15,d0,.L119
-.L700:
+.L707:
 	movh.a	a15,#@his(IfxQspi2_SLSO6_P33_13_OUT)
-.L411:
+.L395:
 	lea	a15,[a15]@los(IfxQspi2_SLSO6_P33_13_OUT)
-.L701:
+.L708:
 	j	.L120
 .L119:
 	mov	d0,#264
-.L702:
+.L709:
 	jne	d15,d0,.L121
-.L703:
+.L710:
 	movh.a	a15,#@his(IfxQspi2_SLSO7_P20_10_OUT)
-.L412:
+.L396:
 	lea	a15,[a15]@los(IfxQspi2_SLSO7_P20_10_OUT)
-.L704:
+.L711:
 	j	.L122
 .L121:
 	mov	d0,#270
-.L705:
+.L712:
 	jne	d15,d0,.L123
-.L706:
+.L713:
 	movh.a	a15,#@his(IfxQspi2_SLSO8_P20_6_OUT)
-.L413:
+.L397:
 	lea	a15,[a15]@los(IfxQspi2_SLSO8_P20_6_OUT)
-.L707:
+.L714:
 	j	.L124
 .L123:
 	mov	d0,#276
-.L708:
+.L715:
 	jne	d15,d0,.L125
-.L709:
+.L716:
 	movh.a	a15,#@his(IfxQspi2_SLSO9_P20_3_OUT)
-.L414:
+.L398:
 	lea	a15,[a15]@los(IfxQspi2_SLSO9_P20_3_OUT)
-.L710:
+.L717:
 	j	.L126
 .L125:
 	mov	d4,#134
+.L718:
 	j	.L127
 .L5:
 	mov	d0,#306
-.L711:
+.L719:
 	jne	d5,d0,.L128
-.L712:
+.L720:
 	movh.a	a2,#@his(IfxQspi3_SCLK_P02_7_OUT)
 	lea	a2,[a2]@los(IfxQspi3_SCLK_P02_7_OUT)
-.L713:
+.L721:
 	j	.L129
 .L128:
 	mov	d0,#307
-.L714:
+.L722:
 	jne	d5,d0,.L130
-.L715:
+.L723:
 	movh.a	a2,#@his(IfxQspi3_SCLK_P10_8_OUT)
 	lea	a2,[a2]@los(IfxQspi3_SCLK_P10_8_OUT)
-.L716:
+.L724:
 	j	.L131
 .L130:
 	mov	d0,#308
-.L717:
+.L725:
 	jne	d5,d0,.L132
-.L718:
+.L726:
 	movh.a	a2,#@his(IfxQspi3_SCLKN_P22_0_OUT)
 	lea	a2,[a2]@los(IfxQspi3_SCLKN_P22_0_OUT)
-.L719:
+.L727:
 	j	.L133
 .L132:
 	mov	d0,#309
-.L720:
+.L728:
 	jne	d5,d0,.L134
-.L721:
+.L729:
 	movh.a	a2,#@his(IfxQspi3_SCLKP_P22_1_OUT)
 	lea	a2,[a2]@los(IfxQspi3_SCLKP_P22_1_OUT)
-.L722:
+.L730:
 	j	.L135
 .L134:
 	mov	d0,#310
-.L723:
+.L731:
 	jne	d5,d0,.L136
-.L724:
+.L732:
 	movh.a	a2,#@his(IfxQspi3_SCLK_P22_3_OUT)
 	lea	a2,[a2]@los(IfxQspi3_SCLK_P22_3_OUT)
-.L725:
+.L733:
 	j	.L137
 .L136:
 	mov	d0,#311
-.L726:
+.L734:
 	jne	d5,d0,.L138
-.L727:
+.L735:
 	movh.a	a2,#@his(IfxQspi3_SCLK_P33_11_OUT)
 	lea	a2,[a2]@los(IfxQspi3_SCLK_P33_11_OUT)
 .L137:
@@ -942,65 +969,68 @@ spi_mux:	.type	func
 .L131:
 .L129:
 	st.a	[a15],a2
-.L728:
+.L736:
 	j	.L139
 .L138:
-	fcall	.cocofun_2
-.L415:
+	movh.a	a4,#@his(.1.str)
+.L401:
+	lea	a4,[a4]@los(.1.str)
 	mov	d4,#145
-	fcall	.cocofun_3
-.L416:
+.L402:
+	movh.a	a5,#@his(_999001___func__)
+.L400:
+	lea	a5,[a5]@los(_999001___func__)
 	call	assert
 .L139:
 	mov	d0,#312
-.L417:
+.L403:
 	jne	d9,d0,.L140
-.L418:
+.L404:
 	movh.a	a2,#@his(IfxQspi3_MTSR_P02_6_OUT)
 	lea	a2,[a2]@los(IfxQspi3_MTSR_P02_6_OUT)
-.L729:
+.L737:
 	j	.L141
 .L140:
 	mov	d0,#313
-.L419:
+.L405:
 	jne	d9,d0,.L142
-.L420:
+.L406:
 	movh.a	a2,#@his(IfxQspi3_MTSR_P10_6_OUT)
 	lea	a2,[a2]@los(IfxQspi3_MTSR_P10_6_OUT)
-.L730:
+.L738:
 	j	.L143
 .L142:
 	mov	d0,#314
-.L421:
+.L407:
 	jne	d9,d0,.L144
-.L422:
+.L408:
 	movh.a	a2,#@his(IfxQspi3_MTSR_P22_0_OUT)
 	lea	a2,[a2]@los(IfxQspi3_MTSR_P22_0_OUT)
-.L731:
+.L739:
 	j	.L145
 .L144:
 	mov	d0,#315
-.L423:
+.L409:
 	jne	d9,d0,.L146
-.L424:
+.L410:
 	movh.a	a2,#@his(IfxQspi3_MTSRN_P22_2_OUT)
 	lea	a2,[a2]@los(IfxQspi3_MTSRN_P22_2_OUT)
-.L732:
+.L740:
 	j	.L147
 .L146:
 	mov	d0,#316
-.L425:
+.L411:
 	jne	d9,d0,.L148
-.L426:
+.L412:
 	movh.a	a2,#@his(IfxQspi3_MTSRP_P22_3_OUT)
 	lea	a2,[a2]@los(IfxQspi3_MTSRP_P22_3_OUT)
-.L733:
+.L741:
 	j	.L149
 .L148:
 	mov	d0,#317
-.L427:
+.L413:
 	jne	d9,d0,.L150
-.L428:
+.L414:
 	movh.a	a2,#@his(IfxQspi3_MTSR_P33_12_OUT)
 	lea	a2,[a2]@los(IfxQspi3_MTSR_P33_12_OUT)
 .L149:
@@ -1009,63 +1039,65 @@ spi_mux:	.type	func
 .L143:
 .L141:
 	st.a	[a15]8,a2
-.L734:
+.L742:
 	j	.L151
 .L150:
-	fcall	.cocofun_2
+	movh.a	a4,#@his(.1.str)
+	lea	a4,[a4]@los(.1.str)
 	mov	d4,#153
-	fcall	.cocofun_3
+	movh.a	a5,#@his(_999001___func__)
+	lea	a5,[a5]@los(_999001___func__)
 	call	assert
 .L151:
 	mov	d0,#318
-.L429:
+.L415:
 	jne	d8,d0,.L152
-.L430:
+.L416:
 	movh.a	a2,#@his(IfxQspi3_MRSTA_P02_5_IN)
 	lea	a2,[a2]@los(IfxQspi3_MRSTA_P02_5_IN)
-.L735:
+.L743:
 	j	.L153
 .L152:
 	mov	d0,#319
-.L431:
+.L417:
 	jne	d8,d0,.L154
-.L432:
+.L418:
 	movh.a	a2,#@his(IfxQspi3_MRSTB_P10_7_IN)
 	lea	a2,[a2]@los(IfxQspi3_MRSTB_P10_7_IN)
-.L736:
+.L744:
 	j	.L155
 .L154:
 	mov	d0,#320
-.L433:
+.L419:
 	jne	d8,d0,.L156
-.L434:
+.L420:
 	movh.a	a2,#@his(IfxQspi3_MRSTE_P22_1_IN)
 	lea	a2,[a2]@los(IfxQspi3_MRSTE_P22_1_IN)
-.L737:
+.L745:
 	j	.L157
 .L156:
 	mov	d0,#321
-.L435:
+.L421:
 	jne	d8,d0,.L158
-.L436:
+.L422:
 	movh.a	a2,#@his(IfxQspi3_MRSTFN_P21_2_IN)
 	lea	a2,[a2]@los(IfxQspi3_MRSTFN_P21_2_IN)
-.L738:
+.L746:
 	j	.L159
 .L158:
 	mov	d0,#322
-.L437:
+.L423:
 	jne	d8,d0,.L160
-.L438:
+.L424:
 	movh.a	a2,#@his(IfxQspi3_MRSTFP_P21_3_IN)
 	lea	a2,[a2]@los(IfxQspi3_MRSTFP_P21_3_IN)
-.L739:
+.L747:
 	j	.L161
 .L160:
 	mov	d0,#323
-.L439:
+.L425:
 	jne	d8,d0,.L162
-.L440:
+.L426:
 	movh.a	a2,#@his(IfxQspi3_MRSTD_P33_13_IN)
 	lea	a2,[a2]@los(IfxQspi3_MRSTD_P33_13_IN)
 .L161:
@@ -1074,180 +1106,182 @@ spi_mux:	.type	func
 .L155:
 .L153:
 	st.a	[a15]16,a2
-.L740:
+.L748:
 	j	.L163
 .L162:
-	fcall	.cocofun_2
+	movh.a	a4,#@his(.1.str)
+	lea	a4,[a4]@los(.1.str)
 	mov	d4,#161
-	fcall	.cocofun_3
+	movh.a	a5,#@his(_999001___func__)
+	lea	a5,[a5]@los(_999001___func__)
 	call	assert
 .L163:
 	mov	d0,#324
-.L741:
+.L749:
 	jne	d15,d0,.L164
-.L742:
+.L750:
 	movh.a	a15,#@his(IfxQspi3_SLSO0_P02_4_OUT)
-.L444:
+.L399:
 	lea	a15,[a15]@los(IfxQspi3_SLSO0_P02_4_OUT)
-.L743:
+.L751:
 	j	.L165
 .L164:
 	mov	d0,#330
-.L744:
+.L752:
 	jne	d15,d0,.L166
-.L745:
+.L753:
 	movh.a	a15,#@his(IfxQspi3_SLSO1_P02_0_OUT)
-.L445:
+.L427:
 	lea	a15,[a15]@los(IfxQspi3_SLSO1_P02_0_OUT)
-.L746:
+.L754:
 	j	.L167
 .L166:
 	mov	d0,#331
-.L747:
+.L755:
 	jne	d15,d0,.L168
-.L748:
+.L756:
 	movh.a	a15,#@his(IfxQspi3_SLSO1_P33_9_OUT)
-.L446:
+.L428:
 	lea	a15,[a15]@los(IfxQspi3_SLSO1_P33_9_OUT)
-.L749:
+.L757:
 	j	.L169
 .L168:
 	mov	d0,#336
-.L750:
+.L758:
 	jne	d15,d0,.L170
-.L751:
+.L759:
 	movh.a	a15,#@his(IfxQspi3_SLSO2_P02_1_OUT)
-.L447:
+.L429:
 	lea	a15,[a15]@los(IfxQspi3_SLSO2_P02_1_OUT)
-.L752:
+.L760:
 	j	.L171
 .L170:
 	mov	d0,#337
-.L753:
+.L761:
 	jne	d15,d0,.L172
-.L754:
+.L762:
 	movh.a	a15,#@his(IfxQspi3_SLSO2_P33_8_OUT)
-.L448:
+.L430:
 	lea	a15,[a15]@los(IfxQspi3_SLSO2_P33_8_OUT)
-.L755:
+.L763:
 	j	.L173
 .L172:
 	mov	d0,#342
-.L756:
+.L764:
 	jne	d15,d0,.L174
-.L757:
+.L765:
 	movh.a	a15,#@his(IfxQspi3_SLSO3_P02_2_OUT)
-.L449:
+.L431:
 	lea	a15,[a15]@los(IfxQspi3_SLSO3_P02_2_OUT)
-.L758:
+.L766:
 	j	.L175
 .L174:
 	mov	d0,#348
-.L759:
+.L767:
 	jne	d15,d0,.L176
-.L760:
+.L768:
 	movh.a	a15,#@his(IfxQspi3_SLSO4_P02_3_OUT)
-.L450:
+.L432:
 	lea	a15,[a15]@los(IfxQspi3_SLSO4_P02_3_OUT)
-.L761:
+.L769:
 	j	.L177
 .L176:
 	mov	d0,#349
-.L762:
+.L770:
 	jne	d15,d0,.L178
-.L763:
+.L771:
 	movh.a	a15,#@his(IfxQspi3_SLSO4_P23_5_OUT)
-.L451:
+.L433:
 	lea	a15,[a15]@los(IfxQspi3_SLSO4_P23_5_OUT)
-.L764:
+.L772:
 	j	.L179
 .L178:
 	mov	d0,#354
-.L765:
+.L773:
 	jne	d15,d0,.L180
-.L766:
+.L774:
 	movh.a	a15,#@his(IfxQspi3_SLSO5_P02_8_OUT)
-.L452:
+.L434:
 	lea	a15,[a15]@los(IfxQspi3_SLSO5_P02_8_OUT)
-.L767:
+.L775:
 	j	.L181
 .L180:
 	mov	d0,#355
-.L768:
+.L776:
 	jne	d15,d0,.L182
-.L769:
+.L777:
 	movh.a	a15,#@his(IfxQspi3_SLSO5_P23_4_OUT)
-.L453:
+.L435:
 	lea	a15,[a15]@los(IfxQspi3_SLSO5_P23_4_OUT)
-.L770:
+.L778:
 	j	.L183
 .L182:
 	mov	d0,#360
-.L771:
+.L779:
 	jne	d15,d0,.L184
-.L772:
+.L780:
 	movh.a	a15,#@his(IfxQspi3_SLSO6_P00_8_OUT)
-.L454:
+.L436:
 	lea	a15,[a15]@los(IfxQspi3_SLSO6_P00_8_OUT)
-.L773:
+.L781:
 	j	.L185
 .L184:
 	mov	d0,#366
-.L774:
+.L782:
 	jne	d15,d0,.L186
-.L775:
+.L783:
 	movh.a	a15,#@his(IfxQspi3_SLSO7_P00_9_OUT)
-.L455:
+.L437:
 	lea	a15,[a15]@los(IfxQspi3_SLSO7_P00_9_OUT)
-.L776:
+.L784:
 	j	.L187
 .L186:
 	mov	d0,#367
-.L777:
+.L785:
 	jne	d15,d0,.L188
-.L778:
+.L786:
 	movh.a	a15,#@his(IfxQspi3_SLSO7_P33_7_OUT)
-.L456:
+.L438:
 	lea	a15,[a15]@los(IfxQspi3_SLSO7_P33_7_OUT)
-.L779:
+.L787:
 	j	.L189
 .L188:
 	mov	d0,#372
-.L780:
+.L788:
 	jne	d15,d0,.L190
-.L781:
+.L789:
 	movh.a	a15,#@his(IfxQspi3_SLSO8_P10_5_OUT)
-.L457:
+.L439:
 	lea	a15,[a15]@los(IfxQspi3_SLSO8_P10_5_OUT)
-.L782:
+.L790:
 	j	.L191
 .L190:
 	mov	d0,#390
-.L783:
+.L791:
 	jne	d15,d0,.L192
-.L784:
+.L792:
 	movh.a	a15,#@his(IfxQspi3_SLSO11_P33_10_OUT)
-.L458:
+.L440:
 	lea	a15,[a15]@los(IfxQspi3_SLSO11_P33_10_OUT)
-.L785:
+.L793:
 	j	.L193
 .L192:
 	mov	d0,#396
-.L786:
+.L794:
 	jne	d15,d0,.L194
-.L787:
+.L795:
 	movh.a	a15,#@his(IfxQspi3_SLSO12_P22_2_OUT)
-.L459:
+.L441:
 	lea	a15,[a15]@los(IfxQspi3_SLSO12_P22_2_OUT)
-.L788:
+.L796:
 	j	.L195
 .L194:
 	mov	d0,#402
-.L789:
+.L797:
 	jne	d15,d0,.L196
-.L790:
+.L798:
 	movh.a	a15,#@his(IfxQspi3_SLSO13_P23_1_OUT)
-.L460:
+.L442:
 	lea	a15,[a15]@los(IfxQspi3_SLSO13_P23_1_OUT)
 .L195:
 .L193:
@@ -1298,53 +1332,25 @@ spi_mux:	.type	func
 .L20:
 .L18:
 	st.a	[a12],a15
-.L791:
+.L799:
 	ret
 .L196:
 	mov	d4,#180
 .L39:
 .L78:
 .L127:
-	fcall	.cocofun_2
-.L442:
-	fcall	.cocofun_3
-.L461:
+	movh.a	a4,#@his(.1.str)
+	lea	a4,[a4]@los(.1.str)
+	movh.a	a5,#@his(_999001___func__)
+	lea	a5,[a5]@los(_999001___func__)
 	j	assert
-.L328:
+.L310:
 	
 __spi_mux_function_end:
 	.size	spi_mux,__spi_mux_function_end-spi_mux
-.L248:
+.L244:
 	; End of function
 	
-	.sdecl	'.text.zf_spi..cocofun_3',code,cluster('.cocofun_3')
-	.sect	'.text.zf_spi..cocofun_3'
-	.align	2
-; Function .cocofun_3
-.L222:
-.cocofun_3:	.type	func
-; Function body .cocofun_3, coco_iter:0
-	movh.a	a5,#@his(_999001___func__)
-.L343:
-	lea	a5,[a5]@los(_999001___func__)
-.L801:
-	fret
-.L258:
-	; End of function
-	.sdecl	'.text.zf_spi..cocofun_2',code,cluster('.cocofun_2')
-	.sect	'.text.zf_spi..cocofun_2'
-	.align	2
-; Function .cocofun_2
-.L224:
-.cocofun_2:	.type	func
-; Function body .cocofun_2, coco_iter:0
-	movh.a	a4,#@his(.1.str)
-.L341:
-	lea	a4,[a4]@los(.1.str)
-.L796:
-	fret
-.L253:
-	; End of function
 	.sdecl	'.text.zf_spi.spi_init',code,cluster('spi_init')
 	.sect	'.text.zf_spi.spi_init'
 	.align	2
@@ -1370,16 +1376,18 @@ __spi_mux_function_end:
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   200  //-------------------------------------------------------------------------------------------------------------------
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   201  void spi_init(SPIN_enum spi_n, SPI_PIN_enum sck_pin, SPI_PIN_enum mosi_pin, SPI_PIN_enum miso_pin, SPI_PIN_enum cs_pin, uint8 mode, uint32 baud)
 ; Function spi_init
-.L226:
+.L223:
 spi_init:	.type	func
-	mov	e8,d5,d4
 	lea	a10,[a10]-288
-.L462:
+.L443:
+	mov	e8,d5,d4
 	mov	e10,d7,d6
 	ld.h	d12,[a10]288
-.L465:
+.L446:
 	ld.bu	d13,[a10]292
-.L466:
+.L447:
+	ld.w	d14,[a10]296
+.L448:
 
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   202  {
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   203  
@@ -1392,93 +1400,98 @@ spi_init:	.type	func
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   210  
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   211  	moudle = IfxQspi_getAddress((IfxQspi_Index)spi_n);
 	extr	d4,d8,#0,#8
-	ld.w	d14,[a10]296
-.L464:
+.L445:
 	call	IfxQspi_getAddress
-.L463:
+.L444:
+	mov.aa	a15,a2
+.L450:
 
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   212  
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   213  	spi_mux(spi_n, sck_pin, mosi_pin, miso_pin, cs_pin, &MasterPins, &SlsoPin);
-	mov	e4,d9,d8
 	st.h	[a10],d12
-.L468:
-	mov	e6,d11,d10
-	mov.aa	a15,a2
-.L469:
+.L486:
 	lea	a4,[a10]208
-.L499:
+.L487:
 	lea	a5,[a10]232
+.L452:
+	mov	e4,d9,d8
+.L453:
+	mov	e6,d11,d10
+.L454:
 	call	spi_mux
-.L467:
+.L449:
 
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   214  
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   215  	IfxQspi_SpiMaster_initModuleConfig(&MasterConfig, moudle);
 	lea	a4,[a10]4
-.L500:
+.L488:
 	mov.aa	a5,a15
-.L471:
+.L455:
 	call	IfxQspi_SpiMaster_initModuleConfig
-.L472:
+.L456:
 
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   216  	MasterConfig.base.mode = SpiIf_Mode_master;
 	mov	d0,#0
+.L489:
 	st.b	[a10]4,d0
-.L501:
+.L490:
 
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   217  	MasterConfig.base.maximumBaudrate = MAX_BAUD;
+	mov.u	d15,#48160
+	addih	d15,d15,#19518
+.L491:
+	st.w	[a10]20,d15
+.L492:
+
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   218  	MasterConfig.base.isrProvider = IfxSrc_Tos_cpu0;
+	st.b	[a10]12,d0
+.L493:
+
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   219  
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   220  
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   221  	MasterConfig.pins = &MasterPins;
-	mov.u	d15,#48160
 	lea	a15,[a10]208
-.L470:
-	addih	d15,d15,#19518
-	st.w	[a10]20,d15
-.L502:
-	st.b	[a10]12,d0
-.L503:
+.L451:
 	st.a	[a10]36,a15
-.L504:
+.L494:
 
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   222  	IfxQspi_SpiMaster_initModule(&MasterHandle, &MasterConfig);
 	lea	a4,[a10]48
-.L505:
+.L495:
 	lea	a5,[a10]4
 	call	IfxQspi_SpiMaster_initModule
-.L288:
+.L269:
 
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   223  
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   224  	IfxQspi_SpiMaster_ChannelConfig MasterChConfig;
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   225  	IfxQspi_SpiMaster_initChannelConfig(&MasterChConfig, &MasterHandle);
 	lea	a4,[a10]240
-.L506:
+.L496:
 	lea	a5,[a10]48
 	call	IfxQspi_SpiMaster_initChannelConfig
-.L507:
+.L497:
 
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   226  
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   227  
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   228  	MasterChConfig.base.baudrate = (float)baud;
 	utof	d15,d14
+.L498:
 	st.w	[a10]244,d15
-.L508:
+.L499:
 
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   229  	switch(mode)
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   230  	{
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   231  		case 0:
+	jeq	d13,#0,.L198
+.L500:
+
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   232  		{
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   233  			MasterChConfig.base.mode.clockPolarity = SpiIf_ClockPolarity_idleLow;//CPOL
-	ld.bu	d15,[a10]248
-.L509:
-	jeq	d13,#0,.L198
-.L510:
-
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   234  			MasterChConfig.base.mode.shiftClock = SpiIf_ShiftClock_shiftTransmitDataOnTrailingEdge;//CPHA
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   235  		}break;
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   236  		case 1:
 	jeq	d13,#1,.L199
-.L511:
+.L501:
 
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   237  		{
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   238  			MasterChConfig.base.mode.clockPolarity = SpiIf_ClockPolarity_idleLow;
@@ -1486,7 +1499,7 @@ spi_init:	.type	func
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   240  		}break;
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   241  		case 2:
 	jeq	d13,#2,.L200
-.L512:
+.L502:
 
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   242  		{
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   243  			MasterChConfig.base.mode.clockPolarity = SpiIf_ClockPolarity_idleHigh;
@@ -1494,15 +1507,23 @@ spi_init:	.type	func
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   245  		}break;
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   246  		case 3:
 	jeq	d13,#3,.L201
-.L513:
+.L503:
 	j	.L202
 .L198:
+	ld.bu	d15,[a10]248
+.L504:
 	insert	d15,d15,#0,#3,#1
+.L505:
 	j	.L203
 .L199:
+	ld.bu	d15,[a10]248
+.L506:
 	insert	d15,d15,#0,#3,#1
+.L507:
 	j	.L204
 .L200:
+	ld.bu	d15,[a10]248
+.L508:
 	or	d15,#8
 
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   247  		{
@@ -1513,42 +1534,49 @@ spi_init:	.type	func
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   252  
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   253  	MasterChConfig.base.mode.dataHeading = SpiIf_DataHeading_msbFirst;
 .L203:
+	st.b	[a10]248,d15
+.L509:
 	or	d15,#16
+.L510:
 	j	.L205
 .L201:
+	ld.bu	d15,[a10]248
+.L511:
 	or	d15,#8
 .L204:
+	st.b	[a10]248,d15
+.L512:
 	insert	d15,d15,#0,#4,#1
 .L205:
-.L202:
 	st.b	[a10]248,d15
+.L202:
+	ld.hu	d0,[a10]248
+.L513:
+	mov	d15,#17
 .L514:
+	insert	d15,d0,d15,#5,#8
+	st.h	[a10]248,d15
+.L515:
 
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   254  	MasterChConfig.base.mode.dataWidth = 8;
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   255  
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   256  	MasterChConfig.base.mode.csActiveLevel = Ifx_ActiveState_low;
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   257  	MasterChConfig.sls.output = SlsoPin;
-; ..\Libraries\seekfree_libraries\zf_spi.c	   258  	IfxQspi_SpiMaster_initChannel(&MasterChHandle, &MasterChConfig);
-	mov	d15,#17
-	lea	a4,[a10]124
-.L515:
-	ld.hu	d0,[a10]248
-.L516:
-	lea	a5,[a10]240
-.L517:
-	insert	d15,d0,d15,#5,#8
-	st.h	[a10]248,d15
-.L518:
 	ld.da	a2/a3,[a10]232
-.L519:
+.L516:
 	st.da	[a10]268,a2/a3
-.L520:
+.L517:
+
+; ..\Libraries\seekfree_libraries\zf_spi.c	   258  	IfxQspi_SpiMaster_initChannel(&MasterChHandle, &MasterChConfig);
+	lea	a4,[a10]124
+.L518:
+	lea	a5,[a10]240
 	j	IfxQspi_SpiMaster_initChannel
-.L264:
+.L245:
 	
 __spi_init_function_end:
 	.size	spi_init,__spi_init_function_end-spi_init
-.L238:
+.L234:
 	; End of function
 	
 	.sdecl	'.text.zf_spi.spi_mosi',code,cluster('spi_mosi')
@@ -1574,16 +1602,18 @@ __spi_init_function_end:
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   273  //-------------------------------------------------------------------------------------------------------------------
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   274  void spi_mosi(SPIN_enum spi_n, SPI_PIN_enum cs_pin, uint8 *modata, uint8 *midata, uint32 len, uint8 continuous)
 ; Function spi_mosi
-.L228:
+.L225:
 spi_mosi:	.type	func
 	mov	d8,d5
+.L459:
 	mov.aa	a12,a4
-.L474:
-	mov	d9,d6
+.L461:
 	mov.aa	a13,a5
-.L485:
+.L462:
+	mov	d9,d6
+.L463:
 	mov	d10,d7
-.L484:
+.L464:
 
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   275  {
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   276  	uint32 i;
@@ -1592,80 +1622,82 @@ spi_mosi:	.type	func
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   279  
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   280  	moudle = IfxQspi_getAddress((IfxQspi_Index)spi_n);
 	extr	d4,d4,#0,#8
+.L458:
 	call	IfxQspi_getAddress
-.L473:
+.L457:
 	mov.aa	a15,a2
-.L486:
+.L465:
 
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   281  
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   282  	bacon.U = moudle->BACON.U;
 	ld.w	d11,[a15]24
-.L483:
+.L466:
 
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   283  
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   284  	bacon.B.DL = 7;
 	insert	d11,d11,#7,#23,#5
-.L525:
+.L523:
 
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   285  	bacon.B.IDLE = 1;
 	extr.u	d0,d11,#0,#8
-.L526:
+.L524:
 	insert	d0,d0,#1,#4,#3
-.L527:
+.L525:
 
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   286  	bacon.B.IPRE = 1;
 	insert	d0,d0,#1,#1,#3
 	insert	d11,d11,d0,#0,#8
-.L528:
+.L526:
 
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   287  	bacon.B.LEAD = 1;
 	insert	d11,d11,#1,#10,#3
-.L529:
+.L527:
 
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   288  	bacon.B.LPRE = 1;
 	insert	d11,d11,#1,#7,#3
-.L530:
+.L528:
 
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   289  	bacon.B.MSB = 1;
 	extr.u	d15,d11,#16,#8
-.L531:
+.L529:
 	or	d15,#32
-.L532:
+.L530:
 
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   290  	bacon.B.PARTYP = 0;
 	insert	d15,d15,#0,#3,#1
-.L533:
+.L531:
 
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   291  	bacon.B.BYTE = 0;
 	insert	d15,d15,#0,#6,#1
-.L534:
+.L532:
 
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   292  	bacon.B.TRAIL = 1;
 	insert	d15,d15,#1,#0,#3
 	insert	d11,d11,d15,#16,#8
-.L535:
+.L533:
 
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   293  	bacon.B.TPRE = 1;
+	insert	d11,d11,#1,#13,#3
+.L534:
+
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   294  	bacon.B.CS = cs_pin%102/6-3;
 	mov	d15,#102
-.L536:
+.L535:
 	div	e0,d8,d15
-.L537:
+.L536:
 	mov	d15,#6
-.L538:
-	insert	d11,d11,#1,#13,#3
-.L539:
+.L537:
 	div	e0,d1,d15
-.L540:
+.L538:
 	add	d15,d0,#-3
 	extr.u	d15,d15,#0,#8
-.L541:
+.L539:
 	insert	d11,d11,d15,#28,#4
-.L542:
+.L540:
 
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   295  	if(continuous)	IfxQspi_writeBasicConfigurationBeginStream(moudle, bacon.U);//发送数据后CS继续保持为低
 	jeq	d10,#0,.L206
-.L305:
+.L285:
 
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Qspi\Std\IfxQspi.h	     1  /**
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Qspi\Std\IfxQspi.h	     2   * \file IfxQspi.h
@@ -2881,10 +2913,11 @@ spi_mosi:	.type	func
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Qspi\Std\IfxQspi.h	  1212      Ifx_QSPI_BACON bacon;
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Qspi\Std\IfxQspi.h	  1213      bacon.U            = baconVal;
 	mov	d15,d11
-.L475:
+.L467:
 
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Qspi\Std\IfxQspi.h	  1214      bacon.B.LAST       = 0;
 	insert	d15,d15,#0,#0,#1
+.L286:
 	j	.L207
 .L206:
 
@@ -4112,7 +4145,7 @@ spi_mosi:	.type	func
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Qspi\Std\IfxQspi.h	  1222      Ifx_QSPI_BACON bacon;
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Qspi\Std\IfxQspi.h	  1223      bacon.U            = baconVal;
 	mov	d15,d11
-.L476:
+.L468:
 
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Qspi\Std\IfxQspi.h	  1224      bacon.B.LAST       = 1;
 	insert	d15,d15,#1,#0,#1
@@ -5347,78 +5380,87 @@ spi_mosi:	.type	func
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Qspi\Std\IfxQspi.h	  1225  
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Qspi\Std\IfxQspi.h	  1226      qspi->BACONENTRY.U = bacon.U;
 	st.w	[a15]96,d15
-.L313:
+.L294:
 
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   297  
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   298  	if(len>1)
 	jlt.u	d9,#2,.L208
-.L543:
+.L541:
 
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   299  	{
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   300  		i = 0;
 	mov	d8,#0
+.L460:
 
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   301  		while(i < (len-1))
-.L209:
+	j	.L209
+.L210:
 
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   302  		{
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   303  			while(moudle->STATUS.B.TXFIFOLEVEL != 0);
-.L210:
+.L211:
 	ld.bu	d15,[a15]66
 	and	d15,#7
-.L544:
-	jne	d15,#0,.L210
-.L545:
+.L542:
+	jne	d15,#0,.L211
+.L543:
 
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   304  			IfxQspi_write8(moudle, IfxQspi_ChannelId_0, modata, 1);
 	mov	d4,#0
-	mov.aa	a4,a15
-.L477:
+.L544:
 	mov	d5,#1
+	mov.aa	a4,a15
+.L469:
 	mov.aa	a5,a12
-.L479:
+.L470:
 	call	IfxQspi_write8
-.L546:
 
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   305  			while(moudle->STATUS.B.RXFIFOLEVEL == 0);
-	fcall	.cocofun_4
-.L478:
+.L212:
+	ld.bu	d15,[a15]66
+	extr.u	d15,d15,#3,#3
+.L545:
+	jeq	d15,#0,.L212
+.L546:
 
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   306  			if(NULL != midata)	
-	jeq.a	a2,a13,.L212
+	mov.a	a2,#0
 .L547:
+	jeq.a	a2,a13,.L213
+.L548:
 
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   307  			{
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   308  				IfxQspi_read8(moudle,midata,1);
 	mov	d4,#1
 	mov.aa	a4,a15
-.L480:
+.L471:
 	mov.aa	a5,a13
-.L482:
+.L473:
 	call	IfxQspi_read8
-.L481:
+.L472:
 
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   309  				midata++;
 	add.a	a13,#1
-.L548:
-	j	.L213
-.L212:
+.L549:
+	j	.L214
+.L213:
 
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   310  			}
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   311  			else				(void)moudle->RXEXIT.U;
 	ld.w	d15,[a15]144
-.L213:
+.L214:
 
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   312  			modata++;
-	add	d15,d9,#-1
 	add.a	a12,#1
-.L549:
+.L550:
 
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   313  			
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   314  			i++;
 	add	d8,#1
-.L550:
-	jlt.u	d8,d15,.L209
+.L209:
+	add	d15,d9,#-1
+.L551:
+	jlt.u	d8,d15,.L210
 .L208:
 
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   315  		}
@@ -5426,8 +5468,8 @@ spi_mosi:	.type	func
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   317  
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   318  	//发送最后一个数据
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   319  	if(continuous)	IfxQspi_writeBasicConfigurationEndStream(moudle, bacon.U);
-	jeq	d10,#0,.L214
-.L320:
+	jeq	d10,#0,.L215
+.L301:
 
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Qspi\Std\IfxQspi.h	     1  /**
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Qspi\Std\IfxQspi.h	     2   * \file IfxQspi.h
@@ -6653,15 +6695,17 @@ spi_mosi:	.type	func
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Qspi\Std\IfxQspi.h	  1222      Ifx_QSPI_BACON bacon;
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Qspi\Std\IfxQspi.h	  1223      bacon.U            = baconVal;
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Qspi\Std\IfxQspi.h	  1224      bacon.B.LAST       = 1;
+	insert	d11,d11,#1,#0,#1
+.L552:
+
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Qspi\Std\IfxQspi.h	  1225  
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Qspi\Std\IfxQspi.h	  1226      qspi->BACONENTRY.U = bacon.U;
-	insert	d11,d11,#1,#0,#1
 	st.w	[a15]96,d11
-.L214:
+.L215:
 
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   320  	IfxQspi_writeTransmitFifo(moudle, *modata);
 	ld.bu	d15,[a12]
-.L551:
+.L304:
 
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Qspi\Std\IfxQspi.h	     1  /**
 ; E:\ProgramData\GithubRepositories\SmartCar2020TC264\Libraries\BaseSw\iLLD\TC26B\Tricore\Qspi\Std\IfxQspi.h	     2   * \file IfxQspi.h
@@ -7911,59 +7955,47 @@ spi_mosi:	.type	func
 	st.w	[a15]100,d15
 
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   321  	while(moudle->STATUS.B.TXFIFOLEVEL != 0);
-.L215:
+.L216:
 	ld.bu	d15,[a15]66
 	and	d15,#7
-.L552:
-	jne	d15,#0,.L215
 .L553:
+	jne	d15,#0,.L216
 
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   322  
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   323  	while(moudle->STATUS.B.RXFIFOLEVEL == 0);
-	fcall	.cocofun_4
+.L217:
+	ld.bu	d15,[a15]66
+	extr.u	d15,d15,#3,#3
 .L554:
+	jeq	d15,#0,.L217
+.L555:
 
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   324  	if(NULL != midata)	IfxQspi_read8(moudle,midata,1);
-	jeq.a	a2,a13,.L217
-.L555:
+	mov.a	a2,#0
+.L556:
+	jeq.a	a2,a13,.L218
+.L557:
 	mov	d4,#1
 	mov.aa	a4,a15
-.L487:
+.L474:
 	mov.aa	a5,a13
-.L488:
+.L475:
 	j	IfxQspi_read8
-.L217:
+.L218:
 
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   325  	else				(void)moudle->RXEXIT.U;
 	ld.w	d15,[a15]144
-.L556:
+.L558:
 
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   326  }
 	ret
-.L291:
+.L272:
 	
 __spi_mosi_function_end:
 	.size	spi_mosi,__spi_mosi_function_end-spi_mosi
-.L243:
+.L239:
 	; End of function
 	
-	.sdecl	'.text.zf_spi..cocofun_4',code,cluster('.cocofun_4')
-	.sect	'.text.zf_spi..cocofun_4'
-	.align	2
-; Function .cocofun_4
-.cocofun_4:	.type	func
-; Function body .cocofun_4, coco_iter:0
-.L211:
-	ld.bu	d15,[a15]66
-	extr.u	d15,d15,#3,#3
-.L806:
-	jeq	d15,#0,.L211
-.L807:
-	mov.a	a2,#0
-.L808:
-	fret
-.L263:
-	; End of function
 	.sdecl	'.rodata.zf_spi..1.str',data,rom
 	.sect	'.rodata.zf_spi..1.str'
 .1.str:	.type	object
@@ -7996,14 +8028,8 @@ _999001___func__:	.type	object
 	.calls	'spi_mosi','IfxQspi_getAddress'
 	.calls	'spi_mosi','IfxQspi_write8'
 	.calls	'spi_mosi','IfxQspi_read8'
-	.calls	'spi_mux','.cocofun_2'
-	.calls	'spi_mux','.cocofun_3'
-	.calls	'spi_mosi','.cocofun_4'
 	.calls	'spi_mux','',0
-	.calls	'.cocofun_3','',0
-	.calls	'.cocofun_2','',0
 	.calls	'spi_init','',288
-	.calls	'spi_mosi','',0
 	.extern	IfxQspi0_MRSTA_P20_12_IN
 	.extern	IfxQspi1_MRSTA_P10_1_IN
 	.extern	IfxQspi1_MRSTB_P11_3_IN
@@ -8106,20 +8132,20 @@ _999001___func__:	.type	object
 	.extern	IfxQspi_SpiMaster_initChannel
 	.extern	IfxQspi_SpiMaster_initChannelConfig
 	.extern	assert
-	.calls	'.cocofun_4','',0
+	.calls	'spi_mosi','',0
 	.sdecl	'.debug_info',debug
 	.sect	'.debug_info'
-.L231:
+.L227:
 	.word	117425
 	.half	3
-	.word	.L232
+	.word	.L228
 	.byte	4
-.L230:
+.L226:
 	.byte	1
 	.byte	'..\\Libraries\\seekfree_libraries\\zf_spi.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L233
+	.word	.L229
 	.byte	2,1,1,3
 	.word	161
 	.byte	4
@@ -8178,7 +8204,7 @@ _999001___func__:	.type	object
 	.byte	'B',0
 	.word	464
 	.byte	4,2,35,0,0
-.L272:
+.L253:
 	.byte	7
 	.byte	'unsigned char',0,1,8,7
 	.byte	'unsigned short int',0,2,7,10
@@ -9716,7 +9742,7 @@ _999001___func__:	.type	object
 	.byte	'IfxCpu_areInterruptsEnabled',0,3,7,139,5,20
 	.word	600
 	.byte	1,1,6,0
-.L274:
+.L255:
 	.byte	7
 	.byte	'unsigned long int',0,4,7,8
 	.byte	'IfxCpu_getPerformanceCounter',0,3,7,161,6,19
@@ -11936,7 +11962,7 @@ _999001___func__:	.type	object
 	.byte	'CS',0,1
 	.word	600
 	.byte	4,0,2,35,3,0
-.L301:
+.L281:
 	.byte	12,15,215,2,9,4,13
 	.byte	'U',0
 	.word	425
@@ -12525,7 +12551,7 @@ _999001___func__:	.type	object
 	.word	27700
 	.byte	4,3,35,252,1,0,14
 	.word	27740
-.L286:
+.L267:
 	.byte	3
 	.word	28284
 	.byte	8
@@ -12535,18 +12561,18 @@ _999001___func__:	.type	object
 	.byte	'qspi',0,14,220,8,53
 	.word	28289
 	.byte	6,0
-.L322:
+.L303:
 	.byte	4
 	.byte	'IfxQspi_writeTransmitFifo',0,3,14,219,9,17,1,1
-.L323:
+.L305:
 	.byte	5
 	.byte	'qspi',0,14,219,9,53
 	.word	28289
-.L325:
+.L307:
 	.byte	5
 	.byte	'data',0,14,219,9,66
 	.word	10274
-.L327:
+.L309:
 	.byte	6,0,8
 	.byte	'IfxQspi_getModuleFrequency',0,3,14,211,7,18
 	.word	221
@@ -12576,31 +12602,31 @@ _999001___func__:	.type	object
 	.byte	'baconVal',0,14,180,9,72
 	.word	10274
 	.byte	6,0
-.L304:
+.L284:
 	.byte	4
 	.byte	'IfxQspi_writeBasicConfigurationBeginStream',0,3,14,186,9,17,1,1
-.L306:
+.L287:
 	.byte	5
 	.byte	'qspi',0,14,186,9,70
 	.word	28289
-.L308:
+.L289:
 	.byte	5
 	.byte	'baconVal',0,14,186,9,83
 	.word	10274
-.L310:
+.L291:
 	.byte	6,0
-.L312:
+.L293:
 	.byte	4
 	.byte	'IfxQspi_writeBasicConfigurationEndStream',0,3,14,196,9,17,1,1
-.L314:
+.L295:
 	.byte	5
 	.byte	'qspi',0,14,196,9,68
 	.word	28289
-.L316:
+.L297:
 	.byte	5
 	.byte	'baconVal',0,14,196,9,81
 	.word	10274
-.L318:
+.L299:
 	.byte	6,0,17,14,95,9,1,18
 	.byte	'IfxQspi_ChannelId_0',0,0,18
 	.byte	'IfxQspi_ChannelId_1',0,1,18
@@ -12819,7 +12845,7 @@ _999001___func__:	.type	object
 	.byte	26
 	.word	28394
 	.byte	6,0
-.L294:
+.L275:
 	.byte	3
 	.word	600
 	.byte	7
@@ -12901,7 +12927,7 @@ _999001___func__:	.type	object
 	.byte	'pvoid',0,19,57,28
 	.word	339
 	.byte	3
-	.word	.L489-.L231
+	.word	.L476-.L227
 	.byte	30,18,118,18,1,11
 	.byte	'onTransfer',0,1
 	.word	600
@@ -12940,7 +12966,7 @@ _999001___func__:	.type	object
 	.byte	'SpiIf_Cbk',0,18,211,1,16
 	.word	30729
 	.byte	3
-	.word	.L490-.L231
+	.word	.L477-.L227
 	.byte	31,1,1,22
 	.word	30753
 	.byte	0,3
@@ -12948,7 +12974,7 @@ _999001___func__:	.type	object
 	.byte	29
 	.byte	'TxRxHandler',0,18,212,1,16
 	.word	30767
-.L490:
+.L477:
 	.byte	10
 	.byte	'SpiIf_Ch_',0,18,214,1,8,48,13
 	.byte	'driver',0
@@ -13010,7 +13036,7 @@ _999001___func__:	.type	object
 	.byte	'SpiIf_GetStatus',0,18,139,1,24
 	.word	31129
 	.byte	3
-	.word	.L489-.L231
+	.word	.L476-.L227
 	.byte	31,1,1,22
 	.word	31159
 	.byte	0,3
@@ -13034,7 +13060,7 @@ _999001___func__:	.type	object
 	.byte	'onError',0
 	.word	31178
 	.byte	4,2,35,16,0
-.L489:
+.L476:
 	.byte	10
 	.byte	'SpiIf_',0,18,153,1,8,40,13
 	.byte	'driver',0
@@ -13083,7 +13109,7 @@ _999001___func__:	.type	object
 	.byte	'useDma',0
 	.word	600
 	.byte	1,2,35,26,0
-.L278:
+.L259:
 	.byte	30,17,251,4,9,76,13
 	.byte	'base',0
 	.word	31290
@@ -13204,7 +13230,7 @@ _999001___func__:	.type	object
 	.byte	'IfxPort_PadDriver_ttlSpeed2',0,9,18
 	.byte	'IfxPort_PadDriver_ttlSpeed3',0,10,18
 	.byte	'IfxPort_PadDriver_ttlSpeed4',0,11,0
-.L282:
+.L263:
 	.byte	30,17,234,4,9,24,13
 	.byte	'sclk',0
 	.word	32323
@@ -13243,7 +13269,7 @@ _999001___func__:	.type	object
 	.byte	'IfxQspi_FifoMode_combinedMove',0,0,18
 	.byte	'IfxQspi_FifoMode_singleMove',0,1,18
 	.byte	'IfxQspi_FifoMode_batchMove',0,2,0
-.L276:
+.L257:
 	.byte	30,17,165,5,9,44,13
 	.byte	'base',0
 	.word	31800
@@ -13310,7 +13336,7 @@ _999001___func__:	.type	object
 	.byte	'qspi',0,17,207,5,96
 	.word	28289
 	.byte	0,3
-	.word	.L280-.L231
+	.word	.L261-.L227
 	.byte	31,1,1,22
 	.word	33716
 	.byte	0,3
@@ -13352,7 +13378,7 @@ _999001___func__:	.type	object
 	.byte	'expectTimeoutError',0,1
 	.word	600
 	.byte	1,0,2,35,0,0
-.L280:
+.L261:
 	.byte	10
 	.byte	'IfxQspi_SpiMaster_Channel_s',0,17,145,5,8,84,13
 	.byte	'base',0
@@ -13485,7 +13511,7 @@ _999001___func__:	.type	object
 	.word	35129
 	.byte	3
 	.word	35196
-.L284:
+.L265:
 	.byte	30,17,179,4,9,8,13
 	.byte	'pin',0
 	.word	35201
@@ -13502,7 +13528,7 @@ _999001___func__:	.type	object
 	.byte	'output',0
 	.word	35206
 	.byte	8,2,35,0,0
-.L289:
+.L270:
 	.byte	30,17,133,5,9,48,13
 	.byte	'base',0
 	.word	34942
@@ -13567,13 +13593,13 @@ _999001___func__:	.type	object
 	.word	35591
 	.byte	3
 	.word	35688
-.L265:
+.L246:
 	.byte	17,24,27,9,1,18
 	.byte	'SPI_0',0,0,18
 	.byte	'SPI_1',0,1,18
 	.byte	'SPI_2',0,2,18
 	.byte	'SPI_3',0,3,0
-.L267:
+.L248:
 	.byte	17,24,35,9,2,18
 	.byte	'SPI0_SCLK_P20_11',0,0,18
 	.byte	'SPI0_SCLK_P20_13',0,1,18
@@ -13670,16 +13696,16 @@ _999001___func__:	.type	object
 	.byte	'SPI3_CS12_P22_2',0,140,3,18
 	.byte	'SPI3_CS13_P23_1',0,146,3,18
 	.byte	'SPI_CS_NOT_USE',0,147,3,0
-.L334:
+.L316:
 	.byte	3
 	.word	32984
-.L336:
+.L318:
 	.byte	3
 	.word	35206
 	.byte	15,8
 	.word	35591
 	.byte	16,7,0
-.L339:
+.L320:
 	.byte	20
 	.word	37518
 	.byte	29
@@ -24818,7 +24844,7 @@ _999001___func__:	.type	object
 	.byte	0
 	.sdecl	'.debug_abbrev',debug
 	.sect	'.debug_abbrev'
-.L232:
+.L228:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,16,6,0,0,2,21,0,54,15,39,12,0,0,3,15,0,73,19,0,0,4,46,1,3,8,32,13
 	.byte	58,15,59,15,57,15,54,15,39,12,0,0,5,5,0,3,8,58,15,59,15,57,15,73,19,0,0,6,11,0,0,0,7,36,0,3,8,11,15,62
 	.byte	15,0,0,8,46,1,3,8,32,13,58,15,59,15,57,15,73,19,54,15,39,12,0,0,9,59,0,3,8,0,0,10,19,1,3,8,58,15,59,15
@@ -24832,12 +24858,12 @@ _999001___func__:	.type	object
 	.byte	15,59,15,57,15,73,19,63,12,60,12,0,0,0
 	.sdecl	'.debug_line',debug
 	.sect	'.debug_line'
-.L233:
-	.word	.L492-.L491
-.L491:
+.L229:
+	.word	.L479-.L478
+.L478:
 	.half	3
-	.word	.L494-.L493
-.L493:
+	.word	.L481-.L480
+.L480:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Std',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Scu\\Std',0
@@ -24884,2267 +24910,1912 @@ _999001___func__:	.type	object
 	.byte	'IfxFlash_regdef.h',0,3,0,0
 	.byte	'IfxScuCcu.h',0,2,0,0
 	.byte	'common.h',0,12,0,0,0
-.L494:
-.L492:
+.L481:
+.L479:
 	.sdecl	'.debug_info',debug,cluster('spi_init')
 	.sect	'.debug_info'
-.L234:
+.L230:
 	.word	531
 	.half	3
-	.word	.L235
+	.word	.L231
 	.byte	4,1
 	.byte	'..\\Libraries\\seekfree_libraries\\zf_spi.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L237,.L236
+	.word	.L233,.L232
 	.byte	2
-	.word	.L230
+	.word	.L226
 	.byte	3
 	.byte	'spi_init',0,1,201,1,6,1,1,1
-	.word	.L226,.L264,.L225
+	.word	.L223,.L245,.L222
 	.byte	4
 	.byte	'spi_n',0,1,201,1,25
-	.word	.L265,.L266
+	.word	.L246,.L247
 	.byte	4
 	.byte	'sck_pin',0,1,201,1,45
-	.word	.L267,.L268
+	.word	.L248,.L249
 	.byte	4
 	.byte	'mosi_pin',0,1,201,1,67
-	.word	.L267,.L269
+	.word	.L248,.L250
 	.byte	4
 	.byte	'miso_pin',0,1,201,1,90
-	.word	.L267,.L270
+	.word	.L248,.L251
 	.byte	4
 	.byte	'cs_pin',0,1,201,1,113
-	.word	.L267,.L271
+	.word	.L248,.L252
 	.byte	4
 	.byte	'mode',0,1,201,1,127
-	.word	.L272,.L273
+	.word	.L253,.L254
 	.byte	4
 	.byte	'baud',0,1,201,1,140,1
-	.word	.L274,.L275
+	.word	.L255,.L256
 	.byte	5
-	.word	.L226,.L264
+	.word	.L223,.L245
 	.byte	6
 	.byte	'MasterConfig',0,1,204,1,27
-	.word	.L276,.L277
+	.word	.L257,.L258
 	.byte	6
 	.byte	'MasterHandle',0,1,205,1,20
-	.word	.L278,.L279
+	.word	.L259,.L260
 	.byte	6
 	.byte	'MasterChHandle',0,1,206,1,28
-	.word	.L280,.L281
+	.word	.L261,.L262
 	.byte	6
 	.byte	'MasterPins',0,1,207,1,25
-	.word	.L282,.L283
+	.word	.L263,.L264
 	.byte	6
 	.byte	'SlsoPin',0,1,208,1,27
-	.word	.L284,.L285
+	.word	.L265,.L266
 	.byte	6
 	.byte	'moudle',0,1,209,1,21
-	.word	.L286,.L287
+	.word	.L267,.L268
 	.byte	5
-	.word	.L288,.L264
+	.word	.L269,.L245
 	.byte	6
 	.byte	'MasterChConfig',0,1,224,1,34
-	.word	.L289,.L290
+	.word	.L270,.L271
 	.byte	0,0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('spi_init')
 	.sect	'.debug_abbrev'
-.L235:
+.L231:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3
 	.byte	8,58,15,59,15,57,15,73,16,2,6,0,0,0
 	.sdecl	'.debug_line',debug,cluster('spi_init')
 	.sect	'.debug_line'
-.L236:
-	.word	.L496-.L495
-.L495:
+.L232:
+	.word	.L483-.L482
+.L482:
 	.half	3
-	.word	.L498-.L497
-.L497:
+	.word	.L485-.L484
+.L484:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\Libraries\\seekfree_libraries\\zf_spi.c',0,0,0,0,0
-.L498:
+.L485:
 	.byte	5,6,7,0,5,2
-	.word	.L226
+	.word	.L223
 	.byte	3,200,1,1,5,30,9
-	.half	.L466-.L226
-	.byte	3,10,1,5,6,3,118,1,5,30,9
-	.half	.L464-.L466
-	.byte	3,10,1,5,68,9
-	.half	.L463-.L464
-	.byte	3,2,1,5,46,1,5,68,9
-	.half	.L468-.L463
-	.byte	1,5,9,3,126,1,5,55,9
-	.half	.L469-.L468
-	.byte	3,2,1,5,68,9
-	.half	.L499-.L469
+	.half	.L448-.L223
+	.byte	3,10,1,5,9,9
+	.half	.L444-.L448
+	.byte	1,5,46,9
+	.half	.L450-.L444
+	.byte	3,2,1,5,55,9
+	.half	.L486-.L450
+	.byte	1,5,68,9
+	.half	.L487-.L486
 	.byte	1,5,38,9
-	.half	.L467-.L499
+	.half	.L449-.L487
 	.byte	3,2,1,5,52,9
-	.half	.L500-.L467
+	.half	.L488-.L449
 	.byte	1,5,27,9
-	.half	.L472-.L500
-	.byte	3,1,1,5,25,1,5,38,9
-	.half	.L501-.L472
-	.byte	3,1,1,5,23,3,4,1,5,38,9
-	.half	.L470-.L501
-	.byte	3,124,1,5,36,1,5,32,9
-	.half	.L502-.L470
-	.byte	3,1,1,5,20,9
-	.half	.L503-.L502
-	.byte	3,3,1,5,32,9
-	.half	.L504-.L503
+	.half	.L456-.L488
+	.byte	3,1,1,5,25,9
+	.half	.L489-.L456
+	.byte	1,5,38,9
+	.half	.L490-.L489
+	.byte	3,1,1,5,36,9
+	.half	.L491-.L490
+	.byte	1,5,32,9
+	.half	.L492-.L491
+	.byte	3,1,1,5,23,9
+	.half	.L493-.L492
+	.byte	3,3,1,5,20,9
+	.half	.L451-.L493
+	.byte	1,5,32,9
+	.half	.L494-.L451
 	.byte	3,1,1,5,47,9
-	.half	.L505-.L504
+	.half	.L495-.L494
 	.byte	1,5,39,9
-	.half	.L288-.L505
+	.half	.L269-.L495
 	.byte	3,3,1,5,56,9
-	.half	.L506-.L288
+	.half	.L496-.L269
 	.byte	1,5,33,9
+	.half	.L497-.L496
+	.byte	3,3,1,5,31,9
+	.half	.L498-.L497
+	.byte	1,5,8,9
+	.half	.L499-.L498
+	.byte	3,3,1,7,9
+	.half	.L500-.L499
+	.byte	3,5,1,7,9
+	.half	.L501-.L500
+	.byte	3,5,1,7,9
+	.half	.L502-.L501
+	.byte	3,5,1,7,9
+	.half	.L503-.L502
+	.byte	1,5,28,9
+	.half	.L198-.L503
+	.byte	3,115,1,5,43,9
+	.half	.L504-.L198
+	.byte	1,5,4,9
+	.half	.L505-.L504
+	.byte	3,2,1,5,28,9
+	.half	.L199-.L505
+	.byte	3,3,1,5,43,9
+	.half	.L506-.L199
+	.byte	1,5,4,9
 	.half	.L507-.L506
-	.byte	3,3,1,5,31,1,5,28,9
-	.half	.L508-.L507
-	.byte	3,5,1,5,8,9
+	.byte	3,2,1,5,28,9
+	.half	.L200-.L507
+	.byte	3,3,1,5,43,9
+	.half	.L508-.L200
+	.byte	1,5,40,9
 	.half	.L509-.L508
-	.byte	3,126,1,7,9
+	.byte	3,1,1,5,4,9
 	.half	.L510-.L509
-	.byte	3,5,1,7,9
-	.half	.L511-.L510
-	.byte	3,5,1,7,9
+	.byte	3,1,1,5,28,9
+	.half	.L201-.L510
+	.byte	3,3,1,5,43,9
+	.half	.L511-.L201
+	.byte	1,5,40,9
 	.half	.L512-.L511
-	.byte	3,5,1,7,9
-	.half	.L513-.L512
-	.byte	1,5,43,9
-	.half	.L198-.L513
-	.byte	3,115,1,5,4,3,2,1,5,43,9
-	.half	.L199-.L198
-	.byte	3,3,1,5,4,3,2,1,5,43,9
-	.half	.L200-.L199
-	.byte	3,3,1,5,40,9
-	.half	.L203-.L200
-	.byte	3,1,1,5,4,3,1,1,5,43,9
-	.half	.L201-.L203
-	.byte	3,3,1,5,40,9
-	.half	.L204-.L201
-	.byte	3,1,1,5,67,9
-	.half	.L202-.L204
+	.byte	3,1,1,5,21,9
+	.half	.L202-.L512
 	.byte	3,4,1,5,41,9
-	.half	.L514-.L202
-	.byte	1,5,33,3,5,1,5,21,9
+	.half	.L513-.L202
+	.byte	1,5,39,9
+	.half	.L514-.L513
+	.byte	1,5,30,9
 	.half	.L515-.L514
-	.byte	3,123,1,5,50,9
-	.half	.L516-.L515
-	.byte	3,5,1,5,39,9
-	.half	.L517-.L516
-	.byte	3,123,1,5,30,9
-	.half	.L518-.L517
 	.byte	3,4,1,5,28,9
-	.half	.L519-.L518
-	.byte	1,5,50,9
-	.half	.L520-.L519
-	.byte	3,1,1,5,1,7,9
-	.half	.L238-.L520
+	.half	.L516-.L515
+	.byte	1,5,33,9
+	.half	.L517-.L516
+	.byte	3,1,1,5,50,9
+	.half	.L518-.L517
+	.byte	1,5,1,9
+	.half	.L234-.L518
 	.byte	3,2,0,1,1
-.L496:
+.L483:
 	.sdecl	'.debug_ranges',debug,cluster('spi_init')
 	.sect	'.debug_ranges'
-.L237:
-	.word	-1,.L226,0,.L238-.L226,0,0
+.L233:
+	.word	-1,.L223,0,.L234-.L223,0,0
 	.sdecl	'.debug_info',debug,cluster('spi_mosi')
 	.sect	'.debug_info'
-.L239:
-	.word	617
+.L235:
+	.word	621
 	.half	3
-	.word	.L240
+	.word	.L236
 	.byte	4,1
 	.byte	'..\\Libraries\\seekfree_libraries\\zf_spi.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L242,.L241
+	.word	.L238,.L237
 	.byte	2
-	.word	.L230
+	.word	.L226
 	.byte	3
 	.byte	'spi_mosi',0,1,146,2,6,1,1,1
-	.word	.L228,.L291,.L227
+	.word	.L225,.L272,.L224
 	.byte	4
 	.byte	'spi_n',0,1,146,2,25
-	.word	.L265,.L292
+	.word	.L246,.L273
 	.byte	4
 	.byte	'cs_pin',0,1,146,2,45
-	.word	.L267,.L293
+	.word	.L248,.L274
 	.byte	4
 	.byte	'modata',0,1,146,2,60
-	.word	.L294,.L295
+	.word	.L275,.L276
 	.byte	4
 	.byte	'midata',0,1,146,2,75
-	.word	.L294,.L296
+	.word	.L275,.L277
 	.byte	4
 	.byte	'len',0,1,146,2,90
-	.word	.L274,.L297
+	.word	.L255,.L278
 	.byte	4
 	.byte	'continuous',0,1,146,2,101
-	.word	.L272,.L298
+	.word	.L253,.L279
 	.byte	5
-	.word	.L299
+	.word	.L225,.L272
 	.byte	6
 	.byte	'i',0,1,148,2,9
-	.word	.L274,.L300
+	.word	.L255,.L280
 	.byte	6
 	.byte	'bacon',0,1,149,2,17
-	.word	.L301,.L302
+	.word	.L281,.L282
 	.byte	6
 	.byte	'moudle',0,1,150,2,21
-	.word	.L286,.L303
+	.word	.L267,.L283
 	.byte	7
-	.word	.L304,.L305,.L206
+	.word	.L284,.L285,.L286
 	.byte	8
-	.word	.L306,.L307
+	.word	.L287,.L288
 	.byte	8
-	.word	.L308,.L309
+	.word	.L289,.L290
 	.byte	9
-	.word	.L310,.L305,.L206
+	.word	.L291,.L285,.L286
 	.byte	6
 	.byte	'bacon',0,2,188,9,20
-	.word	.L301,.L311
+	.word	.L281,.L292
 	.byte	0,0,7
-	.word	.L312,.L206,.L313
+	.word	.L293,.L206,.L294
 	.byte	8
-	.word	.L314,.L315
+	.word	.L295,.L296
 	.byte	8
-	.word	.L316,.L317
+	.word	.L297,.L298
 	.byte	9
-	.word	.L318,.L206,.L313
+	.word	.L299,.L206,.L294
 	.byte	6
 	.byte	'bacon',0,2,198,9,20
-	.word	.L301,.L319
+	.word	.L281,.L300
 	.byte	0,0,7
-	.word	.L312,.L320,.L214
+	.word	.L293,.L301,.L215
 	.byte	8
-	.word	.L314,.L315
+	.word	.L295,.L296
 	.byte	8
-	.word	.L316,.L317
+	.word	.L297,.L298
 	.byte	9
-	.word	.L318,.L320,.L214
+	.word	.L299,.L301,.L215
 	.byte	6
 	.byte	'bacon',0,2,198,9,20
-	.word	.L301,.L321
+	.word	.L281,.L302
 	.byte	0,0,7
-	.word	.L322,.L214,.L215
+	.word	.L303,.L304,.L216
 	.byte	8
-	.word	.L323,.L324
+	.word	.L305,.L306
 	.byte	8
-	.word	.L325,.L326
+	.word	.L307,.L308
 	.byte	10
-	.word	.L327,.L214,.L215
+	.word	.L309,.L304,.L216
 	.byte	0,0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('spi_mosi')
 	.sect	'.debug_abbrev'
-.L240:
+.L236:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
-	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,85,6,0,0,6,52,0,3,8,58
-	.byte	15,59,15,57,15,73,16,2,6,0,0,7,29,1,49,16,17,1,18,1,0,0,8,5,0,49,16,2,6,0,0,9,11,1,49,16,17,1,18,1,0,0
-	.byte	10,11,0,49,16,17,1,18,1,0,0,0
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3
+	.byte	8,58,15,59,15,57,15,73,16,2,6,0,0,7,29,1,49,16,17,1,18,1,0,0,8,5,0,49,16,2,6,0,0,9,11,1,49,16,17,1,18
+	.byte	1,0,0,10,11,0,49,16,17,1,18,1,0,0,0
 	.sdecl	'.debug_line',debug,cluster('spi_mosi')
 	.sect	'.debug_line'
-.L241:
+.L237:
+	.word	.L520-.L519
+.L519:
+	.half	3
 	.word	.L522-.L521
 .L521:
-	.half	3
-	.word	.L524-.L523
-.L523:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi\\Std',0
 	.byte	0
 	.byte	'..\\Libraries\\seekfree_libraries\\zf_spi.c',0,0,0,0
 	.byte	'IfxQspi.h',0,1,0,0,0
-.L524:
+.L522:
 	.byte	5,6,7,0,5,2
-	.word	.L228
+	.word	.L225
 	.byte	3,145,2,1,5,30,9
-	.half	.L484-.L228
+	.half	.L464-.L225
 	.byte	3,6,1,5,9,9
-	.half	.L473-.L484
+	.half	.L457-.L464
 	.byte	1,5,25,9
-	.half	.L486-.L473
+	.half	.L465-.L457
 	.byte	3,2,1,5,13,9
-	.half	.L483-.L486
+	.half	.L466-.L465
 	.byte	3,2,1,5,9,9
-	.half	.L525-.L483
+	.half	.L523-.L466
 	.byte	3,1,1,5,15,9
-	.half	.L526-.L525
+	.half	.L524-.L523
 	.byte	1,9
+	.half	.L525-.L524
+	.byte	3,1,1,9
+	.half	.L526-.L525
+	.byte	3,1,1,9
 	.half	.L527-.L526
-	.byte	3,1,1,9
-	.half	.L528-.L527
-	.byte	3,1,1,9
-	.half	.L529-.L528
 	.byte	3,1,1,5,9,9
-	.half	.L530-.L529
+	.half	.L528-.L527
 	.byte	3,1,1,5,14,9
-	.half	.L531-.L530
+	.half	.L529-.L528
 	.byte	1,5,17,9
+	.half	.L530-.L529
+	.byte	3,1,1,5,15,9
+	.half	.L531-.L530
+	.byte	3,1,1,5,16,9
 	.half	.L532-.L531
 	.byte	3,1,1,5,15,9
 	.half	.L533-.L532
-	.byte	3,1,1,5,16,9
-	.half	.L534-.L533
 	.byte	3,1,1,5,22,9
+	.half	.L534-.L533
+	.byte	3,1,1,5,21,9
 	.half	.L535-.L534
-	.byte	3,2,1,5,21,9
-	.half	.L536-.L535
 	.byte	1,5,26,9
+	.half	.L536-.L535
+	.byte	1,5,25,9
 	.half	.L537-.L536
-	.byte	1,5,15,9
+	.byte	1,5,27,9
 	.half	.L538-.L537
-	.byte	3,127,1,5,25,9
-	.half	.L539-.L538
-	.byte	3,1,1,5,27,9
-	.half	.L540-.L539
 	.byte	1,5,13,9
-	.half	.L541-.L540
+	.half	.L539-.L538
 	.byte	1,5,2,9
-	.half	.L542-.L541
+	.half	.L540-.L539
 	.byte	3,1,1,4,2,5,24,7,9
-	.half	.L305-.L542
+	.half	.L285-.L540
 	.byte	3,150,7,1,9
-	.half	.L475-.L305
-	.byte	3,1,1,4,1,5,76,3,233,120,1,4,2,5,24,9
-	.half	.L206-.L475
+	.half	.L467-.L285
+	.byte	3,1,1,4,1,5,76,9
+	.half	.L286-.L467
+	.byte	3,233,120,1,4,2,5,24,9
+	.half	.L206-.L286
 	.byte	3,160,7,1,9
-	.half	.L476-.L206
+	.half	.L468-.L206
 	.byte	3,1,1,9
-	.half	.L207-.L476
+	.half	.L207-.L468
 	.byte	3,2,1,4,1,5,2,9
-	.half	.L313-.L207
+	.half	.L294-.L207
 	.byte	3,224,120,1,5,5,7,9
-	.half	.L543-.L313
-	.byte	3,2,1,5,26,9
-	.half	.L210-.L543
-	.byte	3,3,1,5,43,9
-	.half	.L544-.L210
+	.half	.L541-.L294
+	.byte	3,2,1,5,20,9
+	.half	.L460-.L541
+	.byte	3,1,1,5,26,9
+	.half	.L211-.L460
+	.byte	3,2,1,5,43,9
+	.half	.L542-.L211
 	.byte	1,5,27,7,9
-	.half	.L545-.L544
-	.byte	3,1,1,5,56,1,5,43,9
+	.half	.L543-.L542
+	.byte	3,1,1,5,56,9
+	.half	.L544-.L543
+	.byte	1,5,26,9
+	.half	.L212-.L544
+	.byte	3,1,1,5,43,9
+	.half	.L545-.L212
+	.byte	1,5,7,7,9
 	.half	.L546-.L545
 	.byte	3,1,1,5,4,9
-	.half	.L478-.L546
-	.byte	3,1,1,5,33,7,9
-	.half	.L547-.L478
+	.half	.L547-.L546
+	.byte	1,5,33,7,9
+	.half	.L548-.L547
 	.byte	3,2,1,5,11,9
-	.half	.L481-.L547
+	.half	.L472-.L548
 	.byte	3,1,1,5,35,9
-	.half	.L548-.L481
+	.half	.L549-.L472
 	.byte	3,127,1,5,32,9
-	.half	.L212-.L548
-	.byte	3,3,1,5,17,9
-	.half	.L213-.L212
-	.byte	3,118,1,5,10,3,11,1,5,5,9
-	.half	.L549-.L213
-	.byte	3,2,1,5,20,9
-	.half	.L550-.L549
-	.byte	3,115,1,5,2,7,9
-	.half	.L208-.L550
+	.half	.L213-.L549
+	.byte	3,3,1,5,10,9
+	.half	.L214-.L213
+	.byte	3,1,1,5,5,9
+	.half	.L550-.L214
+	.byte	3,2,1,5,17,9
+	.half	.L209-.L550
+	.byte	3,115,1,5,20,9
+	.half	.L551-.L209
+	.byte	1,5,2,7,9
+	.half	.L208-.L551
 	.byte	3,18,1,4,2,5,24,7,9
-	.half	.L320-.L208
-	.byte	3,137,7,1,3,2,1,4,1,5,36,9
-	.half	.L214-.L320
+	.half	.L301-.L208
+	.byte	3,137,7,1,9
+	.half	.L552-.L301
+	.byte	3,2,1,4,1,5,36,9
+	.half	.L215-.L552
 	.byte	3,246,120,1,4,2,5,26,9
-	.half	.L551-.L214
+	.half	.L304-.L215
 	.byte	3,157,7,1,4,1,5,24,9
-	.half	.L215-.L551
+	.half	.L216-.L304
 	.byte	3,228,120,1,5,41,9
-	.half	.L552-.L215
-	.byte	1,7,9
-	.half	.L553-.L552
-	.byte	3,2,1,5,2,9
-	.half	.L554-.L553
-	.byte	3,1,1,5,49,7,9
+	.half	.L553-.L216
+	.byte	1,5,24,7,9
+	.half	.L217-.L553
+	.byte	3,2,1,5,41,9
+	.half	.L554-.L217
+	.byte	1,5,5,7,9
 	.half	.L555-.L554
+	.byte	3,1,1,5,2,9
+	.half	.L556-.L555
+	.byte	1,5,49,7,9
+	.half	.L557-.L556
 	.byte	1,5,30,9
-	.half	.L217-.L555
+	.half	.L218-.L557
 	.byte	3,1,1,5,1,9
-	.half	.L556-.L217
+	.half	.L558-.L218
 	.byte	3,1,1,7,9
-	.half	.L243-.L556
+	.half	.L239-.L558
 	.byte	0,1,1
-.L522:
+.L520:
 	.sdecl	'.debug_ranges',debug,cluster('spi_mosi')
 	.sect	'.debug_ranges'
-.L242:
-	.word	-1,.L228,0,.L243-.L228,0,0
-.L299:
-	.word	-1,.L228,0,.L291-.L228,-1,.L211,0,.L263-.L211,0,0
+.L238:
+	.word	-1,.L225,0,.L239-.L225,0,0
 	.sdecl	'.debug_info',debug,cluster('spi_mux')
 	.sect	'.debug_info'
-.L244:
-	.word	364
+.L240:
+	.word	368
 	.half	3
-	.word	.L245
+	.word	.L241
 	.byte	4,1
 	.byte	'..\\Libraries\\seekfree_libraries\\zf_spi.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L247,.L246
+	.word	.L243,.L242
 	.byte	2
-	.word	.L230
+	.word	.L226
 	.byte	3
 	.byte	'spi_mux',0,1,32,6,1,1,1
-	.word	.L220,.L328,.L219
+	.word	.L221,.L310,.L220
 	.byte	4
 	.byte	'spi_n',0,1,32,24
-	.word	.L265,.L329
+	.word	.L246,.L311
 	.byte	4
 	.byte	'sck_pin',0,1,32,44
-	.word	.L267,.L330
+	.word	.L248,.L312
 	.byte	4
 	.byte	'mosi_pin',0,1,32,66
-	.word	.L267,.L331
+	.word	.L248,.L313
 	.byte	4
 	.byte	'miso_pin',0,1,32,89
-	.word	.L267,.L332
+	.word	.L248,.L314
 	.byte	4
 	.byte	'cs_pin',0,1,32,112
-	.word	.L267,.L333
+	.word	.L248,.L315
 	.byte	4
 	.byte	'set_pin',0,1,32,144,1
-	.word	.L334,.L335
+	.word	.L316,.L317
 	.byte	4
 	.byte	'set_cs',0,1,32,179,1
-	.word	.L336,.L337
+	.word	.L318,.L319
 	.byte	5
-	.word	.L338
+	.word	.L221,.L310
 	.byte	6
 	.byte	'__func__',0,1,48,9
-	.word	.L339
+	.word	.L320
 	.byte	5,3
 	.word	_999001___func__
 	.byte	0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('spi_mux')
 	.sect	'.debug_abbrev'
-.L245:
+.L241:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
-	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,85,6,0,0,6,52,0,3,8,58
-	.byte	15,59,15,57,15,73,16,2,9,0,0,0
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3
+	.byte	8,58,15,59,15,57,15,73,16,2,9,0,0,0
 	.sdecl	'.debug_line',debug,cluster('spi_mux')
 	.sect	'.debug_line'
-.L246:
-	.word	.L558-.L557
-.L557:
-	.half	3
+.L242:
 	.word	.L560-.L559
 .L559:
+	.half	3
+	.word	.L562-.L561
+.L561:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\Libraries\\seekfree_libraries\\zf_spi.c',0,0,0,0,0
-.L560:
+.L562:
 	.byte	5,6,7,0,5,2
-	.word	.L220
+	.word	.L221
 	.byte	3,31,1,5,22,9
-	.half	.L443-.L220
-	.byte	3,2,1,5,20,1,5,22,9
-	.half	.L561-.L443
-	.byte	3,1,1,5,20,1,9
-	.half	.L562-.L561
-	.byte	3,1,1,5,23,9
-	.half	.L563-.L562
-	.byte	3,1,1,5,21,1,5,17,9
+	.half	.L327-.L221
+	.byte	3,2,1,5,20,9
+	.half	.L563-.L327
+	.byte	1,5,22,9
 	.half	.L564-.L563
-	.byte	3,2,1,5,15,9
+	.byte	3,1,1,5,20,9
 	.half	.L565-.L564
-	.byte	3,1,1,5,8,9
+	.byte	1,9
 	.half	.L566-.L565
-	.byte	3,4,1,7,9
+	.byte	3,1,1,5,23,9
 	.half	.L567-.L566
-	.byte	3,28,1,7,9
+	.byte	3,1,1,5,21,9
 	.half	.L568-.L567
-	.byte	3,30,1,7,9
+	.byte	1,5,17,9
 	.half	.L569-.L568
-	.byte	3,35,1,5,1,7,9
+	.byte	3,2,1,5,15,9
 	.half	.L570-.L569
-	.byte	3,46,1,5,4,7,9
-	.half	.L2-.L570
-	.byte	3,247,126,1,5,55,7,9
-	.half	.L571-.L2
-	.byte	1,5,79,9
+	.byte	3,1,1,5,8,9
+	.half	.L571-.L570
+	.byte	3,4,1,7,9
 	.half	.L572-.L571
+	.byte	3,28,1,7,9
+	.half	.L573-.L572
+	.byte	3,30,1,7,9
+	.half	.L574-.L573
+	.byte	3,35,1,5,1,7,9
+	.half	.L575-.L574
+	.byte	3,46,1,5,4,7,9
+	.half	.L2-.L575
+	.byte	3,247,126,1,5,55,7,9
+	.half	.L576-.L2
+	.byte	1,5,79,9
+	.half	.L577-.L576
 	.byte	1,5,9,9
-	.half	.L7-.L572
+	.half	.L7-.L577
 	.byte	3,1,1,5,59,7,9
-	.half	.L573-.L7
+	.half	.L578-.L7
 	.byte	1,5,56,9
-	.half	.L8-.L573
+	.half	.L8-.L578
 	.byte	1,5,83,9
-	.half	.L574-.L8
+	.half	.L579-.L8
 	.byte	1,5,9,9
-	.half	.L9-.L574
+	.half	.L9-.L579
 	.byte	3,1,1,5,4,9
 	.half	.L10-.L9
 	.byte	3,2,1,5,56,7,9
-	.half	.L344-.L10
+	.half	.L328-.L10
 	.byte	1,5,80,9
-	.half	.L575-.L344
+	.half	.L580-.L328
 	.byte	1,5,9,9
-	.half	.L11-.L575
+	.half	.L11-.L580
 	.byte	3,1,1,5,60,7,9
-	.half	.L345-.L11
+	.half	.L329-.L11
 	.byte	1,5,57,9
-	.half	.L12-.L345
+	.half	.L12-.L329
 	.byte	1,5,84,9
-	.half	.L576-.L12
+	.half	.L581-.L12
 	.byte	1,5,9,9
-	.half	.L13-.L576
+	.half	.L13-.L581
 	.byte	3,1,1,9
 	.half	.L14-.L13
 	.byte	3,2,1,5,4,9
-	.half	.L346-.L14
+	.half	.L330-.L14
 	.byte	1,5,56,7,9
-	.half	.L347-.L346
+	.half	.L331-.L330
 	.byte	1,5,53,9
-	.half	.L577-.L347
+	.half	.L582-.L331
 	.byte	1,5,80,9
-	.half	.L578-.L577
+	.half	.L583-.L582
 	.byte	1,5,9,9
-	.half	.L15-.L578
+	.half	.L15-.L583
 	.byte	3,1,1,9
 	.half	.L16-.L15
 	.byte	3,2,1,5,4,9
-	.half	.L579-.L16
+	.half	.L584-.L16
 	.byte	1,5,52,7,9
-	.half	.L580-.L579
+	.half	.L585-.L584
 	.byte	1,5,76,9
-	.half	.L581-.L580
-	.byte	1,5,13,9
-	.half	.L17-.L581
-	.byte	3,1,1,5,9,9
-	.half	.L582-.L17
-	.byte	1,5,56,7,9
-	.half	.L583-.L582
-	.byte	1,5,80,9
-	.half	.L584-.L583
-	.byte	1,5,13,9
-	.half	.L19-.L584
-	.byte	3,1,1,5,9,9
-	.half	.L585-.L19
-	.byte	1,5,56,7,9
 	.half	.L586-.L585
-	.byte	1,5,81,9
-	.half	.L587-.L586
 	.byte	1,5,13,9
-	.half	.L21-.L587
+	.half	.L17-.L586
 	.byte	3,1,1,5,9,9
-	.half	.L588-.L21
+	.half	.L587-.L17
 	.byte	1,5,56,7,9
+	.half	.L588-.L587
+	.byte	1,5,80,9
 	.half	.L589-.L588
-	.byte	1,5,81,9
-	.half	.L590-.L589
 	.byte	1,5,13,9
-	.half	.L23-.L590
+	.half	.L19-.L589
 	.byte	3,1,1,5,9,9
-	.half	.L591-.L23
+	.half	.L590-.L19
 	.byte	1,5,56,7,9
+	.half	.L591-.L590
+	.byte	1,5,81,9
 	.half	.L592-.L591
-	.byte	1,5,81,9
-	.half	.L593-.L592
 	.byte	1,5,13,9
-	.half	.L25-.L593
+	.half	.L21-.L592
 	.byte	3,1,1,5,9,9
-	.half	.L594-.L25
+	.half	.L593-.L21
 	.byte	1,5,56,7,9
+	.half	.L594-.L593
+	.byte	1,5,81,9
 	.half	.L595-.L594
-	.byte	1,5,80,9
-	.half	.L596-.L595
 	.byte	1,5,13,9
-	.half	.L27-.L596
+	.half	.L23-.L595
 	.byte	3,1,1,5,9,9
-	.half	.L597-.L27
+	.half	.L596-.L23
 	.byte	1,5,56,7,9
+	.half	.L597-.L596
+	.byte	1,5,81,9
 	.half	.L598-.L597
-	.byte	1,5,81,9
-	.half	.L599-.L598
 	.byte	1,5,13,9
-	.half	.L29-.L599
+	.half	.L25-.L598
 	.byte	3,1,1,5,9,9
-	.half	.L600-.L29
+	.half	.L599-.L25
 	.byte	1,5,56,7,9
+	.half	.L600-.L599
+	.byte	1,5,80,9
 	.half	.L601-.L600
-	.byte	1,5,80,9
-	.half	.L602-.L601
 	.byte	1,5,13,9
-	.half	.L31-.L602
+	.half	.L27-.L601
 	.byte	3,1,1,5,9,9
-	.half	.L603-.L31
+	.half	.L602-.L27
 	.byte	1,5,56,7,9
+	.half	.L603-.L602
+	.byte	1,5,81,9
 	.half	.L604-.L603
-	.byte	1,5,80,9
-	.half	.L605-.L604
 	.byte	1,5,13,9
-	.half	.L33-.L605
+	.half	.L29-.L604
 	.byte	3,1,1,5,9,9
-	.half	.L606-.L33
+	.half	.L605-.L29
 	.byte	1,5,56,7,9
+	.half	.L606-.L605
+	.byte	1,5,80,9
 	.half	.L607-.L606
-	.byte	1,5,80,9
-	.half	.L608-.L607
 	.byte	1,5,13,9
-	.half	.L35-.L608
+	.half	.L31-.L607
 	.byte	3,1,1,5,9,9
-	.half	.L609-.L35
+	.half	.L608-.L31
 	.byte	1,5,56,7,9
+	.half	.L609-.L608
+	.byte	1,5,80,9
 	.half	.L610-.L609
-	.byte	1,5,81,9
-	.half	.L611-.L610
-	.byte	1,5,9,9
-	.half	.L37-.L611
-	.byte	3,1,1,5,4,3,2,1,5,9,9
-	.half	.L3-.L37
-	.byte	3,4,1,5,4,9
-	.half	.L612-.L3
-	.byte	1,5,54,7,9
-	.half	.L613-.L612
-	.byte	1,5,77,9
-	.half	.L614-.L613
 	.byte	1,5,13,9
-	.half	.L40-.L614
+	.half	.L33-.L610
 	.byte	3,1,1,5,9,9
-	.half	.L615-.L40
-	.byte	1,5,58,7,9
-	.half	.L616-.L615
-	.byte	1,5,55,9
-	.half	.L41-.L616
+	.half	.L611-.L33
+	.byte	1,5,56,7,9
+	.half	.L612-.L611
+	.byte	1,5,80,9
+	.half	.L613-.L612
+	.byte	1,5,13,9
+	.half	.L35-.L613
+	.byte	3,1,1,5,9,9
+	.half	.L614-.L35
+	.byte	1,5,56,7,9
+	.half	.L615-.L614
 	.byte	1,5,81,9
-	.half	.L617-.L41
+	.half	.L616-.L615
 	.byte	1,5,9,9
-	.half	.L42-.L617
+	.half	.L37-.L616
+	.byte	3,1,1,5,4,9
+	.half	.L617-.L37
+	.byte	3,2,1,5,9,9
+	.half	.L3-.L617
+	.byte	3,4,1,5,4,9
+	.half	.L618-.L3
+	.byte	1,5,54,7,9
+	.half	.L619-.L618
+	.byte	1,5,77,9
+	.half	.L620-.L619
+	.byte	1,5,13,9
+	.half	.L40-.L620
+	.byte	3,1,1,5,9,9
+	.half	.L621-.L40
+	.byte	1,5,58,7,9
+	.half	.L622-.L621
+	.byte	1,5,55,9
+	.half	.L41-.L622
+	.byte	1,5,81,9
+	.half	.L623-.L41
+	.byte	1,5,9,9
+	.half	.L42-.L623
 	.byte	3,1,1,9
 	.half	.L43-.L42
 	.byte	3,2,1,5,4,9
-	.half	.L362-.L43
+	.half	.L346-.L43
 	.byte	1,5,55,7,9
-	.half	.L363-.L362
+	.half	.L347-.L346
 	.byte	1,5,78,9
-	.half	.L618-.L363
+	.half	.L624-.L347
 	.byte	1,5,13,9
-	.half	.L44-.L618
+	.half	.L44-.L624
 	.byte	3,1,1,5,9,9
-	.half	.L364-.L44
+	.half	.L348-.L44
 	.byte	1,5,59,7,9
-	.half	.L365-.L364
+	.half	.L349-.L348
 	.byte	1,5,82,9
-	.half	.L619-.L365
+	.half	.L625-.L349
 	.byte	1,5,13,9
-	.half	.L46-.L619
+	.half	.L46-.L625
 	.byte	3,1,1,5,9,9
-	.half	.L366-.L46
+	.half	.L350-.L46
 	.byte	1,5,59,7,9
-	.half	.L367-.L366
+	.half	.L351-.L350
 	.byte	1,5,82,9
-	.half	.L620-.L367
+	.half	.L626-.L351
 	.byte	1,5,13,9
-	.half	.L48-.L620
+	.half	.L48-.L626
 	.byte	3,1,1,5,9,9
-	.half	.L368-.L48
+	.half	.L352-.L48
 	.byte	1,5,59,7,9
-	.half	.L369-.L368
+	.half	.L353-.L352
 	.byte	1,5,56,9
-	.half	.L45-.L369
+	.half	.L45-.L353
 	.byte	1,5,82,9
-	.half	.L621-.L45
+	.half	.L627-.L45
 	.byte	1,5,9,9
-	.half	.L50-.L621
+	.half	.L50-.L627
 	.byte	3,1,1,9
 	.half	.L51-.L50
 	.byte	3,2,1,5,4,9
-	.half	.L370-.L51
+	.half	.L354-.L51
 	.byte	1,5,55,7,9
-	.half	.L371-.L370
+	.half	.L355-.L354
 	.byte	1,5,78,9
-	.half	.L622-.L371
+	.half	.L628-.L355
 	.byte	1,5,13,9
-	.half	.L52-.L622
+	.half	.L52-.L628
 	.byte	3,1,1,5,9,9
-	.half	.L372-.L52
+	.half	.L356-.L52
 	.byte	1,5,59,7,9
-	.half	.L373-.L372
+	.half	.L357-.L356
 	.byte	1,5,56,9
-	.half	.L53-.L373
+	.half	.L53-.L357
 	.byte	1,5,82,9
-	.half	.L623-.L53
+	.half	.L629-.L53
 	.byte	1,5,9,9
-	.half	.L54-.L623
+	.half	.L54-.L629
 	.byte	3,1,1,9
 	.half	.L55-.L54
 	.byte	3,2,1,5,4,9
-	.half	.L624-.L55
+	.half	.L630-.L55
 	.byte	1,5,52,7,9
-	.half	.L625-.L624
-	.byte	1,5,76,9
-	.half	.L626-.L625
-	.byte	1,5,13,9
-	.half	.L56-.L626
-	.byte	3,1,1,5,9,9
-	.half	.L627-.L56
-	.byte	1,5,56,7,9
-	.half	.L628-.L627
-	.byte	1,5,80,9
-	.half	.L629-.L628
-	.byte	1,5,13,9
-	.half	.L58-.L629
-	.byte	3,1,1,5,9,9
-	.half	.L630-.L58
-	.byte	1,5,56,7,9
 	.half	.L631-.L630
-	.byte	1,5,81,9
+	.byte	1,5,76,9
 	.half	.L632-.L631
 	.byte	1,5,13,9
-	.half	.L60-.L632
+	.half	.L56-.L632
 	.byte	3,1,1,5,9,9
-	.half	.L633-.L60
+	.half	.L633-.L56
 	.byte	1,5,56,7,9
 	.half	.L634-.L633
-	.byte	1,5,81,9
+	.byte	1,5,80,9
 	.half	.L635-.L634
 	.byte	1,5,13,9
-	.half	.L62-.L635
+	.half	.L58-.L635
 	.byte	3,1,1,5,9,9
-	.half	.L636-.L62
+	.half	.L636-.L58
 	.byte	1,5,56,7,9
 	.half	.L637-.L636
 	.byte	1,5,81,9
 	.half	.L638-.L637
 	.byte	1,5,13,9
-	.half	.L64-.L638
+	.half	.L60-.L638
 	.byte	3,1,1,5,9,9
-	.half	.L639-.L64
+	.half	.L639-.L60
 	.byte	1,5,56,7,9
 	.half	.L640-.L639
-	.byte	1,5,80,9
+	.byte	1,5,81,9
 	.half	.L641-.L640
 	.byte	1,5,13,9
-	.half	.L66-.L641
+	.half	.L62-.L641
 	.byte	3,1,1,5,9,9
-	.half	.L642-.L66
+	.half	.L642-.L62
 	.byte	1,5,56,7,9
 	.half	.L643-.L642
 	.byte	1,5,81,9
 	.half	.L644-.L643
 	.byte	1,5,13,9
-	.half	.L68-.L644
+	.half	.L64-.L644
 	.byte	3,1,1,5,9,9
-	.half	.L645-.L68
+	.half	.L645-.L64
 	.byte	1,5,56,7,9
 	.half	.L646-.L645
 	.byte	1,5,80,9
 	.half	.L647-.L646
 	.byte	1,5,13,9
-	.half	.L70-.L647
+	.half	.L66-.L647
 	.byte	3,1,1,5,9,9
-	.half	.L648-.L70
+	.half	.L648-.L66
 	.byte	1,5,56,7,9
 	.half	.L649-.L648
-	.byte	1,5,80,9
+	.byte	1,5,81,9
 	.half	.L650-.L649
 	.byte	1,5,13,9
-	.half	.L72-.L650
+	.half	.L68-.L650
 	.byte	3,1,1,5,9,9
-	.half	.L651-.L72
+	.half	.L651-.L68
 	.byte	1,5,56,7,9
 	.half	.L652-.L651
 	.byte	1,5,80,9
 	.half	.L653-.L652
 	.byte	1,5,13,9
-	.half	.L74-.L653
+	.half	.L70-.L653
 	.byte	3,1,1,5,9,9
-	.half	.L654-.L74
+	.half	.L654-.L70
 	.byte	1,5,56,7,9
 	.half	.L655-.L654
-	.byte	1,5,81,9
+	.byte	1,5,80,9
 	.half	.L656-.L655
-	.byte	1,5,9,9
-	.half	.L76-.L656
-	.byte	3,1,1,5,4,3,1,1,5,9,9
-	.half	.L4-.L76
-	.byte	3,4,1,5,4,9
-	.half	.L657-.L4
-	.byte	1,5,55,7,9
+	.byte	1,5,13,9
+	.half	.L72-.L656
+	.byte	3,1,1,5,9,9
+	.half	.L657-.L72
+	.byte	1,5,56,7,9
 	.half	.L658-.L657
-	.byte	1,5,79,9
+	.byte	1,5,80,9
 	.half	.L659-.L658
 	.byte	1,5,13,9
-	.half	.L79-.L659
+	.half	.L74-.L659
 	.byte	3,1,1,5,9,9
-	.half	.L660-.L79
-	.byte	1,5,59,7,9
+	.half	.L660-.L74
+	.byte	1,5,56,7,9
 	.half	.L661-.L660
-	.byte	1,5,83,9
+	.byte	1,5,81,9
 	.half	.L662-.L661
-	.byte	1,5,13,9
-	.half	.L81-.L662
-	.byte	3,1,1,5,9,9
-	.half	.L663-.L81
-	.byte	1,5,59,7,9
-	.half	.L664-.L663
-	.byte	1,5,82,9
-	.half	.L665-.L664
-	.byte	1,5,13,9
-	.half	.L83-.L665
-	.byte	3,1,1,5,9,9
-	.half	.L666-.L83
-	.byte	1,5,59,7,9
-	.half	.L667-.L666
-	.byte	1,5,82,9
-	.half	.L668-.L667
-	.byte	1,5,13,9
-	.half	.L85-.L668
-	.byte	3,1,1,5,9,9
-	.half	.L669-.L85
-	.byte	1,5,59,7,9
-	.half	.L670-.L669
-	.byte	1,5,56,9
-	.half	.L80-.L670
-	.byte	1,5,82,9
-	.half	.L671-.L80
 	.byte	1,5,9,9
-	.half	.L87-.L671
+	.half	.L76-.L662
+	.byte	3,1,1,5,4,9
+	.half	.L663-.L76
+	.byte	3,1,1,5,9,9
+	.half	.L4-.L663
+	.byte	3,4,1,5,4,9
+	.half	.L664-.L4
+	.byte	1,5,55,7,9
+	.half	.L665-.L664
+	.byte	1,5,79,9
+	.half	.L666-.L665
+	.byte	1,5,13,9
+	.half	.L79-.L666
+	.byte	3,1,1,5,9,9
+	.half	.L667-.L79
+	.byte	1,5,59,7,9
+	.half	.L668-.L667
+	.byte	1,5,83,9
+	.half	.L669-.L668
+	.byte	1,5,13,9
+	.half	.L81-.L669
+	.byte	3,1,1,5,9,9
+	.half	.L670-.L81
+	.byte	1,5,59,7,9
+	.half	.L671-.L670
+	.byte	1,5,82,9
+	.half	.L672-.L671
+	.byte	1,5,13,9
+	.half	.L83-.L672
+	.byte	3,1,1,5,9,9
+	.half	.L673-.L83
+	.byte	1,5,59,7,9
+	.half	.L674-.L673
+	.byte	1,5,82,9
+	.half	.L675-.L674
+	.byte	1,5,13,9
+	.half	.L85-.L675
+	.byte	3,1,1,5,9,9
+	.half	.L676-.L85
+	.byte	1,5,59,7,9
+	.half	.L677-.L676
+	.byte	1,5,56,9
+	.half	.L80-.L677
+	.byte	1,5,82,9
+	.half	.L678-.L80
+	.byte	1,5,9,9
+	.half	.L87-.L678
 	.byte	3,1,1,9
 	.half	.L88-.L87
 	.byte	3,2,1,5,4,9
-	.half	.L387-.L88
+	.half	.L372-.L88
 	.byte	1,5,56,7,9
-	.half	.L388-.L387
+	.half	.L373-.L372
 	.byte	1,5,80,9
-	.half	.L672-.L388
+	.half	.L679-.L373
 	.byte	1,5,13,9
-	.half	.L89-.L672
+	.half	.L89-.L679
 	.byte	3,1,1,5,9,9
-	.half	.L389-.L89
+	.half	.L374-.L89
 	.byte	1,5,60,7,9
-	.half	.L390-.L389
+	.half	.L375-.L374
 	.byte	1,5,84,9
-	.half	.L673-.L390
+	.half	.L680-.L375
 	.byte	1,5,13,9
-	.half	.L91-.L673
+	.half	.L91-.L680
 	.byte	3,1,1,5,9,9
-	.half	.L391-.L91
+	.half	.L376-.L91
 	.byte	1,5,60,7,9
-	.half	.L392-.L391
+	.half	.L377-.L376
 	.byte	1,5,83,9
-	.half	.L674-.L392
+	.half	.L681-.L377
 	.byte	1,5,13,9
-	.half	.L93-.L674
+	.half	.L93-.L681
 	.byte	3,1,1,5,9,9
-	.half	.L393-.L93
+	.half	.L378-.L93
 	.byte	1,5,60,7,9
-	.half	.L394-.L393
+	.half	.L379-.L378
 	.byte	1,5,57,9
-	.half	.L90-.L394
+	.half	.L90-.L379
 	.byte	1,5,83,9
-	.half	.L675-.L90
+	.half	.L682-.L90
 	.byte	1,5,9,9
-	.half	.L95-.L675
+	.half	.L95-.L682
 	.byte	3,1,1,9
 	.half	.L96-.L95
 	.byte	3,2,1,5,4,9
-	.half	.L395-.L96
+	.half	.L380-.L96
 	.byte	1,5,56,7,9
-	.half	.L396-.L395
+	.half	.L381-.L380
 	.byte	1,5,79,9
-	.half	.L676-.L396
+	.half	.L683-.L381
 	.byte	1,5,13,9
-	.half	.L97-.L676
+	.half	.L97-.L683
 	.byte	3,1,1,5,9,9
-	.half	.L397-.L97
+	.half	.L382-.L97
 	.byte	1,5,60,7,9
-	.half	.L398-.L397
+	.half	.L383-.L382
 	.byte	1,5,83,9
-	.half	.L677-.L398
+	.half	.L684-.L383
 	.byte	1,5,13,9
-	.half	.L99-.L677
+	.half	.L99-.L684
 	.byte	3,1,1,5,9,9
-	.half	.L399-.L99
+	.half	.L384-.L99
 	.byte	1,5,60,7,9
-	.half	.L400-.L399
+	.half	.L385-.L384
 	.byte	1,5,83,9
-	.half	.L678-.L400
+	.half	.L685-.L385
 	.byte	1,5,13,9
-	.half	.L101-.L678
+	.half	.L101-.L685
 	.byte	3,1,1,5,9,9
-	.half	.L401-.L101
+	.half	.L386-.L101
 	.byte	1,5,60,7,9
-	.half	.L402-.L401
+	.half	.L387-.L386
 	.byte	1,5,84,9
-	.half	.L679-.L402
+	.half	.L686-.L387
 	.byte	1,5,13,9
-	.half	.L103-.L679
+	.half	.L103-.L686
 	.byte	3,1,1,5,9,9
-	.half	.L403-.L103
+	.half	.L388-.L103
 	.byte	1,5,60,7,9
-	.half	.L404-.L403
+	.half	.L389-.L388
 	.byte	1,5,57,9
-	.half	.L98-.L404
+	.half	.L98-.L389
 	.byte	1,5,84,9
-	.half	.L680-.L98
+	.half	.L687-.L98
 	.byte	1,5,9,9
-	.half	.L105-.L680
+	.half	.L105-.L687
 	.byte	3,1,1,9
 	.half	.L106-.L105
 	.byte	3,2,1,5,4,9
-	.half	.L681-.L106
+	.half	.L688-.L106
 	.byte	1,5,52,7,9
-	.half	.L682-.L681
-	.byte	1,5,76,9
-	.half	.L683-.L682
-	.byte	1,5,13,9
-	.half	.L107-.L683
-	.byte	3,1,1,5,9,9
-	.half	.L684-.L107
-	.byte	1,5,56,7,9
-	.half	.L685-.L684
-	.byte	1,5,80,9
-	.half	.L686-.L685
-	.byte	1,5,13,9
-	.half	.L109-.L686
-	.byte	3,1,1,5,9,9
-	.half	.L687-.L109
-	.byte	1,5,56,7,9
-	.half	.L688-.L687
-	.byte	1,5,80,9
 	.half	.L689-.L688
+	.byte	1,5,76,9
+	.half	.L690-.L689
 	.byte	1,5,13,9
-	.half	.L111-.L689
+	.half	.L107-.L690
 	.byte	3,1,1,5,9,9
-	.half	.L690-.L111
+	.half	.L691-.L107
 	.byte	1,5,56,7,9
-	.half	.L691-.L690
-	.byte	1,5,80,9
 	.half	.L692-.L691
-	.byte	1,5,13,9
-	.half	.L113-.L692
-	.byte	3,1,1,5,9,9
-	.half	.L693-.L113
-	.byte	1,5,56,7,9
-	.half	.L694-.L693
 	.byte	1,5,80,9
+	.half	.L693-.L692
+	.byte	1,5,13,9
+	.half	.L109-.L693
+	.byte	3,1,1,5,9,9
+	.half	.L694-.L109
+	.byte	1,5,56,7,9
 	.half	.L695-.L694
-	.byte	1,5,13,9
-	.half	.L115-.L695
-	.byte	3,1,1,5,9,9
-	.half	.L696-.L115
-	.byte	1,5,56,7,9
-	.half	.L697-.L696
 	.byte	1,5,80,9
+	.half	.L696-.L695
+	.byte	1,5,13,9
+	.half	.L111-.L696
+	.byte	3,1,1,5,9,9
+	.half	.L697-.L111
+	.byte	1,5,56,7,9
 	.half	.L698-.L697
+	.byte	1,5,80,9
+	.half	.L699-.L698
 	.byte	1,5,13,9
-	.half	.L117-.L698
+	.half	.L113-.L699
 	.byte	3,1,1,5,9,9
-	.half	.L699-.L117
+	.half	.L700-.L113
 	.byte	1,5,56,7,9
-	.half	.L700-.L699
-	.byte	1,5,81,9
 	.half	.L701-.L700
+	.byte	1,5,80,9
+	.half	.L702-.L701
 	.byte	1,5,13,9
-	.half	.L119-.L701
+	.half	.L115-.L702
 	.byte	3,1,1,5,9,9
-	.half	.L702-.L119
+	.half	.L703-.L115
 	.byte	1,5,56,7,9
-	.half	.L703-.L702
-	.byte	1,5,81,9
 	.half	.L704-.L703
-	.byte	1,5,13,9
-	.half	.L121-.L704
-	.byte	3,1,1,5,9,9
-	.half	.L705-.L121
-	.byte	1,5,56,7,9
-	.half	.L706-.L705
 	.byte	1,5,80,9
+	.half	.L705-.L704
+	.byte	1,5,13,9
+	.half	.L117-.L705
+	.byte	3,1,1,5,9,9
+	.half	.L706-.L117
+	.byte	1,5,56,7,9
 	.half	.L707-.L706
+	.byte	1,5,81,9
+	.half	.L708-.L707
 	.byte	1,5,13,9
-	.half	.L123-.L707
+	.half	.L119-.L708
 	.byte	3,1,1,5,9,9
-	.half	.L708-.L123
+	.half	.L709-.L119
 	.byte	1,5,56,7,9
-	.half	.L709-.L708
-	.byte	1,5,80,9
 	.half	.L710-.L709
-	.byte	1,5,9,9
-	.half	.L125-.L710
-	.byte	3,1,1,5,4,3,1,1,5,9,9
-	.half	.L5-.L125
-	.byte	3,4,1,5,4,9
-	.half	.L711-.L5
-	.byte	1,5,55,7,9
-	.half	.L712-.L711
-	.byte	1,5,78,9
+	.byte	1,5,81,9
+	.half	.L711-.L710
+	.byte	1,5,13,9
+	.half	.L121-.L711
+	.byte	3,1,1,5,9,9
+	.half	.L712-.L121
+	.byte	1,5,56,7,9
 	.half	.L713-.L712
+	.byte	1,5,80,9
+	.half	.L714-.L713
 	.byte	1,5,13,9
-	.half	.L128-.L713
+	.half	.L123-.L714
 	.byte	3,1,1,5,9,9
-	.half	.L714-.L128
-	.byte	1,5,59,7,9
-	.half	.L715-.L714
-	.byte	1,5,82,9
+	.half	.L715-.L123
+	.byte	1,5,56,7,9
 	.half	.L716-.L715
-	.byte	1,5,13,9
-	.half	.L130-.L716
-	.byte	3,1,1,5,9,9
-	.half	.L717-.L130
-	.byte	1,5,59,7,9
-	.half	.L718-.L717
-	.byte	1,5,83,9
-	.half	.L719-.L718
-	.byte	1,5,13,9
-	.half	.L132-.L719
-	.byte	3,1,1,5,9,9
-	.half	.L720-.L132
-	.byte	1,5,59,7,9
-	.half	.L721-.L720
-	.byte	1,5,83,9
-	.half	.L722-.L721
-	.byte	1,5,13,9
-	.half	.L134-.L722
-	.byte	3,1,1,5,9,9
-	.half	.L723-.L134
-	.byte	1,5,59,7,9
-	.half	.L724-.L723
-	.byte	1,5,82,9
-	.half	.L725-.L724
-	.byte	1,5,13,9
-	.half	.L136-.L725
-	.byte	3,1,1,5,9,9
-	.half	.L726-.L136
-	.byte	1,5,59,7,9
-	.half	.L727-.L726
-	.byte	1,5,56,9
-	.half	.L129-.L727
-	.byte	1,5,83,9
-	.half	.L728-.L129
+	.byte	1,5,80,9
+	.half	.L717-.L716
 	.byte	1,5,9,9
-	.half	.L138-.L728
+	.half	.L125-.L717
+	.byte	3,1,1,5,4,9
+	.half	.L718-.L125
+	.byte	3,1,1,5,9,9
+	.half	.L5-.L718
+	.byte	3,4,1,5,4,9
+	.half	.L719-.L5
+	.byte	1,5,55,7,9
+	.half	.L720-.L719
+	.byte	1,5,78,9
+	.half	.L721-.L720
+	.byte	1,5,13,9
+	.half	.L128-.L721
+	.byte	3,1,1,5,9,9
+	.half	.L722-.L128
+	.byte	1,5,59,7,9
+	.half	.L723-.L722
+	.byte	1,5,82,9
+	.half	.L724-.L723
+	.byte	1,5,13,9
+	.half	.L130-.L724
+	.byte	3,1,1,5,9,9
+	.half	.L725-.L130
+	.byte	1,5,59,7,9
+	.half	.L726-.L725
+	.byte	1,5,83,9
+	.half	.L727-.L726
+	.byte	1,5,13,9
+	.half	.L132-.L727
+	.byte	3,1,1,5,9,9
+	.half	.L728-.L132
+	.byte	1,5,59,7,9
+	.half	.L729-.L728
+	.byte	1,5,83,9
+	.half	.L730-.L729
+	.byte	1,5,13,9
+	.half	.L134-.L730
+	.byte	3,1,1,5,9,9
+	.half	.L731-.L134
+	.byte	1,5,59,7,9
+	.half	.L732-.L731
+	.byte	1,5,82,9
+	.half	.L733-.L732
+	.byte	1,5,13,9
+	.half	.L136-.L733
+	.byte	3,1,1,5,9,9
+	.half	.L734-.L136
+	.byte	1,5,59,7,9
+	.half	.L735-.L734
+	.byte	1,5,56,9
+	.half	.L129-.L735
+	.byte	1,5,83,9
+	.half	.L736-.L129
+	.byte	1,5,9,9
+	.half	.L138-.L736
 	.byte	3,1,1,9
 	.half	.L139-.L138
 	.byte	3,2,1,5,4,9
-	.half	.L417-.L139
+	.half	.L403-.L139
 	.byte	1,5,56,7,9
-	.half	.L418-.L417
+	.half	.L404-.L403
 	.byte	1,5,79,9
-	.half	.L729-.L418
+	.half	.L737-.L404
 	.byte	1,5,13,9
-	.half	.L140-.L729
+	.half	.L140-.L737
 	.byte	3,1,1,5,9,9
-	.half	.L419-.L140
+	.half	.L405-.L140
 	.byte	1,5,60,7,9
-	.half	.L420-.L419
+	.half	.L406-.L405
 	.byte	1,5,83,9
-	.half	.L730-.L420
+	.half	.L738-.L406
 	.byte	1,5,13,9
-	.half	.L142-.L730
+	.half	.L142-.L738
 	.byte	3,1,1,5,9,9
-	.half	.L421-.L142
+	.half	.L407-.L142
 	.byte	1,5,60,7,9
-	.half	.L422-.L421
+	.half	.L408-.L407
 	.byte	1,5,83,9
-	.half	.L731-.L422
+	.half	.L739-.L408
 	.byte	1,5,13,9
-	.half	.L144-.L731
+	.half	.L144-.L739
 	.byte	3,1,1,5,9,9
-	.half	.L423-.L144
+	.half	.L409-.L144
 	.byte	1,5,60,7,9
-	.half	.L424-.L423
+	.half	.L410-.L409
 	.byte	1,5,84,9
-	.half	.L732-.L424
+	.half	.L740-.L410
 	.byte	1,5,13,9
-	.half	.L146-.L732
+	.half	.L146-.L740
 	.byte	3,1,1,5,9,9
-	.half	.L425-.L146
+	.half	.L411-.L146
 	.byte	1,5,60,7,9
-	.half	.L426-.L425
+	.half	.L412-.L411
 	.byte	1,5,84,9
-	.half	.L733-.L426
+	.half	.L741-.L412
 	.byte	1,5,13,9
-	.half	.L148-.L733
+	.half	.L148-.L741
 	.byte	3,1,1,5,9,9
-	.half	.L427-.L148
+	.half	.L413-.L148
 	.byte	1,5,60,7,9
-	.half	.L428-.L427
+	.half	.L414-.L413
 	.byte	1,5,57,9
-	.half	.L141-.L428
+	.half	.L141-.L414
 	.byte	1,5,84,9
-	.half	.L734-.L141
+	.half	.L742-.L141
 	.byte	1,5,9,9
-	.half	.L150-.L734
+	.half	.L150-.L742
 	.byte	3,1,1,9
 	.half	.L151-.L150
 	.byte	3,2,1,5,4,9
-	.half	.L429-.L151
+	.half	.L415-.L151
 	.byte	1,5,56,7,9
-	.half	.L430-.L429
+	.half	.L416-.L415
 	.byte	1,5,79,9
-	.half	.L735-.L430
+	.half	.L743-.L416
 	.byte	1,5,13,9
-	.half	.L152-.L735
+	.half	.L152-.L743
 	.byte	3,1,1,5,9,9
-	.half	.L431-.L152
+	.half	.L417-.L152
 	.byte	1,5,60,7,9
-	.half	.L432-.L431
+	.half	.L418-.L417
 	.byte	1,5,83,9
-	.half	.L736-.L432
+	.half	.L744-.L418
 	.byte	1,5,13,9
-	.half	.L154-.L736
+	.half	.L154-.L744
 	.byte	3,1,1,5,9,9
-	.half	.L433-.L154
+	.half	.L419-.L154
 	.byte	1,5,60,7,9
-	.half	.L434-.L433
+	.half	.L420-.L419
 	.byte	1,5,83,9
-	.half	.L737-.L434
+	.half	.L745-.L420
 	.byte	1,5,13,9
-	.half	.L156-.L737
+	.half	.L156-.L745
 	.byte	3,1,1,5,9,9
-	.half	.L435-.L156
+	.half	.L421-.L156
 	.byte	1,5,60,7,9
-	.half	.L436-.L435
+	.half	.L422-.L421
 	.byte	1,5,84,9
-	.half	.L738-.L436
+	.half	.L746-.L422
 	.byte	1,5,13,9
-	.half	.L158-.L738
+	.half	.L158-.L746
 	.byte	3,1,1,5,9,9
-	.half	.L437-.L158
+	.half	.L423-.L158
 	.byte	1,5,60,7,9
-	.half	.L438-.L437
+	.half	.L424-.L423
 	.byte	1,5,84,9
-	.half	.L739-.L438
+	.half	.L747-.L424
 	.byte	1,5,13,9
-	.half	.L160-.L739
+	.half	.L160-.L747
 	.byte	3,1,1,5,9,9
-	.half	.L439-.L160
+	.half	.L425-.L160
 	.byte	1,5,61,7,9
-	.half	.L440-.L439
+	.half	.L426-.L425
 	.byte	1,5,58,9
-	.half	.L153-.L440
+	.half	.L153-.L426
 	.byte	1,5,85,9
-	.half	.L740-.L153
+	.half	.L748-.L153
 	.byte	1,5,9,9
-	.half	.L162-.L740
+	.half	.L162-.L748
 	.byte	3,1,1,9
 	.half	.L163-.L162
 	.byte	3,2,1,5,4,9
-	.half	.L741-.L163
+	.half	.L749-.L163
 	.byte	1,5,52,7,9
-	.half	.L742-.L741
+	.half	.L750-.L749
 	.byte	1,5,76,9
-	.half	.L743-.L742
-	.byte	1,5,13,9
-	.half	.L164-.L743
-	.byte	3,1,1,5,9,9
-	.half	.L744-.L164
-	.byte	1,5,56,7,9
-	.half	.L745-.L744
-	.byte	1,5,80,9
-	.half	.L746-.L745
-	.byte	1,5,13,9
-	.half	.L166-.L746
-	.byte	3,1,1,5,9,9
-	.half	.L747-.L166
-	.byte	1,5,56,7,9
-	.half	.L748-.L747
-	.byte	1,5,80,9
-	.half	.L749-.L748
-	.byte	1,5,13,9
-	.half	.L168-.L749
-	.byte	3,1,1,5,9,9
-	.half	.L750-.L168
-	.byte	1,5,56,7,9
 	.half	.L751-.L750
-	.byte	1,5,80,9
-	.half	.L752-.L751
 	.byte	1,5,13,9
-	.half	.L170-.L752
+	.half	.L164-.L751
 	.byte	3,1,1,5,9,9
-	.half	.L753-.L170
+	.half	.L752-.L164
 	.byte	1,5,56,7,9
+	.half	.L753-.L752
+	.byte	1,5,80,9
 	.half	.L754-.L753
-	.byte	1,5,80,9
-	.half	.L755-.L754
 	.byte	1,5,13,9
-	.half	.L172-.L755
+	.half	.L166-.L754
 	.byte	3,1,1,5,9,9
-	.half	.L756-.L172
+	.half	.L755-.L166
 	.byte	1,5,56,7,9
+	.half	.L756-.L755
+	.byte	1,5,80,9
 	.half	.L757-.L756
-	.byte	1,5,80,9
-	.half	.L758-.L757
 	.byte	1,5,13,9
-	.half	.L174-.L758
+	.half	.L168-.L757
 	.byte	3,1,1,5,9,9
-	.half	.L759-.L174
+	.half	.L758-.L168
 	.byte	1,5,56,7,9
+	.half	.L759-.L758
+	.byte	1,5,80,9
 	.half	.L760-.L759
-	.byte	1,5,80,9
-	.half	.L761-.L760
 	.byte	1,5,13,9
-	.half	.L176-.L761
+	.half	.L170-.L760
 	.byte	3,1,1,5,9,9
-	.half	.L762-.L176
+	.half	.L761-.L170
 	.byte	1,5,56,7,9
+	.half	.L762-.L761
+	.byte	1,5,80,9
 	.half	.L763-.L762
-	.byte	1,5,80,9
-	.half	.L764-.L763
 	.byte	1,5,13,9
-	.half	.L178-.L764
+	.half	.L172-.L763
 	.byte	3,1,1,5,9,9
-	.half	.L765-.L178
+	.half	.L764-.L172
 	.byte	1,5,56,7,9
+	.half	.L765-.L764
+	.byte	1,5,80,9
 	.half	.L766-.L765
-	.byte	1,5,80,9
-	.half	.L767-.L766
 	.byte	1,5,13,9
-	.half	.L180-.L767
+	.half	.L174-.L766
 	.byte	3,1,1,5,9,9
-	.half	.L768-.L180
+	.half	.L767-.L174
 	.byte	1,5,56,7,9
+	.half	.L768-.L767
+	.byte	1,5,80,9
 	.half	.L769-.L768
-	.byte	1,5,80,9
-	.half	.L770-.L769
 	.byte	1,5,13,9
-	.half	.L182-.L770
+	.half	.L176-.L769
 	.byte	3,1,1,5,9,9
-	.half	.L771-.L182
+	.half	.L770-.L176
 	.byte	1,5,56,7,9
+	.half	.L771-.L770
+	.byte	1,5,80,9
 	.half	.L772-.L771
-	.byte	1,5,80,9
-	.half	.L773-.L772
 	.byte	1,5,13,9
-	.half	.L184-.L773
+	.half	.L178-.L772
 	.byte	3,1,1,5,9,9
-	.half	.L774-.L184
+	.half	.L773-.L178
 	.byte	1,5,56,7,9
+	.half	.L774-.L773
+	.byte	1,5,80,9
 	.half	.L775-.L774
-	.byte	1,5,80,9
-	.half	.L776-.L775
 	.byte	1,5,13,9
-	.half	.L186-.L776
+	.half	.L180-.L775
 	.byte	3,1,1,5,9,9
-	.half	.L777-.L186
+	.half	.L776-.L180
 	.byte	1,5,56,7,9
+	.half	.L777-.L776
+	.byte	1,5,80,9
 	.half	.L778-.L777
-	.byte	1,5,80,9
-	.half	.L779-.L778
 	.byte	1,5,13,9
-	.half	.L188-.L779
+	.half	.L182-.L778
 	.byte	3,1,1,5,9,9
-	.half	.L780-.L188
+	.half	.L779-.L182
 	.byte	1,5,56,7,9
+	.half	.L780-.L779
+	.byte	1,5,80,9
 	.half	.L781-.L780
+	.byte	1,5,13,9
+	.half	.L184-.L781
+	.byte	3,1,1,5,9,9
+	.half	.L782-.L184
+	.byte	1,5,56,7,9
+	.half	.L783-.L782
 	.byte	1,5,80,9
-	.half	.L782-.L781
-	.byte	1,5,13,9
-	.half	.L190-.L782
-	.byte	3,1,1,5,9,9
-	.half	.L783-.L190
-	.byte	1,5,56,7,9
 	.half	.L784-.L783
-	.byte	1,5,82,9
-	.half	.L785-.L784
 	.byte	1,5,13,9
-	.half	.L192-.L785
+	.half	.L186-.L784
 	.byte	3,1,1,5,9,9
-	.half	.L786-.L192
+	.half	.L785-.L186
 	.byte	1,5,56,7,9
+	.half	.L786-.L785
+	.byte	1,5,80,9
 	.half	.L787-.L786
-	.byte	1,5,81,9
-	.half	.L788-.L787
 	.byte	1,5,13,9
-	.half	.L194-.L788
+	.half	.L188-.L787
 	.byte	3,1,1,5,9,9
-	.half	.L789-.L194
+	.half	.L788-.L188
 	.byte	1,5,56,7,9
+	.half	.L789-.L788
+	.byte	1,5,80,9
 	.half	.L790-.L789
+	.byte	1,5,13,9
+	.half	.L190-.L790
+	.byte	3,1,1,5,9,9
+	.half	.L791-.L190
+	.byte	1,5,56,7,9
+	.half	.L792-.L791
+	.byte	1,5,82,9
+	.half	.L793-.L792
+	.byte	1,5,13,9
+	.half	.L192-.L793
+	.byte	3,1,1,5,9,9
+	.half	.L794-.L192
+	.byte	1,5,56,7,9
+	.half	.L795-.L794
+	.byte	1,5,81,9
+	.half	.L796-.L795
+	.byte	1,5,13,9
+	.half	.L194-.L796
+	.byte	3,1,1,5,9,9
+	.half	.L797-.L194
+	.byte	1,5,56,7,9
+	.half	.L798-.L797
 	.byte	1,5,53,9
-	.half	.L18-.L790
+	.half	.L18-.L798
 	.byte	1,5,1,9
-	.half	.L791-.L18
+	.half	.L799-.L18
 	.byte	3,4,1,5,9,7,9
-	.half	.L196-.L791
+	.half	.L196-.L799
 	.byte	3,125,1,5,1,9
-	.half	.L248-.L196
+	.half	.L244-.L196
 	.byte	3,3,0,1,1
-.L558:
+.L560:
 	.sdecl	'.debug_ranges',debug,cluster('spi_mux')
 	.sect	'.debug_ranges'
-.L247:
-	.word	-1,.L220,0,.L248-.L220,0,0
-.L338:
-	.word	-1,.L220,0,.L328-.L220,-1,.L222,0,.L258-.L222,-1,.L224,0,.L253-.L224,0,0
-	.sdecl	'.debug_info',debug,cluster('.cocofun_2')
-	.sect	'.debug_info'
-.L249:
-	.word	195
-	.half	3
-	.word	.L250
-	.byte	4,1
-	.byte	'..\\Libraries\\seekfree_libraries\\zf_spi.c',0
-	.byte	'TASKING VX-toolset for TriCore: C compiler',0
-	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L252,.L251
-	.byte	2
-	.word	.L230
-	.byte	3
-	.byte	'.cocofun_2',0,1,32,6,1
-	.word	.L224,.L253,.L223
-	.byte	0
-	.sdecl	'.debug_abbrev',debug,cluster('.cocofun_2')
-	.sect	'.debug_abbrev'
-.L250:
-	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,0,3,8,58,15,59,15,57,15,54,15
-	.byte	17,1,18,1,64,6,0,0,0
-	.sdecl	'.debug_line',debug,cluster('.cocofun_2')
-	.sect	'.debug_line'
-.L251:
-	.word	.L793-.L792
-.L792:
-	.half	3
-	.word	.L795-.L794
-.L794:
-	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
-	.byte	'..\\Libraries\\seekfree_libraries\\zf_spi.c',0,0,0,0,0
-.L795:
-	.byte	5,9,7,0,5,2
-	.word	.L224
-	.byte	3,47,1,9
-	.half	.L253-.L224
-	.byte	0,1,1,5,9,0,5,2
-	.word	.L224
-	.byte	3,51,1,9
-	.half	.L796-.L224
-	.byte	3,124,1,7,9
-	.half	.L253-.L796
-	.byte	0,1,1,5,9,0,5,2
-	.word	.L224
-	.byte	3,54,1,9
-	.half	.L796-.L224
-	.byte	3,121,1,7,9
-	.half	.L253-.L796
-	.byte	0,1,1,5,9,0,5,2
-	.word	.L224
-	.byte	3,203,0,1,9
-	.half	.L796-.L224
-	.byte	3,100,1,7,9
-	.half	.L253-.L796
-	.byte	0,1,1,5,9,0,5,2
-	.word	.L224
-	.byte	3,209,0,1,9
-	.half	.L796-.L224
-	.byte	3,94,1,7,9
-	.half	.L253-.L796
-	.byte	0,1,1,5,9,0,5,2
-	.word	.L224
-	.byte	3,213,0,1,9
-	.half	.L796-.L224
-	.byte	3,90,1,7,9
-	.half	.L253-.L796
-	.byte	0,1,1,5,9,0,5,2
-	.word	.L224
-	.byte	3,236,0,1,9
-	.half	.L796-.L224
-	.byte	3,67,1,7,9
-	.half	.L253-.L796
-	.byte	0,1,1,5,9,0,5,2
-	.word	.L224
-	.byte	3,242,0,1,9
-	.half	.L796-.L224
-	.byte	3,189,127,1,7,9
-	.half	.L253-.L796
-	.byte	0,1,1,5,9,0,5,2
-	.word	.L224
-	.byte	3,249,0,1,9
-	.half	.L796-.L224
-	.byte	3,182,127,1,7,9
-	.half	.L253-.L796
-	.byte	0,1,1,5,9,0,5,2
-	.word	.L224
-	.byte	3,144,1,1,9
-	.half	.L796-.L224
-	.byte	3,159,127,1,7,9
-	.half	.L253-.L796
-	.byte	0,1,1,5,9,0,5,2
-	.word	.L224
-	.byte	3,152,1,1,9
-	.half	.L796-.L224
-	.byte	3,151,127,1,7,9
-	.half	.L253-.L796
-	.byte	0,1,1,5,9,0,5,2
-	.word	.L224
-	.byte	3,160,1,1,9
-	.half	.L796-.L224
-	.byte	3,143,127,1,7,9
-	.half	.L253-.L796
-	.byte	0,1,1,5,9,0,5,2
-	.word	.L224
-	.byte	3,179,1,1,9
-	.half	.L796-.L224
-	.byte	3,252,126,1,7,9
-	.half	.L253-.L796
-	.byte	0,1,1
-.L793:
-	.sdecl	'.debug_ranges',debug,cluster('.cocofun_2')
-	.sect	'.debug_ranges'
-.L252:
-	.word	-1,.L224,0,.L253-.L224,0,0
-	.sdecl	'.debug_info',debug,cluster('.cocofun_3')
-	.sect	'.debug_info'
-.L254:
-	.word	195
-	.half	3
-	.word	.L255
-	.byte	4,1
-	.byte	'..\\Libraries\\seekfree_libraries\\zf_spi.c',0
-	.byte	'TASKING VX-toolset for TriCore: C compiler',0
-	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L257,.L256
-	.byte	2
-	.word	.L230
-	.byte	3
-	.byte	'.cocofun_3',0,1,32,6,1
-	.word	.L222,.L258,.L221
-	.byte	0
-	.sdecl	'.debug_abbrev',debug,cluster('.cocofun_3')
-	.sect	'.debug_abbrev'
-.L255:
-	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,0,3,8,58,15,59,15,57,15,54,15
-	.byte	17,1,18,1,64,6,0,0,0
-	.sdecl	'.debug_line',debug,cluster('.cocofun_3')
-	.sect	'.debug_line'
-.L256:
-	.word	.L798-.L797
-.L797:
-	.half	3
-	.word	.L800-.L799
-.L799:
-	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
-	.byte	'..\\Libraries\\seekfree_libraries\\zf_spi.c',0,0,0,0,0
-.L800:
-	.byte	5,9,7,0,5,2
-	.word	.L222
-	.byte	3,47,1,9
-	.half	.L258-.L222
-	.byte	0,1,1,5,9,0,5,2
-	.word	.L222
-	.byte	3,51,1,9
-	.half	.L801-.L222
-	.byte	3,124,1,7,9
-	.half	.L258-.L801
-	.byte	0,1,1,5,9,0,5,2
-	.word	.L222
-	.byte	3,54,1,9
-	.half	.L801-.L222
-	.byte	3,121,1,7,9
-	.half	.L258-.L801
-	.byte	0,1,1,5,9,0,5,2
-	.word	.L222
-	.byte	3,203,0,1,9
-	.half	.L801-.L222
-	.byte	3,100,1,7,9
-	.half	.L258-.L801
-	.byte	0,1,1,5,9,0,5,2
-	.word	.L222
-	.byte	3,209,0,1,9
-	.half	.L801-.L222
-	.byte	3,94,1,7,9
-	.half	.L258-.L801
-	.byte	0,1,1,5,9,0,5,2
-	.word	.L222
-	.byte	3,213,0,1,9
-	.half	.L801-.L222
-	.byte	3,90,1,7,9
-	.half	.L258-.L801
-	.byte	0,1,1,5,9,0,5,2
-	.word	.L222
-	.byte	3,236,0,1,9
-	.half	.L801-.L222
-	.byte	3,67,1,7,9
-	.half	.L258-.L801
-	.byte	0,1,1,5,9,0,5,2
-	.word	.L222
-	.byte	3,242,0,1,9
-	.half	.L801-.L222
-	.byte	3,189,127,1,7,9
-	.half	.L258-.L801
-	.byte	0,1,1,5,9,0,5,2
-	.word	.L222
-	.byte	3,249,0,1,9
-	.half	.L801-.L222
-	.byte	3,182,127,1,7,9
-	.half	.L258-.L801
-	.byte	0,1,1,5,9,0,5,2
-	.word	.L222
-	.byte	3,144,1,1,9
-	.half	.L801-.L222
-	.byte	3,159,127,1,7,9
-	.half	.L258-.L801
-	.byte	0,1,1,5,9,0,5,2
-	.word	.L222
-	.byte	3,152,1,1,9
-	.half	.L801-.L222
-	.byte	3,151,127,1,7,9
-	.half	.L258-.L801
-	.byte	0,1,1,5,9,0,5,2
-	.word	.L222
-	.byte	3,160,1,1,9
-	.half	.L801-.L222
-	.byte	3,143,127,1,7,9
-	.half	.L258-.L801
-	.byte	0,1,1,5,9,0,5,2
-	.word	.L222
-	.byte	3,179,1,1,9
-	.half	.L801-.L222
-	.byte	3,252,126,1,7,9
-	.half	.L258-.L801
-	.byte	0,1,1
-.L798:
-	.sdecl	'.debug_ranges',debug,cluster('.cocofun_3')
-	.sect	'.debug_ranges'
-.L257:
-	.word	-1,.L222,0,.L258-.L222,0,0
-	.sdecl	'.debug_info',debug,cluster('.cocofun_4')
-	.sect	'.debug_info'
-.L259:
-	.word	196
-	.half	3
-	.word	.L260
-	.byte	4,1
-	.byte	'..\\Libraries\\seekfree_libraries\\zf_spi.c',0
-	.byte	'TASKING VX-toolset for TriCore: C compiler',0
-	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L262,.L261
-	.byte	2
-	.word	.L230
-	.byte	3
-	.byte	'.cocofun_4',0,1,146,2,6,1
-	.word	.L211,.L263,.L229
-	.byte	0
-	.sdecl	'.debug_abbrev',debug,cluster('.cocofun_4')
-	.sect	'.debug_abbrev'
-.L260:
-	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,0,3,8,58,15,59,15,57,15,54,15
-	.byte	17,1,18,1,64,6,0,0,0
-	.sdecl	'.debug_line',debug,cluster('.cocofun_4')
-	.sect	'.debug_line'
-.L261:
-	.word	.L803-.L802
-.L802:
-	.half	3
-	.word	.L805-.L804
-.L804:
-	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
-	.byte	'..\\Libraries\\seekfree_libraries\\zf_spi.c',0,0,0,0,0
-.L805:
-	.byte	5,26,7,0,5,2
-	.word	.L211
-	.byte	3,176,2,1,5,43,9
-	.half	.L806-.L211
-	.byte	1,5,7,7,9
-	.half	.L807-.L806
-	.byte	3,1,1,9
-	.half	.L263-.L807
-	.byte	0,1,1,5,24,0,5,2
-	.word	.L211
-	.byte	3,194,2,1,5,41,9
-	.half	.L806-.L211
-	.byte	1,5,5,7,9
-	.half	.L807-.L806
-	.byte	3,1,1,5,7,9
-	.half	.L808-.L807
-	.byte	3,110,1,7,9
-	.half	.L263-.L808
-	.byte	0,1,1
-.L803:
-	.sdecl	'.debug_ranges',debug,cluster('.cocofun_4')
-	.sect	'.debug_ranges'
-.L262:
-	.word	-1,.L211,0,.L263-.L211,0,0
-	.sdecl	'.debug_loc',debug,cluster('.cocofun_2')
-	.sect	'.debug_loc'
-.L223:
-	.word	-1,.L224,0,.L253-.L224
-	.half	2
-	.byte	138,0
-	.word	0,0
-	.sdecl	'.debug_loc',debug,cluster('.cocofun_3')
-	.sect	'.debug_loc'
-.L221:
-	.word	-1,.L222,0,.L258-.L222
-	.half	2
-	.byte	138,0
-	.word	0,0
-	.sdecl	'.debug_loc',debug,cluster('.cocofun_4')
-	.sect	'.debug_loc'
-.L229:
-	.word	-1,.L211,0,.L263-.L211
-	.half	2
-	.byte	138,0
-	.word	0,0
+.L243:
+	.word	-1,.L221,0,.L244-.L221,0,0
 	.sdecl	'.debug_loc',debug,cluster('spi_init')
 	.sect	'.debug_loc'
-.L290:
-	.word	-1,.L226,0,.L264-.L226
+.L271:
+	.word	-1,.L223,0,.L245-.L223
 	.half	2
 	.byte	145,80
 	.word	0,0
-.L281:
-	.word	-1,.L226,0,.L264-.L226
+.L262:
+	.word	-1,.L223,0,.L245-.L223
 	.half	3
 	.byte	145,220,126
 	.word	0,0
-.L277:
-	.word	-1,.L226,0,.L264-.L226
+.L258:
+	.word	-1,.L223,0,.L245-.L223
 	.half	3
 	.byte	145,228,125
 	.word	0,0
-.L279:
-	.word	-1,.L226,0,.L264-.L226
+.L260:
+	.word	-1,.L223,0,.L245-.L223
 	.half	3
 	.byte	145,144,126
 	.word	0,0
-.L283:
-	.word	-1,.L226,0,.L264-.L226
+.L264:
+	.word	-1,.L223,0,.L245-.L223
 	.half	3
 	.byte	145,176,127
 	.word	0,0
-.L285:
-	.word	-1,.L226,0,.L264-.L226
+.L266:
+	.word	-1,.L223,0,.L245-.L223
 	.half	2
 	.byte	145,72
 	.word	0,0
-.L275:
-	.word	-1,.L226,0,.L264-.L226
+.L256:
+	.word	-1,.L223,0,.L245-.L223
 	.half	2
 	.byte	145,8
-	.word	0,.L264-.L226
+	.word	0,.L245-.L223
 	.half	2
 	.byte	145,8
-	.word	.L464-.L226,.L264-.L226
+	.word	.L448-.L223,.L245-.L223
 	.half	1
 	.byte	94
 	.word	0,0
-.L271:
-	.word	-1,.L226,0,.L264-.L226
+.L252:
+	.word	-1,.L223,0,.L245-.L223
 	.half	2
 	.byte	145,0
-	.word	.L465-.L226,.L264-.L226
+	.word	.L446-.L223,.L245-.L223
 	.half	1
 	.byte	92
 	.word	0,0
-.L270:
-	.word	-1,.L226,0,.L463-.L226
+.L251:
+	.word	-1,.L223,0,.L444-.L223
 	.half	1
 	.byte	87
-	.word	.L468-.L226,.L469-.L226
+	.word	.L453-.L223,.L454-.L223
 	.half	1
 	.byte	91
 	.word	0,0
-.L273:
-	.word	-1,.L226,0,.L264-.L226
+.L254:
+	.word	-1,.L223,0,.L245-.L223
 	.half	2
 	.byte	145,4
-	.word	.L466-.L226,.L264-.L226
+	.word	.L447-.L223,.L245-.L223
 	.half	1
 	.byte	93
 	.word	0,0
-.L269:
-	.word	-1,.L226,0,.L463-.L226
+.L250:
+	.word	-1,.L223,0,.L444-.L223
 	.half	1
 	.byte	86
-	.word	.L468-.L226,.L469-.L226
+	.word	.L453-.L223,.L454-.L223
 	.half	1
 	.byte	90
 	.word	0,0
-.L287:
-	.word	-1,.L226,.L463-.L226,.L467-.L226
+.L268:
+	.word	-1,.L223,.L444-.L223,.L449-.L223
 	.half	1
 	.byte	98
-	.word	.L469-.L226,.L470-.L226
+	.word	.L450-.L223,.L451-.L223
 	.half	1
 	.byte	111
-	.word	.L471-.L226,.L472-.L226
+	.word	.L455-.L223,.L456-.L223
 	.half	1
 	.byte	101
 	.word	0,0
-.L268:
-	.word	-1,.L226,0,.L463-.L226
+.L249:
+	.word	-1,.L223,0,.L444-.L223
 	.half	1
 	.byte	85
-	.word	.L463-.L226,.L468-.L226
+	.word	.L452-.L223,.L453-.L223
 	.half	1
 	.byte	89
 	.word	0,0
-.L225:
-	.word	-1,.L226,0,.L462-.L226
+.L222:
+	.word	-1,.L223,0,.L443-.L223
 	.half	2
 	.byte	138,0
-	.word	.L462-.L226,.L264-.L226
+	.word	.L443-.L223,.L245-.L223
 	.half	3
 	.byte	138,160,2
-	.word	.L264-.L226,.L264-.L226
+	.word	.L245-.L223,.L245-.L223
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L266:
-	.word	-1,.L226,0,.L464-.L226
+.L247:
+	.word	-1,.L223,0,.L445-.L223
 	.half	1
 	.byte	84
-	.word	.L466-.L226,.L464-.L226
+	.word	.L448-.L223,.L445-.L223
 	.half	1
 	.byte	88
-	.word	.L463-.L226,.L468-.L226
+	.word	.L452-.L223,.L453-.L223
 	.half	1
 	.byte	88
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('spi_mosi')
 	.sect	'.debug_loc'
-.L302:
-	.word	-1,.L228,.L211-.L228,.L263-.L228
-	.half	1
-	.byte	91
-	.word	.L483-.L228,.L291-.L228
+.L282:
+	.word	-1,.L225,.L466-.L225,.L272-.L225
 	.half	1
 	.byte	91
 	.word	0,0
-.L311:
-	.word	-1,.L228,.L475-.L228,.L206-.L228
+.L292:
+	.word	-1,.L225,.L467-.L225,.L206-.L225
 	.half	1
 	.byte	95
-	.word	0,0
-.L319:
-	.word	-1,.L228,.L476-.L228,.L313-.L228
-	.half	1
-	.byte	95
-	.word	0,0
-.L321:
-	.word	-1,.L228,.L211-.L228,.L263-.L228
-	.half	1
-	.byte	91
-	.word	.L483-.L228,.L291-.L228
-	.half	1
-	.byte	91
-	.word	0,0
-.L309:
-	.word	0,0
-.L317:
-	.word	0,0
-.L298:
-	.word	-1,.L228,0,.L473-.L228
-	.half	1
-	.byte	87
-	.word	.L211-.L228,.L263-.L228
-	.half	1
-	.byte	90
-	.word	.L484-.L228,.L291-.L228
-	.half	1
-	.byte	90
-	.word	0,0
-.L293:
-	.word	-1,.L228,0,.L473-.L228
-	.half	1
-	.byte	85
-	.word	.L474-.L228,.L210-.L228
-	.half	1
-	.byte	88
-	.word	0,0
-.L326:
 	.word	0,0
 .L300:
-	.word	-1,.L228,.L211-.L228,.L263-.L228
+	.word	-1,.L225,.L468-.L225,.L294-.L225
 	.half	1
-	.byte	88
-	.word	.L210-.L228,.L208-.L228
+	.byte	95
+	.word	0,0
+.L302:
+	.word	-1,.L225,.L466-.L225,.L272-.L225
+	.half	1
+	.byte	91
+	.word	0,0
+.L290:
+	.word	0,0
+.L298:
+	.word	0,0
+.L279:
+	.word	-1,.L225,0,.L457-.L225
+	.half	1
+	.byte	87
+	.word	.L464-.L225,.L272-.L225
+	.half	1
+	.byte	90
+	.word	0,0
+.L274:
+	.word	-1,.L225,0,.L457-.L225
+	.half	1
+	.byte	85
+	.word	.L459-.L225,.L460-.L225
 	.half	1
 	.byte	88
 	.word	0,0
-.L297:
-	.word	-1,.L228,0,.L473-.L228
+.L308:
+	.word	0,0
+.L280:
+	.word	-1,.L225,.L460-.L225,.L208-.L225
+	.half	1
+	.byte	88
+	.word	0,0
+.L278:
+	.word	-1,.L225,0,.L457-.L225
 	.half	1
 	.byte	86
-	.word	.L211-.L228,.L263-.L228
-	.half	1
-	.byte	89
-	.word	.L485-.L228,.L291-.L228
+	.word	.L463-.L225,.L272-.L225
 	.half	1
 	.byte	89
 	.word	0,0
-.L296:
-	.word	-1,.L228,0,.L473-.L228
+.L277:
+	.word	-1,.L225,0,.L457-.L225
 	.half	1
 	.byte	101
-	.word	.L211-.L228,.L263-.L228
+	.word	.L462-.L225,.L272-.L225
 	.half	1
 	.byte	109
-	.word	.L482-.L228,.L481-.L228
+	.word	.L473-.L225,.L472-.L225
 	.half	1
 	.byte	101
-	.word	.L485-.L228,.L291-.L228
-	.half	1
-	.byte	109
-	.word	.L488-.L228,.L217-.L228
+	.word	.L475-.L225,.L218-.L225
 	.half	1
 	.byte	101
 	.word	0,0
-.L295:
-	.word	-1,.L228,0,.L473-.L228
+.L276:
+	.word	-1,.L225,0,.L457-.L225
 	.half	1
 	.byte	100
-	.word	.L479-.L228,.L478-.L228
+	.word	.L461-.L225,.L272-.L225
+	.half	1
+	.byte	108
+	.word	.L470-.L225,.L212-.L225
 	.half	1
 	.byte	101
-	.word	.L211-.L228,.L263-.L228
-	.half	1
-	.byte	108
-	.word	.L474-.L228,.L291-.L228
-	.half	1
-	.byte	108
 	.word	0,0
-.L303:
-	.word	-1,.L228,.L473-.L228,.L210-.L228
+.L283:
+	.word	-1,.L225,.L457-.L225,.L211-.L225
 	.half	1
 	.byte	98
-	.word	.L477-.L228,.L478-.L228
-	.half	1
-	.byte	100
-	.word	.L211-.L228,.L263-.L228
+	.word	.L465-.L225,.L272-.L225
 	.half	1
 	.byte	111
-	.word	.L480-.L228,.L481-.L228
+	.word	.L469-.L225,.L212-.L225
 	.half	1
 	.byte	100
-	.word	.L486-.L228,.L291-.L228
+	.word	.L471-.L225,.L472-.L225
 	.half	1
-	.byte	111
-	.word	.L487-.L228,.L217-.L228
+	.byte	100
+	.word	.L474-.L225,.L218-.L225
 	.half	1
 	.byte	100
 	.word	0,0
-.L307:
+.L288:
 	.word	0,0
-.L315:
+.L296:
 	.word	0,0
-.L324:
+.L306:
 	.word	0,0
-.L227:
-	.word	-1,.L228,0,.L291-.L228
+.L224:
+	.word	-1,.L225,0,.L272-.L225
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L292:
-	.word	-1,.L228,0,.L473-.L228
+.L273:
+	.word	-1,.L225,0,.L458-.L225
 	.half	1
 	.byte	84
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('spi_mux')
 	.sect	'.debug_loc'
-.L333:
-	.word	-1,.L220,.L224-.L220,.L253-.L220
-	.half	1
-	.byte	95
-	.word	.L224-.L220,.L253-.L220
+.L315:
+	.word	-1,.L221,0,.L310-.L221
 	.half	2
 	.byte	145,0
-	.word	.L343-.L220,.L258-.L220
+	.word	.L324-.L221,.L310-.L221
 	.half	1
 	.byte	95
-	.word	.L343-.L220,.L258-.L220
-	.half	2
-	.byte	145,0
-	.word	.L441-.L220,.L442-.L220
-	.half	1
-	.byte	95
-	.word	0,.L442-.L220
-	.half	2
-	.byte	145,0
-	.word	.L461-.L220,.L328-.L220
-	.half	1
-	.byte	95
-	.word	.L461-.L220,.L328-.L220
-	.half	2
-	.byte	145,0
 	.word	0,0
-.L332:
-	.word	-1,.L220,.L224-.L220,.L253-.L220
+.L314:
+	.word	-1,.L221,0,.L10-.L221
 	.half	1
 	.byte	87
-	.word	.L343-.L220,.L258-.L220
+	.word	.L330-.L221,.L331-.L221
+	.half	1
+	.byte	88
+	.word	.L3-.L221,.L43-.L221
 	.half	1
 	.byte	87
-	.word	0,.L10-.L220
+	.word	.L354-.L221,.L355-.L221
+	.half	1
+	.byte	88
+	.word	.L356-.L221,.L357-.L221
+	.half	1
+	.byte	88
+	.word	.L4-.L221,.L88-.L221
 	.half	1
 	.byte	87
-	.word	.L346-.L220,.L347-.L220
+	.word	.L380-.L221,.L381-.L221
 	.half	1
 	.byte	88
-	.word	.L3-.L220,.L43-.L220
+	.word	.L382-.L221,.L383-.L221
+	.half	1
+	.byte	88
+	.word	.L384-.L221,.L385-.L221
+	.half	1
+	.byte	88
+	.word	.L386-.L221,.L387-.L221
+	.half	1
+	.byte	88
+	.word	.L388-.L221,.L389-.L221
+	.half	1
+	.byte	88
+	.word	.L5-.L221,.L139-.L221
 	.half	1
 	.byte	87
-	.word	.L370-.L220,.L371-.L220
+	.word	.L415-.L221,.L416-.L221
 	.half	1
 	.byte	88
-	.word	.L372-.L220,.L373-.L220
+	.word	.L417-.L221,.L418-.L221
 	.half	1
 	.byte	88
-	.word	.L4-.L220,.L88-.L220
-	.half	1
-	.byte	87
-	.word	.L395-.L220,.L396-.L220
+	.word	.L419-.L221,.L420-.L221
 	.half	1
 	.byte	88
-	.word	.L397-.L220,.L398-.L220
+	.word	.L421-.L221,.L422-.L221
 	.half	1
 	.byte	88
-	.word	.L399-.L220,.L400-.L220
+	.word	.L423-.L221,.L424-.L221
 	.half	1
 	.byte	88
-	.word	.L401-.L220,.L402-.L220
-	.half	1
-	.byte	88
-	.word	.L403-.L220,.L404-.L220
-	.half	1
-	.byte	88
-	.word	.L5-.L220,.L139-.L220
-	.half	1
-	.byte	87
-	.word	.L429-.L220,.L430-.L220
-	.half	1
-	.byte	88
-	.word	.L431-.L220,.L432-.L220
-	.half	1
-	.byte	88
-	.word	.L433-.L220,.L434-.L220
-	.half	1
-	.byte	88
-	.word	.L435-.L220,.L436-.L220
-	.half	1
-	.byte	88
-	.word	.L437-.L220,.L438-.L220
-	.half	1
-	.byte	88
-	.word	.L439-.L220,.L440-.L220
+	.word	.L425-.L221,.L426-.L221
 	.half	1
 	.byte	88
 	.word	0,0
-.L331:
-	.word	-1,.L220,.L224-.L220,.L253-.L220
+.L313:
+	.word	-1,.L221,0,.L10-.L221
 	.half	1
 	.byte	86
-	.word	.L343-.L220,.L258-.L220
+	.word	.L10-.L221,.L328-.L221
+	.half	1
+	.byte	89
+	.word	.L11-.L221,.L329-.L221
+	.half	1
+	.byte	89
+	.word	.L3-.L221,.L43-.L221
 	.half	1
 	.byte	86
-	.word	0,.L10-.L220
+	.word	.L346-.L221,.L347-.L221
+	.half	1
+	.byte	89
+	.word	.L348-.L221,.L349-.L221
+	.half	1
+	.byte	89
+	.word	.L350-.L221,.L351-.L221
+	.half	1
+	.byte	89
+	.word	.L352-.L221,.L353-.L221
+	.half	1
+	.byte	89
+	.word	.L4-.L221,.L88-.L221
 	.half	1
 	.byte	86
-	.word	.L10-.L220,.L344-.L220
+	.word	.L372-.L221,.L373-.L221
 	.half	1
 	.byte	89
-	.word	.L11-.L220,.L345-.L220
+	.word	.L374-.L221,.L375-.L221
 	.half	1
 	.byte	89
-	.word	.L3-.L220,.L43-.L220
+	.word	.L376-.L221,.L377-.L221
+	.half	1
+	.byte	89
+	.word	.L378-.L221,.L379-.L221
+	.half	1
+	.byte	89
+	.word	.L5-.L221,.L139-.L221
 	.half	1
 	.byte	86
-	.word	.L362-.L220,.L363-.L220
+	.word	.L403-.L221,.L404-.L221
 	.half	1
 	.byte	89
-	.word	.L364-.L220,.L365-.L220
+	.word	.L405-.L221,.L406-.L221
 	.half	1
 	.byte	89
-	.word	.L366-.L220,.L367-.L220
+	.word	.L407-.L221,.L408-.L221
 	.half	1
 	.byte	89
-	.word	.L368-.L220,.L369-.L220
+	.word	.L409-.L221,.L410-.L221
 	.half	1
 	.byte	89
-	.word	.L4-.L220,.L88-.L220
-	.half	1
-	.byte	86
-	.word	.L387-.L220,.L388-.L220
+	.word	.L411-.L221,.L412-.L221
 	.half	1
 	.byte	89
-	.word	.L389-.L220,.L390-.L220
-	.half	1
-	.byte	89
-	.word	.L391-.L220,.L392-.L220
-	.half	1
-	.byte	89
-	.word	.L393-.L220,.L394-.L220
-	.half	1
-	.byte	89
-	.word	.L5-.L220,.L139-.L220
-	.half	1
-	.byte	86
-	.word	.L417-.L220,.L418-.L220
-	.half	1
-	.byte	89
-	.word	.L419-.L220,.L420-.L220
-	.half	1
-	.byte	89
-	.word	.L421-.L220,.L422-.L220
-	.half	1
-	.byte	89
-	.word	.L423-.L220,.L424-.L220
-	.half	1
-	.byte	89
-	.word	.L425-.L220,.L426-.L220
-	.half	1
-	.byte	89
-	.word	.L427-.L220,.L428-.L220
+	.word	.L413-.L221,.L414-.L221
 	.half	1
 	.byte	89
 	.word	0,0
-.L330:
-	.word	-1,.L220,.L224-.L220,.L253-.L220
+.L312:
+	.word	-1,.L221,0,.L10-.L221
 	.half	1
 	.byte	85
-	.word	.L343-.L220,.L258-.L220
+	.word	.L3-.L221,.L43-.L221
 	.half	1
 	.byte	85
-	.word	0,.L10-.L220
+	.word	.L4-.L221,.L88-.L221
 	.half	1
 	.byte	85
-	.word	.L3-.L220,.L43-.L220
-	.half	1
-	.byte	85
-	.word	.L4-.L220,.L88-.L220
-	.half	1
-	.byte	85
-	.word	.L5-.L220,.L139-.L220
+	.word	.L5-.L221,.L139-.L221
 	.half	1
 	.byte	85
 	.word	0,0
-.L337:
-	.word	-1,.L220,.L224-.L220,.L253-.L220
+.L319:
+	.word	-1,.L221,0,.L321-.L221
+	.half	1
+	.byte	101
+	.word	.L327-.L221,.L310-.L221
 	.half	1
 	.byte	108
-	.word	.L224-.L220,.L253-.L220
+	.word	.L3-.L221,.L343-.L221
 	.half	1
 	.byte	101
-	.word	0,.L342-.L220
+	.word	.L4-.L221,.L369-.L221
 	.half	1
 	.byte	101
-	.word	.L343-.L220,.L258-.L220
-	.half	1
-	.byte	108
-	.word	.L3-.L220,.L361-.L220
+	.word	.L5-.L221,.L400-.L221
 	.half	1
 	.byte	101
-	.word	.L4-.L220,.L386-.L220
-	.half	1
-	.byte	101
-	.word	.L5-.L220,.L416-.L220
-	.half	1
-	.byte	101
-	.word	.L443-.L220,.L442-.L220
-	.half	1
-	.byte	108
-	.word	.L461-.L220,.L328-.L220
-	.half	1
-	.byte	108
 	.word	0,0
-.L335:
-	.word	-1,.L220,0,.L340-.L220
+.L317:
+	.word	-1,.L221,0,.L322-.L221
 	.half	1
 	.byte	100
-	.word	.L224-.L220,.L341-.L220
+	.word	.L325-.L221,.L326-.L221
+	.half	1
+	.byte	111
+	.word	.L17-.L221,.L332-.L221
+	.half	1
+	.byte	111
+	.word	.L19-.L221,.L333-.L221
+	.half	1
+	.byte	111
+	.word	.L21-.L221,.L334-.L221
+	.half	1
+	.byte	111
+	.word	.L23-.L221,.L335-.L221
+	.half	1
+	.byte	111
+	.word	.L25-.L221,.L336-.L221
+	.half	1
+	.byte	111
+	.word	.L27-.L221,.L337-.L221
+	.half	1
+	.byte	111
+	.word	.L29-.L221,.L338-.L221
+	.half	1
+	.byte	111
+	.word	.L31-.L221,.L339-.L221
+	.half	1
+	.byte	111
+	.word	.L33-.L221,.L340-.L221
+	.half	1
+	.byte	111
+	.word	.L35-.L221,.L341-.L221
+	.half	1
+	.byte	111
+	.word	.L37-.L221,.L342-.L221
+	.half	1
+	.byte	111
+	.word	.L3-.L221,.L344-.L221
 	.half	1
 	.byte	100
-	.word	.L224-.L220,.L253-.L220
+	.word	.L56-.L221,.L358-.L221
 	.half	1
 	.byte	111
-	.word	.L343-.L220,.L258-.L220
+	.word	.L58-.L221,.L359-.L221
 	.half	1
 	.byte	111
-	.word	.L348-.L220,.L349-.L220
+	.word	.L60-.L221,.L360-.L221
 	.half	1
 	.byte	111
-	.word	.L17-.L220,.L350-.L220
+	.word	.L62-.L221,.L361-.L221
 	.half	1
 	.byte	111
-	.word	.L19-.L220,.L351-.L220
+	.word	.L64-.L221,.L362-.L221
 	.half	1
 	.byte	111
-	.word	.L21-.L220,.L352-.L220
+	.word	.L66-.L221,.L363-.L221
 	.half	1
 	.byte	111
-	.word	.L23-.L220,.L353-.L220
+	.word	.L68-.L221,.L364-.L221
 	.half	1
 	.byte	111
-	.word	.L25-.L220,.L354-.L220
+	.word	.L70-.L221,.L365-.L221
 	.half	1
 	.byte	111
-	.word	.L27-.L220,.L355-.L220
+	.word	.L72-.L221,.L366-.L221
 	.half	1
 	.byte	111
-	.word	.L29-.L220,.L356-.L220
+	.word	.L74-.L221,.L367-.L221
 	.half	1
 	.byte	111
-	.word	.L31-.L220,.L357-.L220
+	.word	.L76-.L221,.L368-.L221
 	.half	1
 	.byte	111
-	.word	.L33-.L220,.L358-.L220
-	.half	1
-	.byte	111
-	.word	.L35-.L220,.L359-.L220
-	.half	1
-	.byte	111
-	.word	.L3-.L220,.L360-.L220
+	.word	.L4-.L221,.L370-.L221
 	.half	1
 	.byte	100
-	.word	.L37-.L220,.L374-.L220
+	.word	.L107-.L221,.L390-.L221
 	.half	1
 	.byte	111
-	.word	.L56-.L220,.L375-.L220
+	.word	.L109-.L221,.L391-.L221
 	.half	1
 	.byte	111
-	.word	.L58-.L220,.L376-.L220
+	.word	.L111-.L221,.L392-.L221
 	.half	1
 	.byte	111
-	.word	.L60-.L220,.L377-.L220
+	.word	.L113-.L221,.L393-.L221
 	.half	1
 	.byte	111
-	.word	.L62-.L220,.L378-.L220
+	.word	.L115-.L221,.L394-.L221
 	.half	1
 	.byte	111
-	.word	.L64-.L220,.L379-.L220
+	.word	.L117-.L221,.L395-.L221
 	.half	1
 	.byte	111
-	.word	.L66-.L220,.L380-.L220
+	.word	.L119-.L221,.L396-.L221
 	.half	1
 	.byte	111
-	.word	.L68-.L220,.L381-.L220
+	.word	.L121-.L221,.L397-.L221
 	.half	1
 	.byte	111
-	.word	.L70-.L220,.L382-.L220
+	.word	.L123-.L221,.L398-.L221
 	.half	1
 	.byte	111
-	.word	.L72-.L220,.L383-.L220
+	.word	.L125-.L221,.L399-.L221
 	.half	1
 	.byte	111
-	.word	.L74-.L220,.L384-.L220
-	.half	1
-	.byte	111
-	.word	.L4-.L220,.L385-.L220
+	.word	.L5-.L221,.L401-.L221
 	.half	1
 	.byte	100
-	.word	.L76-.L220,.L405-.L220
+	.word	.L164-.L221,.L427-.L221
 	.half	1
 	.byte	111
-	.word	.L107-.L220,.L406-.L220
+	.word	.L166-.L221,.L428-.L221
 	.half	1
 	.byte	111
-	.word	.L109-.L220,.L407-.L220
+	.word	.L168-.L221,.L429-.L221
 	.half	1
 	.byte	111
-	.word	.L111-.L220,.L408-.L220
+	.word	.L170-.L221,.L430-.L221
 	.half	1
 	.byte	111
-	.word	.L113-.L220,.L409-.L220
+	.word	.L172-.L221,.L431-.L221
 	.half	1
 	.byte	111
-	.word	.L115-.L220,.L410-.L220
+	.word	.L174-.L221,.L432-.L221
 	.half	1
 	.byte	111
-	.word	.L117-.L220,.L411-.L220
+	.word	.L176-.L221,.L433-.L221
 	.half	1
 	.byte	111
-	.word	.L119-.L220,.L412-.L220
+	.word	.L178-.L221,.L434-.L221
 	.half	1
 	.byte	111
-	.word	.L121-.L220,.L413-.L220
+	.word	.L180-.L221,.L435-.L221
 	.half	1
 	.byte	111
-	.word	.L123-.L220,.L414-.L220
+	.word	.L182-.L221,.L436-.L221
 	.half	1
 	.byte	111
-	.word	.L5-.L220,.L415-.L220
-	.half	1
-	.byte	100
-	.word	.L125-.L220,.L444-.L220
+	.word	.L184-.L221,.L437-.L221
 	.half	1
 	.byte	111
-	.word	.L164-.L220,.L445-.L220
+	.word	.L186-.L221,.L438-.L221
 	.half	1
 	.byte	111
-	.word	.L166-.L220,.L446-.L220
+	.word	.L188-.L221,.L439-.L221
 	.half	1
 	.byte	111
-	.word	.L168-.L220,.L447-.L220
+	.word	.L190-.L221,.L440-.L221
 	.half	1
 	.byte	111
-	.word	.L170-.L220,.L448-.L220
+	.word	.L192-.L221,.L441-.L221
 	.half	1
 	.byte	111
-	.word	.L172-.L220,.L449-.L220
+	.word	.L194-.L221,.L442-.L221
 	.half	1
 	.byte	111
-	.word	.L174-.L220,.L450-.L220
-	.half	1
-	.byte	111
-	.word	.L176-.L220,.L451-.L220
-	.half	1
-	.byte	111
-	.word	.L178-.L220,.L452-.L220
-	.half	1
-	.byte	111
-	.word	.L180-.L220,.L453-.L220
-	.half	1
-	.byte	111
-	.word	.L182-.L220,.L454-.L220
-	.half	1
-	.byte	111
-	.word	.L184-.L220,.L455-.L220
-	.half	1
-	.byte	111
-	.word	.L186-.L220,.L456-.L220
-	.half	1
-	.byte	111
-	.word	.L188-.L220,.L457-.L220
-	.half	1
-	.byte	111
-	.word	.L190-.L220,.L458-.L220
-	.half	1
-	.byte	111
-	.word	.L192-.L220,.L459-.L220
-	.half	1
-	.byte	111
-	.word	.L194-.L220,.L460-.L220
-	.half	1
-	.byte	111
-	.word	.L196-.L220,.L442-.L220
-	.half	1
-	.byte	111
-	.word	.L461-.L220,.L328-.L220
+	.word	.L196-.L221,.L310-.L221
 	.half	1
 	.byte	111
 	.word	0,0
-.L219:
-	.word	-1,.L220,0,.L328-.L220
+.L220:
+	.word	-1,.L221,0,.L310-.L221
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L329:
-	.word	-1,.L220,.L224-.L220,.L253-.L220
+.L311:
+	.word	-1,.L221,0,.L323-.L221
 	.half	1
 	.byte	84
-	.word	0,.L342-.L220
+	.word	.L3-.L221,.L345-.L221
 	.half	1
 	.byte	84
-	.word	.L3-.L220,.L361-.L220
+	.word	.L4-.L221,.L371-.L221
 	.half	1
 	.byte	84
-	.word	.L4-.L220,.L386-.L220
-	.half	1
-	.byte	84
-	.word	.L5-.L220,.L416-.L220
+	.word	.L5-.L221,.L402-.L221
 	.half	1
 	.byte	84
 	.word	0,0
 	.sdecl	'.debug_frame',debug
 	.sect	'.debug_frame'
-.L809:
+.L800:
 	.word	48
 	.word	-1
 	.byte	3,0,2,1,27,12,26,0,8,27,8,26,8,28,8,29,8,30,8,31,8,34,8,35,8,32,8,33,8,16,8,17,8,24,8,25,8,36,8,37,8,38
@@ -27152,42 +26823,20 @@ _999001___func__:	.type	object
 	.sdecl	'.debug_frame',debug,cluster('spi_mux')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L809,.L220,.L328-.L220
+	.word	.L800,.L221,.L310-.L221
 	.sdecl	'.debug_frame',debug,cluster('spi_init')
 	.sect	'.debug_frame'
 	.word	36
-	.word	.L809,.L226,.L264-.L226
+	.word	.L800,.L223,.L245-.L223
 	.byte	4
-	.word	(.L462-.L226)/2
+	.word	(.L443-.L223)/2
 	.byte	19,160,2,22,26,4,19,138,160,2,4
-	.word	(.L264-.L462)/2
+	.word	(.L245-.L443)/2
 	.byte	19,0,8,26
 	.sdecl	'.debug_frame',debug,cluster('spi_mosi')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L809,.L228,.L291-.L228
-	.sdecl	'.debug_frame',debug
-	.sect	'.debug_frame'
-.L810:
-	.word	52
-	.word	-1
-	.byte	3,0,2,1,40,12,26,0,9,40,27,155,0,7,26,8,28,8,29,8,30,8,31,8,34,8,35,8,32,8,33,8,16,8,17,8,24,8,25,8,36
-	.byte	8,37,8,38,8,39,0
-	.sdecl	'.debug_frame',debug,cluster('.cocofun_3')
-	.sect	'.debug_frame'
-	.word	24
-	.word	.L810,.L222,.L258-.L222
-	.byte	8,18,8,19,8,20,8,21,8,22,8,23
-	.sdecl	'.debug_frame',debug,cluster('.cocofun_2')
-	.sect	'.debug_frame'
-	.word	24
-	.word	.L810,.L224,.L253-.L224
-	.byte	8,18,8,19,8,20,8,21,8,22,8,23
-	.sdecl	'.debug_frame',debug,cluster('.cocofun_4')
-	.sect	'.debug_frame'
-	.word	24
-	.word	.L810,.L211,.L263-.L211
-	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.word	.L800,.L225,.L272-.L225
 
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   327  
 ; ..\Libraries\seekfree_libraries\zf_spi.c	   328  

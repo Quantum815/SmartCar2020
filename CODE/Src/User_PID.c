@@ -20,20 +20,18 @@ double GetPIDValue(double middle, double value, double kP, double kI, double kD)
 {
 	static double PreviousErrorValue = 0;
 	static double NowErrorValue = 0;
-	static double IntegralErrorValue = 0;
+	//static double IntegralErrorValue = 0;
 	static double DifferentialErrorValue = 0;
 	static double OldValue = 0;
 
 	NowErrorValue = value - middle;
-	IntegralErrorValue += NowErrorValue;
+	//IntegralErrorValue += NowErrorValue;
 	DifferentialErrorValue = NowErrorValue - PreviousErrorValue;
 	OldValue = PidValue;
 
 	PidValue = kP * NowErrorValue + /*kI * IntegralErrorValue +*/ kD * DifferentialErrorValue;
 
 	PreviousErrorValue = NowErrorValue;
-	if(IntegralErrorValue >= 100)
-		IntegralErrorValue = 0;
 
 	PidValue = 0.1 * OldValue + 0.9 * PidValue;	                       //µÍÍ¨ÂË²¨
 

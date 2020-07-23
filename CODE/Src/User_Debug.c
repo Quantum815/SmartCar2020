@@ -89,6 +89,5 @@ void DebugReadADCData(void)
 	ips114_showfloat(0,2,ADCValueHandle(2),4,4);
 	ips114_showfloat(0,3,ADCValueHandle(3),4,4);
 	ips114_showfloat(0,4,ADCValueHandle(4),4,4);
-	systick_delay_ms(STM0, 20);
 #endif
 }
