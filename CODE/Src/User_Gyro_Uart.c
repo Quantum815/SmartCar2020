@@ -88,7 +88,7 @@ void GyroCalculate(void)
 		temp |= GyroRxBuff[6];
 		YawAngle = (double)temp / (double)32768 * (double)180;//zÖáÐý×ª½Ç
 		GyroRxFlag = 0;
-		//printf("p=%lf,r=%lf,y=%lf\r\n",PitchAngle,RollAngle,YawAngle);
+		printf("p=%lf,r=%lf,y=%lf\r\n",PitchAngle,RollAngle,YawAngle);
     }
 }
 

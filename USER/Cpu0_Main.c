@@ -45,6 +45,7 @@ void core0_main(void)
 
 	while (TRUE)
 	{
+		//ips114_showfloat(0,0,2.222,4,4);
 		//FindLine();
 		//GyroI2CReadByte();
 		//for(int i =0;i<=10;i++)
@@ -62,9 +63,9 @@ void core0_main(void)
 
 
 		//ips114_showchar(50,50,'t');
-		//MotorUserHandle(LMotor_B, 20);
+		MotorUserHandle(LMotor_B, 20);
 		//systick_delay_ms(STM0, 2000);
-		//MotorUserHandle(RMotor_B, 20);
+		MotorUserHandle(RMotor_B, 20);
 		//systick_delay_ms(STM0, 2000);
 		//MotorUserHandle(RMotor_F, 7);
 		//systick_delay_ms(STM0, 2000);

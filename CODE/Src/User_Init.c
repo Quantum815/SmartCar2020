@@ -19,16 +19,16 @@ void UserInit(void)
 	pit_interrupt_ms(CCU6_1, PIT_CH0, CountDistanceTime);
 
 	//各类资源与外设
-	ADCInit();
-	EncoderInit();
+	//ADCInit();
+	//EncoderInit();
 	MotorInit();
-	GyroUARTInit();
-	MotorUserHandle(LMotor_F, 30);
-	MotorUserHandle(LMotor_B, 30);
-	MotorUserHandle(RMotor_F, 30);
-	MotorUserHandle(RMotor_B, 30);
-	CleanDistance();
-	GyroYawAngleInit();
+	//GyroUARTInit();
+	//MotorUserHandle(LMotor_F, 30);
+	//MotorUserHandle(LMotor_B, 30);
+	//MotorUserHandle(RMotor_F, 30);
+	//MotorUserHandle(RMotor_B, 30);
+	//CleanDistance();
+	//GyroYawAngleInit();
 
 	//测试
 	//DebugUARTInit();
