@@ -40,18 +40,14 @@ void DebugSend(void)
 		}
 		else if(DebugRxBuff == 0x02)
 		{
-			FSMEventHandle(&CarFSM, RUNSTART);
-			DebugRxBuff = 0x00;
-		}
-		else if(DebugRxBuff == 0x03)
-		{
 			if(mt9v03x_finish_flag)
 			{
 				seekfree_sendimg_03x(UART_3, mt9v03x_image[0], MT9V03X_W, MT9V03X_H);
 				mt9v03x_finish_flag = 0;
 			}
+			DebugRxBuff = 0x00;
 		}
-		else if(DebugRxBuff == 0x04)
+		else if(DebugRxBuff == 0x03)
 		{
 			if(ReturnFSMState(&CarFSM) == GoLine)
 			{
@@ -63,6 +59,7 @@ void DebugSend(void)
 				uart_putstr(UART_3, "Stop\r\n");
 				my_delay(7000000);
 			}
+			DebugRxBuff = 0x00;
 		}
 	}
 }

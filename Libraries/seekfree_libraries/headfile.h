@@ -79,6 +79,7 @@
 #include "..\CODE\Inc\User_OSTU.h"
 #include "..\CODE\Inc\User_PID.h"
 #include "..\CODE\Inc\User_ADC.h"
+#include "..\CODE\Inc\User_Two_Car.h"
 
 //------预处理内容
 //是否使用摄像头
@@ -108,16 +109,16 @@
 #define RightWheelDeadZone 7
 
 //正常车速PWM占空比
-#define LeftNormalSpeed 10
-#define RightNormalSpeed 10
+#define LeftNormalSpeed 20
+#define RightNormalSpeed 20
 
 //上坡车速PWM占空比
-#define LeftUphillSpeed 20
-#define RightUphillSpeed 20
+#define LeftUphillSpeed 25
+#define RightUphillSpeed 25
 
 //下坡车速PWM占空比
-#define LeftDownhillSpeed 6
-#define RightDownhillSpeed 6
+#define LeftDownhillSpeed 2
+#define RightDownhillSpeed 2
 
 //圆环车速PWM占空比
 #define LeftCircleSpeed 8
@@ -128,9 +129,14 @@
 #define RightInGarageSpeed 8
 
 //正常巡线PID
-#define FINDLINE_P 26
+#define FINDLINE_P 50
 #define FINDLINE_I 0
-#define FINDLINE_D 5000
+#define FINDLINE_D 20000
+
+//圆环巡线PID
+#define GYRO_P 0
+#define GYRO_I 0
+#define GYRO_D 0
 
 #endif
 

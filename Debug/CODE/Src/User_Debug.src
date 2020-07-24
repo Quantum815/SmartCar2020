@@ -34,25 +34,25 @@ $TC16X
 ; ..\CODE\Src\User_Debug.c	    19  
 ; ..\CODE\Src\User_Debug.c	    20  void DebugUARTInit(void)
 ; Function DebugUARTInit
-.L16:
+.L14:
 DebugUARTInit:	.type	func
 
 ; ..\CODE\Src\User_Debug.c	    21  {
 ; ..\CODE\Src\User_Debug.c	    22  	uart_init(UART_3, 115200, UART3_TX_P15_6, UART3_RX_P15_7);
 	mov	d4,#3
-.L58:
+.L56:
 	mov.u	d5,#49664
 	addih	d5,d5,#1
-.L59:
+.L57:
 	mov	d6,#36
-.L60:
+.L58:
 	mov	d7,#44
 	j	uart_init
-.L44:
+.L42:
 	
 __DebugUARTInit_function_end:
 	.size	DebugUARTInit,__DebugUARTInit_function_end-DebugUARTInit
-.L29:
+.L27:
 	; End of function
 	
 	.sdecl	'.text.User_Debug.DebugSend',code,cluster('DebugSend')
@@ -68,33 +68,33 @@ __DebugUARTInit_function_end:
 ; ..\CODE\Src\User_Debug.c	    27  //0x04 返回当前状态回上位机
 ; ..\CODE\Src\User_Debug.c	    28  void DebugSend(void)
 ; Function DebugSend
-.L18:
+.L16:
 DebugSend:	.type	func
 
 ; ..\CODE\Src\User_Debug.c	    29  {
 ; ..\CODE\Src\User_Debug.c	    30  	if(uart_query(UART_3, &DebugRxBuff))
 	mov	d4,#3
-.L65:
+.L63:
 	movh.a	a4,#@his(DebugRxBuff)
 	lea	a4,[a4]@los(DebugRxBuff)
 	call	uart_query
-.L66:
+.L64:
 	jeq	d2,#0,.L2
-.L67:
+.L65:
 
 ; ..\CODE\Src\User_Debug.c	    31  	{
 ; ..\CODE\Src\User_Debug.c	    32  		if(DebugRxBuff == 0x00)
 	movh.a	a15,#@his(DebugRxBuff)
 	ld.bu	d15,[a15]@los(DebugRxBuff)
-.L68:
+.L66:
 	jne	d15,#0,.L3
-.L69:
+.L67:
 
 ; ..\CODE\Src\User_Debug.c	    33  		{
 ; ..\CODE\Src\User_Debug.c	    34  			FSMEventHandle(&CarFSM, NOEVENT);
 	movh.a	a4,#@his(CarFSM)
 	lea	a4,[a4]@los(CarFSM)
-.L70:
+.L68:
 	mov	d4,#0
 	call	FSMEventHandle
 .L3:
@@ -103,137 +103,137 @@ DebugSend:	.type	func
 ; ..\CODE\Src\User_Debug.c	    36  		if(DebugRxBuff == 0x01)
 	movh.a	a15,#@his(DebugRxBuff)
 	ld.bu	d15,[a15]@los(DebugRxBuff)
-.L71:
+.L69:
 	jne	d15,#1,.L4
-.L72:
+.L70:
 
 ; ..\CODE\Src\User_Debug.c	    37  		{
 ; ..\CODE\Src\User_Debug.c	    38  			FSMEventHandle(&CarFSM, RUNSTOP);
-	mov	d4,#2
-.L73:
+	movh.a	a4,#@his(CarFSM)
+	lea	a4,[a4]@los(CarFSM)
+.L71:
+	mov	d4,#7
+	call	FSMEventHandle
+.L72:
 	j	.L5
 .L4:
 
 ; ..\CODE\Src\User_Debug.c	    39  			DebugRxBuff = 0x00;
 ; ..\CODE\Src\User_Debug.c	    40  		}
 ; ..\CODE\Src\User_Debug.c	    41  		else if(DebugRxBuff == 0x02)
+	movh.a	a15,#@his(DebugRxBuff)
 	ld.bu	d15,[a15]@los(DebugRxBuff)
-.L74:
+.L73:
 	jne	d15,#2,.L6
-.L75:
+.L74:
 
 ; ..\CODE\Src\User_Debug.c	    42  		{
-; ..\CODE\Src\User_Debug.c	    43  			FSMEventHandle(&CarFSM, RUNSTART);
-	mov	d4,#1
-.L5:
-	movh.a	a4,#@his(CarFSM)
-	lea	a4,[a4]@los(CarFSM)
-.L76:
-	call	FSMEventHandle
-.L77:
-
-; ..\CODE\Src\User_Debug.c	    44  			DebugRxBuff = 0x00;
-	movh.a	a15,#@his(DebugRxBuff)
-.L78:
-	mov	d15,#0
-.L79:
-	st.b	[a15]@los(DebugRxBuff),d15
-.L2:
-
-; ..\CODE\Src\User_Debug.c	    45  		}
-; ..\CODE\Src\User_Debug.c	    46  		else if(DebugRxBuff == 0x03)
-; ..\CODE\Src\User_Debug.c	    47  		{
-; ..\CODE\Src\User_Debug.c	    48  			if(mt9v03x_finish_flag)
-; ..\CODE\Src\User_Debug.c	    49  			{
-; ..\CODE\Src\User_Debug.c	    50  				seekfree_sendimg_03x(UART_3, mt9v03x_image[0], MT9V03X_W, MT9V03X_H);
-; ..\CODE\Src\User_Debug.c	    51  				mt9v03x_finish_flag = 0;
-; ..\CODE\Src\User_Debug.c	    52  			}
-; ..\CODE\Src\User_Debug.c	    53  		}
-; ..\CODE\Src\User_Debug.c	    54  		else if(DebugRxBuff == 0x04)
-; ..\CODE\Src\User_Debug.c	    55  		{
-; ..\CODE\Src\User_Debug.c	    56  			if(ReturnFSMState(&CarFSM) == GoLine)
-; ..\CODE\Src\User_Debug.c	    57  			{
-; ..\CODE\Src\User_Debug.c	    58  				uart_putstr(UART_3, "GoLine\r\n");
-; ..\CODE\Src\User_Debug.c	    59  				my_delay(7000000);
-; ..\CODE\Src\User_Debug.c	    60  			}
-; ..\CODE\Src\User_Debug.c	    61  			else if(ReturnFSMState(&CarFSM) == Stop)
-; ..\CODE\Src\User_Debug.c	    62  			{
-; ..\CODE\Src\User_Debug.c	    63  				uart_putstr(UART_3, "Stop\r\n");
-; ..\CODE\Src\User_Debug.c	    64  				my_delay(7000000);
-; ..\CODE\Src\User_Debug.c	    65  			}
-; ..\CODE\Src\User_Debug.c	    66  		}
-; ..\CODE\Src\User_Debug.c	    67  	}
-; ..\CODE\Src\User_Debug.c	    68  }
-	ret
-.L6:
-	movh.a	a15,#@his(DebugRxBuff)
-	ld.bu	d15,[a15]@los(DebugRxBuff)
-.L80:
-	jne	d15,#3,.L8
-.L81:
+; ..\CODE\Src\User_Debug.c	    43  			if(mt9v03x_finish_flag)
 	movh.a	a15,#@his(mt9v03x_finish_flag)
 	ld.bu	d15,[a15]@los(mt9v03x_finish_flag)
-.L82:
-	jeq	d15,#0,.L9
-.L83:
+.L75:
+	jeq	d15,#0,.L7
+.L76:
+
+; ..\CODE\Src\User_Debug.c	    44  			{
+; ..\CODE\Src\User_Debug.c	    45  				seekfree_sendimg_03x(UART_3, mt9v03x_image[0], MT9V03X_W, MT9V03X_H);
 	mov	d4,#3
-.L84:
+.L77:
 	movh.a	a4,#@his(mt9v03x_image)
 	lea	a4,[a4]@los(mt9v03x_image)
-.L85:
+.L78:
 	mov	d5,#188
-.L86:
+.L79:
 	mov	d6,#120
 	call	seekfree_sendimg_03x
-.L87:
+.L80:
+
+; ..\CODE\Src\User_Debug.c	    46  				mt9v03x_finish_flag = 0;
 	movh.a	a15,#@his(mt9v03x_finish_flag)
-.L88:
+.L81:
 	mov	d15,#0
-.L89:
+.L82:
 	st.b	[a15]@los(mt9v03x_finish_flag),d15
-.L9:
-	ret
-.L8:
+.L83:
+
+; ..\CODE\Src\User_Debug.c	    47  			}
+; ..\CODE\Src\User_Debug.c	    48  			DebugRxBuff = 0x00;
+	j	.L8
+.L6:
+
+; ..\CODE\Src\User_Debug.c	    49  		}
+; ..\CODE\Src\User_Debug.c	    50  		else if(DebugRxBuff == 0x03)
 	movh.a	a15,#@his(DebugRxBuff)
 	ld.bu	d15,[a15]@los(DebugRxBuff)
-.L90:
-	jne	d15,#4,.L11
-.L91:
+.L84:
+	jne	d15,#3,.L9
+.L85:
+
+; ..\CODE\Src\User_Debug.c	    51  		{
+; ..\CODE\Src\User_Debug.c	    52  			if(ReturnFSMState(&CarFSM) == GoLine)
 	movh.a	a4,#@his(CarFSM)
 	lea	a4,[a4]@los(CarFSM)
 	call	ReturnFSMState
-.L92:
-	jne	d2,#1,.L12
-.L93:
+.L86:
+	jne	d2,#1,.L10
+.L87:
+
+; ..\CODE\Src\User_Debug.c	    53  			{
+; ..\CODE\Src\User_Debug.c	    54  				uart_putstr(UART_3, "GoLine\r\n");
 	movh.a	a4,#@his(.1.str)
 	lea	a4,[a4]@los(.1.str)
-.L94:
-	j	.L13
-.L12:
+.L88:
+	j	.L11
+.L10:
+
+; ..\CODE\Src\User_Debug.c	    55  				my_delay(7000000);
+; ..\CODE\Src\User_Debug.c	    56  			}
+; ..\CODE\Src\User_Debug.c	    57  			else if(ReturnFSMState(&CarFSM) == Stop)
 	movh.a	a4,#@his(CarFSM)
 	lea	a4,[a4]@los(CarFSM)
 	call	ReturnFSMState
-.L95:
-	jne	d2,#0,.L14
-.L96:
+.L89:
+	jne	d2,#6,.L12
+.L90:
+
+; ..\CODE\Src\User_Debug.c	    58  			{
+; ..\CODE\Src\User_Debug.c	    59  				uart_putstr(UART_3, "Stop\r\n");
 	movh.a	a4,#@his(.2.str)
 	lea	a4,[a4]@los(.2.str)
-.L13:
+.L11:
 	mov	d4,#3
-.L97:
+.L91:
 	call	uart_putstr
-.L98:
+.L92:
+
+; ..\CODE\Src\User_Debug.c	    60  				my_delay(7000000);
 	mov.u	d4,#53184
 	addih	d4,d4,#106
-	j	my_delay
-.L14:
-.L11:
+	call	my_delay
+.L12:
+.L8:
+.L7:
+.L5:
+
+; ..\CODE\Src\User_Debug.c	    61  			}
+; ..\CODE\Src\User_Debug.c	    62  			DebugRxBuff = 0x00;
+	movh.a	a15,#@his(DebugRxBuff)
+.L93:
+	mov	d15,#0
+.L94:
+	st.b	[a15]@los(DebugRxBuff),d15
+.L9:
+.L2:
+
+; ..\CODE\Src\User_Debug.c	    63  		}
+; ..\CODE\Src\User_Debug.c	    64  	}
+; ..\CODE\Src\User_Debug.c	    65  }
 	ret
-.L45:
+.L43:
 	
 __DebugSend_function_end:
 	.size	DebugSend,__DebugSend_function_end-DebugSend
-.L34:
+.L32:
 	; End of function
 	
 	.sdecl	'.text.User_Debug.DebugReadADCData',code,cluster('DebugReadADCData')
@@ -242,115 +242,115 @@ __DebugSend_function_end:
 	
 	.global	DebugReadADCData
 
-; ..\CODE\Src\User_Debug.c	    69  
-; ..\CODE\Src\User_Debug.c	    70  void DebugReadADCData(void)
+; ..\CODE\Src\User_Debug.c	    66  
+; ..\CODE\Src\User_Debug.c	    67  void DebugReadADCData(void)
 ; Function DebugReadADCData
-.L20:
+.L18:
 DebugReadADCData:	.type	func
 	sub.a	a10,#8
-.L49:
+.L47:
 
-; ..\CODE\Src\User_Debug.c	    71  {
-; ..\CODE\Src\User_Debug.c	    72      UpdateADCValue();
+; ..\CODE\Src\User_Debug.c	    68  {
+; ..\CODE\Src\User_Debug.c	    69      UpdateADCValue();
 	call	UpdateADCValue
-.L103:
+.L99:
 
-; ..\CODE\Src\User_Debug.c	    73  
-; ..\CODE\Src\User_Debug.c	    74  #ifdef DEBUGADCMODE_A
-; ..\CODE\Src\User_Debug.c	    75      int num;
-; ..\CODE\Src\User_Debug.c	    76  	DebugADCValue[0] = ADCValueHandle(0);
-; ..\CODE\Src\User_Debug.c	    77  	DebugADCValue[1] = ADCValueHandle(1);
-; ..\CODE\Src\User_Debug.c	    78  	DebugADCValue[2] = ADCValueHandle(2);
-; ..\CODE\Src\User_Debug.c	    79  	DebugADCValue[3] = ADCValueHandle(3);
-; ..\CODE\Src\User_Debug.c	    80  	DebugADCValue[4] = ADCValueHandle(4);
-; ..\CODE\Src\User_Debug.c	    81      for(num=0; num<5; num++)
-; ..\CODE\Src\User_Debug.c	    82      	printf("%d	", DebugADCValue[num]);
-; ..\CODE\Src\User_Debug.c	    83      printf("\r\n");
-; ..\CODE\Src\User_Debug.c	    84  #endif
-; ..\CODE\Src\User_Debug.c	    85  
-; ..\CODE\Src\User_Debug.c	    86  #ifdef DEBUGADCMODE_B
-; ..\CODE\Src\User_Debug.c	    87  	ips114_showfloat(0,0,ADCValueHandle(0),4,4);
+; ..\CODE\Src\User_Debug.c	    70  
+; ..\CODE\Src\User_Debug.c	    71  #ifdef DEBUGADCMODE_A
+; ..\CODE\Src\User_Debug.c	    72      int num;
+; ..\CODE\Src\User_Debug.c	    73  	DebugADCValue[0] = ADCValueHandle(0);
+; ..\CODE\Src\User_Debug.c	    74  	DebugADCValue[1] = ADCValueHandle(1);
+; ..\CODE\Src\User_Debug.c	    75  	DebugADCValue[2] = ADCValueHandle(2);
+; ..\CODE\Src\User_Debug.c	    76  	DebugADCValue[3] = ADCValueHandle(3);
+; ..\CODE\Src\User_Debug.c	    77  	DebugADCValue[4] = ADCValueHandle(4);
+; ..\CODE\Src\User_Debug.c	    78      for(num=0; num<5; num++)
+; ..\CODE\Src\User_Debug.c	    79      	printf("%d	", DebugADCValue[num]);
+; ..\CODE\Src\User_Debug.c	    80      printf("\r\n");
+; ..\CODE\Src\User_Debug.c	    81  #endif
+; ..\CODE\Src\User_Debug.c	    82  
+; ..\CODE\Src\User_Debug.c	    83  #ifdef DEBUGADCMODE_B
+; ..\CODE\Src\User_Debug.c	    84  	ips114_showfloat(0,0,ADCValueHandle(0),4,4);
 	mov	d4,#0
 	call	ADCValueHandle
-.L104:
+.L100:
 	mov	d7,#4
 	st.b	[a10],d7
-.L105:
+.L101:
 	mov	d4,#0
-.L106:
+.L102:
 	mov	d5,d4
-.L107:
+.L103:
 	itof	d6,d2
-.L108:
+.L104:
 	call	ips114_showfloat
-.L109:
+.L105:
 
-; ..\CODE\Src\User_Debug.c	    88  	ips114_showfloat(0,1,ADCValueHandle(1),4,4);
+; ..\CODE\Src\User_Debug.c	    85  	ips114_showfloat(0,1,ADCValueHandle(1),4,4);
 	mov	d4,#1
 	call	ADCValueHandle
-.L110:
+.L106:
 	mov	d7,#4
 	st.b	[a10],d7
-.L111:
+.L107:
 	mov	d4,#0
-.L112:
+.L108:
 	mov	d5,#1
-.L113:
+.L109:
 	itof	d6,d2
-.L114:
+.L110:
 	call	ips114_showfloat
-.L115:
+.L111:
 
-; ..\CODE\Src\User_Debug.c	    89  	ips114_showfloat(0,2,ADCValueHandle(2),4,4);
+; ..\CODE\Src\User_Debug.c	    86  	ips114_showfloat(0,2,ADCValueHandle(2),4,4);
 	mov	d4,#2
 	call	ADCValueHandle
-.L116:
+.L112:
 	mov	d7,#4
 	st.b	[a10],d7
-.L117:
+.L113:
 	mov	d4,#0
-.L118:
+.L114:
 	mov	d5,#2
-.L119:
+.L115:
 	itof	d6,d2
-.L120:
+.L116:
 	call	ips114_showfloat
-.L121:
+.L117:
 
-; ..\CODE\Src\User_Debug.c	    90  	ips114_showfloat(0,3,ADCValueHandle(3),4,4);
+; ..\CODE\Src\User_Debug.c	    87  	ips114_showfloat(0,3,ADCValueHandle(3),4,4);
 	mov	d4,#3
 	call	ADCValueHandle
-.L122:
+.L118:
 	mov	d7,#4
 	st.b	[a10],d7
-.L123:
+.L119:
 	mov	d4,#0
-.L124:
+.L120:
 	mov	d5,#3
-.L125:
+.L121:
 	itof	d6,d2
-.L126:
+.L122:
 	call	ips114_showfloat
-.L127:
+.L123:
 
-; ..\CODE\Src\User_Debug.c	    91  	ips114_showfloat(0,4,ADCValueHandle(4),4,4);
+; ..\CODE\Src\User_Debug.c	    88  	ips114_showfloat(0,4,ADCValueHandle(4),4,4);
 	mov	d4,#4
 	call	ADCValueHandle
-.L128:
+.L124:
 	mov	d5,#4
 	st.b	[a10],d5
-.L129:
+.L125:
 	mov	d4,#0
-.L130:
+.L126:
 	itof	d6,d2
-.L131:
+.L127:
 	mov	d7,d5
 	j	ips114_showfloat
-.L46:
+.L44:
 	
 __DebugReadADCData_function_end:
 	.size	DebugReadADCData,__DebugReadADCData_function_end-DebugReadADCData
-.L39:
+.L37:
 	; End of function
 	
 	.sdecl	'.bss.cpu0_dsram',data,cluster('DebugRxBuff')
@@ -408,17 +408,17 @@ DebugADCValue:	.type	object
 	.calls	'DebugReadADCData','',8
 	.sdecl	'.debug_info',debug
 	.sect	'.debug_info'
-.L22:
+.L20:
 	.word	253609
 	.half	3
-	.word	.L23
+	.word	.L21
 	.byte	4
-.L21:
+.L19:
 	.byte	1
 	.byte	'..\\CODE\\Src\\User_Debug.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L24
+	.word	.L22
 	.byte	2,1,1,3
 	.word	145
 	.byte	4
@@ -491,7 +491,7 @@ DebugADCValue:	.type	object
 	.byte	'B',0
 	.word	520
 	.byte	4,2,35,0,0
-.L47:
+.L45:
 	.byte	7
 	.byte	'unsigned char',0,1,8,7
 	.byte	'unsigned short int',0,2,7,11
@@ -6964,7 +6964,7 @@ DebugADCValue:	.type	object
 	.byte	0,34,1,3
 	.word	41921
 	.byte	11
-	.byte	'FSMTable',0,27,30,16,16,14
+	.byte	'FSMTable',0,27,38,16,16,14
 	.byte	'Event',0
 	.word	497
 	.byte	4,2,35,0,14
@@ -6979,7 +6979,7 @@ DebugADCValue:	.type	object
 	.byte	4,2,35,12,0,3
 	.word	41928
 	.byte	11
-	.byte	'FSM',0,27,39,16,12,14
+	.byte	'FSM',0,27,47,16,12,14
 	.byte	'CurState',0
 	.word	497
 	.byte	4,2,35,0,14
@@ -6991,17 +6991,17 @@ DebugADCValue:	.type	object
 	.byte	4,2,35,8,0,3
 	.word	42021
 	.byte	32
-	.byte	'FSMEventHandle',0,27,54,6,1,1,1,1,5
-	.byte	'fsm',0,27,54,28
+	.byte	'FSMEventHandle',0,27,63,6,1,1,1,1,5
+	.byte	'fsm',0,27,63,28
 	.word	42081
 	.byte	5
-	.byte	'event',0,27,54,37
+	.byte	'event',0,27,63,37
 	.word	497
 	.byte	0,33
-	.byte	'ReturnFSMState',0,27,55,5
+	.byte	'ReturnFSMState',0,27,64,5
 	.word	497
 	.byte	1,1,1,1,5
-	.byte	'fsm',0,27,55,27
+	.byte	'fsm',0,27,64,27
 	.word	42081
 	.byte	0,35
 	.byte	'UpdateADCValue',0,28,16,6,1,1,1,1,33
@@ -34904,22 +34904,22 @@ DebugADCValue:	.type	object
 	.byte	'mt9v03x_image',0,26,98,17
 	.word	253518
 	.byte	1,1,36
-	.byte	'FSMTable_t',0,27,35,2
+	.byte	'FSMTable_t',0,27,43,2
 	.word	41928
 	.byte	36
-	.byte	'FSM_t',0,27,43,2
+	.byte	'FSM_t',0,27,51,2
 	.word	42021
 	.byte	39
-	.byte	'CarFSM',0,27,45,14
+	.byte	'CarFSM',0,27,53,14
 	.word	42021
 	.byte	1,1
-.L48:
+.L46:
 	.byte	15,10
 	.word	673
 	.byte	16,4,0,0
 	.sdecl	'.debug_abbrev',debug
 	.sect	'.debug_abbrev'
-.L23:
+.L21:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,16,6,0,0,2,21,0,54,15,39,12,0,0,3,15,0,73,19,0,0,4,46,1,3,8,32,13
 	.byte	58,15,59,15,57,15,54,15,39,12,0,0,5,5,0,3,8,58,15,59,15,57,15,73,19,0,0,6,11,0,0,0,7,36,0,3,8,11,15,62
 	.byte	15,0,0,8,46,1,3,8,32,13,58,15,59,15,57,15,73,19,54,15,39,12,0,0,9,59,0,3,8,0,0,10,53,0,73,19,0,0,11,19
@@ -34934,12 +34934,12 @@ DebugADCValue:	.type	object
 	.byte	73,19,54,15,39,12,0,0,39,52,0,3,8,58,15,59,15,57,15,73,19,63,12,60,12,0,0,0
 	.sdecl	'.debug_line',debug
 	.sect	'.debug_line'
-.L24:
+.L22:
+	.word	.L49-.L48
+.L48:
+	.half	3
 	.word	.L51-.L50
 .L50:
-	.half	3
-	.word	.L53-.L52
-.L52:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Std',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Scu\\Std',0
@@ -35016,371 +35016,361 @@ DebugADCValue:	.type	object
 	.byte	'IfxDma_cfg.h',0,5,0,0
 	.byte	'IfxDma_regdef.h',0,3,0,0
 	.byte	'IfxDma.h',0,19,0,0,0
-.L53:
 .L51:
+.L49:
 	.sdecl	'.debug_info',debug,cluster('DebugUARTInit')
 	.sect	'.debug_info'
-.L25:
+.L23:
 	.word	194
 	.half	3
-	.word	.L26
+	.word	.L24
 	.byte	4,1
 	.byte	'..\\CODE\\Src\\User_Debug.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L28,.L27
+	.word	.L26,.L25
 	.byte	2
-	.word	.L21
+	.word	.L19
 	.byte	3
 	.byte	'DebugUARTInit',0,1,20,6,1,1,1
-	.word	.L16,.L44,.L15
+	.word	.L14,.L42,.L13
 	.byte	4
-	.word	.L16,.L44
+	.word	.L14,.L42
 	.byte	0,0
 	.sdecl	'.debug_abbrev',debug,cluster('DebugUARTInit')
 	.sect	'.debug_abbrev'
-.L26:
+.L24:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
 	.sdecl	'.debug_line',debug,cluster('DebugUARTInit')
 	.sect	'.debug_line'
-.L27:
+.L25:
+	.word	.L53-.L52
+.L52:
+	.half	3
 	.word	.L55-.L54
 .L54:
-	.half	3
-	.word	.L57-.L56
-.L56:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\CODE\\Src\\User_Debug.c',0,0,0,0,0
-.L57:
-	.byte	5,12,7,0,5,2
-	.word	.L16
-	.byte	3,21,1,5,20,9
-	.half	.L58-.L16
-	.byte	1,5,28,9
-	.half	.L59-.L58
-	.byte	1,5,44,9
-	.half	.L60-.L59
-	.byte	1,5,1,9
-	.half	.L29-.L60
-	.byte	3,1,0,1,1
 .L55:
+	.byte	5,12,7,0,5,2
+	.word	.L14
+	.byte	3,21,1,5,20,9
+	.half	.L56-.L14
+	.byte	1,5,28,9
+	.half	.L57-.L56
+	.byte	1,5,44,9
+	.half	.L58-.L57
+	.byte	1,5,1,9
+	.half	.L27-.L58
+	.byte	3,1,0,1,1
+.L53:
 	.sdecl	'.debug_ranges',debug,cluster('DebugUARTInit')
 	.sect	'.debug_ranges'
-.L28:
-	.word	-1,.L16,0,.L29-.L16,0,0
+.L26:
+	.word	-1,.L14,0,.L27-.L14,0,0
 	.sdecl	'.debug_info',debug,cluster('DebugSend')
 	.sect	'.debug_info'
-.L30:
+.L28:
 	.word	190
 	.half	3
-	.word	.L31
+	.word	.L29
 	.byte	4,1
 	.byte	'..\\CODE\\Src\\User_Debug.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L33,.L32
+	.word	.L31,.L30
 	.byte	2
-	.word	.L21
+	.word	.L19
 	.byte	3
 	.byte	'DebugSend',0,1,28,6,1,1,1
-	.word	.L18,.L45,.L17
+	.word	.L16,.L43,.L15
 	.byte	4
-	.word	.L18,.L45
+	.word	.L16,.L43
 	.byte	0,0
 	.sdecl	'.debug_abbrev',debug,cluster('DebugSend')
 	.sect	'.debug_abbrev'
-.L31:
+.L29:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
 	.sdecl	'.debug_line',debug,cluster('DebugSend')
 	.sect	'.debug_line'
-.L32:
+.L30:
+	.word	.L60-.L59
+.L59:
+	.half	3
 	.word	.L62-.L61
 .L61:
-	.half	3
-	.word	.L64-.L63
-.L63:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\CODE\\Src\\User_Debug.c',0,0,0,0,0
-.L64:
-	.byte	5,16,7,0,5,2
-	.word	.L18
-	.byte	3,29,1,5,25,9
-	.half	.L65-.L18
-	.byte	1,5,2,9
-	.half	.L66-.L65
-	.byte	1,5,6,7,9
-	.half	.L67-.L66
-	.byte	3,2,1,5,3,9
-	.half	.L68-.L67
-	.byte	1,5,20,7,9
-	.half	.L69-.L68
-	.byte	3,2,1,5,28,9
-	.half	.L70-.L69
-	.byte	1,5,6,9
-	.half	.L3-.L70
-	.byte	3,2,1,5,3,9
-	.half	.L71-.L3
-	.byte	1,5,28,7,9
-	.half	.L72-.L71
-	.byte	3,2,1,5,36,9
-	.half	.L73-.L72
-	.byte	1,5,11,9
-	.half	.L4-.L73
-	.byte	3,3,1,5,8,9
-	.half	.L74-.L4
-	.byte	1,5,28,7,9
-	.half	.L75-.L74
-	.byte	3,2,1,5,20,9
-	.half	.L5-.L75
-	.byte	1,5,28,9
-	.half	.L76-.L5
-	.byte	1,5,4,9
-	.half	.L77-.L76
-	.byte	3,1,1,5,18,9
-	.half	.L78-.L77
-	.byte	1,5,16,9
-	.half	.L79-.L78
-	.byte	1,5,1,9
-	.half	.L2-.L79
-	.byte	3,24,1,5,11,7,9
-	.half	.L6-.L2
-	.byte	3,106,1,5,8,9
-	.half	.L80-.L6
-	.byte	1,5,7,7,9
-	.half	.L81-.L80
-	.byte	3,2,1,5,4,9
-	.half	.L82-.L81
-	.byte	1,5,26,7,9
-	.half	.L83-.L82
-	.byte	3,2,1,5,34,9
-	.half	.L84-.L83
-	.byte	1,5,52,9
-	.half	.L85-.L84
-	.byte	1,5,63,9
-	.half	.L86-.L85
-	.byte	1,5,5,9
-	.half	.L87-.L86
-	.byte	3,1,1,5,27,9
-	.half	.L88-.L87
-	.byte	1,5,25,9
-	.half	.L89-.L88
-	.byte	1,5,1,9
-	.half	.L9-.L89
-	.byte	3,17,1,5,11,7,9
-	.half	.L8-.L9
-	.byte	3,114,1,5,8,9
-	.half	.L90-.L8
-	.byte	1,5,23,7,9
-	.half	.L91-.L90
-	.byte	3,2,1,5,4,9
-	.half	.L92-.L91
-	.byte	1,5,25,7,9
-	.half	.L93-.L92
-	.byte	3,2,1,5,38,9
-	.half	.L94-.L93
-	.byte	1,5,28,9
-	.half	.L12-.L94
-	.byte	3,3,1,5,9,9
-	.half	.L95-.L12
-	.byte	1,5,25,7,9
-	.half	.L96-.L95
-	.byte	3,2,1,5,17,9
-	.half	.L13-.L96
-	.byte	1,5,25,9
-	.half	.L97-.L13
-	.byte	1,5,14,9
-	.half	.L98-.L97
-	.byte	3,1,1,5,1,9
-	.half	.L11-.L98
-	.byte	3,4,1,7,9
-	.half	.L34-.L11
-	.byte	0,1,1
 .L62:
+	.byte	5,16,7,0,5,2
+	.word	.L16
+	.byte	3,29,1,5,25,9
+	.half	.L63-.L16
+	.byte	1,5,2,9
+	.half	.L64-.L63
+	.byte	1,5,6,7,9
+	.half	.L65-.L64
+	.byte	3,2,1,5,3,9
+	.half	.L66-.L65
+	.byte	1,5,20,7,9
+	.half	.L67-.L66
+	.byte	3,2,1,5,28,9
+	.half	.L68-.L67
+	.byte	1,5,6,9
+	.half	.L3-.L68
+	.byte	3,2,1,5,3,9
+	.half	.L69-.L3
+	.byte	1,5,20,7,9
+	.half	.L70-.L69
+	.byte	3,2,1,5,28,9
+	.half	.L71-.L70
+	.byte	1,5,36,9
+	.half	.L72-.L71
+	.byte	1,5,11,9
+	.half	.L4-.L72
+	.byte	3,3,1,5,8,9
+	.half	.L73-.L4
+	.byte	1,5,7,7,9
+	.half	.L74-.L73
+	.byte	3,2,1,5,4,9
+	.half	.L75-.L74
+	.byte	1,5,26,7,9
+	.half	.L76-.L75
+	.byte	3,2,1,5,34,9
+	.half	.L77-.L76
+	.byte	1,5,52,9
+	.half	.L78-.L77
+	.byte	1,5,63,9
+	.half	.L79-.L78
+	.byte	1,5,5,9
+	.half	.L80-.L79
+	.byte	3,1,1,5,27,9
+	.half	.L81-.L80
+	.byte	1,5,25,9
+	.half	.L82-.L81
+	.byte	1,5,22,9
+	.half	.L83-.L82
+	.byte	3,2,1,5,11,9
+	.half	.L6-.L83
+	.byte	3,2,1,5,8,9
+	.half	.L84-.L6
+	.byte	1,5,23,7,9
+	.half	.L85-.L84
+	.byte	3,2,1,5,4,9
+	.half	.L86-.L85
+	.byte	1,5,25,7,9
+	.half	.L87-.L86
+	.byte	3,2,1,5,38,9
+	.half	.L88-.L87
+	.byte	1,5,28,9
+	.half	.L10-.L88
+	.byte	3,3,1,5,9,9
+	.half	.L89-.L10
+	.byte	1,5,25,7,9
+	.half	.L90-.L89
+	.byte	3,2,1,5,17,9
+	.half	.L11-.L90
+	.byte	1,5,25,9
+	.half	.L91-.L11
+	.byte	1,5,14,9
+	.half	.L92-.L91
+	.byte	3,1,1,5,4,9
+	.half	.L5-.L92
+	.byte	3,2,1,5,18,9
+	.half	.L93-.L5
+	.byte	1,5,16,9
+	.half	.L94-.L93
+	.byte	1,5,1,9
+	.half	.L2-.L94
+	.byte	3,3,1,7,9
+	.half	.L32-.L2
+	.byte	0,1,1
+.L60:
 	.sdecl	'.debug_ranges',debug,cluster('DebugSend')
 	.sect	'.debug_ranges'
-.L33:
-	.word	-1,.L18,0,.L34-.L18,0,0
+.L31:
+	.word	-1,.L16,0,.L32-.L16,0,0
 	.sdecl	'.debug_info',debug,cluster('DebugReadADCData')
 	.sect	'.debug_info'
-.L35:
+.L33:
 	.word	197
 	.half	3
-	.word	.L36
+	.word	.L34
 	.byte	4,1
 	.byte	'..\\CODE\\Src\\User_Debug.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L38,.L37
+	.word	.L36,.L35
 	.byte	2
-	.word	.L21
+	.word	.L19
 	.byte	3
-	.byte	'DebugReadADCData',0,1,70,6,1,1,1
-	.word	.L20,.L46,.L19
+	.byte	'DebugReadADCData',0,1,67,6,1,1,1
+	.word	.L18,.L44,.L17
 	.byte	4
-	.word	.L20,.L46
+	.word	.L18,.L44
 	.byte	0,0
 	.sdecl	'.debug_abbrev',debug,cluster('DebugReadADCData')
 	.sect	'.debug_abbrev'
-.L36:
+.L34:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
 	.sdecl	'.debug_line',debug,cluster('DebugReadADCData')
 	.sect	'.debug_line'
-.L37:
-	.word	.L100-.L99
-.L99:
+.L35:
+	.word	.L96-.L95
+.L95:
 	.half	3
-	.word	.L102-.L101
-.L101:
+	.word	.L98-.L97
+.L97:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\CODE\\Src\\User_Debug.c',0,0,0,0,0
-.L102:
+.L98:
 	.byte	5,6,7,0,5,2
-	.word	.L20
-	.byte	3,197,0,1,5,19,9
-	.half	.L49-.L20
+	.word	.L18
+	.byte	3,194,0,1,5,19,9
+	.half	.L47-.L18
 	.byte	3,2,1,5,38,9
-	.half	.L103-.L49
+	.half	.L99-.L47
 	.byte	3,15,1,5,43,9
+	.half	.L100-.L99
+	.byte	1,5,19,9
+	.half	.L101-.L100
+	.byte	1,5,21,9
+	.half	.L102-.L101
+	.byte	1,5,37,9
+	.half	.L103-.L102
+	.byte	1,5,41,9
 	.half	.L104-.L103
-	.byte	1,5,19,9
+	.byte	1,5,38,9
 	.half	.L105-.L104
-	.byte	1,5,21,9
+	.byte	3,1,1,5,43,9
 	.half	.L106-.L105
-	.byte	1,5,37,9
+	.byte	1,5,19,9
 	.half	.L107-.L106
-	.byte	1,5,41,9
+	.byte	1,5,21,9
 	.half	.L108-.L107
-	.byte	1,5,38,9
+	.byte	1,5,37,9
 	.half	.L109-.L108
-	.byte	3,1,1,5,43,9
+	.byte	1,5,41,9
 	.half	.L110-.L109
-	.byte	1,5,19,9
+	.byte	1,5,38,9
 	.half	.L111-.L110
-	.byte	1,5,21,9
+	.byte	3,1,1,5,43,9
 	.half	.L112-.L111
-	.byte	1,5,37,9
+	.byte	1,5,19,9
 	.half	.L113-.L112
-	.byte	1,5,41,9
+	.byte	1,5,21,9
 	.half	.L114-.L113
-	.byte	1,5,38,9
+	.byte	1,5,37,9
 	.half	.L115-.L114
-	.byte	3,1,1,5,43,9
+	.byte	1,5,41,9
 	.half	.L116-.L115
-	.byte	1,5,19,9
+	.byte	1,5,38,9
 	.half	.L117-.L116
-	.byte	1,5,21,9
+	.byte	3,1,1,5,43,9
 	.half	.L118-.L117
-	.byte	1,5,37,9
+	.byte	1,5,19,9
 	.half	.L119-.L118
-	.byte	1,5,41,9
-	.half	.L120-.L119
-	.byte	1,5,38,9
-	.half	.L121-.L120
-	.byte	3,1,1,5,43,9
-	.half	.L122-.L121
-	.byte	1,5,19,9
-	.half	.L123-.L122
 	.byte	1,5,21,9
-	.half	.L124-.L123
+	.half	.L120-.L119
 	.byte	1,5,37,9
-	.half	.L125-.L124
+	.half	.L121-.L120
 	.byte	1,5,41,9
-	.half	.L126-.L125
+	.half	.L122-.L121
 	.byte	1,5,38,9
-	.half	.L127-.L126
+	.half	.L123-.L122
 	.byte	3,1,1,5,43,9
-	.half	.L128-.L127
+	.half	.L124-.L123
 	.byte	1,5,19,9
-	.half	.L129-.L128
+	.half	.L125-.L124
 	.byte	1,5,37,9
-	.half	.L130-.L129
+	.half	.L126-.L125
 	.byte	1,5,41,9
-	.half	.L131-.L130
+	.half	.L127-.L126
 	.byte	1,5,1,9
-	.half	.L39-.L131
+	.half	.L37-.L127
 	.byte	3,2,0,1,1
-.L100:
+.L96:
 	.sdecl	'.debug_ranges',debug,cluster('DebugReadADCData')
 	.sect	'.debug_ranges'
-.L38:
-	.word	-1,.L20,0,.L39-.L20,0,0
+.L36:
+	.word	-1,.L18,0,.L37-.L18,0,0
 	.sdecl	'.debug_info',debug,cluster('DebugRxBuff')
 	.sect	'.debug_info'
-.L40:
+.L38:
 	.word	170
+	.half	3
+	.word	.L39
+	.byte	4,1
+	.byte	'..\\CODE\\Src\\User_Debug.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1,2
+	.word	.L19
+	.byte	3
+	.byte	'DebugRxBuff',0,29,15,7
+	.word	.L45
+	.byte	1,5,3
+	.word	DebugRxBuff
+	.byte	0
+	.sdecl	'.debug_abbrev',debug,cluster('DebugRxBuff')
+	.sect	'.debug_abbrev'
+.L39:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
+	.byte	0,0,0
+	.sdecl	'.debug_info',debug,cluster('DebugADCValue')
+	.sect	'.debug_info'
+.L40:
+	.word	172
 	.half	3
 	.word	.L41
 	.byte	4,1
 	.byte	'..\\CODE\\Src\\User_Debug.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1,2
-	.word	.L21
-	.byte	3
-	.byte	'DebugRxBuff',0,29,15,7
-	.word	.L47
-	.byte	1,5,3
-	.word	DebugRxBuff
-	.byte	0
-	.sdecl	'.debug_abbrev',debug,cluster('DebugRxBuff')
-	.sect	'.debug_abbrev'
-.L41:
-	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
-	.byte	0,0,0
-	.sdecl	'.debug_info',debug,cluster('DebugADCValue')
-	.sect	'.debug_info'
-.L42:
-	.word	172
-	.half	3
-	.word	.L43
-	.byte	4,1
-	.byte	'..\\CODE\\Src\\User_Debug.c',0
-	.byte	'TASKING VX-toolset for TriCore: C compiler',0
-	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1,2
-	.word	.L21
+	.word	.L19
 	.byte	3
 	.byte	'DebugADCValue',0,29,16,8
-	.word	.L48
+	.word	.L46
 	.byte	1,5,3
 	.word	DebugADCValue
 	.byte	0
 	.sdecl	'.debug_abbrev',debug,cluster('DebugADCValue')
 	.sect	'.debug_abbrev'
-.L43:
+.L41:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
 	.byte	0,0,0
 	.sdecl	'.debug_loc',debug,cluster('DebugReadADCData')
 	.sect	'.debug_loc'
-.L19:
-	.word	-1,.L20,0,.L49-.L20
+.L17:
+	.word	-1,.L18,0,.L47-.L18
 	.half	2
 	.byte	138,0
-	.word	.L49-.L20,.L46-.L20
+	.word	.L47-.L18,.L44-.L18
 	.half	2
 	.byte	138,8
-	.word	.L46-.L20,.L46-.L20
+	.word	.L44-.L18,.L44-.L18
 	.half	2
 	.byte	138,0
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('DebugSend')
 	.sect	'.debug_loc'
-.L17:
-	.word	-1,.L18,0,.L45-.L18
+.L15:
+	.word	-1,.L16,0,.L43-.L16
 	.half	2
 	.byte	138,0
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('DebugUARTInit')
 	.sect	'.debug_loc'
-.L15:
-	.word	-1,.L16,0,.L44-.L16
+.L13:
+	.word	-1,.L14,0,.L42-.L14
 	.half	2
 	.byte	138,0
 	.word	0,0
 	.sdecl	'.debug_frame',debug
 	.sect	'.debug_frame'
-.L132:
+.L128:
 	.word	48
 	.word	-1
 	.byte	3,0,2,1,27,12,26,0,8,27,8,26,8,28,8,29,8,30,8,31,8,34,8,35,8,32,8,33,8,16,8,17,8,24,8,25,8,36,8,37,8,38
@@ -35388,22 +35378,22 @@ DebugADCValue:	.type	object
 	.sdecl	'.debug_frame',debug,cluster('DebugUARTInit')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L132,.L16,.L44-.L16
+	.word	.L128,.L14,.L42-.L14
 	.sdecl	'.debug_frame',debug,cluster('DebugSend')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L132,.L18,.L45-.L18
+	.word	.L128,.L16,.L43-.L16
 	.sdecl	'.debug_frame',debug,cluster('DebugReadADCData')
 	.sect	'.debug_frame'
 	.word	36
-	.word	.L132,.L20,.L46-.L20
+	.word	.L128,.L18,.L44-.L18
 	.byte	4
-	.word	(.L49-.L20)/2
+	.word	(.L47-.L18)/2
 	.byte	19,8,22,26,3,19,138,8,4
-	.word	(.L46-.L49)/2
+	.word	(.L44-.L47)/2
 	.byte	19,0,8,26,0,0
 
-; ..\CODE\Src\User_Debug.c	    92  #endif
-; ..\CODE\Src\User_Debug.c	    93  }
+; ..\CODE\Src\User_Debug.c	    89  #endif
+; ..\CODE\Src\User_Debug.c	    90  }
 
 	; Module end

@@ -43,5 +43,5 @@ void ADCcalculateMidLine(void)
 	Lsqrt = sqrt(ADCValueHandle(0));
 	Rsqrt = sqrt(ADCValueHandle(4));
 	MidLineFuseNum = (Lsqrt-Rsqrt)/(ADCValueHandle(0)+ADCValueHandle(4));
-	printf("%lf\r\n", MidLineFuseNum);
+	//printf("%lf\r\n", MidLineFuseNum);
 }

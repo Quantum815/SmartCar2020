@@ -344,3 +344,5 @@ USER\Cpu0_Main.o :	"E:\ProgramData\GithubRepositories\SmartCar2020TC264\CODE\Inc
 "E:\ProgramData\GithubRepositories\SmartCar2020TC264\CODE\Inc\User_PID.h" :
 USER\Cpu0_Main.o :	"E:\ProgramData\GithubRepositories\SmartCar2020TC264\CODE\Inc\User_ADC.h"
 "E:\ProgramData\GithubRepositories\SmartCar2020TC264\CODE\Inc\User_ADC.h" :
+USER\Cpu0_Main.o :	"E:\ProgramData\GithubRepositories\SmartCar2020TC264\CODE\Inc\User_Two_Car.h"
+"E:\ProgramData\GithubRepositories\SmartCar2020TC264\CODE\Inc\User_Two_Car.h" :

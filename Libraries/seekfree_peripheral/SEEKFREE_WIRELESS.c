@@ -32,6 +32,7 @@
 #include "zf_uart.h"
 #include "SEEKFREE_WIRELESS.h"
 
+uint8 TwoCarReceiveNum;
 uint8 TwoCarRxFlag;
 uint8 wireless_rx_buffer[2];
 
@@ -47,21 +48,17 @@ uint8 wireless_rx_buffer[2];
 //-------------------------------------------------------------------------------------------------------------------
 void wireless_uart_callback(void)  //ÒÑÐÞ¸Ä
 {
-	static uint8 num = 0;
-	while(uart_query(WIRELESS_UART, &wireless_rx_buffer[num]))
+	while(uart_query(WIRELESS_UART, &wireless_rx_buffer[TwoCarReceiveNum]))
 	{
-		if(num == 0 && wireless_rx_buffer[0] != 0xff)
+		TwoCarReceiveNum++;
+		if(TwoCarReceiveNum == 1 && wireless_rx_buffer[0] != 0x01)
+			TwoCarReceiveNum = 0;
+		if(2 == TwoCarReceiveNum && wireless_rx_buffer[0] != 0xff)
 		{
-			num = 0;
-			continue;
-		}
-		if(1 == num)
-		{
-			num = 0;
+			TwoCarReceiveNum = 0;
 			TwoCarRxFlag = 1;
 			break;
 		}
-		num++;
 	}
 }
 

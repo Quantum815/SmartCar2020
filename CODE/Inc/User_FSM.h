@@ -14,17 +14,25 @@ extern double MidLineFuseNum;
 
 enum CarState  //×´Ì¬
 {
-    Stop,
+	WaitBall,
     GoLine,
-	InGarage
+	InRoundabout,
+	PassRoundabout,
+	OutingRoundabout,
+	InGarage,
+    Stop
 };
 
 enum CarEvent  //ÊÂ¼þ
 {
 	NOEVENT,
-    RUNSTART,
-    RUNSTOP,
-	FINDZEBRA
+	GETBALL,
+	FINDROUNDABOUT,
+	ENDINROUNDABOUT,
+	OUTROUNDABOUT,
+	ENDOUTROUNDABOUT,
+	FINDZEBRA,
+    RUNSTOP
 };
 
 typedef struct FSMTable{
@@ -44,9 +52,10 @@ typedef struct FSM{
 
 extern FSM_t CarFSM;
 
-void RunStart(void);
 void RunStop(void);
 void FindLine(void);
+void InRoundaboutProcess(void);
+void OutRoundaboutProcess(void);
 void GoGarage(void);
 
 void FSMRegist(FSM_t *fsm, FSMTable_t *fsmtable);

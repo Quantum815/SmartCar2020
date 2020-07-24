@@ -346,3 +346,5 @@ CODE\Src\User_Encoder.o :	"E:\ProgramData\GithubRepositories\SmartCar2020TC264\C
 "E:\ProgramData\GithubRepositories\SmartCar2020TC264\CODE\Inc\User_PID.h" :
 CODE\Src\User_Encoder.o :	"E:\ProgramData\GithubRepositories\SmartCar2020TC264\CODE\Inc\User_ADC.h"
 "E:\ProgramData\GithubRepositories\SmartCar2020TC264\CODE\Inc\User_ADC.h" :
+CODE\Src\User_Encoder.o :	"E:\ProgramData\GithubRepositories\SmartCar2020TC264\CODE\Inc\User_Two_Car.h"
+"E:\ProgramData\GithubRepositories\SmartCar2020TC264\CODE\Inc\User_Two_Car.h" :

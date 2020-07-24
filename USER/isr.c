@@ -28,10 +28,11 @@ int i;
 IFX_INTERRUPT(cc60_pit_ch0_isr, 0, CCU6_0_CH0_ISR_PRIORITY)  //主程序
 {
 	enableInterrupts();//开启中断嵌套
-	//PIT_CLEAR_FLAG(CCU6_0, PIT_CH0);
-	//ADCcalculateMidLine();
+	PIT_CLEAR_FLAG(CCU6_0, PIT_CH0);
+	ADCcalculateMidLine();
 	//CameraProcess();
-	//FSMRun();
+	FSMRun();
+	//FindLine();
 }
 
 
@@ -51,8 +52,8 @@ IFX_INTERRUPT(cc61_pit_ch0_isr, 0, CCU6_1_CH0_ISR_PRIORITY)  //数据获取
 {
 	enableInterrupts();//开启中断嵌套
 	PIT_CLEAR_FLAG(CCU6_1, PIT_CH0);
-	//UpdateADCValue();
-	//CountDistance();
+	UpdateADCValue();
+	CountDistance();
 	//GyroCalculate();
 }
 
