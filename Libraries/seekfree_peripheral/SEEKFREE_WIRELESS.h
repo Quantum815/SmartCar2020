@@ -40,6 +40,7 @@
 
 #define RTS_PIN P10_2 //定义流控位引脚  指示当前模块是否可以接受数据  0可以继续接收  1不可以继续接收
 
+extern uint8 TwoCarRxFlag;
 
 void 	wireless_uart_callback(void);
 void    seekfree_wireless_init(void);

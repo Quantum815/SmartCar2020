@@ -47,11 +47,11 @@ $TC16X
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    32  #include "zf_uart.h"
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    33  #include "SEEKFREE_WIRELESS.h"
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    34  
-; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    35  
-; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    36  
+; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    35  uint8 TwoCarRxFlag;
+; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    36  uint8 wireless_rx_buffer[2];
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    37  
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    38  
-; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    39  uint8 wireless_rx_buffer;
+; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    39  
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    40  //-------------------------------------------------------------------------------------------------------------------
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    41  //  @brief      无线转串口模块 串口中断函数
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    42  //  @param      void
@@ -60,30 +60,99 @@ $TC16X
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    45  //  Sample usage:	
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    46  //  @note       该函数在ISR文件 串口2中断程序被调用
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    47  //-------------------------------------------------------------------------------------------------------------------
-; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    48  void wireless_uart_callback(void)
+; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    48  void wireless_uart_callback(void)  //已修改
 ; Function wireless_uart_callback
+.L16:
 wireless_uart_callback:	.type	func
 
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    49  {
-; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    50  	while(uart_query(WIRELESS_UART, &wireless_rx_buffer));
+; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    50  	static uint8 num = 0;
+; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    51  	while(uart_query(WIRELESS_UART, &wireless_rx_buffer[num]))
+	j	.L2
+.L3:
+
+; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    52  	{
+; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    53  		if(num == 0 && wireless_rx_buffer[0] != 0xff)
+	movh.a	a15,#@his(_999001_num)
+	ld.bu	d15,[a15]@los(_999001_num)
+	jne	d15,#0,.L4
+.L69:
+	movh.a	a2,#@his(wireless_rx_buffer)
+.L70:
+	ld.bu	d0,[a2]@los(wireless_rx_buffer)
+.L71:
+	mov	d15,#255
+.L72:
+	jeq	d15,d0,.L5
+.L73:
+
+; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    54  		{
+; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    55  			num = 0;
+	mov	d15,#0
+.L74:
+	st.b	[a15]@los(_999001_num),d15
+.L75:
+
+; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    56  			continue;
+	j	.L6
+.L5:
+.L4:
+
+; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    57  		}
+; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    58  		if(1 == num)
+	ld.bu	d15,[a15]@los(_999001_num)
+.L76:
+	jne	d15,#1,.L7
+.L77:
+
+; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    59  		{
+; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    60  			num = 0;
+	mov	d15,#0
+.L78:
+	st.b	[a15]@los(_999001_num),d15
+.L79:
+
+; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    61  			TwoCarRxFlag = 1;
+	movh.a	a15,#@his(TwoCarRxFlag)
+.L80:
+	mov	d15,#1
+.L81:
+	st.b	[a15]@los(TwoCarRxFlag),d15
+.L82:
+
+; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    62  			break;
+; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    63  		}
+; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    64  		num++;
+; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    65  	}
+; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    66  }
+	ret
+.L7:
+	movh.a	a15,#@his(_999001_num)
+	ld.bu	d15,[a15]@los(_999001_num)
+.L83:
+	add	d15,#1
+	st.b	[a15]@los(_999001_num),d15
+.L6:
 .L2:
 	mov	d4,#2
-.L59:
-	movh.a	a4,#@his(wireless_rx_buffer)
-	lea	a4,[a4]@los(wireless_rx_buffer)
+.L84:
+	movh.a	a15,#@his(_999001_num)
+	ld.bu	d15,[a15]@los(_999001_num)
+.L85:
+	movh.a	a15,#@his(wireless_rx_buffer)
+	lea	a15,[a15]@los(wireless_rx_buffer)
+.L86:
+	addsc.a	a4,a15,d15,#0
 	call	uart_query
-.L60:
-	jne	d2,#0,.L2
-.L61:
-
-; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    51  	//读取收到的所有数据
-; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    52  }
+.L87:
+	jne	d2,#0,.L3
+.L88:
 	ret
-.L35:
+.L44:
 	
 __wireless_uart_callback_function_end:
 	.size	wireless_uart_callback,__wireless_uart_callback_function_end-wireless_uart_callback
-.L22:
+.L29:
 	; End of function
 	
 	.sdecl	'.text.SEEKFREE_WIRELESS.seekfree_wireless_init',code,cluster('seekfree_wireless_init')
@@ -92,51 +161,51 @@ __wireless_uart_callback_function_end:
 	
 	.global	seekfree_wireless_init
 
-; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    53  
-; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    54  
-; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    55  
-; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    56  //-------------------------------------------------------------------------------------------------------------------
-; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    57  //  @brief      无线转串口模块初始化
-; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    58  //  @param      NULL
-; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    59  //  @return     void					
-; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    60  //  @since      v1.0
-; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    61  //  Sample usage:	
-; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    62  //  @note       
-; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    63  //-------------------------------------------------------------------------------------------------------------------
-; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    64  void seekfree_wireless_init(void)
+; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    67  
+; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    68  
+; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    69  
+; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    70  //-------------------------------------------------------------------------------------------------------------------
+; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    71  //  @brief      无线转串口模块初始化
+; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    72  //  @param      NULL
+; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    73  //  @return     void					
+; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    74  //  @since      v1.0
+; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    75  //  Sample usage:	
+; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    76  //  @note       
+; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    77  //-------------------------------------------------------------------------------------------------------------------
+; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    78  void seekfree_wireless_init(void)
 ; Function seekfree_wireless_init
-.L11:
+.L18:
 seekfree_wireless_init:	.type	func
 
-; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    65  {
-; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    66      //本函数使用的波特率为115200，为无线转串口模块的默认波特率，如需其他波特率请自行配置模块并修改串口的波特率
-; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    67      gpio_init(RTS_PIN,GPI,0,PUSHPULL);//初始化流控引脚
+; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    79  {
+; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    80      //本函数使用的波特率为115200，为无线转串口模块的默认波特率，如需其他波特率请自行配置模块并修改串口的波特率
+; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    81      gpio_init(RTS_PIN,GPI,0,PUSHPULL);//初始化流控引脚
 	mov	d4,#322
-.L66:
+.L93:
 	mov	d5,#0
-.L67:
+.L94:
 	mov	d6,d5
-.L68:
+.L95:
 	mov	d7,#3
 	call	gpio_init
-.L69:
+.L96:
 
-; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    68      
-; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    69      uart_init (WIRELESS_UART, WIRELESS_UART_BAUD, WIRELESS_UART_TX, WIRELESS_UART_RX);	//初始换串口
+; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    82      
+; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    83      uart_init (WIRELESS_UART, WIRELESS_UART_BAUD, WIRELESS_UART_TX, WIRELESS_UART_RX);	//初始换串口
 	mov	d4,#2
-.L70:
+.L97:
 	mov.u	d5,#49664
 	addih	d5,d5,#1
-.L71:
+.L98:
 	mov	d6,#24
-.L72:
+.L99:
 	mov	d7,#31
 	j	uart_init
-.L36:
+.L46:
 	
 __seekfree_wireless_init_function_end:
 	.size	seekfree_wireless_init,__seekfree_wireless_init_function_end-seekfree_wireless_init
-.L27:
+.L34:
 	; End of function
 	
 	.sdecl	'.text.SEEKFREE_WIRELESS.seekfree_wireless_send_buff',code,cluster('seekfree_wireless_send_buff')
@@ -145,109 +214,120 @@ __seekfree_wireless_init_function_end:
 	
 	.global	seekfree_wireless_send_buff
 
-; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    70  }
-; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    71  
-; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    72  //-------------------------------------------------------------------------------------------------------------------
-; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    73  //  @brief      无线转串口模块 发送函数
-; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    74  //  @param      buff        需要发送的数据地址
-; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    75  //  @param      len         发送长度
-; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    76  //  @return     uint32      剩余未发送的字节数   
-; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    77  //  @since      v1.0
-; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    78  //  Sample usage:	
-; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    79  //  @note       
-; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    80  //-------------------------------------------------------------------------------------------------------------------
-; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    81  uint32 seekfree_wireless_send_buff(uint8 *buff, uint32 len)
+; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    84  }
+; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    85  
+; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    86  //-------------------------------------------------------------------------------------------------------------------
+; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    87  //  @brief      无线转串口模块 发送函数
+; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    88  //  @param      buff        需要发送的数据地址
+; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    89  //  @param      len         发送长度
+; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    90  //  @return     uint32      剩余未发送的字节数   
+; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    91  //  @since      v1.0
+; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    92  //  Sample usage:	
+; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    93  //  @note       
+; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    94  //-------------------------------------------------------------------------------------------------------------------
+; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    95  uint32 seekfree_wireless_send_buff(uint8 *buff, uint32 len)
 ; Function seekfree_wireless_send_buff
-.L13:
+.L20:
 seekfree_wireless_send_buff:	.type	func
 	mov.aa	a15,a4
-.L43:
+.L53:
 	mov	d8,d4
-.L44:
+.L54:
 
-; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    82  {
-; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    83      while(len>30)
+; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    96  {
+; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    97      while(len>30)
 	mov	d15,#30
-.L77:
-	j	.L3
-.L4:
+.L104:
+	j	.L9
+.L10:
 
-; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    84      {
-; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    85          if(gpio_get(RTS_PIN))  
+; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    98      {
+; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    99          if(gpio_get(RTS_PIN))  
 	mov	d4,#322
 	call	gpio_get
-.L78:
-	jne	d2,#0,.L5
-.L79:
+.L105:
+	jne	d2,#0,.L11
+.L106:
 
-; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    86          {
-; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    87              return len;//模块忙,如果允许当前程序使用while等待 则可以使用后面注释的while等待语句替换本if语句
-; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    88          }
-; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    89          //while(gpio_get(RTS_PIN));  //如果RTS为低电平，则继续发送数据
-; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    90          uart_putbuff(WIRELESS_UART,buff,30);
+; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	   100          {
+; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	   101              return len;//模块忙,如果允许当前程序使用while等待 则可以使用后面注释的while等待语句替换本if语句
+; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	   102          }
+; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	   103          //while(gpio_get(RTS_PIN));  //如果RTS为低电平，则继续发送数据
+; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	   104          uart_putbuff(WIRELESS_UART,buff,30);
 	mov	d4,#2
-.L80:
+.L107:
 	mov	d5,#30
 	mov.aa	a4,a15
-.L45:
+.L55:
 	call	uart_putbuff
-.L46:
+.L56:
 
-; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    91  
-; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    92          buff += 30; //地址偏移
+; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	   105  
+; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	   106          buff += 30; //地址偏移
 	lea	a15,[a15]30
-.L81:
+.L108:
 
-; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    93          len -= 30;//数量
+; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	   107          len -= 30;//数量
 	add	d8,d8,#-30
-.L3:
-	jlt.u	d15,d8,.L4
-.L82:
+.L9:
+	jlt.u	d15,d8,.L10
+.L109:
 
-; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    94      }
-; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    95      
-; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    96      if(gpio_get(RTS_PIN))  
+; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	   108      }
+; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	   109      
+; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	   110      if(gpio_get(RTS_PIN))  
 	mov	d4,#322
 	call	gpio_get
-.L83:
-	jeq	d2,#0,.L6
+.L110:
+	jeq	d2,#0,.L12
 
-; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    97      {
-; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    98          return len;//模块忙,如果允许当前程序使用while等待 则可以使用后面注释的while等待语句替换本if语句
-; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	    99      }
-; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	   100      //while(gpio_get(RTS_PIN));  //如果RTS为低电平，则继续发送数据
-; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	   101      uart_putbuff(WIRELESS_UART,buff,len);//发送最后的数据
-; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	   102      
-; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	   103      return 0;
-; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	   104  }
-.L5:
+; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	   111      {
+; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	   112          return len;//模块忙,如果允许当前程序使用while等待 则可以使用后面注释的while等待语句替换本if语句
+; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	   113      }
+; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	   114      //while(gpio_get(RTS_PIN));  //如果RTS为低电平，则继续发送数据
+; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	   115      uart_putbuff(WIRELESS_UART,buff,len);//发送最后的数据
+; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	   116      
+; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	   117      return 0;
+; ..\Libraries\seekfree_peripheral\SEEKFREE_WIRELESS.c	   118  }
+.L11:
 	mov	d2,d8
-.L47:
+.L57:
 	ret
-.L6:
+.L12:
 	mov	d4,#2
-.L84:
+.L111:
 	mov.aa	a4,a15
-.L48:
+.L58:
 	mov	d5,d8
-.L50:
+.L60:
 	call	uart_putbuff
-.L49:
+.L59:
 	mov	d2,#0
-.L85:
+.L112:
 	ret
-.L38:
+.L48:
 	
 __seekfree_wireless_send_buff_function_end:
 	.size	seekfree_wireless_send_buff,__seekfree_wireless_send_buff_function_end-seekfree_wireless_send_buff
-.L32:
+.L39:
 	; End of function
 	
+	.sdecl	'.bss.SEEKFREE_WIRELESS.TwoCarRxFlag',data,cluster('TwoCarRxFlag')
+	.sect	'.bss.SEEKFREE_WIRELESS.TwoCarRxFlag'
+	.global	TwoCarRxFlag
+TwoCarRxFlag:	.type	object
+	.size	TwoCarRxFlag,1
+	.space	1
 	.sdecl	'.bss.SEEKFREE_WIRELESS.wireless_rx_buffer',data,cluster('wireless_rx_buffer')
 	.sect	'.bss.SEEKFREE_WIRELESS.wireless_rx_buffer'
 	.global	wireless_rx_buffer
 wireless_rx_buffer:	.type	object
-	.size	wireless_rx_buffer,1
+	.size	wireless_rx_buffer,2
+	.space	2
+	.sdecl	'.data.SEEKFREE_WIRELESS._999001_num',data,cluster('_999001_num')
+	.sect	'.data.SEEKFREE_WIRELESS._999001_num'
+_999001_num:	.type	object
+	.size	_999001_num,1
 	.space	1
 	.calls	'wireless_uart_callback','uart_query'
 	.calls	'seekfree_wireless_init','gpio_init'
@@ -264,17 +344,17 @@ wireless_rx_buffer:	.type	object
 	.calls	'seekfree_wireless_send_buff','',0
 	.sdecl	'.debug_info',debug
 	.sect	'.debug_info'
-.L15:
-	.word	103139
+.L22:
+	.word	103148
 	.half	3
-	.word	.L16
+	.word	.L23
 	.byte	4
-.L14:
+.L21:
 	.byte	1
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_WIRELESS.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L17
+	.word	.L24
 	.byte	2,1,1,3
 	.word	173
 	.byte	4
@@ -333,7 +413,7 @@ wireless_rx_buffer:	.type	object
 	.byte	'B',0
 	.word	476
 	.byte	4,2,35,0,0
-.L42:
+.L45:
 	.byte	7
 	.byte	'unsigned char',0,1,8,7
 	.byte	'unsigned short int',0,2,7,10
@@ -1869,7 +1949,7 @@ wireless_rx_buffer:	.type	object
 	.byte	'enabled',0,7,168,7,50
 	.word	612
 	.byte	6,0
-.L37:
+.L47:
 	.byte	7
 	.byte	'unsigned long int',0,4,7,8
 	.byte	'IfxCpu_getPerformanceCounter',0,3,7,161,6,19
@@ -4354,7 +4434,7 @@ wireless_rx_buffer:	.type	object
 	.byte	'rx_pin',0,20,87,83
 	.word	25308
 	.byte	0
-.L39:
+.L49:
 	.byte	3
 	.word	612
 	.byte	28
@@ -14785,10 +14865,13 @@ wireless_rx_buffer:	.type	object
 	.byte	33
 	.byte	'UART_PIN_enum',0,20,77,2
 	.word	25308
-	.byte	0
+.L52:
+	.byte	15,2
+	.word	612
+	.byte	16,1,0,0
 	.sdecl	'.debug_abbrev',debug
 	.sect	'.debug_abbrev'
-.L16:
+.L23:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,16,6,0,0,2,21,0,54,15,39,12,0,0,3,15,0,73,19,0,0,4,46,1,3,8,32,13
 	.byte	58,15,59,15,57,15,54,15,39,12,0,0,5,5,0,3,8,58,15,59,15,57,15,73,19,0,0,6,11,0,0,0,7,36,0,3,8,11,15,62
 	.byte	15,0,0,8,46,1,3,8,32,13,58,15,59,15,57,15,73,19,54,15,39,12,0,0,9,59,0,3,8,0,0,10,19,1,3,8,58,15,59,15
@@ -14802,12 +14885,12 @@ wireless_rx_buffer:	.type	object
 	.byte	54,15,39,12,0,0,36,21,1,54,15,39,12,0,0,0
 	.sdecl	'.debug_line',debug
 	.sect	'.debug_line'
-.L17:
-	.word	.L52-.L51
-.L51:
+.L24:
+	.word	.L62-.L61
+.L61:
 	.half	3
-	.word	.L54-.L53
-.L53:
+	.word	.L64-.L63
+.L63:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Std',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Scu\\Std',0
@@ -14857,279 +14940,348 @@ wireless_rx_buffer:	.type	object
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\Service\\CpuGeneric\\StdIf\\IfxStdIf_DPipe.h',0
 	.byte	0,0,0
 	.byte	'ifxAsclin_Asc.h',0,13,0,0,0
-.L54:
-.L52:
+.L64:
+.L62:
 	.sdecl	'.debug_info',debug,cluster('wireless_uart_callback')
 	.sect	'.debug_info'
-.L18:
-	.word	231
+.L25:
+	.word	250
 	.half	3
-	.word	.L19
+	.word	.L26
 	.byte	4,1
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_WIRELESS.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L21,.L20
+	.word	.L28,.L27
 	.byte	2
-	.word	.L14
+	.word	.L21
 	.byte	3
 	.byte	'wireless_uart_callback',0,1,48,6,1,1,1
-	.word	.L2,.L35,.L9
+	.word	.L16,.L44,.L15
 	.byte	4
-	.word	.L2,.L35
-	.byte	0,0
+	.word	.L16,.L44
+	.byte	5
+	.byte	'num',0,1,50,15
+	.word	.L45
+	.byte	5,3
+	.word	_999001_num
+	.byte	0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('wireless_uart_callback')
 	.sect	'.debug_abbrev'
-.L19:
+.L26:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
-	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,1,17,1,18,1,0,0,5,52,0,3,8,58,15,59,15,57,15,73,16,2,9,0,0,0
 	.sdecl	'.debug_line',debug,cluster('wireless_uart_callback')
 	.sect	'.debug_line'
-.L20:
-	.word	.L56-.L55
-.L55:
+.L27:
+	.word	.L66-.L65
+.L65:
 	.half	3
-	.word	.L58-.L57
-.L57:
+	.word	.L68-.L67
+.L67:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_WIRELESS.c',0,0,0,0,0
-.L58:
-	.byte	5,19,7,0,5,2
-	.word	.L2
-	.byte	3,49,1,5,35,9
-	.half	.L59-.L2
-	.byte	1,5,54,9
-	.half	.L60-.L59
+.L68:
+	.byte	5,59,7,0,5,2
+	.word	.L16
+	.byte	3,50,1,5,6,9
+	.half	.L3-.L16
+	.byte	3,2,1,5,18,9
+	.half	.L69-.L3
+	.byte	1,5,36,9
+	.half	.L70-.L69
+	.byte	1,5,43,9
+	.half	.L71-.L70
+	.byte	1,5,40,9
+	.half	.L72-.L71
+	.byte	1,5,10,7,9
+	.half	.L73-.L72
+	.byte	3,2,1,5,8,9
+	.half	.L74-.L73
+	.byte	1,5,4,9
+	.half	.L75-.L74
+	.byte	3,1,1,5,11,9
+	.half	.L4-.L75
+	.byte	3,2,1,5,3,9
+	.half	.L76-.L4
+	.byte	1,5,10,7,9
+	.half	.L77-.L76
+	.byte	3,2,1,5,8,9
+	.half	.L78-.L77
+	.byte	1,5,4,9
+	.half	.L79-.L78
+	.byte	3,1,1,5,19,9
+	.half	.L80-.L79
+	.byte	1,5,17,9
+	.half	.L81-.L80
+	.byte	1,5,1,9
+	.half	.L82-.L81
+	.byte	3,5,1,5,3,7,9
+	.half	.L7-.L82
+	.byte	3,126,1,5,6,9
+	.half	.L83-.L7
+	.byte	1,5,19,9
+	.half	.L2-.L83
+	.byte	3,115,1,5,54,9
+	.half	.L84-.L2
+	.byte	1,5,35,9
+	.half	.L85-.L84
+	.byte	1,5,53,9
+	.half	.L86-.L85
+	.byte	1,5,59,9
+	.half	.L87-.L86
 	.byte	1,5,1,7,9
-	.half	.L61-.L60
-	.byte	3,2,1,7,9
-	.half	.L22-.L61
+	.half	.L88-.L87
+	.byte	3,15,1,7,9
+	.half	.L29-.L88
 	.byte	0,1,1
-.L56:
+.L66:
 	.sdecl	'.debug_ranges',debug,cluster('wireless_uart_callback')
 	.sect	'.debug_ranges'
-.L21:
-	.word	-1,.L2,0,.L22-.L2,0,0
+.L28:
+	.word	-1,.L16,0,.L29-.L16,0,0
 	.sdecl	'.debug_info',debug,cluster('seekfree_wireless_init')
 	.sect	'.debug_info'
-.L23:
+.L30:
 	.word	231
 	.half	3
-	.word	.L24
+	.word	.L31
 	.byte	4,1
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_WIRELESS.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L26,.L25
+	.word	.L33,.L32
 	.byte	2
-	.word	.L14
+	.word	.L21
 	.byte	3
-	.byte	'seekfree_wireless_init',0,1,64,6,1,1,1
-	.word	.L11,.L36,.L10
+	.byte	'seekfree_wireless_init',0,1,78,6,1,1,1
+	.word	.L18,.L46,.L17
 	.byte	4
-	.word	.L11,.L36
+	.word	.L18,.L46
 	.byte	0,0
 	.sdecl	'.debug_abbrev',debug,cluster('seekfree_wireless_init')
 	.sect	'.debug_abbrev'
-.L24:
+.L31:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
 	.sdecl	'.debug_line',debug,cluster('seekfree_wireless_init')
 	.sect	'.debug_line'
-.L25:
-	.word	.L63-.L62
-.L62:
+.L32:
+	.word	.L90-.L89
+.L89:
 	.half	3
-	.word	.L65-.L64
-.L64:
+	.word	.L92-.L91
+.L91:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_WIRELESS.c',0,0,0,0,0
-.L65:
+.L92:
 	.byte	5,15,7,0,5,2
-	.word	.L11
-	.byte	3,194,0,1,5,23,9
-	.half	.L66-.L11
+	.word	.L18
+	.byte	3,208,0,1,5,23,9
+	.half	.L93-.L18
 	.byte	1,5,27,9
-	.half	.L67-.L66
+	.half	.L94-.L93
 	.byte	1,5,29,9
-	.half	.L68-.L67
+	.half	.L95-.L94
 	.byte	1,5,16,9
-	.half	.L69-.L68
+	.half	.L96-.L95
 	.byte	3,2,1,5,31,9
-	.half	.L70-.L69
+	.half	.L97-.L96
 	.byte	1,5,51,9
-	.half	.L71-.L70
+	.half	.L98-.L97
 	.byte	1,5,69,9
-	.half	.L72-.L71
+	.half	.L99-.L98
 	.byte	1,5,1,9
-	.half	.L27-.L72
+	.half	.L34-.L99
 	.byte	3,1,0,1,1
-.L63:
+.L90:
 	.sdecl	'.debug_ranges',debug,cluster('seekfree_wireless_init')
 	.sect	'.debug_ranges'
-.L26:
-	.word	-1,.L11,0,.L27-.L11,0,0
+.L33:
+	.word	-1,.L18,0,.L34-.L18,0,0
 	.sdecl	'.debug_info',debug,cluster('seekfree_wireless_send_buff')
 	.sect	'.debug_info'
-.L28:
+.L35:
 	.word	273
 	.half	3
-	.word	.L29
+	.word	.L36
 	.byte	4,1
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_WIRELESS.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L31,.L30
+	.word	.L38,.L37
 	.byte	2
-	.word	.L14
+	.word	.L21
 	.byte	3
-	.byte	'seekfree_wireless_send_buff',0,1,81,8
-	.word	.L37
+	.byte	'seekfree_wireless_send_buff',0,1,95,8
+	.word	.L47
 	.byte	1,1,1
-	.word	.L13,.L38,.L12
+	.word	.L20,.L48,.L19
 	.byte	4
-	.byte	'buff',0,1,81,43
-	.word	.L39,.L40
+	.byte	'buff',0,1,95,43
+	.word	.L49,.L50
 	.byte	4
-	.byte	'len',0,1,81,56
-	.word	.L37,.L41
+	.byte	'len',0,1,95,56
+	.word	.L47,.L51
 	.byte	5
-	.word	.L13,.L38
+	.word	.L20,.L48
 	.byte	0,0
 	.sdecl	'.debug_abbrev',debug,cluster('seekfree_wireless_send_buff')
 	.sect	'.debug_abbrev'
-.L29:
+.L36:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
 	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
 	.sdecl	'.debug_line',debug,cluster('seekfree_wireless_send_buff')
 	.sect	'.debug_line'
-.L30:
-	.word	.L74-.L73
-.L73:
+.L37:
+	.word	.L101-.L100
+.L100:
 	.half	3
-	.word	.L76-.L75
-.L75:
+	.word	.L103-.L102
+.L102:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_WIRELESS.c',0,0,0,0,0
-.L76:
+.L103:
 	.byte	5,8,7,0,5,2
-	.word	.L13
-	.byte	3,208,0,1,5,15,9
-	.half	.L44-.L13
+	.word	.L20
+	.byte	3,222,0,1,5,15,9
+	.half	.L54-.L20
 	.byte	3,2,1,5,17,9
-	.half	.L77-.L44
+	.half	.L104-.L54
 	.byte	1,5,21,9
-	.half	.L4-.L77
+	.half	.L10-.L104
 	.byte	3,2,1,5,9,9
-	.half	.L78-.L4
+	.half	.L105-.L10
 	.byte	1,5,22,7,9
-	.half	.L79-.L78
+	.half	.L106-.L105
 	.byte	3,5,1,5,41,9
-	.half	.L80-.L79
+	.half	.L107-.L106
 	.byte	1,5,14,9
-	.half	.L46-.L80
+	.half	.L56-.L107
 	.byte	3,2,1,5,13,9
-	.half	.L81-.L46
+	.half	.L108-.L56
 	.byte	3,1,1,5,17,9
-	.half	.L3-.L81
+	.half	.L9-.L108
 	.byte	3,118,1,7,9
-	.half	.L82-.L3
+	.half	.L109-.L9
 	.byte	3,13,1,5,5,9
-	.half	.L83-.L82
+	.half	.L110-.L109
 	.byte	1,5,9,7,9
-	.half	.L5-.L83
+	.half	.L11-.L110
 	.byte	3,2,1,5,1,9
-	.half	.L47-.L5
+	.half	.L57-.L11
 	.byte	3,6,1,5,18,7,9
-	.half	.L6-.L47
+	.half	.L12-.L57
 	.byte	3,125,1,5,37,9
-	.half	.L84-.L6
+	.half	.L111-.L12
 	.byte	1,5,12,9
-	.half	.L49-.L84
+	.half	.L59-.L111
 	.byte	3,2,1,5,1,9
-	.half	.L85-.L49
+	.half	.L112-.L59
 	.byte	3,1,1,7,9
-	.half	.L32-.L85
+	.half	.L39-.L112
 	.byte	0,1,1
-.L74:
+.L101:
 	.sdecl	'.debug_ranges',debug,cluster('seekfree_wireless_send_buff')
 	.sect	'.debug_ranges'
-.L31:
-	.word	-1,.L13,0,.L32-.L13,0,0
-	.sdecl	'.debug_info',debug,cluster('wireless_rx_buffer')
+.L38:
+	.word	-1,.L20,0,.L39-.L20,0,0
+	.sdecl	'.debug_info',debug,cluster('TwoCarRxFlag')
 	.sect	'.debug_info'
-.L33:
-	.word	205
+.L40:
+	.word	199
 	.half	3
-	.word	.L34
+	.word	.L41
 	.byte	4,1
 	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_WIRELESS.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1,2
-	.word	.L14
+	.word	.L21
 	.byte	3
-	.byte	'wireless_rx_buffer',0,21,39,7
-	.word	.L42
+	.byte	'TwoCarRxFlag',0,21,35,7
+	.word	.L45
+	.byte	1,5,3
+	.word	TwoCarRxFlag
+	.byte	0
+	.sdecl	'.debug_abbrev',debug,cluster('TwoCarRxFlag')
+	.sect	'.debug_abbrev'
+.L41:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
+	.byte	0,0,0
+	.sdecl	'.debug_info',debug,cluster('wireless_rx_buffer')
+	.sect	'.debug_info'
+.L42:
+	.word	205
+	.half	3
+	.word	.L43
+	.byte	4,1
+	.byte	'..\\Libraries\\seekfree_peripheral\\SEEKFREE_WIRELESS.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1,2
+	.word	.L21
+	.byte	3
+	.byte	'wireless_rx_buffer',0,21,36,7
+	.word	.L52
 	.byte	1,5,3
 	.word	wireless_rx_buffer
 	.byte	0
 	.sdecl	'.debug_abbrev',debug,cluster('wireless_rx_buffer')
 	.sect	'.debug_abbrev'
-.L34:
+.L43:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
 	.byte	0,0,0
 	.sdecl	'.debug_loc',debug,cluster('seekfree_wireless_init')
 	.sect	'.debug_loc'
-.L10:
-	.word	-1,.L11,0,.L36-.L11
+.L17:
+	.word	-1,.L18,0,.L46-.L18
 	.half	2
 	.byte	138,0
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('seekfree_wireless_send_buff')
 	.sect	'.debug_loc'
-.L40:
-	.word	-1,.L13,0,.L4-.L13
+.L50:
+	.word	-1,.L20,0,.L10-.L20
 	.half	1
 	.byte	100
-	.word	.L43-.L13,.L38-.L13
+	.word	.L53-.L20,.L48-.L20
 	.half	1
 	.byte	111
-	.word	.L45-.L13,.L46-.L13
+	.word	.L55-.L20,.L56-.L20
 	.half	1
 	.byte	100
-	.word	.L48-.L13,.L49-.L13
+	.word	.L58-.L20,.L59-.L20
 	.half	1
 	.byte	100
 	.word	0,0
-.L41:
-	.word	-1,.L13,0,.L4-.L13
+.L51:
+	.word	-1,.L20,0,.L10-.L20
 	.half	1
 	.byte	84
-	.word	.L44-.L13,.L38-.L13
+	.word	.L54-.L20,.L48-.L20
 	.half	1
 	.byte	88
-	.word	.L47-.L13,.L6-.L13
+	.word	.L57-.L20,.L12-.L20
 	.half	1
 	.byte	82
-	.word	.L50-.L13,.L49-.L13
+	.word	.L60-.L20,.L59-.L20
 	.half	1
 	.byte	85
 	.word	0,0
-.L12:
-	.word	-1,.L13,0,.L38-.L13
+.L19:
+	.word	-1,.L20,0,.L48-.L20
 	.half	2
 	.byte	138,0
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('wireless_uart_callback')
 	.sect	'.debug_loc'
-.L9:
-	.word	-1,.L2,0,.L35-.L2
+.L15:
+	.word	-1,.L16,0,.L44-.L16
 	.half	2
 	.byte	138,0
 	.word	0,0
 	.sdecl	'.debug_frame',debug
 	.sect	'.debug_frame'
-.L86:
+.L113:
 	.word	48
 	.word	-1
 	.byte	3,0,2,1,27,12,26,0,8,27,8,26,8,28,8,29,8,30,8,31,8,34,8,35,8,32,8,33,8,16,8,17,8,24,8,25,8,36,8,37,8,38
@@ -15137,15 +15289,15 @@ wireless_rx_buffer:	.type	object
 	.sdecl	'.debug_frame',debug,cluster('wireless_uart_callback')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L86,.L2,.L35-.L2
+	.word	.L113,.L16,.L44-.L16
 	.sdecl	'.debug_frame',debug,cluster('seekfree_wireless_init')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L86,.L11,.L36-.L11
+	.word	.L113,.L18,.L46-.L18
 	.sdecl	'.debug_frame',debug,cluster('seekfree_wireless_send_buff')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L86,.L13,.L38-.L13
+	.word	.L113,.L20,.L48-.L20
 
 
 	; Module end

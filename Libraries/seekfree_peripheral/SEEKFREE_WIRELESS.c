@@ -32,11 +32,11 @@
 #include "zf_uart.h"
 #include "SEEKFREE_WIRELESS.h"
 
+uint8 TwoCarRxFlag;
+uint8 wireless_rx_buffer[2];
 
 
 
-
-uint8 wireless_rx_buffer;
 //-------------------------------------------------------------------------------------------------------------------
 //  @brief      无线转串口模块 串口中断函数
 //  @param      void
@@ -45,10 +45,24 @@ uint8 wireless_rx_buffer;
 //  Sample usage:	
 //  @note       该函数在ISR文件 串口2中断程序被调用
 //-------------------------------------------------------------------------------------------------------------------
-void wireless_uart_callback(void)
+void wireless_uart_callback(void)  //已修改
 {
-	while(uart_query(WIRELESS_UART, &wireless_rx_buffer));
-	//读取收到的所有数据
+	static uint8 num = 0;
+	while(uart_query(WIRELESS_UART, &wireless_rx_buffer[num]))
+	{
+		if(num == 0 && wireless_rx_buffer[0] != 0xff)
+		{
+			num = 0;
+			continue;
+		}
+		if(1 == num)
+		{
+			num = 0;
+			TwoCarRxFlag = 1;
+			break;
+		}
+		num++;
+	}
 }
 
 
