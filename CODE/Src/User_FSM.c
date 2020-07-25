@@ -176,7 +176,7 @@ void FSMRun(void)
     CarFSM.Size = sizeof(CarTable) / sizeof(FSMTable_t);
     if(ReturnFSMState(&CarFSM) == WaitBall)
     {
-    	//if(TwoCarState())  //≤‚ ‘ ±◊¢ Õ
+    	//if(TwoCarStateJudge())  //≤‚ ‘ ±◊¢ Õ
     		FSMEventHandle(&CarFSM, GETBALL);
     }
     //else if(ReturnFSMState(&CarFSM) == GoLine)

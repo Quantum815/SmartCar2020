@@ -32,12 +32,10 @@
 #include "zf_uart.h"
 #include "SEEKFREE_WIRELESS.h"
 
-uint8 TwoCarReceiveNum;
-uint8 TwoCarRxFlag;
-uint8 wireless_rx_buffer[2];
 
 
 
+uint8 wireless_rx_buffer;
 //-------------------------------------------------------------------------------------------------------------------
 //  @brief      无线转串口模块 串口中断函数
 //  @param      void
@@ -48,18 +46,8 @@ uint8 wireless_rx_buffer[2];
 //-------------------------------------------------------------------------------------------------------------------
 void wireless_uart_callback(void)  //已修改
 {
-	while(uart_query(WIRELESS_UART, &wireless_rx_buffer[TwoCarReceiveNum]))
-	{
-		TwoCarReceiveNum++;
-		if(TwoCarReceiveNum == 1 && wireless_rx_buffer[0] != 0x01)
-			TwoCarReceiveNum = 0;
-		if(2 == TwoCarReceiveNum && wireless_rx_buffer[0] != 0xff)
-		{
-			TwoCarReceiveNum = 0;
-			TwoCarRxFlag = 1;
-			break;
-		}
-	}
+	while(uart_query(WIRELESS_UART, &wireless_rx_buffer));
+	//读取收到的所有数据
 }
 
 

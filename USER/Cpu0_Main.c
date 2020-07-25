@@ -21,7 +21,7 @@
 #include "headfile.h"
 #pragma section all "cpu0_dsram"
 //将本语句与#pragma section all restore语句之间的全局变量都放在CPU0的RAM中
-
+uint8 x;
 #pragma section all restore
 
 //工程导入到软件之后，应该选中工程然后点击refresh刷新一下之后再编译
@@ -39,12 +39,18 @@ void core0_main(void)
 	get_clk();//获取时钟频率  务必保留
 
 	//用户在此处调用各种初始化函数等
-    UserInit();
-
+    //UserInit();
+	TwoCarUARTInit();
+    gpio_init(P21_4, GPO, 1, PUSHPULL);
+    gpio_init(P21_5, GPO, 1, PUSHPULL);
 	enableInterrupts();
 
 	while (TRUE)
 	{
+		if(TwoCarRxFlag == 1)
+			gpio_set(P21_4, 0);
+		else
+			gpio_set(P21_5, 0);
     	//seekfree_sendimg_03x(UART_3, *mt9v03x_image[MT9V03X_H], MT9V03X_W, MT9V03X_H);
 		//ips114_showfloat(0,0,2.222,4,4);
 		//FindLine();

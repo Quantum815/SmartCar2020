@@ -11,9 +11,10 @@
 #include "headfile.h"
 
 extern uint8 TwoCarRxFlag;
-extern uint8 wireless_rx_buffer[2];
 
 void TwoCarUARTInit(void);
-uint8 TwoCarState(void);
+void TwoCarReadData(void);
+void TwoCarSendData(uint8 *buff, uint32 len);
+uint8 TwoCarStateJudge(void);
 
 #endif /* CODE_INC_USER_TWO_CAR_H_ */
