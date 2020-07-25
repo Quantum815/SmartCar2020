@@ -33,7 +33,7 @@ void UserInit(void)
 
 	//≤‚ ‘
 	//DebugUARTInit();
-	//ips114_init();
+	ips114_init();
 }
 
 

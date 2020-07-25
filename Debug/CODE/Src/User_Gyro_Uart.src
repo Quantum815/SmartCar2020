@@ -789,13 +789,13 @@ GyroPID:	.type	func
 
 ; ..\CODE\Src\User_Gyro_Uart.c	   167  
 ; ..\CODE\Src\User_Gyro_Uart.c	   168      LPWMDutyOut = LeftWheelDeadZone + PIDValue;
-	movh	d0,#16576
+	movh	d0,#16672
 .L358:
 	add.f	d5,d15,d0
 .L163:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	   169      RPWMDutyOut = RightWheelDeadZone - PIDValue;
-	movh	d0,#16608
+	movh	d0,#16544
 .L359:
 	sub.f	d8,d0,d15
 .L154:

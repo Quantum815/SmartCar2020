@@ -32,9 +32,9 @@ void CountDistance(void)
 	CurDistance = (CurLdistance + CurRdistance) / 2;
 	TotalDistance += CurDistance;
 
-	//printf("L  %lf	",CurLdistance);  //≤‚ ‘
-	//printf("R  %lf	",CurRdistance);  //≤‚ ‘
-	//printf("%lf\r\n",TotalDistance);  //≤‚ ‘
+	printf("L  %lf	",CurLdistance);  //≤‚ ‘
+	printf("R  %lf	",CurRdistance);  //≤‚ ‘
+	printf("%lf\r\n",TotalDistance);  //≤‚ ‘
 
 	gpt12_clear(GPT12_T2);
 	gpt12_clear(GPT12_T6);

@@ -45,6 +45,7 @@ void core0_main(void)
 
 	while (TRUE)
 	{
+    	//seekfree_sendimg_03x(UART_3, *mt9v03x_image[MT9V03X_H], MT9V03X_W, MT9V03X_H);
 		//ips114_showfloat(0,0,2.222,4,4);
 		//FindLine();
 		//GyroI2CReadByte();
@@ -63,12 +64,16 @@ void core0_main(void)
 
 
 		//ips114_showchar(50,50,'t');
+		//MotorUserHandle(RMotor_B, 00);
+		//MotorUserHandle(LMotor_F, 20);
+		///systick_delay_ms(STM0, 2000);
+		//MotorUserHandle(LMotor_F, 10);
 		//MotorUserHandle(LMotor_B, 20);
 		//systick_delay_ms(STM0, 2000);
-		//MotorUserHandle(RMotor_B, 20);
-		//systick_delay_ms(STM0, 2000);
-		//MotorUserHandle(RMotor_F, 7);
-		//systick_delay_ms(STM0, 2000);
+		//MotorUserHandle(LMotor_B, 0);
+		//MotorUserHandle(RMotor_F, 7.2);
+		///systick_delay_ms(STM0, 2000);
+		//MotorUserHandle(RMotor_F, 0);
 		//MotorUserHandle(RMotor_B, 20);
 		//systick_delay_ms(STM0, 2000);
 		//uart_putstr(UART_0, "xxxxx");
