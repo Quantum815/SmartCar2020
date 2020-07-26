@@ -22,16 +22,16 @@
 #include "isr.h"
 //在isr.c的中断函数，函数定义的第二个参数固定为0，请不要更改，即使你用CPU1处理中断也不要更改，需要CPU1处理中断只需要在isr_config.h内修改对应的宏定义即可
 
-//int i;
+int i;
 
 //PIT中断函数  示例
 IFX_INTERRUPT(cc60_pit_ch0_isr, 0, CCU6_0_CH0_ISR_PRIORITY)  //主程序
 {
 	enableInterrupts();//开启中断嵌套
 	PIT_CLEAR_FLAG(CCU6_0, PIT_CH0);
-	//ADCcalculateMidLine();
+	ADCcalculateMidLine();
 	//CameraProcess();
-	//FSMRun();
+	FSMRun();
 }
 
 
@@ -39,28 +39,28 @@ IFX_INTERRUPT(cc60_pit_ch1_isr, 0, CCU6_0_CH1_ISR_PRIORITY)  //摄像头  LED1
 {
 	enableInterrupts();//开启中断嵌套
 	PIT_CLEAR_FLAG(CCU6_0, PIT_CH1);
-	//i++;
-	//if(i == CPU1TIMES)
-	//{
-		//gpio_toggle(P21_4);
-		//i = 0;
-	//}
+	i++;
+	if(i == CPU1TIMES)
+	{
+		gpio_toggle(P21_4);
+		i = 0;
+	}
 }
 
 IFX_INTERRUPT(cc61_pit_ch0_isr, 0, CCU6_1_CH0_ISR_PRIORITY)  //数据获取
 {
 	enableInterrupts();//开启中断嵌套
 	PIT_CLEAR_FLAG(CCU6_1, PIT_CH0);
-	//UpdateADCValue();
-	//CountDistance();
-	//GyroCalculate();
+	UpdateADCValue();
+	CountDistance();
+	GyroCalculate();
 }
 
 IFX_INTERRUPT(cc61_pit_ch1_isr, 0, CCU6_1_CH1_ISR_PRIORITY)  //LED0
 {
 	enableInterrupts();//开启中断嵌套
 	PIT_CLEAR_FLAG(CCU6_1, PIT_CH1);
-	//gpio_toggle(P20_9);
+	gpio_toggle(P20_9);
 }
 
 
@@ -150,7 +150,7 @@ IFX_INTERRUPT(uart0_rx_isr, 0, UART0_RX_INT_PRIO)
 {
 	enableInterrupts();//开启中断嵌套
     IfxAsclin_Asc_isrReceive(&uart0_handle);
-    //GyroUARTReadByte();
+    GyroUARTReadByte();
 }
 IFX_INTERRUPT(uart0_er_isr, 0, UART0_ER_INT_PRIO)
 {
@@ -168,7 +168,7 @@ IFX_INTERRUPT(uart1_rx_isr, 0, UART1_RX_INT_PRIO)
 {
 	enableInterrupts();//开启中断嵌套
     IfxAsclin_Asc_isrReceive(&uart1_handle);
-    //mt9v03x_uart_callback();
+    mt9v03x_uart_callback();
 }
 IFX_INTERRUPT(uart1_er_isr, 0, UART1_ER_INT_PRIO)
 {

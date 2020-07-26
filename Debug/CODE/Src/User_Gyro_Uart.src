@@ -342,7 +342,7 @@ GyroCalculate:	.type	func
 .L256:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    67  		{
-; ..\CODE\Src\User_Gyro_Uart.c	    68  			printf("RECEIVE ERROR!");
+; ..\CODE\Src\User_Gyro_Uart.c	    68  			printf("RECEIVE ERROR!\n");
 	movh.a	a4,#@his(.1.str)
 	lea	a4,[a4]@los(.1.str)
 	call	printf
@@ -795,7 +795,8 @@ GyroPID:	.type	func
 .L163:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	   169      RPWMDutyOut = RightWheelDeadZone - PIDValue;
-	movh	d0,#16544
+	mov	d0,#26214
+	addih	d0,d0,#16646
 .L359:
 	sub.f	d8,d0,d15
 .L154:
@@ -948,11 +949,11 @@ FirstPitchAngle:	.type	object
 	.sdecl	'.rodata.User_Gyro_Uart..1.str',data,rom
 	.sect	'.rodata.User_Gyro_Uart..1.str'
 .1.str:	.type	object
-	.size	.1.str,15
+	.size	.1.str,16
 	.byte	82,69,67,69
 	.byte	73,86,69,32
 	.byte	69,82,82,79
-	.byte	82,33
+	.byte	82,33,10
 	.space	1
 	.sdecl	'.data.User_Gyro_Uart._999001_previousError',data,cluster('_999001_previousError')
 	.sect	'.data.User_Gyro_Uart._999001_previousError'

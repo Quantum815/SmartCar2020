@@ -65,7 +65,7 @@ void GyroCalculate(void)
 		sum += GyroRxBuff[9];
 		if(sum != GyroRxBuff[10])
 		{
-			printf("RECEIVE ERROR!");
+			printf("RECEIVE ERROR!\n");
 			GyroRxFlag = 0;
 			GyroReceiveNum = 0;
 			return;

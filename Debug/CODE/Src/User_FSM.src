@@ -111,15 +111,15 @@ FindLine:	.type	func
 ; ..\CODE\Src\User_FSM.c	    51  {
 ; ..\CODE\Src\User_FSM.c	    52  	//static uint8 uphillCount = 0, downhillCount = 0;
 ; ..\CODE\Src\User_FSM.c	    53  
-; ..\CODE\Src\User_FSM.c	    54  	PIDValue = GetPIDValue(-0.000133, MidLineFuseNum*1000, FINDLINE_P, FINDLINE_I, FINDLINE_D);
+; ..\CODE\Src\User_FSM.c	    54  	PIDValue = GetPIDValue(0.002058, MidLineFuseNum*1000, FINDLINE_P, FINDLINE_I, FINDLINE_D);
 	movh.a	a15,#@his(PIDValue)
 .L172:
-	mov.u	d15,#40960
-	addih	d15,d15,#18060
+	mov	d15,#24576
+	addih	d15,d15,#18026
 	st.w	[a10],d15
 .L173:
-	mov	d4,#30186
-	addih	d4,d4,#47371
+	mov.u	d4,#57219
+	addih	d4,d4,#15110
 .L174:
 	movh.a	a2,#@his(MidLineFuseNum)
 	ld.w	d15,[a2]@los(MidLineFuseNum)
@@ -128,7 +128,7 @@ FindLine:	.type	func
 .L176:
 	mul.f	d5,d15,d0
 .L177:
-	movh	d6,#16920
+	movh	d6,#16984
 .L178:
 	mov	d7,#0
 	call	GetPIDValue
@@ -166,7 +166,7 @@ FindLine:	.type	func
 	movh.a	a2,#@his(PIDValue)
 	ld.w	d15,[a2]@los(PIDValue)
 .L182:
-	movh	d0,#16792
+	movh	d0,#16768
 .L183:
 	add.f	d0,d15,d0
 .L184:
@@ -176,7 +176,8 @@ FindLine:	.type	func
 ; ..\CODE\Src\User_FSM.c	    80  	    RPWM = RightWheelDeadZone + RightNormalSpeed - PIDValue;
 	movh.a	a2,#@his(RPWM)
 .L186:
-	movh	d0,#16736
+	mov	d0,#26214
+	addih	d0,d0,#16742
 .L187:
 	sub.f	d15,d0,d15
 .L188:
@@ -35362,19 +35363,19 @@ StartFlag:	.type	object
 	.word	.L25
 	.byte	3,49,1,5,2,9
 	.half	.L143-.L25
-	.byte	3,4,1,5,81,9
+	.byte	3,4,1,5,80,9
 	.half	.L172-.L143
 	.byte	1,5,25,9
 	.half	.L173-.L172
-	.byte	1,5,36,9
+	.byte	1,5,35,9
 	.half	.L174-.L173
-	.byte	1,5,51,9
-	.half	.L175-.L174
 	.byte	1,5,50,9
+	.half	.L175-.L174
+	.byte	1,5,49,9
 	.half	.L176-.L175
-	.byte	1,5,57,9
+	.byte	1,5,56,9
 	.half	.L177-.L176
-	.byte	1,5,69,9
+	.byte	1,5,68,9
 	.half	.L178-.L177
 	.byte	1,5,11,9
 	.half	.L179-.L178

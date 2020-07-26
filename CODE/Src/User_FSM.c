@@ -51,7 +51,7 @@ void FindLine(void)
 {
 	//static uint8 uphillCount = 0, downhillCount = 0;
 
-	PIDValue = GetPIDValue(-0.000133, MidLineFuseNum*1000, FINDLINE_P, FINDLINE_I, FINDLINE_D);
+	PIDValue = GetPIDValue(0.002058, MidLineFuseNum*1000, FINDLINE_P, FINDLINE_I, FINDLINE_D);
 	//printf("%f\r\n",PIDValue);
 	//if(PitchAngle - FirstPitchAngle <= -3)
 	//{

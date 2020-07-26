@@ -25,7 +25,7 @@ void TwoCarReadData(void)
 {
 	while(uart_query(WIRELESS_UART, &TwoCarRxBuff[TwoCarReceiveNum]))
 	{
-		uart_putstr(WIRELESS_UART, "test");
+		//uart_putstr(WIRELESS_UART, "test");
 		TwoCarReceiveNum++;
 		if(TwoCarReceiveNum == 1 && TwoCarRxBuff[0] != 0x01)
 			TwoCarReceiveNum = 0;
@@ -35,6 +35,7 @@ void TwoCarReadData(void)
 				TwoCarReceiveNum = 0;
 			else
 			{
+				//uart_putstr(WIRELESS_UART, "success");
 				TwoCarReceiveNum = 0;
 				TwoCarRxFlag = 1;
 				break;

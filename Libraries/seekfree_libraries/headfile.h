@@ -106,11 +106,11 @@
 
 //车轮启动死区PWM占空比
 #define LeftWheelDeadZone 10
-#define RightWheelDeadZone 5
+#define RightWheelDeadZone 8.4
 
 //正常车速PWM占空比
-#define LeftNormalSpeed 9
-#define RightNormalSpeed 9
+#define LeftNormalSpeed 6
+#define RightNormalSpeed 6
 
 //上坡车速PWM占空比
 #define LeftUphillSpeed 15
@@ -129,9 +129,9 @@
 #define RightInGarageSpeed 8
 
 //正常巡线PID
-#define FINDLINE_P 38
+#define FINDLINE_P 54
 #define FINDLINE_I 0
-#define FINDLINE_D 18000
+#define FINDLINE_D 15000
 
 //圆环巡线PID
 #define GYRO_P 0
