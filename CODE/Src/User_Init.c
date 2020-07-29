@@ -32,9 +32,9 @@ void UserInit(void)
 	//GyroYawAngleInit();
 
 	//≤‚ ‘
-	//DebugUARTInit();
-	ips114_init();
-	//mt9v03x_init();
+	gpio_init(P20_8, GPO, 1, PUSHPULL);
+	DebugUARTInit();
+	//ips114_init();
 }
 
 

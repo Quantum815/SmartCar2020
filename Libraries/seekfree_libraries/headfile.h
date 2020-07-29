@@ -82,14 +82,12 @@
 #include "..\CODE\Inc\User_Two_Car.h"
 
 //------预处理内容
-//是否使用摄像头
-//#define USECARMERA
 
 //是否使用陀螺仪I2C
 //#define USEGYROI2C
 
 //是否使用图像处理
-//#define IMAGEPROCESS
+#define IMAGEPROCESS
 
 //进程中断时间
 #define MainProcessTime 10
@@ -105,20 +103,16 @@
 #define WHEEL_DIAMETER 62
 
 //车轮启动死区PWM占空比
-#define LeftWheelDeadZone 10
-#define RightWheelDeadZone 8.4
+#define LeftWheelDeadZone 0
+#define RightWheelDeadZone 0
+
+//车轮刹车死区PWM占空比
+#define LeftWheelBrakeZone -5
+#define RightWheelBrakeZone -5
 
 //正常车速PWM占空比
-#define LeftNormalSpeed 6
-#define RightNormalSpeed 6
-
-//上坡车速PWM占空比
-#define LeftUphillSpeed 15
-#define RightUphillSpeed 15
-
-//下坡车速PWM占空比
-#define LeftDownhillSpeed 2
-#define RightDownhillSpeed 2
+#define LeftNormalSpeed 0
+#define RightNormalSpeed 0
 
 //圆环车速PWM占空比
 #define LeftCircleSpeed 8
@@ -127,6 +121,9 @@
 //入库车速PWM占空比
 #define LeftInGarageSpeed 8
 #define RightInGarageSpeed 8
+
+//入库摄像头二值化校正值
+#define InGarageAdjustedValue 20
 
 //正常巡线PID
 #define FINDLINE_P 54

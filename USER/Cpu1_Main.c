@@ -32,11 +32,16 @@ void core1_main(void)
 
     //用户在此处调用各种初始化函数等
     UserCameraInit();
-
     enableInterrupts();
+
     while (TRUE)
     {
-
+    	if(mt9v03x_finish_flag)
+    	{
+    		//ips114_displayimage032(mt9v03x_image[0], MT9V03X_W, MT9V03X_H);
+    		seekfree_sendimg_03x(UART_3, mt9v03x_image[0], MT9V03X_W, MT9V03X_H);
+    		mt9v03x_finish_flag = 0;
+    	}
     }
 }
 

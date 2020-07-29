@@ -30,8 +30,7 @@ IFX_INTERRUPT(cc60_pit_ch0_isr, 0, CCU6_0_CH0_ISR_PRIORITY)  //主程序
 	enableInterrupts();//开启中断嵌套
 	PIT_CLEAR_FLAG(CCU6_0, PIT_CH0);
 	ADCcalculateMidLine();
-	//CameraProcess();
-	FSMRun();
+	//FSMRun();
 }
 
 
@@ -39,6 +38,12 @@ IFX_INTERRUPT(cc60_pit_ch1_isr, 0, CCU6_0_CH1_ISR_PRIORITY)  //摄像头  LED1
 {
 	enableInterrupts();//开启中断嵌套
 	PIT_CLEAR_FLAG(CCU6_0, PIT_CH1);
+	//if(mt9v03x_finish_flag)
+	//{
+		//ips114_displayimage032(mt9v03x_image[0], MT9V03X_W, MT9V03X_H);
+		//seekfree_sendimg_03x(UART_3, mt9v03x_image[0], MT9V03X_W, MT9V03X_H);
+		//mt9v03x_finish_flag = 0;
+	//}
 	i++;
 	if(i == CPU1TIMES)
 	{
@@ -54,6 +59,9 @@ IFX_INTERRUPT(cc61_pit_ch0_isr, 0, CCU6_1_CH0_ISR_PRIORITY)  //数据获取
 	UpdateADCValue();
 	CountDistance();
 	GyroCalculate();
+	//ips114_showfloat(0,0,PitchAngle,4,4);
+	//ips114_showfloat(0,1,RollAngle,4,4);
+	//ips114_showfloat(0,2,YawAngle,4,4);
 }
 
 IFX_INTERRUPT(cc61_pit_ch1_isr, 0, CCU6_1_CH1_ISR_PRIORITY)  //LED0

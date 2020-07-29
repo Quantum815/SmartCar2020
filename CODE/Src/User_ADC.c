@@ -23,11 +23,17 @@ void ADCInit(void)
 }
 void UpdateADCValue(void)
 {
+	int i;
 	ADCValue[0] = adc_convert(ADC_0, ADC0_CH0_A0, ADC_12BIT);
 	ADCValue[1] = adc_convert(ADC_0, ADC0_CH1_A1, ADC_12BIT);
 	ADCValue[2] = adc_convert(ADC_0, ADC0_CH2_A2, ADC_12BIT);
 	ADCValue[3] = adc_convert(ADC_0, ADC0_CH3_A3, ADC_12BIT);
 	ADCValue[4] = adc_convert(ADC_0, ADC0_CH4_A4, ADC_12BIT);
+	for(i=0; i<5; i++)
+	{
+		if(ADCValue[i] <= 15)
+			ADCValue[i] = 0;
+	}
 }
 
 int16 ADCValueHandle(uint8 num)
@@ -42,6 +48,9 @@ void ADCcalculateMidLine(void)
 	float Lsqrt, Rsqrt;
 	Lsqrt = sqrt(ADCValueHandle(0));
 	Rsqrt = sqrt(ADCValueHandle(4));
-	MidLineFuseNum = (Lsqrt-Rsqrt)/(ADCValueHandle(0)+ADCValueHandle(4));
+	if(Lsqrt + Rsqrt == 0)
+		MidLineFuseNum = 0;
+	else
+		MidLineFuseNum = (Lsqrt-Rsqrt)/(ADCValueHandle(0)+ADCValueHandle(4));
 	//printf("%lf\r\n", MidLineFuseNum);
 }

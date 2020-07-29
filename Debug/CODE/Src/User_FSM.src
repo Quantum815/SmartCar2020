@@ -7,8 +7,8 @@
 	
 $TC16X
 	
-	.sdecl	'.text.cpu0_psram',code,cluster('RunStop')
-	.sect	'.text.cpu0_psram'
+	.sdecl	'.text.User_FSM.RunStop',code,cluster('RunStop')
+	.sect	'.text.User_FSM.RunStop'
 	.align	2
 	
 	.global	RunStop
@@ -49,39 +49,38 @@ $TC16X
 ; ..\CODE\Src\User_FSM.c	    34  
 ; ..\CODE\Src\User_FSM.c	    35  #pragma section all restore
 ; ..\CODE\Src\User_FSM.c	    36  
-; ..\CODE\Src\User_FSM.c	    37  #pragma section all "cpu0_psram"
-; ..\CODE\Src\User_FSM.c	    38  
-; ..\CODE\Src\User_FSM.c	    39  //事件反应函数
-; ..\CODE\Src\User_FSM.c	    40  void RunStop(void)
+; ..\CODE\Src\User_FSM.c	    37  
+; ..\CODE\Src\User_FSM.c	    38  //事件反应函数
+; ..\CODE\Src\User_FSM.c	    39  void RunStop(void)
 ; Function RunStop
 .L23:
 RunStop:	.type	func
 
-; ..\CODE\Src\User_FSM.c	    41  {
-; ..\CODE\Src\User_FSM.c	    42  	MotorUserHandle(LMotor_F, 0);
+; ..\CODE\Src\User_FSM.c	    40  {
+; ..\CODE\Src\User_FSM.c	    41  	MotorUserHandle(LMotor_F, 0);
 	mov	d4,#0
 .L161:
 	mov	d5,d4
 	call	MotorUserHandle
 .L162:
 
-; ..\CODE\Src\User_FSM.c	    43  	MotorUserHandle(RMotor_F, 0);
+; ..\CODE\Src\User_FSM.c	    42  	MotorUserHandle(RMotor_F, 0);
 	mov	d4,#2
 .L163:
 	mov	d5,#0
 	call	MotorUserHandle
 .L164:
 
-; ..\CODE\Src\User_FSM.c	    44  	//MotorUserHandle(LMotor_B, 80);
-; ..\CODE\Src\User_FSM.c	    45  	//MotorUserHandle(RMotor_B, 80);
-; ..\CODE\Src\User_FSM.c	    46  	MotorUserHandle(LMotor_B, 0);
+; ..\CODE\Src\User_FSM.c	    43  	//MotorUserHandle(LMotor_B, 80);
+; ..\CODE\Src\User_FSM.c	    44  	//MotorUserHandle(RMotor_B, 80);
+; ..\CODE\Src\User_FSM.c	    45  	MotorUserHandle(LMotor_B, 0);
 	mov	d4,#1
 .L165:
 	mov	d5,#0
 	call	MotorUserHandle
 .L166:
 
-; ..\CODE\Src\User_FSM.c	    47  	MotorUserHandle(RMotor_B, 0);
+; ..\CODE\Src\User_FSM.c	    46  	MotorUserHandle(RMotor_B, 0);
 	mov	d4,#3
 .L167:
 	mov	d5,#0
@@ -93,25 +92,23 @@ __RunStop_function_end:
 .L50:
 	; End of function
 	
-	.sdecl	'.text.cpu0_psram',code,cluster('FindLine')
-	.sect	'.text.cpu0_psram'
+	.sdecl	'.text.User_FSM.FindLine',code,cluster('FindLine')
+	.sect	'.text.User_FSM.FindLine'
 	.align	2
 	
 	.global	FindLine
 
-; ..\CODE\Src\User_FSM.c	    48  }
-; ..\CODE\Src\User_FSM.c	    49  
-; ..\CODE\Src\User_FSM.c	    50  void FindLine(void)
+; ..\CODE\Src\User_FSM.c	    47  }
+; ..\CODE\Src\User_FSM.c	    48  
+; ..\CODE\Src\User_FSM.c	    49  void FindLine(void)
 ; Function FindLine
 .L25:
 FindLine:	.type	func
 	sub.a	a10,#8
 .L143:
 
-; ..\CODE\Src\User_FSM.c	    51  {
-; ..\CODE\Src\User_FSM.c	    52  	//static uint8 uphillCount = 0, downhillCount = 0;
-; ..\CODE\Src\User_FSM.c	    53  
-; ..\CODE\Src\User_FSM.c	    54  	PIDValue = GetPIDValue(0.002058, MidLineFuseNum*1000, FINDLINE_P, FINDLINE_I, FINDLINE_D);
+; ..\CODE\Src\User_FSM.c	    50  {
+; ..\CODE\Src\User_FSM.c	    51  	PIDValue = GetPIDValue(0.002058, MidLineFuseNum*1000, FINDLINE_P, FINDLINE_I, FINDLINE_D);
 	movh.a	a15,#@his(PIDValue)
 .L172:
 	mov	d15,#24576
@@ -136,126 +133,95 @@ FindLine:	.type	func
 	st.w	[a15]@los(PIDValue),d2
 .L180:
 
-; ..\CODE\Src\User_FSM.c	    55  	//printf("%f\r\n",PIDValue);
-; ..\CODE\Src\User_FSM.c	    56  	//if(PitchAngle - FirstPitchAngle <= -3)
-; ..\CODE\Src\User_FSM.c	    57  	//{
-; ..\CODE\Src\User_FSM.c	    58  		//uphillCount++;
-; ..\CODE\Src\User_FSM.c	    59  		//if(uphillCount == 10)
-; ..\CODE\Src\User_FSM.c	    60  		//{
-; ..\CODE\Src\User_FSM.c	    61  			//LPWM = LeftWheelDeadZone + LeftUphillSpeed + PIDValue;
-; ..\CODE\Src\User_FSM.c	    62  		   //RPWM = RightWheelDeadZone + RightUphillSpeed - PIDValue;
-; ..\CODE\Src\User_FSM.c	    63  		    //uphillCount = 0;
-; ..\CODE\Src\User_FSM.c	    64  		//}
-; ..\CODE\Src\User_FSM.c	    65  
-; ..\CODE\Src\User_FSM.c	    66  	//}
-; ..\CODE\Src\User_FSM.c	    67  	//else if(PitchAngle - FirstPitchAngle >= 3)
-; ..\CODE\Src\User_FSM.c	    68  	//{
-; ..\CODE\Src\User_FSM.c	    69  		//downhillCount++;
-; ..\CODE\Src\User_FSM.c	    70  		//if(downhillCount == 10)
-; ..\CODE\Src\User_FSM.c	    71  		//{
-; ..\CODE\Src\User_FSM.c	    72  			//LPWM = LeftWheelDeadZone + LeftDownhillSpeed + PIDValue;
-; ..\CODE\Src\User_FSM.c	    73  			//RPWM = RightWheelDeadZone + RightDownhillSpeed - PIDValue;
-; ..\CODE\Src\User_FSM.c	    74  			//downhillCount = 0;
-; ..\CODE\Src\User_FSM.c	    75  		//}
-; ..\CODE\Src\User_FSM.c	    76  	//}
-; ..\CODE\Src\User_FSM.c	    77  	//else
-; ..\CODE\Src\User_FSM.c	    78  	//{
-; ..\CODE\Src\User_FSM.c	    79  		LPWM = LeftWheelDeadZone + LeftNormalSpeed + PIDValue;
+; ..\CODE\Src\User_FSM.c	    52  	//printf("%f\r\n",PIDValue);
+; ..\CODE\Src\User_FSM.c	    53  	LPWM = LeftWheelDeadZone + LeftNormalSpeed + PIDValue;
 	movh.a	a15,#@his(LPWM)
 .L181:
 	movh.a	a2,#@his(PIDValue)
 	ld.w	d15,[a2]@los(PIDValue)
 .L182:
-	movh	d0,#16768
+	st.w	[a15]@los(LPWM),d15
 .L183:
-	add.f	d0,d15,d0
-.L184:
-	st.w	[a15]@los(LPWM),d0
-.L185:
 
-; ..\CODE\Src\User_FSM.c	    80  	    RPWM = RightWheelDeadZone + RightNormalSpeed - PIDValue;
+; ..\CODE\Src\User_FSM.c	    54  	RPWM = RightWheelDeadZone + RightNormalSpeed - PIDValue;
 	movh.a	a2,#@his(RPWM)
-.L186:
-	mov	d0,#26214
-	addih	d0,d0,#16742
-.L187:
-	sub.f	d15,d0,d15
-.L188:
+.L184:
+	insn.t	d15,d15:31,d15:31
+.L185:
 	st.w	[a2]@los(RPWM),d15
-.L189:
+.L186:
 
-; ..\CODE\Src\User_FSM.c	    81  	//}
-; ..\CODE\Src\User_FSM.c	    82  
-; ..\CODE\Src\User_FSM.c	    83      if(LPWM >= 30)
+; ..\CODE\Src\User_FSM.c	    55  
+; ..\CODE\Src\User_FSM.c	    56      if(LPWM >= 30)
 	ld.w	d15,[a15]@los(LPWM)
-.L190:
+.L187:
 	movh	d0,#16880
-.L191:
+.L188:
 	cmp.f	d15,d15,d0
 	and	d15,#6
-.L192:
+.L189:
 	jne	d15,#0,.L3
-.L193:
+.L190:
 
-; ..\CODE\Src\User_FSM.c	    84          LPWM = 30;
-; ..\CODE\Src\User_FSM.c	    85      else if(LPWM <= -30)
+; ..\CODE\Src\User_FSM.c	    57          LPWM = 30;
+; ..\CODE\Src\User_FSM.c	    58      else if(LPWM <= -30)
 	ld.w	d15,[a15]@los(LPWM)
-.L194:
+.L191:
 	movh	d0,#49648
-.L195:
+.L192:
 	cmp.f	d15,d15,d0
 	and	d15,#3
-.L196:
+.L193:
 	jeq	d15,#0,.L4
 .L3:
 
-; ..\CODE\Src\User_FSM.c	    86          LPWM = -30;
+; ..\CODE\Src\User_FSM.c	    59          LPWM = -30;
 	st.w	[a15]@los(LPWM),d0
 .L4:
 
-; ..\CODE\Src\User_FSM.c	    87      if(RPWM >= 30)
+; ..\CODE\Src\User_FSM.c	    60      if(RPWM >= 30)
 	mov.aa	a15,a2
 	ld.w	d15,[a15]@los(RPWM)
-.L197:
+.L194:
 	movh	d0,#16880
-.L198:
+.L195:
 	cmp.f	d15,d15,d0
 	and	d15,#6
-.L199:
+.L196:
 	jne	d15,#0,.L6
-.L200:
+.L197:
 
-; ..\CODE\Src\User_FSM.c	    88          RPWM = 30;
-; ..\CODE\Src\User_FSM.c	    89      else if(RPWM <= -30)
+; ..\CODE\Src\User_FSM.c	    61          RPWM = 30;
+; ..\CODE\Src\User_FSM.c	    62      else if(RPWM <= -30)
 	ld.w	d15,[a15]@los(RPWM)
-.L201:
+.L198:
 	movh	d0,#49648
-.L202:
+.L199:
 	cmp.f	d15,d15,d0
 	and	d15,#3
-.L203:
+.L200:
 	jeq	d15,#0,.L7
 .L6:
 
-; ..\CODE\Src\User_FSM.c	    90          RPWM = -30;
+; ..\CODE\Src\User_FSM.c	    63          RPWM = -30;
 	st.w	[a15]@los(RPWM),d0
 .L7:
 
-; ..\CODE\Src\User_FSM.c	    91      MotorUserHandle(LMotor_F, LPWM);
+; ..\CODE\Src\User_FSM.c	    64      MotorUserHandle(LMotor_F, LPWM);
 	movh.a	a15,#@his(LPWM)
 	ld.w	d5,[a15]@los(LPWM)
-.L204:
+.L201:
 	mov	d4,#0
-.L205:
+.L202:
 	call	MotorUserHandle
-.L206:
+.L203:
 
-; ..\CODE\Src\User_FSM.c	    92      MotorUserHandle(RMotor_F, RPWM);
+; ..\CODE\Src\User_FSM.c	    65      MotorUserHandle(RMotor_F, RPWM);
 	movh.a	a15,#@his(RPWM)
 	ld.w	d5,[a15]@los(RPWM)
-.L207:
+.L204:
 	mov	d4,#2
-.L208:
+.L205:
 	j	MotorUserHandle
 .L111:
 	
@@ -264,22 +230,22 @@ __FindLine_function_end:
 .L55:
 	; End of function
 	
-	.sdecl	'.text.cpu0_psram',code,cluster('InRoundaboutProcess')
-	.sect	'.text.cpu0_psram'
+	.sdecl	'.text.User_FSM.InRoundaboutProcess',code,cluster('InRoundaboutProcess')
+	.sect	'.text.User_FSM.InRoundaboutProcess'
 	.align	2
 	
 	.global	InRoundaboutProcess
 
-; ..\CODE\Src\User_FSM.c	    93  }
-; ..\CODE\Src\User_FSM.c	    94  
-; ..\CODE\Src\User_FSM.c	    95  void InRoundaboutProcess(void)
+; ..\CODE\Src\User_FSM.c	    66  }
+; ..\CODE\Src\User_FSM.c	    67  
+; ..\CODE\Src\User_FSM.c	    68  void InRoundaboutProcess(void)
 ; Function InRoundaboutProcess
 .L27:
 InRoundaboutProcess:	.type	func
 
-; ..\CODE\Src\User_FSM.c	    96  {
-; ..\CODE\Src\User_FSM.c	    97  
-; ..\CODE\Src\User_FSM.c	    98  }
+; ..\CODE\Src\User_FSM.c	    69  {
+; ..\CODE\Src\User_FSM.c	    70  
+; ..\CODE\Src\User_FSM.c	    71  }
 	ret
 .L112:
 	
@@ -288,21 +254,21 @@ __InRoundaboutProcess_function_end:
 .L60:
 	; End of function
 	
-	.sdecl	'.text.cpu0_psram',code,cluster('OutRoundaboutProcess')
-	.sect	'.text.cpu0_psram'
+	.sdecl	'.text.User_FSM.OutRoundaboutProcess',code,cluster('OutRoundaboutProcess')
+	.sect	'.text.User_FSM.OutRoundaboutProcess'
 	.align	2
 	
 	.global	OutRoundaboutProcess
 
-; ..\CODE\Src\User_FSM.c	    99  
-; ..\CODE\Src\User_FSM.c	   100  void OutRoundaboutProcess(void)
+; ..\CODE\Src\User_FSM.c	    72  
+; ..\CODE\Src\User_FSM.c	    73  void OutRoundaboutProcess(void)
 ; Function OutRoundaboutProcess
 .L29:
 OutRoundaboutProcess:	.type	func
 
-; ..\CODE\Src\User_FSM.c	   101  {
-; ..\CODE\Src\User_FSM.c	   102  
-; ..\CODE\Src\User_FSM.c	   103  }
+; ..\CODE\Src\User_FSM.c	    74  {
+; ..\CODE\Src\User_FSM.c	    75  
+; ..\CODE\Src\User_FSM.c	    76  }
 	ret
 .L113:
 	
@@ -311,21 +277,22 @@ __OutRoundaboutProcess_function_end:
 .L65:
 	; End of function
 	
-	.sdecl	'.text.cpu0_psram',code,cluster('GoGarage')
-	.sect	'.text.cpu0_psram'
+	.sdecl	'.text.User_FSM.GoGarage',code,cluster('GoGarage')
+	.sect	'.text.User_FSM.GoGarage'
 	.align	2
 	
 	.global	GoGarage
 
-; ..\CODE\Src\User_FSM.c	   104  
-; ..\CODE\Src\User_FSM.c	   105  void GoGarage(void)
+; ..\CODE\Src\User_FSM.c	    77  
+; ..\CODE\Src\User_FSM.c	    78  void GoGarage(void)
 ; Function GoGarage
 .L31:
 GoGarage:	.type	func
 
-; ..\CODE\Src\User_FSM.c	   106  {
-; ..\CODE\Src\User_FSM.c	   107  
-; ..\CODE\Src\User_FSM.c	   108  }
+; ..\CODE\Src\User_FSM.c	    79  {
+; ..\CODE\Src\User_FSM.c	    80  	if(EnterGarageFlag)
+; ..\CODE\Src\User_FSM.c	    81  		;
+; ..\CODE\Src\User_FSM.c	    82  }
 	ret
 .L114:
 	
@@ -334,31 +301,31 @@ __GoGarage_function_end:
 .L70:
 	; End of function
 	
-	.sdecl	'.text.cpu0_psram',code,cluster('FSMRegist')
-	.sect	'.text.cpu0_psram'
+	.sdecl	'.text.User_FSM.FSMRegist',code,cluster('FSMRegist')
+	.sect	'.text.User_FSM.FSMRegist'
 	.align	2
 	
 	.global	FSMRegist
 
-; ..\CODE\Src\User_FSM.c	   109  
-; ..\CODE\Src\User_FSM.c	   110  
-; ..\CODE\Src\User_FSM.c	   111  //*********************************************************
-; ..\CODE\Src\User_FSM.c	   112  //状态机功能函数
-; ..\CODE\Src\User_FSM.c	   113  //
-; ..\CODE\Src\User_FSM.c	   114  //函数作用：状态机注册
-; ..\CODE\Src\User_FSM.c	   115  //
-; ..\CODE\Src\User_FSM.c	   116  //****************
-; ..\CODE\Src\User_FSM.c	   117  void FSMRegist(FSM_t *fsm, FSMTable_t *fsmtable)
+; ..\CODE\Src\User_FSM.c	    83  
+; ..\CODE\Src\User_FSM.c	    84  
+; ..\CODE\Src\User_FSM.c	    85  //*********************************************************
+; ..\CODE\Src\User_FSM.c	    86  //状态机功能函数
+; ..\CODE\Src\User_FSM.c	    87  //
+; ..\CODE\Src\User_FSM.c	    88  //函数作用：状态机注册
+; ..\CODE\Src\User_FSM.c	    89  //
+; ..\CODE\Src\User_FSM.c	    90  //****************
+; ..\CODE\Src\User_FSM.c	    91  void FSMRegist(FSM_t *fsm, FSMTable_t *fsmtable)
 ; Function FSMRegist
 .L33:
 FSMRegist:	.type	func
 
-; ..\CODE\Src\User_FSM.c	   118  {
-; ..\CODE\Src\User_FSM.c	   119      fsm->FsmTable = fsmtable;
+; ..\CODE\Src\User_FSM.c	    92  {
+; ..\CODE\Src\User_FSM.c	    93      fsm->FsmTable = fsmtable;
 	st.a	[a4]4,a5
-.L225:
+.L222:
 
-; ..\CODE\Src\User_FSM.c	   120  }
+; ..\CODE\Src\User_FSM.c	    94  }
 	ret
 .L115:
 	
@@ -367,29 +334,29 @@ __FSMRegist_function_end:
 .L75:
 	; End of function
 	
-	.sdecl	'.text.cpu0_psram',code,cluster('FSMStateTransfer')
-	.sect	'.text.cpu0_psram'
+	.sdecl	'.text.User_FSM.FSMStateTransfer',code,cluster('FSMStateTransfer')
+	.sect	'.text.User_FSM.FSMStateTransfer'
 	.align	2
 	
 	.global	FSMStateTransfer
 
-; ..\CODE\Src\User_FSM.c	   121  
-; ..\CODE\Src\User_FSM.c	   122  //*****************
-; ..\CODE\Src\User_FSM.c	   123  //
-; ..\CODE\Src\User_FSM.c	   124  //函数作用：状态机状态迁移
-; ..\CODE\Src\User_FSM.c	   125  //
-; ..\CODE\Src\User_FSM.c	   126  //****************
-; ..\CODE\Src\User_FSM.c	   127  void FSMStateTransfer(FSM_t* fsm, int state)
+; ..\CODE\Src\User_FSM.c	    95  
+; ..\CODE\Src\User_FSM.c	    96  //*****************
+; ..\CODE\Src\User_FSM.c	    97  //
+; ..\CODE\Src\User_FSM.c	    98  //函数作用：状态机状态迁移
+; ..\CODE\Src\User_FSM.c	    99  //
+; ..\CODE\Src\User_FSM.c	   100  //****************
+; ..\CODE\Src\User_FSM.c	   101  void FSMStateTransfer(FSM_t* fsm, int state)
 ; Function FSMStateTransfer
 .L35:
 FSMStateTransfer:	.type	func
 
-; ..\CODE\Src\User_FSM.c	   128  {
-; ..\CODE\Src\User_FSM.c	   129      fsm->CurState = state;
+; ..\CODE\Src\User_FSM.c	   102  {
+; ..\CODE\Src\User_FSM.c	   103      fsm->CurState = state;
 	st.w	[a4],d4
-.L230:
+.L227:
 
-; ..\CODE\Src\User_FSM.c	   130  }
+; ..\CODE\Src\User_FSM.c	   104  }
 	ret
 .L120:
 	
@@ -398,80 +365,80 @@ __FSMStateTransfer_function_end:
 .L80:
 	; End of function
 	
-	.sdecl	'.text.cpu0_psram',code,cluster('FSMEventHandle')
-	.sect	'.text.cpu0_psram'
+	.sdecl	'.text.User_FSM.FSMEventHandle',code,cluster('FSMEventHandle')
+	.sect	'.text.User_FSM.FSMEventHandle'
 	.align	2
 	
 	.global	FSMEventHandle
 
-; ..\CODE\Src\User_FSM.c	   131  
-; ..\CODE\Src\User_FSM.c	   132  void FSMEventHandle(FSM_t *fsm, int event)
+; ..\CODE\Src\User_FSM.c	   105  
+; ..\CODE\Src\User_FSM.c	   106  void FSMEventHandle(FSM_t *fsm, int event)
 ; Function FSMEventHandle
 .L37:
 FSMEventHandle:	.type	func
 	mov.aa	a12,a4
 .L144:
 
-; ..\CODE\Src\User_FSM.c	   133  {
-; ..\CODE\Src\User_FSM.c	   134  	FSMTable_t *fsmTable = fsm->FsmTable;
+; ..\CODE\Src\User_FSM.c	   107  {
+; ..\CODE\Src\User_FSM.c	   108  	FSMTable_t *fsmTable = fsm->FsmTable;
 	ld.a	a2,[a12]4
 .L145:
 
-; ..\CODE\Src\User_FSM.c	   135      int curState = fsm->CurState;
+; ..\CODE\Src\User_FSM.c	   109      int curState = fsm->CurState;
 	ld.w	d0,[a12]
 .L147:
 
-; ..\CODE\Src\User_FSM.c	   136      void (*eventAction)() = NULL;  //函数指针初始化为空
-; ..\CODE\Src\User_FSM.c	   137      int nextState = -1;
-; ..\CODE\Src\User_FSM.c	   138      int size = fsm->Size;
+; ..\CODE\Src\User_FSM.c	   110      void (*eventAction)() = NULL;  //函数指针初始化为空
+; ..\CODE\Src\User_FSM.c	   111      int nextState = -1;
+; ..\CODE\Src\User_FSM.c	   112      int size = fsm->Size;
 	ld.w	d1,[a12]8
 .L148:
 
-; ..\CODE\Src\User_FSM.c	   139      //int flag = 0;  //标识条件是否满足
-; ..\CODE\Src\User_FSM.c	   140      int i;
-; ..\CODE\Src\User_FSM.c	   141  
-; ..\CODE\Src\User_FSM.c	   142      //获取当前动作函数
-; ..\CODE\Src\User_FSM.c	   143      for (i=0; i<size; i++)
+; ..\CODE\Src\User_FSM.c	   113      //int flag = 0;  //标识条件是否满足
+; ..\CODE\Src\User_FSM.c	   114      int i;
+; ..\CODE\Src\User_FSM.c	   115  
+; ..\CODE\Src\User_FSM.c	   116      //获取当前动作函数
+; ..\CODE\Src\User_FSM.c	   117      for (i=0; i<size; i++)
 	mov	d2,#0
 .L149:
 	j	.L8
 .L9:
 
-; ..\CODE\Src\User_FSM.c	   144      {
-; ..\CODE\Src\User_FSM.c	   145          //当且仅当当前状态下来个指定的事件，我才执行它
-; ..\CODE\Src\User_FSM.c	   146          if (event == fsmTable[i].Event && curState == fsmTable[i].CurState)
+; ..\CODE\Src\User_FSM.c	   118      {
+; ..\CODE\Src\User_FSM.c	   119          //当且仅当当前状态下来个指定的事件，我才执行它
+; ..\CODE\Src\User_FSM.c	   120          if (event == fsmTable[i].Event && curState == fsmTable[i].CurState)
 	sha	d15,d2,#4
-.L235:
+.L232:
 	addsc.a	a15,a2,d15,#0
-.L236:
+.L233:
 	ld.w	d15,[a15]
-.L237:
+.L234:
 	jne	d15,d4,.L10
-.L238:
+.L235:
 	ld.w	d15,[a15]4
-.L239:
+.L236:
 	jne	d15,d0,.L11
-.L240:
+.L237:
 
-; ..\CODE\Src\User_FSM.c	   147          {
-; ..\CODE\Src\User_FSM.c	   148          	//flag = 1;
-; ..\CODE\Src\User_FSM.c	   149              eventAction = fsmTable[i].EventAction;
+; ..\CODE\Src\User_FSM.c	   121          {
+; ..\CODE\Src\User_FSM.c	   122          	//flag = 1;
+; ..\CODE\Src\User_FSM.c	   123              eventAction = fsmTable[i].EventAction;
 	ld.a	a2,[a15]8
 .L146:
 
-; ..\CODE\Src\User_FSM.c	   150              nextState = fsmTable[i].NextState;
+; ..\CODE\Src\User_FSM.c	   124              nextState = fsmTable[i].NextState;
 	ld.w	d15,[a15]12
 .L150:
 
-; ..\CODE\Src\User_FSM.c	   151          	if(eventAction)
+; ..\CODE\Src\User_FSM.c	   125          	if(eventAction)
 	jz.a	a2,.L12
-.L241:
+.L238:
 
-; ..\CODE\Src\User_FSM.c	   152          		eventAction();
+; ..\CODE\Src\User_FSM.c	   126          		eventAction();
 	calli	a2
 .L12:
 
-; ..\CODE\Src\User_FSM.c	   153          	FSMStateTransfer(fsm, nextState);
+; ..\CODE\Src\User_FSM.c	   127          	FSMStateTransfer(fsm, nextState);
 	mov.aa	a4,a12
 .L151:
 	mov	d4,d15
@@ -482,16 +449,16 @@ FSMEventHandle:	.type	func
 	add	d2,#1
 .L8:
 	jlt	d2,d1,.L9
-.L242:
+.L239:
 
-; ..\CODE\Src\User_FSM.c	   154              break;
-; ..\CODE\Src\User_FSM.c	   155          }
-; ..\CODE\Src\User_FSM.c	   156      }
-; ..\CODE\Src\User_FSM.c	   157      //if(!flag)
-; ..\CODE\Src\User_FSM.c	   158      //{
-; ..\CODE\Src\User_FSM.c	   159          //printf("there is no match!\n");
-; ..\CODE\Src\User_FSM.c	   160      //}
-; ..\CODE\Src\User_FSM.c	   161  }
+; ..\CODE\Src\User_FSM.c	   128              break;
+; ..\CODE\Src\User_FSM.c	   129          }
+; ..\CODE\Src\User_FSM.c	   130      }
+; ..\CODE\Src\User_FSM.c	   131      //if(!flag)
+; ..\CODE\Src\User_FSM.c	   132      //{
+; ..\CODE\Src\User_FSM.c	   133          //printf("there is no match!\n");
+; ..\CODE\Src\User_FSM.c	   134      //}
+; ..\CODE\Src\User_FSM.c	   135  }
 	ret
 .L124:
 	
@@ -500,24 +467,24 @@ __FSMEventHandle_function_end:
 .L85:
 	; End of function
 	
-	.sdecl	'.text.cpu0_psram',code,cluster('ReturnFSMState')
-	.sect	'.text.cpu0_psram'
+	.sdecl	'.text.User_FSM.ReturnFSMState',code,cluster('ReturnFSMState')
+	.sect	'.text.User_FSM.ReturnFSMState'
 	.align	2
 	
 	.global	ReturnFSMState
 
-; ..\CODE\Src\User_FSM.c	   162  
-; ..\CODE\Src\User_FSM.c	   163  int ReturnFSMState(FSM_t *fsm)
+; ..\CODE\Src\User_FSM.c	   136  
+; ..\CODE\Src\User_FSM.c	   137  int ReturnFSMState(FSM_t *fsm)
 ; Function ReturnFSMState
 .L39:
 ReturnFSMState:	.type	func
 
-; ..\CODE\Src\User_FSM.c	   164  {
-; ..\CODE\Src\User_FSM.c	   165  	return fsm->CurState;
+; ..\CODE\Src\User_FSM.c	   138  {
+; ..\CODE\Src\User_FSM.c	   139  	return fsm->CurState;
 	ld.w	d2,[a4]
-.L247:
+.L244:
 
-; ..\CODE\Src\User_FSM.c	   166  }
+; ..\CODE\Src\User_FSM.c	   140  }
 	ret
 .L134:
 	
@@ -526,139 +493,139 @@ __ReturnFSMState_function_end:
 .L90:
 	; End of function
 	
-	.sdecl	'.text.cpu0_psram',code,cluster('FSMRun')
-	.sect	'.text.cpu0_psram'
+	.sdecl	'.text.User_FSM.FSMRun',code,cluster('FSMRun')
+	.sect	'.text.User_FSM.FSMRun'
 	.align	2
 	
 	.global	FSMRun
 
-; ..\CODE\Src\User_FSM.c	   167  
-; ..\CODE\Src\User_FSM.c	   168  void FSMRun(void)
+; ..\CODE\Src\User_FSM.c	   141  
+; ..\CODE\Src\User_FSM.c	   142  void FSMRun(void)
 ; Function FSMRun
 .L41:
 FSMRun:	.type	func
 
-; ..\CODE\Src\User_FSM.c	   169  {
-; ..\CODE\Src\User_FSM.c	   170      FSMRegist(&CarFSM, CarTable);
+; ..\CODE\Src\User_FSM.c	   143  {
+; ..\CODE\Src\User_FSM.c	   144      FSMRegist(&CarFSM, CarTable);
 	movh.a	a4,#@his(CarFSM)
 	lea	a4,[a4]@los(CarFSM)
-.L252:
+.L249:
 	movh.a	a5,#@his(CarTable)
 	lea	a5,[a5]@los(CarTable)
 	call	FSMRegist
-.L253:
+.L250:
 
-; ..\CODE\Src\User_FSM.c	   171  	if(!StartFlag)
+; ..\CODE\Src\User_FSM.c	   145  	if(!StartFlag)
 	movh.a	a15,#@his(StartFlag)
 	ld.bu	d15,[a15]@los(StartFlag)
 	jne	d15,#0,.L15
-.L254:
+.L251:
 
-; ..\CODE\Src\User_FSM.c	   172  	{
-; ..\CODE\Src\User_FSM.c	   173  		CarFSM.CurState = WaitBall;
+; ..\CODE\Src\User_FSM.c	   146  	{
+; ..\CODE\Src\User_FSM.c	   147  		CarFSM.CurState = WaitBall;
 	movh.a	a2,#@his(CarFSM)
-.L255:
+.L252:
 	st.w	[a2]@los(CarFSM),d15
-.L256:
+.L253:
 
-; ..\CODE\Src\User_FSM.c	   174  		StartFlag = 1;
+; ..\CODE\Src\User_FSM.c	   148  		StartFlag = 1;
 	mov	d15,#1
-.L257:
+.L254:
 	st.b	[a15]@los(StartFlag),d15
 .L15:
 
-; ..\CODE\Src\User_FSM.c	   175  	}
-; ..\CODE\Src\User_FSM.c	   176      CarFSM.Size = sizeof(CarTable) / sizeof(FSMTable_t);
+; ..\CODE\Src\User_FSM.c	   149  	}
+; ..\CODE\Src\User_FSM.c	   150      CarFSM.Size = sizeof(CarTable) / sizeof(FSMTable_t);
 	movh.a	a15,#@his(CarFSM+8)
-.L258:
+.L255:
 	mov	d15,#13
-.L259:
+.L256:
 	st.w	[a15]@los(CarFSM+8),d15
-.L260:
+.L257:
 
-; ..\CODE\Src\User_FSM.c	   177      if(ReturnFSMState(&CarFSM) == WaitBall)
+; ..\CODE\Src\User_FSM.c	   151      if(ReturnFSMState(&CarFSM) == WaitBall)
+	movh.a	a4,#@his(CarFSM)
+	lea	a4,[a4]@los(CarFSM)
+	call	ReturnFSMState
+.L258:
+	jne	d2,#0,.L16
+.L259:
+
+; ..\CODE\Src\User_FSM.c	   152      {
+; ..\CODE\Src\User_FSM.c	   153      	//if(TwoCarStateJudge())  //测试时注释
+; ..\CODE\Src\User_FSM.c	   154      		FSMEventHandle(&CarFSM, GETBALL);
+	mov	d4,#1
+.L260:
+	j	.L17
+.L16:
+
+; ..\CODE\Src\User_FSM.c	   155      }
+; ..\CODE\Src\User_FSM.c	   156      //else if(ReturnFSMState(&CarFSM) == GoLine)
+; ..\CODE\Src\User_FSM.c	   157      //{
+; ..\CODE\Src\User_FSM.c	   158      	//FSMEventHandle(&CarFSM, FINDROUNDABOUT);
+; ..\CODE\Src\User_FSM.c	   159      //}
+; ..\CODE\Src\User_FSM.c	   160      else if(ReturnFSMState(&CarFSM) == InRoundabout)
 	movh.a	a4,#@his(CarFSM)
 	lea	a4,[a4]@los(CarFSM)
 	call	ReturnFSMState
 .L261:
-	jne	d2,#0,.L16
+	jeq	d2,#2,.L18
 .L262:
 
-; ..\CODE\Src\User_FSM.c	   178      {
-; ..\CODE\Src\User_FSM.c	   179      	//if(TwoCarStateJudge())  //测试时注释
-; ..\CODE\Src\User_FSM.c	   180      		FSMEventHandle(&CarFSM, GETBALL);
-	mov	d4,#1
+; ..\CODE\Src\User_FSM.c	   161      {
+; ..\CODE\Src\User_FSM.c	   162      	//FSMEventHandle(&CarFSM, ENDINROUNDABOUT);
+; ..\CODE\Src\User_FSM.c	   163      }
+; ..\CODE\Src\User_FSM.c	   164      else if(ReturnFSMState(&CarFSM) == PassRoundabout)
+	movh.a	a4,#@his(CarFSM)
+	lea	a4,[a4]@los(CarFSM)
+	call	ReturnFSMState
 .L263:
-	j	.L17
-.L16:
-
-; ..\CODE\Src\User_FSM.c	   181      }
-; ..\CODE\Src\User_FSM.c	   182      //else if(ReturnFSMState(&CarFSM) == GoLine)
-; ..\CODE\Src\User_FSM.c	   183      //{
-; ..\CODE\Src\User_FSM.c	   184      	//FSMEventHandle(&CarFSM, FINDROUNDABOUT);
-; ..\CODE\Src\User_FSM.c	   185      //}
-; ..\CODE\Src\User_FSM.c	   186      else if(ReturnFSMState(&CarFSM) == InRoundabout)
-	movh.a	a4,#@his(CarFSM)
-	lea	a4,[a4]@los(CarFSM)
-	call	ReturnFSMState
-.L264:
-	jeq	d2,#2,.L18
-.L265:
-
-; ..\CODE\Src\User_FSM.c	   187      {
-; ..\CODE\Src\User_FSM.c	   188      	//FSMEventHandle(&CarFSM, ENDINROUNDABOUT);
-; ..\CODE\Src\User_FSM.c	   189      }
-; ..\CODE\Src\User_FSM.c	   190      else if(ReturnFSMState(&CarFSM) == PassRoundabout)
-	movh.a	a4,#@his(CarFSM)
-	lea	a4,[a4]@los(CarFSM)
-	call	ReturnFSMState
-.L266:
 	jeq	d2,#3,.L19
-.L267:
+.L264:
 
-; ..\CODE\Src\User_FSM.c	   191      {
-; ..\CODE\Src\User_FSM.c	   192      	//FSMEventHandle(&CarFSM, OUTROUNDABOUT);
-; ..\CODE\Src\User_FSM.c	   193      }
-; ..\CODE\Src\User_FSM.c	   194      else if(ReturnFSMState(&CarFSM) == OutingRoundabout)
+; ..\CODE\Src\User_FSM.c	   165      {
+; ..\CODE\Src\User_FSM.c	   166      	//FSMEventHandle(&CarFSM, OUTROUNDABOUT);
+; ..\CODE\Src\User_FSM.c	   167      }
+; ..\CODE\Src\User_FSM.c	   168      else if(ReturnFSMState(&CarFSM) == OutingRoundabout)
 	movh.a	a4,#@his(CarFSM)
 	lea	a4,[a4]@los(CarFSM)
 	call	ReturnFSMState
-.L268:
+.L265:
 	jeq	d2,#4,.L20
-.L269:
+.L266:
 
-; ..\CODE\Src\User_FSM.c	   195      {
-; ..\CODE\Src\User_FSM.c	   196      	//FSMEventHandle(&CarFSM, ENDOUTROUNDABOUT);
-; ..\CODE\Src\User_FSM.c	   197      }
-; ..\CODE\Src\User_FSM.c	   198      //else if(ReturnFSMState(&CarFSM) == GoLine)
-; ..\CODE\Src\User_FSM.c	   199      //{
-; ..\CODE\Src\User_FSM.c	   200      	//FSMEventHandle(&CarFSM, FINDZEBRA);
-; ..\CODE\Src\User_FSM.c	   201      //}
-; ..\CODE\Src\User_FSM.c	   202      else if(ReturnFSMState(&CarFSM) == InGarage)
+; ..\CODE\Src\User_FSM.c	   169      {
+; ..\CODE\Src\User_FSM.c	   170      	//FSMEventHandle(&CarFSM, ENDOUTROUNDABOUT);
+; ..\CODE\Src\User_FSM.c	   171      }
+; ..\CODE\Src\User_FSM.c	   172      //else if(ReturnFSMState(&CarFSM) == GoLine)
+; ..\CODE\Src\User_FSM.c	   173      //{
+; ..\CODE\Src\User_FSM.c	   174      	//FSMEventHandle(&CarFSM, FINDZEBRA);
+; ..\CODE\Src\User_FSM.c	   175      //}
+; ..\CODE\Src\User_FSM.c	   176      else if(ReturnFSMState(&CarFSM) == InGarage)
 	movh.a	a4,#@his(CarFSM)
 	lea	a4,[a4]@los(CarFSM)
 	call	ReturnFSMState
-.L270:
+.L267:
 	jeq	d2,#5,.L21
-.L271:
+.L268:
 
-; ..\CODE\Src\User_FSM.c	   203      {
-; ..\CODE\Src\User_FSM.c	   204      	//FSMEventHandle(&CarFSM, RUNSTOP);
-; ..\CODE\Src\User_FSM.c	   205      }
-; ..\CODE\Src\User_FSM.c	   206      else
-; ..\CODE\Src\User_FSM.c	   207      	FSMEventHandle(&CarFSM, NOEVENT);
+; ..\CODE\Src\User_FSM.c	   177      {
+; ..\CODE\Src\User_FSM.c	   178      	//FSMEventHandle(&CarFSM, RUNSTOP);
+; ..\CODE\Src\User_FSM.c	   179      }
+; ..\CODE\Src\User_FSM.c	   180      else
+; ..\CODE\Src\User_FSM.c	   181      	FSMEventHandle(&CarFSM, NOEVENT);
 	mov	d4,#0
 .L17:
 	movh.a	a4,#@his(CarFSM)
 	lea	a4,[a4]@los(CarFSM)
-.L272:
+.L269:
 	j	FSMEventHandle
 .L21:
 .L20:
 .L19:
 .L18:
 
-; ..\CODE\Src\User_FSM.c	   208  }
+; ..\CODE\Src\User_FSM.c	   182  }
 	ret
 .L136:
 	
@@ -35279,7 +35246,7 @@ StartFlag:	.type	object
 	.byte	2
 	.word	.L42
 	.byte	3
-	.byte	'RunStop',0,1,40,6,1,1,1
+	.byte	'RunStop',0,1,39,6,1,1,1
 	.word	.L23,.L110,.L22
 	.byte	4
 	.word	.L23,.L110
@@ -35302,7 +35269,7 @@ StartFlag:	.type	object
 .L160:
 	.byte	5,18,7,0,5,2
 	.word	.L23
-	.byte	3,41,1,5,28,9
+	.byte	3,40,1,5,28,9
 	.half	.L161-.L23
 	.byte	1,5,18,9
 	.half	.L162-.L161
@@ -35338,7 +35305,7 @@ StartFlag:	.type	object
 	.byte	2
 	.word	.L42
 	.byte	3
-	.byte	'FindLine',0,1,50,6,1,1,1
+	.byte	'FindLine',0,1,49,6,1,1,1
 	.word	.L25,.L111,.L24
 	.byte	4
 	.word	.L25,.L111
@@ -35361,9 +35328,9 @@ StartFlag:	.type	object
 .L171:
 	.byte	5,6,7,0,5,2
 	.word	.L25
-	.byte	3,49,1,5,2,9
+	.byte	3,48,1,5,2,9
 	.half	.L143-.L25
-	.byte	3,4,1,5,80,9
+	.byte	3,2,1,5,80,9
 	.half	.L172-.L143
 	.byte	1,5,25,9
 	.half	.L173-.L172
@@ -35379,74 +35346,68 @@ StartFlag:	.type	object
 	.half	.L178-.L177
 	.byte	1,5,11,9
 	.half	.L179-.L178
-	.byte	1,5,3,9
+	.byte	1,5,2,9
 	.half	.L180-.L179
-	.byte	3,25,1,5,48,9
+	.byte	3,2,1,5,47,9
 	.half	.L181-.L180
-	.byte	1,5,28,9
+	.byte	1,5,7,9
 	.half	.L182-.L181
-	.byte	1,5,48,9
+	.byte	1,5,2,9
 	.half	.L183-.L182
-	.byte	1,5,8,9
+	.byte	3,1,1,5,47,9
 	.half	.L184-.L183
-	.byte	1,5,6,9
+	.byte	1,5,7,9
 	.half	.L185-.L184
-	.byte	3,1,1,5,32,9
-	.half	.L186-.L185
-	.byte	1,5,51,9
-	.half	.L187-.L186
-	.byte	1,5,11,9
-	.half	.L188-.L187
 	.byte	1,5,8,9
-	.half	.L189-.L188
-	.byte	3,3,1,5,16,9
-	.half	.L190-.L189
+	.half	.L186-.L185
+	.byte	3,2,1,5,16,9
+	.half	.L187-.L186
 	.byte	1,5,13,9
-	.half	.L191-.L190
+	.half	.L188-.L187
 	.byte	1,5,5,9
-	.half	.L192-.L191
+	.half	.L189-.L188
 	.byte	1,5,13,7,9
-	.half	.L193-.L192
+	.half	.L190-.L189
 	.byte	3,2,1,5,21,9
-	.half	.L194-.L193
+	.half	.L191-.L190
 	.byte	1,5,18,9
-	.half	.L195-.L194
+	.half	.L192-.L191
 	.byte	1,5,10,9
-	.half	.L196-.L195
+	.half	.L193-.L192
 	.byte	1,5,14,7,9
-	.half	.L3-.L196
+	.half	.L3-.L193
 	.byte	3,1,1,5,8,9
 	.half	.L4-.L3
 	.byte	3,1,1,5,16,9
-	.half	.L197-.L4
+	.half	.L194-.L4
 	.byte	1,5,13,9
-	.half	.L198-.L197
+	.half	.L195-.L194
 	.byte	1,5,5,9
-	.half	.L199-.L198
+	.half	.L196-.L195
 	.byte	1,5,13,7,9
-	.half	.L200-.L199
+	.half	.L197-.L196
 	.byte	3,2,1,5,21,9
-	.half	.L201-.L200
+	.half	.L198-.L197
 	.byte	1,5,18,9
-	.half	.L202-.L201
+	.half	.L199-.L198
 	.byte	1,5,10,9
-	.half	.L203-.L202
+	.half	.L200-.L199
 	.byte	1,5,14,7,9
-	.half	.L6-.L203
+	.half	.L6-.L200
 	.byte	3,1,1,5,31,9
 	.half	.L7-.L6
 	.byte	3,1,1,5,21,9
-	.half	.L204-.L7
+	.half	.L201-.L7
+	.byte	1,5,31,9
+	.half	.L202-.L201
+	.byte	1,9
+	.half	.L203-.L202
+	.byte	3,1,1,5,21,9
+	.half	.L204-.L203
 	.byte	1,5,31,9
 	.half	.L205-.L204
-	.byte	1,9
-	.half	.L206-.L205
-	.byte	3,1,1,5,21,9
-	.half	.L207-.L206
-	.byte	1,5,31,9
-	.half	.L208-.L207
 	.byte	1,5,1,7,9
-	.half	.L55-.L208
+	.half	.L55-.L205
 	.byte	3,1,0,1,1
 .L169:
 	.sdecl	'.debug_ranges',debug,cluster('FindLine')
@@ -35467,7 +35428,7 @@ StartFlag:	.type	object
 	.byte	2
 	.word	.L42
 	.byte	3
-	.byte	'InRoundaboutProcess',0,1,95,6,1,1,1
+	.byte	'InRoundaboutProcess',0,1,68,6,1,1,1
 	.word	.L27,.L112,.L26
 	.byte	4
 	.word	.L27,.L112
@@ -35480,20 +35441,20 @@ StartFlag:	.type	object
 	.sdecl	'.debug_line',debug,cluster('InRoundaboutProcess')
 	.sect	'.debug_line'
 .L58:
-	.word	.L210-.L209
-.L209:
+	.word	.L207-.L206
+.L206:
 	.half	3
-	.word	.L212-.L211
-.L211:
+	.word	.L209-.L208
+.L208:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\CODE\\Src\\User_FSM.c',0,0,0,0,0
-.L212:
+.L209:
 	.byte	5,1,7,0,5,2
 	.word	.L27
-	.byte	3,225,0,1,7,9
+	.byte	3,198,0,1,7,9
 	.half	.L60-.L27
 	.byte	0,1,1
-.L210:
+.L207:
 	.sdecl	'.debug_ranges',debug,cluster('InRoundaboutProcess')
 	.sect	'.debug_ranges'
 .L59:
@@ -35512,7 +35473,7 @@ StartFlag:	.type	object
 	.byte	2
 	.word	.L42
 	.byte	3
-	.byte	'OutRoundaboutProcess',0,1,100,6,1,1,1
+	.byte	'OutRoundaboutProcess',0,1,73,6,1,1,1
 	.word	.L29,.L113,.L28
 	.byte	4
 	.word	.L29,.L113
@@ -35525,20 +35486,20 @@ StartFlag:	.type	object
 	.sdecl	'.debug_line',debug,cluster('OutRoundaboutProcess')
 	.sect	'.debug_line'
 .L63:
-	.word	.L214-.L213
-.L213:
+	.word	.L211-.L210
+.L210:
 	.half	3
-	.word	.L216-.L215
-.L215:
+	.word	.L213-.L212
+.L212:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\CODE\\Src\\User_FSM.c',0,0,0,0,0
-.L216:
+.L213:
 	.byte	5,1,7,0,5,2
 	.word	.L29
-	.byte	3,230,0,1,7,9
+	.byte	3,203,0,1,7,9
 	.half	.L65-.L29
 	.byte	0,1,1
-.L214:
+.L211:
 	.sdecl	'.debug_ranges',debug,cluster('OutRoundaboutProcess')
 	.sect	'.debug_ranges'
 .L64:
@@ -35557,7 +35518,7 @@ StartFlag:	.type	object
 	.byte	2
 	.word	.L42
 	.byte	3
-	.byte	'GoGarage',0,1,105,6,1,1,1
+	.byte	'GoGarage',0,1,78,6,1,1,1
 	.word	.L31,.L114,.L30
 	.byte	4
 	.word	.L31,.L114
@@ -35570,20 +35531,20 @@ StartFlag:	.type	object
 	.sdecl	'.debug_line',debug,cluster('GoGarage')
 	.sect	'.debug_line'
 .L68:
-	.word	.L218-.L217
-.L217:
+	.word	.L215-.L214
+.L214:
 	.half	3
-	.word	.L220-.L219
-.L219:
+	.word	.L217-.L216
+.L216:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\CODE\\Src\\User_FSM.c',0,0,0,0,0
-.L220:
+.L217:
 	.byte	5,1,7,0,5,2
 	.word	.L31
-	.byte	3,235,0,1,7,9
+	.byte	3,209,0,1,7,9
 	.half	.L70-.L31
 	.byte	0,1,1
-.L218:
+.L215:
 	.sdecl	'.debug_ranges',debug,cluster('GoGarage')
 	.sect	'.debug_ranges'
 .L69:
@@ -35602,13 +35563,13 @@ StartFlag:	.type	object
 	.byte	2
 	.word	.L42
 	.byte	3
-	.byte	'FSMRegist',0,1,117,6,1,1,1
+	.byte	'FSMRegist',0,1,91,6,1,1,1
 	.word	.L33,.L115,.L32
 	.byte	4
-	.byte	'fsm',0,1,117,23
+	.byte	'fsm',0,1,91,23
 	.word	.L116,.L117
 	.byte	4
-	.byte	'fsmtable',0,1,117,40
+	.byte	'fsmtable',0,1,91,40
 	.word	.L118,.L119
 	.byte	5
 	.word	.L33,.L115
@@ -35621,22 +35582,22 @@ StartFlag:	.type	object
 	.sdecl	'.debug_line',debug,cluster('FSMRegist')
 	.sect	'.debug_line'
 .L73:
-	.word	.L222-.L221
-.L221:
+	.word	.L219-.L218
+.L218:
 	.half	3
-	.word	.L224-.L223
-.L223:
+	.word	.L221-.L220
+.L220:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\CODE\\Src\\User_FSM.c',0,0,0,0,0
-.L224:
+.L221:
 	.byte	5,19,7,0,5,2
 	.word	.L33
-	.byte	3,246,0,1,5,1,9
-	.half	.L225-.L33
+	.byte	3,220,0,1,5,1,9
+	.half	.L222-.L33
 	.byte	3,1,1,7,9
-	.half	.L75-.L225
+	.half	.L75-.L222
 	.byte	0,1,1
-.L222:
+.L219:
 	.sdecl	'.debug_ranges',debug,cluster('FSMRegist')
 	.sect	'.debug_ranges'
 .L74:
@@ -35655,13 +35616,13 @@ StartFlag:	.type	object
 	.byte	2
 	.word	.L42
 	.byte	3
-	.byte	'FSMStateTransfer',0,1,127,6,1,1,1
+	.byte	'FSMStateTransfer',0,1,101,6,1,1,1
 	.word	.L35,.L120,.L34
 	.byte	4
-	.byte	'fsm',0,1,127,30
+	.byte	'fsm',0,1,101,30
 	.word	.L116,.L121
 	.byte	4
-	.byte	'state',0,1,127,39
+	.byte	'state',0,1,101,39
 	.word	.L122,.L123
 	.byte	5
 	.word	.L35,.L120
@@ -35674,22 +35635,22 @@ StartFlag:	.type	object
 	.sdecl	'.debug_line',debug,cluster('FSMStateTransfer')
 	.sect	'.debug_line'
 .L78:
-	.word	.L227-.L226
-.L226:
+	.word	.L224-.L223
+.L223:
 	.half	3
-	.word	.L229-.L228
-.L228:
+	.word	.L226-.L225
+.L225:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\CODE\\Src\\User_FSM.c',0,0,0,0,0
-.L229:
+.L226:
 	.byte	5,19,7,0,5,2
 	.word	.L35
-	.byte	3,128,1,1,5,1,9
-	.half	.L230-.L35
+	.byte	3,230,0,1,5,1,9
+	.half	.L227-.L35
 	.byte	3,1,1,7,9
-	.half	.L80-.L230
+	.half	.L80-.L227
 	.byte	0,1,1
-.L227:
+.L224:
 	.sdecl	'.debug_ranges',debug,cluster('FSMStateTransfer')
 	.sect	'.debug_ranges'
 .L79:
@@ -35697,7 +35658,7 @@ StartFlag:	.type	object
 	.sdecl	'.debug_info',debug,cluster('FSMEventHandle')
 	.sect	'.debug_info'
 .L81:
-	.word	356
+	.word	347
 	.half	3
 	.word	.L82
 	.byte	4,1
@@ -35708,33 +35669,33 @@ StartFlag:	.type	object
 	.byte	2
 	.word	.L42
 	.byte	3
-	.byte	'FSMEventHandle',0,1,132,1,6,1,1,1
+	.byte	'FSMEventHandle',0,1,106,6,1,1,1
 	.word	.L37,.L124,.L36
 	.byte	4
-	.byte	'fsm',0,1,132,1,28
+	.byte	'fsm',0,1,106,28
 	.word	.L116,.L125
 	.byte	4
-	.byte	'event',0,1,132,1,37
+	.byte	'event',0,1,106,37
 	.word	.L122,.L126
 	.byte	5
 	.word	.L37,.L124
 	.byte	6
-	.byte	'fsmTable',0,1,134,1,14
+	.byte	'fsmTable',0,1,108,14
 	.word	.L118,.L127
 	.byte	6
-	.byte	'curState',0,1,135,1,9
+	.byte	'curState',0,1,109,9
 	.word	.L122,.L128
 	.byte	6
-	.byte	'eventAction',0,1,136,1,12
+	.byte	'eventAction',0,1,110,12
 	.word	.L129,.L130
 	.byte	6
-	.byte	'nextState',0,1,137,1,9
+	.byte	'nextState',0,1,111,9
 	.word	.L122,.L131
 	.byte	6
-	.byte	'size',0,1,138,1,9
+	.byte	'size',0,1,112,9
 	.word	.L122,.L132
 	.byte	6
-	.byte	'i',0,1,140,1,9
+	.byte	'i',0,1,114,9
 	.word	.L122,.L133
 	.byte	0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('FSMEventHandle')
@@ -35746,17 +35707,17 @@ StartFlag:	.type	object
 	.sdecl	'.debug_line',debug,cluster('FSMEventHandle')
 	.sect	'.debug_line'
 .L83:
-	.word	.L232-.L231
-.L231:
+	.word	.L229-.L228
+.L228:
 	.half	3
-	.word	.L234-.L233
-.L233:
+	.word	.L231-.L230
+.L230:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\CODE\\Src\\User_FSM.c',0,0,0,0,0
-.L234:
+.L231:
 	.byte	5,6,7,0,5,2
 	.word	.L37
-	.byte	3,131,1,1,5,28,9
+	.byte	3,233,0,1,5,28,9
 	.half	.L144-.L37
 	.byte	3,2,1,5,23,9
 	.half	.L145-.L144
@@ -35769,35 +35730,35 @@ StartFlag:	.type	object
 	.byte	1,5,31,9
 	.half	.L9-.L149
 	.byte	3,3,1,5,30,9
-	.half	.L235-.L9
+	.half	.L232-.L9
 	.byte	1,5,33,9
-	.half	.L236-.L235
+	.half	.L233-.L232
 	.byte	1,5,13,9
-	.half	.L237-.L236
+	.half	.L234-.L233
 	.byte	1,5,66,7,9
-	.half	.L238-.L237
+	.half	.L235-.L234
 	.byte	1,5,52,9
-	.half	.L239-.L238
+	.half	.L236-.L235
 	.byte	1,5,38,7,9
-	.half	.L240-.L239
+	.half	.L237-.L236
 	.byte	3,3,1,5,36,9
-	.half	.L146-.L240
+	.half	.L146-.L237
 	.byte	3,1,1,5,10,9
 	.half	.L150-.L146
 	.byte	3,1,1,5,22,7,9
-	.half	.L241-.L150
+	.half	.L238-.L150
 	.byte	3,1,1,5,32,9
-	.half	.L12-.L241
+	.half	.L12-.L238
 	.byte	3,1,1,5,24,9
 	.half	.L10-.L12
 	.byte	3,118,1,5,21,9
 	.half	.L8-.L10
 	.byte	1,5,1,7,9
-	.half	.L242-.L8
+	.half	.L239-.L8
 	.byte	3,18,1,7,9
-	.half	.L85-.L242
+	.half	.L85-.L239
 	.byte	0,1,1
-.L232:
+.L229:
 	.sdecl	'.debug_ranges',debug,cluster('FSMEventHandle')
 	.sect	'.debug_ranges'
 .L84:
@@ -35816,12 +35777,12 @@ StartFlag:	.type	object
 	.byte	2
 	.word	.L42
 	.byte	3
-	.byte	'ReturnFSMState',0,1,163,1,5
+	.byte	'ReturnFSMState',0,1,137,1,5
 	.word	.L122
 	.byte	1,1,1
 	.word	.L39,.L134,.L38
 	.byte	4
-	.byte	'fsm',0,1,163,1,27
+	.byte	'fsm',0,1,137,1,27
 	.word	.L116,.L135
 	.byte	5
 	.word	.L39,.L134
@@ -35834,22 +35795,22 @@ StartFlag:	.type	object
 	.sdecl	'.debug_line',debug,cluster('ReturnFSMState')
 	.sect	'.debug_line'
 .L88:
-	.word	.L244-.L243
-.L243:
+	.word	.L241-.L240
+.L240:
 	.half	3
-	.word	.L246-.L245
-.L245:
+	.word	.L243-.L242
+.L242:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\CODE\\Src\\User_FSM.c',0,0,0,0,0
-.L246:
+.L243:
 	.byte	5,12,7,0,5,2
 	.word	.L39
-	.byte	3,164,1,1,5,1,9
-	.half	.L247-.L39
+	.byte	3,138,1,1,5,1,9
+	.half	.L244-.L39
 	.byte	3,1,1,7,9
-	.half	.L90-.L247
+	.half	.L90-.L244
 	.byte	0,1,1
-.L244:
+.L241:
 	.sdecl	'.debug_ranges',debug,cluster('ReturnFSMState')
 	.sect	'.debug_ranges'
 .L89:
@@ -35868,7 +35829,7 @@ StartFlag:	.type	object
 	.byte	2
 	.word	.L42
 	.byte	3
-	.byte	'FSMRun',0,1,168,1,6,1,1,1
+	.byte	'FSMRun',0,1,142,1,6,1,1,1
 	.word	.L41,.L136,.L40
 	.byte	4
 	.word	.L41,.L136
@@ -35881,70 +35842,70 @@ StartFlag:	.type	object
 	.sdecl	'.debug_line',debug,cluster('FSMRun')
 	.sect	'.debug_line'
 .L93:
-	.word	.L249-.L248
-.L248:
+	.word	.L246-.L245
+.L245:
 	.half	3
-	.word	.L251-.L250
-.L250:
+	.word	.L248-.L247
+.L247:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\CODE\\Src\\User_FSM.c',0,0,0,0,0
-.L251:
+.L248:
 	.byte	5,16,7,0,5,2
 	.word	.L41
-	.byte	3,169,1,1,5,24,9
-	.half	.L252-.L41
+	.byte	3,143,1,1,5,24,9
+	.half	.L249-.L41
 	.byte	1,5,6,9
-	.half	.L253-.L252
+	.half	.L250-.L249
 	.byte	3,1,1,5,3,9
-	.half	.L254-.L253
+	.half	.L251-.L250
 	.byte	3,2,1,5,19,9
-	.half	.L255-.L254
+	.half	.L252-.L251
 	.byte	1,5,15,9
-	.half	.L256-.L255
+	.half	.L253-.L252
 	.byte	3,1,1,5,13,9
-	.half	.L257-.L256
+	.half	.L254-.L253
 	.byte	1,5,5,9
-	.half	.L15-.L257
+	.half	.L15-.L254
 	.byte	3,2,1,5,36,9
-	.half	.L258-.L15
+	.half	.L255-.L15
 	.byte	1,5,17,9
-	.half	.L259-.L258
+	.half	.L256-.L255
 	.byte	1,5,24,9
-	.half	.L260-.L259
+	.half	.L257-.L256
 	.byte	3,1,1,5,5,9
-	.half	.L261-.L260
+	.half	.L258-.L257
 	.byte	1,5,31,7,9
-	.half	.L262-.L261
+	.half	.L259-.L258
 	.byte	3,3,1,5,39,9
-	.half	.L263-.L262
+	.half	.L260-.L259
 	.byte	1,5,29,9
-	.half	.L16-.L263
+	.half	.L16-.L260
 	.byte	3,6,1,5,10,9
-	.half	.L264-.L16
+	.half	.L261-.L16
 	.byte	1,5,29,7,9
+	.half	.L262-.L261
+	.byte	3,4,1,5,10,9
+	.half	.L263-.L262
+	.byte	1,5,29,7,9
+	.half	.L264-.L263
+	.byte	3,4,1,5,10,9
 	.half	.L265-.L264
-	.byte	3,4,1,5,10,9
+	.byte	1,5,29,7,9
 	.half	.L266-.L265
-	.byte	1,5,29,7,9
-	.half	.L267-.L266
-	.byte	3,4,1,5,10,9
-	.half	.L268-.L267
-	.byte	1,5,29,7,9
-	.half	.L269-.L268
 	.byte	3,8,1,5,10,9
-	.half	.L270-.L269
+	.half	.L267-.L266
 	.byte	1,5,30,7,9
-	.half	.L271-.L270
+	.half	.L268-.L267
 	.byte	3,5,1,5,22,9
-	.half	.L17-.L271
+	.half	.L17-.L268
 	.byte	1,5,30,9
-	.half	.L272-.L17
+	.half	.L269-.L17
 	.byte	1,5,1,7,9
-	.half	.L18-.L272
+	.half	.L18-.L269
 	.byte	3,1,1,7,9
 	.half	.L95-.L18
 	.byte	0,1,1
-.L249:
+.L246:
 	.sdecl	'.debug_ranges',debug,cluster('FSMRun')
 	.sect	'.debug_ranges'
 .L94:
@@ -36270,7 +36231,7 @@ StartFlag:	.type	object
 	.word	0,0
 	.sdecl	'.debug_frame',debug
 	.sect	'.debug_frame'
-.L273:
+.L270:
 	.word	48
 	.word	-1
 	.byte	3,0,2,1,27,12,26,0,8,27,8,26,8,28,8,29,8,30,8,31,8,34,8,35,8,32,8,33,8,16,8,17,8,24,8,25,8,36,8,37,8,38
@@ -36278,11 +36239,11 @@ StartFlag:	.type	object
 	.sdecl	'.debug_frame',debug,cluster('RunStop')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L273,.L23,.L110-.L23
+	.word	.L270,.L23,.L110-.L23
 	.sdecl	'.debug_frame',debug,cluster('FindLine')
 	.sect	'.debug_frame'
 	.word	36
-	.word	.L273,.L25,.L111-.L25
+	.word	.L270,.L25,.L111-.L25
 	.byte	4
 	.word	(.L143-.L25)/2
 	.byte	19,8,22,26,3,19,138,8,4
@@ -36291,44 +36252,42 @@ StartFlag:	.type	object
 	.sdecl	'.debug_frame',debug,cluster('InRoundaboutProcess')
 	.sect	'.debug_frame'
 	.word	24
-	.word	.L273,.L27,.L112-.L27
+	.word	.L270,.L27,.L112-.L27
 	.byte	8,18,8,19,8,20,8,21,8,22,8,23
 	.sdecl	'.debug_frame',debug,cluster('OutRoundaboutProcess')
 	.sect	'.debug_frame'
 	.word	24
-	.word	.L273,.L29,.L113-.L29
+	.word	.L270,.L29,.L113-.L29
 	.byte	8,18,8,19,8,20,8,21,8,22,8,23
 	.sdecl	'.debug_frame',debug,cluster('GoGarage')
 	.sect	'.debug_frame'
 	.word	24
-	.word	.L273,.L31,.L114-.L31
+	.word	.L270,.L31,.L114-.L31
 	.byte	8,18,8,19,8,20,8,21,8,22,8,23
 	.sdecl	'.debug_frame',debug,cluster('FSMRegist')
 	.sect	'.debug_frame'
 	.word	20
-	.word	.L273,.L33,.L115-.L33
+	.word	.L270,.L33,.L115-.L33
 	.byte	8,18,8,19,8,22,8,23
 	.sdecl	'.debug_frame',debug,cluster('FSMStateTransfer')
 	.sect	'.debug_frame'
 	.word	24
-	.word	.L273,.L35,.L120-.L35
+	.word	.L270,.L35,.L120-.L35
 	.byte	8,18,8,19,8,21,8,22,8,23,0,0
 	.sdecl	'.debug_frame',debug,cluster('FSMEventHandle')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L273,.L37,.L124-.L37
+	.word	.L270,.L37,.L124-.L37
 	.sdecl	'.debug_frame',debug,cluster('ReturnFSMState')
 	.sect	'.debug_frame'
 	.word	24
-	.word	.L273,.L39,.L134-.L39
+	.word	.L270,.L39,.L134-.L39
 	.byte	8,18,8,19,8,21,8,22,8,23,0,0
 	.sdecl	'.debug_frame',debug,cluster('FSMRun')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L273,.L41,.L136-.L41
+	.word	.L270,.L41,.L136-.L41
 
-; ..\CODE\Src\User_FSM.c	   209  
-; ..\CODE\Src\User_FSM.c	   210  #pragma section all restore
-; ..\CODE\Src\User_FSM.c	   211  
+; ..\CODE\Src\User_FSM.c	   183  
 
 	; Module end

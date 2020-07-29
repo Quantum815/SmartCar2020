@@ -23,6 +23,7 @@ void TwoCarUARTInit(void)
 
 void TwoCarReadData(void)
 {
+	static uint8 count = 0;
 	while(uart_query(WIRELESS_UART, &TwoCarRxBuff[TwoCarReceiveNum]))
 	{
 		//uart_putstr(WIRELESS_UART, "test");
@@ -36,8 +37,10 @@ void TwoCarReadData(void)
 			else
 			{
 				//uart_putstr(WIRELESS_UART, "success");
+				count++;
 				TwoCarReceiveNum = 0;
-				TwoCarRxFlag = 1;
+				if(count == 5)
+					TwoCarRxFlag = 1;
 				break;
 			}
 		}

@@ -7,8 +7,8 @@
 	
 $TC16X
 	
-	.sdecl	'.text.User_Motor.ServoMotorInit',code,cluster('ServoMotorInit')
-	.sect	'.text.User_Motor.ServoMotorInit'
+	.sdecl	'.text.cpu0_psram',code,cluster('ServoMotorInit')
+	.sect	'.text.cpu0_psram'
 	.align	2
 	
 	.global	ServoMotorInit
@@ -22,13 +22,15 @@ $TC16X
 ; ..\CODE\Src\User_Motor.c	     7  
 ; ..\CODE\Src\User_Motor.c	     8  #include "..\CODE\Inc\User_Motor.h"
 ; ..\CODE\Src\User_Motor.c	     9  
-; ..\CODE\Src\User_Motor.c	    10  void ServoMotorInit(void)
+; ..\CODE\Src\User_Motor.c	    10  #pragma section all "cpu0_psram"
+; ..\CODE\Src\User_Motor.c	    11  
+; ..\CODE\Src\User_Motor.c	    12  void ServoMotorInit(void)
 ; Function ServoMotorInit
 .L28:
 ServoMotorInit:	.type	func
 
-; ..\CODE\Src\User_Motor.c	    11  {
-; ..\CODE\Src\User_Motor.c	    12  	gtm_pwm_init(ATOM0_CH0_P21_2, 50, 5000);
+; ..\CODE\Src\User_Motor.c	    13  {
+; ..\CODE\Src\User_Motor.c	    14  	gtm_pwm_init(ATOM0_CH0_P21_2, 50, 5000);
 	mov	d4,#4
 .L107:
 	mov	d5,#50
@@ -37,7 +39,7 @@ ServoMotorInit:	.type	func
 	call	gtm_pwm_init
 .L109:
 
-; ..\CODE\Src\User_Motor.c	    13  	gtm_pwm_init(ATOM0_CH1_P21_3, 50, 5000);
+; ..\CODE\Src\User_Motor.c	    15  	gtm_pwm_init(ATOM0_CH1_P21_3, 50, 5000);
 	mov	d4,#11
 .L110:
 	mov	d5,#50
@@ -51,22 +53,22 @@ __ServoMotorInit_function_end:
 .L45:
 	; End of function
 	
-	.sdecl	'.text.User_Motor.SetServoPWM',code,cluster('SetServoPWM')
-	.sect	'.text.User_Motor.SetServoPWM'
+	.sdecl	'.text.cpu0_psram',code,cluster('SetServoPWM')
+	.sect	'.text.cpu0_psram'
 	.align	2
 	
 	.global	SetServoPWM
 
-; ..\CODE\Src\User_Motor.c	    14  }
-; ..\CODE\Src\User_Motor.c	    15  
-; ..\CODE\Src\User_Motor.c	    16  void SetServoPWM(uint8 ServoNum, float PWMDuty)  //PWMDuty为百分比
+; ..\CODE\Src\User_Motor.c	    16  }
+; ..\CODE\Src\User_Motor.c	    17  
+; ..\CODE\Src\User_Motor.c	    18  void SetServoPWM(uint8 ServoNum, float PWMDuty)  //PWMDuty为百分比
 ; Function SetServoPWM
 .L30:
 SetServoPWM:	.type	func
 
-; ..\CODE\Src\User_Motor.c	    17  {
-; ..\CODE\Src\User_Motor.c	    18  	uint32 PWMCount = 0;
-; ..\CODE\Src\User_Motor.c	    19  	PWMCount = GTM_ATOM0_PWM_DUTY_MAX * (PWMDuty/100);
+; ..\CODE\Src\User_Motor.c	    19  {
+; ..\CODE\Src\User_Motor.c	    20  	uint32 PWMCount = 0;
+; ..\CODE\Src\User_Motor.c	    21  	PWMCount = GTM_ATOM0_PWM_DUTY_MAX * (PWMDuty/100);
 	movh	d15,#17096
 .L116:
 	div.f	d15,d5,d15
@@ -78,18 +80,18 @@ SetServoPWM:	.type	func
 	ftouz	d5,d15
 .L83:
 
-; ..\CODE\Src\User_Motor.c	    20  	switch(ServoNum)
-; ..\CODE\Src\User_Motor.c	    21  	{
-; ..\CODE\Src\User_Motor.c	    22  		case 1: pwm_duty(ATOM0_CH0_P21_2, PWMCount); break;
+; ..\CODE\Src\User_Motor.c	    22  	switch(ServoNum)
+; ..\CODE\Src\User_Motor.c	    23  	{
+; ..\CODE\Src\User_Motor.c	    24  		case 1: pwm_duty(ATOM0_CH0_P21_2, PWMCount); break;
 	jeq	d4,#1,.L2
 .L119:
 
-; ..\CODE\Src\User_Motor.c	    23  		case 2: pwm_duty(ATOM0_CH1_P21_3, PWMCount); break;
+; ..\CODE\Src\User_Motor.c	    25  		case 2: pwm_duty(ATOM0_CH1_P21_3, PWMCount); break;
 	jeq	d4,#2,.L3
 .L120:
 
-; ..\CODE\Src\User_Motor.c	    24  	}
-; ..\CODE\Src\User_Motor.c	    25  }
+; ..\CODE\Src\User_Motor.c	    26  	}
+; ..\CODE\Src\User_Motor.c	    27  }
 	ret
 .L2:
 	mov	d4,#4
@@ -106,50 +108,50 @@ __SetServoPWM_function_end:
 .L50:
 	; End of function
 	
-	.sdecl	'.text.User_Motor.MotorInit',code,cluster('MotorInit')
-	.sect	'.text.User_Motor.MotorInit'
+	.sdecl	'.text.cpu0_psram',code,cluster('MotorInit')
+	.sect	'.text.cpu0_psram'
 	.align	2
 	
 	.global	MotorInit
 
-; ..\CODE\Src\User_Motor.c	    26  
-; ..\CODE\Src\User_Motor.c	    27  void MotorInit(void)
+; ..\CODE\Src\User_Motor.c	    28  
+; ..\CODE\Src\User_Motor.c	    29  void MotorInit(void)
 ; Function MotorInit
 .L32:
 MotorInit:	.type	func
 
-; ..\CODE\Src\User_Motor.c	    28  {
-; ..\CODE\Src\User_Motor.c	    29  	gtm_pwm_init(ATOM1_CH4_P02_4 , 8000, 25000);
+; ..\CODE\Src\User_Motor.c	    30  {
+; ..\CODE\Src\User_Motor.c	    31  	gtm_pwm_init(ATOM1_CH4_P02_4 , 1700, 25000);
 	mov	d4,#80
 .L125:
-	mov	d5,#8000
+	mov	d5,#1700
 .L126:
 	mov	d6,#25000
 	call	gtm_pwm_init
 .L127:
 
-; ..\CODE\Src\User_Motor.c	    30  	gtm_pwm_init(ATOM1_CH5_P02_5 , 8000, 25000);
+; ..\CODE\Src\User_Motor.c	    32  	gtm_pwm_init(ATOM1_CH5_P02_5 , 1700, 25000);
 	mov	d4,#86
 .L128:
-	mov	d5,#8000
+	mov	d5,#1700
 .L129:
 	mov	d6,#25000
 	call	gtm_pwm_init
 .L130:
 
-; ..\CODE\Src\User_Motor.c	    31  	gtm_pwm_init(ATOM1_CH6_P02_6 , 8000, 25000);
+; ..\CODE\Src\User_Motor.c	    33  	gtm_pwm_init(ATOM1_CH6_P02_6 , 1700, 25000);
 	mov	d4,#92
 .L131:
-	mov	d5,#8000
+	mov	d5,#1700
 .L132:
 	mov	d6,#25000
 	call	gtm_pwm_init
 .L133:
 
-; ..\CODE\Src\User_Motor.c	    32  	gtm_pwm_init(ATOM1_CH7_P02_7 , 8000, 25000);
+; ..\CODE\Src\User_Motor.c	    34  	gtm_pwm_init(ATOM1_CH7_P02_7 , 1700, 25000);
 	mov	d4,#98
 .L134:
-	mov	d5,#8000
+	mov	d5,#1700
 .L135:
 	mov	d6,#25000
 	j	gtm_pwm_init
@@ -160,22 +162,22 @@ __MotorInit_function_end:
 .L55:
 	; End of function
 	
-	.sdecl	'.text.User_Motor.SetMotorPWM',code,cluster('SetMotorPWM')
-	.sect	'.text.User_Motor.SetMotorPWM'
+	.sdecl	'.text.cpu0_psram',code,cluster('SetMotorPWM')
+	.sect	'.text.cpu0_psram'
 	.align	2
 	
 	.global	SetMotorPWM
 
-; ..\CODE\Src\User_Motor.c	    33  }
-; ..\CODE\Src\User_Motor.c	    34  
-; ..\CODE\Src\User_Motor.c	    35  void SetMotorPWM(Motor_State_t MotorState, float PWMDuty)
+; ..\CODE\Src\User_Motor.c	    35  }
+; ..\CODE\Src\User_Motor.c	    36  
+; ..\CODE\Src\User_Motor.c	    37  void SetMotorPWM(Motor_State_t MotorState, float PWMDuty)
 ; Function SetMotorPWM
 .L34:
 SetMotorPWM:	.type	func
 
-; ..\CODE\Src\User_Motor.c	    36  {
-; ..\CODE\Src\User_Motor.c	    37  	uint32 PWMCount = 0;
-; ..\CODE\Src\User_Motor.c	    38  	PWMCount = GTM_ATOM1_PWM_DUTY_MAX * (PWMDuty / 100);
+; ..\CODE\Src\User_Motor.c	    38  {
+; ..\CODE\Src\User_Motor.c	    39  	uint32 PWMCount = 0;
+; ..\CODE\Src\User_Motor.c	    40  	PWMCount = GTM_ATOM1_PWM_DUTY_MAX * (PWMDuty / 100);
 	movh	d15,#17096
 .L140:
 	div.f	d15,d5,d15
@@ -187,26 +189,26 @@ SetMotorPWM:	.type	func
 	ftouz	d5,d15
 .L86:
 
-; ..\CODE\Src\User_Motor.c	    39  	switch(MotorState)
-; ..\CODE\Src\User_Motor.c	    40  	{
-; ..\CODE\Src\User_Motor.c	    41  		case LMotor_F: pwm_duty(ATOM1_CH7_P02_7, PWMCount); break;
+; ..\CODE\Src\User_Motor.c	    41  	switch(MotorState)
+; ..\CODE\Src\User_Motor.c	    42  	{
+; ..\CODE\Src\User_Motor.c	    43  		case LMotor_F: pwm_duty(ATOM1_CH7_P02_7, PWMCount); break;
 	jeq	d4,#0,.L6
 .L143:
 
-; ..\CODE\Src\User_Motor.c	    42  		case LMotor_B: pwm_duty(ATOM1_CH4_P02_4, PWMCount); break;
+; ..\CODE\Src\User_Motor.c	    44  		case LMotor_B: pwm_duty(ATOM1_CH4_P02_4, PWMCount); break;
 	jeq	d4,#1,.L7
 .L144:
 
-; ..\CODE\Src\User_Motor.c	    43  		case RMotor_F: pwm_duty(ATOM1_CH6_P02_6, PWMCount); break;
+; ..\CODE\Src\User_Motor.c	    45  		case RMotor_F: pwm_duty(ATOM1_CH6_P02_6, PWMCount); break;
 	jeq	d4,#2,.L8
 .L145:
 
-; ..\CODE\Src\User_Motor.c	    44  		case RMotor_B: pwm_duty(ATOM1_CH5_P02_5, PWMCount); break;
+; ..\CODE\Src\User_Motor.c	    46  		case RMotor_B: pwm_duty(ATOM1_CH5_P02_5, PWMCount); break;
 	jeq	d4,#3,.L9
 .L146:
 
-; ..\CODE\Src\User_Motor.c	    45  	}
-; ..\CODE\Src\User_Motor.c	    46  }
+; ..\CODE\Src\User_Motor.c	    47  	}
+; ..\CODE\Src\User_Motor.c	    48  }
 	ret
 .L6:
 	mov	d4,#98
@@ -233,27 +235,27 @@ __SetMotorPWM_function_end:
 .L60:
 	; End of function
 	
-	.sdecl	'.text.User_Motor.MotorUserHandle',code,cluster('MotorUserHandle')
-	.sect	'.text.User_Motor.MotorUserHandle'
+	.sdecl	'.text.cpu0_psram',code,cluster('MotorUserHandle')
+	.sect	'.text.cpu0_psram'
 	.align	2
 	
 	.global	MotorUserHandle
 
-; ..\CODE\Src\User_Motor.c	    47  
-; ..\CODE\Src\User_Motor.c	    48  void MotorUserHandle(Motor_State_t Motor, float PWMDuty)
+; ..\CODE\Src\User_Motor.c	    49  
+; ..\CODE\Src\User_Motor.c	    50  void MotorUserHandle(Motor_State_t Motor, float PWMDuty)
 ; Function MotorUserHandle
 .L36:
 MotorUserHandle:	.type	func
 	mov	d8,d5
 .L91:
 
-; ..\CODE\Src\User_Motor.c	    49  {
-; ..\CODE\Src\User_Motor.c	    50      if(Motor == LMotor_F)
+; ..\CODE\Src\User_Motor.c	    51  {
+; ..\CODE\Src\User_Motor.c	    52      if(Motor == LMotor_F)
 	jne	d4,#0,.L14
 .L151:
 
-; ..\CODE\Src\User_Motor.c	    51      {
-; ..\CODE\Src\User_Motor.c	    52      	if(PWMDuty < 0)
+; ..\CODE\Src\User_Motor.c	    53      {
+; ..\CODE\Src\User_Motor.c	    54      	if(PWMDuty < 0)
 	mov	d15,#0
 .L152:
 	cmp.f	d15,d8,d15
@@ -261,26 +263,26 @@ MotorUserHandle:	.type	func
 	jz.t	d15:0,.L15
 .L154:
 
-; ..\CODE\Src\User_Motor.c	    53      	{
-; ..\CODE\Src\User_Motor.c	    54      		SetMotorPWM(LMotor_F, 0);
+; ..\CODE\Src\User_Motor.c	    55      	{
+; ..\CODE\Src\User_Motor.c	    56      		SetMotorPWM(LMotor_F, 0);
 	j	.L16
 .L14:
 
-; ..\CODE\Src\User_Motor.c	    55      		SetMotorPWM(LMotor_B, PWMDuty);
-; ..\CODE\Src\User_Motor.c	    56      	}
-; ..\CODE\Src\User_Motor.c	    57      	else
-; ..\CODE\Src\User_Motor.c	    58      	{
-; ..\CODE\Src\User_Motor.c	    59  			SetMotorPWM(LMotor_B, 0);
-; ..\CODE\Src\User_Motor.c	    60  			SetMotorPWM(LMotor_F, PWMDuty);
-; ..\CODE\Src\User_Motor.c	    61      	}
-; ..\CODE\Src\User_Motor.c	    62  
-; ..\CODE\Src\User_Motor.c	    63      }
-; ..\CODE\Src\User_Motor.c	    64      else if(Motor == LMotor_B)
+; ..\CODE\Src\User_Motor.c	    57      		SetMotorPWM(LMotor_B, PWMDuty);
+; ..\CODE\Src\User_Motor.c	    58      	}
+; ..\CODE\Src\User_Motor.c	    59      	else
+; ..\CODE\Src\User_Motor.c	    60      	{
+; ..\CODE\Src\User_Motor.c	    61  			SetMotorPWM(LMotor_B, 0);
+; ..\CODE\Src\User_Motor.c	    62  			SetMotorPWM(LMotor_F, PWMDuty);
+; ..\CODE\Src\User_Motor.c	    63      	}
+; ..\CODE\Src\User_Motor.c	    64  
+; ..\CODE\Src\User_Motor.c	    65      }
+; ..\CODE\Src\User_Motor.c	    66      else if(Motor == LMotor_B)
 	jne	d4,#1,.L17
 .L155:
 
-; ..\CODE\Src\User_Motor.c	    65      {
-; ..\CODE\Src\User_Motor.c	    66      	if(PWMDuty < 0)
+; ..\CODE\Src\User_Motor.c	    67      {
+; ..\CODE\Src\User_Motor.c	    68      	if(PWMDuty < 0)
 	mov	d15,#0
 .L156:
 	cmp.f	d15,d8,d15
@@ -288,8 +290,8 @@ MotorUserHandle:	.type	func
 	jz.t	d15:0,.L18
 .L15:
 
-; ..\CODE\Src\User_Motor.c	    67      	{
-; ..\CODE\Src\User_Motor.c	    68  			SetMotorPWM(LMotor_B, 0);
+; ..\CODE\Src\User_Motor.c	    69      	{
+; ..\CODE\Src\User_Motor.c	    70  			SetMotorPWM(LMotor_B, 0);
 	mov	d4,#1
 .L89:
 	mov	d5,#0
@@ -297,17 +299,17 @@ MotorUserHandle:	.type	func
 	call	SetMotorPWM
 .L158:
 
-; ..\CODE\Src\User_Motor.c	    69  			SetMotorPWM(LMotor_F, PWMDuty);
+; ..\CODE\Src\User_Motor.c	    71  			SetMotorPWM(LMotor_F, PWMDuty);
 	mov	d4,#0
 .L159:
 	j	.L19
 .L18:
 .L16:
 
-; ..\CODE\Src\User_Motor.c	    70      	}
-; ..\CODE\Src\User_Motor.c	    71      	else
-; ..\CODE\Src\User_Motor.c	    72      	{
-; ..\CODE\Src\User_Motor.c	    73      		SetMotorPWM(LMotor_F, 0);
+; ..\CODE\Src\User_Motor.c	    72      	}
+; ..\CODE\Src\User_Motor.c	    73      	else
+; ..\CODE\Src\User_Motor.c	    74      	{
+; ..\CODE\Src\User_Motor.c	    75      		SetMotorPWM(LMotor_F, 0);
 	mov	d4,#0
 .L92:
 	mov	d5,d4
@@ -315,21 +317,21 @@ MotorUserHandle:	.type	func
 	call	SetMotorPWM
 .L160:
 
-; ..\CODE\Src\User_Motor.c	    74      		SetMotorPWM(LMotor_B, PWMDuty);
+; ..\CODE\Src\User_Motor.c	    76      		SetMotorPWM(LMotor_B, PWMDuty);
 	mov	d4,#1
 .L161:
 	j	.L20
 .L17:
 
-; ..\CODE\Src\User_Motor.c	    75      	}
-; ..\CODE\Src\User_Motor.c	    76  
-; ..\CODE\Src\User_Motor.c	    77      }
-; ..\CODE\Src\User_Motor.c	    78      else if(Motor == RMotor_F)
+; ..\CODE\Src\User_Motor.c	    77      	}
+; ..\CODE\Src\User_Motor.c	    78  
+; ..\CODE\Src\User_Motor.c	    79      }
+; ..\CODE\Src\User_Motor.c	    80      else if(Motor == RMotor_F)
 	jne	d4,#2,.L21
 .L162:
 
-; ..\CODE\Src\User_Motor.c	    79      {
-; ..\CODE\Src\User_Motor.c	    80      	if(PWMDuty < 0)
+; ..\CODE\Src\User_Motor.c	    81      {
+; ..\CODE\Src\User_Motor.c	    82      	if(PWMDuty < 0)
 	mov	d15,#0
 .L163:
 	cmp.f	d15,d8,d15
@@ -337,25 +339,25 @@ MotorUserHandle:	.type	func
 	jz.t	d15:0,.L22
 .L165:
 
-; ..\CODE\Src\User_Motor.c	    81      	{
-; ..\CODE\Src\User_Motor.c	    82  			SetMotorPWM(RMotor_F, 0);
+; ..\CODE\Src\User_Motor.c	    83      	{
+; ..\CODE\Src\User_Motor.c	    84  			SetMotorPWM(RMotor_F, 0);
 	j	.L23
 .L21:
 
-; ..\CODE\Src\User_Motor.c	    83  			SetMotorPWM(RMotor_B, PWMDuty);
-; ..\CODE\Src\User_Motor.c	    84      	}
-; ..\CODE\Src\User_Motor.c	    85      	else
-; ..\CODE\Src\User_Motor.c	    86      	{
-; ..\CODE\Src\User_Motor.c	    87      		SetMotorPWM(RMotor_B, 0);
-; ..\CODE\Src\User_Motor.c	    88      		SetMotorPWM(RMotor_F, PWMDuty);
-; ..\CODE\Src\User_Motor.c	    89      	}
-; ..\CODE\Src\User_Motor.c	    90      }
-; ..\CODE\Src\User_Motor.c	    91      else if(Motor == RMotor_B)
+; ..\CODE\Src\User_Motor.c	    85  			SetMotorPWM(RMotor_B, PWMDuty);
+; ..\CODE\Src\User_Motor.c	    86      	}
+; ..\CODE\Src\User_Motor.c	    87      	else
+; ..\CODE\Src\User_Motor.c	    88      	{
+; ..\CODE\Src\User_Motor.c	    89      		SetMotorPWM(RMotor_B, 0);
+; ..\CODE\Src\User_Motor.c	    90      		SetMotorPWM(RMotor_F, PWMDuty);
+; ..\CODE\Src\User_Motor.c	    91      	}
+; ..\CODE\Src\User_Motor.c	    92      }
+; ..\CODE\Src\User_Motor.c	    93      else if(Motor == RMotor_B)
 	jne	d4,#3,.L24
 .L166:
 
-; ..\CODE\Src\User_Motor.c	    92      {
-; ..\CODE\Src\User_Motor.c	    93      	if(PWMDuty < 0)
+; ..\CODE\Src\User_Motor.c	    94      {
+; ..\CODE\Src\User_Motor.c	    95      	if(PWMDuty < 0)
 	mov	d15,#0
 .L167:
 	cmp.f	d15,d8,d15
@@ -363,8 +365,8 @@ MotorUserHandle:	.type	func
 	jz.t	d15:0,.L25
 .L22:
 
-; ..\CODE\Src\User_Motor.c	    94      	{
-; ..\CODE\Src\User_Motor.c	    95      		SetMotorPWM(RMotor_B, 0);
+; ..\CODE\Src\User_Motor.c	    96      	{
+; ..\CODE\Src\User_Motor.c	    97      		SetMotorPWM(RMotor_B, 0);
 	mov	d4,#3
 .L94:
 	mov	d5,#0
@@ -372,20 +374,20 @@ MotorUserHandle:	.type	func
 	call	SetMotorPWM
 .L169:
 
-; ..\CODE\Src\User_Motor.c	    96      		SetMotorPWM(RMotor_F, PWMDuty);
+; ..\CODE\Src\User_Motor.c	    98      		SetMotorPWM(RMotor_F, PWMDuty);
 	mov	d4,#2
 .L170:
 	j	.L26
 .L24:
 
-; ..\CODE\Src\User_Motor.c	    97      	}
-; ..\CODE\Src\User_Motor.c	    98      	else
-; ..\CODE\Src\User_Motor.c	    99      	{
-; ..\CODE\Src\User_Motor.c	   100      		SetMotorPWM(RMotor_F, 0);
-; ..\CODE\Src\User_Motor.c	   101      		SetMotorPWM(RMotor_B, PWMDuty);
-; ..\CODE\Src\User_Motor.c	   102      	}
-; ..\CODE\Src\User_Motor.c	   103      }
-; ..\CODE\Src\User_Motor.c	   104  }
+; ..\CODE\Src\User_Motor.c	    99      	}
+; ..\CODE\Src\User_Motor.c	   100      	else
+; ..\CODE\Src\User_Motor.c	   101      	{
+; ..\CODE\Src\User_Motor.c	   102      		SetMotorPWM(RMotor_F, 0);
+; ..\CODE\Src\User_Motor.c	   103      		SetMotorPWM(RMotor_B, PWMDuty);
+; ..\CODE\Src\User_Motor.c	   104      	}
+; ..\CODE\Src\User_Motor.c	   105      }
+; ..\CODE\Src\User_Motor.c	   106  }
 	ret
 .L25:
 .L23:
@@ -35068,7 +35070,7 @@ __MotorUserHandle_function_end:
 	.byte	2
 	.word	.L37
 	.byte	3
-	.byte	'ServoMotorInit',0,1,10,6,1,1,1
+	.byte	'ServoMotorInit',0,1,12,6,1,1,1
 	.word	.L28,.L66,.L27
 	.byte	4
 	.word	.L28,.L66
@@ -35091,7 +35093,7 @@ __MotorUserHandle_function_end:
 .L106:
 	.byte	5,15,7,0,5,2
 	.word	.L28
-	.byte	3,11,1,5,32,9
+	.byte	3,13,1,5,32,9
 	.half	.L107-.L28
 	.byte	1,5,36,9
 	.half	.L108-.L107
@@ -35123,18 +35125,18 @@ __MotorUserHandle_function_end:
 	.byte	2
 	.word	.L37
 	.byte	3
-	.byte	'SetServoPWM',0,1,16,6,1,1,1
+	.byte	'SetServoPWM',0,1,18,6,1,1,1
 	.word	.L30,.L67,.L29
 	.byte	4
-	.byte	'ServoNum',0,1,16,24
+	.byte	'ServoNum',0,1,18,24
 	.word	.L68,.L69
 	.byte	4
-	.byte	'PWMDuty',0,1,16,40
+	.byte	'PWMDuty',0,1,18,40
 	.word	.L70,.L71
 	.byte	5
 	.word	.L30,.L67
 	.byte	6
-	.byte	'PWMCount',0,1,18,9
+	.byte	'PWMCount',0,1,20,9
 	.word	.L72,.L73
 	.byte	0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('SetServoPWM')
@@ -35156,7 +35158,7 @@ __MotorUserHandle_function_end:
 .L115:
 	.byte	5,47,7,0,5,2
 	.word	.L30
-	.byte	3,18,1,5,46,9
+	.byte	3,20,1,5,46,9
 	.half	.L116-.L30
 	.byte	1,5,13,9
 	.half	.L117-.L116
@@ -35198,7 +35200,7 @@ __MotorUserHandle_function_end:
 	.byte	2
 	.word	.L37
 	.byte	3
-	.byte	'MotorInit',0,1,27,6,1,1,1
+	.byte	'MotorInit',0,1,29,6,1,1,1
 	.word	.L32,.L74,.L31
 	.byte	4
 	.word	.L32,.L74
@@ -35221,7 +35223,7 @@ __MotorUserHandle_function_end:
 .L124:
 	.byte	5,15,7,0,5,2
 	.word	.L32
-	.byte	3,28,1,5,33,9
+	.byte	3,30,1,5,33,9
 	.half	.L125-.L32
 	.byte	1,5,39,9
 	.half	.L126-.L125
@@ -35265,18 +35267,18 @@ __MotorUserHandle_function_end:
 	.byte	2
 	.word	.L37
 	.byte	3
-	.byte	'SetMotorPWM',0,1,35,6,1,1,1
+	.byte	'SetMotorPWM',0,1,37,6,1,1,1
 	.word	.L34,.L75,.L33
 	.byte	4
-	.byte	'MotorState',0,1,35,32
+	.byte	'MotorState',0,1,37,32
 	.word	.L76,.L77
 	.byte	4
-	.byte	'PWMDuty',0,1,35,50
+	.byte	'PWMDuty',0,1,37,50
 	.word	.L70,.L78
 	.byte	5
 	.word	.L34,.L75
 	.byte	6
-	.byte	'PWMCount',0,1,37,9
+	.byte	'PWMCount',0,1,39,9
 	.word	.L72,.L79
 	.byte	0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('SetMotorPWM')
@@ -35298,7 +35300,7 @@ __MotorUserHandle_function_end:
 .L139:
 	.byte	5,49,7,0,5,2
 	.word	.L34
-	.byte	3,37,1,5,47,9
+	.byte	3,39,1,5,47,9
 	.half	.L140-.L34
 	.byte	1,5,13,9
 	.half	.L141-.L140
@@ -35352,13 +35354,13 @@ __MotorUserHandle_function_end:
 	.byte	2
 	.word	.L37
 	.byte	3
-	.byte	'MotorUserHandle',0,1,48,6,1,1,1
+	.byte	'MotorUserHandle',0,1,50,6,1,1,1
 	.word	.L36,.L80,.L35
 	.byte	4
-	.byte	'Motor',0,1,48,36
+	.byte	'Motor',0,1,50,36
 	.word	.L76,.L81
 	.byte	4
-	.byte	'PWMDuty',0,1,48,49
+	.byte	'PWMDuty',0,1,50,49
 	.word	.L70,.L82
 	.byte	5
 	.word	.L36,.L80
@@ -35381,7 +35383,7 @@ __MotorUserHandle_function_end:
 .L150:
 	.byte	5,6,7,0,5,2
 	.word	.L36
-	.byte	3,47,1,5,5,9
+	.byte	3,49,1,5,5,9
 	.half	.L91-.L36
 	.byte	3,2,1,5,19,7,9
 	.half	.L151-.L91
@@ -35598,6 +35600,8 @@ __MotorUserHandle_function_end:
 	.word	12
 	.word	.L172,.L36,.L80-.L36
 
-; ..\CODE\Src\User_Motor.c	   105  
+; ..\CODE\Src\User_Motor.c	   107  
+; ..\CODE\Src\User_Motor.c	   108  #pragma section all restore
+; ..\CODE\Src\User_Motor.c	   109  
 
 	; Module end

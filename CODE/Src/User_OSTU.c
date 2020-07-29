@@ -1,5 +1,5 @@
 /*
- * User_OSTU.c
+  * User_OSTU.c
  *
  *  Created on: 2020Äê7ÔÂ6ÈÕ
  *      Author: Quantum815
@@ -7,15 +7,11 @@
 
 #include "..\CODE\Inc\User_OSTU.h"
 
-#pragma section all "cpu1_dsram"
-
-uint16_t Threshold;  //OSTU´ó½ò·¨¼ÆËãµÄÍ¼ÏñãĞÖµ, ·µ»ØÀàĞÍÔ­À´Îªuint8_t
-
-#pragma section all restore
+#pragma section all "cpu1_psram"
 
 /***************************************************************
 *
-* º¯ÊıÃû³Æ£ºuint8_t GetOSTU(uint8_t tmImage[MT9V03X_H][MT9V03X_W])
+* º¯ÊıÃû³Æ£ºuint8_t GetOSTU(uint8_t tmImage[IMAGEH][IMAGEW])
 * ¹¦ÄÜËµÃ÷£ºÇóãĞÖµ´óĞ¡
 * ²ÎÊıËµÃ÷£º
 * º¯Êı·µ»Ø£ºãĞÖµ´óĞ¡
@@ -34,7 +30,7 @@ Ostu·½·¨ÓÖÃû×î´óÀà¼ä²î·½·¨£¬Í¨¹ıÍ³¼ÆÕû¸öÍ¼ÏñµÄÖ±·½Í¼ÌØĞÔÀ´ÊµÏÖÈ«¾ÖãĞÖµTµÄ×Ô¶¯Ñ¡È
 7£©½«×î´ógÏàÓ¦µÄiÖµ×÷ÎªÍ¼ÏñµÄÈ«¾ÖãĞÖµ
 È±Ïİ:OSTUËã·¨ÔÚ´¦Àí¹âÕÕ²»¾ùÔÈµÄÍ¼ÏñµÄÊ±ºò£¬Ğ§¹û»áÃ÷ÏÔ²»ºÃ£¬ÒòÎªÀûÓÃµÄÊÇÈ«¾ÖÏñËØĞÅÏ¢¡£
 ***************************************************************/
-uint16_t GetOSTU(uint8_t tmImage[MT9V03X_H][MT9V03X_W])  //·µ»ØÖµÔ­Îªuint8_t
+uint8_t GetOSTU(uint8_t tmImage[IMAGEH][IMAGEW])
 {
   uint32_t Amount = 0;
   uint32_t PixelBack = 0;
@@ -43,15 +39,15 @@ uint16_t GetOSTU(uint8_t tmImage[MT9V03X_H][MT9V03X_W])  //·µ»ØÖµÔ­Îªuint8_t
   int32_t PixelIntegralFore = 0;
   int32_t PixelFore = 0;
   double OmegaBack, OmegaFore, MicroBack, MicroFore, SigmaB, Sigma; // Àà¼ä·½²î;
-  int16_t MinValue, MaxValue;
+  uint8_t MinValue, MaxValue;
   uint8_t Threshold = 0;
   uint8_t HistoGram[256];              //
 
   for (int j = 0; j < 256; j++)  HistoGram[j] = 0; //³õÊ¼»¯»Ò¶ÈÖ±·½Í¼
 
-  for (int j = 0; j < MT9V03X_H-40; j++)
+  for (int j = 0; j < IMAGEH-40; j++)
   {
-    for (int i = 0; i < MT9V03X_W-8; i++)
+    for (int i = 0; i < IMAGEW-8; i++)
     {
       HistoGram[tmImage[j][i]]++; //Í³¼Æ»Ò¶È¼¶ÖĞÃ¿¸öÏñËØÔÚÕû·ùÍ¼ÏñÖĞµÄ¸öÊı
     }
@@ -92,19 +88,19 @@ uint16_t GetOSTU(uint8_t tmImage[MT9V03X_H][MT9V03X_W])  //·µ»ØÖµÔ­Îªuint8_t
 }
 /***************************************************************
 *
-* º¯ÊıÃû³Æ£ºvoid BinaryImage(uint8_t tmImage[MT9V03X_H][MT9V03X_W])
+* º¯ÊıÃû³Æ£ºvoid BinaryImage(uint8_t tmImage[IMAGEH][IMAGEW])
 * ¹¦ÄÜËµÃ÷£ºÍ¼ÏñÊı¾İ¶şÖµ»¯
 * ²ÎÊıËµÃ÷£º
 * º¯Êı·µ»Ø£ºvoid
 * ĞŞ¸ÄÊ±¼ä£º2018Äê3ÔÂ27ÈÕ
 * ±¸ ×¢£º
 ***************************************************************/
-void BinaryImage(uint8_t tmImage[MT9V03X_H][MT9V03X_W],uint8_t ThresholdV)
+void BinaryImage(uint8_t tmImage[IMAGEH][IMAGEW],uint8_t ThresholdV)
 {
 
-  for(int i = 0;i < MT9V03X_H;i++)
+  for(int i = 0;i < IMAGEH;i++)
   {
-    for(int j = 0; j< MT9V03X_W;j++)
+    for(int j = 0; j< IMAGEW;j++)
     {
       if(tmImage[i][j] >= ThresholdV)
       {
@@ -117,4 +113,6 @@ void BinaryImage(uint8_t tmImage[MT9V03X_H][MT9V03X_W],uint8_t ThresholdV)
     }
   }
 }
+
+#pragma section all restore
 

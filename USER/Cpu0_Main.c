@@ -31,67 +31,29 @@
 //对于TC系列默认是不支持中断嵌套的，希望支持中断嵌套需要在中断内使用enableInterrupts();来开启中断嵌套
 //简单点说实际上进入中断后TC系列的硬件自动调用了disableInterrupts();来拒绝响应任何的中断，因为需要我们自己手动调用enableInterrupts();来开启中断的响应。
 
-#pragma section all "cpu0_psram"
-
 void core0_main(void)
 {
 	get_clk();//获取时钟频率  务必保留
 
 	//用户在此处调用各种初始化函数等
     UserInit();
-    //TwoCarUARTInit();
-    //DebugUARTInit();
 	enableInterrupts();
 
 	while (TRUE)
 	{
+		//gpio_set(P20_8, 0);
+
 		//if(TwoCarRxFlag)
-			//uart_putstr(WIRELESS_UART, "test");
-		//uint8 x;
-		//if(uart_query(WIRELESS_UART, &x))
-		//{
-			//uart_putstr(WIRELESS_UART, "test");
-		//}
-		//if(mt9v03x_finish_flag)
-		//{
-	    	//seekfree_sendimg_03x(UART_3, mt9v03x_image[0], MT9V03X_W, MT9V03X_H);
-			//ips114_displayimage032(mt9v03x_image[0], MT9V03X_W, MT9V03X_H);
-			//mt9v03x_finish_flag = 0;
-		//}
+			//gpio_set(P20_8, 0);
+
 		//ips114_showfloat(0,0,2.222,4,4);
-		//FindLine();
-		//GyroI2CReadByte();
-		//for(int i =0;i<=10;i++)
-		//printf("%d   ",GYRORxBuff[i]);
-		//printf("\r\n");
-		//systick_delay_ms(STM0, 100);
-		//UpdateADCValue();
-		DebugReadADCData();
-		//GyroUARTReadByte();
-		//CountDistance();
-		//GyroCalculate();
-    	//ADCcalculateMidLine();
-    	//systick_delay_ms(STM0, 50);
-    	//CountDistance();
+		//DebugReadADCData();
 
-
-		//ips114_showchar(50,50,'t');
-		//MotorUserHandle(RMotor_B, 00);
-		//MotorUserHandle(LMotor_F, 10);
-		///systick_delay_ms(STM0, 2000);
-		//MotorUserHandle(LMotor_F, 10);
-		//MotorUserHandle(LMotor_B, 20);
+		MotorUserHandle(LMotor_F, 10);
+		//MotorUserHandle(LMotor_B, 5);
+		MotorUserHandle(RMotor_F, 10);
+		//MotorUserHandle(RMotor_B, 5);
 		//systick_delay_ms(STM0, 2000);
-		//MotorUserHandle(LMotor_B, 0);
-		//MotorUserHandle(RMotor_F, 8.4);
-		///systick_delay_ms(STM0, 2000);
-		//MotorUserHandle(RMotor_F, 0);
-		//MotorUserHandle(RMotor_B, 20);
-		//systick_delay_ms(STM0, 2000);
-		//uart_putstr(UART_0, "xxxxx");
 	}
 }
-
-#pragma section all restore
-
 

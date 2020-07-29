@@ -14,7 +14,7 @@ uint8 GyroAutoCalibration[5] = {0xff, 0xaa, 0x63, 0x00, 0x00};  //ÍÓÂÝÒÇ×Ô¶¯Ð£×¼
 uint8 GyroKeepConfiguration[5] = {0xff, 0xaa, 0x00, 0x00, 0x00};  //±£³ÖÅäÖÃ
 uint8 GyroRxBuff[11];
 uint8 GyroReceiveNum, GyroRxFlag, FirstPitchAngleFlag;
-double PitchAngle, RollAngle, YawAngle, NowGyroYawAngle, FirstPitchAngle;
+double PitchAngle, RollAngle, YawAngle, NowGyroYawAngle;
 
 #pragma section all restore
 
@@ -72,7 +72,7 @@ void GyroCalculate(void)
 		}
 		temp = GyroRxBuff[3] << 8;
 		temp |= GyroRxBuff[2];
-		PitchAngle= (double)temp / (double)32768 * (double)180;  //yÖá¸©Ñö½Ç
+		PitchAngle = (double)temp / (double)32768 * (double)180;  //yÖá¸©Ñö½Ç
 
 		temp = GyroRxBuff[5] << 8;
 		temp |= GyroRxBuff[4];
@@ -84,20 +84,8 @@ void GyroCalculate(void)
 		ManageYawAngle();
 		GyroRxFlag = 0;
 		//printf("p=%lf,r=%lf,y=%lf\r\n",PitchAngle,RollAngle,YawAngle);
-
-		if(!FirstPitchAngleFlag)
-		{
-			GetFirstPitchAngle();
-			FirstPitchAngleFlag = 1;
-		}
     }
 }
-
-void GetFirstPitchAngle(void)
-{
-	FirstPitchAngle = PitchAngle;
-}
-
 void ManageYawAngle(void)
 {
     if(YawAngle < 0)

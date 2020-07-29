@@ -34,7 +34,6 @@ uint8 StartFlag;
 
 #pragma section all restore
 
-#pragma section all "cpu0_psram"
 
 //事件反应函数
 void RunStop(void)
@@ -49,36 +48,10 @@ void RunStop(void)
 
 void FindLine(void)
 {
-	//static uint8 uphillCount = 0, downhillCount = 0;
-
 	PIDValue = GetPIDValue(0.002058, MidLineFuseNum*1000, FINDLINE_P, FINDLINE_I, FINDLINE_D);
 	//printf("%f\r\n",PIDValue);
-	//if(PitchAngle - FirstPitchAngle <= -3)
-	//{
-		//uphillCount++;
-		//if(uphillCount == 10)
-		//{
-			//LPWM = LeftWheelDeadZone + LeftUphillSpeed + PIDValue;
-		   //RPWM = RightWheelDeadZone + RightUphillSpeed - PIDValue;
-		    //uphillCount = 0;
-		//}
-
-	//}
-	//else if(PitchAngle - FirstPitchAngle >= 3)
-	//{
-		//downhillCount++;
-		//if(downhillCount == 10)
-		//{
-			//LPWM = LeftWheelDeadZone + LeftDownhillSpeed + PIDValue;
-			//RPWM = RightWheelDeadZone + RightDownhillSpeed - PIDValue;
-			//downhillCount = 0;
-		//}
-	//}
-	//else
-	//{
-		LPWM = LeftWheelDeadZone + LeftNormalSpeed + PIDValue;
-	    RPWM = RightWheelDeadZone + RightNormalSpeed - PIDValue;
-	//}
+	LPWM = LeftWheelDeadZone + LeftNormalSpeed + PIDValue;
+	RPWM = RightWheelDeadZone + RightNormalSpeed - PIDValue;
 
     if(LPWM >= 30)
         LPWM = 30;
@@ -104,7 +77,8 @@ void OutRoundaboutProcess(void)
 
 void GoGarage(void)
 {
-
+	if(EnterGarageFlag)
+		;
 }
 
 
@@ -206,6 +180,4 @@ void FSMRun(void)
     else
     	FSMEventHandle(&CarFSM, NOEVENT);
 }
-
-#pragma section all restore
 

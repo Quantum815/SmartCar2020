@@ -10,9 +10,8 @@
 
 #include "headfile.h"
 
-#ifdef IMAGEPROCESS
-
 extern uint8 ProcessImageFlag;
+extern uint8 EnterGarageFlag;
 extern double MidLineFuseNum;
 
 void ImagePretreatment(void);
@@ -23,10 +22,7 @@ double GetMidLineNum(void);
 void ShowMidLine(void);
 void FindMidLine_ADD(void);
 void GetOSTUIMAG(void);
-extern uint8 ProcessImageFlag;
-extern double MidLineFuseNum;
-//extern uint8 DisplayIMAG[MT9V03X_H][MT9V03X_W];
+void FindZebra(void);
+
 
 #endif /* CODE_INC_USER_IMAGE_PROCESS_H_ */
-
-#endif

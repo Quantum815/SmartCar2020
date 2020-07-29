@@ -9,23 +9,32 @@
 
 #ifdef IMAGEPROCESS
 
+#pragma section all "cpu0_dsram"
+
+uint8 EnterGarageFlag;
+
+#pragma section all restore
+
 #pragma section all "cpu1_dsram"
 
-int x1, x2, x3, x4;
+/*int x1, x2, x3, x4;
 int CloseThresholds;
 int FarThresholds;
 uint8 ProcessImageFlag = 0;
 uint8 DisplayIMAGE[MT9V03X_H][MT9V03X_W], OSTUIMAGE[15][MT9V03X_W];
-uint8 LeftLine[MT9V03X_H], RightLine[MT9V03X_H], MidLine[MT9V03X_H];
+uint8 LeftLine[MT9V03X_H], RightLine[MT9V03X_H], MidLine[MT9V03X_H];*/
 
-#pragma section all "cpu1_dsram"
+#pragma section all restore
+
+
+#pragma section all "cpu1_psram"
 
 //Í¼ÏñÍ¼´¦Àí
-void ImagePretreatment(void)
+/*void ImagePretreatment(void)
 {
-    for (int i = 0; i <= MT9V03X_H - 1; i++)
+    for (uint8 i = 0; i <= MT9V03X_H - 1; i++)
     {
-        for(int j = 0; j <= MT9V03X_W-1; j++)
+        for(uint8 j = 0; j <= MT9V03X_W-1; j++)
         {
 
             if((i<=50 && (j<=50 || j>=138)) || (i>=70 && (j<=50 || j>=138)))
@@ -68,11 +77,11 @@ void ImagePretreatment(void)
 void FindMidLine(void)
 {
 
-    for (int i = (MT9V03X_H - 1) - 15; i >= 15; i--)
+    for (uint8 i = (MT9V03X_H - 1) - 15; i >= 15; i--)
     {
         if(i >= (MT9V03X_H - 1) - 20)
         {
-            for (int j = 0; j <= MT9V03X_W - 1; j++)
+            for (uint8 j = 0; j <= MT9V03X_W - 1; j++)
             {
                 if (DisplayIMAGE[i][j] == 255)
                 {
@@ -85,7 +94,7 @@ void FindMidLine(void)
                     LeftLine[i] = 187;
                 }
             }
-            for(int k = MT9V03X_W; k >= 0; k--)
+            for(uint8 k = MT9V03X_W; k >= 0; k--)
             {
                 if(DisplayIMAGE[i][k] == 255)
                 {
@@ -103,7 +112,7 @@ void FindMidLine(void)
         }
         else
         {
-            for (int f = ((int)((x1 + x2) / 2)); f >= 0; f--)
+            for (uint8 f = ((int)((x1 + x2) / 2)); f >= 0; f--)
             {
                 if (DisplayIMAGE[i][f] == 0)
                 {
@@ -116,7 +125,7 @@ void FindMidLine(void)
                     LeftLine[i] = 0;
                 }
             }
-            for (int g = (int)((x1 + x2) / 2); g <= MT9V03X_W - 1; g++)
+            for (uint8 g = (int)((x1 + x2) / 2); g <= MT9V03X_W - 1; g++)
             {
                 if (DisplayIMAGE[i][g] == 0)
                 {
@@ -278,6 +287,130 @@ void GetOSTUIMAGE(void)
         for(int j = 0; j < MT9V03X_W; j++)
             OSTUIMAGE[i][j] = mt9v03x_image[i + 15][j];
     }
+}*/
+
+void FindZebra(void)
+{
+	uint8_t Threshold;
+	uint8 JudgeFlag = 0;
+	static uint8 BlackWhiteChangeCount = 0;
+	static uint8 RecognizedCorrectLineCount = 0;
+	//static uint8 count = 0;
+
+	Threshold = GetOSTU(&mt9v03x_image[0]);
+	if(255 - Threshold >= InGarageAdjustedValue)
+		Threshold += InGarageAdjustedValue;
+	else
+		Threshold = 255;
+	BinaryImage(&mt9v03x_image[0], Threshold);
+
+	for(int imageH=110; imageH<=119; imageH++)
+	{
+		for(int imageRW=94; imageRW>=60; imageRW--)
+		{
+			for(int imageLW=93; imageLW>=59; imageLW--)
+			{
+				JudgeFlag = 0;
+				if(mt9v03x_image[imageH][imageRW]==0x00 && mt9v03x_image[imageH][imageLW]==0xfe)
+				{
+					for(int i=imageLW-5; i<=imageLW; i++)
+						if(mt9v03x_image[imageH][i]==0x00)
+							JudgeFlag = 1;
+					for(int i=imageRW+5; i>=imageRW; i--)
+						if(mt9v03x_image[imageH][i]==0xfe)
+							JudgeFlag = 1;
+					if(JudgeFlag)
+						continue;
+					else
+					{
+						BlackWhiteChangeCount++;
+						RecognizedCorrectLineCount++;
+					}
+
+				}
+				if(mt9v03x_image[imageH][imageRW]==0xfe && mt9v03x_image[imageH][imageLW]==0x00)
+				{
+					for(int i=imageLW-5; i<=imageLW; i++)
+						if(mt9v03x_image[imageH][i]==0xfe)
+							JudgeFlag = 1;
+					for(int i=imageRW+5; i>=imageRW; i--)
+						if(mt9v03x_image[imageH][i]==0x00)
+							JudgeFlag = 1;
+					if(JudgeFlag)
+						continue;
+					else
+					{
+						BlackWhiteChangeCount++;
+						RecognizedCorrectLineCount++;
+					}
+				}
+			}
+		}
+		for(int imageLW=94; imageLW<=130; imageLW++)
+		{
+			for(int imageRW=95; imageRW<=131; imageRW++)
+			{
+				JudgeFlag = 0;
+				if(mt9v03x_image[imageH][imageRW]==0x00 && mt9v03x_image[imageH][imageLW]==0xfe)
+				{
+					for(int i=imageLW-5; i<=imageLW; i++)
+						if(mt9v03x_image[imageH][i]==0x00)
+							JudgeFlag = 1;
+					for(int i=imageRW+5; i>=imageRW; i--)
+						if(mt9v03x_image[imageH][i]==0xfe)
+							JudgeFlag = 1;
+					if(JudgeFlag)
+						continue;
+					else
+					{
+						BlackWhiteChangeCount++;
+						RecognizedCorrectLineCount++;
+					}
+
+				}
+				if(mt9v03x_image[imageH][imageRW]==0xfe && mt9v03x_image[imageH][imageLW]==0x00)
+				{
+					for(int i=imageLW-5; i<=imageLW; i++)
+						if(mt9v03x_image[imageH][i]==0xfe)
+							JudgeFlag = 1;
+					for(int i=imageRW+5; i>=imageRW; i--)
+						if(mt9v03x_image[imageH][i]==0x00)
+							JudgeFlag = 1;
+					if(JudgeFlag)
+						continue;
+					else
+					{
+						BlackWhiteChangeCount++;
+						RecognizedCorrectLineCount++;
+					}
+				}
+			}
+		}
+	}
+	if(BlackWhiteChangeCount >= 4 && RecognizedCorrectLineCount >= 4)
+	{
+		//count++;
+		//if(count == 3)
+		//{
+			gpio_set(P20_8, 0);
+			EnterGarageFlag = 1;
+		//}
+		//else
+		//{
+			//count = 0;
+		//}
+
+	}
+	else
+	{
+		//count--;
+		gpio_set(P20_8, 1);
+	}
+
+	uart_putchar(UART_3, Threshold);
+	ips114_displayimage032(mt9v03x_image[0], MT9V03X_W, MT9V03X_H);
 }
+
+#pragma section all restore
 
 #endif

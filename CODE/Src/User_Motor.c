@@ -7,6 +7,8 @@
 
 #include "..\CODE\Inc\User_Motor.h"
 
+#pragma section all "cpu0_psram"
+
 void ServoMotorInit(void)
 {
 	gtm_pwm_init(ATOM0_CH0_P21_2, 50, 5000);
@@ -26,10 +28,10 @@ void SetServoPWM(uint8 ServoNum, float PWMDuty)  //PWMDuty为百分比
 
 void MotorInit(void)
 {
-	gtm_pwm_init(ATOM1_CH4_P02_4 , 8000, 25000);
-	gtm_pwm_init(ATOM1_CH5_P02_5 , 8000, 25000);
-	gtm_pwm_init(ATOM1_CH6_P02_6 , 8000, 25000);
-	gtm_pwm_init(ATOM1_CH7_P02_7 , 8000, 25000);
+	gtm_pwm_init(ATOM1_CH4_P02_4 , 1700, 25000);
+	gtm_pwm_init(ATOM1_CH5_P02_5 , 1700, 25000);
+	gtm_pwm_init(ATOM1_CH6_P02_6 , 1700, 25000);
+	gtm_pwm_init(ATOM1_CH7_P02_7 , 1700, 25000);
 }
 
 void SetMotorPWM(Motor_State_t MotorState, float PWMDuty)
@@ -102,4 +104,6 @@ void MotorUserHandle(Motor_State_t Motor, float PWMDuty)
     	}
     }
 }
+
+#pragma section all restore
 
