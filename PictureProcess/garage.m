@@ -12,7 +12,7 @@ mt9v03x_image = INITIAL;
 mt9v03x_image(mt9v03x_image < threshold) = 0;
 mt9v03x_image(mt9v03x_image >= threshold) = 255;
 
-for imageH=85:119
+for imageH=60:85
     for imageRW=94:-1:60
         for imageLW=93:-1:59
             JudgeFlag = 0;
@@ -101,6 +101,8 @@ if(BlackWhiteChangeCount >= 4 && RecognizedCorrectLineCount >= 4)
 		EnterGarageFlag = 1;
 end
 
-subplot(2,1,1);imshow(INITIAL);
-subplot(2,1,2);imshow(mt9v03x_image);
+subplot(2,1,1);
+imshow(INITIAL);
+subplot(2,1,2);
+imshow(mt9v03x_image);
 fprintf("threshold = %f EnterGarageFlag = %d\n", threshold, EnterGarageFlag);
