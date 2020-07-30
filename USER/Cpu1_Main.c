@@ -22,7 +22,7 @@
 //将本语句与#pragma section all restore语句之间的全局变量都放在CPU1的RAM中
 
 #pragma section all restore
-
+	uint8_t Threshold;
 #pragma section all "cpu1_psram"
 
 void core1_main(void)
@@ -38,8 +38,9 @@ void core1_main(void)
     {
     	if(mt9v03x_finish_flag)
     	{
+    		//FindZebra();
     		//ips114_displayimage032(mt9v03x_image[0], MT9V03X_W, MT9V03X_H);
-    		seekfree_sendimg_03x(UART_3, mt9v03x_image[0], MT9V03X_W, MT9V03X_H);
+    		//seekfree_sendimg_03x(UART_3, mt9v03x_image[0], MT9V03X_W, MT9V03X_H);
     		mt9v03x_finish_flag = 0;
     	}
     }

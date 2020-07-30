@@ -47,12 +47,17 @@ void core0_main(void)
 			//gpio_set(P20_8, 0);
 
 		//ips114_showfloat(0,0,2.222,4,4);
-		//DebugReadADCData();
+		DebugReadADCData();
 
-		MotorUserHandle(LMotor_F, 10);
-		//MotorUserHandle(LMotor_B, 5);
-		MotorUserHandle(RMotor_F, 10);
-		//MotorUserHandle(RMotor_B, 5);
+		//MotorUserHandle(RMotor_B, 0);
+		//MotorUserHandle(LMotor_F, 4);
+		//systick_delay_ms(STM0, 2000);
+		//MotorUserHandle(LMotor_B, 25);
+		//systick_delay_ms(STM0, 2000);
+		//MotorUserHandle(LMotor_B, 0);
+		//MotorUserHandle(RMotor_F, 4.2);
+		//systick_delay_ms(STM0, 2000);
+		//MotorUserHandle(RMotor_B, 25);
 		//systick_delay_ms(STM0, 2000);
 	}
 }

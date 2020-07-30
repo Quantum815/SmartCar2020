@@ -1,9 +1,10 @@
 clear;
 clc;
-INITIAL = imread('test1.BMP');
+INITIAL = imread('A2.BMP');
 
 EnterGarageFlag = 0;
-JudgeFlag = 0;
+JudgeBToWFlag = 0;
+JudgeWToBFlag = 0;
 BlackWhiteChangeCount = 0;
 RecognizedCorrectLineCount = 0;
 
@@ -12,92 +13,92 @@ mt9v03x_image = INITIAL;
 mt9v03x_image(mt9v03x_image < threshold) = 0;
 mt9v03x_image(mt9v03x_image >= threshold) = 255;
 
-for imageH=60:85
-    for imageRW=94:-1:60
-        for imageLW=93:-1:59
-            JudgeFlag = 0;
-            if mt9v03x_image(imageH,imageRW)==0 && mt9v03x_image(imageH,imageLW)==255
-                for i=imageLW-5:imageLW
-                    if mt9v03x_image(imageH,i)==0
-                        JudgeFlag = 1;
-                    end
-                end
-                for i=imageRW+5:-1:imageRW
-                    if mt9v03x_image(imageH,i)==255
-                        JudgeFlag = 1;
-                    end
-                end
-                if JudgeFlag == 1
-                    continue;
-                else
-                    BlackWhiteChangeCount = BlackWhiteChangeCount + 1;
-                    RecognizedCorrectLineCount = RecognizedCorrectLineCount + 1;
+for imageH=30:70
+    BlackWhiteChangeCount = 0;
+    for imageW=94:-1:40
+        INITIAL(imageH,imageW) = 0;
+        JudgeBToWFlag = 0;
+        JudgeWToBFlag = 0;
+        if mt9v03x_image(imageH,imageW)==0 && mt9v03x_image(imageH,imageW-1)==255
+            for i=imageW-6:imageW-1
+                if mt9v03x_image(imageH,i)==0
+                     JudgeBToWFlag = 1;
+                    break;
                 end
             end
-            if mt9v03x_image(imageH,imageRW)==255 && mt9v03x_image(imageH,imageLW)==0
-                for i=imageLW-5:imageLW
-                    if mt9v03x_image(imageH,i)==255
-                        JudgeFlag = 1;
-                    end
+            for i=imageW:imageW+5
+                if mt9v03x_image(imageH,i)==255
+                    JudgeBToWFlag = 1;
+                    break;
                 end
-                for i=imageRW+5:-1:imageRW
-                    if mt9v03x_image(imageH,i)==0
-                        JudgeFlag = 1;
-                    end
+            end
+            if JudgeBToWFlag == 0
+                BlackWhiteChangeCount = BlackWhiteChangeCount + 1;
+            end
+        end
+        if mt9v03x_image(imageH,imageW)==255 && mt9v03x_image(imageH,imageW-1)==0
+            for i=imageW-6:imageW-1
+                if mt9v03x_image(imageH,i)==255
+                   JudgeWToBFlag = 1;
+                   break;
                 end
-                if JudgeFlag == 1
-                    continue;
-                else
-                    BlackWhiteChangeCount = BlackWhiteChangeCount + 1;
-                    RecognizedCorrectLineCount = RecognizedCorrectLineCount + 1;
+            end
+            for i=imageW:imageW+5
+                if mt9v03x_image(imageH,i)==0
+                   JudgeWToBFlag = 1;
+                   break;
                 end
+            end
+            if JudgeWToBFlag == 0
+                BlackWhiteChangeCount = BlackWhiteChangeCount + 1;
             end
         end
     end
-    for imageLW=94:130 
-        for imageRW=95:131
-            JudgeFlag = 0;
-            if mt9v03x_image(imageH,imageRW)==0 && mt9v03x_image(imageH,imageLW)==255
-                for i=imageLW-5:imageLW
-                    if mt9v03x_image(imageH,i)==0
-                        JudgeFlag = 1;
-                    end
-                end
-                for i=imageRW+5:-1:imageRW
-                    if mt9v03x_image(imageH,i)==255
-                        JudgeFlag = 1;
-                    end
-                end
-                if JudgeFlag == 1
-                    continue;
-                else
-                    BlackWhiteChangeCount = BlackWhiteChangeCount + 1;
-                    RecognizedCorrectLineCount = RecognizedCorrectLineCount + 1;
+    for imageW=94:140
+        INITIAL(imageH,imageW) = 0;
+        JudgeBToWFlag = 0;
+        JudgeWToBFlag = 0;
+        if mt9v03x_image(imageH,imageW)==0 && mt9v03x_image(imageH,imageW+1)==255
+            for i=imageW-5:imageW
+                if mt9v03x_image(imageH,i)==255
+                     JudgeBToWFlag = 1;
+                    break;
                 end
             end
-            if mt9v03x_image(imageH,imageRW)==255 && mt9v03x_image(imageH,imageLW)==0
-                for i=imageLW-5:imageLW
-                    if mt9v03x_image(imageH,i)==255
-                        JudgeFlag = 1;
-                    end
+            for i=imageW+1:imageW+6
+                if mt9v03x_image(imageH,i)==0
+                    JudgeBToWFlag = 1;
+                    break;
                 end
-                for i=imageRW+5:-1:imageRW
-                    if mt9v03x_image(imageH,i)==0
-                        JudgeFlag = 1;
-                    end
-                end
-                if JudgeFlag == 1
-                    continue;
-                else
-                    BlackWhiteChangeCount = BlackWhiteChangeCount + 1;
-                    RecognizedCorrectLineCount = RecognizedCorrectLineCount + 1;
-                end
+            end
+            if JudgeBToWFlag == 0
+                BlackWhiteChangeCount = BlackWhiteChangeCount + 1;
             end
         end
+        if mt9v03x_image(imageH,imageW)==255 && mt9v03x_image(imageH,imageW+1)==0
+            for i=imageW-5:imageW
+                if mt9v03x_image(imageH,i)==0
+                   JudgeWToBFlag = 1;
+                   break;
+                end
+            end
+            for i=imageW+1:imageW+6
+                if mt9v03x_image(imageH,i)==255
+                   JudgeWToBFlag = 1;
+                   break;
+                end
+            end
+            if JudgeWToBFlag == 0
+                BlackWhiteChangeCount = BlackWhiteChangeCount + 1;
+            end
+        end
+    end
+    if BlackWhiteChangeCount >= 8
+        RecognizedCorrectLineCount = RecognizedCorrectLineCount + 1;
     end
 end
 
-if(BlackWhiteChangeCount >= 4 && RecognizedCorrectLineCount >= 4)
+if RecognizedCorrectLineCount >= 6
 		EnterGarageFlag = 1;
 end
 
@@ -105,4 +106,3 @@ subplot(2,1,1);
 imshow(INITIAL);
 subplot(2,1,2);
 imshow(mt9v03x_image);
-fprintf("threshold = %f EnterGarageFlag = %d\n", threshold, EnterGarageFlag);

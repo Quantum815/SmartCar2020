@@ -24,7 +24,9 @@ FSMTable_t CarTable[] =
 	{ ENDOUTROUNDABOUT, OutingRoundabout, FindLine,              GoLine           },
 	{ FINDZEBRA,        GoLine,           GoGarage,              InGarage         },
 	{ NOEVENT,          InGarage,         GoGarage,              InGarage         },
-    { RUNSTOP,          InGarage,         RunStop,               Stop             }
+    { RUNSTOP,          InGarage,         RunStop,               Stop             },
+	{ RUNSTOP,          GoLine,           RunStop,               Stop             },  //测试
+	{ NOEVENT,          Stop,             RunStop,               Stop             },
 };
 FSM_t CarFSM;
 double MidLineFuseNum;
@@ -38,29 +40,32 @@ uint8 StartFlag;
 //事件反应函数
 void RunStop(void)
 {
+	int i;
+	GyroYawAngleInit();
+	for(i=0; i<50; i++)
+	{
+		MotorUserHandle(LMotor_B, 50);
+		MotorUserHandle(RMotor_B, 50);
+	}
 	MotorUserHandle(LMotor_F, 0);
 	MotorUserHandle(RMotor_F, 0);
-	//MotorUserHandle(LMotor_B, 80);
-	//MotorUserHandle(RMotor_B, 80);
-	MotorUserHandle(LMotor_B, 0);
-	MotorUserHandle(RMotor_B, 0);
 }
 
 void FindLine(void)
 {
-	PIDValue = GetPIDValue(0.002058, MidLineFuseNum*1000, FINDLINE_P, FINDLINE_I, FINDLINE_D);
+	PIDValue = GetPIDValue(PIDMidLineFuseNum, MidLineFuseNum*1000, FINDLINE_P, FINDLINE_I, FINDLINE_D);
 	//printf("%f\r\n",PIDValue);
 	LPWM = LeftWheelDeadZone + LeftNormalSpeed + PIDValue;
 	RPWM = RightWheelDeadZone + RightNormalSpeed - PIDValue;
 
-    if(LPWM >= 30)
-        LPWM = 30;
-    else if(LPWM <= -30)
-        LPWM = -30;
-    if(RPWM >= 30)
-        RPWM = 30;
-    else if(RPWM <= -30)
-        RPWM = -30;
+    if(LPWM >= 35)
+        LPWM = 35;
+    else if(LPWM <= -35)
+        LPWM = -35;
+    if(RPWM >= 35)
+        RPWM = 35;
+    else if(RPWM <= -35)
+        RPWM = -40;
     MotorUserHandle(LMotor_F, LPWM);
     MotorUserHandle(RMotor_F, RPWM);
 }
@@ -177,6 +182,8 @@ void FSMRun(void)
     {
     	//FSMEventHandle(&CarFSM, RUNSTOP);
     }
+    else if(EnterGarageFlag)
+    	FSMEventHandle(&CarFSM, RUNSTOP);
     else
     	FSMEventHandle(&CarFSM, NOEVENT);
 }

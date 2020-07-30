@@ -29,12 +29,11 @@ void UserInit(void)
 	//MotorUserHandle(RMotor_F, 30);
 	//MotorUserHandle(RMotor_B, 30);
 	CleanDistance();
-	//GyroYawAngleInit();
 
 	//≤‚ ‘
-	gpio_init(P20_8, GPO, 1, PUSHPULL);
-	DebugUARTInit();
-	//ips114_init();
+	gpio_init(P20_8, GPO, 0, PUSHPULL);
+	//DebugUARTInit();
+	ips114_init();
 }
 
 

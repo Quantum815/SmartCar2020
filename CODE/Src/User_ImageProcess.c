@@ -292,10 +292,10 @@ void GetOSTUIMAGE(void)
 void FindZebra(void)
 {
 	uint8_t Threshold;
-	uint8 JudgeFlag = 0;
-	static uint8 BlackWhiteChangeCount = 0;
+	uint8 JudgeBToWFlag = 0;
+	uint8 JudgeWToBFlag = 0;
+	uint8 BlackWhiteChangeCount = 0;
 	static uint8 RecognizedCorrectLineCount = 0;
-	//static uint8 count = 0;
 
 	Threshold = GetOSTU(&mt9v03x_image[0]);
 	if(255 - Threshold >= InGarageAdjustedValue)
@@ -304,111 +304,96 @@ void FindZebra(void)
 		Threshold = 255;
 	BinaryImage(&mt9v03x_image[0], Threshold);
 
-	for(int imageH=110; imageH<=119; imageH++)
+	for(int imageH=30; imageH<=70; imageH++)
 	{
-		for(int imageRW=94; imageRW>=60; imageRW--)
+		BlackWhiteChangeCount = 0;
+		for(int imageW=94; imageW>=40; imageW--)
 		{
-			for(int imageLW=93; imageLW>=59; imageLW--)
+			JudgeBToWFlag = 0;
+			JudgeWToBFlag = 0;
+			if(mt9v03x_image[imageH][imageW]==0x00 && mt9v03x_image[imageH][imageW-1]==0xfe)
 			{
-				JudgeFlag = 0;
-				if(mt9v03x_image[imageH][imageRW]==0x00 && mt9v03x_image[imageH][imageLW]==0xfe)
-				{
-					for(int i=imageLW-5; i<=imageLW; i++)
-						if(mt9v03x_image[imageH][i]==0x00)
-							JudgeFlag = 1;
-					for(int i=imageRW+5; i>=imageRW; i--)
-						if(mt9v03x_image[imageH][i]==0xfe)
-							JudgeFlag = 1;
-					if(JudgeFlag)
-						continue;
-					else
+				for(int i=imageW-6; i<=imageW-1; i++)
+					if(mt9v03x_image[imageH][i]==0x00)
 					{
-						BlackWhiteChangeCount++;
-						RecognizedCorrectLineCount++;
+						JudgeBToWFlag = 1;
+						break;
 					}
-
-				}
-				if(mt9v03x_image[imageH][imageRW]==0xfe && mt9v03x_image[imageH][imageLW]==0x00)
-				{
-					for(int i=imageLW-5; i<=imageLW; i++)
-						if(mt9v03x_image[imageH][i]==0xfe)
-							JudgeFlag = 1;
-					for(int i=imageRW+5; i>=imageRW; i--)
-						if(mt9v03x_image[imageH][i]==0x00)
-							JudgeFlag = 1;
-					if(JudgeFlag)
-						continue;
-					else
+				for(int i=imageW; i<=imageW+5; i++)
+					if(mt9v03x_image[imageH][i]==0xfe)
 					{
-						BlackWhiteChangeCount++;
-						RecognizedCorrectLineCount++;
+						JudgeBToWFlag = 1;
+						break;
 					}
-				}
+				if(!JudgeBToWFlag)
+					BlackWhiteChangeCount++;
+			}
+			if(mt9v03x_image[imageH][imageW]==0xfe && mt9v03x_image[imageH][imageW-1]==0x00)
+			{
+				for(int i=imageW-6; i<=imageW-1; i++)
+					if(mt9v03x_image[imageH][i]==0xfe)
+					{
+						JudgeWToBFlag = 1;
+						break;
+					}
+				for(int i=imageW; i<=imageW+5; i++)
+					if(mt9v03x_image[imageH][i]==0x00)
+					{
+						JudgeWToBFlag = 1;
+						break;
+					}
+				if(!JudgeWToBFlag)
+					BlackWhiteChangeCount++;
 			}
 		}
-		for(int imageLW=94; imageLW<=130; imageLW++)
+		for(int imageW=94; imageW<=140; imageW++)
 		{
-			for(int imageRW=95; imageRW<=131; imageRW++)
+			JudgeBToWFlag = 0;
+			JudgeWToBFlag = 0;
+			if(mt9v03x_image[imageH][imageW]==0x00 && mt9v03x_image[imageH][imageW+1]==0xfe)
 			{
-				JudgeFlag = 0;
-				if(mt9v03x_image[imageH][imageRW]==0x00 && mt9v03x_image[imageH][imageLW]==0xfe)
-				{
-					for(int i=imageLW-5; i<=imageLW; i++)
-						if(mt9v03x_image[imageH][i]==0x00)
-							JudgeFlag = 1;
-					for(int i=imageRW+5; i>=imageRW; i--)
-						if(mt9v03x_image[imageH][i]==0xfe)
-							JudgeFlag = 1;
-					if(JudgeFlag)
-						continue;
-					else
+				for(int i=imageW-5; i<=imageW; i++)
+					if(mt9v03x_image[imageH][i]==0xfe)
 					{
-						BlackWhiteChangeCount++;
-						RecognizedCorrectLineCount++;
+						JudgeBToWFlag = 1;
+						break;
 					}
-
-				}
-				if(mt9v03x_image[imageH][imageRW]==0xfe && mt9v03x_image[imageH][imageLW]==0x00)
-				{
-					for(int i=imageLW-5; i<=imageLW; i++)
-						if(mt9v03x_image[imageH][i]==0xfe)
-							JudgeFlag = 1;
-					for(int i=imageRW+5; i>=imageRW; i--)
-						if(mt9v03x_image[imageH][i]==0x00)
-							JudgeFlag = 1;
-					if(JudgeFlag)
-						continue;
-					else
+				for(int i=imageW+1; i<=imageW+6; i++)
+					if(mt9v03x_image[imageH][i]==0x00)
 					{
-						BlackWhiteChangeCount++;
-						RecognizedCorrectLineCount++;
+						JudgeBToWFlag = 1;
+						break;
 					}
-				}
+				if(!JudgeBToWFlag)
+					BlackWhiteChangeCount++;
+			}
+			if(mt9v03x_image[imageH][imageW]==0xfe && mt9v03x_image[imageH][imageW+1]==0x00)
+			{
+				for(int i=imageW-5; i<=imageW; i++)
+					if(mt9v03x_image[imageH][i]==0x00)
+					{
+						JudgeWToBFlag = 1;
+						break;
+					}
+				for(int i=imageW+1; i<=imageW+6; i++)
+					if(mt9v03x_image[imageH][i]==0xfe)
+					{
+						JudgeWToBFlag = 1;
+						break;
+					}
+				if(!JudgeWToBFlag)
+					BlackWhiteChangeCount++;
 			}
 		}
+		if(BlackWhiteChangeCount >= 8)
+			RecognizedCorrectLineCount++;
 	}
-	if(BlackWhiteChangeCount >= 4 && RecognizedCorrectLineCount >= 4)
+
+	if(RecognizedCorrectLineCount >= 5)
 	{
-		//count++;
-		//if(count == 3)
-		//{
-			gpio_set(P20_8, 0);
+			gpio_set(P20_8, 1);
 			EnterGarageFlag = 1;
-		//}
-		//else
-		//{
-			//count = 0;
-		//}
-
 	}
-	else
-	{
-		//count--;
-		gpio_set(P20_8, 1);
-	}
-
-	uart_putchar(UART_3, Threshold);
-	ips114_displayimage032(mt9v03x_image[0], MT9V03X_W, MT9V03X_H);
 }
 
 #pragma section all restore

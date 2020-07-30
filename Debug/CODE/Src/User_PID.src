@@ -110,33 +110,33 @@ GetPIDValue:	.type	func
 .L57:
 
 ; ..\CODE\Src\User_PID.c	    37  
-; ..\CODE\Src\User_PID.c	    38  	if(PidValue > 2500)
-	mov	d15,#16384
-	addih	d15,d15,#17692
+; ..\CODE\Src\User_PID.c	    38  	if(PidValue > 3000)
+	mov.u	d15,#32768
+	addih	d15,d15,#17723
 .L58:
 	cmp.f	d15,d0,d15
 	jnz.t	d15:2,.L2
 .L59:
 
-; ..\CODE\Src\User_PID.c	    39  		PidValue = 2500;
-; ..\CODE\Src\User_PID.c	    40  	else if(PidValue < -2500)
-	mov	d1,#16384
-	addih	d1,d1,#50460
+; ..\CODE\Src\User_PID.c	    39  		PidValue = 3000;
+; ..\CODE\Src\User_PID.c	    40  	else if(PidValue < -3000)
+	mov.u	d1,#32768
+	addih	d1,d1,#50491
 .L60:
 	cmp.f	d15,d1,d0
 	and	d15,#6
 	cmov	d0,d15,d1
 .L61:
 
-; ..\CODE\Src\User_PID.c	    41  		PidValue = -2500;
+; ..\CODE\Src\User_PID.c	    41  		PidValue = -3000;
 	st.w	[a5]@los(PidValue),d0
 .L62:
 	j	.L5
 .L2:
 	mov.aa	a15,a5
 .L63:
-	mov	d15,#16384
-	addih	d15,d15,#17692
+	mov.u	d15,#32768
+	addih	d15,d15,#17723
 .L64:
 	st.w	[a15]@los(PidValue),d15
 .L5:

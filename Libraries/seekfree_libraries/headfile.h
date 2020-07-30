@@ -91,7 +91,7 @@
 
 //进程中断时间
 #define MainProcessTime 10
-#define CameraProcessTime 20
+#define CameraProcessTime 18
 #define CountDistanceTime 5
 #define LED0Time 500
 
@@ -103,16 +103,16 @@
 #define WHEEL_DIAMETER 62
 
 //车轮启动死区PWM占空比
-#define LeftWheelDeadZone 0
-#define RightWheelDeadZone 0
+#define LeftWheelDeadZone 4
+#define RightWheelDeadZone 4.4
 
 //车轮刹车死区PWM占空比
 #define LeftWheelBrakeZone -5
 #define RightWheelBrakeZone -5
 
 //正常车速PWM占空比
-#define LeftNormalSpeed 0
-#define RightNormalSpeed 0
+#define LeftNormalSpeed 9
+#define RightNormalSpeed 9
 
 //圆环车速PWM占空比
 #define LeftCircleSpeed 8
@@ -123,12 +123,15 @@
 #define RightInGarageSpeed 8
 
 //入库摄像头二值化校正值
-#define InGarageAdjustedValue 20
+#define InGarageAdjustedValue 0
+
+//正常巡线PID中线值
+#define PIDMidLineFuseNum 0.000924
 
 //正常巡线PID
-#define FINDLINE_P 54
+#define FINDLINE_P 31
 #define FINDLINE_I 0
-#define FINDLINE_D 15000
+#define FINDLINE_D 6550
 
 //圆环巡线PID
 #define GYRO_P 0

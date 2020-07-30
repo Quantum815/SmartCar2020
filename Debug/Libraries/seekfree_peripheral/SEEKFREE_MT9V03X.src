@@ -76,7 +76,7 @@ $TC16X
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	    61      {SET_ROW,           MT9V03X_H}, //图像行数量        范围1-480
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	    62      {LR_OFFSET,         0},   //图像左右偏移量    正值 右偏移   负值 左偏移  列为188 376 752时无法设置偏移    摄像头收偏移数据后会自动计算最大偏移，如果超出则设置计算出来的最大偏移
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	    63      {UD_OFFSET,         0},   //图像上下偏移量    正值 上偏移   负值 下偏移  行为120 240 480时无法设置偏移    摄像头收偏移数据后会自动计算最大偏移，如果超出则设置计算出来的最大偏移
-; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	    64      {GAIN,              32},  //图像增益          范围16-64     增益可以在曝光时间固定的情况下改变图像亮暗程度
+; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	    64      {GAIN,              16},  //图像增益          范围16-64     增益可以在曝光时间固定的情况下改变图像亮暗程度
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	    65  
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	    66      
 ; ..\Libraries\seekfree_peripheral\SEEKFREE_MT9V03X.c	    67      {INIT,              0}    //摄像头开始初始化
@@ -7852,7 +7852,7 @@ MT9V03X_CFG:	.type	object
 	.space	2
 	.half	7
 	.space	2
-	.half	8,32
+	.half	8,16
 	.space	4
 	.sdecl	'.data.SEEKFREE_MT9V03X.GET_CFG',data,cluster('GET_CFG')
 	.sect	'.data.SEEKFREE_MT9V03X.GET_CFG'

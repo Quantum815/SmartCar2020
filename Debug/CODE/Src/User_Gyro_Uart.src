@@ -41,59 +41,59 @@ GyroUARTInit:	.type	func
 ; ..\CODE\Src\User_Gyro_Uart.c	    22  {
 ; ..\CODE\Src\User_Gyro_Uart.c	    23  	uart_init(UART_0, 115200, UART0_TX_P14_0, UART0_RX_P14_1);
 	mov	d4,#0
-.L163:
+.L162:
 	mov.u	d5,#49664
 	addih	d5,d5,#1
-.L164:
+.L163:
 	mov	d6,d4
-.L165:
+.L164:
 	mov	d7,#4
 	call	uart_init
-.L166:
+.L165:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    24  	uart_putbuff(UART_0, &GyroUnlockInstruction[0], 5);
 	mov	d4,#0
-.L167:
+.L166:
 	movh.a	a4,#@his(GyroUnlockInstruction)
 	lea	a4,[a4]@los(GyroUnlockInstruction)
-.L168:
+.L167:
 	mov	d5,#5
 	call	uart_putbuff
-.L169:
+.L168:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    25  	systick_delay_ms(STM1, 100);
 	mov	d4,#1
 	mov.u	d5,#57600
 	addih	d5,d5,#1525
 	call	systick_delay
-.L170:
+.L169:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    26  	uart_putbuff(UART_0, &GyroAutoCalibration[0], 5);
 	mov	d4,#0
-.L171:
+.L170:
 	movh.a	a4,#@his(GyroAutoCalibration)
 	lea	a4,[a4]@los(GyroAutoCalibration)
-.L172:
+.L171:
 	mov	d5,#5
 	call	uart_putbuff
-.L173:
+.L172:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    27  	systick_delay_ms(STM1, 100);
 	mov	d4,#1
 	mov.u	d5,#57600
 	addih	d5,d5,#1525
 	call	systick_delay
-.L174:
+.L173:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    28  	uart_putbuff(UART_0, &GyroKeepConfiguration[0], 5);
 	mov	d4,#0
-.L175:
+.L174:
 	movh.a	a4,#@his(GyroKeepConfiguration)
 	lea	a4,[a4]@los(GyroKeepConfiguration)
-.L176:
+.L175:
 	mov	d5,#5
 	call	uart_putbuff
-.L177:
+.L176:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    29  	systick_delay_ms(STM1, 100);
 	mov	d4,#1
@@ -129,27 +129,27 @@ GyroUARTReadByte:	.type	func
 ; ..\CODE\Src\User_Gyro_Uart.c	    36          GyroReceiveNum++;
 	movh.a	a15,#@his(GyroReceiveNum)
 	ld.bu	d15,[a15]@los(GyroReceiveNum)
-.L182:
+.L181:
 	add	d15,#1
 	st.b	[a15]@los(GyroReceiveNum),d15
-.L183:
+.L182:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    37  		if(GyroReceiveNum==1 && GyroRxBuff[0]!=0x55)
 	ld.bu	d15,[a15]@los(GyroReceiveNum)
 	jne	d15,#1,.L4
-.L184:
+.L183:
 	movh.a	a2,#@his(GyroRxBuff)
-.L185:
+.L184:
 	ld.bu	d0,[a2]@los(GyroRxBuff)
-.L186:
+.L185:
 	mov	d15,#85
-.L187:
+.L186:
 	jeq	d15,d0,.L5
-.L188:
+.L187:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    38  			GyroReceiveNum = 0;
 	mov	d15,#0
-.L189:
+.L188:
 	st.b	[a15]@los(GyroReceiveNum),d15
 .L5:
 .L4:
@@ -157,45 +157,45 @@ GyroUARTReadByte:	.type	func
 ; ..\CODE\Src\User_Gyro_Uart.c	    39  		if(GyroReceiveNum==2 && GyroRxBuff[1]!=0x53)
 	ld.bu	d15,[a15]@los(GyroReceiveNum)
 	jne	d15,#2,.L6
-.L190:
+.L189:
 	movh.a	a2,#@his(GyroRxBuff+1)
-.L191:
+.L190:
 	ld.bu	d0,[a2]@los(GyroRxBuff+1)
-.L192:
+.L191:
 	mov	d15,#83
-.L193:
+.L192:
 	jeq	d15,d0,.L7
-.L194:
+.L193:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    40  			GyroReceiveNum = 0;
 	mov	d15,#0
-.L195:
+.L194:
 	st.b	[a15]@los(GyroReceiveNum),d15
 .L7:
 .L6:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    41          if(11 == GyroReceiveNum)
 	ld.bu	d0,[a15]@los(GyroReceiveNum)
-.L196:
+.L195:
 	mov	d15,#11
-.L197:
+.L196:
 	jne	d15,d0,.L8
-.L198:
+.L197:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    42          {
 ; ..\CODE\Src\User_Gyro_Uart.c	    43          	GyroReceiveNum = 0;
 	mov	d15,#0
-.L199:
+.L198:
 	st.b	[a15]@los(GyroReceiveNum),d15
-.L200:
+.L199:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    44              GyroRxFlag = 1;
 	movh.a	a15,#@his(GyroRxFlag)
-.L201:
+.L200:
 	mov	d15,#1
-.L202:
+.L201:
 	st.b	[a15]@los(GyroRxFlag),d15
-.L203:
+.L202:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    45              break;
 ; ..\CODE\Src\User_Gyro_Uart.c	    46          }
@@ -205,18 +205,18 @@ GyroUARTReadByte:	.type	func
 .L8:
 .L2:
 	mov	d4,#0
-.L204:
+.L203:
 	movh.a	a15,#@his(GyroReceiveNum)
 	ld.bu	d15,[a15]@los(GyroReceiveNum)
-.L205:
+.L204:
 	movh.a	a15,#@his(GyroRxBuff)
 	lea	a15,[a15]@los(GyroRxBuff)
-.L206:
+.L205:
 	addsc.a	a4,a15,d15,#0
 	call	uart_query
-.L207:
+.L206:
 	jne	d2,#0,.L3
-.L208:
+.L207:
 	ret
 .L105:
 	
@@ -246,88 +246,88 @@ GyroCalculate:	.type	func
 ; ..\CODE\Src\User_Gyro_Uart.c	    54      if(GyroRxFlag == 1)
 	movh.a	a15,#@his(GyroRxFlag)
 	ld.bu	d15,[a15]@los(GyroRxFlag)
-.L213:
+.L212:
 	jne	d15,#1,.L10
-.L214:
+.L213:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    55      {
 ; ..\CODE\Src\User_Gyro_Uart.c	    56  		sum += GyroRxBuff[0];
 	movh.a	a15,#@his(GyroRxBuff)
-.L215:
+.L214:
 	ld.bu	d15,[a15]@los(GyroRxBuff)
-.L216:
+.L215:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    57  		sum += GyroRxBuff[1];
 	movh.a	a15,#@his(GyroRxBuff+1)
-.L217:
+.L216:
 	ld.bu	d0,[a15]@los(GyroRxBuff+1)
-.L218:
+.L217:
 	add	d15,d0
-.L219:
+.L218:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    58  		sum += GyroRxBuff[2];
 	movh.a	a15,#@his(GyroRxBuff+2)
-.L220:
+.L219:
 	ld.bu	d0,[a15]@los(GyroRxBuff+2)
-.L221:
+.L220:
 	add	d15,d0
-.L222:
+.L221:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    59  		sum += GyroRxBuff[3];
 	movh.a	a15,#@his(GyroRxBuff+3)
-.L223:
+.L222:
 	ld.bu	d0,[a15]@los(GyroRxBuff+3)
-.L224:
+.L223:
 	add	d15,d0
-.L225:
+.L224:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    60  		sum += GyroRxBuff[4];
 	movh.a	a15,#@his(GyroRxBuff+4)
-.L226:
+.L225:
 	ld.bu	d0,[a15]@los(GyroRxBuff+4)
-.L227:
+.L226:
 	add	d15,d0
-.L228:
+.L227:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    61  		sum += GyroRxBuff[5];
 	movh.a	a15,#@his(GyroRxBuff+5)
-.L229:
+.L228:
 	ld.bu	d0,[a15]@los(GyroRxBuff+5)
-.L230:
+.L229:
 	add	d15,d0
-.L231:
+.L230:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    62  		sum += GyroRxBuff[6];
 	movh.a	a15,#@his(GyroRxBuff+6)
-.L232:
+.L231:
 	ld.bu	d0,[a15]@los(GyroRxBuff+6)
-.L233:
+.L232:
 	add	d15,d0
-.L234:
+.L233:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    63  		sum += GyroRxBuff[7];
 	movh.a	a15,#@his(GyroRxBuff+7)
-.L235:
+.L234:
 	ld.bu	d0,[a15]@los(GyroRxBuff+7)
-.L236:
+.L235:
 	add	d15,d0
-.L237:
+.L236:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    64  		sum += GyroRxBuff[8];
 	movh.a	a15,#@his(GyroRxBuff+8)
-.L238:
+.L237:
 	ld.bu	d0,[a15]@los(GyroRxBuff+8)
-.L239:
+.L238:
 	add	d15,d0
-.L240:
+.L239:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    65  		sum += GyroRxBuff[9];
 	movh.a	a15,#@his(GyroRxBuff+9)
-.L241:
+.L240:
 	ld.bu	d0,[a15]@los(GyroRxBuff+9)
-.L242:
+.L241:
 	add	d15,d0
-.L243:
+.L242:
 	add	d1,d15
 .L129:
 	extr.u	d15,d1,#0,#8
@@ -335,30 +335,30 @@ GyroCalculate:	.type	func
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    66  		if(sum != GyroRxBuff[10])
 	movh.a	a15,#@his(GyroRxBuff+10)
-.L244:
+.L243:
 	ld.bu	d0,[a15]@los(GyroRxBuff+10)
-.L245:
+.L244:
 	jeq	d15,d0,.L11
-.L246:
+.L245:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    67  		{
 ; ..\CODE\Src\User_Gyro_Uart.c	    68  			printf("RECEIVE ERROR!\n");
 	movh.a	a4,#@his(.1.str)
 	lea	a4,[a4]@los(.1.str)
 	call	printf
-.L247:
+.L246:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    69  			GyroRxFlag = 0;
 	movh.a	a15,#@his(GyroRxFlag)
-.L248:
+.L247:
 	mov	d15,#0
 .L131:
 	st.b	[a15]@los(GyroRxFlag),d15
-.L249:
+.L248:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    70  			GyroReceiveNum = 0;
 	movh.a	a15,#@his(GyroReceiveNum)
-.L250:
+.L249:
 	st.b	[a15]@los(GyroReceiveNum),d15
 .L10:
 
@@ -383,86 +383,86 @@ GyroCalculate:	.type	func
 	ret
 .L11:
 	movh.a	a15,#@his(GyroRxBuff+3)
-.L251:
+.L250:
 	ld.bu	d15,[a15]@los(GyroRxBuff+3)
 .L132:
 	sha	d15,d15,#8
 	extr	d15,d15,#0,#16
-.L252:
+.L251:
 	movh.a	a15,#@his(GyroRxBuff+2)
-.L253:
+.L252:
 	ld.bu	d0,[a15]@los(GyroRxBuff+2)
 .L133:
 	or	d15,d0
-.L254:
+.L253:
 	movh.a	a15,#@his(PitchAngle)
-.L255:
+.L254:
 	itof	d15,d15
 .L134:
 	movh	d1,#14336
-.L256:
+.L255:
 	mul.f	d15,d15,d1
-.L257:
+.L256:
 	movh	d2,#17204
-.L258:
+.L257:
 	mul.f	d15,d15,d2
-.L259:
+.L258:
 	st.w	[a15]@los(PitchAngle),d15
-.L260:
+.L259:
 	movh.a	a15,#@his(GyroRxBuff+5)
-.L261:
+.L260:
 	ld.bu	d15,[a15]@los(GyroRxBuff+5)
-.L262:
+.L261:
 	sha	d15,d15,#8
 	extr	d15,d15,#0,#16
-.L263:
+.L262:
 	movh.a	a15,#@his(GyroRxBuff+4)
-.L264:
+.L263:
 	ld.bu	d0,[a15]@los(GyroRxBuff+4)
 .L135:
 	or	d15,d0
-.L265:
+.L264:
 	movh.a	a15,#@his(RollAngle)
-.L266:
+.L265:
 	itof	d15,d15
 .L136:
 	mul.f	d15,d15,d1
-.L267:
+.L266:
 	mul.f	d15,d15,d2
-.L268:
+.L267:
 	st.w	[a15]@los(RollAngle),d15
-.L269:
+.L268:
 	movh.a	a15,#@his(GyroRxBuff+7)
-.L270:
+.L269:
 	ld.bu	d15,[a15]@los(GyroRxBuff+7)
-.L271:
+.L270:
 	sha	d15,d15,#8
 	extr	d15,d15,#0,#16
-.L272:
+.L271:
 	movh.a	a15,#@his(GyroRxBuff+6)
-.L273:
+.L272:
 	ld.bu	d0,[a15]@los(GyroRxBuff+6)
 .L137:
 	or	d15,d0
-.L274:
+.L273:
 	movh.a	a15,#@his(YawAngle)
-.L275:
+.L274:
 	itof	d15,d15
 .L138:
 	mul.f	d15,d15,d1
-.L276:
+.L275:
 	mul.f	d15,d15,d2
-.L277:
+.L276:
 	st.w	[a15]@los(YawAngle),d15
-.L278:
+.L277:
 	call	ManageYawAngle
-.L279:
+.L278:
 	movh.a	a15,#@his(GyroRxFlag)
-.L280:
+.L279:
 	mov	d15,#0
-.L281:
+.L280:
 	st.b	[a15]@los(GyroRxFlag),d15
-.L282:
+.L281:
 	ret
 .L106:
 	
@@ -486,19 +486,19 @@ ManageYawAngle:	.type	func
 ; ..\CODE\Src\User_Gyro_Uart.c	    91      if(YawAngle < 0)
 	movh.a	a15,#@his(YawAngle)
 	ld.w	d0,[a15]@los(YawAngle)
-.L287:
+.L286:
 	mov	d15,#0
-.L288:
+.L287:
 	cmp.f	d15,d0,d15
-.L289:
+.L288:
 	jz.t	d15:0,.L13
-.L290:
+.L289:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    92      	YawAngle = YawAngle + 360;
 	movh	d15,#17332
-.L291:
+.L290:
 	add.f	d15,d0,d15
-.L292:
+.L291:
 	st.w	[a15]@los(YawAngle),d15
 .L13:
 
@@ -526,12 +526,12 @@ GyroYawAngleInit:	.type	func
 ; ..\CODE\Src\User_Gyro_Uart.c	    96  {
 ; ..\CODE\Src\User_Gyro_Uart.c	    97  	NowGyroYawAngle = YawAngle;
 	movh.a	a15,#@his(NowGyroYawAngle)
-.L297:
+.L296:
 	movh.a	a2,#@his(YawAngle)
 	ld.w	d15,[a2]@los(YawAngle)
-.L298:
+.L297:
 	st.w	[a15]@los(NowGyroYawAngle),d15
-.L299:
+.L298:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    98  }
 	ret
@@ -558,34 +558,34 @@ GetGyroError:	.type	func
 ; ..\CODE\Src\User_Gyro_Uart.c	   102      if (NowGyroYawAngle < 180)
 	movh.a	a15,#@his(NowGyroYawAngle)
 	ld.w	d0,[a15]@los(NowGyroYawAngle)
-.L304:
+.L303:
 	movh	d15,#17204
-.L305:
+.L304:
 	cmp.f	d1,d0,d15
-.L306:
+.L305:
 	jz.t	d1:0,.L14
-.L307:
+.L306:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	   103      {
 ; ..\CODE\Src\User_Gyro_Uart.c	   104          if (YawAngle > 180)
 	movh.a	a15,#@his(YawAngle)
 	ld.w	d1,[a15]@los(YawAngle)
-.L308:
+.L307:
 	cmp.f	d2,d1,d15
-.L309:
+.L308:
 	jz.t	d2:2,.L15
-.L310:
+.L309:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	   105          {
 ; ..\CODE\Src\User_Gyro_Uart.c	   106              if (fabs(YawAngle - NowGyroYawAngle) <= 180)
 	sub.f	d2,d1,d0
 	insert	d2,d2,#0,#31,#1
-.L311:
+.L310:
 	cmp.f	d15,d2,d15
 	and	d15,#3
-.L312:
+.L311:
 	jne	d15,#0,.L16
-.L313:
+.L312:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	   107              {
 ; ..\CODE\Src\User_Gyro_Uart.c	   108                  return (YawAngle - NowGyroYawAngle);
@@ -594,13 +594,13 @@ GetGyroError:	.type	func
 ; ..\CODE\Src\User_Gyro_Uart.c	   111  
 ; ..\CODE\Src\User_Gyro_Uart.c	   112                  return (-(NowGyroYawAngle + 360 - YawAngle));
 	sub.f	d15,d0,d1
-.L314:
+.L313:
 	movh	d0,#17332
-.L315:
+.L314:
 	add.f	d15,d15,d0
-.L316:
+.L315:
 	insn.t	d2,d15:31,d15:31
-.L317:
+.L316:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	   113          }
 ; ..\CODE\Src\User_Gyro_Uart.c	   114          else
@@ -634,37 +634,37 @@ GetGyroError:	.type	func
 	ld.w	d0,[a15]@los(NowGyroYawAngle)
 	sub.f	d15,d15,d0
 	insert	d15,d15,#0,#31,#1
-.L318:
+.L317:
 	movh	d0,#17204
-.L319:
+.L318:
 	cmp.f	d15,d15,d0
 	and	d15,#3
-.L320:
+.L319:
 	jeq	d15,#0,.L18
 .L16:
 .L15:
 	movh.a	a15,#@his(YawAngle)
 	ld.w	d15,[a15]@los(YawAngle)
-.L321:
+.L320:
 	movh.a	a15,#@his(NowGyroYawAngle)
 	ld.w	d0,[a15]@los(NowGyroYawAngle)
-.L322:
+.L321:
 	sub.f	d2,d15,d0
-.L323:
+.L322:
 	ret
 .L18:
 	movh.a	a15,#@his(YawAngle)
 	ld.w	d15,[a15]@los(YawAngle)
-.L324:
+.L323:
 	movh.a	a15,#@his(NowGyroYawAngle)
 	ld.w	d0,[a15]@los(NowGyroYawAngle)
-.L325:
+.L324:
 	sub.f	d15,d15,d0
-.L326:
+.L325:
 	movh	d0,#17332
-.L327:
+.L326:
 	add.f	d2,d15,d0
-.L328:
+.L327:
 	ret
 .L114:
 	
@@ -714,7 +714,7 @@ GyroPID:	.type	func
 ; ..\CODE\Src\User_Gyro_Uart.c	   150      D = error - previousError;
 	movh.a	a15,#@his(_999001_previousError)
 	ld.w	d1,[a15]@los(_999001_previousError)
-.L333:
+.L332:
 	sub.f	d1,d2,d1
 .L149:
 
@@ -729,38 +729,45 @@ GyroPID:	.type	func
 
 ; ..\CODE\Src\User_Gyro_Uart.c	   153      previousError = error;
 	st.w	[a15]@los(_999001_previousError),d2
-.L334:
+.L333:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	   154      PIDValue /= 1000;
 	movh	d0,#17530
+.L334:
+	div.f	d15,d15,d0
 .L335:
-	div.f	d5,d15,d0
-.L151:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	   155  
 ; ..\CODE\Src\User_Gyro_Uart.c	   156      LPWMDutyOut = LeftWheelDeadZone + PIDValue;
+	movh	d0,#16512
+.L336:
+	add.f	d5,d15,d0
+.L152:
+
 ; ..\CODE\Src\User_Gyro_Uart.c	   157      RPWMDutyOut = RightWheelDeadZone - PIDValue;
-	insn.t	d8,d5:31,d5:31
+	mov.u	d0,#52429
+	addih	d0,d0,#16524
+.L337:
+	sub.f	d8,d0,d15
 .L143:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	   158  	if(LPWMDutyOut >= 40)
 	movh	d15,#16928
-.L336:
+.L151:
 	cmp.f	d15,d5,d15
 	and	d15,#6
-.L337:
-	jne	d15,#0,.L21
 .L338:
+	jne	d15,#0,.L21
+.L339:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	   159  		LPWMDutyOut = 40;
 ; ..\CODE\Src\User_Gyro_Uart.c	   160  	else if(LPWMDutyOut <= -40)
 	movh	d0,#49696
-.L339:
+.L340:
 	cmp.f	d15,d0,d5
 	and	d15,#6
-.L153:
 	cmov	d5,d15,d0
-.L152:
+.L341:
 	j	.L24
 .L21:
 	movh	d5,#16928
@@ -769,21 +776,21 @@ GyroPID:	.type	func
 ; ..\CODE\Src\User_Gyro_Uart.c	   161  		LPWMDutyOut = -40;
 ; ..\CODE\Src\User_Gyro_Uart.c	   162  	if(RPWMDutyOut >= 40)
 	movh	d15,#16928
-.L340:
+.L342:
 	cmp.f	d15,d8,d15
 	and	d15,#6
-.L341:
+.L343:
 	jne	d15,#0,.L25
-.L342:
+.L344:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	   163  		RPWMDutyOut = 40;
 ; ..\CODE\Src\User_Gyro_Uart.c	   164  	else if(RPWMDutyOut <= -40)
 	movh	d0,#49696
-.L343:
+.L345:
 	cmp.f	d15,d0,d8
 	and	d15,#6
 	cmov	d8,d15,d0
-.L344:
+.L346:
 	j	.L28
 .L25:
 	movh	d8,#16928
@@ -792,15 +799,15 @@ GyroPID:	.type	func
 ; ..\CODE\Src\User_Gyro_Uart.c	   165  		RPWMDutyOut = -40;
 ; ..\CODE\Src\User_Gyro_Uart.c	   166  	MotorUserHandle(LMotor_F, LPWMDutyOut);
 	mov	d4,#0
-.L345:
+.L347:
 	call	MotorUserHandle
 .L147:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	   167  	MotorUserHandle(RMotor_F, RPWMDutyOut);
 	mov	d4,#2
-.L346:
+.L348:
 	mov	d5,d8
-.L154:
+.L153:
 	j	MotorUserHandle
 .L115:
 	
@@ -35415,11 +35422,11 @@ _999001_previousError:	.type	object
 	.sdecl	'.debug_line',debug
 	.sect	'.debug_line'
 .L46:
-	.word	.L156-.L155
-.L155:
+	.word	.L155-.L154
+.L154:
 	.half	3
-	.word	.L158-.L157
-.L157:
+	.word	.L157-.L156
+.L156:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Std',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Scu\\Std',0
@@ -35493,8 +35500,8 @@ _999001_previousError:	.type	object
 	.byte	'IfxDma_regdef.h',0,3,0,0
 	.byte	'IfxDma.h',0,18,0,0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\CODE\\Inc\\User_FSM.h',0,0,0,0,0
-.L158:
-.L156:
+.L157:
+.L155:
 	.sdecl	'.debug_info',debug,cluster('GyroUARTInit')
 	.sect	'.debug_info'
 .L47:
@@ -35522,50 +35529,50 @@ _999001_previousError:	.type	object
 	.sdecl	'.debug_line',debug,cluster('GyroUARTInit')
 	.sect	'.debug_line'
 .L49:
-	.word	.L160-.L159
-.L159:
+	.word	.L159-.L158
+.L158:
 	.half	3
-	.word	.L162-.L161
-.L161:
+	.word	.L161-.L160
+.L160:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\CODE\\Src\\User_Gyro_Uart.c',0,0,0,0,0
-.L162:
+.L161:
 	.byte	5,12,7,0,5,2
 	.word	.L30
 	.byte	3,22,1,5,20,9
-	.half	.L163-.L30
+	.half	.L162-.L30
 	.byte	1,5,28,9
-	.half	.L164-.L163
+	.half	.L163-.L162
 	.byte	1,5,44,9
-	.half	.L165-.L164
+	.half	.L164-.L163
 	.byte	1,5,15,9
+	.half	.L165-.L164
+	.byte	3,1,1,5,24,9
 	.half	.L166-.L165
-	.byte	3,1,1,5,24,9
+	.byte	1,5,50,9
 	.half	.L167-.L166
-	.byte	1,5,50,9
+	.byte	1,5,2,9
 	.half	.L168-.L167
-	.byte	1,5,2,9
+	.byte	3,1,1,5,15,9
 	.half	.L169-.L168
-	.byte	3,1,1,5,15,9
+	.byte	3,1,1,5,24,9
 	.half	.L170-.L169
-	.byte	3,1,1,5,24,9
-	.half	.L171-.L170
 	.byte	1,5,48,9
+	.half	.L171-.L170
+	.byte	1,5,2,9
 	.half	.L172-.L171
-	.byte	1,5,2,9
-	.half	.L173-.L172
 	.byte	3,1,1,5,15,9
-	.half	.L174-.L173
+	.half	.L173-.L172
 	.byte	3,1,1,5,24,9
-	.half	.L175-.L174
+	.half	.L174-.L173
 	.byte	1,5,50,9
-	.half	.L176-.L175
+	.half	.L175-.L174
 	.byte	1,5,2,9
-	.half	.L177-.L176
+	.half	.L176-.L175
 	.byte	3,1,1,5,1,9
-	.half	.L51-.L177
+	.half	.L51-.L176
 	.byte	3,1,0,1,1
-.L160:
+.L159:
 	.sdecl	'.debug_ranges',debug,cluster('GyroUARTInit')
 	.sect	'.debug_ranges'
 .L50:
@@ -35597,82 +35604,82 @@ _999001_previousError:	.type	object
 	.sdecl	'.debug_line',debug,cluster('GyroUARTReadByte')
 	.sect	'.debug_line'
 .L54:
-	.word	.L179-.L178
-.L178:
+	.word	.L178-.L177
+.L177:
 	.half	3
-	.word	.L181-.L180
-.L180:
+	.word	.L180-.L179
+.L179:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\CODE\\Src\\User_Gyro_Uart.c',0,0,0,0,0
-.L181:
+.L180:
 	.byte	5,55,7,0,5,2
 	.word	.L32
 	.byte	3,33,1,5,9,9
 	.half	.L3-.L32
 	.byte	3,2,1,5,23,9
-	.half	.L182-.L3
+	.half	.L181-.L3
 	.byte	1,5,6,9
+	.half	.L182-.L181
+	.byte	3,1,1,5,27,9
 	.half	.L183-.L182
-	.byte	3,1,1,5,27,9
+	.byte	1,5,37,9
 	.half	.L184-.L183
-	.byte	1,5,37,9
+	.byte	1,5,42,9
 	.half	.L185-.L184
-	.byte	1,5,42,9
+	.byte	1,5,40,9
 	.half	.L186-.L185
-	.byte	1,5,40,9
+	.byte	1,5,21,7,9
 	.half	.L187-.L186
-	.byte	1,5,21,7,9
+	.byte	3,1,1,5,19,9
 	.half	.L188-.L187
-	.byte	3,1,1,5,19,9
-	.half	.L189-.L188
 	.byte	1,5,6,9
-	.half	.L4-.L189
+	.half	.L4-.L188
 	.byte	3,1,1,5,27,9
-	.half	.L190-.L4
+	.half	.L189-.L4
 	.byte	1,5,37,9
-	.half	.L191-.L190
+	.half	.L190-.L189
 	.byte	1,5,42,9
-	.half	.L192-.L191
+	.half	.L191-.L190
 	.byte	1,5,40,9
-	.half	.L193-.L192
+	.half	.L192-.L191
 	.byte	1,5,21,7,9
-	.half	.L194-.L193
+	.half	.L193-.L192
 	.byte	3,1,1,5,19,9
-	.half	.L195-.L194
+	.half	.L194-.L193
 	.byte	1,5,18,9
-	.half	.L6-.L195
+	.half	.L6-.L194
 	.byte	3,1,1,5,12,9
-	.half	.L196-.L6
+	.half	.L195-.L6
 	.byte	1,5,9,9
-	.half	.L197-.L196
+	.half	.L196-.L195
 	.byte	1,5,27,7,9
-	.half	.L198-.L197
+	.half	.L197-.L196
 	.byte	3,2,1,5,25,9
-	.half	.L199-.L198
+	.half	.L198-.L197
 	.byte	1,5,13,9
-	.half	.L200-.L199
+	.half	.L199-.L198
 	.byte	3,1,1,5,26,9
-	.half	.L201-.L200
+	.half	.L200-.L199
 	.byte	1,5,24,9
-	.half	.L202-.L201
+	.half	.L201-.L200
 	.byte	1,5,1,9
-	.half	.L203-.L202
+	.half	.L202-.L201
 	.byte	3,4,1,5,19,7,9
-	.half	.L2-.L203
+	.half	.L2-.L202
 	.byte	3,114,1,5,39,9
-	.half	.L204-.L2
+	.half	.L203-.L2
 	.byte	1,5,28,9
-	.half	.L205-.L204
+	.half	.L204-.L203
 	.byte	1,5,38,9
-	.half	.L206-.L205
+	.half	.L205-.L204
 	.byte	1,5,55,9
-	.half	.L207-.L206
+	.half	.L206-.L205
 	.byte	1,5,1,7,9
-	.half	.L208-.L207
+	.half	.L207-.L206
 	.byte	3,14,1,7,9
-	.half	.L56-.L208
+	.half	.L56-.L207
 	.byte	0,1,1
-.L179:
+.L178:
 	.sdecl	'.debug_ranges',debug,cluster('GyroUARTReadByte')
 	.sect	'.debug_ranges'
 .L55:
@@ -35710,180 +35717,180 @@ _999001_previousError:	.type	object
 	.sdecl	'.debug_line',debug,cluster('GyroCalculate')
 	.sect	'.debug_line'
 .L59:
-	.word	.L210-.L209
-.L209:
+	.word	.L209-.L208
+.L208:
 	.half	3
-	.word	.L212-.L211
-.L211:
+	.word	.L211-.L210
+.L210:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\CODE\\Src\\User_Gyro_Uart.c',0,0,0,0,0
-.L212:
+.L211:
 	.byte	5,12,7,0,5,2
 	.word	.L34
 	.byte	3,50,1,5,8,9
 	.half	.L128-.L34
 	.byte	3,3,1,5,5,9
-	.half	.L213-.L128
+	.half	.L212-.L128
 	.byte	1,5,10,7,9
-	.half	.L214-.L213
+	.half	.L213-.L212
 	.byte	3,2,1,5,20,9
+	.half	.L214-.L213
+	.byte	1,5,10,9
 	.half	.L215-.L214
-	.byte	1,5,10,9
+	.byte	3,1,1,5,20,9
 	.half	.L216-.L215
-	.byte	3,1,1,5,20,9
+	.byte	1,5,7,9
 	.half	.L217-.L216
-	.byte	1,5,7,9
+	.byte	1,5,10,9
 	.half	.L218-.L217
-	.byte	1,5,10,9
+	.byte	3,1,1,5,20,9
 	.half	.L219-.L218
-	.byte	3,1,1,5,20,9
+	.byte	1,5,7,9
 	.half	.L220-.L219
-	.byte	1,5,7,9
+	.byte	1,5,10,9
 	.half	.L221-.L220
-	.byte	1,5,10,9
+	.byte	3,1,1,5,20,9
 	.half	.L222-.L221
-	.byte	3,1,1,5,20,9
+	.byte	1,5,7,9
 	.half	.L223-.L222
-	.byte	1,5,7,9
+	.byte	1,5,10,9
 	.half	.L224-.L223
-	.byte	1,5,10,9
+	.byte	3,1,1,5,20,9
 	.half	.L225-.L224
-	.byte	3,1,1,5,20,9
+	.byte	1,5,7,9
 	.half	.L226-.L225
-	.byte	1,5,7,9
+	.byte	1,5,10,9
 	.half	.L227-.L226
-	.byte	1,5,10,9
+	.byte	3,1,1,5,20,9
 	.half	.L228-.L227
-	.byte	3,1,1,5,20,9
+	.byte	1,5,7,9
 	.half	.L229-.L228
-	.byte	1,5,7,9
+	.byte	1,5,10,9
 	.half	.L230-.L229
-	.byte	1,5,10,9
+	.byte	3,1,1,5,20,9
 	.half	.L231-.L230
-	.byte	3,1,1,5,20,9
+	.byte	1,5,7,9
 	.half	.L232-.L231
-	.byte	1,5,7,9
+	.byte	1,5,10,9
 	.half	.L233-.L232
-	.byte	1,5,10,9
+	.byte	3,1,1,5,20,9
 	.half	.L234-.L233
-	.byte	3,1,1,5,20,9
+	.byte	1,5,7,9
 	.half	.L235-.L234
-	.byte	1,5,7,9
+	.byte	1,5,10,9
 	.half	.L236-.L235
-	.byte	1,5,10,9
+	.byte	3,1,1,5,20,9
 	.half	.L237-.L236
-	.byte	3,1,1,5,20,9
+	.byte	1,5,7,9
 	.half	.L238-.L237
-	.byte	1,5,7,9
-	.half	.L239-.L238
 	.byte	1,5,10,9
-	.half	.L240-.L239
+	.half	.L239-.L238
 	.byte	3,1,1,5,20,9
-	.half	.L241-.L240
+	.half	.L240-.L239
 	.byte	1,5,7,9
-	.half	.L242-.L241
+	.half	.L241-.L240
 	.byte	1,9
-	.half	.L243-.L242
+	.half	.L242-.L241
 	.byte	3,119,1,5,13,9
-	.half	.L130-.L243
+	.half	.L130-.L242
 	.byte	3,10,1,5,23,9
-	.half	.L244-.L130
+	.half	.L243-.L130
 	.byte	1,5,3,9
-	.half	.L245-.L244
+	.half	.L244-.L243
 	.byte	1,5,11,7,9
-	.half	.L246-.L245
+	.half	.L245-.L244
 	.byte	3,2,1,5,4,9
-	.half	.L247-.L246
+	.half	.L246-.L245
 	.byte	3,1,1,5,17,9
-	.half	.L248-.L247
+	.half	.L247-.L246
 	.byte	1,5,15,9
-	.half	.L131-.L248
+	.half	.L131-.L247
 	.byte	1,5,4,9
-	.half	.L249-.L131
+	.half	.L248-.L131
 	.byte	3,1,1,5,19,9
-	.half	.L250-.L249
+	.half	.L249-.L248
 	.byte	1,5,1,9
-	.half	.L10-.L250
+	.half	.L10-.L249
 	.byte	3,18,1,5,10,7,9
 	.half	.L11-.L10
 	.byte	3,113,1,5,20,9
-	.half	.L251-.L11
+	.half	.L250-.L11
 	.byte	1,5,24,9
-	.half	.L132-.L251
+	.half	.L132-.L250
 	.byte	1,5,11,9
-	.half	.L252-.L132
+	.half	.L251-.L132
 	.byte	3,1,1,5,21,9
-	.half	.L253-.L252
+	.half	.L252-.L251
 	.byte	1,5,8,9
-	.half	.L133-.L253
+	.half	.L133-.L252
 	.byte	1,5,3,9
-	.half	.L254-.L133
+	.half	.L253-.L133
 	.byte	3,1,1,5,16,9
-	.half	.L255-.L254
+	.half	.L254-.L253
 	.byte	1,5,31,9
-	.half	.L134-.L255
+	.half	.L134-.L254
 	.byte	1,5,16,9
-	.half	.L256-.L134
+	.half	.L255-.L134
 	.byte	1,5,47,9
-	.half	.L257-.L256
+	.half	.L256-.L255
 	.byte	1,5,45,9
+	.half	.L257-.L256
+	.byte	1,5,14,9
 	.half	.L258-.L257
-	.byte	1,5,14,9
+	.byte	1,5,10,9
 	.half	.L259-.L258
-	.byte	1,5,10,9
+	.byte	3,2,1,5,20,9
 	.half	.L260-.L259
-	.byte	3,2,1,5,20,9
+	.byte	1,5,24,9
 	.half	.L261-.L260
-	.byte	1,5,24,9
+	.byte	1,5,11,9
 	.half	.L262-.L261
-	.byte	1,5,11,9
+	.byte	3,1,1,5,21,9
 	.half	.L263-.L262
-	.byte	3,1,1,5,21,9
-	.half	.L264-.L263
 	.byte	1,5,8,9
-	.half	.L135-.L264
+	.half	.L135-.L263
 	.byte	1,5,3,9
-	.half	.L265-.L135
+	.half	.L264-.L135
 	.byte	3,1,1,5,15,9
-	.half	.L266-.L265
+	.half	.L265-.L264
 	.byte	1,5,44,9
-	.half	.L267-.L266
+	.half	.L266-.L265
 	.byte	1,5,13,9
-	.half	.L268-.L267
+	.half	.L267-.L266
 	.byte	1,5,10,9
-	.half	.L269-.L268
+	.half	.L268-.L267
 	.byte	3,2,1,5,20,9
-	.half	.L270-.L269
+	.half	.L269-.L268
 	.byte	1,5,24,9
-	.half	.L271-.L270
+	.half	.L270-.L269
 	.byte	1,5,11,9
-	.half	.L272-.L271
+	.half	.L271-.L270
 	.byte	3,1,1,5,21,9
-	.half	.L273-.L272
+	.half	.L272-.L271
 	.byte	1,5,8,9
-	.half	.L137-.L273
+	.half	.L137-.L272
 	.byte	1,5,3,9
-	.half	.L274-.L137
+	.half	.L273-.L137
 	.byte	3,1,1,5,14,9
-	.half	.L275-.L274
+	.half	.L274-.L273
 	.byte	1,5,43,9
-	.half	.L276-.L275
+	.half	.L275-.L274
 	.byte	1,5,12,9
-	.half	.L277-.L276
+	.half	.L276-.L275
 	.byte	1,5,17,9
-	.half	.L278-.L277
+	.half	.L277-.L276
 	.byte	3,1,1,5,3,9
-	.half	.L279-.L278
+	.half	.L278-.L277
 	.byte	3,1,1,5,16,9
-	.half	.L280-.L279
+	.half	.L279-.L278
 	.byte	1,5,14,9
-	.half	.L281-.L280
+	.half	.L280-.L279
 	.byte	1,5,1,9
-	.half	.L282-.L281
+	.half	.L281-.L280
 	.byte	3,3,1,7,9
-	.half	.L61-.L282
+	.half	.L61-.L281
 	.byte	0,1,1
-.L210:
+.L209:
 	.sdecl	'.debug_ranges',debug,cluster('GyroCalculate')
 	.sect	'.debug_ranges'
 .L60:
@@ -35915,34 +35922,34 @@ _999001_previousError:	.type	object
 	.sdecl	'.debug_line',debug,cluster('ManageYawAngle')
 	.sect	'.debug_line'
 .L64:
-	.word	.L284-.L283
-.L283:
+	.word	.L283-.L282
+.L282:
 	.half	3
-	.word	.L286-.L285
-.L285:
+	.word	.L285-.L284
+.L284:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\CODE\\Src\\User_Gyro_Uart.c',0,0,0,0,0
-.L286:
+.L285:
 	.byte	5,8,7,0,5,2
 	.word	.L36
 	.byte	3,218,0,1,5,19,9
-	.half	.L287-.L36
+	.half	.L286-.L36
 	.byte	1,5,17,9
-	.half	.L288-.L287
+	.half	.L287-.L286
 	.byte	1,5,5,9
-	.half	.L289-.L288
+	.half	.L288-.L287
 	.byte	1,5,28,7,9
-	.half	.L290-.L289
+	.half	.L289-.L288
 	.byte	3,1,1,5,26,9
-	.half	.L291-.L290
+	.half	.L290-.L289
 	.byte	1,5,15,9
-	.half	.L292-.L291
+	.half	.L291-.L290
 	.byte	1,5,1,9
-	.half	.L13-.L292
+	.half	.L13-.L291
 	.byte	3,1,1,7,9
 	.half	.L66-.L13
 	.byte	0,1,1
-.L284:
+.L283:
 	.sdecl	'.debug_ranges',debug,cluster('ManageYawAngle')
 	.sect	'.debug_ranges'
 .L65:
@@ -35974,26 +35981,26 @@ _999001_previousError:	.type	object
 	.sdecl	'.debug_line',debug,cluster('GyroYawAngleInit')
 	.sect	'.debug_line'
 .L69:
-	.word	.L294-.L293
-.L293:
+	.word	.L293-.L292
+.L292:
 	.half	3
-	.word	.L296-.L295
-.L295:
+	.word	.L295-.L294
+.L294:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\CODE\\Src\\User_Gyro_Uart.c',0,0,0,0,0
-.L296:
+.L295:
 	.byte	5,2,7,0,5,2
 	.word	.L38
 	.byte	3,224,0,1,5,20,9
-	.half	.L297-.L38
+	.half	.L296-.L38
 	.byte	1,5,18,9
-	.half	.L298-.L297
+	.half	.L297-.L296
 	.byte	1,5,1,9
-	.half	.L299-.L298
+	.half	.L298-.L297
 	.byte	3,1,1,7,9
-	.half	.L71-.L299
+	.half	.L71-.L298
 	.byte	0,1,1
-.L294:
+.L293:
 	.sdecl	'.debug_ranges',debug,cluster('GyroYawAngleInit')
 	.sect	'.debug_ranges'
 .L70:
@@ -36027,76 +36034,76 @@ _999001_previousError:	.type	object
 	.sdecl	'.debug_line',debug,cluster('GetGyroError')
 	.sect	'.debug_line'
 .L74:
-	.word	.L301-.L300
-.L300:
+	.word	.L300-.L299
+.L299:
 	.half	3
-	.word	.L303-.L302
-.L302:
+	.word	.L302-.L301
+.L301:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\CODE\\Src\\User_Gyro_Uart.c',0,0,0,0,0
-.L303:
+.L302:
 	.byte	5,9,7,0,5,2
 	.word	.L40
 	.byte	3,229,0,1,5,27,9
-	.half	.L304-.L40
+	.half	.L303-.L40
 	.byte	1,5,25,9
-	.half	.L305-.L304
+	.half	.L304-.L303
 	.byte	1,5,5,9
-	.half	.L306-.L305
+	.half	.L305-.L304
 	.byte	1,5,13,7,9
-	.half	.L307-.L306
+	.half	.L306-.L305
 	.byte	3,2,1,5,22,9
-	.half	.L308-.L307
+	.half	.L307-.L306
 	.byte	1,5,9,9
-	.half	.L309-.L308
+	.half	.L308-.L307
 	.byte	1,5,17,7,9
-	.half	.L310-.L309
+	.half	.L309-.L308
 	.byte	3,2,1,5,50,9
-	.half	.L311-.L310
+	.half	.L310-.L309
 	.byte	1,5,13,9
-	.half	.L312-.L311
+	.half	.L311-.L310
 	.byte	1,5,27,7,9
-	.half	.L313-.L312
+	.half	.L312-.L311
 	.byte	3,6,1,5,45,9
-	.half	.L314-.L313
+	.half	.L313-.L312
 	.byte	1,5,27,9
-	.half	.L315-.L314
+	.half	.L314-.L313
 	.byte	1,5,25,9
+	.half	.L315-.L314
+	.byte	1,5,1,9
 	.half	.L316-.L315
-	.byte	1,5,1,9
-	.half	.L317-.L316
 	.byte	3,24,1,5,18,7,9
-	.half	.L14-.L317
+	.half	.L14-.L316
 	.byte	3,121,1,5,54,9
-	.half	.L318-.L14
+	.half	.L317-.L14
 	.byte	1,5,51,9
-	.half	.L319-.L318
+	.half	.L318-.L317
 	.byte	1,5,14,9
-	.half	.L320-.L319
+	.half	.L319-.L318
 	.byte	1,5,21,7,9
-	.half	.L15-.L320
+	.half	.L15-.L319
 	.byte	3,2,1,5,32,9
-	.half	.L321-.L15
+	.half	.L320-.L15
 	.byte	1,5,30,9
+	.half	.L321-.L320
+	.byte	1,5,1,9
 	.half	.L322-.L321
-	.byte	1,5,1,9
-	.half	.L323-.L322
 	.byte	3,5,1,5,22,7,9
-	.half	.L18-.L323
+	.half	.L18-.L322
 	.byte	3,126,1,5,40,9
-	.half	.L324-.L18
+	.half	.L323-.L18
 	.byte	1,5,22,9
-	.half	.L325-.L324
+	.half	.L324-.L323
 	.byte	1,5,33,9
-	.half	.L326-.L325
+	.half	.L325-.L324
 	.byte	1,5,22,9
-	.half	.L327-.L326
+	.half	.L326-.L325
 	.byte	1,5,1,9
-	.half	.L328-.L327
+	.half	.L327-.L326
 	.byte	3,2,1,7,9
-	.half	.L76-.L328
+	.half	.L76-.L327
 	.byte	0,1,1
-.L301:
+.L300:
 	.sdecl	'.debug_ranges',debug,cluster('GetGyroError')
 	.sect	'.debug_ranges'
 .L75:
@@ -36164,14 +36171,14 @@ _999001_previousError:	.type	object
 	.sdecl	'.debug_line',debug,cluster('GyroPID')
 	.sect	'.debug_line'
 .L79:
-	.word	.L330-.L329
-.L329:
+	.word	.L329-.L328
+.L328:
 	.half	3
-	.word	.L332-.L331
-.L331:
+	.word	.L331-.L330
+.L330:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\CODE\\Src\\User_Gyro_Uart.c',0,0,0,0,0
-.L332:
+.L331:
 	.byte	5,6,7,0,5,2
 	.word	.L42
 	.byte	3,137,1,1,5,32,9
@@ -36183,9 +36190,9 @@ _999001_previousError:	.type	object
 	.byte	3,3,1,5,17,9
 	.half	.L146-.L139
 	.byte	3,1,1,5,15,9
-	.half	.L333-.L146
+	.half	.L332-.L146
 	.byte	1,5,31,9
-	.half	.L149-.L333
+	.half	.L149-.L332
 	.byte	3,2,1,5,25,9
 	.half	.L148-.L149
 	.byte	1,5,36,9
@@ -36193,51 +36200,57 @@ _999001_previousError:	.type	object
 	.byte	1,5,19,9
 	.half	.L150-.L141
 	.byte	3,1,1,5,17,9
-	.half	.L334-.L150
+	.half	.L333-.L150
 	.byte	3,1,1,5,14,9
-	.half	.L335-.L334
-	.byte	1,5,38,9
-	.half	.L151-.L335
-	.byte	3,3,1,5,20,9
-	.half	.L143-.L151
-	.byte	3,1,1,5,17,9
-	.half	.L336-.L143
-	.byte	1,5,2,9
-	.half	.L337-.L336
-	.byte	1,5,25,7,9
-	.half	.L338-.L337
-	.byte	3,2,1,5,22,9
-	.half	.L339-.L338
+	.half	.L334-.L333
 	.byte	1,5,19,9
-	.half	.L152-.L339
+	.half	.L335-.L334
+	.byte	3,2,1,5,37,9
+	.half	.L336-.L335
+	.byte	1,5,19,9
+	.half	.L152-.L336
+	.byte	3,1,1,5,38,9
+	.half	.L337-.L152
+	.byte	1,5,20,9
+	.half	.L143-.L337
+	.byte	3,1,1,5,17,9
+	.half	.L151-.L143
+	.byte	1,5,2,9
+	.half	.L338-.L151
+	.byte	1,5,25,7,9
+	.half	.L339-.L338
+	.byte	3,2,1,5,22,9
+	.half	.L340-.L339
+	.byte	1,5,19,9
+	.half	.L341-.L340
 	.byte	3,127,1,5,17,9
-	.half	.L21-.L152
+	.half	.L21-.L341
 	.byte	1,5,20,9
 	.half	.L24-.L21
 	.byte	3,3,1,5,17,9
-	.half	.L340-.L24
+	.half	.L342-.L24
 	.byte	1,5,2,9
-	.half	.L341-.L340
-	.byte	1,5,25,7,9
-	.half	.L342-.L341
-	.byte	3,2,1,5,22,9
 	.half	.L343-.L342
-	.byte	1,5,19,9
+	.byte	1,5,25,7,9
 	.half	.L344-.L343
+	.byte	3,2,1,5,22,9
+	.half	.L345-.L344
+	.byte	1,5,19,9
+	.half	.L346-.L345
 	.byte	3,127,1,5,17,9
-	.half	.L25-.L344
+	.half	.L25-.L346
 	.byte	1,5,18,9
 	.half	.L28-.L25
 	.byte	3,3,1,5,28,9
-	.half	.L345-.L28
+	.half	.L347-.L28
 	.byte	1,5,18,9
-	.half	.L147-.L345
+	.half	.L147-.L347
 	.byte	3,1,1,5,28,9
-	.half	.L346-.L147
+	.half	.L348-.L147
 	.byte	1,5,1,9
-	.half	.L81-.L346
+	.half	.L81-.L348
 	.byte	3,1,0,1,1
-.L330:
+.L329:
 	.sdecl	'.debug_ranges',debug,cluster('GyroPID')
 	.sect	'.debug_ranges'
 .L80:
@@ -36565,10 +36578,7 @@ _999001_previousError:	.type	object
 	.byte	95
 	.word	0,0
 .L124:
-	.word	-1,.L42,.L153-.L42,.L21-.L42
-	.half	1
-	.byte	85
-	.word	.L24-.L42,.L147-.L42
+	.word	-1,.L42,.L152-.L42,.L147-.L42
 	.half	1
 	.byte	85
 	.word	0,0
@@ -36578,18 +36588,12 @@ _999001_previousError:	.type	object
 	.word	-1,.L42,.L150-.L42,.L151-.L42
 	.half	1
 	.byte	95
-	.word	.L151-.L42,.L152-.L42
-	.half	1
-	.byte	85
-	.word	.L21-.L42,.L24-.L42
-	.half	1
-	.byte	85
 	.word	0,0
 .L125:
 	.word	-1,.L42,.L143-.L42,.L115-.L42
 	.half	1
 	.byte	88
-	.word	.L154-.L42,.L115-.L42
+	.word	.L153-.L42,.L115-.L42
 	.half	1
 	.byte	85
 	.word	0,0
@@ -36628,7 +36632,7 @@ _999001_previousError:	.type	object
 	.word	0,0
 	.sdecl	'.debug_frame',debug
 	.sect	'.debug_frame'
-.L347:
+.L349:
 	.word	48
 	.word	-1
 	.byte	3,0,2,1,27,12,26,0,8,27,8,26,8,28,8,29,8,30,8,31,8,34,8,35,8,32,8,33,8,16,8,17,8,24,8,25,8,36,8,37,8,38
@@ -36636,34 +36640,34 @@ _999001_previousError:	.type	object
 	.sdecl	'.debug_frame',debug,cluster('GyroUARTInit')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L347,.L30,.L104-.L30
+	.word	.L349,.L30,.L104-.L30
 	.sdecl	'.debug_frame',debug,cluster('GyroUARTReadByte')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L347,.L32,.L105-.L32
+	.word	.L349,.L32,.L105-.L32
 	.sdecl	'.debug_frame',debug,cluster('GyroCalculate')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L347,.L34,.L106-.L34
+	.word	.L349,.L34,.L106-.L34
 	.sdecl	'.debug_frame',debug,cluster('ManageYawAngle')
 	.sect	'.debug_frame'
 	.word	24
-	.word	.L347,.L36,.L111-.L36
+	.word	.L349,.L36,.L111-.L36
 	.byte	8,18,8,19,8,20,8,21,8,22,8,23
 	.sdecl	'.debug_frame',debug,cluster('GyroYawAngleInit')
 	.sect	'.debug_frame'
 	.word	24
-	.word	.L347,.L38,.L112-.L38
+	.word	.L349,.L38,.L112-.L38
 	.byte	8,19,8,20,8,21,8,22,8,23,0,0
 	.sdecl	'.debug_frame',debug,cluster('GetGyroError')
 	.sect	'.debug_frame'
 	.word	24
-	.word	.L347,.L40,.L114-.L40
+	.word	.L349,.L40,.L114-.L40
 	.byte	8,18,8,19,8,20,8,21,8,22,8,23
 	.sdecl	'.debug_frame',debug,cluster('GyroPID')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L347,.L42,.L115-.L42
+	.word	.L349,.L42,.L115-.L42
 
 ; ..\CODE\Src\User_Gyro_Uart.c	   168  }
 

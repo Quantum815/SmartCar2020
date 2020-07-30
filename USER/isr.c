@@ -30,7 +30,7 @@ IFX_INTERRUPT(cc60_pit_ch0_isr, 0, CCU6_0_CH0_ISR_PRIORITY)  //主程序
 	enableInterrupts();//开启中断嵌套
 	PIT_CLEAR_FLAG(CCU6_0, PIT_CH0);
 	ADCcalculateMidLine();
-	//FSMRun();
+	FSMRun();
 }
 
 
@@ -38,6 +38,7 @@ IFX_INTERRUPT(cc60_pit_ch1_isr, 0, CCU6_0_CH1_ISR_PRIORITY)  //摄像头  LED1
 {
 	enableInterrupts();//开启中断嵌套
 	PIT_CLEAR_FLAG(CCU6_0, PIT_CH1);
+	FindZebra();
 	//if(mt9v03x_finish_flag)
 	//{
 		//ips114_displayimage032(mt9v03x_image[0], MT9V03X_W, MT9V03X_H);
