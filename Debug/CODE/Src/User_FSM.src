@@ -130,8 +130,8 @@ FindLine:	.type	func
 ; ..\CODE\Src\User_FSM.c	    56  	PIDValue = GetPIDValue(PIDMidLineFuseNum, MidLineFuseNum*1000, FINDLINE_P, FINDLINE_I, FINDLINE_D);
 	movh.a	a15,#@his(PIDValue)
 .L181:
-	mov.u	d15,#45056
-	addih	d15,d15,#17868
+	mov	d15,#8192
+	addih	d15,d15,#17867
 	st.w	[a10],d15
 .L182:
 	mov	d4,#14487
@@ -144,7 +144,7 @@ FindLine:	.type	func
 .L185:
 	mul.f	d5,d15,d0
 .L186:
-	movh	d6,#16888
+	movh	d6,#16880
 .L187:
 	mov	d7,#0
 	call	GetPIDValue
@@ -159,7 +159,7 @@ FindLine:	.type	func
 	movh.a	a2,#@his(PIDValue)
 	ld.w	d15,[a2]@los(PIDValue)
 .L191:
-	movh	d0,#16720
+	movh	d0,#16704
 .L192:
 	add.f	d0,d15,d0
 .L193:
@@ -170,7 +170,7 @@ FindLine:	.type	func
 	movh.a	a2,#@his(RPWM)
 .L195:
 	mov	d0,#26214
-	addih	d0,d0,#16726
+	addih	d0,d0,#16710
 .L196:
 	sub.f	d15,d0,d15
 .L197:

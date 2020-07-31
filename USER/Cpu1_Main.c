@@ -38,14 +38,12 @@ void core1_main(void)
     {
     	if(mt9v03x_finish_flag)
     	{
-    		//FindZebra();
-    		//ips114_displayimage032(mt9v03x_image[0], MT9V03X_W, MT9V03X_H);
+    		FindZebra();
+    		ips114_displayimage032(mt9v03x_image[0], MT9V03X_W, MT9V03X_H);
     		//seekfree_sendimg_03x(UART_3, mt9v03x_image[0], MT9V03X_W, MT9V03X_H);
     		mt9v03x_finish_flag = 0;
     	}
     }
 }
-
-
 
 #pragma section all restore

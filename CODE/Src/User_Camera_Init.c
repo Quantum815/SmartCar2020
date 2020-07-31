@@ -21,6 +21,6 @@ void UserCameraInit(void)
 	//测试
 	gpio_init(P20_8, GPO, 0, PUSHPULL);
 	//DebugUARTInit();  //单核有便可，双核也行
-	//ips114_init();  //双核都得有
+	ips114_init();  //双核都得有
 }
 

@@ -15,5 +15,6 @@
 
 uint8_t GetOSTU(uint8_t tmImage[IMAGEH][IMAGEW]);
 void BinaryImage(uint8_t tmImage[IMAGEH][IMAGEW],uint8_t ThresholdV);
+uint8_t GetVariance(uint8_t tmImage[IMAGEH][IMAGEW]);
 
 #endif /* CODE_INC_USER_OSTU_H_ */

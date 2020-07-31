@@ -111,8 +111,8 @@
 #define RightWheelBrakeZone -5
 
 //正常车速PWM占空比
-#define LeftNormalSpeed 9
-#define RightNormalSpeed 9
+#define LeftNormalSpeed 8
+#define RightNormalSpeed 8
 
 //圆环车速PWM占空比
 #define LeftCircleSpeed 8
@@ -129,9 +129,9 @@
 #define PIDMidLineFuseNum 0.000924
 
 //正常巡线PID
-#define FINDLINE_P 31
+#define FINDLINE_P 30
 #define FINDLINE_I 0
-#define FINDLINE_D 6550
+#define FINDLINE_D 6500
 
 //圆环巡线PID
 #define GYRO_P 0

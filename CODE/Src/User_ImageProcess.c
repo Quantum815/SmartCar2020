@@ -297,7 +297,10 @@ void FindZebra(void)
 	uint8 BlackWhiteChangeCount = 0;
 	static uint8 RecognizedCorrectLineCount = 0;
 
-	Threshold = GetOSTU(&mt9v03x_image[0]);
+	//Threshold = GetOSTU(&mt9v03x_image[0]);
+	Threshold = GetVariance(&mt9v03x_image[0]);
+	printf("%d\n", Threshold);
+
 	if(255 - Threshold >= InGarageAdjustedValue)
 		Threshold += InGarageAdjustedValue;
 	else
