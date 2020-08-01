@@ -38,13 +38,13 @@ IFX_INTERRUPT(cc60_pit_ch1_isr, 0, CCU6_0_CH1_ISR_PRIORITY)  //ÉãÏñÍ·  LED1
 {
 	enableInterrupts();//¿ªÆôÖÐ¶ÏÇ¶Ì×
 	PIT_CLEAR_FLAG(CCU6_0, PIT_CH1);
-	//FindZebra();
-	//if(mt9v03x_finish_flag)
-	//{
+	if(mt9v03x_finish_flag)
+	{
+		FindZebra();
 		//ips114_displayimage032(mt9v03x_image[0], MT9V03X_W, MT9V03X_H);
 		//seekfree_sendimg_03x(UART_3, mt9v03x_image[0], MT9V03X_W, MT9V03X_H);
 		//mt9v03x_finish_flag = 0;
-	//}
+	}
 	i++;
 	if(i == CPU1TIMES)
 	{

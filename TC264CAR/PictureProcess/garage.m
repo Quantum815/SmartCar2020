@@ -1,7 +1,7 @@
 clear;
 clc;
-INITIAL = imread('A2.BMP');
-
+INITIAL = imread('A5.BMP');
+tic;
 EnterGarageFlag = 0;
 JudgeBToWFlag = 0;
 JudgeWToBFlag = 0;
@@ -26,10 +26,12 @@ for imageH=30:70
                     break;
                 end
             end
-            for i=imageW:imageW+5
-                if mt9v03x_image(imageH,i)==255
-                    JudgeBToWFlag = 1;
-                    break;
+            if JudgeBToWFlag == 0
+                for i=imageW:imageW+5
+                    if mt9v03x_image(imageH,i)==255
+                        JudgeBToWFlag = 1;
+                        break;
+                    end
                 end
             end
             if JudgeBToWFlag == 0
@@ -43,10 +45,12 @@ for imageH=30:70
                    break;
                 end
             end
-            for i=imageW:imageW+5
-                if mt9v03x_image(imageH,i)==0
-                   JudgeWToBFlag = 1;
-                   break;
+            if JudgeWToBFlag == 0
+                for i=imageW:imageW+5
+                    if mt9v03x_image(imageH,i)==0
+                       JudgeWToBFlag = 1;
+                       break;
+                    end
                 end
             end
             if JudgeWToBFlag == 0
@@ -65,10 +69,12 @@ for imageH=30:70
                     break;
                 end
             end
-            for i=imageW+1:imageW+6
-                if mt9v03x_image(imageH,i)==0
-                    JudgeBToWFlag = 1;
-                    break;
+            if JudgeBToWFlag == 0
+                for i=imageW+1:imageW+6
+                    if mt9v03x_image(imageH,i)==0
+                        JudgeBToWFlag = 1;
+                        break;
+                    end
                 end
             end
             if JudgeBToWFlag == 0
@@ -82,10 +88,12 @@ for imageH=30:70
                    break;
                 end
             end
-            for i=imageW+1:imageW+6
-                if mt9v03x_image(imageH,i)==255
-                   JudgeWToBFlag = 1;
-                   break;
+            if JudgeWToBFlag == 0
+                for i=imageW+1:imageW+6
+                    if mt9v03x_image(imageH,i)==255
+                       JudgeWToBFlag = 1;
+                       break;
+                    end
                 end
             end
             if JudgeWToBFlag == 0
@@ -98,9 +106,10 @@ for imageH=30:70
     end
 end
 
-if RecognizedCorrectLineCount >= 6
+if RecognizedCorrectLineCount >= 5
 		EnterGarageFlag = 1;
 end
+toc;
 
 subplot(2,1,1);
 imshow(INITIAL);

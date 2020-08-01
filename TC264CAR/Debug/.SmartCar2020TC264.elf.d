@@ -424,5 +424,5 @@ SmartCar2020TC264.elf : "D:\Program Files\TASKING\TriCore v6.3r1\ctc\lib\tc16x\l
 "D:\Program Files\TASKING\TriCore v6.3r1\ctc\lib\tc16x\libfp_fpu.a" :
 SmartCar2020TC264.elf : "D:\Program Files\TASKING\TriCore v6.3r1\ctc\lib\tc16x\librt.a"
 "D:\Program Files\TASKING\TriCore v6.3r1\ctc\lib\tc16x\librt.a" :
-SmartCar2020TC264.elf : "E:\ProgramData\GithubRepositories\SmartCar2020TC264\Lcf_Tasking_Tricore_Tc.lsl"
-"E:\ProgramData\GithubRepositories\SmartCar2020TC264\Lcf_Tasking_Tricore_Tc.lsl" :
+SmartCar2020TC264.elf : "E:\ProgramData\GithubRepositories\SmartCar2020\TC264CAR\Lcf_Tasking_Tricore_Tc.lsl"
+"E:\ProgramData\GithubRepositories\SmartCar2020\TC264CAR\Lcf_Tasking_Tricore_Tc.lsl" :

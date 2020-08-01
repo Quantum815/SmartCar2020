@@ -321,12 +321,15 @@ void FindZebra(void)
 						JudgeBToWFlag = 1;
 						break;
 					}
-				for(int i=imageW; i<=imageW+5; i++)
-					if(mt9v03x_image[imageH][i]==0xfe)
-					{
-						JudgeBToWFlag = 1;
-						break;
-					}
+				if(!JudgeBToWFlag)
+				{
+					for(int i=imageW; i<=imageW+5; i++)
+						if(mt9v03x_image[imageH][i]==0xfe)
+						{
+							JudgeBToWFlag = 1;
+							break;
+						}
+				}
 				if(!JudgeBToWFlag)
 					BlackWhiteChangeCount++;
 			}
@@ -338,12 +341,15 @@ void FindZebra(void)
 						JudgeWToBFlag = 1;
 						break;
 					}
-				for(int i=imageW; i<=imageW+5; i++)
-					if(mt9v03x_image[imageH][i]==0x00)
-					{
-						JudgeWToBFlag = 1;
-						break;
-					}
+				if(!JudgeWToBFlag)
+				{
+					for(int i=imageW; i<=imageW+5; i++)
+						if(mt9v03x_image[imageH][i]==0x00)
+						{
+							JudgeWToBFlag = 1;
+							break;
+						}
+				}
 				if(!JudgeWToBFlag)
 					BlackWhiteChangeCount++;
 			}
@@ -360,12 +366,15 @@ void FindZebra(void)
 						JudgeBToWFlag = 1;
 						break;
 					}
-				for(int i=imageW+1; i<=imageW+6; i++)
-					if(mt9v03x_image[imageH][i]==0x00)
-					{
-						JudgeBToWFlag = 1;
-						break;
-					}
+				if(!JudgeBToWFlag)
+				{
+					for(int i=imageW+1; i<=imageW+6; i++)
+						if(mt9v03x_image[imageH][i]==0x00)
+						{
+							JudgeBToWFlag = 1;
+							break;
+						}
+				}
 				if(!JudgeBToWFlag)
 					BlackWhiteChangeCount++;
 			}
@@ -377,24 +386,27 @@ void FindZebra(void)
 						JudgeWToBFlag = 1;
 						break;
 					}
-				for(int i=imageW+1; i<=imageW+6; i++)
-					if(mt9v03x_image[imageH][i]==0xfe)
-					{
-						JudgeWToBFlag = 1;
-						break;
-					}
+				if(!JudgeWToBFlag)
+				{
+					for(int i=imageW+1; i<=imageW+6; i++)
+						if(mt9v03x_image[imageH][i]==0xfe)
+						{
+							JudgeWToBFlag = 1;
+							break;
+						}
+				}
 				if(!JudgeWToBFlag)
 					BlackWhiteChangeCount++;
 			}
 		}
-		if(BlackWhiteChangeCount >= 7)
+		if(BlackWhiteChangeCount >= 8)
 			RecognizedCorrectLineCount++;
 	}
 
 	if(RecognizedCorrectLineCount >= 5)
 	{
-			gpio_set(P20_8, 1);
-			EnterGarageFlag = 1;
+		EnterGarageFlag = 1;
+		gpio_set(P20_8, 1);
 	}
 }
 
