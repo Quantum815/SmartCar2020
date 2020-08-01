@@ -13,6 +13,9 @@ static double CurDistance, TotalDistance;
 
 #pragma section all restore
 
+
+#pragma section all "cpu0_psram"
+
 void EncoderInit(void)
 {
 	gpt12_init(GPT12_T2, GPT12_T2INB_P33_7, GPT12_T2EUDB_P33_6);
@@ -54,3 +57,5 @@ void CleanDistance(void)
 {
 	TotalDistance = 0;
 }
+
+#pragma section all restore

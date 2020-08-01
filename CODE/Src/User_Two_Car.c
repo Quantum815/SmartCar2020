@@ -16,6 +16,8 @@ uint8 TwoCarRxBuff[2];
 #pragma section all restore
 
 
+#pragma section all "cpu0_psram"
+
 void TwoCarUARTInit(void)
 {
 	seekfree_wireless_init();
@@ -74,3 +76,5 @@ uint8 TwoCarStateJudge(void)
 	}
 	return 0;
 }
+
+#pragma section all restore

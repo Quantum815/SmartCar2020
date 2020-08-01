@@ -4329,7 +4329,7 @@ cc60_pit_ch1_isr:	.type	func
 .L271:
 
 ; ..\USER\isr.c	    49  	if(i == CPU1TIMES)
-	mov	d8,#27
+	mov	d8,#25
 .L272:
 	jne	d15,d8,.L2
 .L273:

@@ -7,8 +7,8 @@
 	
 $TC16X
 	
-	.sdecl	'.text.User_Two_Car.TwoCarUARTInit',code,cluster('TwoCarUARTInit')
-	.sect	'.text.User_Two_Car.TwoCarUARTInit'
+	.sdecl	'.text.cpu0_psram',code,cluster('TwoCarUARTInit')
+	.sect	'.text.cpu0_psram'
 	.align	2
 	
 	.global	TwoCarUARTInit
@@ -31,13 +31,15 @@ $TC16X
 ; ..\CODE\Src\User_Two_Car.c	    16  #pragma section all restore
 ; ..\CODE\Src\User_Two_Car.c	    17  
 ; ..\CODE\Src\User_Two_Car.c	    18  
-; ..\CODE\Src\User_Two_Car.c	    19  void TwoCarUARTInit(void)
+; ..\CODE\Src\User_Two_Car.c	    19  #pragma section all "cpu0_psram"
+; ..\CODE\Src\User_Two_Car.c	    20  
+; ..\CODE\Src\User_Two_Car.c	    21  void TwoCarUARTInit(void)
 ; Function TwoCarUARTInit
 .L18:
 TwoCarUARTInit:	.type	func
 
-; ..\CODE\Src\User_Two_Car.c	    20  {
-; ..\CODE\Src\User_Two_Car.c	    21  	seekfree_wireless_init();
+; ..\CODE\Src\User_Two_Car.c	    22  {
+; ..\CODE\Src\User_Two_Car.c	    23  	seekfree_wireless_init();
 	j	seekfree_wireless_init
 .L55:
 	
@@ -46,28 +48,28 @@ __TwoCarUARTInit_function_end:
 .L33:
 	; End of function
 	
-	.sdecl	'.text.User_Two_Car.TwoCarReadData',code,cluster('TwoCarReadData')
-	.sect	'.text.User_Two_Car.TwoCarReadData'
+	.sdecl	'.text.cpu0_psram',code,cluster('TwoCarReadData')
+	.sect	'.text.cpu0_psram'
 	.align	2
 	
 	.global	TwoCarReadData
 
-; ..\CODE\Src\User_Two_Car.c	    22  }
-; ..\CODE\Src\User_Two_Car.c	    23  
-; ..\CODE\Src\User_Two_Car.c	    24  void TwoCarReadData(void)
+; ..\CODE\Src\User_Two_Car.c	    24  }
+; ..\CODE\Src\User_Two_Car.c	    25  
+; ..\CODE\Src\User_Two_Car.c	    26  void TwoCarReadData(void)
 ; Function TwoCarReadData
 .L20:
 TwoCarReadData:	.type	func
 
-; ..\CODE\Src\User_Two_Car.c	    25  {
-; ..\CODE\Src\User_Two_Car.c	    26  	static uint8 count = 0;
-; ..\CODE\Src\User_Two_Car.c	    27  	while(uart_query(WIRELESS_UART, &TwoCarRxBuff[TwoCarReceiveNum]))
+; ..\CODE\Src\User_Two_Car.c	    27  {
+; ..\CODE\Src\User_Two_Car.c	    28  	static uint8 count = 0;
+; ..\CODE\Src\User_Two_Car.c	    29  	while(uart_query(WIRELESS_UART, &TwoCarRxBuff[TwoCarReceiveNum]))
 	j	.L2
 .L3:
 
-; ..\CODE\Src\User_Two_Car.c	    28  	{
-; ..\CODE\Src\User_Two_Car.c	    29  		//uart_putstr(WIRELESS_UART, "test");
-; ..\CODE\Src\User_Two_Car.c	    30  		TwoCarReceiveNum++;
+; ..\CODE\Src\User_Two_Car.c	    30  	{
+; ..\CODE\Src\User_Two_Car.c	    31  		//uart_putstr(WIRELESS_UART, "test");
+; ..\CODE\Src\User_Two_Car.c	    32  		TwoCarReceiveNum++;
 	movh.a	a15,#@his(TwoCarReceiveNum)
 	ld.bu	d15,[a15]@los(TwoCarReceiveNum)
 .L83:
@@ -75,7 +77,7 @@ TwoCarReadData:	.type	func
 	st.b	[a15]@los(TwoCarReceiveNum),d15
 .L84:
 
-; ..\CODE\Src\User_Two_Car.c	    31  		if(TwoCarReceiveNum == 1 && TwoCarRxBuff[0] != 0x01)
+; ..\CODE\Src\User_Two_Car.c	    33  		if(TwoCarReceiveNum == 1 && TwoCarRxBuff[0] != 0x01)
 	ld.bu	d15,[a15]@los(TwoCarReceiveNum)
 	jne	d15,#1,.L4
 .L85:
@@ -86,21 +88,21 @@ TwoCarReadData:	.type	func
 	jeq	d15,#1,.L5
 .L88:
 
-; ..\CODE\Src\User_Two_Car.c	    32  			TwoCarReceiveNum = 0;
+; ..\CODE\Src\User_Two_Car.c	    34  			TwoCarReceiveNum = 0;
 	mov	d15,#0
 .L89:
 	st.b	[a15]@los(TwoCarReceiveNum),d15
 .L5:
 .L4:
 
-; ..\CODE\Src\User_Two_Car.c	    33  		if(TwoCarReceiveNum == 2)
+; ..\CODE\Src\User_Two_Car.c	    35  		if(TwoCarReceiveNum == 2)
 	ld.bu	d15,[a15]@los(TwoCarReceiveNum)
 .L90:
 	jne	d15,#2,.L6
 .L91:
 
-; ..\CODE\Src\User_Two_Car.c	    34  		{
-; ..\CODE\Src\User_Two_Car.c	    35  			if(TwoCarRxBuff[1] != 0xff)
+; ..\CODE\Src\User_Two_Car.c	    36  		{
+; ..\CODE\Src\User_Two_Car.c	    37  			if(TwoCarRxBuff[1] != 0xff)
 	movh.a	a2,#@his(TwoCarRxBuff+1)
 .L92:
 	ld.bu	d0,[a2]@los(TwoCarRxBuff+1)
@@ -110,7 +112,7 @@ TwoCarReadData:	.type	func
 	jeq	d15,d0,.L7
 .L95:
 
-; ..\CODE\Src\User_Two_Car.c	    36  				TwoCarReceiveNum = 0;
+; ..\CODE\Src\User_Two_Car.c	    38  				TwoCarReceiveNum = 0;
 	mov	d15,#0
 .L96:
 	st.b	[a15]@los(TwoCarReceiveNum),d15
@@ -118,10 +120,10 @@ TwoCarReadData:	.type	func
 	j	.L8
 .L7:
 
-; ..\CODE\Src\User_Two_Car.c	    37  			else
-; ..\CODE\Src\User_Two_Car.c	    38  			{
-; ..\CODE\Src\User_Two_Car.c	    39  				//uart_putstr(WIRELESS_UART, "success");
-; ..\CODE\Src\User_Two_Car.c	    40  				count++;
+; ..\CODE\Src\User_Two_Car.c	    39  			else
+; ..\CODE\Src\User_Two_Car.c	    40  			{
+; ..\CODE\Src\User_Two_Car.c	    41  				//uart_putstr(WIRELESS_UART, "success");
+; ..\CODE\Src\User_Two_Car.c	    42  				count++;
 	movh.a	a15,#@his(_999001_count)
 	ld.bu	d15,[a15]@los(_999001_count)
 .L98:
@@ -129,7 +131,7 @@ TwoCarReadData:	.type	func
 	st.b	[a15]@los(_999001_count),d15
 .L99:
 
-; ..\CODE\Src\User_Two_Car.c	    41  				TwoCarReceiveNum = 0;
+; ..\CODE\Src\User_Two_Car.c	    43  				TwoCarReceiveNum = 0;
 	movh.a	a2,#@his(TwoCarReceiveNum)
 .L100:
 	mov	d15,#0
@@ -137,13 +139,13 @@ TwoCarReadData:	.type	func
 	st.b	[a2]@los(TwoCarReceiveNum),d15
 .L102:
 
-; ..\CODE\Src\User_Two_Car.c	    42  				if(count == 5)
+; ..\CODE\Src\User_Two_Car.c	    44  				if(count == 5)
 	ld.bu	d15,[a15]@los(_999001_count)
 .L103:
 	jne	d15,#5,.L9
 .L104:
 
-; ..\CODE\Src\User_Two_Car.c	    43  					TwoCarRxFlag = 1;
+; ..\CODE\Src\User_Two_Car.c	    45  					TwoCarRxFlag = 1;
 	movh.a	a15,#@his(TwoCarRxFlag)
 .L105:
 	mov	d15,#1
@@ -151,11 +153,11 @@ TwoCarReadData:	.type	func
 	st.b	[a15]@los(TwoCarRxFlag),d15
 .L9:
 
-; ..\CODE\Src\User_Two_Car.c	    44  				break;
-; ..\CODE\Src\User_Two_Car.c	    45  			}
-; ..\CODE\Src\User_Two_Car.c	    46  		}
-; ..\CODE\Src\User_Two_Car.c	    47  	}
-; ..\CODE\Src\User_Two_Car.c	    48  }
+; ..\CODE\Src\User_Two_Car.c	    46  				break;
+; ..\CODE\Src\User_Two_Car.c	    47  			}
+; ..\CODE\Src\User_Two_Car.c	    48  		}
+; ..\CODE\Src\User_Two_Car.c	    49  	}
+; ..\CODE\Src\User_Two_Car.c	    50  }
 	ret
 .L8:
 .L6:
@@ -181,14 +183,14 @@ __TwoCarReadData_function_end:
 .L38:
 	; End of function
 	
-	.sdecl	'.text.User_Two_Car.TwoCarSendData',code,cluster('TwoCarSendData')
-	.sect	'.text.User_Two_Car.TwoCarSendData'
+	.sdecl	'.text.cpu0_psram',code,cluster('TwoCarSendData')
+	.sect	'.text.cpu0_psram'
 	.align	2
 	
 	.global	TwoCarSendData
 
-; ..\CODE\Src\User_Two_Car.c	    49  
-; ..\CODE\Src\User_Two_Car.c	    50  void TwoCarSendData(uint8 *buff, uint32 len)
+; ..\CODE\Src\User_Two_Car.c	    51  
+; ..\CODE\Src\User_Two_Car.c	    52  void TwoCarSendData(uint8 *buff, uint32 len)
 ; Function TwoCarSendData
 .L22:
 TwoCarSendData:	.type	func
@@ -197,8 +199,8 @@ TwoCarSendData:	.type	func
 	mov	d15,d4
 .L68:
 
-; ..\CODE\Src\User_Two_Car.c	    51  {
-; ..\CODE\Src\User_Two_Car.c	    52      if(!gpio_get(RTS_PIN))
+; ..\CODE\Src\User_Two_Car.c	    53  {
+; ..\CODE\Src\User_Two_Car.c	    54      if(!gpio_get(RTS_PIN))
 	mov	d4,#322
 .L66:
 	call	gpio_get
@@ -206,7 +208,7 @@ TwoCarSendData:	.type	func
 	jne	d2,#0,.L11
 .L116:
 
-; ..\CODE\Src\User_Two_Car.c	    53      	uart_putbuff(WIRELESS_UART, buff, len);
+; ..\CODE\Src\User_Two_Car.c	    55      	uart_putbuff(WIRELESS_UART, buff, len);
 	mov	d4,#2
 .L117:
 	mov.aa	a4,a15
@@ -216,7 +218,7 @@ TwoCarSendData:	.type	func
 	j	uart_putbuff
 .L11:
 
-; ..\CODE\Src\User_Two_Car.c	    54  }
+; ..\CODE\Src\User_Two_Car.c	    56  }
 	ret
 .L58:
 	
@@ -225,29 +227,29 @@ __TwoCarSendData_function_end:
 .L43:
 	; End of function
 	
-	.sdecl	'.text.User_Two_Car.TwoCarStateJudge',code,cluster('TwoCarStateJudge')
-	.sect	'.text.User_Two_Car.TwoCarStateJudge'
+	.sdecl	'.text.cpu0_psram',code,cluster('TwoCarStateJudge')
+	.sect	'.text.cpu0_psram'
 	.align	2
 	
 	.global	TwoCarStateJudge
 
-; ..\CODE\Src\User_Two_Car.c	    55  
-; ..\CODE\Src\User_Two_Car.c	    56  uint8 TwoCarStateJudge(void)
+; ..\CODE\Src\User_Two_Car.c	    57  
+; ..\CODE\Src\User_Two_Car.c	    58  uint8 TwoCarStateJudge(void)
 ; Function TwoCarStateJudge
 .L24:
 TwoCarStateJudge:	.type	func
 
-; ..\CODE\Src\User_Two_Car.c	    57  {
-; ..\CODE\Src\User_Two_Car.c	    58  	static uint8 count;
-; ..\CODE\Src\User_Two_Car.c	    59  	if(TwoCarRxFlag)
+; ..\CODE\Src\User_Two_Car.c	    59  {
+; ..\CODE\Src\User_Two_Car.c	    60  	static uint8 count;
+; ..\CODE\Src\User_Two_Car.c	    61  	if(TwoCarRxFlag)
 	movh.a	a15,#@his(TwoCarRxFlag)
 	ld.bu	d15,[a15]@los(TwoCarRxFlag)
 .L122:
 	jeq	d15,#0,.L12
 .L123:
 
-; ..\CODE\Src\User_Two_Car.c	    60  	{
-; ..\CODE\Src\User_Two_Car.c	    61  		count++;
+; ..\CODE\Src\User_Two_Car.c	    62  	{
+; ..\CODE\Src\User_Two_Car.c	    63  		count++;
 	movh.a	a2,#@his(_999002_count)
 	ld.bu	d15,[a2]@los(_999002_count)
 .L124:
@@ -255,37 +257,37 @@ TwoCarStateJudge:	.type	func
 	st.b	[a2]@los(_999002_count),d15
 .L125:
 
-; ..\CODE\Src\User_Two_Car.c	    62  		TwoCarRxFlag = 0;
+; ..\CODE\Src\User_Two_Car.c	    64  		TwoCarRxFlag = 0;
 	mov	d0,#0
 .L126:
 	st.b	[a15]@los(TwoCarRxFlag),d0
 .L127:
 
-; ..\CODE\Src\User_Two_Car.c	    63  		if(count == 5)
+; ..\CODE\Src\User_Two_Car.c	    65  		if(count == 5)
 	ld.bu	d15,[a2]@los(_999002_count)
 .L128:
 	jne	d15,#5,.L13
 .L129:
 
-; ..\CODE\Src\User_Two_Car.c	    64  		{
-; ..\CODE\Src\User_Two_Car.c	    65  			count = 0;
+; ..\CODE\Src\User_Two_Car.c	    66  		{
+; ..\CODE\Src\User_Two_Car.c	    67  			count = 0;
 	st.b	[a2]@los(_999002_count),d0
 .L130:
 
-; ..\CODE\Src\User_Two_Car.c	    66  			return 1;
+; ..\CODE\Src\User_Two_Car.c	    68  			return 1;
 	mov	d2,#1
 .L131:
 
-; ..\CODE\Src\User_Two_Car.c	    67  		}
-; ..\CODE\Src\User_Two_Car.c	    68  	}
-; ..\CODE\Src\User_Two_Car.c	    69  	else
-; ..\CODE\Src\User_Two_Car.c	    70  	{
-; ..\CODE\Src\User_Two_Car.c	    71  		count--;
-; ..\CODE\Src\User_Two_Car.c	    72  		if(count <= 0)
-; ..\CODE\Src\User_Two_Car.c	    73  			count = 0;
-; ..\CODE\Src\User_Two_Car.c	    74  	}
-; ..\CODE\Src\User_Two_Car.c	    75  	return 0;
-; ..\CODE\Src\User_Two_Car.c	    76  }
+; ..\CODE\Src\User_Two_Car.c	    69  		}
+; ..\CODE\Src\User_Two_Car.c	    70  	}
+; ..\CODE\Src\User_Two_Car.c	    71  	else
+; ..\CODE\Src\User_Two_Car.c	    72  	{
+; ..\CODE\Src\User_Two_Car.c	    73  		count--;
+; ..\CODE\Src\User_Two_Car.c	    74  		if(count <= 0)
+; ..\CODE\Src\User_Two_Car.c	    75  			count = 0;
+; ..\CODE\Src\User_Two_Car.c	    76  	}
+; ..\CODE\Src\User_Two_Car.c	    77  	return 0;
+; ..\CODE\Src\User_Two_Car.c	    78  }
 	ret
 .L12:
 	movh.a	a15,#@his(_999002_count)
@@ -329,13 +331,13 @@ TwoCarRxFlag:	.type	object
 TwoCarRxBuff:	.type	object
 	.size	TwoCarRxBuff,2
 	.space	2
-	.sdecl	'.data.User_Two_Car._999001_count',data,cluster('_999001_count')
-	.sect	'.data.User_Two_Car._999001_count'
+	.sdecl	'.data.cpu0_psram',data,cluster('_999001_count')
+	.sect	'.data.cpu0_psram'
 _999001_count:	.type	object
 	.size	_999001_count,1
 	.space	1
-	.sdecl	'.bss.User_Two_Car._999002_count',data,cluster('_999002_count')
-	.sect	'.bss.User_Two_Car._999002_count'
+	.sdecl	'.bss.cpu0_psram',data,cluster('_999002_count')
+	.sect	'.bss.cpu0_psram'
 _999002_count:	.type	object
 	.size	_999002_count,1
 	.space	1
@@ -35048,7 +35050,7 @@ _999002_count:	.type	object
 	.byte	2
 	.word	.L25
 	.byte	3
-	.byte	'TwoCarUARTInit',0,1,19,6,1,1,1
+	.byte	'TwoCarUARTInit',0,1,21,6,1,1,1
 	.word	.L18,.L55,.L17
 	.byte	4
 	.word	.L18,.L55
@@ -35071,7 +35073,7 @@ _999002_count:	.type	object
 .L78:
 	.byte	5,24,7,0,5,2
 	.word	.L18
-	.byte	3,20,1,5,1,7,9
+	.byte	3,22,1,5,1,7,9
 	.half	.L33-.L18
 	.byte	3,1,0,1,1
 .L76:
@@ -35093,12 +35095,12 @@ _999002_count:	.type	object
 	.byte	2
 	.word	.L25
 	.byte	3
-	.byte	'TwoCarReadData',0,1,24,6,1,1,1
+	.byte	'TwoCarReadData',0,1,26,6,1,1,1
 	.word	.L20,.L56,.L19
 	.byte	4
 	.word	.L20,.L56
 	.byte	5
-	.byte	'count',0,1,26,15
+	.byte	'count',0,1,28,15
 	.word	.L57
 	.byte	5,3
 	.word	_999001_count
@@ -35121,7 +35123,7 @@ _999002_count:	.type	object
 .L82:
 	.byte	5,66,7,0,5,2
 	.word	.L20
-	.byte	3,26,1,5,3,9
+	.byte	3,28,1,5,3,9
 	.half	.L3-.L20
 	.byte	3,3,1,5,19,9
 	.half	.L83-.L3
@@ -35211,13 +35213,13 @@ _999002_count:	.type	object
 	.byte	2
 	.word	.L25
 	.byte	3
-	.byte	'TwoCarSendData',0,1,50,6,1,1,1
+	.byte	'TwoCarSendData',0,1,52,6,1,1,1
 	.word	.L22,.L58,.L21
 	.byte	4
-	.byte	'buff',0,1,50,28
+	.byte	'buff',0,1,52,28
 	.word	.L59,.L60
 	.byte	4
-	.byte	'len',0,1,50,41
+	.byte	'len',0,1,52,41
 	.word	.L61,.L62
 	.byte	5
 	.word	.L22,.L58
@@ -35240,7 +35242,7 @@ _999002_count:	.type	object
 .L115:
 	.byte	5,6,7,0,5,2
 	.word	.L22
-	.byte	3,49,1,5,18,9
+	.byte	3,51,1,5,18,9
 	.half	.L68-.L22
 	.byte	3,2,1,5,9,9
 	.half	.L65-.L68
@@ -35272,14 +35274,14 @@ _999002_count:	.type	object
 	.byte	2
 	.word	.L25
 	.byte	3
-	.byte	'TwoCarStateJudge',0,1,56,7
+	.byte	'TwoCarStateJudge',0,1,58,7
 	.word	.L57
 	.byte	1,1,1
 	.word	.L24,.L63,.L23
 	.byte	4
 	.word	.L24,.L63
 	.byte	5
-	.byte	'count',0,1,58,15
+	.byte	'count',0,1,60,15
 	.word	.L57
 	.byte	5,3
 	.word	_999002_count
@@ -35302,7 +35304,7 @@ _999002_count:	.type	object
 .L121:
 	.byte	5,5,7,0,5,2
 	.word	.L24
-	.byte	3,58,1,5,2,9
+	.byte	3,60,1,5,2,9
 	.half	.L122-.L24
 	.byte	1,5,3,7,9
 	.half	.L123-.L122
@@ -35485,5 +35487,7 @@ _999002_count:	.type	object
 	.word	.L137,.L24,.L63-.L24
 	.byte	8,19,8,20,8,21,8,22,8,23,0,0
 
+; ..\CODE\Src\User_Two_Car.c	    79  
+; ..\CODE\Src\User_Two_Car.c	    80  #pragma section all restore
 
 	; Module end

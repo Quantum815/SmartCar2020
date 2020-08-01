@@ -114,23 +114,5 @@ void BinaryImage(uint8_t tmImage[IMAGEH][IMAGEW],uint8_t ThresholdV)
   }
 }
 
-//∑Ω≤Ó«Û„–÷µ
-uint8_t GetVariance(uint8_t tmImage[IMAGEH][IMAGEW])
-{
-	static uint8_t AverageValue = 0;
-	uint8_t Threshold = 0;
-
-	for(int i=0; i<IMAGEH; i++)
-		for(int j=0; j<IMAGEW; j++)
-			AverageValue += tmImage[i][j];
-	AverageValue /= IMAGEH * IMAGEW;
-	Threshold = AverageValue;
-	//for(int i=0; i<IMAGEH; i++)
-		//for(int j=0; j<IMAGEW; j++)
-			//Threshold += (tmImage[i][j] - AverageValue)*(tmImage[i][j] - AverageValue);
-	//Threshold /= IMAGEH * IMAGEW;
-	return Threshold;
-}
-
 #pragma section all restore
 

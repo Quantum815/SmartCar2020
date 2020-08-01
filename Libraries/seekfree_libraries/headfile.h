@@ -91,7 +91,7 @@
 
 //进程中断时间
 #define MainProcessTime 10
-#define CameraProcessTime 18
+#define CameraProcessTime 20
 #define CountDistanceTime 5
 #define LED0Time 500
 
@@ -107,12 +107,16 @@
 #define RightWheelDeadZone 4.4
 
 //车轮刹车死区PWM占空比
-#define LeftWheelBrakeZone -5
-#define RightWheelBrakeZone -5
+#define LeftWheelBrakeZone 0.5
+#define RightWheelBrakeZone 0.5
 
 //正常车速PWM占空比
 #define LeftNormalSpeed 8
 #define RightNormalSpeed 8
+
+//下坡车速PWM占空比
+#define LeftDownhillSpeed 0
+#define RightDownhillSpeed 0
 
 //圆环车速PWM占空比
 #define LeftCircleSpeed 8

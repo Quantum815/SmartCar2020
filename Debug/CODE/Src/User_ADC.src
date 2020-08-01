@@ -7,8 +7,8 @@
 	
 $TC16X
 	
-	.sdecl	'.text.User_ADC.ADCInit',code,cluster('ADCInit')
-	.sect	'.text.User_ADC.ADCInit'
+	.sdecl	'.text.cpu0_psram',code,cluster('ADCInit')
+	.sect	'.text.cpu0_psram'
 	.align	2
 	
 	.global	ADCInit
@@ -28,41 +28,44 @@ $TC16X
 ; ..\CODE\Src\User_ADC.c	    13  
 ; ..\CODE\Src\User_ADC.c	    14  #pragma section all restore
 ; ..\CODE\Src\User_ADC.c	    15  
-; ..\CODE\Src\User_ADC.c	    16  void ADCInit(void)
+; ..\CODE\Src\User_ADC.c	    16  
+; ..\CODE\Src\User_ADC.c	    17  #pragma section all "cpu0_psram"
+; ..\CODE\Src\User_ADC.c	    18  
+; ..\CODE\Src\User_ADC.c	    19  void ADCInit(void)
 ; Function ADCInit
 .L8:
 ADCInit:	.type	func
 
-; ..\CODE\Src\User_ADC.c	    17  {
-; ..\CODE\Src\User_ADC.c	    18  	adc_init(ADC_0,ADC0_CH0_A0);
+; ..\CODE\Src\User_ADC.c	    20  {
+; ..\CODE\Src\User_ADC.c	    21  	adc_init(ADC_0,ADC0_CH0_A0);
 	mov	d4,#0
 .L67:
 	mov	d5,d4
 	call	adc_init
 .L68:
 
-; ..\CODE\Src\User_ADC.c	    19  	adc_init(ADC_0,ADC0_CH1_A1);
+; ..\CODE\Src\User_ADC.c	    22  	adc_init(ADC_0,ADC0_CH1_A1);
 	mov	d4,#0
 .L69:
 	mov	d5,#1
 	call	adc_init
 .L70:
 
-; ..\CODE\Src\User_ADC.c	    20  	adc_init(ADC_0,ADC0_CH2_A2);
+; ..\CODE\Src\User_ADC.c	    23  	adc_init(ADC_0,ADC0_CH2_A2);
 	mov	d4,#0
 .L71:
 	mov	d5,#2
 	call	adc_init
 .L72:
 
-; ..\CODE\Src\User_ADC.c	    21  	adc_init(ADC_0,ADC0_CH3_A3);
+; ..\CODE\Src\User_ADC.c	    24  	adc_init(ADC_0,ADC0_CH3_A3);
 	mov	d4,#0
 .L73:
 	mov	d5,#3
 	call	adc_init
 .L74:
 
-; ..\CODE\Src\User_ADC.c	    22  	adc_init(ADC_0,ADC0_CH4_A4);
+; ..\CODE\Src\User_ADC.c	    25  	adc_init(ADC_0,ADC0_CH4_A4);
 	mov	d4,#0
 .L75:
 	mov	d5,#4
@@ -74,20 +77,20 @@ __ADCInit_function_end:
 .L23:
 	; End of function
 	
-	.sdecl	'.text.User_ADC.UpdateADCValue',code,cluster('UpdateADCValue')
-	.sect	'.text.User_ADC.UpdateADCValue'
+	.sdecl	'.text.cpu0_psram',code,cluster('UpdateADCValue')
+	.sect	'.text.cpu0_psram'
 	.align	2
 	
 	.global	UpdateADCValue
 
-; ..\CODE\Src\User_ADC.c	    23  }
-; ..\CODE\Src\User_ADC.c	    24  void UpdateADCValue(void)
+; ..\CODE\Src\User_ADC.c	    26  }
+; ..\CODE\Src\User_ADC.c	    27  void UpdateADCValue(void)
 ; Function UpdateADCValue
 .L10:
 UpdateADCValue:	.type	func
 
-; ..\CODE\Src\User_ADC.c	    25  {
-; ..\CODE\Src\User_ADC.c	    26  	ADCValue[0] = adc_convert(ADC_0, ADC0_CH0_A0, ADC_12BIT);
+; ..\CODE\Src\User_ADC.c	    28  {
+; ..\CODE\Src\User_ADC.c	    29  	ADCValue[0] = adc_convert(ADC_0, ADC0_CH0_A0, ADC_12BIT);
 	movh.a	a15,#@his(ADCValue)
 .L80:
 	mov	d4,#0
@@ -100,7 +103,7 @@ UpdateADCValue:	.type	func
 	st.h	[a15]@los(ADCValue),d2
 .L84:
 
-; ..\CODE\Src\User_ADC.c	    27  	ADCValue[1] = adc_convert(ADC_0, ADC0_CH1_A1, ADC_12BIT);
+; ..\CODE\Src\User_ADC.c	    30  	ADCValue[1] = adc_convert(ADC_0, ADC0_CH1_A1, ADC_12BIT);
 	movh.a	a15,#@his(ADCValue+2)
 .L85:
 	mov	d4,#0
@@ -113,7 +116,7 @@ UpdateADCValue:	.type	func
 	st.h	[a15]@los(ADCValue+2),d2
 .L89:
 
-; ..\CODE\Src\User_ADC.c	    28  	ADCValue[2] = adc_convert(ADC_0, ADC0_CH2_A2, ADC_12BIT);
+; ..\CODE\Src\User_ADC.c	    31  	ADCValue[2] = adc_convert(ADC_0, ADC0_CH2_A2, ADC_12BIT);
 	movh.a	a15,#@his(ADCValue+4)
 .L90:
 	mov	d4,#0
@@ -126,7 +129,7 @@ UpdateADCValue:	.type	func
 	st.h	[a15]@los(ADCValue+4),d2
 .L94:
 
-; ..\CODE\Src\User_ADC.c	    29  	ADCValue[3] = adc_convert(ADC_0, ADC0_CH3_A3, ADC_12BIT);
+; ..\CODE\Src\User_ADC.c	    32  	ADCValue[3] = adc_convert(ADC_0, ADC0_CH3_A3, ADC_12BIT);
 	movh.a	a15,#@his(ADCValue+6)
 .L95:
 	mov	d4,#0
@@ -139,7 +142,7 @@ UpdateADCValue:	.type	func
 	st.h	[a15]@los(ADCValue+6),d2
 .L99:
 
-; ..\CODE\Src\User_ADC.c	    30  	ADCValue[4] = adc_convert(ADC_0, ADC0_CH4_A4, ADC_12BIT);
+; ..\CODE\Src\User_ADC.c	    33  	ADCValue[4] = adc_convert(ADC_0, ADC0_CH4_A4, ADC_12BIT);
 	movh.a	a15,#@his(ADCValue+8)
 .L100:
 	mov	d4,#0
@@ -152,7 +155,7 @@ UpdateADCValue:	.type	func
 	st.h	[a15]@los(ADCValue+8),d2
 .L104:
 
-; ..\CODE\Src\User_ADC.c	    31  }
+; ..\CODE\Src\User_ADC.c	    34  }
 	ret
 .L42:
 	
@@ -161,29 +164,29 @@ __UpdateADCValue_function_end:
 .L28:
 	; End of function
 	
-	.sdecl	'.text.User_ADC.ADCValueHandle',code,cluster('ADCValueHandle')
-	.sect	'.text.User_ADC.ADCValueHandle'
+	.sdecl	'.text.cpu0_psram',code,cluster('ADCValueHandle')
+	.sect	'.text.cpu0_psram'
 	.align	2
 	
 	.global	ADCValueHandle
 
-; ..\CODE\Src\User_ADC.c	    32  
-; ..\CODE\Src\User_ADC.c	    33  int16 ADCValueHandle(uint8 num)
+; ..\CODE\Src\User_ADC.c	    35  
+; ..\CODE\Src\User_ADC.c	    36  int16 ADCValueHandle(uint8 num)
 ; Function ADCValueHandle
 .L12:
 ADCValueHandle:	.type	func
 
-; ..\CODE\Src\User_ADC.c	    34  {
-; ..\CODE\Src\User_ADC.c	    35  	if(num > 4)
+; ..\CODE\Src\User_ADC.c	    37  {
+; ..\CODE\Src\User_ADC.c	    38  	if(num > 4)
 	jlt.u	d4,#5,.L2
 .L109:
 
-; ..\CODE\Src\User_ADC.c	    36  		return -1;
+; ..\CODE\Src\User_ADC.c	    39  		return -1;
 	mov	d2,#-1
 .L110:
 
-; ..\CODE\Src\User_ADC.c	    37  	return ADCValue[num];
-; ..\CODE\Src\User_ADC.c	    38  }
+; ..\CODE\Src\User_ADC.c	    40  	return ADCValue[num];
+; ..\CODE\Src\User_ADC.c	    41  }
 	ret
 .L2:
 	movh.a	a15,#@his(ADCValue)
@@ -201,21 +204,21 @@ __ADCValueHandle_function_end:
 .L33:
 	; End of function
 	
-	.sdecl	'.text.User_ADC.ADCcalculateMidLine',code,cluster('ADCcalculateMidLine')
-	.sect	'.text.User_ADC.ADCcalculateMidLine'
+	.sdecl	'.text.cpu0_psram',code,cluster('ADCcalculateMidLine')
+	.sect	'.text.cpu0_psram'
 	.align	2
 	
 	.global	ADCcalculateMidLine
 
-; ..\CODE\Src\User_ADC.c	    39  
-; ..\CODE\Src\User_ADC.c	    40  void ADCcalculateMidLine(void)
+; ..\CODE\Src\User_ADC.c	    42  
+; ..\CODE\Src\User_ADC.c	    43  void ADCcalculateMidLine(void)
 ; Function ADCcalculateMidLine
 .L14:
 ADCcalculateMidLine:	.type	func
 
-; ..\CODE\Src\User_ADC.c	    41  {
-; ..\CODE\Src\User_ADC.c	    42  	float Lsqrt, Rsqrt;
-; ..\CODE\Src\User_ADC.c	    43  	Lsqrt = sqrt(ADCValueHandle(0));
+; ..\CODE\Src\User_ADC.c	    44  {
+; ..\CODE\Src\User_ADC.c	    45  	float Lsqrt, Rsqrt;
+; ..\CODE\Src\User_ADC.c	    46  	Lsqrt = sqrt(ADCValueHandle(0));
 	mov	d4,#0
 	call	ADCValueHandle
 .L117:
@@ -225,7 +228,7 @@ ADCcalculateMidLine:	.type	func
 	mov	d8,d2
 .L54:
 
-; ..\CODE\Src\User_ADC.c	    44  	Rsqrt = sqrt(ADCValueHandle(4));
+; ..\CODE\Src\User_ADC.c	    47  	Rsqrt = sqrt(ADCValueHandle(4));
 	mov	d4,#4
 	call	ADCValueHandle
 .L53:
@@ -235,16 +238,16 @@ ADCcalculateMidLine:	.type	func
 	mov	d9,d2
 .L58:
 
-; ..\CODE\Src\User_ADC.c	    45  	if(Lsqrt + Rsqrt == 0)
+; ..\CODE\Src\User_ADC.c	    48  	if(Lsqrt + Rsqrt == 0)
 	add.f	d15,d8,d9
 .L118:
 	extr.u	d15,d15,#23,#8
 	jeq	d15,#0,.L5
 .L119:
 
-; ..\CODE\Src\User_ADC.c	    46  		MidLineFuseNum = 0;
-; ..\CODE\Src\User_ADC.c	    47  	else
-; ..\CODE\Src\User_ADC.c	    48  		MidLineFuseNum = (Lsqrt-Rsqrt)/(ADCValueHandle(0)+ADCValueHandle(4));
+; ..\CODE\Src\User_ADC.c	    49  		MidLineFuseNum = 0;
+; ..\CODE\Src\User_ADC.c	    50  	else
+; ..\CODE\Src\User_ADC.c	    51  		MidLineFuseNum = (Lsqrt-Rsqrt)/(ADCValueHandle(0)+ADCValueHandle(4));
 	mov	d4,#0
 	call	ADCValueHandle
 .L57:
@@ -265,8 +268,8 @@ ADCcalculateMidLine:	.type	func
 	st.w	[a15]@los(MidLineFuseNum),d15
 .L124:
 
-; ..\CODE\Src\User_ADC.c	    49  	//printf("%lf\r\n", MidLineFuseNum);
-; ..\CODE\Src\User_ADC.c	    50  }
+; ..\CODE\Src\User_ADC.c	    52  	//printf("%lf\r\n", MidLineFuseNum);
+; ..\CODE\Src\User_ADC.c	    53  }
 	ret
 .L47:
 	
@@ -34814,7 +34817,7 @@ ADCValue:	.type	object
 	.byte	2
 	.word	.L15
 	.byte	3
-	.byte	'ADCInit',0,1,16,6,1,1,1
+	.byte	'ADCInit',0,1,19,6,1,1,1
 	.word	.L8,.L41,.L7
 	.byte	4
 	.word	.L8,.L41
@@ -34837,7 +34840,7 @@ ADCValue:	.type	object
 .L66:
 	.byte	5,11,7,0,5,2
 	.word	.L8
-	.byte	3,17,1,5,17,9
+	.byte	3,20,1,5,17,9
 	.half	.L67-.L8
 	.byte	1,5,11,9
 	.half	.L68-.L67
@@ -34877,7 +34880,7 @@ ADCValue:	.type	object
 	.byte	2
 	.word	.L15
 	.byte	3
-	.byte	'UpdateADCValue',0,1,24,6,1,1,1
+	.byte	'UpdateADCValue',0,1,27,6,1,1,1
 	.word	.L10,.L42,.L9
 	.byte	4
 	.word	.L10,.L42
@@ -34900,7 +34903,7 @@ ADCValue:	.type	object
 .L79:
 	.byte	5,2,7,0,5,2
 	.word	.L10
-	.byte	3,25,1,5,28,9
+	.byte	3,28,1,5,28,9
 	.half	.L80-.L10
 	.byte	1,5,35,9
 	.half	.L81-.L80
@@ -34972,12 +34975,12 @@ ADCValue:	.type	object
 	.byte	2
 	.word	.L15
 	.byte	3
-	.byte	'ADCValueHandle',0,1,33,7
+	.byte	'ADCValueHandle',0,1,36,7
 	.word	.L43
 	.byte	1,1,1
 	.word	.L12,.L44,.L11
 	.byte	4
-	.byte	'num',0,1,33,28
+	.byte	'num',0,1,36,28
 	.word	.L45,.L46
 	.byte	5
 	.word	.L12,.L44
@@ -35000,7 +35003,7 @@ ADCValue:	.type	object
 .L108:
 	.byte	5,2,7,0,5,2
 	.word	.L12
-	.byte	3,34,1,5,10,7,9
+	.byte	3,37,1,5,10,7,9
 	.half	.L109-.L12
 	.byte	3,1,1,5,1,9
 	.half	.L110-.L109
@@ -35032,15 +35035,15 @@ ADCValue:	.type	object
 	.byte	2
 	.word	.L15
 	.byte	3
-	.byte	'ADCcalculateMidLine',0,1,40,6,1,1,1
+	.byte	'ADCcalculateMidLine',0,1,43,6,1,1,1
 	.word	.L14,.L47,.L13
 	.byte	4
 	.word	.L14,.L47
 	.byte	5
-	.byte	'Lsqrt',0,1,42,8
+	.byte	'Lsqrt',0,1,45,8
 	.word	.L48,.L49
 	.byte	5
-	.byte	'Rsqrt',0,1,42,15
+	.byte	'Rsqrt',0,1,45,15
 	.word	.L48,.L50
 	.byte	0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('ADCcalculateMidLine')
@@ -35061,7 +35064,7 @@ ADCValue:	.type	object
 .L116:
 	.byte	5,30,7,0,5,2
 	.word	.L14
-	.byte	3,42,1,5,29,9
+	.byte	3,45,1,5,29,9
 	.half	.L117-.L14
 	.byte	1,5,8,9
 	.half	.L52-.L117
@@ -35196,5 +35199,7 @@ ADCValue:	.type	object
 	.word	12
 	.word	.L125,.L14,.L47-.L14
 
+; ..\CODE\Src\User_ADC.c	    54  
+; ..\CODE\Src\User_ADC.c	    55  #pragma section all restore
 
 	; Module end

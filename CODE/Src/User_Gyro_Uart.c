@@ -18,6 +18,9 @@ double PitchAngle, RollAngle, YawAngle, NowGyroYawAngle;
 
 #pragma section all restore
 
+
+#pragma section all "cpu0_psram"
+
 void GyroUARTInit(void)
 {
 	uart_init(UART_0, 115200, UART0_TX_P14_0, UART0_RX_P14_1);
@@ -70,16 +73,13 @@ void GyroCalculate(void)
 			GyroReceiveNum = 0;
 			return;
 		}
-		temp = GyroRxBuff[3] << 8;
-		temp |= GyroRxBuff[2];
+		temp = (GyroRxBuff[3] << 8) | GyroRxBuff[2];
 		PitchAngle = (double)temp / (double)32768 * (double)180;  //yÖá¸©Ñö½Ç
 
-		temp = GyroRxBuff[5] << 8;
-		temp |= GyroRxBuff[4];
+		temp = (GyroRxBuff[5] << 8) | GyroRxBuff[4];
 		RollAngle = (double)temp / (double)32768 * (double)180;  //xÖá¹ö¶¯½Ç
 
-		temp = GyroRxBuff[7] << 8;
-		temp |= GyroRxBuff[6];
+		temp = (GyroRxBuff[7] << 8) | GyroRxBuff[6];
 		YawAngle = (double)temp / (double)32768 * (double)180;//zÖáÐý×ª½Ç
 		ManageYawAngle();
 		GyroRxFlag = 0;
@@ -166,3 +166,5 @@ void GyroPID(double Kp, double Ki, double Kd)
 	MotorUserHandle(LMotor_F, LPWMDutyOut);
 	MotorUserHandle(RMotor_F, RPWMDutyOut);
 }
+
+#pragma section all restore

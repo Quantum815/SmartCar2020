@@ -297,15 +297,14 @@ void FindZebra(void)
 	uint8 BlackWhiteChangeCount = 0;
 	static uint8 RecognizedCorrectLineCount = 0;
 
-	//Threshold = GetOSTU(&mt9v03x_image[0]);
-	Threshold = GetVariance(&mt9v03x_image[0]);
-	printf("%d\n", Threshold);
-
+	Threshold = GetOSTU(&mt9v03x_image[0]);
 	if(255 - Threshold >= InGarageAdjustedValue)
 		Threshold += InGarageAdjustedValue;
 	else
 		Threshold = 255;
 	BinaryImage(&mt9v03x_image[0], Threshold);
+
+	printf("%d\n", Threshold);  //≤‚ ‘
 
 	for(int imageH=30; imageH<=70; imageH++)
 	{
@@ -388,7 +387,7 @@ void FindZebra(void)
 					BlackWhiteChangeCount++;
 			}
 		}
-		if(BlackWhiteChangeCount >= 8)
+		if(BlackWhiteChangeCount >= 7)
 			RecognizedCorrectLineCount++;
 	}
 

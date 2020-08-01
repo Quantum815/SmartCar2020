@@ -45,7 +45,7 @@ UserCameraInit:	.type	func
 ; ..\CODE\Src\User_Camera_Init.c	    16  	pit_interrupt_ms(CCU6_0, PIT_CH1, CameraProcessTime);
 	mov	d4,#0
 	mov	d5,#1
-	mov	d6,#18000
+	mov	d6,#20000
 	call	pit_init
 .L26:
 

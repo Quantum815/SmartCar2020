@@ -7,8 +7,8 @@
 	
 $TC16X
 	
-	.sdecl	'.text.User_Encoder.EncoderInit',code,cluster('EncoderInit')
-	.sect	'.text.User_Encoder.EncoderInit'
+	.sdecl	'.text.cpu0_psram',code,cluster('EncoderInit')
+	.sect	'.text.cpu0_psram'
 	.align	2
 	
 	.global	EncoderInit
@@ -28,13 +28,16 @@ $TC16X
 ; ..\CODE\Src\User_Encoder.c	    13  
 ; ..\CODE\Src\User_Encoder.c	    14  #pragma section all restore
 ; ..\CODE\Src\User_Encoder.c	    15  
-; ..\CODE\Src\User_Encoder.c	    16  void EncoderInit(void)
+; ..\CODE\Src\User_Encoder.c	    16  
+; ..\CODE\Src\User_Encoder.c	    17  #pragma section all "cpu0_psram"
+; ..\CODE\Src\User_Encoder.c	    18  
+; ..\CODE\Src\User_Encoder.c	    19  void EncoderInit(void)
 ; Function EncoderInit
 .L5:
 EncoderInit:	.type	func
 
-; ..\CODE\Src\User_Encoder.c	    17  {
-; ..\CODE\Src\User_Encoder.c	    18  	gpt12_init(GPT12_T2, GPT12_T2INB_P33_7, GPT12_T2EUDB_P33_6);
+; ..\CODE\Src\User_Encoder.c	    20  {
+; ..\CODE\Src\User_Encoder.c	    21  	gpt12_init(GPT12_T2, GPT12_T2INB_P33_7, GPT12_T2EUDB_P33_6);
 	mov	d4,#0
 .L75:
 	mov	d5,#1
@@ -43,7 +46,7 @@ EncoderInit:	.type	func
 	call	gpt12_init
 .L77:
 
-; ..\CODE\Src\User_Encoder.c	    19  	gpt12_init(GPT12_T6, GPT12_T6INA_P20_3, GPT12_T6EUDA_P20_0);
+; ..\CODE\Src\User_Encoder.c	    22  	gpt12_init(GPT12_T6, GPT12_T6INA_P20_3, GPT12_T6EUDA_P20_0);
 	mov	d4,#4
 .L78:
 	mov	d5,#17
@@ -57,37 +60,37 @@ __EncoderInit_function_end:
 .L22:
 	; End of function
 	
-	.sdecl	'.text.User_Encoder.CountDistance',code,cluster('CountDistance')
-	.sect	'.text.User_Encoder.CountDistance'
+	.sdecl	'.text.cpu0_psram',code,cluster('CountDistance')
+	.sect	'.text.cpu0_psram'
 	.align	2
 	
 	.global	CountDistance
 
-; ..\CODE\Src\User_Encoder.c	    20  }
-; ..\CODE\Src\User_Encoder.c	    21  
-; ..\CODE\Src\User_Encoder.c	    22  void CountDistance(void)
+; ..\CODE\Src\User_Encoder.c	    23  }
+; ..\CODE\Src\User_Encoder.c	    24  
+; ..\CODE\Src\User_Encoder.c	    25  void CountDistance(void)
 ; Function CountDistance
 .L7:
 CountDistance:	.type	func
 
-; ..\CODE\Src\User_Encoder.c	    23  {
-; ..\CODE\Src\User_Encoder.c	    24  	int16 encoder0, encoder1;
-; ..\CODE\Src\User_Encoder.c	    25  	double CurLdistance, CurRdistance;
-; ..\CODE\Src\User_Encoder.c	    26  
-; ..\CODE\Src\User_Encoder.c	    27  	encoder0 = gpt12_get(GPT12_T2);
+; ..\CODE\Src\User_Encoder.c	    26  {
+; ..\CODE\Src\User_Encoder.c	    27  	int16 encoder0, encoder1;
+; ..\CODE\Src\User_Encoder.c	    28  	double CurLdistance, CurRdistance;
+; ..\CODE\Src\User_Encoder.c	    29  
+; ..\CODE\Src\User_Encoder.c	    30  	encoder0 = gpt12_get(GPT12_T2);
 	mov	d4,#0
 	call	gpt12_get
 .L58:
 	mov	d15,d2
 .L60:
 
-; ..\CODE\Src\User_Encoder.c	    28  	encoder1 = gpt12_get(GPT12_T6);
+; ..\CODE\Src\User_Encoder.c	    31  	encoder1 = gpt12_get(GPT12_T6);
 	mov	d4,#4
 	call	gpt12_get
 .L59:
 
-; ..\CODE\Src\User_Encoder.c	    29  
-; ..\CODE\Src\User_Encoder.c	    30  	CurLdistance = ((double)encoder0/1024)*((WHEEL_DIAMETER*3.1415)/1000)*(30/68.0);
+; ..\CODE\Src\User_Encoder.c	    32  
+; ..\CODE\Src\User_Encoder.c	    33  	CurLdistance = ((double)encoder0/1024)*((WHEEL_DIAMETER*3.1415)/1000)*(30/68.0);
 	itof	d15,d15
 .L61:
 	movh	d0,#14976
@@ -105,7 +108,7 @@ CountDistance:	.type	func
 	mul.f	d15,d15,d3
 .L63:
 
-; ..\CODE\Src\User_Encoder.c	    31  	CurRdistance = -((double)encoder1/1024)*((WHEEL_DIAMETER*3.1415)/1000)*(30/68.0);
+; ..\CODE\Src\User_Encoder.c	    34  	CurRdistance = -((double)encoder1/1024)*((WHEEL_DIAMETER*3.1415)/1000)*(30/68.0);
 	movh	d4,#32768
 .L89:
 	itof	d2,d2
@@ -117,7 +120,7 @@ CountDistance:	.type	func
 	mul.f	d0,d0,d3
 .L65:
 
-; ..\CODE\Src\User_Encoder.c	    32  	CurDistance = (CurLdistance + CurRdistance) / 2;
+; ..\CODE\Src\User_Encoder.c	    35  	CurDistance = (CurLdistance + CurRdistance) / 2;
 	movh.a	a15,#@his(CurDistance)
 .L92:
 	add.f	d15,d15,d0
@@ -129,7 +132,7 @@ CountDistance:	.type	func
 	st.w	[a15]@los(CurDistance),d15
 .L94:
 
-; ..\CODE\Src\User_Encoder.c	    33  	TotalDistance += CurDistance;
+; ..\CODE\Src\User_Encoder.c	    36  	TotalDistance += CurDistance;
 	movh.a	a15,#@his(TotalDistance)
 	ld.w	d0,[a15]@los(TotalDistance)
 .L95:
@@ -137,17 +140,17 @@ CountDistance:	.type	func
 	st.w	[a15]@los(TotalDistance),d15
 .L96:
 
-; ..\CODE\Src\User_Encoder.c	    34  
-; ..\CODE\Src\User_Encoder.c	    35  	//printf("L  %lf	",CurLdistance);  //≤‚ ‘
-; ..\CODE\Src\User_Encoder.c	    36  	//printf("R  %lf	",CurRdistance);  //≤‚ ‘
-; ..\CODE\Src\User_Encoder.c	    37  	//printf("%lf\r\n",TotalDistance);  //≤‚ ‘
-; ..\CODE\Src\User_Encoder.c	    38  
-; ..\CODE\Src\User_Encoder.c	    39  	gpt12_clear(GPT12_T2);
+; ..\CODE\Src\User_Encoder.c	    37  
+; ..\CODE\Src\User_Encoder.c	    38  	//printf("L  %lf	",CurLdistance);  //≤‚ ‘
+; ..\CODE\Src\User_Encoder.c	    39  	//printf("R  %lf	",CurRdistance);  //≤‚ ‘
+; ..\CODE\Src\User_Encoder.c	    40  	//printf("%lf\r\n",TotalDistance);  //≤‚ ‘
+; ..\CODE\Src\User_Encoder.c	    41  
+; ..\CODE\Src\User_Encoder.c	    42  	gpt12_clear(GPT12_T2);
 	mov	d4,#0
 	call	gpt12_clear
 .L97:
 
-; ..\CODE\Src\User_Encoder.c	    40  	gpt12_clear(GPT12_T6);
+; ..\CODE\Src\User_Encoder.c	    43  	gpt12_clear(GPT12_T6);
 	mov	d4,#4
 	j	gpt12_clear
 .L48:
@@ -157,26 +160,26 @@ __CountDistance_function_end:
 .L27:
 	; End of function
 	
-	.sdecl	'.text.User_Encoder.GetDistance',code,cluster('GetDistance')
-	.sect	'.text.User_Encoder.GetDistance'
+	.sdecl	'.text.cpu0_psram',code,cluster('GetDistance')
+	.sect	'.text.cpu0_psram'
 	.align	2
 	
 	.global	GetDistance
 
-; ..\CODE\Src\User_Encoder.c	    41  }
-; ..\CODE\Src\User_Encoder.c	    42  
-; ..\CODE\Src\User_Encoder.c	    43  double GetDistance(void)
+; ..\CODE\Src\User_Encoder.c	    44  }
+; ..\CODE\Src\User_Encoder.c	    45  
+; ..\CODE\Src\User_Encoder.c	    46  double GetDistance(void)
 ; Function GetDistance
 .L9:
 GetDistance:	.type	func
 
-; ..\CODE\Src\User_Encoder.c	    44  {
-; ..\CODE\Src\User_Encoder.c	    45  	return TotalDistance;
+; ..\CODE\Src\User_Encoder.c	    47  {
+; ..\CODE\Src\User_Encoder.c	    48  	return TotalDistance;
 	movh.a	a15,#@his(TotalDistance)
 	ld.w	d2,[a15]@los(TotalDistance)
 .L102:
 
-; ..\CODE\Src\User_Encoder.c	    46  }
+; ..\CODE\Src\User_Encoder.c	    49  }
 	ret
 .L55:
 	
@@ -185,20 +188,20 @@ __GetDistance_function_end:
 .L32:
 	; End of function
 	
-	.sdecl	'.text.User_Encoder.GetSpeed',code,cluster('GetSpeed')
-	.sect	'.text.User_Encoder.GetSpeed'
+	.sdecl	'.text.cpu0_psram',code,cluster('GetSpeed')
+	.sect	'.text.cpu0_psram'
 	.align	2
 	
 	.global	GetSpeed
 
-; ..\CODE\Src\User_Encoder.c	    47  
-; ..\CODE\Src\User_Encoder.c	    48  double GetSpeed(void)  //5ms÷–∂œæ‡¿Îº∆À„
+; ..\CODE\Src\User_Encoder.c	    50  
+; ..\CODE\Src\User_Encoder.c	    51  double GetSpeed(void)  //5ms÷–∂œæ‡¿Îº∆À„
 ; Function GetSpeed
 .L11:
 GetSpeed:	.type	func
 
-; ..\CODE\Src\User_Encoder.c	    49  {
-; ..\CODE\Src\User_Encoder.c	    50  	return (CurDistance/0.005);
+; ..\CODE\Src\User_Encoder.c	    52  {
+; ..\CODE\Src\User_Encoder.c	    53  	return (CurDistance/0.005);
 	movh.a	a15,#@his(CurDistance)
 	ld.w	d15,[a15]@los(CurDistance)
 .L107:
@@ -208,7 +211,7 @@ GetSpeed:	.type	func
 	div.f	d2,d15,d0
 .L109:
 
-; ..\CODE\Src\User_Encoder.c	    51  }
+; ..\CODE\Src\User_Encoder.c	    54  }
 	ret
 .L56:
 	
@@ -217,20 +220,20 @@ __GetSpeed_function_end:
 .L37:
 	; End of function
 	
-	.sdecl	'.text.User_Encoder.CleanDistance',code,cluster('CleanDistance')
-	.sect	'.text.User_Encoder.CleanDistance'
+	.sdecl	'.text.cpu0_psram',code,cluster('CleanDistance')
+	.sect	'.text.cpu0_psram'
 	.align	2
 	
 	.global	CleanDistance
 
-; ..\CODE\Src\User_Encoder.c	    52  
-; ..\CODE\Src\User_Encoder.c	    53  void CleanDistance(void)
+; ..\CODE\Src\User_Encoder.c	    55  
+; ..\CODE\Src\User_Encoder.c	    56  void CleanDistance(void)
 ; Function CleanDistance
 .L13:
 CleanDistance:	.type	func
 
-; ..\CODE\Src\User_Encoder.c	    54  {
-; ..\CODE\Src\User_Encoder.c	    55  	TotalDistance = 0;
+; ..\CODE\Src\User_Encoder.c	    57  {
+; ..\CODE\Src\User_Encoder.c	    58  	TotalDistance = 0;
 	movh.a	a15,#@his(TotalDistance)
 .L114:
 	mov	d15,#0
@@ -238,7 +241,7 @@ CleanDistance:	.type	func
 	st.w	[a15]@los(TotalDistance),d15
 .L116:
 
-; ..\CODE\Src\User_Encoder.c	    56  }
+; ..\CODE\Src\User_Encoder.c	    59  }
 	ret
 .L57:
 	
@@ -34763,7 +34766,7 @@ TotalDistance:	.type	object
 	.byte	2
 	.word	.L14
 	.byte	3
-	.byte	'EncoderInit',0,1,16,6,1,1,1
+	.byte	'EncoderInit',0,1,19,6,1,1,1
 	.word	.L5,.L47,.L4
 	.byte	4
 	.word	.L5,.L47
@@ -34786,7 +34789,7 @@ TotalDistance:	.type	object
 .L74:
 	.byte	5,13,7,0,5,2
 	.word	.L5
-	.byte	3,17,1,5,23,9
+	.byte	3,20,1,5,23,9
 	.half	.L75-.L5
 	.byte	1,5,42,9
 	.half	.L76-.L75
@@ -34818,21 +34821,21 @@ TotalDistance:	.type	object
 	.byte	2
 	.word	.L14
 	.byte	3
-	.byte	'CountDistance',0,1,22,6,1,1,1
+	.byte	'CountDistance',0,1,25,6,1,1,1
 	.word	.L7,.L48,.L6
 	.byte	4
 	.word	.L7,.L48
 	.byte	5
-	.byte	'encoder0',0,1,24,8
+	.byte	'encoder0',0,1,27,8
 	.word	.L49,.L50
 	.byte	5
-	.byte	'encoder1',0,1,24,18
+	.byte	'encoder1',0,1,27,18
 	.word	.L49,.L51
 	.byte	5
-	.byte	'CurLdistance',0,1,25,9
+	.byte	'CurLdistance',0,1,28,9
 	.word	.L52,.L53
 	.byte	5
-	.byte	'CurRdistance',0,1,25,23
+	.byte	'CurRdistance',0,1,28,23
 	.word	.L52,.L54
 	.byte	0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('CountDistance')
@@ -34853,7 +34856,7 @@ TotalDistance:	.type	object
 .L83:
 	.byte	5,23,7,0,5,2
 	.word	.L7
-	.byte	3,26,1,5,11,9
+	.byte	3,29,1,5,11,9
 	.half	.L58-.L7
 	.byte	1,5,23,9
 	.half	.L60-.L58
@@ -34921,7 +34924,7 @@ TotalDistance:	.type	object
 	.byte	2
 	.word	.L14
 	.byte	3
-	.byte	'GetDistance',0,1,43,8
+	.byte	'GetDistance',0,1,46,8
 	.word	.L52
 	.byte	1,1,1
 	.word	.L9,.L55,.L8
@@ -34946,7 +34949,7 @@ TotalDistance:	.type	object
 .L101:
 	.byte	5,9,7,0,5,2
 	.word	.L9
-	.byte	3,44,1,5,1,9
+	.byte	3,47,1,5,1,9
 	.half	.L102-.L9
 	.byte	3,1,1,7,9
 	.half	.L32-.L102
@@ -34970,7 +34973,7 @@ TotalDistance:	.type	object
 	.byte	2
 	.word	.L14
 	.byte	3
-	.byte	'GetSpeed',0,1,48,8
+	.byte	'GetSpeed',0,1,51,8
 	.word	.L52
 	.byte	1,1,1
 	.word	.L11,.L56,.L10
@@ -34995,7 +34998,7 @@ TotalDistance:	.type	object
 .L106:
 	.byte	5,10,7,0,5,2
 	.word	.L11
-	.byte	3,49,1,5,22,9
+	.byte	3,52,1,5,22,9
 	.half	.L107-.L11
 	.byte	1,5,21,9
 	.half	.L108-.L107
@@ -35023,7 +35026,7 @@ TotalDistance:	.type	object
 	.byte	2
 	.word	.L14
 	.byte	3
-	.byte	'CleanDistance',0,1,53,6,1,1,1
+	.byte	'CleanDistance',0,1,56,6,1,1,1
 	.word	.L13,.L57,.L12
 	.byte	4
 	.word	.L13,.L57
@@ -35046,7 +35049,7 @@ TotalDistance:	.type	object
 .L113:
 	.byte	5,2,7,0,5,2
 	.word	.L13
-	.byte	3,54,1,5,18,9
+	.byte	3,57,1,5,18,9
 	.half	.L114-.L13
 	.byte	1,5,16,9
 	.half	.L115-.L114
@@ -35191,5 +35194,7 @@ TotalDistance:	.type	object
 	.word	.L117,.L13,.L57-.L13
 	.byte	8,18,8,19,8,20,8,21,8,22,8,23
 
+; ..\CODE\Src\User_Encoder.c	    60  
+; ..\CODE\Src\User_Encoder.c	    61  #pragma section all restore
 
 	; Module end

@@ -47,19 +47,19 @@ $TC16X
 ; ..\CODE\Src\User_OSTU.c	    32  ***************************************************************/
 ; ..\CODE\Src\User_OSTU.c	    33  uint8_t GetOSTU(uint8_t tmImage[IMAGEH][IMAGEW])
 ; Function GetOSTU
-.L34:
+.L33:
 GetOSTU:	.type	func
 	lea	a10,[a10]-256
-.L107:
+.L96:
 
 ; ..\CODE\Src\User_OSTU.c	    34  {
 ; ..\CODE\Src\User_OSTU.c	    35    uint32_t Amount = 0;
 	mov	d3,#0
-.L108:
+.L97:
 
 ; ..\CODE\Src\User_OSTU.c	    36    uint32_t PixelBack = 0;
 	mov	e4,d3,d3
-.L141:
+.L129:
 
 ; ..\CODE\Src\User_OSTU.c	    37    uint32_t PixelIntegralBack = 0;
 ; ..\CODE\Src\User_OSTU.c	    38    uint32_t PixelIntegral = 0;
@@ -69,39 +69,39 @@ GetOSTU:	.type	func
 ; ..\CODE\Src\User_OSTU.c	    42    uint8_t MinValue, MaxValue;
 ; ..\CODE\Src\User_OSTU.c	    43    uint8_t Threshold = 0;
 	mov	d6,d3
-.L82:
+.L74:
 
 ; ..\CODE\Src\User_OSTU.c	    44    uint8_t HistoGram[256];              //
 ; ..\CODE\Src\User_OSTU.c	    45  
 ; ..\CODE\Src\User_OSTU.c	    46    for (int j = 0; j < 256; j++)  HistoGram[j] = 0; //初始化灰度直方图
 	mov	d15,d3
-.L109:
+.L98:
 	j	.L2
 .L3:
 	addsc.a	a15,a10,d15,#0
-.L142:
+.L130:
 	mov	d0,#0
-.L143:
+.L131:
 	st.b	[a15],d0
-.L144:
+.L132:
 	add	d15,#1
 .L2:
 	mov	d0,#256
-.L145:
+.L133:
 	jlt	d15,d0,.L3
-.L83:
+.L75:
 
 ; ..\CODE\Src\User_OSTU.c	    47  
 ; ..\CODE\Src\User_OSTU.c	    48    for (int j = 0; j < IMAGEH-40; j++)
 	mov	d0,d3
-.L110:
+.L99:
 	j	.L4
 .L5:
 
 ; ..\CODE\Src\User_OSTU.c	    49    {
 ; ..\CODE\Src\User_OSTU.c	    50      for (int i = 0; i < IMAGEW-8; i++)
 	mov	d1,#0
-.L111:
+.L100:
 	j	.L6
 .L7:
 
@@ -109,74 +109,74 @@ GetOSTU:	.type	func
 ; ..\CODE\Src\User_OSTU.c	    52        HistoGram[tmImage[j][i]]++; //统计灰度级中每个像素在整幅图像中的个数
 	mul	d15,d0,#188
 	addsc.a	a15,a4,d15,#0
-.L146:
+.L134:
 	addsc.a	a15,a15,d1,#0
 	ld.bu	d15,[a15]
-.L147:
+.L135:
 	addsc.a	a15,a10,d15,#0
 	ld.bu	d2,[a15]
-.L148:
+.L136:
 	add	d2,#1
 	st.b	[a15],d2
-.L149:
+.L137:
 	add	d1,#1
 .L6:
 	mov	d15,#180
-.L150:
+.L138:
 	jlt	d1,d15,.L7
-.L87:
+.L79:
 	add	d0,#1
 .L4:
 	mov	d15,#80
-.L151:
+.L139:
 	jlt	d0,d15,.L5
-.L85:
+.L77:
 
 ; ..\CODE\Src\User_OSTU.c	    53      }
 ; ..\CODE\Src\User_OSTU.c	    54    }
 ; ..\CODE\Src\User_OSTU.c	    55  
 ; ..\CODE\Src\User_OSTU.c	    56    for (MinValue = 0; MinValue < 256 && HistoGram[MinValue] == 0; MinValue++) ;        //获取最小灰度的值
 	mov	d2,d3
-.L112:
+.L101:
 	j	.L8
 .L9:
 	add	d0,d2,#1
 	extr.u	d2,d0,#0,#8
 .L8:
 	mov	d0,#256
-.L152:
+.L140:
 	jge	d2,d0,.L10
-.L153:
+.L141:
 	addsc.a	a15,a10,d2,#0
 	ld.bu	d15,[a15]
-.L154:
+.L142:
 	jeq	d15,#0,.L9
 .L10:
 
 ; ..\CODE\Src\User_OSTU.c	    57    for (MaxValue = 255; MaxValue > MinValue && HistoGram[MinValue] == 0; MaxValue--) ; //获取最大灰度的值
 	mov	d8,#255
-.L114:
+.L103:
 	j	.L11
 .L12:
 	add	d0,d8,#-1
 	extr.u	d8,d0,#0,#8
 .L11:
 	jge.u	d2,d8,.L13
-.L155:
+.L143:
 	addsc.a	a15,a10,d2,#0
 	ld.bu	d15,[a15]
-.L156:
+.L144:
 	jeq	d15,#0,.L12
 .L13:
 
 ; ..\CODE\Src\User_OSTU.c	    58  
 ; ..\CODE\Src\User_OSTU.c	    59    if (MaxValue == MinValue)     return MaxValue;         // 图像中只有一个颜色
 	jeq	d8,d2,.L17
-.L157:
+.L145:
 
 ; ..\CODE\Src\User_OSTU.c	    60    if (MinValue + 1 == MaxValue)  return MinValue;        // 图像中只有二个颜色
 	add	d15,d2,#1
-.L158:
+.L146:
 	jne	d15,d8,.L16
 
 ; ..\CODE\Src\User_OSTU.c	    61  
@@ -211,98 +211,98 @@ GetOSTU:	.type	func
 	ret
 .L16:
 	mov	d15,d2
-.L115:
+.L104:
 	j	.L18
 .L19:
 	addsc.a	a15,a10,d15,#0
 	ld.bu	d0,[a15]
-.L159:
+.L147:
 	add	d3,d0
-.L160:
+.L148:
 	add	d15,#1
 .L18:
 	jge	d8,d15,.L19
-.L89:
+.L81:
 	mov	d9,#0
-.L91:
+.L83:
 	mov	d15,d2
-.L116:
+.L105:
 	j	.L20
 .L21:
 	addsc.a	a15,a10,d15,#0
 	ld.bu	d0,[a15]
-.L161:
+.L149:
 	mul	d0,d15
-.L162:
+.L150:
 	add	d9,d0
-.L163:
+.L151:
 	add	d15,#1
 .L20:
 	jge	d8,d15,.L21
-.L92:
+.L84:
 	movh	d10,#49024
-.L94:
+.L86:
 	j	.L22
 .L23:
 	addsc.a	a15,a10,d2,#0
 	ld.bu	d0,[a15]
-.L117:
+.L106:
 	add	d4,d0
-.L164:
+.L152:
 	sub	d1,d3,d4
-.L118:
+.L107:
 	utof	d15,d4
-.L165:
+.L153:
 	utof	d7,d3
-.L166:
+.L154:
 	div.f	d11,d15,d7
-.L120:
+.L109:
 	itof	d12,d1
-.L167:
+.L155:
 	div.f	d7,d12,d7
-.L121:
+.L110:
 	mul	d0,d2
-.L122:
+.L111:
 	add	d5,d0
-.L168:
+.L156:
 	sub	d0,d9,d5
-.L123:
+.L112:
 	utof	d1,d5
-.L119:
+.L108:
 	div.f	d15,d1,d15
-.L125:
+.L114:
 	itof	d0,d0
-.L124:
+.L113:
 	div.f	d0,d0,d12
-.L127:
+.L116:
 	mul.f	d1,d11,d7
-.L169:
+.L157:
 	sub.f	d15,d15,d0
-.L126:
+.L115:
 	mul.f	d0,d1,d15
-.L128:
+.L117:
 	mul.f	d0,d0,d15
-.L129:
+.L118:
 	cmp.f	d15,d0,d10
-.L170:
+.L158:
 	jz.t	d15:2,.L24
-.L171:
+.L159:
 	mov	d10,d0
-.L172:
+.L160:
 	extr.u	d6,d2,#0,#8
 .L24:
 	add	d2,#1
 .L22:
 	jlt	d2,d8,.L23
-.L95:
+.L87:
 	mov	d2,d6
-.L113:
+.L102:
 	ret
-.L59:
+.L51:
 	
 __GetOSTU_function_end:
 	.size	GetOSTU,__GetOSTU_function_end-GetOSTU
-.L47:
+.L44:
 	; End of function
 	
 	.sdecl	'.text.cpu1_psram',code,cluster('BinaryImage')
@@ -322,21 +322,21 @@ __GetOSTU_function_end:
 ; ..\CODE\Src\User_OSTU.c	    97  ***************************************************************/
 ; ..\CODE\Src\User_OSTU.c	    98  void BinaryImage(uint8_t tmImage[IMAGEH][IMAGEW],uint8_t ThresholdV)
 ; Function BinaryImage
-.L36:
+.L35:
 BinaryImage:	.type	func
 
 ; ..\CODE\Src\User_OSTU.c	    99  {
 ; ..\CODE\Src\User_OSTU.c	   100  
 ; ..\CODE\Src\User_OSTU.c	   101    for(int i = 0;i < IMAGEH;i++)
 	mov	d0,#0
-.L130:
+.L119:
 	j	.L26
 .L27:
 
 ; ..\CODE\Src\User_OSTU.c	   102    {
 ; ..\CODE\Src\User_OSTU.c	   103      for(int j = 0; j< IMAGEW;j++)
 	mov	d1,#0
-.L131:
+.L120:
 	j	.L28
 .L29:
 
@@ -344,17 +344,17 @@ BinaryImage:	.type	func
 ; ..\CODE\Src\User_OSTU.c	   105        if(tmImage[i][j] >= ThresholdV)
 	mul	d15,d0,#188
 	addsc.a	a15,a4,d15,#0
-.L177:
+.L165:
 	addsc.a	a15,a15,d1,#0
 	ld.bu	d15,[a15]
-.L178:
+.L166:
 	jlt.u	d15,d4,.L30
-.L179:
+.L167:
 
 ; ..\CODE\Src\User_OSTU.c	   106        {
 ; ..\CODE\Src\User_OSTU.c	   107          tmImage[i][j] = 0xFE;
 	mov	d15,#254
-.L180:
+.L168:
 	j	.L31
 .L30:
 
@@ -364,104 +364,53 @@ BinaryImage:	.type	func
 ; ..\CODE\Src\User_OSTU.c	   111          tmImage[i][j] = 0X00;
 	mul	d15,d0,#188
 	addsc.a	a15,a4,d15,#0
-.L181:
+.L169:
 	addsc.a	a15,a15,d1,#0
-.L182:
+.L170:
 	mov	d15,#0
 .L31:
 	st.b	[a15],d15
-.L183:
+.L171:
 	add	d1,#1
 .L28:
 	mov	d15,#188
-.L184:
+.L172:
 	jlt	d1,d15,.L29
-.L102:
+.L94:
 	add	d0,#1
 .L26:
 	mov	d15,#120
-.L185:
+.L173:
 	jlt	d0,d15,.L27
-.L100:
+.L92:
 
 ; ..\CODE\Src\User_OSTU.c	   112        }
 ; ..\CODE\Src\User_OSTU.c	   113      }
 ; ..\CODE\Src\User_OSTU.c	   114    }
 ; ..\CODE\Src\User_OSTU.c	   115  }
 	ret
-.L97:
+.L89:
 	
 __BinaryImage_function_end:
 	.size	BinaryImage,__BinaryImage_function_end-BinaryImage
-.L52:
+.L49:
 	; End of function
 	
-	.sdecl	'.text.cpu1_psram',code,cluster('GetVariance')
-	.sect	'.text.cpu1_psram'
-	.align	2
-	
-	.global	GetVariance
-
-; ..\CODE\Src\User_OSTU.c	   116  
-; ..\CODE\Src\User_OSTU.c	   117  //方差求阈值
-; ..\CODE\Src\User_OSTU.c	   118  uint8_t GetVariance(uint8_t tmImage[IMAGEH][IMAGEW])
-; Function GetVariance
-.L38:
-GetVariance:	.type	func
-
-; ..\CODE\Src\User_OSTU.c	   119  {
-; ..\CODE\Src\User_OSTU.c	   120  	static uint8_t AverageValue = 0;
-; ..\CODE\Src\User_OSTU.c	   121  	uint8_t Threshold = 0;
-; ..\CODE\Src\User_OSTU.c	   122  
-; ..\CODE\Src\User_OSTU.c	   123  	for(int i=0; i<IMAGEH; i++)
-; ..\CODE\Src\User_OSTU.c	   124  		for(int j=0; j<IMAGEW; j++)
-; ..\CODE\Src\User_OSTU.c	   125  			AverageValue += tmImage[i][j];
-; ..\CODE\Src\User_OSTU.c	   126  	AverageValue /= IMAGEH * IMAGEW;
-	movh.a	a15,#@his(_999001_AverageValue)
-.L190:
-	mov	d15,#0
-	st.b	[a15]@los(_999001_AverageValue),d15
-.L191:
-
-; ..\CODE\Src\User_OSTU.c	   127  	Threshold = AverageValue;
-	mov	d2,#0
-.L132:
-
-; ..\CODE\Src\User_OSTU.c	   128  	//for(int i=0; i<IMAGEH; i++)
-; ..\CODE\Src\User_OSTU.c	   129  		//for(int j=0; j<IMAGEW; j++)
-; ..\CODE\Src\User_OSTU.c	   130  			//Threshold += (tmImage[i][j] - AverageValue)*(tmImage[i][j] - AverageValue);
-; ..\CODE\Src\User_OSTU.c	   131  	//Threshold /= IMAGEH * IMAGEW;
-; ..\CODE\Src\User_OSTU.c	   132  	return Threshold;
-; ..\CODE\Src\User_OSTU.c	   133  }
-	ret
-.L104:
-	
-__GetVariance_function_end:
-	.size	GetVariance,__GetVariance_function_end-GetVariance
-.L57:
-	; End of function
-	
-	.sdecl	'.data.cpu1_psram',data,cluster('_999001_AverageValue')
-	.sect	'.data.cpu1_psram'
-_999001_AverageValue:	.type	object
-	.size	_999001_AverageValue,1
-	.space	1
 	.calls	'GetOSTU','',256
 	.calls	'BinaryImage','',0
-	.calls	'GetVariance','',0
 	.sdecl	'.debug_info',debug
 	.sect	'.debug_info'
-.L40:
+.L37:
 	.word	252011
 	.half	3
-	.word	.L41
+	.word	.L38
 	.byte	4
-.L39:
+.L36:
 	.byte	1
 	.byte	'..\\CODE\\Src\\User_OSTU.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L42
+	.word	.L39
 	.byte	2,1,1,3
 	.word	144
 	.byte	4
@@ -470,7 +419,7 @@ _999001_AverageValue:	.type	object
 	.word	147
 	.byte	6,0,7
 	.byte	'__fract',0,4,128,1
-.L70:
+.L62:
 	.byte	7
 	.byte	'float',0,4,4,8
 	.byte	'Ifx__float_to_fract',0,3,1,152,2,18
@@ -484,7 +433,7 @@ _999001_AverageValue:	.type	object
 	.word	290
 	.byte	3
 	.word	296
-.L62:
+.L54:
 	.byte	7
 	.byte	'unsigned int',0,4,7,4
 	.byte	'__ldmst_c',0,3,2,111,17,1,1,5
@@ -513,7 +462,7 @@ _999001_AverageValue:	.type	object
 	.byte	'value',0,2,143,1,43
 	.word	384
 	.byte	6,0
-.L67:
+.L59:
 	.byte	7
 	.byte	'int',0,4,5,7
 	.byte	'unsigned int',0,4,7,11
@@ -539,7 +488,7 @@ _999001_AverageValue:	.type	object
 	.byte	'B',0
 	.word	519
 	.byte	4,2,35,0,0
-.L58:
+.L50:
 	.byte	7
 	.byte	'unsigned char',0,1,8,7
 	.byte	'unsigned short int',0,2,7,11
@@ -6891,10 +6840,10 @@ _999001_AverageValue:	.type	object
 	.byte	6,0,15,188,1
 	.word	655
 	.byte	16,187,1,0
-.L60:
+.L52:
 	.byte	3
 	.word	40651
-.L80:
+.L72:
 	.byte	15,128,2
 	.word	655
 	.byte	16,255,1,0,32
@@ -34799,7 +34748,7 @@ _999001_AverageValue:	.type	object
 	.byte	0
 	.sdecl	'.debug_abbrev',debug
 	.sect	'.debug_abbrev'
-.L41:
+.L38:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,16,6,0,0,2,21,0,54,15,39,12,0,0,3,15,0,73,19,0,0,4,46,1,3,8,32,13
 	.byte	58,15,59,15,57,15,54,15,39,12,0,0,5,5,0,3,8,58,15,59,15,57,15,73,19,0,0,6,11,0,0,0,7,36,0,3,8,11,15,62
 	.byte	15,0,0,8,46,1,3,8,32,13,58,15,59,15,57,15,73,19,54,15,39,12,0,0,9,59,0,3,8,0,0,10,53,0,73,19,0,0,11,19
@@ -34812,12 +34761,12 @@ _999001_AverageValue:	.type	object
 	.byte	1,54,15,39,12,0,0,35,21,1,73,19,54,15,39,12,0,0,0
 	.sdecl	'.debug_line',debug
 	.sect	'.debug_line'
-.L42:
-	.word	.L134-.L133
-.L133:
+.L39:
+	.word	.L122-.L121
+.L121:
 	.half	3
-	.word	.L136-.L135
-.L135:
+	.word	.L124-.L123
+.L123:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Std',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Scu\\Std',0
@@ -34888,653 +34837,571 @@ _999001_AverageValue:	.type	object
 	.byte	'IfxDma.h',0,17,0,0
 	.byte	'stdint.h',0,13,0,0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\CODE\\Inc\\User_FSM.h',0,0,0,0,0
-.L136:
-.L134:
+.L124:
+.L122:
 	.sdecl	'.debug_info',debug,cluster('GetOSTU')
 	.sect	'.debug_info'
-.L43:
+.L40:
 	.word	716
 	.half	3
-	.word	.L44
+	.word	.L41
 	.byte	4,1
 	.byte	'..\\CODE\\Src\\User_OSTU.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L46,.L45
+	.word	.L43,.L42
 	.byte	2
-	.word	.L39
+	.word	.L36
 	.byte	3
 	.byte	'GetOSTU',0,1,33,9
-	.word	.L58
+	.word	.L50
 	.byte	1,1,1
-	.word	.L34,.L59,.L33
+	.word	.L33,.L51,.L32
 	.byte	4
 	.byte	'tmImage',0,1,33,25
-	.word	.L60,.L61
+	.word	.L52,.L53
 	.byte	5
-	.word	.L34,.L59
+	.word	.L33,.L51
 	.byte	6
 	.byte	'Amount',0,1,35,12
-	.word	.L62,.L63
+	.word	.L54,.L55
 	.byte	6
 	.byte	'PixelBack',0,1,36,12
-	.word	.L62,.L64
+	.word	.L54,.L56
 	.byte	6
 	.byte	'PixelIntegralBack',0,1,37,12
-	.word	.L62,.L65
+	.word	.L54,.L57
 	.byte	6
 	.byte	'PixelIntegral',0,1,38,12
-	.word	.L62,.L66
+	.word	.L54,.L58
 	.byte	6
 	.byte	'PixelIntegralFore',0,1,39,11
-	.word	.L67,.L68
+	.word	.L59,.L60
 	.byte	6
 	.byte	'PixelFore',0,1,40,11
-	.word	.L67,.L69
+	.word	.L59,.L61
 	.byte	6
 	.byte	'OmegaBack',0,1,41,10
-	.word	.L70,.L71
+	.word	.L62,.L63
 	.byte	6
 	.byte	'OmegaFore',0,1,41,21
-	.word	.L70,.L72
+	.word	.L62,.L64
 	.byte	6
 	.byte	'MicroBack',0,1,41,32
-	.word	.L70,.L73
+	.word	.L62,.L65
 	.byte	6
 	.byte	'MicroFore',0,1,41,43
-	.word	.L70,.L74
+	.word	.L62,.L66
 	.byte	6
 	.byte	'SigmaB',0,1,41,54
-	.word	.L70,.L75
+	.word	.L62,.L67
 	.byte	6
 	.byte	'Sigma',0,1,41,62
-	.word	.L70,.L76
+	.word	.L62,.L68
 	.byte	6
 	.byte	'MinValue',0,1,42,11
-	.word	.L58,.L77
+	.word	.L50,.L69
 	.byte	6
 	.byte	'MaxValue',0,1,42,21
-	.word	.L58,.L78
+	.word	.L50,.L70
 	.byte	6
 	.byte	'Threshold',0,1,43,11
-	.word	.L58,.L79
+	.word	.L50,.L71
 	.byte	6
 	.byte	'HistoGram',0,1,44,11
-	.word	.L80,.L81
+	.word	.L72,.L73
 	.byte	5
-	.word	.L82,.L83
+	.word	.L74,.L75
 	.byte	6
 	.byte	'j',0,1,46,12
-	.word	.L67,.L84
+	.word	.L59,.L76
 	.byte	0,5
-	.word	.L83,.L85
+	.word	.L75,.L77
 	.byte	6
 	.byte	'j',0,1,48,12
-	.word	.L67,.L86
+	.word	.L59,.L78
 	.byte	5
-	.word	.L5,.L87
+	.word	.L5,.L79
 	.byte	6
 	.byte	'i',0,1,50,14
-	.word	.L67,.L88
+	.word	.L59,.L80
 	.byte	0,0,5
-	.word	.L16,.L89
+	.word	.L16,.L81
 	.byte	6
 	.byte	'j',0,1,62,12
-	.word	.L67,.L90
+	.word	.L59,.L82
 	.byte	0,5
-	.word	.L91,.L92
+	.word	.L83,.L84
 	.byte	6
 	.byte	'j',0,1,65,12
-	.word	.L67,.L93
+	.word	.L59,.L85
 	.byte	0,5
-	.word	.L94,.L95
+	.word	.L86,.L87
 	.byte	6
 	.byte	'j',0,1,70,12
-	.word	.L67,.L96
+	.word	.L59,.L88
 	.byte	0,0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('GetOSTU')
 	.sect	'.debug_abbrev'
-.L44:
+.L41:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
 	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
 	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
 	.sdecl	'.debug_line',debug,cluster('GetOSTU')
 	.sect	'.debug_line'
-.L45:
-	.word	.L138-.L137
-.L137:
+.L42:
+	.word	.L126-.L125
+.L125:
 	.half	3
-	.word	.L140-.L139
-.L139:
+	.word	.L128-.L127
+.L127:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\CODE\\Src\\User_OSTU.c',0,0,0,0,0
-.L140:
+.L128:
 	.byte	5,9,7,0,5,2
-	.word	.L34
+	.word	.L33
 	.byte	3,32,1,5,19,9
-	.half	.L107-.L34
+	.half	.L96-.L33
 	.byte	3,2,1,5,22,9
-	.half	.L108-.L107
+	.half	.L97-.L96
 	.byte	3,1,1,5,21,9
-	.half	.L141-.L108
+	.half	.L129-.L97
 	.byte	3,7,1,5,14,9
-	.half	.L82-.L141
+	.half	.L74-.L129
 	.byte	3,3,1,5,26,9
-	.half	.L109-.L82
+	.half	.L98-.L74
 	.byte	1,5,43,9
-	.half	.L3-.L109
+	.half	.L3-.L98
 	.byte	1,5,49,9
-	.half	.L142-.L3
+	.half	.L130-.L3
 	.byte	1,5,47,9
-	.half	.L143-.L142
+	.half	.L131-.L130
 	.byte	1,5,29,9
-	.half	.L144-.L143
+	.half	.L132-.L131
 	.byte	1,5,23,9
-	.half	.L2-.L144
+	.half	.L2-.L132
 	.byte	1,5,26,9
-	.half	.L145-.L2
+	.half	.L133-.L2
 	.byte	1,5,14,7,9
-	.half	.L83-.L145
+	.half	.L75-.L133
 	.byte	3,2,1,5,32,9
-	.half	.L110-.L83
+	.half	.L99-.L75
 	.byte	1,5,16,9
-	.half	.L5-.L110
+	.half	.L5-.L99
 	.byte	3,2,1,5,33,9
-	.half	.L111-.L5
+	.half	.L100-.L5
 	.byte	1,5,24,9
-	.half	.L7-.L111
+	.half	.L7-.L100
 	.byte	3,2,1,5,27,9
-	.half	.L146-.L7
+	.half	.L134-.L7
 	.byte	1,5,16,9
-	.half	.L147-.L146
+	.half	.L135-.L134
 	.byte	1,5,31,9
-	.half	.L148-.L147
+	.half	.L136-.L135
 	.byte	1,5,36,9
-	.half	.L149-.L148
+	.half	.L137-.L136
 	.byte	3,126,1,5,31,9
-	.half	.L6-.L149
+	.half	.L6-.L137
 	.byte	1,5,33,9
-	.half	.L150-.L6
+	.half	.L138-.L6
 	.byte	1,5,35,7,9
-	.half	.L87-.L150
+	.half	.L79-.L138
 	.byte	3,126,1,5,29,9
-	.half	.L4-.L87
+	.half	.L4-.L79
 	.byte	1,5,32,9
-	.half	.L151-.L4
+	.half	.L139-.L4
 	.byte	1,5,17,7,9
-	.half	.L85-.L151
+	.half	.L77-.L139
 	.byte	3,8,1,5,64,9
-	.half	.L112-.L85
+	.half	.L101-.L77
 	.byte	1,5,74,9
-	.half	.L9-.L112
+	.half	.L9-.L101
 	.byte	1,5,33,9
 	.half	.L8-.L9
 	.byte	1,5,22,9
-	.half	.L152-.L8
+	.half	.L140-.L8
 	.byte	1,5,49,7,9
-	.half	.L153-.L152
+	.half	.L141-.L140
 	.byte	1,5,60,9
-	.half	.L154-.L153
+	.half	.L142-.L141
 	.byte	1,5,17,7,9
-	.half	.L10-.L154
+	.half	.L10-.L142
 	.byte	3,1,1,5,71,9
-	.half	.L114-.L10
+	.half	.L103-.L10
 	.byte	1,5,81,9
-	.half	.L12-.L114
+	.half	.L12-.L103
 	.byte	1,5,24,9
 	.half	.L11-.L12
 	.byte	1,5,56,7,9
-	.half	.L155-.L11
+	.half	.L143-.L11
 	.byte	1,5,67,9
-	.half	.L156-.L155
+	.half	.L144-.L143
 	.byte	1,5,3,7,9
-	.half	.L13-.L156
+	.half	.L13-.L144
 	.byte	3,2,1,5,16,7,9
-	.half	.L157-.L13
+	.half	.L145-.L13
 	.byte	3,1,1,5,3,9
-	.half	.L158-.L157
+	.half	.L146-.L145
 	.byte	1,5,1,7,9
-	.half	.L17-.L158
+	.half	.L17-.L146
 	.byte	3,28,1,5,14,7,9
 	.half	.L16-.L17
 	.byte	3,102,1,5,39,9
-	.half	.L115-.L16
+	.half	.L104-.L16
 	.byte	1,5,68,9
-	.half	.L19-.L115
+	.half	.L19-.L104
 	.byte	1,5,56,9
-	.half	.L159-.L19
+	.half	.L147-.L19
 	.byte	1,5,42,9
-	.half	.L160-.L159
+	.half	.L148-.L147
 	.byte	1,5,39,9
-	.half	.L18-.L160
+	.half	.L18-.L148
 	.byte	1,5,17,7,9
-	.half	.L89-.L18
+	.half	.L81-.L18
 	.byte	3,2,1,5,14,9
-	.half	.L91-.L89
+	.half	.L83-.L81
 	.byte	3,1,1,5,39,9
-	.half	.L116-.L91
+	.half	.L105-.L83
 	.byte	1,5,31,9
-	.half	.L21-.L116
+	.half	.L21-.L105
 	.byte	3,2,1,5,35,9
-	.half	.L161-.L21
+	.half	.L149-.L21
 	.byte	1,5,19,9
-	.half	.L162-.L161
+	.half	.L150-.L149
 	.byte	1,5,42,9
-	.half	.L163-.L162
+	.half	.L151-.L150
 	.byte	3,126,1,5,39,9
-	.half	.L20-.L163
+	.half	.L20-.L151
 	.byte	1,5,12,7,9
-	.half	.L92-.L20
+	.half	.L84-.L20
 	.byte	3,4,1,5,38,9
-	.half	.L94-.L92
+	.half	.L86-.L84
 	.byte	3,1,1,9
-	.half	.L23-.L94
+	.half	.L23-.L86
 	.byte	3,2,1,5,27,9
-	.half	.L117-.L23
+	.half	.L106-.L23
 	.byte	1,5,24,9
-	.half	.L164-.L117
+	.half	.L152-.L106
 	.byte	3,1,1,5,17,9
-	.half	.L118-.L164
+	.half	.L107-.L152
 	.byte	3,1,1,5,37,9
-	.half	.L165-.L118
+	.half	.L153-.L107
 	.byte	1,5,35,9
-	.half	.L166-.L165
+	.half	.L154-.L153
 	.byte	1,5,17,9
-	.half	.L120-.L166
+	.half	.L109-.L154
 	.byte	3,1,1,5,35,9
-	.half	.L167-.L120
+	.half	.L155-.L109
 	.byte	1,5,39,9
-	.half	.L121-.L167
+	.half	.L110-.L155
 	.byte	3,1,1,5,23,9
-	.half	.L122-.L121
+	.half	.L111-.L110
 	.byte	1,5,39,9
-	.half	.L168-.L122
+	.half	.L156-.L111
 	.byte	3,1,1,5,17,9
-	.half	.L123-.L168
+	.half	.L112-.L156
 	.byte	3,1,1,5,43,9
-	.half	.L119-.L123
+	.half	.L108-.L112
 	.byte	1,5,17,9
-	.half	.L125-.L119
+	.half	.L114-.L108
 	.byte	3,1,1,5,43,9
-	.half	.L124-.L125
+	.half	.L113-.L114
 	.byte	1,5,23,9
-	.half	.L127-.L124
+	.half	.L116-.L113
 	.byte	3,1,1,5,48,9
-	.half	.L169-.L127
+	.half	.L157-.L116
 	.byte	1,5,35,9
-	.half	.L126-.L169
+	.half	.L115-.L157
 	.byte	1,5,61,9
-	.half	.L128-.L126
+	.half	.L117-.L115
 	.byte	1,5,15,9
-	.half	.L129-.L128
+	.half	.L118-.L117
 	.byte	3,1,1,5,5,9
-	.half	.L170-.L129
+	.half	.L158-.L118
 	.byte	1,5,14,7,9
-	.half	.L171-.L170
+	.half	.L159-.L158
 	.byte	3,2,1,5,19,9
-	.half	.L172-.L171
+	.half	.L160-.L159
 	.byte	3,1,1,5,41,9
-	.half	.L24-.L172
+	.half	.L24-.L160
 	.byte	3,114,1,5,38,9
 	.half	.L22-.L24
 	.byte	1,5,3,7,9
-	.half	.L95-.L22
+	.half	.L87-.L22
 	.byte	3,17,1,5,1,9
-	.half	.L113-.L95
+	.half	.L102-.L87
 	.byte	3,1,1,7,9
-	.half	.L47-.L113
+	.half	.L44-.L102
 	.byte	0,1,1
-.L138:
+.L126:
 	.sdecl	'.debug_ranges',debug,cluster('GetOSTU')
 	.sect	'.debug_ranges'
-.L46:
-	.word	-1,.L34,0,.L47-.L34,0,0
+.L43:
+	.word	-1,.L33,0,.L44-.L33,0,0
 	.sdecl	'.debug_info',debug,cluster('BinaryImage')
 	.sect	'.debug_info'
-.L48:
+.L45:
 	.word	283
 	.half	3
-	.word	.L49
+	.word	.L46
 	.byte	4,1
 	.byte	'..\\CODE\\Src\\User_OSTU.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L51,.L50
+	.word	.L48,.L47
 	.byte	2
-	.word	.L39
+	.word	.L36
 	.byte	3
 	.byte	'BinaryImage',0,1,98,6,1,1,1
-	.word	.L36,.L97,.L35
+	.word	.L35,.L89,.L34
 	.byte	4
 	.byte	'tmImage',0,1,98,26
-	.word	.L60,.L98
+	.word	.L52,.L90
 	.byte	4
 	.byte	'ThresholdV',0,1,98,58
-	.word	.L58,.L99
+	.word	.L50,.L91
 	.byte	5
-	.word	.L36,.L97
+	.word	.L35,.L89
 	.byte	5
-	.word	.L36,.L100
+	.word	.L35,.L92
 	.byte	6
 	.byte	'i',0,1,101,11
-	.word	.L67,.L101
+	.word	.L59,.L93
 	.byte	5
-	.word	.L27,.L102
+	.word	.L27,.L94
 	.byte	6
 	.byte	'j',0,1,103,13
-	.word	.L67,.L103
+	.word	.L59,.L95
 	.byte	0,0,0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('BinaryImage')
 	.sect	'.debug_abbrev'
-.L49:
+.L46:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3
 	.byte	8,58,15,59,15,57,15,73,16,2,6,0,0,0
 	.sdecl	'.debug_line',debug,cluster('BinaryImage')
 	.sect	'.debug_line'
-.L50:
-	.word	.L174-.L173
-.L173:
+.L47:
+	.word	.L162-.L161
+.L161:
 	.half	3
-	.word	.L176-.L175
-.L175:
+	.word	.L164-.L163
+.L163:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\CODE\\Src\\User_OSTU.c',0,0,0,0,0
-.L176:
+.L164:
 	.byte	5,13,7,0,5,2
-	.word	.L36
+	.word	.L35
 	.byte	3,228,0,1,5,27,9
-	.half	.L130-.L36
+	.half	.L119-.L35
 	.byte	1,5,15,9
-	.half	.L27-.L130
+	.half	.L27-.L119
 	.byte	3,2,1,5,29,9
-	.half	.L131-.L27
+	.half	.L120-.L27
 	.byte	1,5,17,9
-	.half	.L29-.L131
+	.half	.L29-.L120
 	.byte	3,2,1,5,20,9
-	.half	.L177-.L29
+	.half	.L165-.L29
 	.byte	1,5,7,9
-	.half	.L178-.L177
+	.half	.L166-.L165
 	.byte	1,5,25,7,9
-	.half	.L179-.L178
+	.half	.L167-.L166
 	.byte	3,2,1,5,29,9
-	.half	.L180-.L179
+	.half	.L168-.L167
 	.byte	1,5,16,9
-	.half	.L30-.L180
+	.half	.L30-.L168
 	.byte	3,4,1,5,19,9
-	.half	.L181-.L30
+	.half	.L169-.L30
 	.byte	1,5,25,9
-	.half	.L182-.L181
+	.half	.L170-.L169
 	.byte	1,5,23,9
-	.half	.L31-.L182
+	.half	.L31-.L170
 	.byte	1,5,31,9
-	.half	.L183-.L31
+	.half	.L171-.L31
 	.byte	3,120,1,5,23,9
-	.half	.L28-.L183
+	.half	.L28-.L171
 	.byte	1,5,29,9
-	.half	.L184-.L28
+	.half	.L172-.L28
 	.byte	1,7,9
-	.half	.L102-.L184
+	.half	.L94-.L172
 	.byte	3,126,1,5,21,9
-	.half	.L26-.L102
+	.half	.L26-.L94
 	.byte	1,5,27,9
-	.half	.L185-.L26
+	.half	.L173-.L26
 	.byte	1,5,1,7,9
-	.half	.L100-.L185
+	.half	.L92-.L173
 	.byte	3,14,1,7,9
-	.half	.L52-.L100
+	.half	.L49-.L92
 	.byte	0,1,1
-.L174:
+.L162:
 	.sdecl	'.debug_ranges',debug,cluster('BinaryImage')
 	.sect	'.debug_ranges'
-.L51:
-	.word	-1,.L36,0,.L52-.L36,0,0
-	.sdecl	'.debug_info',debug,cluster('GetVariance')
-	.sect	'.debug_info'
-.L53:
-	.word	265
-	.half	3
-	.word	.L54
-	.byte	4,1
-	.byte	'..\\CODE\\Src\\User_OSTU.c',0
-	.byte	'TASKING VX-toolset for TriCore: C compiler',0
-	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020TC264\\Debug\\',0,12,1
-	.word	.L56,.L55
-	.byte	2
-	.word	.L39
-	.byte	3
-	.byte	'GetVariance',0,1,118,9
-	.word	.L58
-	.byte	1,1,1
-	.word	.L38,.L104,.L37
-	.byte	4
-	.byte	'tmImage',0,1,118,29
-	.word	.L60,.L105
-	.byte	5
-	.word	.L38,.L104
-	.byte	6
-	.byte	'AverageValue',0,1,120,17
-	.word	.L58
-	.byte	5,3
-	.word	_999001_AverageValue
-	.byte	7
-	.byte	'Threshold',0,1,121,10
-	.word	.L58,.L106
-	.byte	0,0,0
-	.sdecl	'.debug_abbrev',debug,cluster('GetVariance')
-	.sect	'.debug_abbrev'
-.L54:
-	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
-	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
-	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,9,0,0,7,52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
-	.sdecl	'.debug_line',debug,cluster('GetVariance')
-	.sect	'.debug_line'
-.L55:
-	.word	.L187-.L186
-.L186:
-	.half	3
-	.word	.L189-.L188
-.L188:
-	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
-	.byte	'..\\CODE\\Src\\User_OSTU.c',0,0,0,0,0
-.L189:
-	.byte	5,2,7,0,5,2
-	.word	.L38
-	.byte	3,253,0,1,5,15,9
-	.half	.L190-.L38
-	.byte	1,5,12,9
-	.half	.L191-.L190
-	.byte	3,1,1,5,1,9
-	.half	.L132-.L191
-	.byte	3,6,1,7,9
-	.half	.L57-.L132
-	.byte	0,1,1
-.L187:
-	.sdecl	'.debug_ranges',debug,cluster('GetVariance')
-	.sect	'.debug_ranges'
-.L56:
-	.word	-1,.L38,0,.L57-.L38,0,0
+.L48:
+	.word	-1,.L35,0,.L49-.L35,0,0
 	.sdecl	'.debug_loc',debug,cluster('BinaryImage')
 	.sect	'.debug_loc'
-.L35:
-	.word	-1,.L36,0,.L97-.L36
+.L34:
+	.word	-1,.L35,0,.L89-.L35
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L99:
-	.word	-1,.L36,0,.L97-.L36
+.L91:
+	.word	-1,.L35,0,.L89-.L35
 	.half	1
 	.byte	84
 	.word	0,0
-.L101:
-	.word	-1,.L36,.L130-.L36,.L97-.L36
+.L93:
+	.word	-1,.L35,.L119-.L35,.L89-.L35
 	.half	5
 	.byte	144,32,157,32,0
 	.word	0,0
-.L103:
-	.word	-1,.L36,.L131-.L36,.L26-.L36
+.L95:
+	.word	-1,.L35,.L120-.L35,.L26-.L35
 	.half	1
 	.byte	81
 	.word	0,0
-.L98:
-	.word	-1,.L36,0,.L97-.L36
+.L90:
+	.word	-1,.L35,0,.L89-.L35
 	.half	1
 	.byte	100
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('GetOSTU')
 	.sect	'.debug_loc'
-.L63:
-	.word	-1,.L34,.L108-.L34,.L59-.L34
+.L55:
+	.word	-1,.L33,.L97-.L33,.L51-.L33
 	.half	1
 	.byte	83
 	.word	0,0
-.L33:
-	.word	-1,.L34,0,.L107-.L34
+.L32:
+	.word	-1,.L33,0,.L96-.L33
 	.half	2
 	.byte	138,0
-	.word	.L107-.L34,.L16-.L34
+	.word	.L96-.L33,.L16-.L33
 	.half	3
 	.byte	138,128,2
-	.word	.L16-.L34,.L16-.L34
+	.word	.L16-.L33,.L16-.L33
 	.half	2
 	.byte	138,0
-	.word	.L16-.L34,.L59-.L34
+	.word	.L16-.L33,.L51-.L33
 	.half	3
 	.byte	138,128,2
-	.word	.L59-.L34,.L59-.L34
+	.word	.L51-.L33,.L51-.L33
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L81:
-	.word	-1,.L34,0,.L59-.L34
+.L73:
+	.word	-1,.L33,0,.L51-.L33
 	.half	3
 	.byte	145,128,126
 	.word	0,0
-.L78:
-	.word	-1,.L34,.L114-.L34,.L59-.L34
+.L70:
+	.word	-1,.L33,.L103-.L33,.L51-.L33
 	.half	1
 	.byte	88
 	.word	0,0
-.L73:
-	.word	-1,.L34,.L125-.L34,.L126-.L34
+.L65:
+	.word	-1,.L33,.L114-.L33,.L115-.L33
 	.half	1
 	.byte	95
 	.word	0,0
-.L74:
-	.word	-1,.L34,.L127-.L34,.L128-.L34
+.L66:
+	.word	-1,.L33,.L116-.L33,.L117-.L33
 	.half	5
 	.byte	144,32,157,32,0
 	.word	0,0
-.L77:
-	.word	-1,.L34,.L112-.L34,.L113-.L34
+.L69:
+	.word	-1,.L33,.L101-.L33,.L102-.L33
 	.half	1
 	.byte	82
 	.word	0,0
-.L71:
-	.word	-1,.L34,.L120-.L34,.L22-.L34
+.L63:
+	.word	-1,.L33,.L109-.L33,.L22-.L33
 	.half	1
 	.byte	91
 	.word	0,0
-.L72:
-	.word	-1,.L34,.L121-.L34,.L22-.L34
+.L64:
+	.word	-1,.L33,.L110-.L33,.L22-.L33
 	.half	1
 	.byte	87
 	.word	0,0
-.L64:
-	.word	-1,.L34,.L117-.L34,.L22-.L34
+.L56:
+	.word	-1,.L33,.L106-.L33,.L22-.L33
 	.half	1
 	.byte	84
 	.word	0,0
-.L69:
-	.word	-1,.L34,.L118-.L34,.L119-.L34
+.L61:
+	.word	-1,.L33,.L107-.L33,.L108-.L33
 	.half	1
 	.byte	81
 	.word	0,0
-.L66:
-	.word	-1,.L34,.L91-.L34,.L59-.L34
+.L58:
+	.word	-1,.L33,.L83-.L33,.L51-.L33
 	.half	1
 	.byte	89
 	.word	0,0
-.L65:
-	.word	-1,.L34,.L122-.L34,.L22-.L34
+.L57:
+	.word	-1,.L33,.L111-.L33,.L22-.L33
 	.half	1
 	.byte	85
 	.word	0,0
+.L60:
+	.word	-1,.L33,.L112-.L33,.L113-.L33
+	.half	5
+	.byte	144,32,157,32,0
+	.word	0,0
 .L68:
-	.word	-1,.L34,.L123-.L34,.L124-.L34
+	.word	-1,.L33,.L118-.L33,.L22-.L33
 	.half	5
 	.byte	144,32,157,32,0
 	.word	0,0
-.L76:
-	.word	-1,.L34,.L129-.L34,.L22-.L34
-	.half	5
-	.byte	144,32,157,32,0
-	.word	0,0
-.L75:
-	.word	-1,.L34,.L94-.L34,.L59-.L34
+.L67:
+	.word	-1,.L33,.L86-.L33,.L51-.L33
 	.half	1
 	.byte	90
 	.word	0,0
-.L79:
-	.word	-1,.L34,.L82-.L34,.L59-.L34
+.L71:
+	.word	-1,.L33,.L74-.L33,.L51-.L33
 	.half	1
 	.byte	86
-	.word	.L113-.L34,.L59-.L34
+	.word	.L102-.L33,.L51-.L33
 	.half	1
 	.byte	82
 	.word	0,0
-.L88:
-	.word	-1,.L34,.L111-.L34,.L4-.L34
+.L80:
+	.word	-1,.L33,.L100-.L33,.L4-.L33
 	.half	1
 	.byte	81
 	.word	0,0
-.L84:
-	.word	-1,.L34,.L109-.L34,.L5-.L34
+.L76:
+	.word	-1,.L33,.L98-.L33,.L5-.L33
 	.half	1
 	.byte	95
 	.word	0,0
-.L86:
-	.word	-1,.L34,.L110-.L34,.L9-.L34
+.L78:
+	.word	-1,.L33,.L99-.L33,.L9-.L33
 	.half	5
 	.byte	144,32,157,32,0
 	.word	0,0
-.L90:
-	.word	-1,.L34,.L115-.L34,.L116-.L34
+.L82:
+	.word	-1,.L33,.L104-.L33,.L105-.L33
 	.half	1
 	.byte	95
 	.word	0,0
-.L93:
-	.word	-1,.L34,.L116-.L34,.L23-.L34
+.L85:
+	.word	-1,.L33,.L105-.L33,.L23-.L33
 	.half	1
 	.byte	95
 	.word	0,0
-.L96:
+.L88:
 	.word	0,0
-.L61:
-	.word	-1,.L34,0,.L59-.L34
-	.half	1
-	.byte	100
-	.word	0,0
-	.sdecl	'.debug_loc',debug,cluster('GetVariance')
-	.sect	'.debug_loc'
-.L37:
-	.word	-1,.L38,0,.L104-.L38
-	.half	2
-	.byte	138,0
-	.word	0,0
-.L106:
-	.word	-1,.L38,.L132-.L38,.L104-.L38
-	.half	1
-	.byte	82
-	.word	0,0
-.L105:
-	.word	-1,.L38,0,.L104-.L38
+.L53:
+	.word	-1,.L33,0,.L51-.L33
 	.half	1
 	.byte	100
 	.word	0,0
 	.sdecl	'.debug_frame',debug
 	.sect	'.debug_frame'
-.L192:
+.L174:
 	.word	48
 	.word	-1
 	.byte	3,0,2,1,27,12,26,0,8,27,8,26,8,28,8,29,8,30,8,31,8,34,8,35,8,32,8,33,8,16,8,17,8,24,8,25,8,36,8,37,8,38
@@ -35542,27 +35409,22 @@ _999001_AverageValue:	.type	object
 	.sdecl	'.debug_frame',debug,cluster('GetOSTU')
 	.sect	'.debug_frame'
 	.word	68
-	.word	.L192,.L34,.L59-.L34
+	.word	.L174,.L33,.L51-.L33
 	.byte	8,18,8,19,8,21,8,22,8,23,4
-	.word	(.L107-.L34)/2
+	.word	(.L96-.L33)/2
 	.byte	19,128,2,22,26,4,19,138,128,2,4
-	.word	(.L16-.L107)/2
+	.word	(.L16-.L96)/2
 	.byte	19,0,8,26,19,128,2,22,26,4,19,138,128,2,4
-	.word	(.L59-.L16)/2
+	.word	(.L51-.L16)/2
 	.byte	19,0,8,26,0,0,0
 	.sdecl	'.debug_frame',debug,cluster('BinaryImage')
 	.sect	'.debug_frame'
 	.word	24
-	.word	.L192,.L36,.L97-.L36
+	.word	.L174,.L35,.L89-.L35
 	.byte	8,18,8,19,8,21,8,22,8,23,0,0
-	.sdecl	'.debug_frame',debug,cluster('GetVariance')
-	.sect	'.debug_frame'
-	.word	24
-	.word	.L192,.L38,.L104-.L38
-	.byte	8,18,8,19,8,20,8,21,8,22,8,23
 
-; ..\CODE\Src\User_OSTU.c	   134  
-; ..\CODE\Src\User_OSTU.c	   135  #pragma section all restore
-; ..\CODE\Src\User_OSTU.c	   136  
+; ..\CODE\Src\User_OSTU.c	   116  
+; ..\CODE\Src\User_OSTU.c	   117  #pragma section all restore
+; ..\CODE\Src\User_OSTU.c	   118  
 
 	; Module end

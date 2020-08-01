@@ -11,5 +11,6 @@
 #include "headfile.h"
 
 double GetPIDValue(double middle, double value, double kP, double kI, double kD);
+void CleanPIDValue(void);
 
 #endif /* CODE_INC_USER_PID_H_ */

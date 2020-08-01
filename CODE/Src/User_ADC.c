@@ -13,6 +13,9 @@ static uint16 ADCValue[5];
 
 #pragma section all restore
 
+
+#pragma section all "cpu0_psram"
+
 void ADCInit(void)
 {
 	adc_init(ADC_0,ADC0_CH0_A0);
@@ -48,3 +51,5 @@ void ADCcalculateMidLine(void)
 		MidLineFuseNum = (Lsqrt-Rsqrt)/(ADCValueHandle(0)+ADCValueHandle(4));
 	//printf("%lf\r\n", MidLineFuseNum);
 }
+
+#pragma section all restore

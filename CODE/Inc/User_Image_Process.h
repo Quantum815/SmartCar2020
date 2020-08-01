@@ -10,7 +10,7 @@
 
 #include "headfile.h"
 
-extern uint8 ProcessImageFlag;
+//extern uint8 ProcessImageFlag;
 extern uint8 EnterGarageFlag;
 extern double MidLineFuseNum;
 

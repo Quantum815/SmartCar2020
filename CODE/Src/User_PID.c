@@ -10,6 +10,11 @@
 #pragma section all "cpu0_dsram"
 
 double PidValue;
+double PreviousErrorValue;
+double NowErrorValue;
+//double IntegralErrorValue;
+double DifferentialErrorValue;
+double OldValue;
 
 #pragma section all restore
 
@@ -18,11 +23,6 @@ double PidValue;
 
 double GetPIDValue(double middle, double value, double kP, double kI, double kD)
 {
-	static double PreviousErrorValue = 0;
-	static double NowErrorValue = 0;
-	//static double IntegralErrorValue = 0;
-	static double DifferentialErrorValue = 0;
-	static double OldValue = 0;
 
 	NowErrorValue = value - middle;
 	//IntegralErrorValue += NowErrorValue;
@@ -41,6 +41,15 @@ double GetPIDValue(double middle, double value, double kP, double kI, double kD)
 		PidValue = -3000;
 
 	return (PidValue/100);
+}
+
+void CleanPIDValue(void)
+{
+	PidValue = 0;
+	PreviousErrorValue = 0;
+	NowErrorValue = 0;
+	//IntegralErrorValue = 0;
+	OldValue = 0;
 }
 
 #pragma section all restore

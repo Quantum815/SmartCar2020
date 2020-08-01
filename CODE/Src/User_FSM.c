@@ -11,7 +11,8 @@
 
 FSMTable_t CarTable[] =
 {
-    //{到来的事件，当前的状态，将要要执行的函数，下一个状态}
+    //到来的事件                   当前的状态                  将要要执行的函数                    下一个状态
+	//正常执行状态表
 	{ NOEVENT,          WaitBall,         RunStop,               WaitBall         },
 	{ GETBALL,          WaitBall,         FindLine,              GoLine           },
 	{ NOEVENT,          GoLine,           FindLine,              GoLine           },
@@ -25,8 +26,13 @@ FSMTable_t CarTable[] =
 	{ FINDZEBRA,        GoLine,           GoGarage,              InGarage         },
 	{ NOEVENT,          InGarage,         GoGarage,              InGarage         },
     { RUNSTOP,          InGarage,         RunStop,               Stop             },
-	{ RUNSTOP,          GoLine,           RunStop,               Stop             },  //测试
 	{ NOEVENT,          Stop,             RunStop,               Stop             },
+	//debug强制停止状态表
+	{ RUNSTOP,          GoLine,           RunStop,               Stop             },
+	{ RUNSTOP,          InRoundabout,     RunStop,               Stop             },
+	{ RUNSTOP,          PassRoundabout,   RunStop,               Stop             },
+	{ RUNSTOP,          OutingRoundabout, RunStop,               Stop             },
+	{ RUNSTOP,          InGarage,         RunStop,               Stop             }
 };
 FSM_t CarFSM;
 double MidLineFuseNum;
@@ -40,15 +46,8 @@ uint8 StartFlag;
 //事件反应函数
 void RunStop(void)
 {
-	int i;
-	GyroYawAngleInit();
-	for(i=0; i<50; i++)
-	{
-		MotorUserHandle(LMotor_B, 50);
-		MotorUserHandle(RMotor_B, 50);
-	}
-	MotorUserHandle(LMotor_F, 0);
-	MotorUserHandle(RMotor_F, 0);
+	MotorUserHandle(LMotor_B, LeftWheelBrakeZone);
+	MotorUserHandle(RMotor_B, RightWheelBrakeZone);
 }
 
 void FindLine(void)
@@ -82,8 +81,8 @@ void OutRoundaboutProcess(void)
 
 void GoGarage(void)
 {
-	if(EnterGarageFlag)
-		;
+
+
 }
 
 
@@ -153,6 +152,7 @@ void FSMRun(void)
 		StartFlag = 1;
 	}
     CarFSM.Size = sizeof(CarTable) / sizeof(FSMTable_t);
+
     if(ReturnFSMState(&CarFSM) == WaitBall)
     {
     	//if(TwoCarStateJudge())  //测试时注释
@@ -174,7 +174,7 @@ void FSMRun(void)
     {
     	//FSMEventHandle(&CarFSM, ENDOUTROUNDABOUT);
     }
-    //else if(ReturnFSMState(&CarFSM) == GoLine)
+    //else if(EnterGarageFlag == 1 && ReturnFSMState(&CarFSM) == GoLine)
     //{
     	//FSMEventHandle(&CarFSM, FINDZEBRA);
     //}
