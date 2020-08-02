@@ -107,8 +107,8 @@
 #define RightWheelDeadZone 4
 
 //车轮刹车死区PWM占空比
-#define LeftWheelBrakeZone 2.2
-#define RightWheelBrakeZone 2
+#define LeftWheelBrakeZone 2
+#define RightWheelBrakeZone 1.8
 
 //正常车速PWM占空比
 #define LeftNormalSpeed 9
@@ -125,6 +125,12 @@
 //入库摄像头二值化校正值
 #define InGarageAdjustedValue 0
 
+//左转入库转弯角度
+#define SetLeftRotationAngle 20
+
+//右转入库转弯角度
+#define SetRightRotationAngle 20
+
 //正常巡线PID中线值
 #define PIDMidLineFuseNum 0.000176
 
@@ -133,7 +139,7 @@
 #define FINDLINE_I 0
 #define FINDLINE_D 2000
 
-//圆环巡线PID
+//入库导航PID
 #define GYRO_P 210
 #define GYRO_I 0.16
 #define GYRO_D 1000

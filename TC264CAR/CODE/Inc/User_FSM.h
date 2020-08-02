@@ -19,7 +19,8 @@ enum CarState  //×´Ì¬
 	InRoundabout,
 	PassRoundabout,
 	OutingRoundabout,
-	InGarage,
+	LeftInGarage,
+	RightInGarage,
     Stop
 };
 
@@ -31,7 +32,8 @@ enum CarEvent  //ÊÂ¼þ
 	ENDINROUNDABOUT,
 	OUTROUNDABOUT,
 	ENDOUTROUNDABOUT,
-	FINDZEBRA,
+	LEFTFINDZEBRA,
+	RIGHTFINDZEBRA,
     RUNSTOP
 };
 
@@ -56,12 +58,14 @@ void RunStop(void);
 void FindLine(void);
 void InRoundaboutProcess(void);
 void OutRoundaboutProcess(void);
-void GoGarage(void);
+void TurnLeftGoGarage(void);
+void TurnRightGoGarage(void);
 
 void FSMRegist(FSM_t *fsm, FSMTable_t *fsmtable);
 void FSMStateTransfer(FSM_t *fsm, int state);
 void FSMEventHandle(FSM_t *fsm, int event);
 int ReturnFSMState(FSM_t *fsm);
 void FSMRun(void);
+void FindLineAdjPWM(double PWM, double LCut, double RCut);
 
 #endif /* CODE_INC_USER_FSM_H_ */

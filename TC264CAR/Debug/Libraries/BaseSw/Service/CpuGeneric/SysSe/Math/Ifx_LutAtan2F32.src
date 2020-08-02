@@ -1,0 +1,1846 @@
+	; Module start
+	.compiler_version	"TASKING VX-toolset for TriCore: C compiler v6.3r1 Build 19041558 SN 99294086"
+	.compiler_invocation	"ctc --dep-file=Libraries\\BaseSw\\Service\\CpuGeneric\\SysSe\\Math\\.Ifx_LutAtan2F32.o.d --fp-model=c,f,l,n,r,S,T,z -D__CPU__=tc26x -D__CPU_TC26X__ --core=tc1.6.x --iso=99 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\CODE -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Build -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Impl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Lib -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Lib\\DataHandling -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_Lib\\InternalMux -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\_PinMap -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Asc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Lin -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Spi -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Asclin\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\Icu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\PwmBc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\PwmHl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\TimerWithTrigger -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Ccu6\\TPwm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cif -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cif\\Cam -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cif\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\CStart -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Irq -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Trap -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dma -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dma\\Dma -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dma\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc\\Dsadc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc\\Rdc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dsadc\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dts -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dts\\Dts -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Dts\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Emem -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Emem\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eray -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eray\\Eray -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eray\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eth -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eth\\Phy_Pef7071 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Eth\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fce -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fce\\Crc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fce\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fft -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fft\\Fft -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Fft\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Flash -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Flash\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gpt12 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gpt12\\IncrEnc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gpt12\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom\\Pwm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom\\PwmHl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Atom\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tim -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tim\\In -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom\\Pwm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom\\PwmHl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Tom\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Gtm\\Trig -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Hssl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Hssl\\Hssl -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Hssl\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\I2c -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\I2c\\I2c -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\I2c\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Iom -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Iom\\Driver -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Iom\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Msc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Msc\\Msc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Msc\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Mtu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Mtu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Multican -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Multican\\Can -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Multican\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Port -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Port\\Io -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Port\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5\\Psi5 -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5s -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5s\\Psi5s -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Psi5s\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi\\SpiMaster -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi\\SpiSlave -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Qspi\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Scu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Scu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Sent -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Sent\\Sent -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Sent\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Smu -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Smu\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Src -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Src\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Stm -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Stm\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Stm\\Timer -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Vadc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Vadc\\Adc -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Vadc\\Std -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\Infra -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\Infra\\Platform -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\Infra\\Platform\\Tricore -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\Infra\\Platform\\Tricore\\Compilers -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\Infra\\Sfr -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\Infra\\Sfr\\TC26B -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\Infra\\Sfr\\TC26B\\_Reg -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\Service -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\Service\\CpuGeneric -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\seekfree_libraries -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\seekfree_libraries\\common -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\seekfree_peripheral -IE:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\USER -g2 -wW557 --make-target=Libraries\\BaseSw\\Service\\CpuGeneric\\SysSe\\Math\\Ifx_LutAtan2F32.o -t4 --language=-gcc,-volatile,+strings,-kanji --default-near-size=0 -O1 --default-a1-size=0 --default-a0-size=0 --source --align=0 --switch=auto --error-limit=42 -o Libraries\\BaseSw\\Service\\CpuGeneric\\SysSe\\Math\\Ifx_LutAtan2F32.src ..\\Libraries\\BaseSw\\Service\\CpuGeneric\\SysSe\\Math\\Ifx_LutAtan2F32.c"
+	.compiler_name		"ctc"
+	;source	'..\\Libraries\\BaseSw\\Service\\CpuGeneric\\SysSe\\Math\\Ifx_LutAtan2F32.c'
+
+	
+$TC16X
+	
+	.sdecl	'.text.Ifx_LutAtan2F32.Ifx_LutAtan2F32_init',code,cluster('Ifx_LutAtan2F32_init')
+	.sect	'.text.Ifx_LutAtan2F32.Ifx_LutAtan2F32_init'
+	.align	2
+	
+	.global	Ifx_LutAtan2F32_init
+
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	     1  /**
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	     2   * \file Ifx_LutAtan2F32.c
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	     3   * \brief ATAN2 lookup functions with fixed-point angle data type
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	     4   *
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	     5   *
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	     6   * \version disabled
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	     7   * \copyright Copyright (c) 2013 Infineon Technologies AG. All rights reserved.
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	     8   *
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	     9   *
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    10   *                                 IMPORTANT NOTICE
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    11   *
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    12   *
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    13   * Use of this file is subject to the terms of use agreed between (i) you or 
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    14   * the company in which ordinary course of business you are acting and (ii) 
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    15   * Infineon Technologies AG or its licensees. If and as long as no such 
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    16   * terms of use are agreed, use of this file is subject to following:
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    17  
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    18  
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    19   * Boost Software License - Version 1.0 - August 17th, 2003
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    20  
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    21   * Permission is hereby granted, free of charge, to any person or 
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    22   * organization obtaining a copy of the software and accompanying 
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    23   * documentation covered by this license (the "Software") to use, reproduce,
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    24   * display, distribute, execute, and transmit the Software, and to prepare
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    25   * derivative works of the Software, and to permit third-parties to whom the 
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    26   * Software is furnished to do so, all subject to the following:
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    27  
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    28   * The copyright notices in the Software and this entire statement, including
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    29   * the above license grant, this restriction and the following disclaimer, must
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    30   * be included in all copies of the Software, in whole or in part, and all
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    31   * derivative works of the Software, unless such copies or derivative works are
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    32   * solely in the form of machine-executable object code generated by a source
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    33   * language processor.
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    34  
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    35   * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR 
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    36   * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    37   * FITNESS FOR A PARTICULAR PURPOSE, TITLE AND NON-INFRINGEMENT. IN NO EVENT
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    38   * SHALL THE COPYRIGHT HOLDERS OR ANYONE DISTRIBUTING THE SOFTWARE BE LIABLE 
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    39   * FOR ANY DAMAGES OR OTHER LIABILITY, WHETHER IN CONTRACT, TORT OR OTHERWISE,
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    40   * ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    41   * DEALINGS IN THE SOFTWARE.
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    42  
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    43   *
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    44   */
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    45  #include "Ifx_LutAtan2F32.h"
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    46  
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    47  #include <math.h>
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    48  
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    49  void Ifx_LutAtan2F32_init(void)
+; Function Ifx_LutAtan2F32_init
+.L33:
+Ifx_LutAtan2F32_init:	.type	func
+
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    50  {
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    51  #if IFX_LUT_TABLE_CONST == 0
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    52      {   /* generate arctan table */
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    53          sint32  k;
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    54          float32 Step, value;
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    55          Step = (double)IFX_LUT_ATAN_LIMIT_LOW / IFX_LUT_ATAN_SIZE_LOW;
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    56  
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    57          for (k = 0; k < IFX_LUTATAN2F32_SIZE; k++)
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    58          {
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    59              Ifx_g_LutAtan2F32_FxpAngle_table[k] = IFX_LUT_F32_TO_FXPANGLE(atanf(k / Step));
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    60          }
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    61      }
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    62  #endif
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    63  }
+	ret
+.L57:
+	
+__Ifx_LutAtan2F32_init_function_end:
+	.size	Ifx_LutAtan2F32_init,__Ifx_LutAtan2F32_init_function_end-Ifx_LutAtan2F32_init
+.L46:
+	; End of function
+	
+	.sdecl	'.text.Ifx_LutAtan2F32.Ifx_LutAtan2F32_fxpAngle',code,cluster('Ifx_LutAtan2F32_fxpAngle')
+	.sect	'.text.Ifx_LutAtan2F32.Ifx_LutAtan2F32_fxpAngle'
+	.align	2
+	
+	.global	Ifx_LutAtan2F32_fxpAngle
+
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    64  
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    65  
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    66  IFX_INLINE Ifx_Lut_FxpAngle Ifx_LutAtan2F32_fxpAnglePrivate(float32 valf)
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    67  {
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    68      uint32 vali;
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    69      valf = IFX_LUTATAN2F32_SIZE * valf;
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    70      vali = (uint32)valf;
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    71  
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    72      if ((valf - (float32)vali) > 0.5)
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    73      {   /* Round to nearest */
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    74          vali++;
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    75      }
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    76  
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    77      return Ifx_g_LutAtan2F32_FxpAngle_table[vali];
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    78  }
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    79  
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    80  
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    81  IFX_INLINE float32 Ifx_LutAtan2F32_float32Private(float32 val)
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    82  {   /* FIXME round to nearest ?? */
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    83      return Ifx_g_LutAtan2F32_table[(int)(val * IFX_LUTATAN2F32_SIZE)];
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    84  }
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    85  
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    86  
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    87  Ifx_Lut_FxpAngle Ifx_LutAtan2F32_fxpAngle(float32 x, float32 y)
+; Function Ifx_LutAtan2F32_fxpAngle
+.L35:
+Ifx_LutAtan2F32_fxpAngle:	.type	func
+
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    88  {
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    89      Ifx_Lut_FxpAngle angle;
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    90      float32          fx = (float32)x;
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    91      float32          fy = (float32)y;
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    92  
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    93      if (y < 0)
+	mov	d15,#0
+.L148:
+	cmp.f	d0,d5,d15
+.L149:
+	jz.t	d0:0,.L2
+.L150:
+
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    94      {
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    95          if (x < 0)
+	cmp.f	d15,d4,d15
+.L151:
+	jz.t	d15:0,.L3
+.L152:
+
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    96          {
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    97              if (-y < -x)
+	insn.t	d15,d5:31,d5:31
+.L153:
+	insn.t	d0,d4:31,d4:31
+.L154:
+	cmp.f	d15,d15,d0
+.L155:
+	jz.t	d15:0,.L4
+.L67:
+
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    98              {   // 180 .. 225 deg
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	    99                  angle = -IFX_LUT_ANGLE_PI + Ifx_LutAtan2F32_fxpAnglePrivate(-fy / -fx);
+	insn.t	d15,d5:31,d5:31
+.L156:
+	insn.t	d0,d4:31,d4:31
+.L157:
+	div.f	d15,d15,d0
+.L158:
+	movh	d0,#17536
+.L159:
+	mul.f	d0,d15,d0
+.L160:
+	ftouz	d15,d0
+.L120:
+	utof	d1,d15
+.L161:
+	sub.f	d0,d0,d1
+.L162:
+	movh	d1,#16128
+.L163:
+	cmp.f	d0,d0,d1
+	extr.u	d0,d0,#2,#1
+.L164:
+	add	d15,d0
+.L165:
+	movh.a	a15,#@his(Ifx_g_LutAtan2F32_FxpAngle_table)
+	lea	a15,[a15]@los(Ifx_g_LutAtan2F32_FxpAngle_table)
+.L166:
+	addsc.a	a15,a15,d15,#2
+	ld.w	d15,[a15]
+.L68:
+	addi	d15,d15,#-2048
+.L121:
+	j	.L5
+.L4:
+
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   100              }
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   101              else
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   102              {   // 225 .. 270 deg
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   103                  angle = -(IFX_LUT_ANGLE_PI / 2) - Ifx_LutAtan2F32_fxpAnglePrivate(-fx / -fy);
+	insn.t	d15,d4:31,d4:31
+.L167:
+	insn.t	d0,d5:31,d5:31
+.L168:
+	div.f	d15,d15,d0
+.L169:
+	movh	d0,#17536
+.L170:
+	mul.f	d0,d15,d0
+.L171:
+	ftouz	d15,d0
+.L122:
+	utof	d1,d15
+.L172:
+	sub.f	d0,d0,d1
+.L173:
+	movh	d1,#16128
+.L174:
+	cmp.f	d0,d0,d1
+	extr.u	d0,d0,#2,#1
+.L175:
+	add	d15,d0
+.L176:
+	movh.a	a15,#@his(Ifx_g_LutAtan2F32_FxpAngle_table)
+	lea	a15,[a15]@los(Ifx_g_LutAtan2F32_FxpAngle_table)
+.L177:
+	addsc.a	a15,a15,d15,#2
+.L74:
+	mov	d15,#-1024
+.L123:
+	j	.L6
+.L3:
+
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   104              }
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   105          }
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   106          else // x >= 0
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   107          {
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   108              if (-y < x)
+	insn.t	d15,d5:31,d5:31
+.L178:
+	cmp.f	d15,d15,d4
+.L179:
+	jz.t	d15:0,.L7
+.L76:
+
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   109              { // 315 .. 360 deg
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   110                  angle = -Ifx_LutAtan2F32_fxpAnglePrivate(-fy / fx); // ok
+	insn.t	d15,d5:31,d5:31
+.L180:
+	div.f	d15,d15,d4
+.L181:
+	movh	d0,#17536
+.L182:
+	mul.f	d0,d15,d0
+.L183:
+	ftouz	d15,d0
+.L124:
+	utof	d1,d15
+.L184:
+	sub.f	d0,d0,d1
+.L185:
+	movh	d1,#16128
+.L186:
+	cmp.f	d0,d0,d1
+	extr.u	d0,d0,#2,#1
+.L187:
+	add	d15,d0
+.L188:
+	movh.a	a15,#@his(Ifx_g_LutAtan2F32_FxpAngle_table)
+	lea	a15,[a15]@los(Ifx_g_LutAtan2F32_FxpAngle_table)
+.L189:
+	addsc.a	a15,a15,d15,#2
+	ld.w	d15,[a15]
+.L77:
+	rsub	d15,#0
+.L190:
+	j	.L8
+.L7:
+
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   111              }
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   112              else
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   113              {                                                         // 225 .. 270 deg
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   114                  angle = -(IFX_LUT_ANGLE_PI / 2) + Ifx_LutAtan2F32_fxpAnglePrivate(fx / -fy);
+	insn.t	d15,d5:31,d5:31
+.L191:
+	div.f	d15,d4,d15
+.L192:
+	movh	d0,#17536
+.L193:
+	mul.f	d0,d15,d0
+.L194:
+	ftouz	d15,d0
+.L125:
+	utof	d1,d15
+.L195:
+	sub.f	d0,d0,d1
+.L196:
+	movh	d1,#16128
+.L197:
+	cmp.f	d0,d0,d1
+	extr.u	d0,d0,#2,#1
+.L198:
+	add	d15,d0
+.L199:
+	movh.a	a15,#@his(Ifx_g_LutAtan2F32_FxpAngle_table)
+	lea	a15,[a15]@los(Ifx_g_LutAtan2F32_FxpAngle_table)
+.L200:
+	addsc.a	a15,a15,d15,#2
+	ld.w	d15,[a15]
+.L79:
+	addi	d15,d15,#-1024
+.L126:
+	j	.L9
+.L2:
+
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   115              }
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   116          }
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   117      }
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   118      else // y >= 0
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   119      {
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   120          if (x < 0)
+	cmp.f	d15,d4,d15
+.L201:
+	jz.t	d15:0,.L10
+.L202:
+
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   121          {
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   122              if (y < -x)
+	insn.t	d15,d4:31,d4:31
+.L203:
+	cmp.f	d15,d5,d15
+.L204:
+	jz.t	d15:0,.L11
+.L81:
+
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   123              {                                                                                 // 135 .. 180 deg
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   124                  angle = IFX_LUT_ANGLE_PI - Ifx_LutAtan2F32_fxpAnglePrivate(fy / -fx);       // ok
+	insn.t	d15,d4:31,d4:31
+.L205:
+	div.f	d15,d5,d15
+.L206:
+	movh	d0,#17536
+.L207:
+	mul.f	d0,d15,d0
+.L208:
+	ftouz	d15,d0
+.L127:
+	utof	d1,d15
+.L209:
+	sub.f	d0,d0,d1
+.L210:
+	movh	d1,#16128
+.L211:
+	cmp.f	d0,d0,d1
+	extr.u	d0,d0,#2,#1
+.L212:
+	add	d15,d0
+.L213:
+	movh.a	a15,#@his(Ifx_g_LutAtan2F32_FxpAngle_table)
+	lea	a15,[a15]@los(Ifx_g_LutAtan2F32_FxpAngle_table)
+.L214:
+	addsc.a	a15,a15,d15,#2
+.L82:
+	mov	d15,#2048
+.L128:
+	j	.L12
+.L11:
+
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   125              }
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   126              else
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   127              {                                                                                 // 90 .. 135 deg
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   128                  angle = (IFX_LUT_ANGLE_PI / 2) + Ifx_LutAtan2F32_fxpAnglePrivate(-fx / fy); // ok
+	insn.t	d15,d4:31,d4:31
+.L215:
+	div.f	d15,d15,d5
+.L216:
+	movh	d0,#17536
+.L217:
+	mul.f	d0,d15,d0
+.L218:
+	ftouz	d15,d0
+.L129:
+	utof	d1,d15
+.L219:
+	sub.f	d0,d0,d1
+.L220:
+	movh	d1,#16128
+.L221:
+	cmp.f	d0,d0,d1
+	extr.u	d0,d0,#2,#1
+.L222:
+	add	d15,d0
+.L223:
+	movh.a	a15,#@his(Ifx_g_LutAtan2F32_FxpAngle_table)
+	lea	a15,[a15]@los(Ifx_g_LutAtan2F32_FxpAngle_table)
+.L224:
+	addsc.a	a15,a15,d15,#2
+	ld.w	d15,[a15]
+.L84:
+	addi	d15,d15,#1024
+.L130:
+	j	.L13
+.L10:
+
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   129              }
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   130          }
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   131          else // x >= 0
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   132          {
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   133              if (y < x)
+	cmp.f	d15,d5,d4
+	jnz.t	d15:0,.L14
+.L86:
+
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   134              {                                                                                // 0 .. 45 deg
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   135                  angle = Ifx_LutAtan2F32_fxpAnglePrivate(fy / fx);                          // ok
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   136              }
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   137              else
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   138              {                                                                                // 45 .. 90 deg
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   139                  angle = (IFX_LUT_ANGLE_PI / 2) - Ifx_LutAtan2F32_fxpAnglePrivate(fx / fy); // ok
+	div.f	d15,d4,d5
+.L225:
+	movh	d0,#17536
+.L226:
+	mul.f	d0,d15,d0
+.L227:
+	ftouz	d15,d0
+.L131:
+	utof	d1,d15
+.L228:
+	sub.f	d0,d0,d1
+.L229:
+	movh	d1,#16128
+.L230:
+	cmp.f	d0,d0,d1
+	extr.u	d0,d0,#2,#1
+.L231:
+	add	d15,d0
+.L232:
+	movh.a	a15,#@his(Ifx_g_LutAtan2F32_FxpAngle_table)
+	lea	a15,[a15]@los(Ifx_g_LutAtan2F32_FxpAngle_table)
+.L233:
+	addsc.a	a15,a15,d15,#2
+.L87:
+	mov	d15,#1024
+.L6:
+.L12:
+	ld.w	d0,[a15]
+.L89:
+	sub	d15,d0
+.L234:
+	j	.L15
+.L14:
+	div.f	d15,d5,d4
+.L235:
+	movh	d0,#17536
+.L236:
+	mul.f	d0,d15,d0
+.L237:
+	ftouz	d15,d0
+.L132:
+	utof	d1,d15
+.L238:
+	sub.f	d0,d0,d1
+.L239:
+	movh	d1,#16128
+.L240:
+	cmp.f	d0,d0,d1
+	extr.u	d0,d0,#2,#1
+.L241:
+	add	d15,d0
+.L242:
+	movh.a	a15,#@his(Ifx_g_LutAtan2F32_FxpAngle_table)
+	lea	a15,[a15]@los(Ifx_g_LutAtan2F32_FxpAngle_table)
+.L243:
+	addsc.a	a15,a15,d15,#2
+	ld.w	d15,[a15]
+.L15:
+.L13:
+.L9:
+.L8:
+.L5:
+
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   140              }
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   141          }
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   142      }
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   143  
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   144      return angle & (IFX_LUT_ANGLE_RESOLUTION - 1);
+	insert	d2,d15,#0,#12,#20
+.L244:
+
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   145  }
+	ret
+.L59:
+	
+__Ifx_LutAtan2F32_fxpAngle_function_end:
+	.size	Ifx_LutAtan2F32_fxpAngle,__Ifx_LutAtan2F32_fxpAngle_function_end-Ifx_LutAtan2F32_fxpAngle
+.L51:
+	; End of function
+	
+	.sdecl	'.text.Ifx_LutAtan2F32.Ifx_LutAtan2F32_float32',code,cluster('Ifx_LutAtan2F32_float32')
+	.sect	'.text.Ifx_LutAtan2F32.Ifx_LutAtan2F32_float32'
+	.align	2
+	
+	.global	Ifx_LutAtan2F32_float32
+
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   146  
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   147  
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   148  float32 Ifx_LutAtan2F32_float32(float32 y, float32 x)
+; Function Ifx_LutAtan2F32_float32
+.L37:
+Ifx_LutAtan2F32_float32:	.type	func
+
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   149  {
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   150      float32 angle;
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   151  
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   152      if (y < 0)
+	mov	d15,#0
+.L249:
+	cmp.f	d0,d4,d15
+.L250:
+	jz.t	d0:0,.L17
+.L251:
+
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   153      {
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   154          if (x < 0)
+	cmp.f	d15,d5,d15
+.L252:
+	jz.t	d15:0,.L18
+.L253:
+
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   155          {
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   156              if (-y < -x)
+	insn.t	d15,d4:31,d4:31
+.L254:
+	insn.t	d0,d5:31,d5:31
+.L255:
+	cmp.f	d15,d15,d0
+.L256:
+	jz.t	d15:0,.L19
+.L257:
+
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   157              {   // 180 .. 225 deg
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   158                  angle = -IFX_PI + Ifx_LutAtan2F32_float32Private(-y / -x);
+	insn.t	d15,d4:31,d4:31
+.L258:
+	insn.t	d0,d5:31,d5:31
+.L259:
+	div.f	d15,d15,d0
+.L97:
+	movh	d0,#17536
+.L260:
+	mul.f	d15,d15,d0
+.L98:
+	mov	d0,#4059
+	addih	d0,d0,#49225
+.L261:
+	j	.L20
+.L19:
+
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   159              }
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   160              else
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   161              {   // 225 .. 270 deg
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   162                  angle = -(IFX_PI / 2) - Ifx_LutAtan2F32_float32Private(-x / -y);
+	insn.t	d15,d5:31,d5:31
+.L262:
+	insn.t	d0,d4:31,d4:31
+.L263:
+	div.f	d15,d15,d0
+.L102:
+	movh	d0,#17536
+.L264:
+	mul.f	d15,d15,d0
+.L103:
+	mov	d0,#4059
+	addih	d0,d0,#49097
+.L265:
+	j	.L21
+.L18:
+
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   163              }
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   164          }
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   165          else // x >= 0
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   166          {
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   167              if (-y < x)
+	insn.t	d15,d4:31,d4:31
+.L266:
+	cmp.f	d15,d15,d5
+.L267:
+	jz.t	d15:0,.L22
+.L268:
+
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   168              { // 315 .. 360 deg
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   169                  angle = -Ifx_LutAtan2F32_float32Private(-y / x); // ok
+	insn.t	d15,d4:31,d4:31
+.L269:
+	div.f	d15,d15,d5
+.L104:
+	movh	d0,#17536
+.L270:
+	mul.f	d15,d15,d0
+.L271:
+	ftoiz	d15,d15
+.L272:
+	movh.a	a15,#@his(Ifx_g_LutAtan2F32_table)
+	lea	a15,[a15]@los(Ifx_g_LutAtan2F32_table)
+.L273:
+	addsc.a	a15,a15,d15,#2
+	ld.w	d15,[a15]
+.L105:
+	insn.t	d2,d15:31,d15:31
+.L133:
+
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   170              }
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   171              else
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   172              {                                                      // 225 .. 270 deg
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   173                  angle = -(IFX_PI / 2) + Ifx_LutAtan2F32_float32Private(x / -y);
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   174              }
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   175          }
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   176      }
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   177      else // y >= 0
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   178      {
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   179          if (x < 0)
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   180          {
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   181              if (y < -x)
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   182              {                                                                    // 135 .. 180 deg
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   183                  angle = IFX_PI - Ifx_LutAtan2F32_float32Private(y / -x);       // ok
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   184              }
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   185              else
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   186              {                                                                    // 90 .. 135 deg
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   187                  angle = (IFX_PI / 2) + Ifx_LutAtan2F32_float32Private(-x / y); // ok
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   188              }
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   189          }
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   190          else // x >= 0
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   191          {
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   192              if (y < x)
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   193              {                                                                   // 0 .. 45 deg
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   194                  angle = Ifx_LutAtan2F32_float32Private(y / x);                // ok
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   195              }
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   196              else
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   197              {                                                                   // 45 .. 90 deg
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   198                  angle = (IFX_PI / 2) - Ifx_LutAtan2F32_float32Private(x / y); // ok
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   199              }
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   200          }
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   201      }
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   202  
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   203      return angle;
+; ..\Libraries\BaseSw\Service\CpuGeneric\SysSe\Math\Ifx_LutAtan2F32.c	   204  }
+	ret
+.L22:
+	insn.t	d15,d4:31,d4:31
+.L274:
+	div.f	d15,d5,d15
+.L106:
+	movh	d0,#17536
+.L275:
+	mul.f	d15,d15,d0
+.L107:
+	mov	d0,#4059
+	addih	d0,d0,#49097
+.L276:
+	j	.L24
+.L17:
+	cmp.f	d15,d5,d15
+.L277:
+	jz.t	d15:0,.L25
+.L278:
+	insn.t	d15,d5:31,d5:31
+.L279:
+	cmp.f	d15,d4,d15
+.L280:
+	jz.t	d15:0,.L26
+.L281:
+	insn.t	d15,d5:31,d5:31
+.L282:
+	div.f	d15,d4,d15
+.L108:
+	movh	d0,#17536
+.L283:
+	mul.f	d15,d15,d0
+.L109:
+	mov	d0,#4059
+	addih	d0,d0,#16457
+.L284:
+	j	.L27
+.L26:
+	insn.t	d15,d5:31,d5:31
+.L285:
+	div.f	d15,d15,d4
+.L110:
+	movh	d0,#17536
+.L286:
+	mul.f	d15,d15,d0
+.L111:
+	mov	d0,#4059
+	addih	d0,d0,#16329
+.L20:
+.L24:
+	ftoiz	d15,d15
+.L287:
+	movh.a	a15,#@his(Ifx_g_LutAtan2F32_table)
+	lea	a15,[a15]@los(Ifx_g_LutAtan2F32_table)
+.L288:
+	addsc.a	a15,a15,d15,#2
+	ld.w	d15,[a15]
+.L113:
+	add.f	d2,d15,d0
+.L134:
+	ret
+.L25:
+	cmp.f	d15,d4,d5
+	jnz.t	d15:0,.L29
+.L289:
+	div.f	d15,d5,d4
+.L114:
+	movh	d0,#17536
+.L290:
+	mul.f	d15,d15,d0
+.L115:
+	mov	d0,#4059
+	addih	d0,d0,#16329
+.L21:
+.L27:
+	ftoiz	d15,d15
+.L291:
+	movh.a	a15,#@his(Ifx_g_LutAtan2F32_table)
+	lea	a15,[a15]@los(Ifx_g_LutAtan2F32_table)
+.L292:
+	addsc.a	a15,a15,d15,#2
+	ld.w	d15,[a15]
+.L117:
+	sub.f	d2,d0,d15
+.L135:
+	ret
+.L29:
+	div.f	d15,d4,d5
+.L118:
+	movh	d0,#17536
+.L293:
+	mul.f	d15,d15,d0
+.L294:
+	ftoiz	d15,d15
+.L295:
+	movh.a	a15,#@his(Ifx_g_LutAtan2F32_table)
+	lea	a15,[a15]@los(Ifx_g_LutAtan2F32_table)
+.L296:
+	addsc.a	a15,a15,d15,#2
+	ld.w	d2,[a15]
+.L119:
+	ret
+.L92:
+	
+__Ifx_LutAtan2F32_float32_function_end:
+	.size	Ifx_LutAtan2F32_float32,__Ifx_LutAtan2F32_float32_function_end-Ifx_LutAtan2F32_float32
+.L56:
+	; End of function
+	
+	.calls	'Ifx_LutAtan2F32_init','',0
+	.calls	'Ifx_LutAtan2F32_fxpAngle','',0
+	.extern	Ifx_g_LutAtan2F32_FxpAngle_table
+	.extern	Ifx_g_LutAtan2F32_table
+	.calls	'Ifx_LutAtan2F32_float32','',0
+	.sdecl	'.debug_info',debug
+	.sect	'.debug_info'
+.L39:
+	.word	1213
+	.half	3
+	.word	.L40
+	.byte	4
+.L38:
+	.byte	1
+	.byte	'..\\Libraries\\BaseSw\\Service\\CpuGeneric\\SysSe\\Math\\Ifx_LutAtan2F32.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Debug\\',0,12,1
+	.word	.L41
+	.byte	2,1,1,3
+	.word	192
+	.byte	4
+	.byte	'Ifx__jump_and_link',0,3,1,61,17,1,1,5
+	.byte	'fun',0,1,61,43
+	.word	195
+	.byte	6,0,7
+	.byte	'__fract',0,4,128,1
+.L60:
+	.byte	7
+	.byte	'float',0,4,4,8
+	.byte	'Ifx__float_to_fract',0,3,1,152,2,18
+	.word	240
+	.byte	1,1,5
+	.byte	'a',0,1,152,2,44
+	.word	252
+	.byte	6,0,7
+	.byte	'unsigned long long int',0,8,7,9
+	.byte	'void',0,3
+	.word	332
+	.byte	8
+	.byte	'__ld64',0,3,2,135,1,19
+	.word	306
+	.byte	1,1,5
+	.byte	'addr',0,2,135,1,32
+	.word	338
+	.byte	6,0,4
+	.byte	'__st64',0,3,2,143,1,17,1,1,5
+	.byte	'addr',0,2,143,1,30
+	.word	338
+	.byte	5
+	.byte	'value',0,2,143,1,43
+	.word	306
+	.byte	6,0
+.L58:
+	.byte	7
+	.byte	'long int',0,4,5
+.L66:
+	.byte	8
+	.byte	'Ifx_LutAtan2F32_fxpAnglePrivate',0,3,3,66,29
+	.word	424
+	.byte	1,1
+.L69:
+	.byte	5
+	.byte	'valf',0,3,66,69
+	.word	252
+.L71:
+	.byte	6,0
+.L96:
+	.byte	8
+	.byte	'Ifx_LutAtan2F32_float32Private',0,3,3,81,20
+	.word	252
+	.byte	1,1
+.L99:
+	.byte	5
+	.byte	'val',0,3,81,59
+	.word	252
+.L101:
+	.byte	6,0,7
+	.byte	'int',0,4,5,10
+	.word	550
+	.byte	11
+	.byte	'__c11_atomic_thread_fence',0,1,1,1,1,12
+	.word	557
+	.byte	0,7
+	.byte	'unsigned int',0,4,7,13
+	.word	599
+	.byte	3
+	.word	599
+	.byte	14
+	.byte	'__cmpswapw',0
+	.word	615
+	.byte	1,1,1,1,15
+	.byte	'p',0
+	.word	620
+	.byte	15
+	.byte	'value',0
+	.word	599
+	.byte	15
+	.byte	'compare',0
+	.word	599
+	.byte	0,16
+	.word	200
+	.byte	17
+	.word	226
+	.byte	6,0,16
+	.word	261
+	.byte	17
+	.word	293
+	.byte	6,0,16
+	.word	343
+	.byte	17
+	.word	362
+	.byte	6,0,16
+	.word	378
+	.byte	17
+	.word	393
+	.byte	17
+	.word	407
+	.byte	6,0
+.L72:
+	.byte	7
+	.byte	'unsigned long int',0,4,7,16
+	.word	436
+	.byte	17
+	.word	479
+	.byte	6,0,16
+	.word	494
+	.byte	17
+	.word	536
+	.byte	6,0,7
+	.byte	'short int',0,2,5,18
+	.byte	'__wchar_t',0,3,1,1
+	.word	775
+	.byte	18
+	.byte	'__size_t',0,3,1,1
+	.word	599
+	.byte	18
+	.byte	'__ptrdiff_t',0,3,1,1
+	.word	550
+	.byte	19,1,3
+	.word	843
+	.byte	18
+	.byte	'__codeptr',0,3,1,1
+	.word	845
+	.byte	7
+	.byte	'unsigned char',0,1,8,18
+	.byte	'uint8',0,4,105,29
+	.word	868
+	.byte	7
+	.byte	'unsigned short int',0,2,7,18
+	.byte	'uint16',0,4,109,29
+	.word	899
+	.byte	18
+	.byte	'uint32',0,4,113,29
+	.word	730
+	.byte	18
+	.byte	'uint64',0,4,118,29
+	.word	306
+	.byte	18
+	.byte	'sint16',0,4,126,29
+	.word	775
+	.byte	18
+	.byte	'sint32',0,4,131,1,29
+	.word	424
+	.byte	7
+	.byte	'long long int',0,8,5,18
+	.byte	'sint64',0,4,138,1,29
+	.word	997
+	.byte	18
+	.byte	'float32',0,4,167,1,29
+	.word	252
+	.byte	18
+	.byte	'pvoid',0,5,57,28
+	.word	338
+	.byte	18
+	.byte	'Ifx_TickTime',0,5,79,28
+	.word	997
+	.byte	18
+	.byte	'Ifx_Lut_FxpAngle',0,6,84,16
+	.word	424
+	.byte	20,132,32
+	.word	424
+	.byte	21,128,8,0,10
+	.word	1107
+	.byte	22
+	.byte	'Ifx_g_LutAtan2F32_FxpAngle_table',0,7,60,43
+	.word	1118
+	.byte	1,1,20,132,32
+	.word	252
+	.byte	21,128,8,0,10
+	.word	1166
+	.byte	22
+	.byte	'Ifx_g_LutAtan2F32_table',0,7,61,43
+	.word	1177
+	.byte	1,1,0
+	.sdecl	'.debug_abbrev',debug
+	.sect	'.debug_abbrev'
+.L40:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,16,6,0,0,2,21,0,54,15,39,12,0,0,3,15,0,73,19,0,0,4,46,1,3,8,32,13
+	.byte	58,15,59,15,57,15,54,15,39,12,0,0,5,5,0,3,8,58,15,59,15,57,15,73,19,0,0,6,11,0,0,0,7,36,0,3,8,11,15,62
+	.byte	15,0,0,8,46,1,3,8,32,13,58,15,59,15,57,15,73,19,54,15,39,12,0,0,9,59,0,3,8,0,0,10,38,0,73,19,0,0,11,46
+	.byte	1,3,8,54,15,39,12,63,12,60,12,0,0,12,5,0,73,19,0,0,13,53,0,73,19,0,0,14,46,1,3,8,73,19,54,15,39,12,63
+	.byte	12,60,12,0,0,15,5,0,3,8,73,19,0,0,16,46,1,49,19,0,0,17,5,0,49,19,0,0,18,22,0,3,8,58,15,59,15,57,15,73
+	.byte	19,0,0,19,21,0,54,15,0,0,20,1,1,11,15,73,19,0,0,21,33,0,47,15,0,0,22,52,0,3,8,58,15,59,15,57,15,73,19
+	.byte	63,12,60,12,0,0,0
+	.sdecl	'.debug_line',debug
+	.sect	'.debug_line'
+.L41:
+	.word	.L137-.L136
+.L136:
+	.half	3
+	.word	.L139-.L138
+.L138:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Std',0
+	.byte	0
+	.byte	'IfxCpu_IntrinsicsTasking.h',0,1,0,0
+	.byte	'IfxCpu_Intrinsics.h',0,1,0,0
+	.byte	'..\\Libraries\\BaseSw\\Service\\CpuGeneric\\SysSe\\Math\\Ifx_LutAtan2F32.c',0,0,0,0
+	.byte	'Platform_Types.h',0,1,0,0
+	.byte	'Ifx_Types.h',0,1,0,0
+	.byte	'..\\Libraries\\BaseSw\\Service\\CpuGeneric\\SysSe\\Math\\Ifx_Lut.h',0,0,0,0
+	.byte	'..\\Libraries\\BaseSw\\Service\\CpuGeneric\\SysSe\\Math\\Ifx_LutAtan2F32.h',0,0,0,0,0
+.L139:
+.L137:
+	.sdecl	'.debug_info',debug,cluster('Ifx_LutAtan2F32_init')
+	.sect	'.debug_info'
+.L42:
+	.word	248
+	.half	3
+	.word	.L43
+	.byte	4,1
+	.byte	'..\\Libraries\\BaseSw\\Service\\CpuGeneric\\SysSe\\Math\\Ifx_LutAtan2F32.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Debug\\',0,12,1
+	.word	.L45,.L44
+	.byte	2
+	.word	.L38
+	.byte	3
+	.byte	'Ifx_LutAtan2F32_init',0,1,49,6,1,1,1
+	.word	.L33,.L57,.L32
+	.byte	4
+	.word	.L33,.L57
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('Ifx_LutAtan2F32_init')
+	.sect	'.debug_abbrev'
+.L43:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('Ifx_LutAtan2F32_init')
+	.sect	'.debug_line'
+.L44:
+	.word	.L141-.L140
+.L140:
+	.half	3
+	.word	.L143-.L142
+.L142:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'..\\Libraries\\BaseSw\\Service\\CpuGeneric\\SysSe\\Math\\Ifx_LutAtan2F32.c',0,0,0,0,0
+.L143:
+	.byte	5,1,7,0,5,2
+	.word	.L33
+	.byte	3,62,1,7,9
+	.half	.L46-.L33
+	.byte	0,1,1
+.L141:
+	.sdecl	'.debug_ranges',debug,cluster('Ifx_LutAtan2F32_init')
+	.sect	'.debug_ranges'
+.L45:
+	.word	-1,.L33,0,.L46-.L33,0,0
+	.sdecl	'.debug_info',debug,cluster('Ifx_LutAtan2F32_fxpAngle')
+	.sect	'.debug_info'
+.L47:
+	.word	784
+	.half	3
+	.word	.L48
+	.byte	4,1
+	.byte	'..\\Libraries\\BaseSw\\Service\\CpuGeneric\\SysSe\\Math\\Ifx_LutAtan2F32.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Debug\\',0,12,1
+	.word	.L50,.L49
+	.byte	2
+	.word	.L38
+	.byte	3
+	.byte	'Ifx_LutAtan2F32_fxpAngle',0,1,87,18
+	.word	.L58
+	.byte	1,1,1
+	.word	.L35,.L59,.L34
+	.byte	4
+	.byte	'x',0,1,87,51
+	.word	.L60,.L61
+	.byte	4
+	.byte	'y',0,1,87,62
+	.word	.L60,.L62
+	.byte	5
+	.word	.L35,.L59
+	.byte	6
+	.byte	'angle',0,1,89,22
+	.word	.L58,.L63
+	.byte	6
+	.byte	'fx',0,1,90,22
+	.word	.L60,.L64
+	.byte	6
+	.byte	'fy',0,1,91,22
+	.word	.L60,.L65
+	.byte	7
+	.word	.L66,.L67,.L68
+	.byte	8
+	.word	.L69,.L70
+	.byte	9
+	.word	.L71,.L67,.L68
+	.byte	6
+	.byte	'vali',0,1,68,12
+	.word	.L72,.L73
+	.byte	0,0,7
+	.word	.L66,.L4,.L74
+	.byte	8
+	.word	.L69,.L70
+	.byte	9
+	.word	.L71,.L4,.L74
+	.byte	6
+	.byte	'vali',0,1,68,12
+	.word	.L72,.L75
+	.byte	0,0,7
+	.word	.L66,.L76,.L77
+	.byte	8
+	.word	.L69,.L70
+	.byte	9
+	.word	.L71,.L76,.L77
+	.byte	6
+	.byte	'vali',0,1,68,12
+	.word	.L72,.L78
+	.byte	0,0,7
+	.word	.L66,.L7,.L79
+	.byte	8
+	.word	.L69,.L70
+	.byte	9
+	.word	.L71,.L7,.L79
+	.byte	6
+	.byte	'vali',0,1,68,12
+	.word	.L72,.L80
+	.byte	0,0,7
+	.word	.L66,.L81,.L82
+	.byte	8
+	.word	.L69,.L70
+	.byte	9
+	.word	.L71,.L81,.L82
+	.byte	6
+	.byte	'vali',0,1,68,12
+	.word	.L72,.L83
+	.byte	0,0,7
+	.word	.L66,.L11,.L84
+	.byte	8
+	.word	.L69,.L70
+	.byte	9
+	.word	.L71,.L11,.L84
+	.byte	6
+	.byte	'vali',0,1,68,12
+	.word	.L72,.L85
+	.byte	0,0,7
+	.word	.L66,.L86,.L87
+	.byte	8
+	.word	.L69,.L70
+	.byte	10
+	.word	.L71,.L88
+	.byte	6
+	.byte	'vali',0,1,68,12
+	.word	.L72,.L90
+	.byte	0,0,7
+	.word	.L66,.L12,.L89
+	.byte	8
+	.word	.L69,.L70
+	.byte	0,7
+	.word	.L66,.L14,.L5
+	.byte	8
+	.word	.L69,.L70
+	.byte	9
+	.word	.L71,.L14,.L5
+	.byte	6
+	.byte	'vali',0,1,68,12
+	.word	.L72,.L91
+	.byte	0,0,0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('Ifx_LutAtan2F32_fxpAngle')
+	.sect	'.debug_abbrev'
+.L48:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
+	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,7,29,1,49,16,17,1,18,1,0,0,8,5,0,49,16,2,6,0,0,9,11,1,49,16,17
+	.byte	1,18,1,0,0,10,11,1,49,16,85,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('Ifx_LutAtan2F32_fxpAngle')
+	.sect	'.debug_line'
+.L49:
+	.word	.L145-.L144
+.L144:
+	.half	3
+	.word	.L147-.L146
+.L146:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'..\\Libraries\\BaseSw\\Service\\CpuGeneric\\SysSe\\Math\\Ifx_LutAtan2F32.c',0,0,0,0,0
+.L147:
+	.byte	5,13,7,0,5,2
+	.word	.L35
+	.byte	3,220,0,1,5,11,9
+	.half	.L148-.L35
+	.byte	1,5,5,9
+	.half	.L149-.L148
+	.byte	1,5,15,7,9
+	.half	.L150-.L149
+	.byte	3,2,1,5,9,9
+	.half	.L151-.L150
+	.byte	1,5,17,7,9
+	.half	.L152-.L151
+	.byte	3,2,1,5,22,9
+	.half	.L153-.L152
+	.byte	1,5,20,9
+	.half	.L154-.L153
+	.byte	1,5,13,9
+	.half	.L155-.L154
+	.byte	1,5,77,7,9
+	.half	.L67-.L155
+	.byte	3,2,1,5,83,9
+	.half	.L156-.L67
+	.byte	1,5,81,9
+	.half	.L157-.L156
+	.byte	1,5,12,9
+	.half	.L158-.L157
+	.byte	3,98,1,5,33,9
+	.half	.L159-.L158
+	.byte	1,5,12,9
+	.half	.L160-.L159
+	.byte	3,1,1,5,17,9
+	.half	.L120-.L160
+	.byte	3,2,1,5,15,9
+	.half	.L161-.L120
+	.byte	1,5,34,9
+	.half	.L162-.L161
+	.byte	1,5,32,9
+	.half	.L163-.L162
+	.byte	1,5,13,9
+	.half	.L164-.L163
+	.byte	3,2,1,5,12,9
+	.half	.L165-.L164
+	.byte	3,3,1,5,44,9
+	.half	.L166-.L165
+	.byte	1,5,76,9
+	.half	.L68-.L166
+	.byte	3,22,1,5,87,9
+	.half	.L121-.L68
+	.byte	1,5,83,9
+	.half	.L4-.L121
+	.byte	3,4,1,5,89,9
+	.half	.L167-.L4
+	.byte	1,5,87,9
+	.half	.L168-.L167
+	.byte	1,5,12,9
+	.half	.L169-.L168
+	.byte	3,94,1,5,33,9
+	.half	.L170-.L169
+	.byte	1,5,12,9
+	.half	.L171-.L170
+	.byte	3,1,1,5,17,9
+	.half	.L122-.L171
+	.byte	3,2,1,5,15,9
+	.half	.L172-.L122
+	.byte	1,5,34,9
+	.half	.L173-.L172
+	.byte	1,5,32,9
+	.half	.L174-.L173
+	.byte	1,5,13,9
+	.half	.L175-.L174
+	.byte	3,2,1,5,12,9
+	.half	.L176-.L175
+	.byte	3,3,1,5,44,9
+	.half	.L177-.L176
+	.byte	1,5,25,9
+	.half	.L74-.L177
+	.byte	3,26,1,5,13,9
+	.half	.L123-.L74
+	.byte	3,126,1,5,17,9
+	.half	.L3-.L123
+	.byte	3,7,1,5,20,9
+	.half	.L178-.L3
+	.byte	1,5,13,9
+	.half	.L179-.L178
+	.byte	1,5,58,7,9
+	.half	.L76-.L179
+	.byte	3,2,1,5,62,9
+	.half	.L180-.L76
+	.byte	1,5,12,9
+	.half	.L181-.L180
+	.byte	3,87,1,5,33,9
+	.half	.L182-.L181
+	.byte	1,5,12,9
+	.half	.L183-.L182
+	.byte	3,1,1,5,17,9
+	.half	.L124-.L183
+	.byte	3,2,1,5,15,9
+	.half	.L184-.L124
+	.byte	1,5,34,9
+	.half	.L185-.L184
+	.byte	1,5,32,9
+	.half	.L186-.L185
+	.byte	1,5,13,9
+	.half	.L187-.L186
+	.byte	3,2,1,5,12,9
+	.half	.L188-.L187
+	.byte	3,3,1,5,44,9
+	.half	.L189-.L188
+	.byte	1,5,25,9
+	.half	.L77-.L189
+	.byte	3,33,1,5,67,9
+	.half	.L190-.L77
+	.byte	1,5,88,9
+	.half	.L7-.L190
+	.byte	3,4,1,5,86,9
+	.half	.L191-.L7
+	.byte	1,5,12,9
+	.half	.L192-.L191
+	.byte	3,83,1,5,33,9
+	.half	.L193-.L192
+	.byte	1,5,12,9
+	.half	.L194-.L193
+	.byte	3,1,1,5,17,9
+	.half	.L125-.L194
+	.byte	3,2,1,5,15,9
+	.half	.L195-.L125
+	.byte	1,5,34,9
+	.half	.L196-.L195
+	.byte	1,5,32,9
+	.half	.L197-.L196
+	.byte	1,5,13,9
+	.half	.L198-.L197
+	.byte	3,2,1,5,12,9
+	.half	.L199-.L198
+	.byte	3,3,1,5,44,9
+	.half	.L200-.L199
+	.byte	1,5,82,9
+	.half	.L79-.L200
+	.byte	3,37,1,5,9,9
+	.half	.L126-.L79
+	.byte	3,120,1,5,15,9
+	.half	.L2-.L126
+	.byte	3,14,1,5,9,9
+	.half	.L201-.L2
+	.byte	1,5,21,7,9
+	.half	.L202-.L201
+	.byte	3,2,1,5,19,9
+	.half	.L203-.L202
+	.byte	1,5,13,9
+	.half	.L204-.L203
+	.byte	1,5,81,7,9
+	.half	.L81-.L204
+	.byte	3,2,1,5,79,9
+	.half	.L205-.L81
+	.byte	1,5,12,9
+	.half	.L206-.L205
+	.byte	3,73,1,5,33,9
+	.half	.L207-.L206
+	.byte	1,5,12,9
+	.half	.L208-.L207
+	.byte	3,1,1,5,17,9
+	.half	.L127-.L208
+	.byte	3,2,1,5,15,9
+	.half	.L209-.L127
+	.byte	1,5,34,9
+	.half	.L210-.L209
+	.byte	1,5,32,9
+	.half	.L211-.L210
+	.byte	1,5,13,9
+	.half	.L212-.L211
+	.byte	3,2,1,5,12,9
+	.half	.L213-.L212
+	.byte	3,3,1,5,44,9
+	.half	.L214-.L213
+	.byte	1,5,25,9
+	.half	.L82-.L214
+	.byte	3,47,1,5,85,9
+	.half	.L128-.L82
+	.byte	1,5,82,9
+	.half	.L11-.L128
+	.byte	3,4,1,5,86,9
+	.half	.L215-.L11
+	.byte	1,5,12,9
+	.half	.L216-.L215
+	.byte	3,69,1,5,33,9
+	.half	.L217-.L216
+	.byte	1,5,12,9
+	.half	.L218-.L217
+	.byte	3,1,1,5,17,9
+	.half	.L129-.L218
+	.byte	3,2,1,5,15,9
+	.half	.L219-.L129
+	.byte	1,5,34,9
+	.half	.L220-.L219
+	.byte	1,5,32,9
+	.half	.L221-.L220
+	.byte	1,5,13,9
+	.half	.L222-.L221
+	.byte	3,2,1,5,12,9
+	.half	.L223-.L222
+	.byte	3,3,1,5,44,9
+	.half	.L224-.L223
+	.byte	1,5,81,9
+	.half	.L84-.L224
+	.byte	3,51,1,5,13,9
+	.half	.L130-.L84
+	.byte	3,126,1,9
+	.half	.L10-.L130
+	.byte	3,7,1,5,85,9
+	.half	.L86-.L10
+	.byte	3,6,1,5,12,9
+	.half	.L225-.L86
+	.byte	3,186,127,1,5,33,9
+	.half	.L226-.L225
+	.byte	1,5,12,9
+	.half	.L227-.L226
+	.byte	3,1,1,5,17,9
+	.half	.L131-.L227
+	.byte	3,2,1,5,15,9
+	.half	.L228-.L131
+	.byte	1,5,34,9
+	.half	.L229-.L228
+	.byte	1,5,32,9
+	.half	.L230-.L229
+	.byte	1,5,13,9
+	.half	.L231-.L230
+	.byte	3,2,1,5,12,9
+	.half	.L232-.L231
+	.byte	3,3,1,5,44,9
+	.half	.L233-.L232
+	.byte	1,5,43,9
+	.half	.L87-.L233
+	.byte	3,62,1,5,44,9
+	.half	.L12-.L87
+	.byte	3,66,1,5,48,9
+	.half	.L89-.L12
+	.byte	3,62,1,5,65,9
+	.half	.L234-.L89
+	.byte	3,124,1,5,60,9
+	.half	.L14-.L234
+	.byte	1,5,12,9
+	.half	.L235-.L14
+	.byte	3,190,127,1,5,33,9
+	.half	.L236-.L235
+	.byte	1,5,12,9
+	.half	.L237-.L236
+	.byte	3,1,1,5,17,9
+	.half	.L132-.L237
+	.byte	3,2,1,5,15,9
+	.half	.L238-.L132
+	.byte	1,5,34,9
+	.half	.L239-.L238
+	.byte	1,5,32,9
+	.half	.L240-.L239
+	.byte	1,5,13,9
+	.half	.L241-.L240
+	.byte	3,2,1,5,12,9
+	.half	.L242-.L241
+	.byte	3,3,1,5,44,9
+	.half	.L243-.L242
+	.byte	1,5,18,9
+	.half	.L5-.L243
+	.byte	3,195,0,1,5,1,9
+	.half	.L244-.L5
+	.byte	3,1,1,7,9
+	.half	.L51-.L244
+	.byte	0,1,1
+.L145:
+	.sdecl	'.debug_ranges',debug,cluster('Ifx_LutAtan2F32_fxpAngle')
+	.sect	'.debug_ranges'
+.L50:
+	.word	-1,.L35,0,.L51-.L35,0,0
+.L88:
+	.word	-1,.L35,.L86-.L35,.L87-.L35,.L12-.L35,.L89-.L35,0,0
+	.sdecl	'.debug_info',debug,cluster('Ifx_LutAtan2F32_float32')
+	.sect	'.debug_info'
+.L52:
+	.word	632
+	.half	3
+	.word	.L53
+	.byte	4,1
+	.byte	'..\\Libraries\\BaseSw\\Service\\CpuGeneric\\SysSe\\Math\\Ifx_LutAtan2F32.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Debug\\',0,12,1
+	.word	.L55,.L54
+	.byte	2
+	.word	.L38
+	.byte	3
+	.byte	'Ifx_LutAtan2F32_float32',0,1,148,1,9
+	.word	.L60
+	.byte	1,1,1
+	.word	.L37,.L92,.L36
+	.byte	4
+	.byte	'y',0,1,148,1,41
+	.word	.L60,.L93
+	.byte	4
+	.byte	'x',0,1,148,1,52
+	.word	.L60,.L94
+	.byte	5
+	.word	.L37,.L92
+	.byte	6
+	.byte	'angle',0,1,150,1,13
+	.word	.L60,.L95
+	.byte	7
+	.word	.L96,.L97,.L98
+	.byte	8
+	.word	.L99,.L100
+	.byte	9
+	.word	.L101,.L97,.L98
+	.byte	0,7
+	.word	.L96,.L102,.L103
+	.byte	8
+	.word	.L99,.L100
+	.byte	9
+	.word	.L101,.L102,.L103
+	.byte	0,7
+	.word	.L96,.L104,.L105
+	.byte	8
+	.word	.L99,.L100
+	.byte	9
+	.word	.L101,.L104,.L105
+	.byte	0,7
+	.word	.L96,.L106,.L107
+	.byte	8
+	.word	.L99,.L100
+	.byte	9
+	.word	.L101,.L106,.L107
+	.byte	0,7
+	.word	.L96,.L108,.L109
+	.byte	8
+	.word	.L99,.L100
+	.byte	9
+	.word	.L101,.L108,.L109
+	.byte	0,7
+	.word	.L96,.L110,.L111
+	.byte	8
+	.word	.L99,.L100
+	.byte	10
+	.word	.L101,.L112
+	.byte	0,7
+	.word	.L96,.L24,.L113
+	.byte	8
+	.word	.L99,.L100
+	.byte	0,7
+	.word	.L96,.L114,.L115
+	.byte	8
+	.word	.L99,.L100
+	.byte	10
+	.word	.L101,.L116
+	.byte	0,7
+	.word	.L96,.L27,.L117
+	.byte	8
+	.word	.L99,.L100
+	.byte	0,7
+	.word	.L96,.L118,.L119
+	.byte	8
+	.word	.L99,.L100
+	.byte	9
+	.word	.L101,.L118,.L119
+	.byte	0,0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('Ifx_LutAtan2F32_float32')
+	.sect	'.debug_abbrev'
+.L53:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
+	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,7,29,1,49,16,17,1,18,1,0,0,8,5,0,49,16,2,6,0,0,9,11,0,49,16,17
+	.byte	1,18,1,0,0,10,11,0,49,16,85,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('Ifx_LutAtan2F32_float32')
+	.sect	'.debug_line'
+.L54:
+	.word	.L246-.L245
+.L245:
+	.half	3
+	.word	.L248-.L247
+.L247:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'..\\Libraries\\BaseSw\\Service\\CpuGeneric\\SysSe\\Math\\Ifx_LutAtan2F32.c',0,0,0,0,0
+.L248:
+	.byte	5,13,7,0,5,2
+	.word	.L37
+	.byte	3,151,1,1,5,11,9
+	.half	.L249-.L37
+	.byte	1,5,5,9
+	.half	.L250-.L249
+	.byte	1,5,15,7,9
+	.half	.L251-.L250
+	.byte	3,2,1,5,9,9
+	.half	.L252-.L251
+	.byte	1,5,17,7,9
+	.half	.L253-.L252
+	.byte	3,2,1,5,22,9
+	.half	.L254-.L253
+	.byte	1,5,20,9
+	.half	.L255-.L254
+	.byte	1,5,13,9
+	.half	.L256-.L255
+	.byte	1,5,66,7,9
+	.half	.L257-.L256
+	.byte	3,2,1,5,71,9
+	.half	.L258-.L257
+	.byte	1,5,69,9
+	.half	.L259-.L258
+	.byte	1,5,48,9
+	.half	.L97-.L259
+	.byte	3,181,127,1,5,46,9
+	.half	.L260-.L97
+	.byte	1,5,25,9
+	.half	.L98-.L260
+	.byte	3,203,0,1,5,74,9
+	.half	.L261-.L98
+	.byte	1,5,72,9
+	.half	.L19-.L261
+	.byte	3,4,1,5,77,9
+	.half	.L262-.L19
+	.byte	1,5,75,9
+	.half	.L263-.L262
+	.byte	1,5,48,9
+	.half	.L102-.L263
+	.byte	3,177,127,1,5,46,9
+	.half	.L264-.L102
+	.byte	1,5,25,9
+	.half	.L103-.L264
+	.byte	3,207,0,1,5,13,9
+	.half	.L265-.L103
+	.byte	3,126,1,5,17,9
+	.half	.L18-.L265
+	.byte	3,7,1,5,20,9
+	.half	.L266-.L18
+	.byte	1,5,13,9
+	.half	.L267-.L266
+	.byte	1,5,57,7,9
+	.half	.L268-.L267
+	.byte	3,2,1,5,60,9
+	.half	.L269-.L268
+	.byte	1,5,48,9
+	.half	.L104-.L269
+	.byte	3,170,127,1,5,46,9
+	.half	.L270-.L104
+	.byte	1,5,36,9
+	.half	.L271-.L270
+	.byte	1,5,12,9
+	.half	.L272-.L271
+	.byte	1,5,35,9
+	.half	.L273-.L272
+	.byte	1,5,25,9
+	.half	.L105-.L273
+	.byte	3,214,0,1,5,1,9
+	.half	.L133-.L105
+	.byte	3,35,1,5,76,7,9
+	.half	.L22-.L133
+	.byte	3,97,1,5,74,9
+	.half	.L274-.L22
+	.byte	1,5,48,9
+	.half	.L106-.L274
+	.byte	3,166,127,1,5,46,9
+	.half	.L275-.L106
+	.byte	1,5,25,9
+	.half	.L107-.L275
+	.byte	3,218,0,1,5,9,9
+	.half	.L276-.L107
+	.byte	3,120,1,5,15,9
+	.half	.L17-.L276
+	.byte	3,14,1,5,9,9
+	.half	.L277-.L17
+	.byte	1,5,21,7,9
+	.half	.L278-.L277
+	.byte	3,2,1,5,19,9
+	.half	.L279-.L278
+	.byte	1,5,13,9
+	.half	.L280-.L279
+	.byte	1,5,69,7,9
+	.half	.L281-.L280
+	.byte	3,2,1,5,67,9
+	.half	.L282-.L281
+	.byte	1,5,48,9
+	.half	.L108-.L282
+	.byte	3,156,127,1,5,46,9
+	.half	.L283-.L108
+	.byte	1,5,25,9
+	.half	.L109-.L283
+	.byte	3,228,0,1,5,72,9
+	.half	.L284-.L109
+	.byte	1,5,71,9
+	.half	.L26-.L284
+	.byte	3,4,1,5,74,9
+	.half	.L285-.L26
+	.byte	1,5,48,9
+	.half	.L110-.L285
+	.byte	3,152,127,1,5,46,9
+	.half	.L286-.L110
+	.byte	1,5,33,9
+	.half	.L111-.L286
+	.byte	3,232,0,1,5,36,9
+	.half	.L24-.L111
+	.byte	3,152,127,1,5,12,9
+	.half	.L287-.L24
+	.byte	1,5,35,9
+	.half	.L288-.L287
+	.byte	1,5,70,9
+	.half	.L113-.L288
+	.byte	3,232,0,1,5,1,9
+	.half	.L134-.L113
+	.byte	3,17,1,5,13,7,9
+	.half	.L25-.L134
+	.byte	3,116,1,5,73,9
+	.half	.L289-.L25
+	.byte	3,6,1,5,48,9
+	.half	.L114-.L289
+	.byte	3,141,127,1,5,46,9
+	.half	.L290-.L114
+	.byte	1,5,33,9
+	.half	.L115-.L290
+	.byte	3,243,0,1,5,36,9
+	.half	.L27-.L115
+	.byte	3,141,127,1,5,12,9
+	.half	.L291-.L27
+	.byte	1,5,35,9
+	.half	.L292-.L291
+	.byte	1,5,38,9
+	.half	.L117-.L292
+	.byte	3,243,0,1,5,1,9
+	.half	.L135-.L117
+	.byte	3,6,1,5,58,7,9
+	.half	.L29-.L135
+	.byte	3,118,1,5,48,9
+	.half	.L118-.L29
+	.byte	3,145,127,1,5,46,9
+	.half	.L293-.L118
+	.byte	1,5,36,9
+	.half	.L294-.L293
+	.byte	1,5,12,9
+	.half	.L295-.L294
+	.byte	1,5,35,9
+	.half	.L296-.L295
+	.byte	1,5,1,9
+	.half	.L119-.L296
+	.byte	3,249,0,1,7,9
+	.half	.L56-.L119
+	.byte	0,1,1
+.L246:
+	.sdecl	'.debug_ranges',debug,cluster('Ifx_LutAtan2F32_float32')
+	.sect	'.debug_ranges'
+.L55:
+	.word	-1,.L37,0,.L56-.L37,0,0
+.L112:
+	.word	-1,.L37,.L110-.L37,.L111-.L37,.L24-.L37,.L113-.L37,0,0
+.L116:
+	.word	-1,.L37,.L114-.L37,.L115-.L37,.L27-.L37,.L117-.L37,0,0
+	.sdecl	'.debug_loc',debug,cluster('Ifx_LutAtan2F32_float32')
+	.sect	'.debug_loc'
+.L36:
+	.word	-1,.L37,0,.L92-.L37
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L95:
+	.word	-1,.L37,.L133-.L37,.L22-.L37
+	.half	1
+	.byte	82
+	.word	.L134-.L37,.L25-.L37
+	.half	1
+	.byte	82
+	.word	.L135-.L37,.L29-.L37
+	.half	1
+	.byte	82
+	.word	.L119-.L37,.L92-.L37
+	.half	1
+	.byte	82
+	.word	0,0
+.L100:
+	.word	0,0
+.L94:
+	.word	-1,.L37,0,.L92-.L37
+	.half	1
+	.byte	85
+	.word	0,0
+.L93:
+	.word	-1,.L37,0,.L92-.L37
+	.half	1
+	.byte	84
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('Ifx_LutAtan2F32_fxpAngle')
+	.sect	'.debug_loc'
+.L34:
+	.word	-1,.L35,0,.L59-.L35
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L63:
+	.word	-1,.L35,.L121-.L35,.L4-.L35
+	.half	1
+	.byte	95
+	.word	.L77-.L35,.L7-.L35
+	.half	1
+	.byte	95
+	.word	.L126-.L35,.L2-.L35
+	.half	1
+	.byte	95
+	.word	.L130-.L35,.L10-.L35
+	.half	1
+	.byte	95
+	.word	.L89-.L35,.L14-.L35
+	.half	1
+	.byte	95
+	.word	.L5-.L35,.L59-.L35
+	.half	1
+	.byte	95
+	.word	0,0
+.L64:
+	.word	0,0
+.L65:
+	.word	0,0
+.L70:
+	.word	0,0
+.L73:
+	.word	-1,.L35,.L120-.L35,.L68-.L35
+	.half	1
+	.byte	95
+	.word	0,0
+.L75:
+	.word	-1,.L35,.L122-.L35,.L123-.L35
+	.half	1
+	.byte	95
+	.word	0,0
+.L78:
+	.word	-1,.L35,.L124-.L35,.L77-.L35
+	.half	1
+	.byte	95
+	.word	0,0
+.L80:
+	.word	-1,.L35,.L125-.L35,.L79-.L35
+	.half	1
+	.byte	95
+	.word	0,0
+.L83:
+	.word	-1,.L35,.L127-.L35,.L128-.L35
+	.half	1
+	.byte	95
+	.word	0,0
+.L85:
+	.word	-1,.L35,.L129-.L35,.L84-.L35
+	.half	1
+	.byte	95
+	.word	0,0
+.L90:
+	.word	-1,.L35,.L131-.L35,.L12-.L35
+	.half	1
+	.byte	95
+	.word	0,0
+.L91:
+	.word	-1,.L35,.L132-.L35,.L5-.L35
+	.half	1
+	.byte	95
+	.word	0,0
+.L61:
+	.word	-1,.L35,0,.L59-.L35
+	.half	1
+	.byte	84
+	.word	0,0
+.L62:
+	.word	-1,.L35,0,.L59-.L35
+	.half	1
+	.byte	85
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('Ifx_LutAtan2F32_init')
+	.sect	'.debug_loc'
+.L32:
+	.word	-1,.L33,0,.L57-.L33
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_frame',debug
+	.sect	'.debug_frame'
+.L297:
+	.word	48
+	.word	-1
+	.byte	3,0,2,1,27,12,26,0,8,27,8,26,8,28,8,29,8,30,8,31,8,34,8,35,8,32,8,33,8,16,8,17,8,24,8,25,8,36,8,37,8,38
+	.byte	8,39
+	.sdecl	'.debug_frame',debug,cluster('Ifx_LutAtan2F32_init')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L297,.L33,.L57-.L33
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('Ifx_LutAtan2F32_fxpAngle')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L297,.L35,.L59-.L35
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('Ifx_LutAtan2F32_float32')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L297,.L37,.L92-.L37
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+
+
+	; Module end
