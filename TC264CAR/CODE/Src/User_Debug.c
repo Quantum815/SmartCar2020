@@ -7,9 +7,6 @@
 
 #include "..\CODE\Inc\User_Debug.h"
 
-//#define DEBUGADCMODE_A
-#define DEBUGADCMODE_B
-
 #pragma section all "cpu0_dsram"
 
 uint8 DebugRxBuff;
@@ -64,27 +61,17 @@ void DebugSend(void)
 	}
 }
 
-void DebugReadADCData(void)
+void DebugReadParameter(void)
 {
-    UpdateADCValue();
-
-#ifdef DEBUGADCMODE_A
-    int num;
-	DebugADCValue[0] = ADCValueHandle(0);
-	DebugADCValue[1] = ADCValueHandle(1);
-	DebugADCValue[2] = ADCValueHandle(2);
-	DebugADCValue[3] = ADCValueHandle(3);
-	DebugADCValue[4] = ADCValueHandle(4);
-    for(num=0; num<5; num++)
-    	printf("%d	", DebugADCValue[num]);
-    printf("\r\n");
-#endif
-
-#ifdef DEBUGADCMODE_B
-	ips114_showfloat(0,0,ADCValueHandle(0),4,4);
-	ips114_showfloat(0,1,ADCValueHandle(1),4,4);
-	ips114_showfloat(0,2,ADCValueHandle(2),4,4);
-	ips114_showfloat(0,3,ADCValueHandle(3),4,4);
-	ips114_showfloat(0,4,ADCValueHandle(4),4,4);
-#endif
+	ips114_showfloat(0,0,ADCValueHandle(0),4,6);
+	ips114_showfloat(0,1,ADCValueHandle(1),4,6);
+	ips114_showfloat(0,2,ADCValueHandle(2),4,6);
+	ips114_showfloat(0,3,ADCValueHandle(3),4,6);
+	ips114_showfloat(0,4,ADCValueHandle(4),4,6);
+	ips114_showfloat(0,5,MidLineFuseNum,4,6);
+	ips114_showfloat(120,0,PitchAngle,4,6);
+	ips114_showfloat(120,1,RollAngle,4,6);
+	ips114_showfloat(120,2,YawAngle,4,6);
+	ips114_showfloat(120,4,TotalDistance,4,6);
+	ips114_showfloat(120,5,Threshold,4,6);
 }

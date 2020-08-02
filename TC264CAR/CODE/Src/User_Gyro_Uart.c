@@ -13,8 +13,8 @@ uint8 GyroUnlockInstruction[5] = {0xff, 0xaa, 0x69, 0x88, 0xb5};  //解锁指令
 uint8 GyroAutoCalibration[5] = {0xff, 0xaa, 0x63, 0x00, 0x00};  //陀螺仪自动校准
 uint8 GyroKeepConfiguration[5] = {0xff, 0xaa, 0x00, 0x00, 0x00};  //保持配置
 uint8 GyroRxBuff[11];
-uint8 GyroReceiveNum, GyroRxFlag, FirstPitchAngleFlag;
-double PitchAngle, RollAngle, YawAngle, NowGyroYawAngle;
+uint8 GyroReceiveNum, GyroRxFlag;
+double PitchAngle, RollAngle, YawAngle, TargetGyroYawAngle;
 
 #pragma section all restore
 
@@ -68,7 +68,7 @@ void GyroCalculate(void)
 		sum += GyroRxBuff[9];
 		if(sum != GyroRxBuff[10])
 		{
-			printf("RECEIVE ERROR!\n");
+			//printf("RECEIVE ERROR!\n");
 			GyroRxFlag = 0;
 			GyroReceiveNum = 0;
 			return;
@@ -83,7 +83,6 @@ void GyroCalculate(void)
 		YawAngle = (double)temp / (double)32768 * (double)180;//z轴旋转角
 		ManageYawAngle();
 		GyroRxFlag = 0;
-		printf("p=%lf,r=%lf,y=%lf\r\n",PitchAngle,RollAngle,YawAngle);
     }
 }
 void ManageYawAngle(void)
@@ -92,53 +91,56 @@ void ManageYawAngle(void)
     	YawAngle = YawAngle + 360;
 }
 
-void GyroYawAngleInit(void)
+void GyroYawAngleInit(double RotationAngle)
 {
-	NowGyroYawAngle = YawAngle;
+	TargetGyroYawAngle = YawAngle + RotationAngle;  //左转正右转负
+	if(TargetGyroYawAngle > 360)
+		TargetGyroYawAngle -= 360;
+	else if(TargetGyroYawAngle < 0)
+		TargetGyroYawAngle += 360;
 }
 
 double GetGyroError(void)
 {
-    if (NowGyroYawAngle < 180)
+    if (TargetGyroYawAngle < 180)
     {
         if (YawAngle > 180)
         {
-            if (fabs(YawAngle - NowGyroYawAngle) <= 180)
+            if (fabs(YawAngle - TargetGyroYawAngle) <= 180)
             {
-                return (YawAngle - NowGyroYawAngle);
+                return (YawAngle - TargetGyroYawAngle);
             }
             else
 
-                return (-(NowGyroYawAngle + 360 - YawAngle));
+                return (-(TargetGyroYawAngle + 360 - YawAngle));
         }
         else
-            return (YawAngle - NowGyroYawAngle);
+            return (YawAngle - TargetGyroYawAngle);
     }
     else
     {
         if (YawAngle < 180)
         {
-            if (fabs(YawAngle - NowGyroYawAngle) <= 180)
+            if (fabs(YawAngle - TargetGyroYawAngle) <= 180)
             {
-                return (YawAngle - NowGyroYawAngle);
+                return (YawAngle - TargetGyroYawAngle);
             }
             else
 
-                return ((YawAngle + 360) - NowGyroYawAngle);
+                return ((YawAngle + 360) - TargetGyroYawAngle);
         }
-        else if (fabs(YawAngle - NowGyroYawAngle) <= 180)
+        else if (fabs(YawAngle - TargetGyroYawAngle) <= 180)
         {
-            return (YawAngle - NowGyroYawAngle);
+            return (YawAngle - TargetGyroYawAngle);
         }
         else
-            return ((YawAngle + 360) - NowGyroYawAngle);
+            return ((YawAngle + 360) - TargetGyroYawAngle);
     }
 }
 
 void GyroPID(double Kp, double Ki, double Kd)
 {
 
-    //float Kp = 35, Ki = 0.01, Kd = 95;
     double error = 0, P = 0, I = 0, D = 0, PIDValue = 0;
     double LPWMDutyOut, RPWMDutyOut;
 	static double previousError = 0;
@@ -153,8 +155,8 @@ void GyroPID(double Kp, double Ki, double Kd)
     previousError = error;
     PIDValue /= 1000;
 
-    LPWMDutyOut = LeftWheelDeadZone + PIDValue;
-    RPWMDutyOut = RightWheelDeadZone - PIDValue;
+    LPWMDutyOut = LeftWheelDeadZone + LeftInGarageSpeed + PIDValue;
+    RPWMDutyOut = RightWheelDeadZone + RightInGarageSpeed -PIDValue;
 	if(LPWMDutyOut >= 40)
 		LPWMDutyOut = 40;
 	else if(LPWMDutyOut <= -40)

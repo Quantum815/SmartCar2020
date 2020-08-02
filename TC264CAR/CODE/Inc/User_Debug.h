@@ -12,6 +12,6 @@
 
 void DebugUARTInit(void);
 void DebugSend(void);
-void DebugReadADCData(void);
+void DebugReadParameter(void);
 
 #endif /* CODE_INC_USER_DEBUG_H_ */

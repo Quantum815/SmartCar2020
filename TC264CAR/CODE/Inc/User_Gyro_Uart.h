@@ -10,13 +10,13 @@
 
 #include "headfile.h"
 
-extern double PitchAngle, RollAngle, YawAngle, NowGyroYawAngle;
+extern double PitchAngle, RollAngle, YawAngle, TargetGyroYawAngle;
 
 void GyroUARTInit(void);
 void GyroUARTReadByte(void);
 void GyroCalculate(void);
 void ManageYawAngle(void);
-void GyroYawAngleInit(void);
+void GyroYawAngleInit(double RotationAngle);
 double GetGyroError(void);  //ªÒ»°±»¿˝ŒÛ≤Ó
 void GyroPID(double Kp, double Ki, double Kd);
 

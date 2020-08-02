@@ -17,6 +17,7 @@ uint8 EnterGarageFlag;
 
 #pragma section all "cpu1_dsram"
 
+uint8_t Threshold;
 /*int x1, x2, x3, x4;
 int CloseThresholds;
 int FarThresholds;
@@ -291,7 +292,6 @@ void GetOSTUIMAGE(void)
 
 void FindZebra(void)
 {
-	uint8_t Threshold;
 	uint8 JudgeBToWFlag = 0;
 	uint8 JudgeWToBFlag = 0;
 	uint8 BlackWhiteChangeCount = 0;
@@ -306,7 +306,7 @@ void FindZebra(void)
 
 	printf("%d\n", Threshold);  //≤‚ ‘
 
-	for(int imageH=30; imageH<=70; imageH++)
+	for(int imageH=20; imageH<=60; imageH++)
 	{
 		BlackWhiteChangeCount = 0;
 		for(int imageW=94; imageW>=40; imageW--)
@@ -315,7 +315,7 @@ void FindZebra(void)
 			JudgeWToBFlag = 0;
 			if(mt9v03x_image[imageH][imageW]==0x00 && mt9v03x_image[imageH][imageW-1]==0xfe)
 			{
-				for(int i=imageW-6; i<=imageW-1; i++)
+				for(int i=imageW-4; i<=imageW-1; i++)
 					if(mt9v03x_image[imageH][i]==0x00)
 					{
 						JudgeBToWFlag = 1;
@@ -323,7 +323,7 @@ void FindZebra(void)
 					}
 				if(!JudgeBToWFlag)
 				{
-					for(int i=imageW; i<=imageW+5; i++)
+					for(int i=imageW; i<=imageW+3; i++)
 						if(mt9v03x_image[imageH][i]==0xfe)
 						{
 							JudgeBToWFlag = 1;
@@ -335,7 +335,7 @@ void FindZebra(void)
 			}
 			if(mt9v03x_image[imageH][imageW]==0xfe && mt9v03x_image[imageH][imageW-1]==0x00)
 			{
-				for(int i=imageW-6; i<=imageW-1; i++)
+				for(int i=imageW-4; i<=imageW-1; i++)
 					if(mt9v03x_image[imageH][i]==0xfe)
 					{
 						JudgeWToBFlag = 1;
@@ -343,7 +343,7 @@ void FindZebra(void)
 					}
 				if(!JudgeWToBFlag)
 				{
-					for(int i=imageW; i<=imageW+5; i++)
+					for(int i=imageW; i<=imageW+3; i++)
 						if(mt9v03x_image[imageH][i]==0x00)
 						{
 							JudgeWToBFlag = 1;
@@ -360,7 +360,7 @@ void FindZebra(void)
 			JudgeWToBFlag = 0;
 			if(mt9v03x_image[imageH][imageW]==0x00 && mt9v03x_image[imageH][imageW+1]==0xfe)
 			{
-				for(int i=imageW-5; i<=imageW; i++)
+				for(int i=imageW-3; i<=imageW; i++)
 					if(mt9v03x_image[imageH][i]==0xfe)
 					{
 						JudgeBToWFlag = 1;
@@ -368,7 +368,7 @@ void FindZebra(void)
 					}
 				if(!JudgeBToWFlag)
 				{
-					for(int i=imageW+1; i<=imageW+6; i++)
+					for(int i=imageW+1; i<=imageW+4; i++)
 						if(mt9v03x_image[imageH][i]==0x00)
 						{
 							JudgeBToWFlag = 1;
@@ -380,7 +380,7 @@ void FindZebra(void)
 			}
 			if(mt9v03x_image[imageH][imageW]==0xfe && mt9v03x_image[imageH][imageW+1]==0x00)
 			{
-				for(int i=imageW-5; i<=imageW; i++)
+				for(int i=imageW-3; i<=imageW; i++)
 					if(mt9v03x_image[imageH][i]==0x00)
 					{
 						JudgeWToBFlag = 1;
@@ -388,7 +388,7 @@ void FindZebra(void)
 					}
 				if(!JudgeWToBFlag)
 				{
-					for(int i=imageW+1; i<=imageW+6; i++)
+					for(int i=imageW+1; i<=imageW+4; i++)
 						if(mt9v03x_image[imageH][i]==0xfe)
 						{
 							JudgeWToBFlag = 1;
@@ -406,7 +406,7 @@ void FindZebra(void)
 	if(RecognizedCorrectLineCount >= 5)
 	{
 		EnterGarageFlag = 1;
-		gpio_set(P20_8, 1);
+		gpio_set(P20_8, 0);
 	}
 }
 

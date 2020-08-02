@@ -10,6 +10,8 @@
 
 #include "headfile.h"
 
+extern double CurDistance, TotalDistance;
+
 void EncoderInit(void);
 void CountDistance(void);
 double GetDistance(void);

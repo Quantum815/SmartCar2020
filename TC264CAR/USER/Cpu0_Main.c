@@ -41,23 +41,17 @@ void core0_main(void)
 
 	while (TRUE)
 	{
-		//gpio_set(P20_8, 0);
-
-		//if(TwoCarRxFlag)
-			//gpio_set(P20_8, 0);
-
-		//ips114_showfloat(0,0,2.222,4,4);
-		DebugReadADCData();
-		//MotorUserHandle(RMotor_B, 0);
-		//MotorUserHandle(LMotor_F, 25);
-		//systick_delay_ms(STM0, 2000);
-		//MotorUserHandle(LMotor_B, 25);
-		//systick_delay_ms(STM0, 2000);
-		//MotorUserHandle(LMotor_B, 0);
-		//MotorUserHandle(RMotor_F, 25);
-		//systick_delay_ms(STM0, 2000);
-		//MotorUserHandle(RMotor_B, 25);
-		//systick_delay_ms(STM0, 2000);
+		DebugReadParameter();  //≤‚ ‘
+//		MotorUserHandle(RMotor_B, 0);
+//		MotorUserHandle(LMotor_B, 2);
+//		systick_delay_ms(STM0, 2000);
+//		MotorUserHandle(LMotor_B, 25);
+//		systick_delay_ms(STM0, 2000);
+//		MotorUserHandle(LMotor_B, 0);
+//		MotorUserHandle(RMotor_B, 2.3);
+//		systick_delay_ms(STM0, 2000);
+//		MotorUserHandle(RMotor_B, 25);
+//		systick_delay_ms(STM0, 2000);
 	}
 }
 

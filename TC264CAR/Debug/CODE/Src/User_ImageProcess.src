@@ -32,408 +32,416 @@ $TC16X
 ; ..\CODE\Src\User_ImageProcess.c	    17  
 ; ..\CODE\Src\User_ImageProcess.c	    18  #pragma section all "cpu1_dsram"
 ; ..\CODE\Src\User_ImageProcess.c	    19  
-; ..\CODE\Src\User_ImageProcess.c	    20  /*int x1, x2, x3, x4;
-; ..\CODE\Src\User_ImageProcess.c	    21  int CloseThresholds;
-; ..\CODE\Src\User_ImageProcess.c	    22  int FarThresholds;
-; ..\CODE\Src\User_ImageProcess.c	    23  uint8 ProcessImageFlag = 0;
-; ..\CODE\Src\User_ImageProcess.c	    24  uint8 DisplayIMAGE[MT9V03X_H][MT9V03X_W], OSTUIMAGE[15][MT9V03X_W];
-; ..\CODE\Src\User_ImageProcess.c	    25  uint8 LeftLine[MT9V03X_H], RightLine[MT9V03X_H], MidLine[MT9V03X_H];*/
-; ..\CODE\Src\User_ImageProcess.c	    26  
-; ..\CODE\Src\User_ImageProcess.c	    27  #pragma section all restore
-; ..\CODE\Src\User_ImageProcess.c	    28  
+; ..\CODE\Src\User_ImageProcess.c	    20  uint8_t Threshold;
+; ..\CODE\Src\User_ImageProcess.c	    21  /*int x1, x2, x3, x4;
+; ..\CODE\Src\User_ImageProcess.c	    22  int CloseThresholds;
+; ..\CODE\Src\User_ImageProcess.c	    23  int FarThresholds;
+; ..\CODE\Src\User_ImageProcess.c	    24  uint8 ProcessImageFlag = 0;
+; ..\CODE\Src\User_ImageProcess.c	    25  uint8 DisplayIMAGE[MT9V03X_H][MT9V03X_W], OSTUIMAGE[15][MT9V03X_W];
+; ..\CODE\Src\User_ImageProcess.c	    26  uint8 LeftLine[MT9V03X_H], RightLine[MT9V03X_H], MidLine[MT9V03X_H];*/
+; ..\CODE\Src\User_ImageProcess.c	    27  
+; ..\CODE\Src\User_ImageProcess.c	    28  #pragma section all restore
 ; ..\CODE\Src\User_ImageProcess.c	    29  
-; ..\CODE\Src\User_ImageProcess.c	    30  #pragma section all "cpu1_psram"
-; ..\CODE\Src\User_ImageProcess.c	    31  
-; ..\CODE\Src\User_ImageProcess.c	    32  //ÕºœÒÕº¥¶¿Ì
-; ..\CODE\Src\User_ImageProcess.c	    33  /*void ImagePretreatment(void)
-; ..\CODE\Src\User_ImageProcess.c	    34  {
-; ..\CODE\Src\User_ImageProcess.c	    35      for (uint8 i = 0; i <= MT9V03X_H - 1; i++)
-; ..\CODE\Src\User_ImageProcess.c	    36      {
-; ..\CODE\Src\User_ImageProcess.c	    37          for(uint8 j = 0; j <= MT9V03X_W-1; j++)
-; ..\CODE\Src\User_ImageProcess.c	    38          {
-; ..\CODE\Src\User_ImageProcess.c	    39  
-; ..\CODE\Src\User_ImageProcess.c	    40              if((i<=50 && (j<=50 || j>=138)) || (i>=70 && (j<=50 || j>=138)))
-; ..\CODE\Src\User_ImageProcess.c	    41              {
-; ..\CODE\Src\User_ImageProcess.c	    42                  DisplayIMAGE[i][j] = mt9v03x_image[i][j] + 0;
-; ..\CODE\Src\User_ImageProcess.c	    43              }
-; ..\CODE\Src\User_ImageProcess.c	    44  
-; ..\CODE\Src\User_ImageProcess.c	    45          }
-; ..\CODE\Src\User_ImageProcess.c	    46      }
-; ..\CODE\Src\User_ImageProcess.c	    47      for(int i = 15; i <= (MT9V03X_H-1)-15; i++)
-; ..\CODE\Src\User_ImageProcess.c	    48      {
-; ..\CODE\Src\User_ImageProcess.c	    49          for(int j = 0; j <= MT9V03X_W-1; j++)
-; ..\CODE\Src\User_ImageProcess.c	    50          {
-; ..\CODE\Src\User_ImageProcess.c	    51              if(i >= 50)
-; ..\CODE\Src\User_ImageProcess.c	    52              {
-; ..\CODE\Src\User_ImageProcess.c	    53                  if(mt9v03x_image[i][j] <= CloseThresholds)
-; ..\CODE\Src\User_ImageProcess.c	    54                  {
-; ..\CODE\Src\User_ImageProcess.c	    55                      DisplayIMAGE[i][j] = 0;  //∞◊
-; ..\CODE\Src\User_ImageProcess.c	    56                  }
-; ..\CODE\Src\User_ImageProcess.c	    57                  else
-; ..\CODE\Src\User_ImageProcess.c	    58                  {
-; ..\CODE\Src\User_ImageProcess.c	    59                      DisplayIMAGE[i][j] = 255;  //∫⁄
-; ..\CODE\Src\User_ImageProcess.c	    60                  }
-; ..\CODE\Src\User_ImageProcess.c	    61              }
-; ..\CODE\Src\User_ImageProcess.c	    62              else
-; ..\CODE\Src\User_ImageProcess.c	    63              {
-; ..\CODE\Src\User_ImageProcess.c	    64                  if(mt9v03x_image[i][j] <= FarThresholds)
-; ..\CODE\Src\User_ImageProcess.c	    65                  {
-; ..\CODE\Src\User_ImageProcess.c	    66                      DisplayIMAGE[i][j] = 0;
-; ..\CODE\Src\User_ImageProcess.c	    67                  }
-; ..\CODE\Src\User_ImageProcess.c	    68                  else
-; ..\CODE\Src\User_ImageProcess.c	    69                  {
-; ..\CODE\Src\User_ImageProcess.c	    70                      DisplayIMAGE[i][j] = 255;
-; ..\CODE\Src\User_ImageProcess.c	    71                  }
-; ..\CODE\Src\User_ImageProcess.c	    72              }
-; ..\CODE\Src\User_ImageProcess.c	    73          }
-; ..\CODE\Src\User_ImageProcess.c	    74      }
-; ..\CODE\Src\User_ImageProcess.c	    75  
-; ..\CODE\Src\User_ImageProcess.c	    76  }
-; ..\CODE\Src\User_ImageProcess.c	    77  void FindMidLine(void)
-; ..\CODE\Src\User_ImageProcess.c	    78  {
-; ..\CODE\Src\User_ImageProcess.c	    79  
-; ..\CODE\Src\User_ImageProcess.c	    80      for (uint8 i = (MT9V03X_H - 1) - 15; i >= 15; i--)
-; ..\CODE\Src\User_ImageProcess.c	    81      {
-; ..\CODE\Src\User_ImageProcess.c	    82          if(i >= (MT9V03X_H - 1) - 20)
-; ..\CODE\Src\User_ImageProcess.c	    83          {
-; ..\CODE\Src\User_ImageProcess.c	    84              for (uint8 j = 0; j <= MT9V03X_W - 1; j++)
-; ..\CODE\Src\User_ImageProcess.c	    85              {
-; ..\CODE\Src\User_ImageProcess.c	    86                  if (DisplayIMAGE[i][j] == 255)
-; ..\CODE\Src\User_ImageProcess.c	    87                  {
-; ..\CODE\Src\User_ImageProcess.c	    88                      x1 = j;
-; ..\CODE\Src\User_ImageProcess.c	    89                      LeftLine[i] = j;
-; ..\CODE\Src\User_ImageProcess.c	    90                      break;
-; ..\CODE\Src\User_ImageProcess.c	    91                  }
-; ..\CODE\Src\User_ImageProcess.c	    92                  else if(j == 187)
-; ..\CODE\Src\User_ImageProcess.c	    93                  {
-; ..\CODE\Src\User_ImageProcess.c	    94                      LeftLine[i] = 187;
-; ..\CODE\Src\User_ImageProcess.c	    95                  }
-; ..\CODE\Src\User_ImageProcess.c	    96              }
-; ..\CODE\Src\User_ImageProcess.c	    97              for(uint8 k = MT9V03X_W; k >= 0; k--)
-; ..\CODE\Src\User_ImageProcess.c	    98              {
-; ..\CODE\Src\User_ImageProcess.c	    99                  if(DisplayIMAGE[i][k] == 255)
-; ..\CODE\Src\User_ImageProcess.c	   100                  {
-; ..\CODE\Src\User_ImageProcess.c	   101                      x2 = k;
-; ..\CODE\Src\User_ImageProcess.c	   102                      RightLine[i] = k;
-; ..\CODE\Src\User_ImageProcess.c	   103                      break;
-; ..\CODE\Src\User_ImageProcess.c	   104                  }
-; ..\CODE\Src\User_ImageProcess.c	   105                  else if(k == 0)
-; ..\CODE\Src\User_ImageProcess.c	   106                  {
-; ..\CODE\Src\User_ImageProcess.c	   107                      RightLine[i] = 0;
-; ..\CODE\Src\User_ImageProcess.c	   108                  }
-; ..\CODE\Src\User_ImageProcess.c	   109              }
-; ..\CODE\Src\User_ImageProcess.c	   110              //DisplayIMAG[i][(int)((x1 + x2) / 2)] = 0;
-; ..\CODE\Src\User_ImageProcess.c	   111              MidLine[i] = (int)((x1 + x2) / 2);
-; ..\CODE\Src\User_ImageProcess.c	   112          }
-; ..\CODE\Src\User_ImageProcess.c	   113          else
-; ..\CODE\Src\User_ImageProcess.c	   114          {
-; ..\CODE\Src\User_ImageProcess.c	   115              for (uint8 f = ((int)((x1 + x2) / 2)); f >= 0; f--)
-; ..\CODE\Src\User_ImageProcess.c	   116              {
-; ..\CODE\Src\User_ImageProcess.c	   117                  if (DisplayIMAGE[i][f] == 0)
-; ..\CODE\Src\User_ImageProcess.c	   118                  {
-; ..\CODE\Src\User_ImageProcess.c	   119                      LeftLine[i] = f;
-; ..\CODE\Src\User_ImageProcess.c	   120                      x3 = f;
-; ..\CODE\Src\User_ImageProcess.c	   121                      break;
-; ..\CODE\Src\User_ImageProcess.c	   122                  }
-; ..\CODE\Src\User_ImageProcess.c	   123                  else if(f == 0)
-; ..\CODE\Src\User_ImageProcess.c	   124                  {
-; ..\CODE\Src\User_ImageProcess.c	   125                      LeftLine[i] = 0;
-; ..\CODE\Src\User_ImageProcess.c	   126                  }
-; ..\CODE\Src\User_ImageProcess.c	   127              }
-; ..\CODE\Src\User_ImageProcess.c	   128              for (uint8 g = (int)((x1 + x2) / 2); g <= MT9V03X_W - 1; g++)
-; ..\CODE\Src\User_ImageProcess.c	   129              {
-; ..\CODE\Src\User_ImageProcess.c	   130                  if (DisplayIMAGE[i][g] == 0)
-; ..\CODE\Src\User_ImageProcess.c	   131                  {
-; ..\CODE\Src\User_ImageProcess.c	   132                      x4 = g;
-; ..\CODE\Src\User_ImageProcess.c	   133                      RightLine[i] = g;
-; ..\CODE\Src\User_ImageProcess.c	   134                      break;
-; ..\CODE\Src\User_ImageProcess.c	   135                  }
-; ..\CODE\Src\User_ImageProcess.c	   136                  else if(g == 187)
-; ..\CODE\Src\User_ImageProcess.c	   137                  {
-; ..\CODE\Src\User_ImageProcess.c	   138                      RightLine[i] = 187;
-; ..\CODE\Src\User_ImageProcess.c	   139                  }
-; ..\CODE\Src\User_ImageProcess.c	   140              }
-; ..\CODE\Src\User_ImageProcess.c	   141              //DisplayIMAG[i][(int)((x3 + x4) / 2)] = 0;
-; ..\CODE\Src\User_ImageProcess.c	   142  
-; ..\CODE\Src\User_ImageProcess.c	   143              if(x4 == 188 && x3 == 0)
-; ..\CODE\Src\User_ImageProcess.c	   144              {
-; ..\CODE\Src\User_ImageProcess.c	   145                  x2 = x4;
-; ..\CODE\Src\User_ImageProcess.c	   146                  x1 = x3;
-; ..\CODE\Src\User_ImageProcess.c	   147              }
-; ..\CODE\Src\User_ImageProcess.c	   148              if(((x3 + x4) / 2) - ((x1 + x2) / 2) < 5 || ((x3 + x4) / 2) - ((x1 + x2) / 2) > -5)
-; ..\CODE\Src\User_ImageProcess.c	   149              {
-; ..\CODE\Src\User_ImageProcess.c	   150                  x2 = x4;
-; ..\CODE\Src\User_ImageProcess.c	   151                  x1 = x3;
-; ..\CODE\Src\User_ImageProcess.c	   152              }
-; ..\CODE\Src\User_ImageProcess.c	   153              MidLine[i] = (int)((x1 + x2) / 2);
-; ..\CODE\Src\User_ImageProcess.c	   154          }
-; ..\CODE\Src\User_ImageProcess.c	   155      }
-; ..\CODE\Src\User_ImageProcess.c	   156  }
-; ..\CODE\Src\User_ImageProcess.c	   157  
-; ..\CODE\Src\User_ImageProcess.c	   158  void CameraProcess(void)
-; ..\CODE\Src\User_ImageProcess.c	   159  {
-; ..\CODE\Src\User_ImageProcess.c	   160  //	if(mt9v03x_finish_flag)
-; ..\CODE\Src\User_ImageProcess.c	   161  //	{
-; ..\CODE\Src\User_ImageProcess.c	   162  //		mt9v03x_finish_flag=0;
-; ..\CODE\Src\User_ImageProcess.c	   163  //		ips114_displayimage032_zoom(mt9v03x_image[0], MT9V03X_W, MT9V03X_H, 240, 135);
-; ..\CODE\Src\User_ImageProcess.c	   164  //	}
-; ..\CODE\Src\User_ImageProcess.c	   165      CloseThresholds = GetOSTU(mt9v03x_image) + 15;
-; ..\CODE\Src\User_ImageProcess.c	   166      FarThresholds = GetOSTU(mt9v03x_image) + 15;
-; ..\CODE\Src\User_ImageProcess.c	   167  	ImagePretreatment();
-; ..\CODE\Src\User_ImageProcess.c	   168      FindMidLine_ADD();
-; ..\CODE\Src\User_ImageProcess.c	   169  	//EdgePointFind();
-; ..\CODE\Src\User_ImageProcess.c	   170  	 MidLineFuseNum = GetMidLineNum();
-; ..\CODE\Src\User_ImageProcess.c	   171  	ProcessImageFlag = 1;
-; ..\CODE\Src\User_ImageProcess.c	   172  //			for(int i=0;i<MT9V03X_H;i++)
-; ..\CODE\Src\User_ImageProcess.c	   173  //		{
-; ..\CODE\Src\User_ImageProcess.c	   174  //			DisplayIMAGE[i][(int)(LeftLine[i]+RightLine[i])/2]=0;
-; ..\CODE\Src\User_ImageProcess.c	   175  //		}
-; ..\CODE\Src\User_ImageProcess.c	   176  //    ips114_displayimage032_zoom(DisplayIMAGE[0], MT9V03X_W, MT9V03X_H, 240, 135);
-; ..\CODE\Src\User_ImageProcess.c	   177  }
-; ..\CODE\Src\User_ImageProcess.c	   178  void EdgePointFind(void)
-; ..\CODE\Src\User_ImageProcess.c	   179  {
-; ..\CODE\Src\User_ImageProcess.c	   180      uint8 Rbp = 0, Lbp = 0;
-; ..\CODE\Src\User_ImageProcess.c	   181  
-; ..\CODE\Src\User_ImageProcess.c	   182      for(int i = 105; i >= 15; i--)
-; ..\CODE\Src\User_ImageProcess.c	   183      {
-; ..\CODE\Src\User_ImageProcess.c	   184          if(RightLine[i] - RightLine[i - 1] >= 3 || RightLine[i] - RightLine[i - 1] <= -3)
-; ..\CODE\Src\User_ImageProcess.c	   185              Rbp = Rbp + 1;
-; ..\CODE\Src\User_ImageProcess.c	   186          if(LeftLine[i] - LeftLine[i - 1] >= 3 || LeftLine[i] - LeftLine[i - 1] <= -3)
-; ..\CODE\Src\User_ImageProcess.c	   187              Lbp = Rbp + 1;
-; ..\CODE\Src\User_ImageProcess.c	   188      }
-; ..\CODE\Src\User_ImageProcess.c	   189      if(Rbp + Lbp >= 4 || Rbp >= 2 || Lbp >= 2)
-; ..\CODE\Src\User_ImageProcess.c	   190      {
-; ..\CODE\Src\User_ImageProcess.c	   191          Rbp = 0;
-; ..\CODE\Src\User_ImageProcess.c	   192          Lbp = 0;
-; ..\CODE\Src\User_ImageProcess.c	   193          for(int i = 105; i >= 15; i--)
-; ..\CODE\Src\User_ImageProcess.c	   194          {
-; ..\CODE\Src\User_ImageProcess.c	   195              if(RightLine[i] - RightLine[i - 1] >= 5 || RightLine[i] - RightLine[i - 1] <= -5)
-; ..\CODE\Src\User_ImageProcess.c	   196              {
-; ..\CODE\Src\User_ImageProcess.c	   197                  RightLine[i] = RightLine[i - 1] - 1;
-; ..\CODE\Src\User_ImageProcess.c	   198              }
-; ..\CODE\Src\User_ImageProcess.c	   199              if(LeftLine[i] - LeftLine[i - 1] >= 5 || LeftLine[i] - LeftLine[i - 1] <= -5)
-; ..\CODE\Src\User_ImageProcess.c	   200              {
-; ..\CODE\Src\User_ImageProcess.c	   201                  LeftLine[i] = LeftLine[i - 1] + 1;
-; ..\CODE\Src\User_ImageProcess.c	   202              }
-; ..\CODE\Src\User_ImageProcess.c	   203          }
-; ..\CODE\Src\User_ImageProcess.c	   204          for(int i = 187; i >= 0; i--)
-; ..\CODE\Src\User_ImageProcess.c	   205          {
-; ..\CODE\Src\User_ImageProcess.c	   206              MidLine[i] = (int)((LeftLine[i] + RightLine[i]) / 2);
-; ..\CODE\Src\User_ImageProcess.c	   207          }
-; ..\CODE\Src\User_ImageProcess.c	   208      }
-; ..\CODE\Src\User_ImageProcess.c	   209  }
-; ..\CODE\Src\User_ImageProcess.c	   210  
-; ..\CODE\Src\User_ImageProcess.c	   211  double GetMidLineNum(void)
-; ..\CODE\Src\User_ImageProcess.c	   212  {
-; ..\CODE\Src\User_ImageProcess.c	   213      double ClearLineSum = 0, MidLineSum = 0, LongLineSum = 0;
-; ..\CODE\Src\User_ImageProcess.c	   214      double AllLineSum = 0;
-; ..\CODE\Src\User_ImageProcess.c	   215      for(int i = 15; i <= 105; i++)
-; ..\CODE\Src\User_ImageProcess.c	   216      {
-; ..\CODE\Src\User_ImageProcess.c	   217          if(i >= 15 && i <= 45)
-; ..\CODE\Src\User_ImageProcess.c	   218              LongLineSum += MidLine[i];
-; ..\CODE\Src\User_ImageProcess.c	   219          else if(i > 55 && i < 65)
-; ..\CODE\Src\User_ImageProcess.c	   220              MidLineSum += MidLine[i];
-; ..\CODE\Src\User_ImageProcess.c	   221          else if(i >= 85 && i <= 105)
-; ..\CODE\Src\User_ImageProcess.c	   222              ClearLineSum += MidLine[i];
-; ..\CODE\Src\User_ImageProcess.c	   223      }
-; ..\CODE\Src\User_ImageProcess.c	   224      AllLineSum = LongLineSum * 0  + MidLineSum * 0  + ClearLineSum ;
-; ..\CODE\Src\User_ImageProcess.c	   225      return AllLineSum / 20;
-; ..\CODE\Src\User_ImageProcess.c	   226  }
-; ..\CODE\Src\User_ImageProcess.c	   227  
-; ..\CODE\Src\User_ImageProcess.c	   228  void ShowMidLine(void)
-; ..\CODE\Src\User_ImageProcess.c	   229  {
-; ..\CODE\Src\User_ImageProcess.c	   230      uint8 ShowMidLineIMG[MT9V03X_H][MT9V03X_W] = {{255}};
-; ..\CODE\Src\User_ImageProcess.c	   231      for(int i = 0; i <= MT9V03X_H - 1; i++)
-; ..\CODE\Src\User_ImageProcess.c	   232      {
-; ..\CODE\Src\User_ImageProcess.c	   233          for(int j = 0; j <= MT9V03X_W - 1; j++)
-; ..\CODE\Src\User_ImageProcess.c	   234              ShowMidLineIMG[i][j] = 255;
-; ..\CODE\Src\User_ImageProcess.c	   235      }
-; ..\CODE\Src\User_ImageProcess.c	   236      for(int i = 90; i <= 105; i++)
-; ..\CODE\Src\User_ImageProcess.c	   237      {
-; ..\CODE\Src\User_ImageProcess.c	   238  
-; ..\CODE\Src\User_ImageProcess.c	   239          ShowMidLineIMG[i][MidLine[i]] = 0;
-; ..\CODE\Src\User_ImageProcess.c	   240      }
-; ..\CODE\Src\User_ImageProcess.c	   241      ips114_displayimage032_zoom(ShowMidLineIMG[0], MT9V03X_W, MT9V03X_H, 240, 135);
-; ..\CODE\Src\User_ImageProcess.c	   242  
-; ..\CODE\Src\User_ImageProcess.c	   243  }
-; ..\CODE\Src\User_ImageProcess.c	   244  void FindMidLine_ADD(void)
-; ..\CODE\Src\User_ImageProcess.c	   245  {
-; ..\CODE\Src\User_ImageProcess.c	   246      //DisplayIMAGE
-; ..\CODE\Src\User_ImageProcess.c	   247      float CountWhitePixels = 0, FirstWhitePixels, BlackFlag = 0;
-; ..\CODE\Src\User_ImageProcess.c	   248      int AllAddsum = 0;
-; ..\CODE\Src\User_ImageProcess.c	   249      for(int i = 0; i <= MT9V03X_W - 1; i++)
-; ..\CODE\Src\User_ImageProcess.c	   250      {
-; ..\CODE\Src\User_ImageProcess.c	   251          for(int j = 0; j <= MT9V03X_W - 1; j++)
-; ..\CODE\Src\User_ImageProcess.c	   252          {
-; ..\CODE\Src\User_ImageProcess.c	   253              if(DisplayIMAGE[i][j] == 255)
-; ..\CODE\Src\User_ImageProcess.c	   254              {
-; ..\CODE\Src\User_ImageProcess.c	   255  //				FirstWhitePixels=j;
-; ..\CODE\Src\User_ImageProcess.c	   256                  CountWhitePixels++;
-; ..\CODE\Src\User_ImageProcess.c	   257  //				if(CountWhitePixels>=20)
-; ..\CODE\Src\User_ImageProcess.c	   258  //				{
-; ..\CODE\Src\User_ImageProcess.c	   259  //
-; ..\CODE\Src\User_ImageProcess.c	   260  //				}
-; ..\CODE\Src\User_ImageProcess.c	   261                  AllAddsum += j;
-; ..\CODE\Src\User_ImageProcess.c	   262                  BlackFlag = 0;
-; ..\CODE\Src\User_ImageProcess.c	   263  
-; ..\CODE\Src\User_ImageProcess.c	   264              }
-; ..\CODE\Src\User_ImageProcess.c	   265              else
-; ..\CODE\Src\User_ImageProcess.c	   266              {
-; ..\CODE\Src\User_ImageProcess.c	   267                  BlackFlag++;
-; ..\CODE\Src\User_ImageProcess.c	   268                  if(BlackFlag == 5)
-; ..\CODE\Src\User_ImageProcess.c	   269                  {
-; ..\CODE\Src\User_ImageProcess.c	   270                      if(CountWhitePixels <= 40)
-; ..\CODE\Src\User_ImageProcess.c	   271                      {
-; ..\CODE\Src\User_ImageProcess.c	   272                          AllAddsum = 0;
-; ..\CODE\Src\User_ImageProcess.c	   273                          CountWhitePixels = 0;
-; ..\CODE\Src\User_ImageProcess.c	   274                      }
-; ..\CODE\Src\User_ImageProcess.c	   275                  }
-; ..\CODE\Src\User_ImageProcess.c	   276              }
-; ..\CODE\Src\User_ImageProcess.c	   277  
-; ..\CODE\Src\User_ImageProcess.c	   278          }
-; ..\CODE\Src\User_ImageProcess.c	   279          MidLine[i] = (uint8)(AllAddsum / CountWhitePixels * 1.0);
-; ..\CODE\Src\User_ImageProcess.c	   280      }
-; ..\CODE\Src\User_ImageProcess.c	   281  }
-; ..\CODE\Src\User_ImageProcess.c	   282  
-; ..\CODE\Src\User_ImageProcess.c	   283  void GetOSTUIMAGE(void)
-; ..\CODE\Src\User_ImageProcess.c	   284  {
-; ..\CODE\Src\User_ImageProcess.c	   285      for(int i = 0; i < 15; i++)
-; ..\CODE\Src\User_ImageProcess.c	   286      {
-; ..\CODE\Src\User_ImageProcess.c	   287          for(int j = 0; j < MT9V03X_W; j++)
-; ..\CODE\Src\User_ImageProcess.c	   288              OSTUIMAGE[i][j] = mt9v03x_image[i + 15][j];
-; ..\CODE\Src\User_ImageProcess.c	   289      }
-; ..\CODE\Src\User_ImageProcess.c	   290  }*/
-; ..\CODE\Src\User_ImageProcess.c	   291  
-; ..\CODE\Src\User_ImageProcess.c	   292  void FindZebra(void)
+; ..\CODE\Src\User_ImageProcess.c	    30  
+; ..\CODE\Src\User_ImageProcess.c	    31  #pragma section all "cpu1_psram"
+; ..\CODE\Src\User_ImageProcess.c	    32  
+; ..\CODE\Src\User_ImageProcess.c	    33  //ÕºœÒÕº¥¶¿Ì
+; ..\CODE\Src\User_ImageProcess.c	    34  /*void ImagePretreatment(void)
+; ..\CODE\Src\User_ImageProcess.c	    35  {
+; ..\CODE\Src\User_ImageProcess.c	    36      for (uint8 i = 0; i <= MT9V03X_H - 1; i++)
+; ..\CODE\Src\User_ImageProcess.c	    37      {
+; ..\CODE\Src\User_ImageProcess.c	    38          for(uint8 j = 0; j <= MT9V03X_W-1; j++)
+; ..\CODE\Src\User_ImageProcess.c	    39          {
+; ..\CODE\Src\User_ImageProcess.c	    40  
+; ..\CODE\Src\User_ImageProcess.c	    41              if((i<=50 && (j<=50 || j>=138)) || (i>=70 && (j<=50 || j>=138)))
+; ..\CODE\Src\User_ImageProcess.c	    42              {
+; ..\CODE\Src\User_ImageProcess.c	    43                  DisplayIMAGE[i][j] = mt9v03x_image[i][j] + 0;
+; ..\CODE\Src\User_ImageProcess.c	    44              }
+; ..\CODE\Src\User_ImageProcess.c	    45  
+; ..\CODE\Src\User_ImageProcess.c	    46          }
+; ..\CODE\Src\User_ImageProcess.c	    47      }
+; ..\CODE\Src\User_ImageProcess.c	    48      for(int i = 15; i <= (MT9V03X_H-1)-15; i++)
+; ..\CODE\Src\User_ImageProcess.c	    49      {
+; ..\CODE\Src\User_ImageProcess.c	    50          for(int j = 0; j <= MT9V03X_W-1; j++)
+; ..\CODE\Src\User_ImageProcess.c	    51          {
+; ..\CODE\Src\User_ImageProcess.c	    52              if(i >= 50)
+; ..\CODE\Src\User_ImageProcess.c	    53              {
+; ..\CODE\Src\User_ImageProcess.c	    54                  if(mt9v03x_image[i][j] <= CloseThresholds)
+; ..\CODE\Src\User_ImageProcess.c	    55                  {
+; ..\CODE\Src\User_ImageProcess.c	    56                      DisplayIMAGE[i][j] = 0;  //∞◊
+; ..\CODE\Src\User_ImageProcess.c	    57                  }
+; ..\CODE\Src\User_ImageProcess.c	    58                  else
+; ..\CODE\Src\User_ImageProcess.c	    59                  {
+; ..\CODE\Src\User_ImageProcess.c	    60                      DisplayIMAGE[i][j] = 255;  //∫⁄
+; ..\CODE\Src\User_ImageProcess.c	    61                  }
+; ..\CODE\Src\User_ImageProcess.c	    62              }
+; ..\CODE\Src\User_ImageProcess.c	    63              else
+; ..\CODE\Src\User_ImageProcess.c	    64              {
+; ..\CODE\Src\User_ImageProcess.c	    65                  if(mt9v03x_image[i][j] <= FarThresholds)
+; ..\CODE\Src\User_ImageProcess.c	    66                  {
+; ..\CODE\Src\User_ImageProcess.c	    67                      DisplayIMAGE[i][j] = 0;
+; ..\CODE\Src\User_ImageProcess.c	    68                  }
+; ..\CODE\Src\User_ImageProcess.c	    69                  else
+; ..\CODE\Src\User_ImageProcess.c	    70                  {
+; ..\CODE\Src\User_ImageProcess.c	    71                      DisplayIMAGE[i][j] = 255;
+; ..\CODE\Src\User_ImageProcess.c	    72                  }
+; ..\CODE\Src\User_ImageProcess.c	    73              }
+; ..\CODE\Src\User_ImageProcess.c	    74          }
+; ..\CODE\Src\User_ImageProcess.c	    75      }
+; ..\CODE\Src\User_ImageProcess.c	    76  
+; ..\CODE\Src\User_ImageProcess.c	    77  }
+; ..\CODE\Src\User_ImageProcess.c	    78  void FindMidLine(void)
+; ..\CODE\Src\User_ImageProcess.c	    79  {
+; ..\CODE\Src\User_ImageProcess.c	    80  
+; ..\CODE\Src\User_ImageProcess.c	    81      for (uint8 i = (MT9V03X_H - 1) - 15; i >= 15; i--)
+; ..\CODE\Src\User_ImageProcess.c	    82      {
+; ..\CODE\Src\User_ImageProcess.c	    83          if(i >= (MT9V03X_H - 1) - 20)
+; ..\CODE\Src\User_ImageProcess.c	    84          {
+; ..\CODE\Src\User_ImageProcess.c	    85              for (uint8 j = 0; j <= MT9V03X_W - 1; j++)
+; ..\CODE\Src\User_ImageProcess.c	    86              {
+; ..\CODE\Src\User_ImageProcess.c	    87                  if (DisplayIMAGE[i][j] == 255)
+; ..\CODE\Src\User_ImageProcess.c	    88                  {
+; ..\CODE\Src\User_ImageProcess.c	    89                      x1 = j;
+; ..\CODE\Src\User_ImageProcess.c	    90                      LeftLine[i] = j;
+; ..\CODE\Src\User_ImageProcess.c	    91                      break;
+; ..\CODE\Src\User_ImageProcess.c	    92                  }
+; ..\CODE\Src\User_ImageProcess.c	    93                  else if(j == 187)
+; ..\CODE\Src\User_ImageProcess.c	    94                  {
+; ..\CODE\Src\User_ImageProcess.c	    95                      LeftLine[i] = 187;
+; ..\CODE\Src\User_ImageProcess.c	    96                  }
+; ..\CODE\Src\User_ImageProcess.c	    97              }
+; ..\CODE\Src\User_ImageProcess.c	    98              for(uint8 k = MT9V03X_W; k >= 0; k--)
+; ..\CODE\Src\User_ImageProcess.c	    99              {
+; ..\CODE\Src\User_ImageProcess.c	   100                  if(DisplayIMAGE[i][k] == 255)
+; ..\CODE\Src\User_ImageProcess.c	   101                  {
+; ..\CODE\Src\User_ImageProcess.c	   102                      x2 = k;
+; ..\CODE\Src\User_ImageProcess.c	   103                      RightLine[i] = k;
+; ..\CODE\Src\User_ImageProcess.c	   104                      break;
+; ..\CODE\Src\User_ImageProcess.c	   105                  }
+; ..\CODE\Src\User_ImageProcess.c	   106                  else if(k == 0)
+; ..\CODE\Src\User_ImageProcess.c	   107                  {
+; ..\CODE\Src\User_ImageProcess.c	   108                      RightLine[i] = 0;
+; ..\CODE\Src\User_ImageProcess.c	   109                  }
+; ..\CODE\Src\User_ImageProcess.c	   110              }
+; ..\CODE\Src\User_ImageProcess.c	   111              //DisplayIMAG[i][(int)((x1 + x2) / 2)] = 0;
+; ..\CODE\Src\User_ImageProcess.c	   112              MidLine[i] = (int)((x1 + x2) / 2);
+; ..\CODE\Src\User_ImageProcess.c	   113          }
+; ..\CODE\Src\User_ImageProcess.c	   114          else
+; ..\CODE\Src\User_ImageProcess.c	   115          {
+; ..\CODE\Src\User_ImageProcess.c	   116              for (uint8 f = ((int)((x1 + x2) / 2)); f >= 0; f--)
+; ..\CODE\Src\User_ImageProcess.c	   117              {
+; ..\CODE\Src\User_ImageProcess.c	   118                  if (DisplayIMAGE[i][f] == 0)
+; ..\CODE\Src\User_ImageProcess.c	   119                  {
+; ..\CODE\Src\User_ImageProcess.c	   120                      LeftLine[i] = f;
+; ..\CODE\Src\User_ImageProcess.c	   121                      x3 = f;
+; ..\CODE\Src\User_ImageProcess.c	   122                      break;
+; ..\CODE\Src\User_ImageProcess.c	   123                  }
+; ..\CODE\Src\User_ImageProcess.c	   124                  else if(f == 0)
+; ..\CODE\Src\User_ImageProcess.c	   125                  {
+; ..\CODE\Src\User_ImageProcess.c	   126                      LeftLine[i] = 0;
+; ..\CODE\Src\User_ImageProcess.c	   127                  }
+; ..\CODE\Src\User_ImageProcess.c	   128              }
+; ..\CODE\Src\User_ImageProcess.c	   129              for (uint8 g = (int)((x1 + x2) / 2); g <= MT9V03X_W - 1; g++)
+; ..\CODE\Src\User_ImageProcess.c	   130              {
+; ..\CODE\Src\User_ImageProcess.c	   131                  if (DisplayIMAGE[i][g] == 0)
+; ..\CODE\Src\User_ImageProcess.c	   132                  {
+; ..\CODE\Src\User_ImageProcess.c	   133                      x4 = g;
+; ..\CODE\Src\User_ImageProcess.c	   134                      RightLine[i] = g;
+; ..\CODE\Src\User_ImageProcess.c	   135                      break;
+; ..\CODE\Src\User_ImageProcess.c	   136                  }
+; ..\CODE\Src\User_ImageProcess.c	   137                  else if(g == 187)
+; ..\CODE\Src\User_ImageProcess.c	   138                  {
+; ..\CODE\Src\User_ImageProcess.c	   139                      RightLine[i] = 187;
+; ..\CODE\Src\User_ImageProcess.c	   140                  }
+; ..\CODE\Src\User_ImageProcess.c	   141              }
+; ..\CODE\Src\User_ImageProcess.c	   142              //DisplayIMAG[i][(int)((x3 + x4) / 2)] = 0;
+; ..\CODE\Src\User_ImageProcess.c	   143  
+; ..\CODE\Src\User_ImageProcess.c	   144              if(x4 == 188 && x3 == 0)
+; ..\CODE\Src\User_ImageProcess.c	   145              {
+; ..\CODE\Src\User_ImageProcess.c	   146                  x2 = x4;
+; ..\CODE\Src\User_ImageProcess.c	   147                  x1 = x3;
+; ..\CODE\Src\User_ImageProcess.c	   148              }
+; ..\CODE\Src\User_ImageProcess.c	   149              if(((x3 + x4) / 2) - ((x1 + x2) / 2) < 5 || ((x3 + x4) / 2) - ((x1 + x2) / 2) > -5)
+; ..\CODE\Src\User_ImageProcess.c	   150              {
+; ..\CODE\Src\User_ImageProcess.c	   151                  x2 = x4;
+; ..\CODE\Src\User_ImageProcess.c	   152                  x1 = x3;
+; ..\CODE\Src\User_ImageProcess.c	   153              }
+; ..\CODE\Src\User_ImageProcess.c	   154              MidLine[i] = (int)((x1 + x2) / 2);
+; ..\CODE\Src\User_ImageProcess.c	   155          }
+; ..\CODE\Src\User_ImageProcess.c	   156      }
+; ..\CODE\Src\User_ImageProcess.c	   157  }
+; ..\CODE\Src\User_ImageProcess.c	   158  
+; ..\CODE\Src\User_ImageProcess.c	   159  void CameraProcess(void)
+; ..\CODE\Src\User_ImageProcess.c	   160  {
+; ..\CODE\Src\User_ImageProcess.c	   161  //	if(mt9v03x_finish_flag)
+; ..\CODE\Src\User_ImageProcess.c	   162  //	{
+; ..\CODE\Src\User_ImageProcess.c	   163  //		mt9v03x_finish_flag=0;
+; ..\CODE\Src\User_ImageProcess.c	   164  //		ips114_displayimage032_zoom(mt9v03x_image[0], MT9V03X_W, MT9V03X_H, 240, 135);
+; ..\CODE\Src\User_ImageProcess.c	   165  //	}
+; ..\CODE\Src\User_ImageProcess.c	   166      CloseThresholds = GetOSTU(mt9v03x_image) + 15;
+; ..\CODE\Src\User_ImageProcess.c	   167      FarThresholds = GetOSTU(mt9v03x_image) + 15;
+; ..\CODE\Src\User_ImageProcess.c	   168  	ImagePretreatment();
+; ..\CODE\Src\User_ImageProcess.c	   169      FindMidLine_ADD();
+; ..\CODE\Src\User_ImageProcess.c	   170  	//EdgePointFind();
+; ..\CODE\Src\User_ImageProcess.c	   171  	 MidLineFuseNum = GetMidLineNum();
+; ..\CODE\Src\User_ImageProcess.c	   172  	ProcessImageFlag = 1;
+; ..\CODE\Src\User_ImageProcess.c	   173  //			for(int i=0;i<MT9V03X_H;i++)
+; ..\CODE\Src\User_ImageProcess.c	   174  //		{
+; ..\CODE\Src\User_ImageProcess.c	   175  //			DisplayIMAGE[i][(int)(LeftLine[i]+RightLine[i])/2]=0;
+; ..\CODE\Src\User_ImageProcess.c	   176  //		}
+; ..\CODE\Src\User_ImageProcess.c	   177  //    ips114_displayimage032_zoom(DisplayIMAGE[0], MT9V03X_W, MT9V03X_H, 240, 135);
+; ..\CODE\Src\User_ImageProcess.c	   178  }
+; ..\CODE\Src\User_ImageProcess.c	   179  void EdgePointFind(void)
+; ..\CODE\Src\User_ImageProcess.c	   180  {
+; ..\CODE\Src\User_ImageProcess.c	   181      uint8 Rbp = 0, Lbp = 0;
+; ..\CODE\Src\User_ImageProcess.c	   182  
+; ..\CODE\Src\User_ImageProcess.c	   183      for(int i = 105; i >= 15; i--)
+; ..\CODE\Src\User_ImageProcess.c	   184      {
+; ..\CODE\Src\User_ImageProcess.c	   185          if(RightLine[i] - RightLine[i - 1] >= 3 || RightLine[i] - RightLine[i - 1] <= -3)
+; ..\CODE\Src\User_ImageProcess.c	   186              Rbp = Rbp + 1;
+; ..\CODE\Src\User_ImageProcess.c	   187          if(LeftLine[i] - LeftLine[i - 1] >= 3 || LeftLine[i] - LeftLine[i - 1] <= -3)
+; ..\CODE\Src\User_ImageProcess.c	   188              Lbp = Rbp + 1;
+; ..\CODE\Src\User_ImageProcess.c	   189      }
+; ..\CODE\Src\User_ImageProcess.c	   190      if(Rbp + Lbp >= 4 || Rbp >= 2 || Lbp >= 2)
+; ..\CODE\Src\User_ImageProcess.c	   191      {
+; ..\CODE\Src\User_ImageProcess.c	   192          Rbp = 0;
+; ..\CODE\Src\User_ImageProcess.c	   193          Lbp = 0;
+; ..\CODE\Src\User_ImageProcess.c	   194          for(int i = 105; i >= 15; i--)
+; ..\CODE\Src\User_ImageProcess.c	   195          {
+; ..\CODE\Src\User_ImageProcess.c	   196              if(RightLine[i] - RightLine[i - 1] >= 5 || RightLine[i] - RightLine[i - 1] <= -5)
+; ..\CODE\Src\User_ImageProcess.c	   197              {
+; ..\CODE\Src\User_ImageProcess.c	   198                  RightLine[i] = RightLine[i - 1] - 1;
+; ..\CODE\Src\User_ImageProcess.c	   199              }
+; ..\CODE\Src\User_ImageProcess.c	   200              if(LeftLine[i] - LeftLine[i - 1] >= 5 || LeftLine[i] - LeftLine[i - 1] <= -5)
+; ..\CODE\Src\User_ImageProcess.c	   201              {
+; ..\CODE\Src\User_ImageProcess.c	   202                  LeftLine[i] = LeftLine[i - 1] + 1;
+; ..\CODE\Src\User_ImageProcess.c	   203              }
+; ..\CODE\Src\User_ImageProcess.c	   204          }
+; ..\CODE\Src\User_ImageProcess.c	   205          for(int i = 187; i >= 0; i--)
+; ..\CODE\Src\User_ImageProcess.c	   206          {
+; ..\CODE\Src\User_ImageProcess.c	   207              MidLine[i] = (int)((LeftLine[i] + RightLine[i]) / 2);
+; ..\CODE\Src\User_ImageProcess.c	   208          }
+; ..\CODE\Src\User_ImageProcess.c	   209      }
+; ..\CODE\Src\User_ImageProcess.c	   210  }
+; ..\CODE\Src\User_ImageProcess.c	   211  
+; ..\CODE\Src\User_ImageProcess.c	   212  double GetMidLineNum(void)
+; ..\CODE\Src\User_ImageProcess.c	   213  {
+; ..\CODE\Src\User_ImageProcess.c	   214      double ClearLineSum = 0, MidLineSum = 0, LongLineSum = 0;
+; ..\CODE\Src\User_ImageProcess.c	   215      double AllLineSum = 0;
+; ..\CODE\Src\User_ImageProcess.c	   216      for(int i = 15; i <= 105; i++)
+; ..\CODE\Src\User_ImageProcess.c	   217      {
+; ..\CODE\Src\User_ImageProcess.c	   218          if(i >= 15 && i <= 45)
+; ..\CODE\Src\User_ImageProcess.c	   219              LongLineSum += MidLine[i];
+; ..\CODE\Src\User_ImageProcess.c	   220          else if(i > 55 && i < 65)
+; ..\CODE\Src\User_ImageProcess.c	   221              MidLineSum += MidLine[i];
+; ..\CODE\Src\User_ImageProcess.c	   222          else if(i >= 85 && i <= 105)
+; ..\CODE\Src\User_ImageProcess.c	   223              ClearLineSum += MidLine[i];
+; ..\CODE\Src\User_ImageProcess.c	   224      }
+; ..\CODE\Src\User_ImageProcess.c	   225      AllLineSum = LongLineSum * 0  + MidLineSum * 0  + ClearLineSum ;
+; ..\CODE\Src\User_ImageProcess.c	   226      return AllLineSum / 20;
+; ..\CODE\Src\User_ImageProcess.c	   227  }
+; ..\CODE\Src\User_ImageProcess.c	   228  
+; ..\CODE\Src\User_ImageProcess.c	   229  void ShowMidLine(void)
+; ..\CODE\Src\User_ImageProcess.c	   230  {
+; ..\CODE\Src\User_ImageProcess.c	   231      uint8 ShowMidLineIMG[MT9V03X_H][MT9V03X_W] = {{255}};
+; ..\CODE\Src\User_ImageProcess.c	   232      for(int i = 0; i <= MT9V03X_H - 1; i++)
+; ..\CODE\Src\User_ImageProcess.c	   233      {
+; ..\CODE\Src\User_ImageProcess.c	   234          for(int j = 0; j <= MT9V03X_W - 1; j++)
+; ..\CODE\Src\User_ImageProcess.c	   235              ShowMidLineIMG[i][j] = 255;
+; ..\CODE\Src\User_ImageProcess.c	   236      }
+; ..\CODE\Src\User_ImageProcess.c	   237      for(int i = 90; i <= 105; i++)
+; ..\CODE\Src\User_ImageProcess.c	   238      {
+; ..\CODE\Src\User_ImageProcess.c	   239  
+; ..\CODE\Src\User_ImageProcess.c	   240          ShowMidLineIMG[i][MidLine[i]] = 0;
+; ..\CODE\Src\User_ImageProcess.c	   241      }
+; ..\CODE\Src\User_ImageProcess.c	   242      ips114_displayimage032_zoom(ShowMidLineIMG[0], MT9V03X_W, MT9V03X_H, 240, 135);
+; ..\CODE\Src\User_ImageProcess.c	   243  
+; ..\CODE\Src\User_ImageProcess.c	   244  }
+; ..\CODE\Src\User_ImageProcess.c	   245  void FindMidLine_ADD(void)
+; ..\CODE\Src\User_ImageProcess.c	   246  {
+; ..\CODE\Src\User_ImageProcess.c	   247      //DisplayIMAGE
+; ..\CODE\Src\User_ImageProcess.c	   248      float CountWhitePixels = 0, FirstWhitePixels, BlackFlag = 0;
+; ..\CODE\Src\User_ImageProcess.c	   249      int AllAddsum = 0;
+; ..\CODE\Src\User_ImageProcess.c	   250      for(int i = 0; i <= MT9V03X_W - 1; i++)
+; ..\CODE\Src\User_ImageProcess.c	   251      {
+; ..\CODE\Src\User_ImageProcess.c	   252          for(int j = 0; j <= MT9V03X_W - 1; j++)
+; ..\CODE\Src\User_ImageProcess.c	   253          {
+; ..\CODE\Src\User_ImageProcess.c	   254              if(DisplayIMAGE[i][j] == 255)
+; ..\CODE\Src\User_ImageProcess.c	   255              {
+; ..\CODE\Src\User_ImageProcess.c	   256  //				FirstWhitePixels=j;
+; ..\CODE\Src\User_ImageProcess.c	   257                  CountWhitePixels++;
+; ..\CODE\Src\User_ImageProcess.c	   258  //				if(CountWhitePixels>=20)
+; ..\CODE\Src\User_ImageProcess.c	   259  //				{
+; ..\CODE\Src\User_ImageProcess.c	   260  //
+; ..\CODE\Src\User_ImageProcess.c	   261  //				}
+; ..\CODE\Src\User_ImageProcess.c	   262                  AllAddsum += j;
+; ..\CODE\Src\User_ImageProcess.c	   263                  BlackFlag = 0;
+; ..\CODE\Src\User_ImageProcess.c	   264  
+; ..\CODE\Src\User_ImageProcess.c	   265              }
+; ..\CODE\Src\User_ImageProcess.c	   266              else
+; ..\CODE\Src\User_ImageProcess.c	   267              {
+; ..\CODE\Src\User_ImageProcess.c	   268                  BlackFlag++;
+; ..\CODE\Src\User_ImageProcess.c	   269                  if(BlackFlag == 5)
+; ..\CODE\Src\User_ImageProcess.c	   270                  {
+; ..\CODE\Src\User_ImageProcess.c	   271                      if(CountWhitePixels <= 40)
+; ..\CODE\Src\User_ImageProcess.c	   272                      {
+; ..\CODE\Src\User_ImageProcess.c	   273                          AllAddsum = 0;
+; ..\CODE\Src\User_ImageProcess.c	   274                          CountWhitePixels = 0;
+; ..\CODE\Src\User_ImageProcess.c	   275                      }
+; ..\CODE\Src\User_ImageProcess.c	   276                  }
+; ..\CODE\Src\User_ImageProcess.c	   277              }
+; ..\CODE\Src\User_ImageProcess.c	   278  
+; ..\CODE\Src\User_ImageProcess.c	   279          }
+; ..\CODE\Src\User_ImageProcess.c	   280          MidLine[i] = (uint8)(AllAddsum / CountWhitePixels * 1.0);
+; ..\CODE\Src\User_ImageProcess.c	   281      }
+; ..\CODE\Src\User_ImageProcess.c	   282  }
+; ..\CODE\Src\User_ImageProcess.c	   283  
+; ..\CODE\Src\User_ImageProcess.c	   284  void GetOSTUIMAGE(void)
+; ..\CODE\Src\User_ImageProcess.c	   285  {
+; ..\CODE\Src\User_ImageProcess.c	   286      for(int i = 0; i < 15; i++)
+; ..\CODE\Src\User_ImageProcess.c	   287      {
+; ..\CODE\Src\User_ImageProcess.c	   288          for(int j = 0; j < MT9V03X_W; j++)
+; ..\CODE\Src\User_ImageProcess.c	   289              OSTUIMAGE[i][j] = mt9v03x_image[i + 15][j];
+; ..\CODE\Src\User_ImageProcess.c	   290      }
+; ..\CODE\Src\User_ImageProcess.c	   291  }*/
+; ..\CODE\Src\User_ImageProcess.c	   292  
+; ..\CODE\Src\User_ImageProcess.c	   293  void FindZebra(void)
 ; Function FindZebra
 .L55:
 FindZebra:	.type	func
 	sub.a	a10,#8
-.L98:
+.L99:
 
-; ..\CODE\Src\User_ImageProcess.c	   293  {
-; ..\CODE\Src\User_ImageProcess.c	   294  	uint8_t Threshold;
+; ..\CODE\Src\User_ImageProcess.c	   294  {
 ; ..\CODE\Src\User_ImageProcess.c	   295  	uint8 JudgeBToWFlag = 0;
 ; ..\CODE\Src\User_ImageProcess.c	   296  	uint8 JudgeWToBFlag = 0;
 ; ..\CODE\Src\User_ImageProcess.c	   297  	uint8 BlackWhiteChangeCount = 0;
 ; ..\CODE\Src\User_ImageProcess.c	   298  	static uint8 RecognizedCorrectLineCount = 0;
 ; ..\CODE\Src\User_ImageProcess.c	   299  
 ; ..\CODE\Src\User_ImageProcess.c	   300  	Threshold = GetOSTU(&mt9v03x_image[0]);
+	movh.a	a15,#@his(Threshold)
+.L127:
 	movh.a	a4,#@his(mt9v03x_image)
 	lea	a4,[a4]@los(mt9v03x_image)
 	call	GetOSTU
-.L99:
-	mov	d15,d2
-.L100:
+.L128:
+	st.b	[a15]@los(Threshold),d2
+.L129:
 
 ; ..\CODE\Src\User_ImageProcess.c	   301  	if(255 - Threshold >= InGarageAdjustedValue)
-	rsub	d0,d15,#255
+	movh.a	a15,#@his(Threshold)
+	ld.bu	d15,[a15]@los(Threshold)
 .L130:
-	jge	d0,#0,.L2
+	rsub	d15,d15,#255
 .L131:
+	jge	d15,#0,.L2
+.L132:
 
 ; ..\CODE\Src\User_ImageProcess.c	   302  		Threshold += InGarageAdjustedValue;
 ; ..\CODE\Src\User_ImageProcess.c	   303  	else
 ; ..\CODE\Src\User_ImageProcess.c	   304  		Threshold = 255;
 	mov	d15,#255
+.L133:
+	st.b	[a15]@los(Threshold),d15
 .L2:
 
 ; ..\CODE\Src\User_ImageProcess.c	   305  	BinaryImage(&mt9v03x_image[0], Threshold);
 	movh.a	a4,#@his(mt9v03x_image)
 	lea	a4,[a4]@los(mt9v03x_image)
-.L132:
-	mov	d4,d15
-.L101:
+.L134:
+	ld.bu	d4,[a15]@los(Threshold)
 	call	BinaryImage
-.L102:
+.L135:
 
 ; ..\CODE\Src\User_ImageProcess.c	   306  
 ; ..\CODE\Src\User_ImageProcess.c	   307  	printf("%d\n", Threshold);  //≤‚ ‘
+	movh.a	a15,#@his(Threshold)
+	ld.bu	d15,[a15]@los(Threshold)
 	st.w	[a10],d15
-.L133:
+.L136:
 	movh.a	a4,#@his(.1.str)
 	lea	a4,[a4]@los(.1.str)
 	call	printf
-.L73:
+.L74:
 
 ; ..\CODE\Src\User_ImageProcess.c	   308  
-; ..\CODE\Src\User_ImageProcess.c	   309  	for(int imageH=30; imageH<=70; imageH++)
-	mov	d2,#30
-.L103:
+; ..\CODE\Src\User_ImageProcess.c	   309  	for(int imageH=20; imageH<=60; imageH++)
+	mov	d2,#20
+.L100:
 	j	.L3
 .L4:
 
 ; ..\CODE\Src\User_ImageProcess.c	   310  	{
 ; ..\CODE\Src\User_ImageProcess.c	   311  		BlackWhiteChangeCount = 0;
 	mov	d3,#0
-.L77:
+.L78:
 
 ; ..\CODE\Src\User_ImageProcess.c	   312  		for(int imageW=94; imageW>=40; imageW--)
 	mov	d4,#94
-.L105:
+.L102:
 	j	.L5
 .L6:
 
 ; ..\CODE\Src\User_ImageProcess.c	   313  		{
 ; ..\CODE\Src\User_ImageProcess.c	   314  			JudgeBToWFlag = 0;
 	mov	d5,#0
-.L107:
+.L104:
 
 ; ..\CODE\Src\User_ImageProcess.c	   315  			JudgeWToBFlag = 0;
 	mov	d6,d5
-.L108:
+.L105:
 
 ; ..\CODE\Src\User_ImageProcess.c	   316  			if(mt9v03x_image[imageH][imageW]==0x00 && mt9v03x_image[imageH][imageW-1]==0xfe)
 	mul	d15,d2,#188
-.L134:
+.L137:
 	movh.a	a15,#@his(mt9v03x_image)
 	lea	a15,[a15]@los(mt9v03x_image)
-.L135:
+.L138:
 	addsc.a	a15,a15,d15,#0
-.L136:
+.L139:
 	addsc.a	a15,a15,d4,#0
 	ld.bu	d0,[a15]
-.L137:
+.L140:
 	jne	d0,#0,.L7
-.L138:
+.L141:
 	movh.a	a15,#@his(mt9v03x_image)
 	lea	a15,[a15]@los(mt9v03x_image)
-.L139:
+.L142:
 	addsc.a	a15,a15,d15,#0
-.L140:
+.L143:
 	addsc.a	a15,a15,d4,#0
 	ld.bu	d0,[a15]-1
-.L141:
+.L144:
 	mov	d1,#254
-.L142:
+.L145:
 	jne	d0,d1,.L8
-.L80:
+.L81:
 
 ; ..\CODE\Src\User_ImageProcess.c	   317  			{
-; ..\CODE\Src\User_ImageProcess.c	   318  				for(int i=imageW-6; i<=imageW-1; i++)
-	add	d15,d4,#-6
-.L109:
+; ..\CODE\Src\User_ImageProcess.c	   318  				for(int i=imageW-4; i<=imageW-1; i++)
+	add	d15,d4,#-4
+.L106:
 	j	.L9
 .L10:
 
 ; ..\CODE\Src\User_ImageProcess.c	   319  					if(mt9v03x_image[imageH][i]==0x00)
 	mul	d0,d2,#188
-.L143:
+.L146:
 	movh.a	a15,#@his(mt9v03x_image)
 	lea	a15,[a15]@los(mt9v03x_image)
-.L144:
+.L147:
 	addsc.a	a15,a15,d0,#0
-.L145:
+.L148:
 	addsc.a	a15,a15,d15,#0
 	ld.bu	d0,[a15]
-.L146:
+.L149:
 	jne	d0,#0,.L11
-.L147:
+.L150:
 
 ; ..\CODE\Src\User_ImageProcess.c	   320  					{
 ; ..\CODE\Src\User_ImageProcess.c	   321  						JudgeBToWFlag = 1;
 	mov	d5,#1
-.L148:
+.L151:
 
 ; ..\CODE\Src\User_ImageProcess.c	   322  						break;
 	j	.L12
@@ -441,50 +449,50 @@ FindZebra:	.type	func
 	add	d15,#1
 .L9:
 	add	d0,d4,#-1
-.L149:
+.L152:
 	jge	d0,d15,.L10
 
 ; ..\CODE\Src\User_ImageProcess.c	   323  					}
 ; ..\CODE\Src\User_ImageProcess.c	   324  				if(!JudgeBToWFlag)
 .L12:
 	jne	d5,#0,.L13
-.L82:
+.L83:
 
 ; ..\CODE\Src\User_ImageProcess.c	   325  				{
-; ..\CODE\Src\User_ImageProcess.c	   326  					for(int i=imageW; i<=imageW+5; i++)
+; ..\CODE\Src\User_ImageProcess.c	   326  					for(int i=imageW; i<=imageW+3; i++)
 	mov	d0,d4
-.L110:
+.L107:
 	j	.L14
 .L15:
 
 ; ..\CODE\Src\User_ImageProcess.c	   327  						if(mt9v03x_image[imageH][i]==0xfe)
 	mul	d1,d2,#188
-.L150:
+.L153:
 	movh.a	a15,#@his(mt9v03x_image)
 	lea	a15,[a15]@los(mt9v03x_image)
-.L151:
+.L154:
 	addsc.a	a15,a15,d1,#0
-.L152:
+.L155:
 	addsc.a	a15,a15,d0,#0
 	ld.bu	d1,[a15]
-.L153:
+.L156:
 	mov	d15,#254
-.L154:
+.L157:
 	jne	d15,d1,.L16
-.L155:
+.L158:
 
 ; ..\CODE\Src\User_ImageProcess.c	   328  						{
 ; ..\CODE\Src\User_ImageProcess.c	   329  							JudgeBToWFlag = 1;
 	mov	d5,#1
-.L156:
+.L159:
 
 ; ..\CODE\Src\User_ImageProcess.c	   330  							break;
 	j	.L17
 .L16:
 	add	d0,#1
 .L14:
-	add	d15,d4,#5
-.L157:
+	add	d15,d4,#3
+.L160:
 	jge	d15,d0,.L15
 
 ; ..\CODE\Src\User_ImageProcess.c	   331  						}
@@ -494,11 +502,11 @@ FindZebra:	.type	func
 
 ; ..\CODE\Src\User_ImageProcess.c	   333  				if(!JudgeBToWFlag)
 	eq	d15,d5,#0
-.L158:
+.L161:
 
 ; ..\CODE\Src\User_ImageProcess.c	   334  					BlackWhiteChangeCount++;
 	add	d3,d15
-.L104:
+.L101:
 	extr.u	d3,d3,#0,#8
 .L8:
 .L7:
@@ -506,57 +514,57 @@ FindZebra:	.type	func
 ; ..\CODE\Src\User_ImageProcess.c	   335  			}
 ; ..\CODE\Src\User_ImageProcess.c	   336  			if(mt9v03x_image[imageH][imageW]==0xfe && mt9v03x_image[imageH][imageW-1]==0x00)
 	mul	d15,d2,#188
-.L159:
+.L162:
 	movh.a	a15,#@his(mt9v03x_image)
 	lea	a15,[a15]@los(mt9v03x_image)
-.L160:
+.L163:
 	addsc.a	a15,a15,d15,#0
-.L161:
+.L164:
 	addsc.a	a15,a15,d4,#0
 	ld.bu	d0,[a15]
-.L162:
+.L165:
 	mov	d1,#254
-.L163:
+.L166:
 	jne	d0,d1,.L18
-.L164:
+.L167:
 	movh.a	a15,#@his(mt9v03x_image)
 	lea	a15,[a15]@los(mt9v03x_image)
-.L165:
+.L168:
 	addsc.a	a15,a15,d15,#0
-.L166:
+.L169:
 	addsc.a	a15,a15,d4,#0
 	ld.bu	d15,[a15]-1
-.L167:
+.L170:
 	jne	d15,#0,.L19
-.L84:
+.L85:
 
 ; ..\CODE\Src\User_ImageProcess.c	   337  			{
-; ..\CODE\Src\User_ImageProcess.c	   338  				for(int i=imageW-6; i<=imageW-1; i++)
-	add	d0,d4,#-6
-.L112:
+; ..\CODE\Src\User_ImageProcess.c	   338  				for(int i=imageW-4; i<=imageW-1; i++)
+	add	d0,d4,#-4
+.L109:
 	j	.L20
 .L21:
 
 ; ..\CODE\Src\User_ImageProcess.c	   339  					if(mt9v03x_image[imageH][i]==0xfe)
 	mul	d15,d2,#188
-.L168:
+.L171:
 	movh.a	a15,#@his(mt9v03x_image)
 	lea	a15,[a15]@los(mt9v03x_image)
-.L169:
+.L172:
 	addsc.a	a15,a15,d15,#0
-.L170:
+.L173:
 	addsc.a	a15,a15,d0,#0
 	ld.bu	d1,[a15]
-.L171:
+.L174:
 	mov	d15,#254
-.L172:
+.L175:
 	jne	d15,d1,.L22
-.L173:
+.L176:
 
 ; ..\CODE\Src\User_ImageProcess.c	   340  					{
 ; ..\CODE\Src\User_ImageProcess.c	   341  						JudgeWToBFlag = 1;
 	mov	d6,#1
-.L174:
+.L177:
 
 ; ..\CODE\Src\User_ImageProcess.c	   342  						break;
 	j	.L23
@@ -564,48 +572,48 @@ FindZebra:	.type	func
 	add	d0,#1
 .L20:
 	add	d15,d4,#-1
-.L175:
+.L178:
 	jge	d15,d0,.L21
 
 ; ..\CODE\Src\User_ImageProcess.c	   343  					}
 ; ..\CODE\Src\User_ImageProcess.c	   344  				if(!JudgeWToBFlag)
 .L23:
 	jne	d6,#0,.L24
-.L86:
+.L87:
 
 ; ..\CODE\Src\User_ImageProcess.c	   345  				{
-; ..\CODE\Src\User_ImageProcess.c	   346  					for(int i=imageW; i<=imageW+5; i++)
+; ..\CODE\Src\User_ImageProcess.c	   346  					for(int i=imageW; i<=imageW+3; i++)
 	mov	d0,d4
-.L113:
+.L110:
 	j	.L25
 .L26:
 
 ; ..\CODE\Src\User_ImageProcess.c	   347  						if(mt9v03x_image[imageH][i]==0x00)
 	mul	d15,d2,#188
-.L176:
+.L179:
 	movh.a	a15,#@his(mt9v03x_image)
 	lea	a15,[a15]@los(mt9v03x_image)
-.L177:
+.L180:
 	addsc.a	a15,a15,d15,#0
-.L178:
+.L181:
 	addsc.a	a15,a15,d0,#0
 	ld.bu	d15,[a15]
-.L179:
+.L182:
 	jne	d15,#0,.L27
-.L180:
+.L183:
 
 ; ..\CODE\Src\User_ImageProcess.c	   348  						{
 ; ..\CODE\Src\User_ImageProcess.c	   349  							JudgeWToBFlag = 1;
 	mov	d6,#1
-.L181:
+.L184:
 
 ; ..\CODE\Src\User_ImageProcess.c	   350  							break;
 	j	.L28
 .L27:
 	add	d0,#1
 .L25:
-	add	d15,d4,#5
-.L182:
+	add	d15,d4,#3
+.L185:
 	jge	d15,d0,.L26
 
 ; ..\CODE\Src\User_ImageProcess.c	   351  						}
@@ -615,91 +623,91 @@ FindZebra:	.type	func
 
 ; ..\CODE\Src\User_ImageProcess.c	   353  				if(!JudgeWToBFlag)
 	eq	d15,d6,#0
-.L183:
+.L186:
 
 ; ..\CODE\Src\User_ImageProcess.c	   354  					BlackWhiteChangeCount++;
 	add	d3,d15
-.L111:
+.L108:
 	extr.u	d3,d3,#0,#8
 .L19:
 .L18:
 	add	d4,#-1
 .L5:
 	mov	d15,#40
-.L184:
+.L187:
 	jge	d4,d15,.L6
-.L78:
+.L79:
 
 ; ..\CODE\Src\User_ImageProcess.c	   355  			}
 ; ..\CODE\Src\User_ImageProcess.c	   356  		}
 ; ..\CODE\Src\User_ImageProcess.c	   357  		for(int imageW=94; imageW<=140; imageW++)
 	mov	d4,#94
-.L106:
+.L103:
 	j	.L29
 .L30:
 
 ; ..\CODE\Src\User_ImageProcess.c	   358  		{
 ; ..\CODE\Src\User_ImageProcess.c	   359  			JudgeBToWFlag = 0;
 	mov	d5,#0
-.L115:
+.L112:
 
 ; ..\CODE\Src\User_ImageProcess.c	   360  			JudgeWToBFlag = 0;
 	mov	d6,d5
-.L116:
+.L113:
 
 ; ..\CODE\Src\User_ImageProcess.c	   361  			if(mt9v03x_image[imageH][imageW]==0x00 && mt9v03x_image[imageH][imageW+1]==0xfe)
 	mul	d15,d2,#188
-.L185:
+.L188:
 	movh.a	a15,#@his(mt9v03x_image)
 	lea	a15,[a15]@los(mt9v03x_image)
-.L186:
+.L189:
 	addsc.a	a15,a15,d15,#0
-.L187:
+.L190:
 	addsc.a	a15,a15,d4,#0
 	ld.bu	d0,[a15]
-.L188:
+.L191:
 	jne	d0,#0,.L31
-.L189:
+.L192:
 	movh.a	a15,#@his(mt9v03x_image)
 	lea	a15,[a15]@los(mt9v03x_image)
-.L190:
+.L193:
 	addsc.a	a15,a15,d15,#0
-.L191:
+.L194:
 	addsc.a	a15,a15,d4,#0
 	ld.bu	d0,[a15]1
-.L192:
+.L195:
 	mov	d1,#254
-.L193:
+.L196:
 	jne	d0,d1,.L32
-.L90:
+.L91:
 
 ; ..\CODE\Src\User_ImageProcess.c	   362  			{
-; ..\CODE\Src\User_ImageProcess.c	   363  				for(int i=imageW-5; i<=imageW; i++)
-	add	d0,d4,#-5
-.L117:
+; ..\CODE\Src\User_ImageProcess.c	   363  				for(int i=imageW-3; i<=imageW; i++)
+	add	d0,d4,#-3
+.L114:
 
 ; ..\CODE\Src\User_ImageProcess.c	   364  					if(mt9v03x_image[imageH][i]==0xfe)
 	mov	d15,d1
-.L194:
+.L197:
 	j	.L33
 .L34:
 	mul	d1,d2,#188
-.L195:
+.L198:
 	movh.a	a15,#@his(mt9v03x_image)
 	lea	a15,[a15]@los(mt9v03x_image)
-.L196:
+.L199:
 	addsc.a	a15,a15,d1,#0
-.L197:
+.L200:
 	addsc.a	a15,a15,d0,#0
 	ld.bu	d1,[a15]
-.L198:
+.L201:
 	jne	d15,d1,.L35
-.L199:
+.L202:
 
 ; ..\CODE\Src\User_ImageProcess.c	   365  					{
 ; ..\CODE\Src\User_ImageProcess.c	   366  						JudgeBToWFlag = 1;
 	mov	d5,#1
-.L200:
+.L203:
 
 ; ..\CODE\Src\User_ImageProcess.c	   367  						break;
 	j	.L36
@@ -712,41 +720,41 @@ FindZebra:	.type	func
 ; ..\CODE\Src\User_ImageProcess.c	   369  				if(!JudgeBToWFlag)
 .L36:
 	jne	d5,#0,.L37
-.L92:
+.L93:
 
 ; ..\CODE\Src\User_ImageProcess.c	   370  				{
-; ..\CODE\Src\User_ImageProcess.c	   371  					for(int i=imageW+1; i<=imageW+6; i++)
+; ..\CODE\Src\User_ImageProcess.c	   371  					for(int i=imageW+1; i<=imageW+4; i++)
 	add	d15,d4,#1
-.L118:
+.L115:
 	j	.L38
 .L39:
 
 ; ..\CODE\Src\User_ImageProcess.c	   372  						if(mt9v03x_image[imageH][i]==0x00)
 	mul	d0,d2,#188
-.L201:
+.L204:
 	movh.a	a15,#@his(mt9v03x_image)
 	lea	a15,[a15]@los(mt9v03x_image)
-.L202:
+.L205:
 	addsc.a	a15,a15,d0,#0
-.L203:
+.L206:
 	addsc.a	a15,a15,d15,#0
 	ld.bu	d0,[a15]
-.L204:
+.L207:
 	jne	d0,#0,.L40
-.L205:
+.L208:
 
 ; ..\CODE\Src\User_ImageProcess.c	   373  						{
 ; ..\CODE\Src\User_ImageProcess.c	   374  							JudgeBToWFlag = 1;
 	mov	d5,#1
-.L206:
+.L209:
 
 ; ..\CODE\Src\User_ImageProcess.c	   375  							break;
 	j	.L41
 .L40:
 	add	d15,#1
 .L38:
-	add	d0,d4,#6
-.L207:
+	add	d0,d4,#4
+.L210:
 	jge	d0,d15,.L39
 
 ; ..\CODE\Src\User_ImageProcess.c	   376  						}
@@ -756,11 +764,11 @@ FindZebra:	.type	func
 
 ; ..\CODE\Src\User_ImageProcess.c	   378  				if(!JudgeBToWFlag)
 	eq	d15,d5,#0
-.L208:
+.L211:
 
 ; ..\CODE\Src\User_ImageProcess.c	   379  					BlackWhiteChangeCount++;
 	add	d3,d15
-.L114:
+.L111:
 	extr.u	d3,d3,#0,#8
 .L32:
 .L31:
@@ -768,55 +776,55 @@ FindZebra:	.type	func
 ; ..\CODE\Src\User_ImageProcess.c	   380  			}
 ; ..\CODE\Src\User_ImageProcess.c	   381  			if(mt9v03x_image[imageH][imageW]==0xfe && mt9v03x_image[imageH][imageW+1]==0x00)
 	mul	d15,d2,#188
-.L209:
+.L212:
 	movh.a	a15,#@his(mt9v03x_image)
 	lea	a15,[a15]@los(mt9v03x_image)
-.L210:
+.L213:
 	addsc.a	a15,a15,d15,#0
-.L211:
+.L214:
 	addsc.a	a15,a15,d4,#0
 	ld.bu	d0,[a15]
-.L212:
+.L215:
 	mov	d1,#254
-.L213:
+.L216:
 	jne	d0,d1,.L42
-.L214:
+.L217:
 	movh.a	a15,#@his(mt9v03x_image)
 	lea	a15,[a15]@los(mt9v03x_image)
-.L215:
+.L218:
 	addsc.a	a15,a15,d15,#0
-.L216:
+.L219:
 	addsc.a	a15,a15,d4,#0
 	ld.bu	d15,[a15]1
-.L217:
+.L220:
 	jne	d15,#0,.L43
-.L94:
+.L95:
 
 ; ..\CODE\Src\User_ImageProcess.c	   382  			{
-; ..\CODE\Src\User_ImageProcess.c	   383  				for(int i=imageW-5; i<=imageW; i++)
-	add	d0,d4,#-5
-.L120:
+; ..\CODE\Src\User_ImageProcess.c	   383  				for(int i=imageW-3; i<=imageW; i++)
+	add	d0,d4,#-3
+.L117:
 	j	.L44
 .L45:
 
 ; ..\CODE\Src\User_ImageProcess.c	   384  					if(mt9v03x_image[imageH][i]==0x00)
 	mul	d15,d2,#188
-.L218:
+.L221:
 	movh.a	a15,#@his(mt9v03x_image)
 	lea	a15,[a15]@los(mt9v03x_image)
-.L219:
+.L222:
 	addsc.a	a15,a15,d15,#0
-.L220:
+.L223:
 	addsc.a	a15,a15,d0,#0
 	ld.bu	d15,[a15]
-.L221:
+.L224:
 	jne	d15,#0,.L46
-.L222:
+.L225:
 
 ; ..\CODE\Src\User_ImageProcess.c	   385  					{
 ; ..\CODE\Src\User_ImageProcess.c	   386  						JudgeWToBFlag = 1;
 	mov	d6,#1
-.L223:
+.L226:
 
 ; ..\CODE\Src\User_ImageProcess.c	   387  						break;
 	j	.L47
@@ -829,43 +837,43 @@ FindZebra:	.type	func
 ; ..\CODE\Src\User_ImageProcess.c	   389  				if(!JudgeWToBFlag)
 .L47:
 	jne	d6,#0,.L48
-.L96:
+.L97:
 
 ; ..\CODE\Src\User_ImageProcess.c	   390  				{
-; ..\CODE\Src\User_ImageProcess.c	   391  					for(int i=imageW+1; i<=imageW+6; i++)
+; ..\CODE\Src\User_ImageProcess.c	   391  					for(int i=imageW+1; i<=imageW+4; i++)
 	add	d0,d4,#1
-.L121:
+.L118:
 	j	.L49
 .L50:
 
 ; ..\CODE\Src\User_ImageProcess.c	   392  						if(mt9v03x_image[imageH][i]==0xfe)
 	mul	d15,d2,#188
-.L224:
+.L227:
 	movh.a	a15,#@his(mt9v03x_image)
 	lea	a15,[a15]@los(mt9v03x_image)
-.L225:
+.L228:
 	addsc.a	a15,a15,d15,#0
-.L226:
+.L229:
 	addsc.a	a15,a15,d0,#0
 	ld.bu	d1,[a15]
-.L227:
+.L230:
 	mov	d15,#254
-.L228:
+.L231:
 	jne	d15,d1,.L51
-.L229:
+.L232:
 
 ; ..\CODE\Src\User_ImageProcess.c	   393  						{
 ; ..\CODE\Src\User_ImageProcess.c	   394  							JudgeWToBFlag = 1;
 	mov	d6,#1
-.L230:
+.L233:
 
 ; ..\CODE\Src\User_ImageProcess.c	   395  							break;
 	j	.L52
 .L51:
 	add	d0,#1
 .L49:
-	add	d15,d4,#6
-.L231:
+	add	d15,d4,#4
+.L234:
 	jge	d15,d0,.L50
 
 ; ..\CODE\Src\User_ImageProcess.c	   396  						}
@@ -875,20 +883,20 @@ FindZebra:	.type	func
 
 ; ..\CODE\Src\User_ImageProcess.c	   398  				if(!JudgeWToBFlag)
 	eq	d15,d6,#0
-.L232:
+.L235:
 
 ; ..\CODE\Src\User_ImageProcess.c	   399  					BlackWhiteChangeCount++;
 	add	d3,d15
-.L119:
+.L116:
 	extr.u	d3,d3,#0,#8
 .L43:
 .L42:
 	add	d4,#1
 .L29:
 	mov	d15,#140
-.L233:
+.L236:
 	jge	d15,d4,.L30
-.L88:
+.L89:
 
 ; ..\CODE\Src\User_ImageProcess.c	   400  			}
 ; ..\CODE\Src\User_ImageProcess.c	   401  		}
@@ -896,47 +904,48 @@ FindZebra:	.type	func
 ; ..\CODE\Src\User_ImageProcess.c	   403  			RecognizedCorrectLineCount++;
 	movh.a	a15,#@his(_999001_RecognizedCorrectLineCount)
 	ld.bu	d15,[a15]@los(_999001_RecognizedCorrectLineCount)
-.L234:
+.L237:
 	ge.u	d0,d3,#8
-.L235:
+.L238:
 	add	d15,d0
 	st.b	[a15]@los(_999001_RecognizedCorrectLineCount),d15
-.L236:
+.L239:
 	add	d2,#1
 .L3:
-	mov	d15,#70
-.L237:
+	mov	d15,#60
+.L240:
 	jge	d15,d2,.L4
-.L74:
+.L75:
 
 ; ..\CODE\Src\User_ImageProcess.c	   404  	}
 ; ..\CODE\Src\User_ImageProcess.c	   405  
 ; ..\CODE\Src\User_ImageProcess.c	   406  	if(RecognizedCorrectLineCount >= 5)
 	movh.a	a15,#@his(_999001_RecognizedCorrectLineCount)
 	ld.bu	d15,[a15]@los(_999001_RecognizedCorrectLineCount)
-.L238:
+.L241:
 	jlt.u	d15,#5,.L53
-.L239:
+.L242:
 
 ; ..\CODE\Src\User_ImageProcess.c	   407  	{
 ; ..\CODE\Src\User_ImageProcess.c	   408  		EnterGarageFlag = 1;
 	movh.a	a15,#@his(EnterGarageFlag)
-.L240:
-	mov	d5,#1
-.L241:
-	st.b	[a15]@los(EnterGarageFlag),d5
-.L242:
-
-; ..\CODE\Src\User_ImageProcess.c	   409  		gpio_set(P20_8, 1);
-	mov	d4,#648
 .L243:
+	mov	d15,#1
+.L244:
+	st.b	[a15]@los(EnterGarageFlag),d15
+.L245:
+
+; ..\CODE\Src\User_ImageProcess.c	   409  		gpio_set(P20_8, 0);
+	mov	d4,#648
+.L246:
+	mov	d5,#0
 	j	gpio_set
 .L53:
 
 ; ..\CODE\Src\User_ImageProcess.c	   410  	}
 ; ..\CODE\Src\User_ImageProcess.c	   411  }
 	ret
-.L67:
+.L69:
 	
 __FindZebra_function_end:
 	.size	FindZebra,__FindZebra_function_end-FindZebra
@@ -948,6 +957,12 @@ __FindZebra_function_end:
 	.global	EnterGarageFlag
 EnterGarageFlag:	.type	object
 	.size	EnterGarageFlag,1
+	.space	1
+	.sdecl	'.bss.cpu1_dsram',data,cluster('Threshold')
+	.sect	'.bss.cpu1_dsram'
+	.global	Threshold
+Threshold:	.type	object
+	.size	Threshold,1
 	.space	1
 	.sdecl	'.data.cpu1_psram',data,cluster('_999001_RecognizedCorrectLineCount')
 	.sect	'.data.cpu1_psram'
@@ -1032,7 +1047,7 @@ _999001_RecognizedCorrectLineCount:	.type	object
 	.byte	'value',0,2,143,1,43
 	.word	396
 	.byte	6,0
-.L75:
+.L76:
 	.byte	7
 	.byte	'int',0,4,5,7
 	.byte	'unsigned int',0,4,7,11
@@ -1058,7 +1073,7 @@ _999001_RecognizedCorrectLineCount:	.type	object
 	.byte	'B',0
 	.word	531
 	.byte	4,2,35,0,0
-.L68:
+.L70:
 	.byte	7
 	.byte	'unsigned char',0,1,8,7
 	.byte	'unsigned short int',0,2,7,11
@@ -35578,11 +35593,11 @@ _999001_RecognizedCorrectLineCount:	.type	object
 	.sdecl	'.debug_line',debug
 	.sect	'.debug_line'
 .L59:
-	.word	.L123-.L122
-.L122:
+	.word	.L120-.L119
+.L119:
 	.half	3
-	.word	.L125-.L124
-.L124:
+	.word	.L122-.L121
+.L121:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Std',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Scu\\Std',0
@@ -35657,12 +35672,12 @@ _999001_RecognizedCorrectLineCount:	.type	object
 	.byte	'SEEKFREE_MT9V03X.h',0,19,0,0
 	.byte	'stdint.h',0,12,0,0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\CODE\\Inc\\User_FSM.h',0,0,0,0,0
-.L125:
-.L123:
+.L122:
+.L120:
 	.sdecl	'.debug_info',debug,cluster('FindZebra')
 	.sect	'.debug_info'
 .L60:
-	.word	647
+	.word	624
 	.half	3
 	.word	.L61
 	.byte	4,1
@@ -35673,82 +35688,79 @@ _999001_RecognizedCorrectLineCount:	.type	object
 	.byte	2
 	.word	.L56
 	.byte	3
-	.byte	'FindZebra',0,1,164,2,6,1,1,1
-	.word	.L55,.L67,.L54
+	.byte	'FindZebra',0,1,165,2,6,1,1,1
+	.word	.L55,.L69,.L54
 	.byte	4
-	.word	.L55,.L67
-	.byte	5
-	.byte	'Threshold',0,1,166,2,10
-	.word	.L68,.L69
+	.word	.L55,.L69
 	.byte	5
 	.byte	'JudgeBToWFlag',0,1,167,2,8
-	.word	.L68,.L70
+	.word	.L70,.L71
 	.byte	5
 	.byte	'JudgeWToBFlag',0,1,168,2,8
-	.word	.L68,.L71
+	.word	.L70,.L72
 	.byte	5
 	.byte	'BlackWhiteChangeCount',0,1,169,2,8
-	.word	.L68,.L72
+	.word	.L70,.L73
 	.byte	6
 	.byte	'RecognizedCorrectLineCount',0,1,170,2,15
-	.word	.L68
+	.word	.L70
 	.byte	5,3
 	.word	_999001_RecognizedCorrectLineCount
 	.byte	4
-	.word	.L73,.L74
+	.word	.L74,.L75
 	.byte	5
 	.byte	'imageH',0,1,181,2,10
-	.word	.L75,.L76
+	.word	.L76,.L77
 	.byte	4
-	.word	.L77,.L78
+	.word	.L78,.L79
 	.byte	5
 	.byte	'imageW',0,1,184,2,11
-	.word	.L75,.L79
+	.word	.L76,.L80
 	.byte	4
-	.word	.L80,.L12
+	.word	.L81,.L12
 	.byte	5
 	.byte	'i',0,1,190,2,13
-	.word	.L75,.L81
+	.word	.L76,.L82
 	.byte	0,4
-	.word	.L82,.L13
+	.word	.L83,.L13
 	.byte	5
 	.byte	'i',0,1,198,2,14
-	.word	.L75,.L83
+	.word	.L76,.L84
 	.byte	0,4
-	.word	.L84,.L23
+	.word	.L85,.L23
 	.byte	5
 	.byte	'i',0,1,210,2,13
-	.word	.L75,.L85
+	.word	.L76,.L86
 	.byte	0,4
-	.word	.L86,.L24
+	.word	.L87,.L24
 	.byte	5
 	.byte	'i',0,1,218,2,14
-	.word	.L75,.L87
+	.word	.L76,.L88
 	.byte	0,0,4
-	.word	.L78,.L88
+	.word	.L79,.L89
 	.byte	5
 	.byte	'imageW',0,1,229,2,11
-	.word	.L75,.L89
+	.word	.L76,.L90
 	.byte	4
-	.word	.L90,.L36
+	.word	.L91,.L36
 	.byte	5
 	.byte	'i',0,1,235,2,13
-	.word	.L75,.L91
+	.word	.L76,.L92
 	.byte	0,4
-	.word	.L92,.L37
+	.word	.L93,.L37
 	.byte	5
 	.byte	'i',0,1,243,2,14
-	.word	.L75,.L93
+	.word	.L76,.L94
 	.byte	0,4
-	.word	.L94,.L47
+	.word	.L95,.L47
 	.byte	5
 	.byte	'i',0,1,255,2,13
-	.word	.L75,.L95
+	.word	.L76,.L96
 	.byte	0,4
-	.word	.L96,.L48
+	.word	.L97,.L48
 	.byte	5
 	.byte	'i',0,1,135,3,14
-	.word	.L75,.L97
+	.word	.L76,.L98
 	.byte	0,0,0,0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('FindZebra')
 	.sect	'.debug_abbrev'
@@ -35759,400 +35771,406 @@ _999001_RecognizedCorrectLineCount:	.type	object
 	.sdecl	'.debug_line',debug,cluster('FindZebra')
 	.sect	'.debug_line'
 .L62:
-	.word	.L127-.L126
-.L126:
+	.word	.L124-.L123
+.L123:
 	.half	3
-	.word	.L129-.L128
-.L128:
+	.word	.L126-.L125
+.L125:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\CODE\\Src\\User_ImageProcess.c',0,0,0,0,0
-.L129:
+.L126:
 	.byte	5,6,7,0,5,2
 	.word	.L55
-	.byte	3,163,2,1,5,23,9
-	.half	.L98-.L55
-	.byte	3,8,1,5,12,9
-	.half	.L99-.L98
-	.byte	1,5,9,9
-	.half	.L100-.L99
-	.byte	3,1,1,5,2,9
-	.half	.L130-.L100
-	.byte	1,5,13,7,9
-	.half	.L131-.L130
-	.byte	3,3,1,5,15,9
-	.half	.L2-.L131
-	.byte	3,1,1,5,33,9
-	.half	.L132-.L2
-	.byte	1,5,17,9
-	.half	.L102-.L132
-	.byte	3,2,1,5,9,9
-	.half	.L133-.L102
-	.byte	1,5,16,9
-	.half	.L73-.L133
-	.byte	3,2,1,5,31,9
-	.half	.L103-.L73
-	.byte	1,5,25,9
-	.half	.L4-.L103
-	.byte	3,2,1,5,17,9
-	.half	.L77-.L4
-	.byte	3,1,1,5,32,9
-	.half	.L105-.L77
-	.byte	1,5,18,9
-	.half	.L6-.L105
-	.byte	3,2,1,9
-	.half	.L107-.L6
-	.byte	3,1,1,5,20,9
-	.half	.L108-.L107
-	.byte	3,1,1,5,7,9
-	.half	.L134-.L108
-	.byte	1,5,20,9
-	.half	.L135-.L134
-	.byte	1,5,28,9
-	.half	.L136-.L135
-	.byte	1,5,7,9
-	.half	.L137-.L136
-	.byte	1,5,46,7,9
-	.half	.L138-.L137
-	.byte	1,5,59,9
-	.half	.L139-.L138
-	.byte	1,5,67,9
-	.half	.L140-.L139
-	.byte	1,5,79,9
-	.half	.L141-.L140
-	.byte	1,5,77,9
-	.half	.L142-.L141
-	.byte	1,5,21,7,9
-	.half	.L80-.L142
-	.byte	3,2,1,5,36,9
-	.half	.L109-.L80
-	.byte	1,5,22,9
-	.half	.L10-.L109
+	.byte	3,164,2,1,5,2,9
+	.half	.L99-.L55
+	.byte	3,7,1,5,23,9
+	.half	.L127-.L99
+	.byte	1,5,12,9
+	.half	.L128-.L127
+	.byte	1,5,11,9
+	.half	.L129-.L128
 	.byte	3,1,1,5,9,9
-	.half	.L143-.L10
-	.byte	1,5,22,9
+	.half	.L130-.L129
+	.byte	1,5,2,9
+	.half	.L131-.L130
+	.byte	1,5,15,7,9
+	.half	.L132-.L131
+	.byte	3,3,1,5,13,9
+	.half	.L133-.L132
+	.byte	1,5,15,9
+	.half	.L2-.L133
+	.byte	3,1,1,5,33,9
+	.half	.L134-.L2
+	.byte	1,5,17,9
+	.half	.L135-.L134
+	.byte	3,2,1,5,9,9
+	.half	.L136-.L135
+	.byte	1,5,16,9
+	.half	.L74-.L136
+	.byte	3,2,1,5,31,9
+	.half	.L100-.L74
+	.byte	1,5,25,9
+	.half	.L4-.L100
+	.byte	3,2,1,5,17,9
+	.half	.L78-.L4
+	.byte	3,1,1,5,32,9
+	.half	.L102-.L78
+	.byte	1,5,18,9
+	.half	.L6-.L102
+	.byte	3,2,1,9
+	.half	.L104-.L6
+	.byte	3,1,1,5,20,9
+	.half	.L105-.L104
+	.byte	3,1,1,5,7,9
+	.half	.L137-.L105
+	.byte	1,5,20,9
+	.half	.L138-.L137
+	.byte	1,5,28,9
+	.half	.L139-.L138
+	.byte	1,5,7,9
+	.half	.L140-.L139
+	.byte	1,5,46,7,9
+	.half	.L141-.L140
+	.byte	1,5,59,9
+	.half	.L142-.L141
+	.byte	1,5,67,9
+	.half	.L143-.L142
+	.byte	1,5,79,9
 	.half	.L144-.L143
-	.byte	1,5,30,9
+	.byte	1,5,77,9
 	.half	.L145-.L144
-	.byte	1,5,6,9
-	.half	.L146-.L145
 	.byte	1,5,21,7,9
+	.half	.L81-.L145
+	.byte	3,2,1,5,36,9
+	.half	.L106-.L81
+	.byte	1,5,22,9
+	.half	.L10-.L106
+	.byte	3,1,1,5,9,9
+	.half	.L146-.L10
+	.byte	1,5,22,9
 	.half	.L147-.L146
-	.byte	3,2,1,5,7,9
+	.byte	1,5,30,9
 	.half	.L148-.L147
+	.byte	1,5,6,9
+	.half	.L149-.L148
+	.byte	1,5,21,7,9
+	.half	.L150-.L149
+	.byte	3,2,1,5,7,9
+	.half	.L151-.L150
 	.byte	3,1,1,5,39,9
-	.half	.L11-.L148
+	.half	.L11-.L151
 	.byte	3,124,1,5,34,9
 	.half	.L9-.L11
 	.byte	1,5,36,9
-	.half	.L149-.L9
+	.half	.L152-.L9
 	.byte	1,5,9,7,9
-	.half	.L12-.L149
+	.half	.L12-.L152
 	.byte	3,6,1,5,15,7,9
-	.half	.L82-.L12
+	.half	.L83-.L12
 	.byte	3,2,1,5,35,9
-	.half	.L110-.L82
+	.half	.L107-.L83
 	.byte	1,5,23,9
-	.half	.L15-.L110
+	.half	.L15-.L107
 	.byte	3,1,1,5,10,9
-	.half	.L150-.L15
+	.half	.L153-.L15
 	.byte	1,5,23,9
-	.half	.L151-.L150
-	.byte	1,5,31,9
-	.half	.L152-.L151
-	.byte	1,5,36,9
-	.half	.L153-.L152
-	.byte	1,5,7,9
 	.half	.L154-.L153
-	.byte	1,5,22,7,9
+	.byte	1,5,31,9
 	.half	.L155-.L154
-	.byte	3,2,1,5,8,9
+	.byte	1,5,36,9
 	.half	.L156-.L155
+	.byte	1,5,7,9
+	.half	.L157-.L156
+	.byte	1,5,22,7,9
+	.half	.L158-.L157
+	.byte	3,2,1,5,8,9
+	.half	.L159-.L158
 	.byte	3,1,1,5,38,9
-	.half	.L16-.L156
+	.half	.L16-.L159
 	.byte	3,124,1,5,33,9
 	.half	.L14-.L16
 	.byte	1,5,35,9
-	.half	.L157-.L14
+	.half	.L160-.L14
 	.byte	1,5,9,7,9
-	.half	.L13-.L157
+	.half	.L13-.L160
 	.byte	3,7,1,5,27,9
-	.half	.L158-.L13
+	.half	.L161-.L13
 	.byte	3,1,1,5,20,9
-	.half	.L7-.L158
+	.half	.L7-.L161
 	.byte	3,2,1,5,7,9
-	.half	.L159-.L7
+	.half	.L162-.L7
 	.byte	1,5,20,9
-	.half	.L160-.L159
-	.byte	1,5,28,9
-	.half	.L161-.L160
-	.byte	1,5,38,9
-	.half	.L162-.L161
-	.byte	1,5,7,9
 	.half	.L163-.L162
-	.byte	1,5,46,7,9
+	.byte	1,5,28,9
 	.half	.L164-.L163
-	.byte	1,5,59,9
+	.byte	1,5,38,9
 	.half	.L165-.L164
-	.byte	1,5,67,9
+	.byte	1,5,7,9
 	.half	.L166-.L165
-	.byte	1,5,77,9
+	.byte	1,5,46,7,9
 	.half	.L167-.L166
-	.byte	1,5,21,7,9
-	.half	.L84-.L167
-	.byte	3,2,1,5,36,9
-	.half	.L112-.L84
-	.byte	1,5,22,9
-	.half	.L21-.L112
-	.byte	3,1,1,5,9,9
-	.half	.L168-.L21
-	.byte	1,5,22,9
+	.byte	1,5,59,9
+	.half	.L168-.L167
+	.byte	1,5,67,9
 	.half	.L169-.L168
-	.byte	1,5,30,9
+	.byte	1,5,77,9
 	.half	.L170-.L169
-	.byte	1,5,35,9
-	.half	.L171-.L170
-	.byte	1,5,6,9
-	.half	.L172-.L171
 	.byte	1,5,21,7,9
+	.half	.L85-.L170
+	.byte	3,2,1,5,36,9
+	.half	.L109-.L85
+	.byte	1,5,22,9
+	.half	.L21-.L109
+	.byte	3,1,1,5,9,9
+	.half	.L171-.L21
+	.byte	1,5,22,9
+	.half	.L172-.L171
+	.byte	1,5,30,9
 	.half	.L173-.L172
-	.byte	3,2,1,5,7,9
+	.byte	1,5,35,9
 	.half	.L174-.L173
+	.byte	1,5,6,9
+	.half	.L175-.L174
+	.byte	1,5,21,7,9
+	.half	.L176-.L175
+	.byte	3,2,1,5,7,9
+	.half	.L177-.L176
 	.byte	3,1,1,5,39,9
-	.half	.L22-.L174
+	.half	.L22-.L177
 	.byte	3,124,1,5,34,9
 	.half	.L20-.L22
 	.byte	1,5,36,9
-	.half	.L175-.L20
+	.half	.L178-.L20
 	.byte	1,5,9,7,9
-	.half	.L23-.L175
+	.half	.L23-.L178
 	.byte	3,6,1,5,15,7,9
-	.half	.L86-.L23
+	.half	.L87-.L23
 	.byte	3,2,1,5,35,9
-	.half	.L113-.L86
+	.half	.L110-.L87
 	.byte	1,5,23,9
-	.half	.L26-.L113
+	.half	.L26-.L110
 	.byte	3,1,1,5,10,9
-	.half	.L176-.L26
+	.half	.L179-.L26
 	.byte	1,5,23,9
-	.half	.L177-.L176
-	.byte	1,5,31,9
-	.half	.L178-.L177
-	.byte	1,5,7,9
-	.half	.L179-.L178
-	.byte	1,5,22,7,9
 	.half	.L180-.L179
-	.byte	3,2,1,5,8,9
+	.byte	1,5,31,9
 	.half	.L181-.L180
+	.byte	1,5,7,9
+	.half	.L182-.L181
+	.byte	1,5,22,7,9
+	.half	.L183-.L182
+	.byte	3,2,1,5,8,9
+	.half	.L184-.L183
 	.byte	3,1,1,5,38,9
-	.half	.L27-.L181
+	.half	.L27-.L184
 	.byte	3,124,1,5,33,9
 	.half	.L25-.L27
 	.byte	1,5,35,9
-	.half	.L182-.L25
+	.half	.L185-.L25
 	.byte	1,5,9,7,9
-	.half	.L24-.L182
+	.half	.L24-.L185
 	.byte	3,7,1,5,27,9
-	.half	.L183-.L24
+	.half	.L186-.L24
 	.byte	3,1,1,5,40,9
-	.half	.L18-.L183
+	.half	.L18-.L186
 	.byte	3,86,1,5,30,9
 	.half	.L5-.L18
 	.byte	1,5,32,9
-	.half	.L184-.L5
+	.half	.L187-.L5
 	.byte	1,5,17,7,9
-	.half	.L78-.L184
+	.half	.L79-.L187
 	.byte	3,45,1,5,33,9
-	.half	.L106-.L78
+	.half	.L103-.L79
 	.byte	1,5,18,9
-	.half	.L30-.L106
+	.half	.L30-.L103
 	.byte	3,2,1,9
-	.half	.L115-.L30
+	.half	.L112-.L30
 	.byte	3,1,1,5,20,9
-	.half	.L116-.L115
+	.half	.L113-.L112
 	.byte	3,1,1,5,7,9
-	.half	.L185-.L116
+	.half	.L188-.L113
 	.byte	1,5,20,9
-	.half	.L186-.L185
-	.byte	1,5,28,9
-	.half	.L187-.L186
-	.byte	1,5,7,9
-	.half	.L188-.L187
-	.byte	1,5,46,7,9
 	.half	.L189-.L188
-	.byte	1,5,59,9
+	.byte	1,5,28,9
 	.half	.L190-.L189
-	.byte	1,5,67,9
+	.byte	1,5,7,9
 	.half	.L191-.L190
-	.byte	1,5,79,9
+	.byte	1,5,46,7,9
 	.half	.L192-.L191
-	.byte	1,5,77,9
+	.byte	1,5,59,9
 	.half	.L193-.L192
-	.byte	1,5,21,7,9
-	.half	.L90-.L193
-	.byte	3,2,1,5,35,9
-	.half	.L117-.L90
-	.byte	3,1,1,5,34,9
-	.half	.L194-.L117
-	.byte	3,127,1,5,22,9
-	.half	.L34-.L194
-	.byte	3,1,1,5,9,9
-	.half	.L195-.L34
-	.byte	1,5,22,9
+	.byte	1,5,67,9
+	.half	.L194-.L193
+	.byte	1,5,79,9
+	.half	.L195-.L194
+	.byte	1,5,77,9
 	.half	.L196-.L195
-	.byte	1,5,30,9
-	.half	.L197-.L196
-	.byte	1,5,6,9
-	.half	.L198-.L197
 	.byte	1,5,21,7,9
+	.half	.L91-.L196
+	.byte	3,2,1,5,35,9
+	.half	.L114-.L91
+	.byte	3,1,1,5,34,9
+	.half	.L197-.L114
+	.byte	3,127,1,5,22,9
+	.half	.L34-.L197
+	.byte	3,1,1,5,9,9
+	.half	.L198-.L34
+	.byte	1,5,22,9
 	.half	.L199-.L198
-	.byte	3,2,1,5,7,9
+	.byte	1,5,30,9
 	.half	.L200-.L199
+	.byte	1,5,6,9
+	.half	.L201-.L200
+	.byte	1,5,21,7,9
+	.half	.L202-.L201
+	.byte	3,2,1,5,7,9
+	.half	.L203-.L202
 	.byte	3,1,1,5,37,9
-	.half	.L35-.L200
+	.half	.L35-.L203
 	.byte	3,124,1,5,34,9
 	.half	.L33-.L35
 	.byte	1,5,9,7,9
 	.half	.L36-.L33
 	.byte	3,6,1,5,22,7,9
-	.half	.L92-.L36
+	.half	.L93-.L36
 	.byte	3,2,1,5,37,9
-	.half	.L118-.L92
+	.half	.L115-.L93
 	.byte	1,5,23,9
-	.half	.L39-.L118
+	.half	.L39-.L115
 	.byte	3,1,1,5,10,9
-	.half	.L201-.L39
+	.half	.L204-.L39
 	.byte	1,5,23,9
-	.half	.L202-.L201
-	.byte	1,5,31,9
-	.half	.L203-.L202
-	.byte	1,5,7,9
-	.half	.L204-.L203
-	.byte	1,5,22,7,9
 	.half	.L205-.L204
-	.byte	3,2,1,5,8,9
+	.byte	1,5,31,9
 	.half	.L206-.L205
+	.byte	1,5,7,9
+	.half	.L207-.L206
+	.byte	1,5,22,7,9
+	.half	.L208-.L207
+	.byte	3,2,1,5,8,9
+	.half	.L209-.L208
 	.byte	3,1,1,5,40,9
-	.half	.L40-.L206
+	.half	.L40-.L209
 	.byte	3,124,1,5,35,9
 	.half	.L38-.L40
 	.byte	1,5,37,9
-	.half	.L207-.L38
+	.half	.L210-.L38
 	.byte	1,5,9,7,9
-	.half	.L37-.L207
+	.half	.L37-.L210
 	.byte	3,7,1,5,27,9
-	.half	.L208-.L37
+	.half	.L211-.L37
 	.byte	3,1,1,5,20,9
-	.half	.L31-.L208
+	.half	.L31-.L211
 	.byte	3,2,1,5,7,9
-	.half	.L209-.L31
+	.half	.L212-.L31
 	.byte	1,5,20,9
-	.half	.L210-.L209
-	.byte	1,5,28,9
-	.half	.L211-.L210
-	.byte	1,5,38,9
-	.half	.L212-.L211
-	.byte	1,5,7,9
 	.half	.L213-.L212
-	.byte	1,5,46,7,9
+	.byte	1,5,28,9
 	.half	.L214-.L213
-	.byte	1,5,59,9
+	.byte	1,5,38,9
 	.half	.L215-.L214
-	.byte	1,5,67,9
+	.byte	1,5,7,9
 	.half	.L216-.L215
-	.byte	1,5,77,9
+	.byte	1,5,46,7,9
 	.half	.L217-.L216
-	.byte	1,5,21,7,9
-	.half	.L94-.L217
-	.byte	3,2,1,5,34,9
-	.half	.L120-.L94
-	.byte	1,5,22,9
-	.half	.L45-.L120
-	.byte	3,1,1,5,9,9
-	.half	.L218-.L45
-	.byte	1,5,22,9
+	.byte	1,5,59,9
+	.half	.L218-.L217
+	.byte	1,5,67,9
 	.half	.L219-.L218
-	.byte	1,5,30,9
+	.byte	1,5,77,9
 	.half	.L220-.L219
-	.byte	1,5,6,9
-	.half	.L221-.L220
 	.byte	1,5,21,7,9
+	.half	.L95-.L220
+	.byte	3,2,1,5,34,9
+	.half	.L117-.L95
+	.byte	1,5,22,9
+	.half	.L45-.L117
+	.byte	3,1,1,5,9,9
+	.half	.L221-.L45
+	.byte	1,5,22,9
 	.half	.L222-.L221
-	.byte	3,2,1,5,7,9
+	.byte	1,5,30,9
 	.half	.L223-.L222
+	.byte	1,5,6,9
+	.half	.L224-.L223
+	.byte	1,5,21,7,9
+	.half	.L225-.L224
+	.byte	3,2,1,5,7,9
+	.half	.L226-.L225
 	.byte	3,1,1,5,37,9
-	.half	.L46-.L223
+	.half	.L46-.L226
 	.byte	3,124,1,5,34,9
 	.half	.L44-.L46
 	.byte	1,5,9,7,9
 	.half	.L47-.L44
 	.byte	3,6,1,5,22,7,9
-	.half	.L96-.L47
+	.half	.L97-.L47
 	.byte	3,2,1,5,37,9
-	.half	.L121-.L96
+	.half	.L118-.L97
 	.byte	1,5,23,9
-	.half	.L50-.L121
+	.half	.L50-.L118
 	.byte	3,1,1,5,10,9
-	.half	.L224-.L50
+	.half	.L227-.L50
 	.byte	1,5,23,9
-	.half	.L225-.L224
-	.byte	1,5,31,9
-	.half	.L226-.L225
-	.byte	1,5,36,9
-	.half	.L227-.L226
-	.byte	1,5,7,9
 	.half	.L228-.L227
-	.byte	1,5,22,7,9
+	.byte	1,5,31,9
 	.half	.L229-.L228
-	.byte	3,2,1,5,8,9
+	.byte	1,5,36,9
 	.half	.L230-.L229
+	.byte	1,5,7,9
+	.half	.L231-.L230
+	.byte	1,5,22,7,9
+	.half	.L232-.L231
+	.byte	3,2,1,5,8,9
+	.half	.L233-.L232
 	.byte	3,1,1,5,40,9
-	.half	.L51-.L230
+	.half	.L51-.L233
 	.byte	3,124,1,5,35,9
 	.half	.L49-.L51
 	.byte	1,5,37,9
-	.half	.L231-.L49
+	.half	.L234-.L49
 	.byte	1,5,9,7,9
-	.half	.L48-.L231
+	.half	.L48-.L234
 	.byte	3,7,1,5,27,9
-	.half	.L232-.L48
+	.half	.L235-.L48
 	.byte	3,1,1,5,41,9
-	.half	.L42-.L232
+	.half	.L42-.L235
 	.byte	3,86,1,5,30,9
 	.half	.L29-.L42
 	.byte	1,5,33,9
-	.half	.L233-.L29
+	.half	.L236-.L29
 	.byte	1,5,4,7,9
-	.half	.L88-.L233
+	.half	.L89-.L236
 	.byte	3,46,1,5,28,9
-	.half	.L234-.L88
+	.half	.L237-.L89
 	.byte	3,127,1,5,30,9
-	.half	.L235-.L234
+	.half	.L238-.L237
 	.byte	3,1,1,5,39,9
-	.half	.L236-.L235
-	.byte	3,162,127,1,5,29,9
-	.half	.L3-.L236
-	.byte	1,5,31,9
-	.half	.L237-.L3
-	.byte	1,5,5,7,9
-	.half	.L74-.L237
-	.byte	3,225,0,1,5,2,9
-	.half	.L238-.L74
-	.byte	1,5,3,7,9
 	.half	.L239-.L238
-	.byte	3,2,1,5,21,9
-	.half	.L240-.L239
-	.byte	1,5,19,9
-	.half	.L241-.L240
-	.byte	1,5,12,9
+	.byte	3,162,127,1,5,29,9
+	.half	.L3-.L239
+	.byte	1,5,31,9
+	.half	.L240-.L3
+	.byte	1,5,5,7,9
+	.half	.L75-.L240
+	.byte	3,225,0,1,5,2,9
+	.half	.L241-.L75
+	.byte	1,5,3,7,9
 	.half	.L242-.L241
-	.byte	3,1,1,5,19,9
+	.byte	3,2,1,5,21,9
 	.half	.L243-.L242
-	.byte	1,5,1,7,9
-	.half	.L53-.L243
+	.byte	1,5,19,9
+	.half	.L244-.L243
+	.byte	1,5,12,9
+	.half	.L245-.L244
+	.byte	3,1,1,5,19,9
+	.half	.L246-.L245
+	.byte	1,5,1,9
+	.half	.L53-.L246
 	.byte	3,2,1,7,9
 	.half	.L64-.L53
 	.byte	0,1,1
-.L127:
+.L124:
 	.sdecl	'.debug_ranges',debug,cluster('FindZebra')
 	.sect	'.debug_ranges'
 .L63:
@@ -36170,7 +36188,7 @@ _999001_RecognizedCorrectLineCount:	.type	object
 	.word	.L56
 	.byte	3
 	.byte	'EnterGarageFlag',0,27,14,7
-	.word	.L68
+	.word	.L70
 	.byte	1,5,3
 	.word	EnterGarageFlag
 	.byte	0
@@ -36179,19 +36197,41 @@ _999001_RecognizedCorrectLineCount:	.type	object
 .L66:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
 	.byte	0,0,0
+	.sdecl	'.debug_info',debug,cluster('Threshold')
+	.sect	'.debug_info'
+.L67:
+	.word	179
+	.half	3
+	.word	.L68
+	.byte	4,1
+	.byte	'..\\CODE\\Src\\User_ImageProcess.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Debug\\',0,12,1,2
+	.word	.L56
+	.byte	3
+	.byte	'Threshold',0,27,20,9
+	.word	.L70
+	.byte	1,5,3
+	.word	Threshold
+	.byte	0
+	.sdecl	'.debug_abbrev',debug,cluster('Threshold')
+	.sect	'.debug_abbrev'
+.L68:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
+	.byte	0,0,0
 	.sdecl	'.debug_loc',debug,cluster('FindZebra')
 	.sect	'.debug_loc'
-.L72:
-	.word	-1,.L55,.L77-.L55,.L104-.L55
+.L73:
+	.word	-1,.L55,.L78-.L55,.L101-.L55
 	.half	1
 	.byte	83
-	.word	.L7-.L55,.L111-.L55
+	.word	.L7-.L55,.L108-.L55
 	.half	1
 	.byte	83
-	.word	.L18-.L55,.L114-.L55
+	.word	.L18-.L55,.L111-.L55
 	.half	1
 	.byte	83
-	.word	.L31-.L55,.L119-.L55
+	.word	.L31-.L55,.L116-.L55
 	.half	1
 	.byte	83
 	.word	.L42-.L55,.L3-.L55
@@ -36199,107 +36239,96 @@ _999001_RecognizedCorrectLineCount:	.type	object
 	.byte	83
 	.word	0,0
 .L54:
-	.word	-1,.L55,0,.L98-.L55
+	.word	-1,.L55,0,.L99-.L55
 	.half	2
 	.byte	138,0
-	.word	.L98-.L55,.L53-.L55
+	.word	.L99-.L55,.L53-.L55
 	.half	2
 	.byte	138,8
 	.word	.L53-.L55,.L53-.L55
 	.half	2
 	.byte	138,0
-	.word	.L53-.L55,.L67-.L55
+	.word	.L53-.L55,.L69-.L55
 	.half	2
 	.byte	138,8
-	.word	.L67-.L55,.L67-.L55
+	.word	.L69-.L55,.L69-.L55
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L70:
-	.word	-1,.L55,.L107-.L55,.L5-.L55
-	.half	1
-	.byte	85
-	.word	.L115-.L55,.L29-.L55
-	.half	1
-	.byte	85
-	.word	0,0
 .L71:
-	.word	-1,.L55,.L108-.L55,.L5-.L55
+	.word	-1,.L55,.L104-.L55,.L5-.L55
+	.half	1
+	.byte	85
+	.word	.L112-.L55,.L29-.L55
+	.half	1
+	.byte	85
+	.word	0,0
+.L72:
+	.word	-1,.L55,.L105-.L55,.L5-.L55
 	.half	1
 	.byte	86
-	.word	.L116-.L55,.L29-.L55
+	.word	.L113-.L55,.L29-.L55
 	.half	1
 	.byte	86
 	.word	0,0
-.L69:
-	.word	-1,.L55,.L99-.L55,.L2-.L55
-	.half	1
-	.byte	82
-	.word	.L100-.L55,.L4-.L55
-	.half	1
-	.byte	95
-	.word	.L101-.L55,.L102-.L55
-	.half	1
-	.byte	84
-	.word	0,0
-.L81:
-	.word	-1,.L55,.L109-.L55,.L15-.L55
+.L82:
+	.word	-1,.L55,.L106-.L55,.L15-.L55
 	.half	1
 	.byte	95
 	.word	0,0
-.L83:
-	.word	-1,.L55,.L110-.L55,.L13-.L55
+.L84:
+	.word	-1,.L55,.L107-.L55,.L13-.L55
 	.half	5
 	.byte	144,32,157,32,0
 	.word	0,0
-.L85:
-	.word	-1,.L55,.L112-.L55,.L113-.L55
+.L86:
+	.word	-1,.L55,.L109-.L55,.L110-.L55
 	.half	5
 	.byte	144,32,157,32,0
 	.word	0,0
-.L87:
-	.word	-1,.L55,.L113-.L55,.L24-.L55
+.L88:
+	.word	-1,.L55,.L110-.L55,.L24-.L55
 	.half	5
 	.byte	144,32,157,32,0
 	.word	0,0
-.L91:
-	.word	-1,.L55,.L117-.L55,.L39-.L55
+.L92:
+	.word	-1,.L55,.L114-.L55,.L39-.L55
 	.half	5
 	.byte	144,32,157,32,0
 	.word	0,0
-.L93:
-	.word	-1,.L55,.L118-.L55,.L37-.L55
+.L94:
+	.word	-1,.L55,.L115-.L55,.L37-.L55
 	.half	1
 	.byte	95
 	.word	0,0
-.L95:
-	.word	-1,.L55,.L120-.L55,.L121-.L55
+.L96:
+	.word	-1,.L55,.L117-.L55,.L118-.L55
 	.half	5
 	.byte	144,32,157,32,0
 	.word	0,0
-.L97:
-	.word	-1,.L55,.L121-.L55,.L48-.L55
+.L98:
+	.word	-1,.L55,.L118-.L55,.L48-.L55
 	.half	5
 	.byte	144,32,157,32,0
 	.word	0,0
-.L76:
-	.word	-1,.L55,.L103-.L55,.L67-.L55
+.L77:
+	.word	-1,.L55,.L100-.L55,.L69-.L55
 	.half	1
 	.byte	82
 	.word	0,0
-.L79:
-	.word	-1,.L55,.L105-.L55,.L106-.L55
+.L80:
+	.word	-1,.L55,.L102-.L55,.L103-.L55
 	.half	1
 	.byte	84
 	.word	0,0
-.L89:
-	.word	-1,.L55,.L106-.L55,.L3-.L55
+.L90:
+	.word	-1,.L55,.L103-.L55,.L3-.L55
 	.half	1
 	.byte	84
 	.word	0,0
 	.sdecl	'.debug_frame',debug
 	.sect	'.debug_frame'
-.L244:
+.L247:
 	.word	48
 	.word	-1
 	.byte	3,0,2,1,27,12,26,0,8,27,8,26,8,28,8,29,8,30,8,31,8,34,8,35,8,32,8,33,8,16,8,17,8,24,8,25,8,36,8,37,8,38
@@ -36307,13 +36336,13 @@ _999001_RecognizedCorrectLineCount:	.type	object
 	.sdecl	'.debug_frame',debug,cluster('FindZebra')
 	.sect	'.debug_frame'
 	.word	52
-	.word	.L244,.L55,.L67-.L55
+	.word	.L247,.L55,.L69-.L55
 	.byte	4
-	.word	(.L98-.L55)/2
+	.word	(.L99-.L55)/2
 	.byte	19,8,22,26,3,19,138,8,4
-	.word	(.L53-.L98)/2
+	.word	(.L53-.L99)/2
 	.byte	19,0,8,26,19,8,22,26,3,19,138,8,4
-	.word	(.L67-.L53)/2
+	.word	(.L69-.L53)/2
 	.byte	19,0,8,26,0
 
 ; ..\CODE\Src\User_ImageProcess.c	   412  

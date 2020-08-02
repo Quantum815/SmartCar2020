@@ -39,6 +39,7 @@ double MidLineFuseNum;
 volatile float LPWM, RPWM;
 float PIDValue;
 uint8 StartFlag;
+uint8 GoGarageFinishFlag;
 
 #pragma section all restore
 
@@ -54,17 +55,17 @@ void FindLine(void)
 {
 	PIDValue = GetPIDValue(PIDMidLineFuseNum, MidLineFuseNum*1000, FINDLINE_P, FINDLINE_I, FINDLINE_D);
 	//printf("%f\r\n",PIDValue);
-	LPWM = LeftWheelDeadZone + LeftNormalSpeed + PIDValue;
-	RPWM = RightWheelDeadZone + RightNormalSpeed - PIDValue;
+	LPWM = LeftWheelDeadZone + LeftNormalSpeed - PIDValue;
+	RPWM = RightWheelDeadZone + RightNormalSpeed + PIDValue;
 
-    if(LPWM >= 35)
-        LPWM = 35;
-    else if(LPWM <= -35)
-        LPWM = -35;
-    if(RPWM >= 35)
-        RPWM = 35;
-    else if(RPWM <= -35)
-        RPWM = -40;
+    if(LPWM >= 50)
+        LPWM = 50;
+    else if(LPWM <= -50)
+        LPWM = -50;
+    if(RPWM >= 50)
+        RPWM = 50;
+    else if(RPWM <= -50)
+        RPWM = -50;
     MotorUserHandle(LMotor_F, LPWM);
     MotorUserHandle(RMotor_F, RPWM);
 }
@@ -81,8 +82,24 @@ void OutRoundaboutProcess(void)
 
 void GoGarage(void)
 {
-
-
+	static uint8 CleanDistanceFlag = 0;
+	if(!CleanDistanceFlag)
+	{
+		CleanDistance();
+		CleanDistanceFlag = 1;
+	}
+	GyroYawAngleInit(20);
+	GyroPID(GYRO_P, GYRO_I, GYRO_D);
+	if(TotalDistance >= 0.3)
+	{
+	    MotorUserHandle(LMotor_F, LeftWheelDeadZone);
+	    MotorUserHandle(RMotor_F, RightWheelDeadZone);
+	}
+	if(TotalDistance >= 0.9)
+	{
+		RunStop();
+		GoGarageFinishFlag = 1;
+	}
 }
 
 
@@ -158,32 +175,30 @@ void FSMRun(void)
     	//if(TwoCarStateJudge())  //≤‚ ‘ ±◊¢ Õ
     		FSMEventHandle(&CarFSM, GETBALL);
     }
-    //else if(ReturnFSMState(&CarFSM) == GoLine)
-    //{
-    	//FSMEventHandle(&CarFSM, FINDROUNDABOUT);
-    //}
-    else if(ReturnFSMState(&CarFSM) == InRoundabout)
+//    else if(ReturnFSMState(&CarFSM) == GoLine)
+//    {
+//    	FSMEventHandle(&CarFSM, FINDROUNDABOUT);
+//    }
+//    else if(ReturnFSMState(&CarFSM) == InRoundabout)
+//    {
+//    	FSMEventHandle(&CarFSM, ENDINROUNDABOUT);
+//    }
+//    else if(ReturnFSMState(&CarFSM) == PassRoundabout)
+//    {
+//    	FSMEventHandle(&CarFSM, OUTROUNDABOUT);
+//    }
+//    else if(ReturnFSMState(&CarFSM) == OutingRoundabout)
+//    {
+//    	FSMEventHandle(&CarFSM, ENDOUTROUNDABOUT);
+//    }
+    else if(EnterGarageFlag && ReturnFSMState(&CarFSM) == GoLine)
     {
-    	//FSMEventHandle(&CarFSM, ENDINROUNDABOUT);
+    	FSMEventHandle(&CarFSM, FINDZEBRA);
     }
-    else if(ReturnFSMState(&CarFSM) == PassRoundabout)
+    else if(GoGarageFinishFlag && ReturnFSMState(&CarFSM) == InGarage)
     {
-    	//FSMEventHandle(&CarFSM, OUTROUNDABOUT);
-    }
-    else if(ReturnFSMState(&CarFSM) == OutingRoundabout)
-    {
-    	//FSMEventHandle(&CarFSM, ENDOUTROUNDABOUT);
-    }
-    //else if(EnterGarageFlag == 1 && ReturnFSMState(&CarFSM) == GoLine)
-    //{
-    	//FSMEventHandle(&CarFSM, FINDZEBRA);
-    //}
-    else if(ReturnFSMState(&CarFSM) == InGarage)
-    {
-    	//FSMEventHandle(&CarFSM, RUNSTOP);
-    }
-    else if(EnterGarageFlag)
     	FSMEventHandle(&CarFSM, RUNSTOP);
+    }
     else
     	FSMEventHandle(&CarFSM, NOEVENT);
 }

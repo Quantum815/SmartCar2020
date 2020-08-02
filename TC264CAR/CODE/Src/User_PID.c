@@ -35,10 +35,10 @@ double GetPIDValue(double middle, double value, double kP, double kI, double kD)
 
 	PidValue = 0.1 * OldValue + 0.9 * PidValue;	                       //µÍÍ¨ÂË²¨
 
-	if(PidValue > 3000)
-		PidValue = 3000;
-	else if(PidValue < -3000)
-		PidValue = -3000;
+	if(PidValue > 2800)
+		PidValue = 2800;
+	else if(PidValue < -2800)
+		PidValue = -2800;
 
 	return (PidValue/100);
 }

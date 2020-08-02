@@ -57,12 +57,12 @@ UserCameraInit:	.type	func
 
 ; ..\CODE\Src\User_Camera_Init.c	    20  
 ; ..\CODE\Src\User_Camera_Init.c	    21  	//≤‚ ‘
-; ..\CODE\Src\User_Camera_Init.c	    22  	gpio_init(P20_8, GPO, 0, PUSHPULL);
+; ..\CODE\Src\User_Camera_Init.c	    22  	gpio_init(P20_8, GPO, 1, PUSHPULL);
 	mov	d4,#648
 .L28:
 	mov	d5,#1
 .L29:
-	mov	d6,#0
+	mov	d6,d5
 .L30:
 	mov	d7,#3
 	call	gpio_init

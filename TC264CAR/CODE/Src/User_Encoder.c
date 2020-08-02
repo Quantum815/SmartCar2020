@@ -9,7 +9,7 @@
 
 #pragma section all "cpu0_dsram"
 
-static double CurDistance, TotalDistance;
+double CurDistance, TotalDistance;
 
 #pragma section all restore
 
@@ -35,10 +35,6 @@ void CountDistance(void)
 	CurDistance = (CurLdistance + CurRdistance) / 2;
 	TotalDistance += CurDistance;
 
-	//printf("L  %lf	",CurLdistance);  //≤‚ ‘
-	//printf("R  %lf	",CurRdistance);  //≤‚ ‘
-	//printf("%lf\r\n",TotalDistance);  //≤‚ ‘
-
 	gpt12_clear(GPT12_T2);
 	gpt12_clear(GPT12_T6);
 }
@@ -48,9 +44,9 @@ double GetDistance(void)
 	return TotalDistance;
 }
 
-double GetSpeed(void)  //5ms÷–∂œæ‡¿Îº∆À„
+double GetSpeed(void)
 {
-	return (CurDistance/0.005);
+	return (CurDistance/CalculationTime);
 }
 
 void CleanDistance(void)

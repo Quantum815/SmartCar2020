@@ -12,7 +12,8 @@
 
 //extern uint8 ProcessImageFlag;
 extern uint8 EnterGarageFlag;
-extern double MidLineFuseNum;
+extern uint8_t Threshold;
+//extern double MidLineFuseNum;
 
 void ImagePretreatment(void);
 void FindMidLine(void);

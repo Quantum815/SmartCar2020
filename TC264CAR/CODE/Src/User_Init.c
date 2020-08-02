@@ -16,7 +16,7 @@ void UserInit(void)
 	//主进程
 	pit_interrupt_ms(CCU6_0, PIT_CH0, MainProcessTime);
 	//计算
-	pit_interrupt_ms(CCU6_1, PIT_CH0, CountDistanceTime);
+	pit_interrupt_ms(CCU6_1, PIT_CH0, CalculationTime);
 
 	//各类资源与外设
 	TwoCarUARTInit();
@@ -26,9 +26,10 @@ void UserInit(void)
 	MotorInit();
 	RunStop();
 	CleanDistance();
+	CleanPIDValue();
 
 	//测试
-	gpio_init(P20_8, GPO, 0, PUSHPULL);
+	//gpio_init(P20_8, GPO, 1, PUSHPULL);
 	//DebugUARTInit();
 	ips114_init();
 }
