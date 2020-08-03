@@ -1,0 +1,111 @@
+#include "User_Motor.h"
+
+void ServoMotorInit(void)
+{
+    pwm_init(PWM1_MODULE0_CHB_D13, 50, 5000);
+    pwm_init(PWM1_MODULE1_CHA_D14, 50, 5000);
+    pwm_init(PWM1_MODULE1_CHB_D15, 50, 5000);
+}
+void SetServoPWM(uint8 ServoNum, float PWNDuty)
+{
+    double PWMCount = 0;
+    PWMCount = PWM_DUTY_MAX * (PWNDuty / 100);
+    switch(ServoNum)
+    {
+    case 1:
+        pwm_duty(PWM1_MODULE0_CHB_D13, (uint16)PWMCount);
+        break;
+    case 2:
+        pwm_duty(PWM1_MODULE1_CHA_D14, (uint16)PWMCount);
+        break;
+    case 3:
+        pwm_duty(PWM1_MODULE1_CHB_D15, (uint16)PWMCount);
+        break;
+    }
+}
+void MotorInit(void)
+{
+    pwm_init(PWM1_MODULE3_CHB_D1, 1700, 25000);
+    pwm_init(PWM1_MODULE3_CHA_D0, 1700, 25000);
+    pwm_init(PWM2_MODULE3_CHB_D3, 1700, 25000);
+    pwm_init(PWM2_MODULE3_CHA_D2, 1700, 25000);
+
+}
+void SetMotorPWM(Motor_State Motor, float PWNDuty)
+{
+    double PWMCount = 0;
+    PWMCount = PWM_DUTY_MAX * (PWNDuty / 100);
+    switch(Motor)
+    {
+    case LMotor_F:
+        pwm_duty(PWM1_MODULE3_CHB_D1, (uint16)PWMCount);
+        break;
+    case LMotor_B:
+        pwm_duty(PWM2_MODULE3_CHA_D2, (uint16)PWMCount);
+        break;
+    case RMotor_F:
+        pwm_duty(PWM1_MODULE3_CHA_D0, (uint16)PWMCount);
+        break;
+    case RMotor_B:
+        pwm_duty(PWM2_MODULE3_CHB_D3, (uint16)PWMCount);
+        break;
+    }
+}
+void MotorUserHandle(Motor_State Motor, float PWNDuty)
+{
+    if(Motor == LMotor_F)
+    {
+        if(PWNDuty < 0)
+        {
+            SetMotorPWM(LMotor_F, 0);
+            SetMotorPWM(LMotor_B, -PWNDuty);
+        }
+        else
+        {
+						SetMotorPWM(LMotor_B, 0);
+            SetMotorPWM(LMotor_F, PWNDuty);
+        }
+    }
+    else if(Motor == LMotor_B)
+    {
+        if(PWNDuty < 0)
+        {
+            SetMotorPWM(LMotor_B, 0);
+            SetMotorPWM(LMotor_F, -PWNDuty);
+        }
+        else
+        {
+						SetMotorPWM(LMotor_F, 0);
+            SetMotorPWM(LMotor_B, PWNDuty);
+        }
+    }
+    else if(Motor == RMotor_F)
+    {
+        if(PWNDuty < 0)
+        {
+            SetMotorPWM(RMotor_F, 0);
+            SetMotorPWM(RMotor_B, -PWNDuty);
+        }
+        else
+        {
+						SetMotorPWM(RMotor_B, 0);
+            SetMotorPWM(RMotor_F, PWNDuty);
+        }
+
+    }
+    else if(Motor == RMotor_B)
+    {
+        if(PWNDuty < 0)
+        {
+            SetMotorPWM(RMotor_B, 0);
+            SetMotorPWM(RMotor_F, -PWNDuty);
+        }
+        else
+        {
+						SetMotorPWM(RMotor_F, 0);
+            SetMotorPWM(RMotor_B, PWNDuty);
+        }
+
+    }
+
+}

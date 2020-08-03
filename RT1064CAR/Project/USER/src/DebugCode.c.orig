@@ -1,0 +1,53 @@
+#include "DebugCode.h"
+void ADCreadData(void)
+{
+    uint16 adc_value, NumLenth = 0, temp;
+    uint8 adc_str[1000];
+    adc_value = adc_convert(ADC_1, ADC1_CH3_B14);
+    temp = adc_value;
+    while(temp != 0)
+    {
+        temp = temp / 10;
+        NumLenth++;
+
+    }
+    adc_str[0] = adc_value + '0';
+    usb_cdc_send_buff(adc_str, 1);
+    usb_cdc_send_str("\r\n");
+    systick_delay_ms(100);
+}
+////////在这里定义相关的debug命令////////////
+//
+//0x01 停车 0x02启动  0x03通过串口发送数据回电脑 0x04通过usb-cdc发送数据回电脑
+//
+//
+/////////////////////////////////////////////
+void UserDebug(void)
+{
+    if(Rx_Buffer == 0x01)
+    {
+        FSM_EventHandle(&Car_Fsm, RUNSTOP);
+    }
+    else if(Rx_Buffer == 0x02)
+    {
+        FSM_EventHandle(&Car_Fsm, RUNSTART);
+    }
+    else if(Rx_Buffer == 0x03)
+    {
+        if(mt9v03x_csi_finish_flag)
+        {
+            mt9v03x_csi_finish_flag = 0;
+            
+						csi_seekfree_sendimg_03x(USART_1,mt9v03x_csi_image[0],MT9V03X_CSI_W,MT9V03X_CSI_H);
+        }
+    }
+    else if(Rx_Buffer == 0x04)
+    {
+        if(mt9v03x_csi_finish_flag)
+        {
+            mt9v03x_csi_finish_flag = 0;
+            seekfree_sendimg_03x_usb_cdc(mt9v03x_csi_image[0], MT9V03X_CSI_W, MT9V03X_CSI_H);
+
+        }
+    }
+}

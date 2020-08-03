@@ -1,0 +1,40 @@
+#ifndef _USER_FSM
+#define _USER_FSM
+#include "headfile.h"
+void LogicThing(void);
+void RunStart(void);
+void RunStop(void);
+void FindLine(void);
+enum NXP_State
+{
+    Stop,
+    GoLine,
+    SendBall,
+		Nothing,
+};
+
+enum Car_Event
+{
+    RUNSTART = 1,
+    RUNSTOP,
+};
+
+typedef struct FsmTable_s{
+    int event;   //事件
+    int CurState;  //当前状态
+    void (*eventActFun)();  //函数指针
+    int NextState;  //下一个状态
+}FsmTable_t;
+extern FsmTable_t Car_Table[] ;
+
+typedef struct FSM_s{
+    int CurState;//当前状态
+    FsmTable_t * PfsmTable;//状态表
+    int Size;//表的项数
+}FSM_t;
+extern FSM_t Car_Fsm;
+void FSM_Regist(FSM_t* Pfsm, FsmTable_t* Ptable);
+void FSM_StateTransfer(FSM_t* Pfsm, int State);
+void FSM_EventHandle(FSM_t* Pfsm, int Event);
+int ReturnFSMState(FSM_t* Pfsm);
+#endif
