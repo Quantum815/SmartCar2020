@@ -365,8 +365,8 @@ FindZebra:	.type	func
 .L74:
 
 ; ..\CODE\Src\User_ImageProcess.c	   308  
-; ..\CODE\Src\User_ImageProcess.c	   309  	for(int imageH=20; imageH<=60; imageH++)
-	mov	d2,#20
+; ..\CODE\Src\User_ImageProcess.c	   309  	for(int imageH=1; imageH<=35; imageH++)
+	mov	d2,#1
 .L100:
 	j	.L3
 .L4:
@@ -418,8 +418,8 @@ FindZebra:	.type	func
 .L81:
 
 ; ..\CODE\Src\User_ImageProcess.c	   317  			{
-; ..\CODE\Src\User_ImageProcess.c	   318  				for(int i=imageW-4; i<=imageW-1; i++)
-	add	d15,d4,#-4
+; ..\CODE\Src\User_ImageProcess.c	   318  				for(int i=imageW-3; i<=imageW-1; i++)
+	add	d15,d4,#-3
 .L106:
 	j	.L9
 .L10:
@@ -459,7 +459,7 @@ FindZebra:	.type	func
 .L83:
 
 ; ..\CODE\Src\User_ImageProcess.c	   325  				{
-; ..\CODE\Src\User_ImageProcess.c	   326  					for(int i=imageW; i<=imageW+3; i++)
+; ..\CODE\Src\User_ImageProcess.c	   326  					for(int i=imageW; i<=imageW+2; i++)
 	mov	d0,d4
 .L107:
 	j	.L14
@@ -491,7 +491,7 @@ FindZebra:	.type	func
 .L16:
 	add	d0,#1
 .L14:
-	add	d15,d4,#3
+	add	d15,d4,#2
 .L160:
 	jge	d15,d0,.L15
 
@@ -539,8 +539,8 @@ FindZebra:	.type	func
 .L85:
 
 ; ..\CODE\Src\User_ImageProcess.c	   337  			{
-; ..\CODE\Src\User_ImageProcess.c	   338  				for(int i=imageW-4; i<=imageW-1; i++)
-	add	d0,d4,#-4
+; ..\CODE\Src\User_ImageProcess.c	   338  				for(int i=imageW-3; i<=imageW-1; i++)
+	add	d0,d4,#-3
 .L109:
 	j	.L20
 .L21:
@@ -582,7 +582,7 @@ FindZebra:	.type	func
 .L87:
 
 ; ..\CODE\Src\User_ImageProcess.c	   345  				{
-; ..\CODE\Src\User_ImageProcess.c	   346  					for(int i=imageW; i<=imageW+3; i++)
+; ..\CODE\Src\User_ImageProcess.c	   346  					for(int i=imageW; i<=imageW+2; i++)
 	mov	d0,d4
 .L110:
 	j	.L25
@@ -612,7 +612,7 @@ FindZebra:	.type	func
 .L27:
 	add	d0,#1
 .L25:
-	add	d15,d4,#3
+	add	d15,d4,#2
 .L185:
 	jge	d15,d0,.L26
 
@@ -682,8 +682,8 @@ FindZebra:	.type	func
 .L91:
 
 ; ..\CODE\Src\User_ImageProcess.c	   362  			{
-; ..\CODE\Src\User_ImageProcess.c	   363  				for(int i=imageW-3; i<=imageW; i++)
-	add	d0,d4,#-3
+; ..\CODE\Src\User_ImageProcess.c	   363  				for(int i=imageW-2; i<=imageW; i++)
+	add	d0,d4,#-2
 .L114:
 
 ; ..\CODE\Src\User_ImageProcess.c	   364  					if(mt9v03x_image[imageH][i]==0xfe)
@@ -723,7 +723,7 @@ FindZebra:	.type	func
 .L93:
 
 ; ..\CODE\Src\User_ImageProcess.c	   370  				{
-; ..\CODE\Src\User_ImageProcess.c	   371  					for(int i=imageW+1; i<=imageW+4; i++)
+; ..\CODE\Src\User_ImageProcess.c	   371  					for(int i=imageW+1; i<=imageW+3; i++)
 	add	d15,d4,#1
 .L115:
 	j	.L38
@@ -753,7 +753,7 @@ FindZebra:	.type	func
 .L40:
 	add	d15,#1
 .L38:
-	add	d0,d4,#4
+	add	d0,d4,#3
 .L210:
 	jge	d0,d15,.L39
 
@@ -801,8 +801,8 @@ FindZebra:	.type	func
 .L95:
 
 ; ..\CODE\Src\User_ImageProcess.c	   382  			{
-; ..\CODE\Src\User_ImageProcess.c	   383  				for(int i=imageW-3; i<=imageW; i++)
-	add	d0,d4,#-3
+; ..\CODE\Src\User_ImageProcess.c	   383  				for(int i=imageW-2; i<=imageW; i++)
+	add	d0,d4,#-2
 .L117:
 	j	.L44
 .L45:
@@ -840,7 +840,7 @@ FindZebra:	.type	func
 .L97:
 
 ; ..\CODE\Src\User_ImageProcess.c	   390  				{
-; ..\CODE\Src\User_ImageProcess.c	   391  					for(int i=imageW+1; i<=imageW+4; i++)
+; ..\CODE\Src\User_ImageProcess.c	   391  					for(int i=imageW+1; i<=imageW+3; i++)
 	add	d0,d4,#1
 .L118:
 	j	.L49
@@ -872,7 +872,7 @@ FindZebra:	.type	func
 .L51:
 	add	d0,#1
 .L49:
-	add	d15,d4,#4
+	add	d15,d4,#3
 .L234:
 	jge	d15,d0,.L50
 
@@ -900,30 +900,30 @@ FindZebra:	.type	func
 
 ; ..\CODE\Src\User_ImageProcess.c	   400  			}
 ; ..\CODE\Src\User_ImageProcess.c	   401  		}
-; ..\CODE\Src\User_ImageProcess.c	   402  		if(BlackWhiteChangeCount >= 8)
+; ..\CODE\Src\User_ImageProcess.c	   402  		if(BlackWhiteChangeCount >= 12)
 ; ..\CODE\Src\User_ImageProcess.c	   403  			RecognizedCorrectLineCount++;
 	movh.a	a15,#@his(_999001_RecognizedCorrectLineCount)
 	ld.bu	d15,[a15]@los(_999001_RecognizedCorrectLineCount)
 .L237:
-	ge.u	d0,d3,#8
+	ge.u	d0,d3,#12
 .L238:
 	add	d15,d0
 	st.b	[a15]@los(_999001_RecognizedCorrectLineCount),d15
 .L239:
 	add	d2,#1
 .L3:
-	mov	d15,#60
+	mov	d15,#35
 .L240:
 	jge	d15,d2,.L4
 .L75:
 
 ; ..\CODE\Src\User_ImageProcess.c	   404  	}
 ; ..\CODE\Src\User_ImageProcess.c	   405  
-; ..\CODE\Src\User_ImageProcess.c	   406  	if(RecognizedCorrectLineCount >= 5)
+; ..\CODE\Src\User_ImageProcess.c	   406  	if(RecognizedCorrectLineCount >= 2)
 	movh.a	a15,#@his(_999001_RecognizedCorrectLineCount)
 	ld.bu	d15,[a15]@los(_999001_RecognizedCorrectLineCount)
 .L241:
-	jlt.u	d15,#5,.L53
+	jlt.u	d15,#2,.L53
 .L242:
 
 ; ..\CODE\Src\User_ImageProcess.c	   407  	{
@@ -35807,7 +35807,7 @@ _999001_RecognizedCorrectLineCount:	.type	object
 	.half	.L136-.L135
 	.byte	1,5,16,9
 	.half	.L74-.L136
-	.byte	3,2,1,5,31,9
+	.byte	3,2,1,5,30,9
 	.half	.L100-.L74
 	.byte	1,5,25,9
 	.half	.L4-.L100
@@ -36145,11 +36145,11 @@ _999001_RecognizedCorrectLineCount:	.type	object
 	.half	.L237-.L89
 	.byte	3,127,1,5,30,9
 	.half	.L238-.L237
-	.byte	3,1,1,5,39,9
+	.byte	3,1,1,5,38,9
 	.half	.L239-.L238
-	.byte	3,162,127,1,5,29,9
+	.byte	3,162,127,1,5,28,9
 	.half	.L3-.L239
-	.byte	1,5,31,9
+	.byte	1,5,30,9
 	.half	.L240-.L3
 	.byte	1,5,5,7,9
 	.half	.L75-.L240

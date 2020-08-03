@@ -178,7 +178,7 @@ void TurnLeftGoGarage(void)
 	    MotorUserHandle(LMotor_F, LeftWheelDeadZone);
 	    MotorUserHandle(RMotor_F, RightWheelDeadZone);
 	}
-	if(TotalDistance >= 0.9)
+	if(TotalDistance >= 0.5)
 	{
 		RunStop();
 		GoGarageFinishFlag = 1;
@@ -297,8 +297,8 @@ void FSMRun(void)
 //    }
     else if(EnterGarageFlag && ReturnFSMState(&CarFSM) == GoLine)
     {
-        MotorUserHandle(LMotor_F, LeftWheelDeadZone+LeftInGarageSpeed);
-        MotorUserHandle(RMotor_F, RightWheelDeadZone+RightInGarageSpeed);
+//        MotorUserHandle(LMotor_F, LeftWheelDeadZone+LeftInGarageSpeed);
+//        MotorUserHandle(RMotor_F, RightWheelDeadZone+RightInGarageSpeed);
     	FSMEventHandle(&CarFSM, LEFTFINDZEBRA);
     }
     else if(GoGarageFinishFlag && ReturnFSMState(&CarFSM) == LeftInGarage)

@@ -155,8 +155,8 @@ void GyroPID(double Kp, double Ki, double Kd)
     previousError = error;
     PIDValue /= 1000;
 
-    LPWMDutyOut = LeftWheelDeadZone + LeftInGarageSpeed + PIDValue;
-    RPWMDutyOut = RightWheelDeadZone + RightInGarageSpeed -PIDValue;
+    LPWMDutyOut = LeftWheelDeadZone + LeftInGarageSpeed - PIDValue;
+    RPWMDutyOut = RightWheelDeadZone + RightInGarageSpeed + PIDValue;
 	if(LPWMDutyOut >= 40)
 		LPWMDutyOut = 40;
 	else if(LPWMDutyOut <= -40)

@@ -35973,7 +35973,7 @@ __core1_main_function_end:
 	.half	.L2-.L26
 	.byte	3,134,123,1,5,1,9
 	.half	.L13-.L2
-	.byte	3,4,0,1,1
+	.byte	3,10,0,1,1
 .L35:
 	.sdecl	'.debug_ranges',debug,cluster('core1_main')
 	.sect	'.debug_ranges'
@@ -36001,10 +36001,16 @@ __core1_main_function_end:
 	.word	.L40,.L4,.L14-.L4
 
 ; ..\USER\Cpu1_Main.c	    38      {
-; ..\USER\Cpu1_Main.c	    39  
-; ..\USER\Cpu1_Main.c	    40      }
-; ..\USER\Cpu1_Main.c	    41  }
-; ..\USER\Cpu1_Main.c	    42  
-; ..\USER\Cpu1_Main.c	    43  #pragma section all restore
+; ..\USER\Cpu1_Main.c	    39  //		if(mt9v03x_finish_flag)
+; ..\USER\Cpu1_Main.c	    40  //		{
+; ..\USER\Cpu1_Main.c	    41  //			FindZebra();
+; ..\USER\Cpu1_Main.c	    42  //			ips114_displayimage032(mt9v03x_image[0], MT9V03X_W, MT9V03X_H); //≤‚ ‘
+; ..\USER\Cpu1_Main.c	    43  ////			seekfree_sendimg_03x(UART_3, mt9v03x_image[0], MT9V03X_W, MT9V03X_H);  //≤‚ ‘
+; ..\USER\Cpu1_Main.c	    44  //			mt9v03x_finish_flag = 0;
+; ..\USER\Cpu1_Main.c	    45  //		}
+; ..\USER\Cpu1_Main.c	    46      }
+; ..\USER\Cpu1_Main.c	    47  }
+; ..\USER\Cpu1_Main.c	    48  
+; ..\USER\Cpu1_Main.c	    49  #pragma section all restore
 
 	; Module end

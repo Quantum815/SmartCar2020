@@ -760,17 +760,17 @@ GyroPID:	.type	func
 .L343:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	   157  
-; ..\CODE\Src\User_Gyro_Uart.c	   158      LPWMDutyOut = LeftWheelDeadZone + LeftInGarageSpeed + PIDValue;
+; ..\CODE\Src\User_Gyro_Uart.c	   158      LPWMDutyOut = LeftWheelDeadZone + LeftInGarageSpeed - PIDValue;
 	mov.u	d0,#39320
 	addih	d0,d0,#16281
 .L344:
-	add.f	d5,d15,d0
+	sub.f	d5,d0,d15
 .L154:
 
-; ..\CODE\Src\User_Gyro_Uart.c	   159      RPWMDutyOut = RightWheelDeadZone + RightInGarageSpeed -PIDValue;
+; ..\CODE\Src\User_Gyro_Uart.c	   159      RPWMDutyOut = RightWheelDeadZone + RightInGarageSpeed + PIDValue;
 	movh	d0,#16256
 .L345:
-	sub.f	d8,d0,d15
+	add.f	d8,d15,d0
 .L145:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	   160  	if(LPWMDutyOut >= 40)
@@ -36219,11 +36219,11 @@ _999001_previousError:	.type	object
 	.half	.L342-.L341
 	.byte	1,5,37,9
 	.half	.L343-.L342
-	.byte	3,2,1,5,59,9
+	.byte	3,2,1,5,57,9
 	.half	.L344-.L343
 	.byte	1,5,38,9
 	.half	.L154-.L344
-	.byte	3,1,1,5,59,9
+	.byte	3,1,1,5,61,9
 	.half	.L345-.L154
 	.byte	1,5,20,9
 	.half	.L145-.L345

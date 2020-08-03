@@ -5,7 +5,7 @@
  *      Author: Quantum815
  */
 
-#include "Inc\User_ADC.h"
+#include "..\CODE\Inc\User_ADC.h"
 
 #pragma section all "cpu0_dsram"
 
