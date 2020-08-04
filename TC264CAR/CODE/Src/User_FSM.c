@@ -173,12 +173,12 @@ void TurnLeftGoGarage(void)
 	}
 	GyroYawAngleInit(SetLeftRotationAngle);
 	GyroPID(GYRO_P, GYRO_I, GYRO_D);
-	if(TotalDistance >= 0.3)
+	if(TotalDistance >= 0.4)
 	{
 	    MotorUserHandle(LMotor_F, LeftWheelDeadZone);
 	    MotorUserHandle(RMotor_F, RightWheelDeadZone);
 	}
-	if(TotalDistance >= 0.5)
+	if(TotalDistance >= 0.6)
 	{
 		RunStop();
 		GoGarageFinishFlag = 1;
@@ -196,12 +196,12 @@ void TurnRightGoGarage(void)
 	}
 	GyroYawAngleInit(-SetRightRotationAngle);
 	GyroPID(GYRO_P, GYRO_I, GYRO_D);
-	if(TotalDistance >= 0.3)
+	if(TotalDistance >= 0.25)
 	{
 	    MotorUserHandle(LMotor_F, LeftWheelDeadZone);
 	    MotorUserHandle(RMotor_F, RightWheelDeadZone);
 	}
-	if(TotalDistance >= 0.9)
+	else if(TotalDistance >= 0.9)
 	{
 		RunStop();
 		GoGarageFinishFlag = 1;
@@ -301,7 +301,7 @@ void FSMRun(void)
 //        MotorUserHandle(RMotor_F, RightWheelDeadZone+RightInGarageSpeed);
     	FSMEventHandle(&CarFSM, LEFTFINDZEBRA);
     }
-    else if(GoGarageFinishFlag && ReturnFSMState(&CarFSM) == LeftInGarage)
+    else if(GoGarageFinishFlag && ReturnFSMState(&CarFSM) == RightInGarage)
     {
     	FSMEventHandle(&CarFSM, RUNSTOP);
     }

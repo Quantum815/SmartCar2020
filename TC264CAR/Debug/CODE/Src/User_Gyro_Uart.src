@@ -761,14 +761,15 @@ GyroPID:	.type	func
 
 ; ..\CODE\Src\User_Gyro_Uart.c	   157  
 ; ..\CODE\Src\User_Gyro_Uart.c	   158      LPWMDutyOut = LeftWheelDeadZone + LeftInGarageSpeed - PIDValue;
-	mov.u	d0,#39320
-	addih	d0,d0,#16281
+	mov	d0,#26214
+	addih	d0,d0,#16518
 .L344:
 	sub.f	d5,d0,d15
 .L154:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	   159      RPWMDutyOut = RightWheelDeadZone + RightInGarageSpeed + PIDValue;
-	movh	d0,#16256
+	mov	d0,#13107
+	addih	d0,d0,#16515
 .L345:
 	add.f	d8,d15,d0
 .L145:
