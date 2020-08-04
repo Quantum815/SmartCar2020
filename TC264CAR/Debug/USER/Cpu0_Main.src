@@ -35261,7 +35261,7 @@ __core0_main_function_end:
 	.half	.L29-.L2
 	.byte	3,126,1,5,1,9
 	.half	.L13-.L29
-	.byte	3,14,0,1,1
+	.byte	3,15,0,1,1
 .L25:
 	.sdecl	'.debug_ranges',debug,cluster('core0_main')
 	.sect	'.debug_ranges'
@@ -35286,18 +35286,19 @@ __core0_main_function_end:
 	.word	12
 	.word	.L30,.L4,.L14-.L4
 
-; ..\USER\Cpu0_Main.c	    45  //		MotorUserHandle(RMotor_B, 2.3);
-; ..\USER\Cpu0_Main.c	    46  //		MotorUserHandle(LMotor_B, 2.4);
-; ..\USER\Cpu0_Main.c	    47  //		systick_delay_ms(STM0, 2000);
-; ..\USER\Cpu0_Main.c	    48  //		MotorUserHandle(LMotor_B, 25);
-; ..\USER\Cpu0_Main.c	    49  //		systick_delay_ms(STM0, 2000);
-; ..\USER\Cpu0_Main.c	    50  //		MotorUserHandle(LMotor_B, 0);
-; ..\USER\Cpu0_Main.c	    51  //		MotorUserHandle(RMotor_B, 2.3);
-; ..\USER\Cpu0_Main.c	    52  //		systick_delay_ms(STM0, 2000);
-; ..\USER\Cpu0_Main.c	    53  //		MotorUserHandle(RMotor_B, 25);
-; ..\USER\Cpu0_Main.c	    54  //		systick_delay_ms(STM0, 2000);
-; ..\USER\Cpu0_Main.c	    55  	}
-; ..\USER\Cpu0_Main.c	    56  }
-; ..\USER\Cpu0_Main.c	    57  
+; ..\USER\Cpu0_Main.c	    45  //		RunStop();
+; ..\USER\Cpu0_Main.c	    46  //		MotorUserHandle(RMotor_B, 2.3);
+; ..\USER\Cpu0_Main.c	    47  //		MotorUserHandle(LMotor_B, 2.4);
+; ..\USER\Cpu0_Main.c	    48  //		systick_delay_ms(STM0, 2000);
+; ..\USER\Cpu0_Main.c	    49  //		MotorUserHandle(LMotor_B, 25);
+; ..\USER\Cpu0_Main.c	    50  //		systick_delay_ms(STM0, 2000);
+; ..\USER\Cpu0_Main.c	    51  //		MotorUserHandle(LMotor_B, 0);
+; ..\USER\Cpu0_Main.c	    52  //		MotorUserHandle(RMotor_B, 2.3);
+; ..\USER\Cpu0_Main.c	    53  //		systick_delay_ms(STM0, 2000);
+; ..\USER\Cpu0_Main.c	    54  //		MotorUserHandle(RMotor_B, 25);
+; ..\USER\Cpu0_Main.c	    55  //		systick_delay_ms(STM0, 2000);
+; ..\USER\Cpu0_Main.c	    56  	}
+; ..\USER\Cpu0_Main.c	    57  }
+; ..\USER\Cpu0_Main.c	    58  
 
 	; Module end

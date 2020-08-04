@@ -135,14 +135,58 @@
 #define PIDMidLineFuseNum -0.000289
 
 //正常巡线PID
-#define FINDLINE_P 11
-#define FINDLINE_I 0
-#define FINDLINE_D 5600
+#define FINDLINE_P 9
+#define FINDLINE_I 0.1
+#define FINDLINE_D 2200
 
 //入库导航PID
-#define GYRO_P 10//210
+#define GYRO_P 30//210
 #define GYRO_I 0.1
 #define GYRO_D 200//1000
+
+//环岛判别条件
+#define ADCvalueC 2400 //入圆时中心电感值
+#define ADCvalueCL 1400 //入圆时左斜电感值
+#define ADCvalueCR 1400//入圆时右斜电感值
+#define ADCvalueLL 2800//入圆时最左侧电感值
+#define ADCvalueRR 2800// 入圆时最右侧电感值
+
+////进环岛判别条件
+//#define ADCvalueC_In 2400 //入圆时中心电感值
+//#define ADCvalueCL_In 1400 //入圆时左斜电感值
+//#define ADCvalueCR_In 1400//入圆时右斜电感值
+//#define ADCvalueLL_In 2800//入圆时最左侧电感值
+//#define ADCvalueRR_In 2800// 入圆时最右侧电感值
+//
+////出环岛判别条件
+//#define ADCvalueC_Out 2200 //出圆时中心电感值
+//#define ADCvalueCL_Out 1900 //出圆时左斜电感值
+//#define ADCvalueCR_Out 1900//出圆时右斜电感值
+//#define ADCvalueLL_Out 2600//出圆时最左侧电感值
+//#define ADCvalueRR_Out 2600//出圆时最右侧电感值
+
+//入圆相关参数
+#define InRAngle 10 //入左圆角度
+#define SpeedDownInAngle -13 //入圆减速pwm
+#define StraightLineInRA 0.2 //入圆时直行距离 这个值必须大于0.2且小于GYROLineInRA
+#define SpeedStraightInRA 8.5 //入圆时直行时的基础速度
+#define CSpeedStraightInRA 1.5 //入左圆时差速
+#define GYROLineInRA 0.4 //入圆时陀螺仪走的距离 这个值必须小于0.8
+
+/*入圆时转向PID参数*/
+#define InRAGyroKp 105
+#define InRAGyroKi 0
+#define InRAGyroKd 200
+
+//出圆相关参数
+#define OutRALeftAngle 30 //出左圆时的偏角度
+#define SpeedDownOutAngle -13 //出圆减速pwm
+#define GYROLineOutRA 0.6 //出圆陀螺仪走的距离
+
+//出圆陀螺仪PID
+#define OutRAGyroKp 105
+#define OutRAGyroKi 0
+#define OutRAGyroKd 200
 
 #endif
 
