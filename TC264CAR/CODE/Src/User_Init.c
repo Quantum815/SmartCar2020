@@ -30,7 +30,7 @@ void UserInit(void)
 
 	//≤‚ ‘
 	//gpio_init(P20_8, GPO, 1, PUSHPULL);
-	//DebugUARTInit();
+	DebugUARTInit();
 	ips114_init();
 }
 

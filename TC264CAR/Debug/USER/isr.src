@@ -4324,12 +4324,12 @@ cc60_pit_ch1_isr:	.type	func
 .L273:
 
 ; ..\USER\isr.c	    42  	{
-; ..\USER\isr.c	    43  		FindZebra();
+; ..\USER\isr.c	    43    		FindZebra();
 	call	FindZebra
 .L274:
 
-; ..\USER\isr.c	    44  		//ips114_displayimage032(mt9v03x_image[0], MT9V03X_W, MT9V03X_H); //≤‚ ‘
-; ..\USER\isr.c	    45  		//seekfree_sendimg_03x(UART_3, mt9v03x_image[0], MT9V03X_W, MT9V03X_H);  //≤‚ ‘
+; ..\USER\isr.c	    44  //  		ips114_displayimage032(mt9v03x_image[0], MT9V03X_W, MT9V03X_H); //≤‚ ‘
+; ..\USER\isr.c	    45  //		seekfree_sendimg_03x(UART_3, mt9v03x_image[0], MT9V03X_W, MT9V03X_H);  //≤‚ ‘
 ; ..\USER\isr.c	    46  		mt9v03x_finish_flag = 0;
 	movh.a	a15,#@his(mt9v03x_finish_flag)
 .L275:
@@ -55257,7 +55257,7 @@ i:	.type	object
 	.half	.L183-.L253
 	.byte	3,153,117,1,5,2,9
 	.half	.L254-.L183
-	.byte	1,5,12,7,9
+	.byte	1,5,14,7,9
 	.half	.L273-.L254
 	.byte	3,2,1,5,3,9
 	.half	.L274-.L273

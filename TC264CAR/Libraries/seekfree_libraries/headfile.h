@@ -111,8 +111,8 @@
 #define RightWheelBrakeZone 1.8
 
 //正常车速PWM占空比
-#define LeftNormalSpeed 7
-#define RightNormalSpeed 7
+#define LeftNormalSpeed 8
+#define RightNormalSpeed 8
 
 //圆环车速PWM占空比
 #define LeftCircleSpeed 0
@@ -126,60 +126,23 @@
 #define InGarageAdjustedValue 0
 
 //左转入库转弯角度
-#define SetLeftRotationAngle 20
+#define SetLeftRotationAngle 25
 
 //右转入库转弯角度
 #define SetRightRotationAngle 20
 
 //正常巡线PID中线值
-#define PIDMidLineFuseNum -0.000594
+#define PIDMidLineFuseNum 0.000176
 
 //正常巡线PID
-#define FINDLINE_P 15
+#define FINDLINE_P 13
 #define FINDLINE_I 0
-#define FINDLINE_D 2000
+#define FINDLINE_D 2200
 
 //入库导航PID
-#define GYRO_P 210
-#define GYRO_I 0.16
-#define GYRO_D 1000
-
-//进环岛判别条件
-#define ADCvalueC_In 2600 //入圆时中心电感值
-#define ADCvalueCL_In 2100 //入圆时左斜电感值
-#define ADCvalueCR_In 2100//入圆时右斜电感值
-#define ADCvalueLL_In 2600//入圆时最左侧电感值
-#define ADCvalueRR_In 2600// 入圆时最右侧电感值
-
-//出环岛判别条件
-#define ADCvalueC_Out 2200 //出圆时中心电感值
-#define ADCvalueCL_Out 1900 //出圆时左斜电感值
-#define ADCvalueCR_Out 1900//出圆时右斜电感值
-#define ADCvalueLL_Out 2600//出圆时最左侧电感值
-#define ADCvalueRR_Out 2600//出圆时最右侧电感值
-
-//入圆相关参数
-#define InRAngle 10 //入左圆角度
-#define SpeedDownInAngle -13 //入圆减速pwm
-#define StraightLineInRA 0.2 //入圆时直行距离 这个值必须大于0.2且小于GYROLineInRA
-#define SpeedStraightInRA 8.5 //入圆时直行时的基础速度
-#define CSpeedStraightInRA 1.5 //入左圆时差速
-#define GYROLineInRA 0.4 //入圆时陀螺仪走的距离 这个值必须小于0.8
-
-/*入圆时转向PID参数*/
-#define InRAGyroKp 105
-#define InRAGyroKi 0
-#define InRAGyroKd 200
-
-//出圆相关参数
-#define OutRALeftAngle 30 //出左圆时的偏角度
-#define SpeedDownOutAngle -13 //出圆减速pwm
-#define GYROLineOutRA 0.6 //出圆陀螺仪走的距离
-
-//出圆陀螺仪PID
-#define OutRAGyroKp 105
-#define OutRAGyroKi 0
-#define OutRAGyroKd 200
+#define GYRO_P 210//210
+#define GYRO_I 0.15
+#define GYRO_D 500//1000
 
 #endif
 
