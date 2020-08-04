@@ -12,7 +12,7 @@
 double PidValue;
 double PreviousErrorValue;
 double NowErrorValue;
-//double IntegralErrorValue;
+double IntegralErrorValue;
 double DifferentialErrorValue;
 double OldValue;
 
@@ -29,7 +29,7 @@ double GetPIDValue(double middle, double value, double kP, double kI, double kD)
 	DifferentialErrorValue = NowErrorValue - PreviousErrorValue;
 	OldValue = PidValue;
 
-	PidValue = kP * NowErrorValue + /*kI * IntegralErrorValue +*/ kD * DifferentialErrorValue;
+	PidValue = kP * NowErrorValue + kI * IntegralErrorValue + kD * DifferentialErrorValue;
 
 	PreviousErrorValue = NowErrorValue;
 
@@ -48,7 +48,7 @@ void CleanPIDValue(void)
 	PidValue = 0;
 	PreviousErrorValue = 0;
 	NowErrorValue = 0;
-	//IntegralErrorValue = 0;
+	IntegralErrorValue = 0;
 	OldValue = 0;
 }
 
