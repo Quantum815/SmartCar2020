@@ -1,6 +1,6 @@
 clear;
 clc;
-INITIAL = imread('c2.BMP');
+INITIAL = imread('c1.BMP');
 tic;
 EnterGarageFlag = 0;
 JudgeBToWFlag = 0;
