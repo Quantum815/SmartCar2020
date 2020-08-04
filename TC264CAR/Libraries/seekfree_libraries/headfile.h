@@ -173,6 +173,9 @@
 #define CSpeedStraightInRA 1.5 //入左圆时差速
 #define GYROLineInRA 0.4 //入圆时陀螺仪走的距离 这个值必须小于0.8
 
+//入圆前进PID
+//#define
+
 /*入圆时转向PID参数*/
 #define InRAGyroKp 105
 #define InRAGyroKi 0
