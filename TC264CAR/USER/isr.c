@@ -30,7 +30,7 @@ IFX_INTERRUPT(cc60_pit_ch0_isr, 0, CCU6_0_CH0_ISR_PRIORITY)  //÷˜≥Ã–Ú
 	enableInterrupts();//ø™∆Ù÷–∂œ«∂Ã◊
 	PIT_CLEAR_FLAG(CCU6_0, PIT_CH0);
 	ADCcalculateMidLine();
-	FSMRun();
+//	FSMRun();
 }
 
 
@@ -41,7 +41,7 @@ IFX_INTERRUPT(cc60_pit_ch1_isr, 0, CCU6_0_CH1_ISR_PRIORITY)  //…„œÒÕ∑  LED1
 	if(mt9v03x_finish_flag)
 	{
   		FindZebra();
-//  		ips114_displayimage032(mt9v03x_image[0], MT9V03X_W, MT9V03X_H); //≤‚ ‘
+  		ips114_displayimage032(mt9v03x_image[0], MT9V03X_W, MT9V03X_H); //≤‚ ‘
 //		seekfree_sendimg_03x(UART_3, mt9v03x_image[0], MT9V03X_W, MT9V03X_H);  //≤‚ ‘
 		mt9v03x_finish_flag = 0;
 	}

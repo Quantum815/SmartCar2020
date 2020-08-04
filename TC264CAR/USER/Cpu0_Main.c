@@ -42,8 +42,8 @@ void core0_main(void)
 	while (TRUE)
 	{
 //		DebugReadParameter();  //≤‚ ‘
-//		MotorUserHandle(RMotor_B, 0);
-//		MotorUserHandle(LMotor_B, 2);
+		MotorUserHandle(RMotor_B, 2.3);
+		MotorUserHandle(LMotor_B, 2.3);
 //		systick_delay_ms(STM0, 2000);
 //		MotorUserHandle(LMotor_B, 25);
 //		systick_delay_ms(STM0, 2000);
