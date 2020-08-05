@@ -67,6 +67,8 @@ void FindLine(void)
 {
 	LRoundaboutFlag = 0;
 	RRoundaboutFlag = 0;
+	InRoundaboutFlag = 0;
+	OutRoundaboutFlag = 0;
 
 	PIDValue = GetPIDValue(PIDMidLineFuseNum, MidLineFuseNum*1000, FINDLINE_P, FINDLINE_I, FINDLINE_D);
 	//printf("%f\r\n",PIDValue);
@@ -97,9 +99,9 @@ void InRoundaboutProcess(void)
 
 	if(LRoundaboutFlag)
 	{
-		if(GetDistance() < 0.6)
+		if(GetDistance() < 0.3)
 		{
-			FindLineAdjPWM(4, 0, 8);
+			FindLineAdjPWM(6, 0, 6);
 		}
 		else
 		{
@@ -109,9 +111,9 @@ void InRoundaboutProcess(void)
 	}
 	else if(RRoundaboutFlag)
 	{
-		if(GetDistance() < 0.6)
+		if(GetDistance() < 0.3)
 		{
-			FindLineAdjPWM(4, 8, 0);
+			FindLineAdjPWM(6, 0, 6);
 		}
 		else
 		{
@@ -133,9 +135,9 @@ void OutRoundaboutProcess(void)
 
 	if(LRoundaboutFlag)
 	{
-		if(GetDistance() < 0.6)
+		if(GetDistance() < 0.3)
 		{
-			FindLineAdjPWM(4, 8, 0);
+			FindLineAdjPWM(6, 6, 0);
 		}
 		else
 		{
@@ -145,9 +147,9 @@ void OutRoundaboutProcess(void)
 	}
 	else if(RRoundaboutFlag)
 	{
-		if(GetDistance() < 0.6)
+		if(GetDistance() < 0.3)
 		{
-			FindLineAdjPWM(4, 8, 0);
+			FindLineAdjPWM(6, 6, 0);
 		}
 		else
 		{
@@ -168,12 +170,12 @@ void TurnLeftGoGarage(void)
 	}
 	GyroYawAngleInit(SetLeftRotationAngle);
 	GyroPID(GYRO_P, GYRO_I, GYRO_D);
-	if(TotalDistance >= 0.3)
+	if(TotalDistance >= 0.25)
 	{
 	    MotorUserHandle(LMotor_F, LeftWheelDeadZone);
 	    MotorUserHandle(RMotor_F, RightWheelDeadZone);
 	}
-	if(TotalDistance >= 0.9)
+	if(TotalDistance >= 0.7)
 	{
 		RunStop();
 		GoGarageFinishFlag = 1;
@@ -191,12 +193,12 @@ void TurnRightGoGarage(void)
 	}
 	GyroYawAngleInit(-SetRightRotationAngle);
 	GyroPID(GYRO_P, GYRO_I, GYRO_D);
-	if(TotalDistance >= 0.3)
+	if(TotalDistance >= 0.25)
 	{
 	    MotorUserHandle(LMotor_F, LeftWheelDeadZone);
 	    MotorUserHandle(RMotor_F, RightWheelDeadZone);
 	}
-	else if(TotalDistance >= 0.9)
+	else if(TotalDistance >= 0.7)
 	{
 		RunStop();
 		GoGarageFinishFlag = 1;
@@ -298,24 +300,35 @@ void FSMRun(void)
     {
     	FSMEventHandle(&CarFSM, ENDINROUNDABOUT);
     }
-    else if(ReturnFSMState(&CarFSM) == PassRoundabout)
+    else if(ADCValueHandle(2) >= ADCvalueC && (ADCValueHandle(1) >= ADCvalueCL || ADCValueHandle(3) >= ADCvalueCR)\
+    && (ADCValueHandle(0) > ADCvalueLL || ADCValueHandle(4) > ADCvalueRR) && ReturnFSMState(&CarFSM) == PassRoundabout)
     {
     	FSMEventHandle(&CarFSM, OUTROUNDABOUT);
     }
-    else if(ReturnFSMState(&CarFSM) == OutingRoundabout)
+    else if(OutRoundaboutFlag && ReturnFSMState(&CarFSM) == OutingRoundabout)
     {
     	FSMEventHandle(&CarFSM, ENDOUTROUNDABOUT);
     }
-//    else if(EnterGarageFlag && ReturnFSMState(&CarFSM) == GoLine)
-//    {
-//        MotorUserHandle(LMotor_F, LeftWheelDeadZone+LeftInGarageSpeed);
-//        MotorUserHandle(RMotor_F, RightWheelDeadZone+RightInGarageSpeed);
-//    	FSMEventHandle(&CarFSM, LEFTFINDZEBRA);
-//    }
-//    else if(GoGarageFinishFlag && ReturnFSMState(&CarFSM) == RightInGarage)
-//    {
-//    	FSMEventHandle(&CarFSM, RUNSTOP);
-//    }
+    else if(!InGarageDirection && EnterGarageFlag && ReturnFSMState(&CarFSM) == GoLine)
+    {
+        MotorUserHandle(LMotor_F, LeftWheelDeadZone+LeftInGarageSpeed);
+        MotorUserHandle(RMotor_F, RightWheelDeadZone+RightInGarageSpeed);
+    	FSMEventHandle(&CarFSM, LEFTFINDZEBRA);
+    }
+    else if(InGarageDirection && EnterGarageFlag && ReturnFSMState(&CarFSM) == GoLine)
+    {
+        MotorUserHandle(LMotor_F, LeftWheelDeadZone+LeftInGarageSpeed);
+        MotorUserHandle(RMotor_F, RightWheelDeadZone+RightInGarageSpeed);
+    	FSMEventHandle(&CarFSM, RIGHTFINDZEBRA);
+    }
+    else if(GoGarageFinishFlag && ReturnFSMState(&CarFSM) == LeftInGarage)
+    {
+    	FSMEventHandle(&CarFSM, RUNSTOP);
+    }
+    else if(GoGarageFinishFlag && ReturnFSMState(&CarFSM) == RightInGarage)
+    {
+    	FSMEventHandle(&CarFSM, RUNSTOP);
+    }
     else
     	FSMEventHandle(&CarFSM, NOEVENT);
 }
