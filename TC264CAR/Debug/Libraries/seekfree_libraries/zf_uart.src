@@ -125,35 +125,35 @@ uart_set_interrupt_priority:	.type	func
 .L2:
 	movh.a	a15,#@his(uart_config+32)
 .L429:
-	mov	d15,#254
+	mov	d15,#251
 .L430:
 	st.h	[a15]@los(uart_config+32),d15
 .L431:
 	movh.a	a15,#@his(uart_config+34)
 .L432:
-	mov	d15,#255
+	mov	d15,#252
 .L433:
 	st.h	[a15]@los(uart_config+34),d15
 .L434:
-	mov	d15,#253
+	mov	d15,#250
 .L435:
 	j	.L7
 .L3:
 	movh.a	a15,#@his(uart_config+32)
 .L436:
-	mov	d15,#247
+	mov	d15,#248
 .L437:
 	st.h	[a15]@los(uart_config+32),d15
 .L438:
 	movh.a	a15,#@his(uart_config+34)
 .L439:
-	mov	d15,#248
+	mov	d15,#249
 .L440:
 	st.h	[a15]@los(uart_config+34),d15
 .L441:
 	movh.a	a15,#@his(uart_config+36)
 .L442:
-	mov	d15,#249
+	mov	d15,#247
 .L443:
 	st.h	[a15]@los(uart_config+36),d15
 .L444:
@@ -163,17 +163,17 @@ uart_set_interrupt_priority:	.type	func
 .L4:
 	movh.a	a15,#@his(uart_config+32)
 .L446:
-	mov	d15,#251
+	mov	d15,#254
 .L447:
 	st.h	[a15]@los(uart_config+32),d15
 .L448:
 	movh.a	a15,#@his(uart_config+34)
 .L449:
-	mov	d15,#252
+	mov	d15,#255
 .L450:
 	st.h	[a15]@los(uart_config+34),d15
 .L451:
-	mov	d15,#250
+	mov	d15,#253
 .L452:
 	j	.L9
 .L5:
@@ -182,7 +182,7 @@ uart_set_interrupt_priority:	.type	func
 ; ..\Libraries\seekfree_libraries\zf_uart.c	    89  			uart_config.interrupt.txPriority 	= UART3_TX_INT_PRIO;
 	movh.a	a15,#@his(uart_config+32)
 .L453:
-	mov	d15,#244
+	mov	d15,#245
 .L454:
 	st.h	[a15]@los(uart_config+32),d15
 .L455:
@@ -190,13 +190,13 @@ uart_set_interrupt_priority:	.type	func
 ; ..\Libraries\seekfree_libraries\zf_uart.c	    90  			uart_config.interrupt.rxPriority 	= UART3_RX_INT_PRIO;
 	movh.a	a15,#@his(uart_config+34)
 .L456:
-	mov	d15,#245
+	mov	d15,#246
 .L457:
 	st.h	[a15]@los(uart_config+34),d15
 .L458:
 
 ; ..\Libraries\seekfree_libraries\zf_uart.c	    91  			uart_config.interrupt.erPriority 	= UART3_ER_INT_PRIO;
-	mov	d15,#246
+	mov	d15,#244
 
 ; ..\Libraries\seekfree_libraries\zf_uart.c	    92  			uart_config.interrupt.typeOfService = (IfxSrc_Tos)UART3_INT_SERVICE;
 ; ..\Libraries\seekfree_libraries\zf_uart.c	    93  		}break;
