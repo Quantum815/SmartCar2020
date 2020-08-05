@@ -103,12 +103,12 @@
 #define WHEEL_DIAMETER 62
 
 //车轮启动死区PWM占空比
-#define LeftWheelDeadZone 4.2
-#define RightWheelDeadZone 4.1
+#define LeftWheelDeadZone 4//4.2
+#define RightWheelDeadZone 4.9//4.1
 
 //车轮刹车死区PWM占空比
-#define LeftWheelBrakeZone 2.4
-#define RightWheelBrakeZone 2.3
+#define LeftWheelBrakeZone 2.4//2.4
+#define RightWheelBrakeZone 2.7//2.3
 
 //正常车速PWM占空比
 #define LeftNormalSpeed 8
@@ -134,9 +134,9 @@
 #define PIDMidLineFuseNum -0.000289
 
 //正常巡线PID
-#define FINDLINE_P 110
-#define FINDLINE_I 0.1
-#define FINDLINE_D 2800
+#define FINDLINE_P 11//10
+#define FINDLINE_I 0.1//0.1
+#define FINDLINE_D 2800//2500
 
 //入库导航PID
 #define GYRO_P 20//210

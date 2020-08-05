@@ -48,8 +48,7 @@ uint8 StartFlag;
 uint8 RoundaboutCount;  //判断环岛和出环岛计数
 uint8 LRoundaboutFlag;  //判断为左环
 uint8 RRoundaboutFlag;  //判断为右环
-uint8 InRoundaboutFlag;
-uint8 OutRoundaboutFlag;
+uint8 PassingRoundaboutFlag; //判断是否在走圆
 uint8 GoGarageFinishFlag;
 
 #pragma section all restore
@@ -65,11 +64,11 @@ void RunStop(void)
 
 void FindLine(void)
 {
-	LRoundaboutFlag = 0;
-	RRoundaboutFlag = 0;
-	InRoundaboutFlag = 0;
-	OutRoundaboutFlag = 0;
-
+	if(!PassingRoundaboutFlag){
+		LRoundaboutFlag = 0;
+		RRoundaboutFlag = 0;
+		PassingRoundaboutFlag = 0;
+	}
 	PIDValue = GetPIDValue(PIDMidLineFuseNum, MidLineFuseNum*1000, FINDLINE_P, FINDLINE_I, FINDLINE_D);
 	//printf("%f\r\n",PIDValue);
 	LPWM = LeftWheelDeadZone + LeftNormalSpeed - PIDValue;
@@ -99,14 +98,14 @@ void InRoundaboutProcess(void)
 
 	if(LRoundaboutFlag)
 	{
-		if(GetDistance() < 0.3)
+		if(GetDistance() < 0.3)//0.6
 		{
-			FindLineAdjPWM(6, 0, 6);
+			FindLineAdjPWM(6, 0, 6);//6 0 8
 		}
 		else
 		{
 			FindLine();
-			InRoundaboutFlag = 1;
+			PassingRoundaboutFlag = 1;
 		}
 	}
 	else if(RRoundaboutFlag)
@@ -118,7 +117,7 @@ void InRoundaboutProcess(void)
 		else
 		{
 			FindLine();
-			InRoundaboutFlag = 1;
+			PassingRoundaboutFlag = 1;
 		}
 	}
 }
@@ -141,7 +140,7 @@ void OutRoundaboutProcess(void)
 		}
 		else
 		{
-			OutRoundaboutFlag = 1;
+			PassingRoundaboutFlag = 0;
 			FindLine();
 		}
 	}
@@ -153,7 +152,7 @@ void OutRoundaboutProcess(void)
 		}
 		else
 		{
-			OutRoundaboutFlag = 1;
+			PassingRoundaboutFlag = 0;
 			FindLine();
 		}
 	}
@@ -277,35 +276,35 @@ void FSMRun(void)
     		FSMEventHandle(&CarFSM, GETBALL);
     }
     else if(ADCValueHandle(2) >= ADCvalueC && (ADCValueHandle(1) >= ADCvalueCL || ADCValueHandle(3) >= ADCvalueCR)\
-    && (ADCValueHandle(0) > ADCvalueLL || ADCValueHandle(4) > ADCvalueRR) && ReturnFSMState(&CarFSM) == GoLine)
+    && (ADCValueHandle(0) > ADCvalueLL || ADCValueHandle(4) > ADCvalueRR) && ReturnFSMState(&CarFSM) == GoLine && RoundaboutCount==0)//检测进圆
     {
     	RoundaboutCount++;
-    	if(RoundaboutCount >= 3)
+    	if(RoundaboutCount >= 3)//连续检测三次
     	{
-    		if(ADCValueHandle(1) > ADCValueHandle(3))
+    		if(ADCValueHandle(1) > ADCValueHandle(3))//判断左圆或右圆
 			{
-				LRoundaboutFlag = 1;
+				LRoundaboutFlag = 1;//左圆
 				RRoundaboutFlag = 0;
 			}
 			else
 			{
 				LRoundaboutFlag = 0;
-				RRoundaboutFlag = 1;
+				RRoundaboutFlag = 1;//右圆
 			}
-    		RoundaboutCount = 0;
+//    		RoundaboutCount = 0;
             FSMEventHandle(&CarFSM, FINDROUNDABOUT);
     	}
     }
-    else if(InRoundaboutFlag && ReturnFSMState(&CarFSM) == InRoundabout)
+    else if(PassingRoundaboutFlag && ReturnFSMState(&CarFSM) == InRoundabout)//圆内过程
     {
     	FSMEventHandle(&CarFSM, ENDINROUNDABOUT);
     }
     else if(ADCValueHandle(2) >= ADCvalueC && (ADCValueHandle(1) >= ADCvalueCL || ADCValueHandle(3) >= ADCvalueCR)\
-    && (ADCValueHandle(0) > ADCvalueLL || ADCValueHandle(4) > ADCvalueRR) && ReturnFSMState(&CarFSM) == PassRoundabout)
+    && (ADCValueHandle(0) > ADCvalueLL || ADCValueHandle(4) > ADCvalueRR) && ReturnFSMState(&CarFSM) == PassRoundabout)//检测出圆
     {
     	FSMEventHandle(&CarFSM, OUTROUNDABOUT);
     }
-    else if(OutRoundaboutFlag && ReturnFSMState(&CarFSM) == OutingRoundabout)
+    else if(!PassingRoundaboutFlag && ReturnFSMState(&CarFSM) == OutingRoundabout)
     {
     	FSMEventHandle(&CarFSM, ENDOUTROUNDABOUT);
     }
