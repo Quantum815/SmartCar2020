@@ -11655,8 +11655,8 @@ __dma_ch5_isr_function_end:
 .L99:
 	; End of function
 	
-	.sdecl	'.text.inttab0.intvec.0fe',code
-	.sect	'.text.inttab0.intvec.0fe'
+	.sdecl	'.text.inttab0.intvec.0fb',code
+	.sect	'.text.inttab0.intvec.0fb'
 
 ; ..\USER\isr.c	   148  
 ; ..\USER\isr.c	   149  
@@ -12368,8 +12368,8 @@ __uart0_tx_isr_function_end:
 .L104:
 	; End of function
 	
-	.sdecl	'.text.inttab0.intvec.0ff',code
-	.sect	'.text.inttab0.intvec.0ff'
+	.sdecl	'.text.inttab0.intvec.0fc',code
+	.sect	'.text.inttab0.intvec.0fc'
 
 ; ..\USER\isr.c	   156  IFX_INTERRUPT(uart0_rx_isr, 0, UART0_RX_INT_PRIO)
 	movh.a	a14,#@his(uart0_rx_isr)
@@ -13082,8 +13082,8 @@ __uart0_rx_isr_function_end:
 .L109:
 	; End of function
 	
-	.sdecl	'.text.inttab0.intvec.0fd',code
-	.sect	'.text.inttab0.intvec.0fd'
+	.sdecl	'.text.inttab0.intvec.0fa',code
+	.sect	'.text.inttab0.intvec.0fa'
 
 ; ..\USER\isr.c	   162  IFX_INTERRUPT(uart0_er_isr, 0, UART0_ER_INT_PRIO)
 	movh.a	a14,#@his(uart0_er_isr)
@@ -13792,8 +13792,8 @@ __uart0_er_isr_function_end:
 .L114:
 	; End of function
 	
-	.sdecl	'.text.inttab0.intvec.0f7',code
-	.sect	'.text.inttab0.intvec.0f7'
+	.sdecl	'.text.inttab0.intvec.0f8',code
+	.sect	'.text.inttab0.intvec.0f8'
 
 ; ..\USER\isr.c	   167  
 ; ..\USER\isr.c	   168  //串口1默认连接到摄像头配置串口
@@ -14504,8 +14504,8 @@ __uart1_tx_isr_function_end:
 .L119:
 	; End of function
 	
-	.sdecl	'.text.inttab0.intvec.0f8',code
-	.sect	'.text.inttab0.intvec.0f8'
+	.sdecl	'.text.inttab0.intvec.0f9',code
+	.sect	'.text.inttab0.intvec.0f9'
 
 ; ..\USER\isr.c	   174  IFX_INTERRUPT(uart1_rx_isr, 0, UART1_RX_INT_PRIO)
 	movh.a	a14,#@his(uart1_rx_isr)
@@ -15218,8 +15218,8 @@ __uart1_rx_isr_function_end:
 .L124:
 	; End of function
 	
-	.sdecl	'.text.inttab0.intvec.0f9',code
-	.sect	'.text.inttab0.intvec.0f9'
+	.sdecl	'.text.inttab0.intvec.0f7',code
+	.sect	'.text.inttab0.intvec.0f7'
 
 ; ..\USER\isr.c	   180  IFX_INTERRUPT(uart1_er_isr, 0, UART1_ER_INT_PRIO)
 	movh.a	a14,#@his(uart1_er_isr)
@@ -15928,8 +15928,8 @@ __uart1_er_isr_function_end:
 .L129:
 	; End of function
 	
-	.sdecl	'.text.inttab0.intvec.0fb',code
-	.sect	'.text.inttab0.intvec.0fb'
+	.sdecl	'.text.inttab0.intvec.0fe',code
+	.sect	'.text.inttab0.intvec.0fe'
 
 ; ..\USER\isr.c	   185  
 ; ..\USER\isr.c	   186  
@@ -16641,8 +16641,8 @@ __uart2_tx_isr_function_end:
 .L134:
 	; End of function
 	
-	.sdecl	'.text.inttab0.intvec.0fc',code
-	.sect	'.text.inttab0.intvec.0fc'
+	.sdecl	'.text.inttab0.intvec.0ff',code
+	.sect	'.text.inttab0.intvec.0ff'
 
 ; ..\USER\isr.c	   193  IFX_INTERRUPT(uart2_rx_isr, 0, UART2_RX_INT_PRIO)
 	movh.a	a14,#@his(uart2_rx_isr)
@@ -17355,8 +17355,8 @@ __uart2_rx_isr_function_end:
 .L139:
 	; End of function
 	
-	.sdecl	'.text.inttab0.intvec.0fa',code
-	.sect	'.text.inttab0.intvec.0fa'
+	.sdecl	'.text.inttab0.intvec.0fd',code
+	.sect	'.text.inttab0.intvec.0fd'
 
 ; ..\USER\isr.c	   199  IFX_INTERRUPT(uart2_er_isr, 0, UART2_ER_INT_PRIO)
 	movh.a	a14,#@his(uart2_er_isr)
@@ -18065,8 +18065,8 @@ __uart2_er_isr_function_end:
 .L144:
 	; End of function
 	
-	.sdecl	'.text.inttab0.intvec.0f4',code
-	.sect	'.text.inttab0.intvec.0f4'
+	.sdecl	'.text.inttab0.intvec.0f5',code
+	.sect	'.text.inttab0.intvec.0f5'
 
 ; ..\USER\isr.c	   204  
 ; ..\USER\isr.c	   205  
@@ -18778,8 +18778,8 @@ __uart3_tx_isr_function_end:
 .L149:
 	; End of function
 	
-	.sdecl	'.text.inttab0.intvec.0f5',code
-	.sect	'.text.inttab0.intvec.0f5'
+	.sdecl	'.text.inttab0.intvec.0f6',code
+	.sect	'.text.inttab0.intvec.0f6'
 
 ; ..\USER\isr.c	   212  IFX_INTERRUPT(uart3_rx_isr, 0, UART3_RX_INT_PRIO)
 	movh.a	a14,#@his(uart3_rx_isr)
@@ -19489,8 +19489,8 @@ __uart3_rx_isr_function_end:
 .L154:
 	; End of function
 	
-	.sdecl	'.text.inttab0.intvec.0f6',code
-	.sect	'.text.inttab0.intvec.0f6'
+	.sdecl	'.text.inttab0.intvec.0f4',code
+	.sect	'.text.inttab0.intvec.0f4'
 
 ; ..\USER\isr.c	   218  IFX_INTERRUPT(uart3_er_isr, 0, UART3_ER_INT_PRIO)
 	movh.a	a14,#@his(uart3_er_isr)

@@ -101,10 +101,20 @@ UserInit:	.type	func
 
 ; ..\CODE\Src\User_Init.c	    30  
 ; ..\CODE\Src\User_Init.c	    31  	//≤‚ ‘
-; ..\CODE\Src\User_Init.c	    32  	//gpio_init(P20_8, GPO, 1, PUSHPULL);
+; ..\CODE\Src\User_Init.c	    32  	gpio_init(P21_5, GPO, 1, PUSHPULL);
+	mov	d4,#677
+.L37:
+	mov	d5,#1
+.L38:
+	mov	d6,d5
+.L39:
+	mov	d7,#3
+	call	gpio_init
+.L40:
+
 ; ..\CODE\Src\User_Init.c	    33  	DebugUARTInit();
 	call	DebugUARTInit
-.L37:
+.L41:
 
 ; ..\CODE\Src\User_Init.c	    34  	ips114_init();
 	j	ips114_init
@@ -34906,12 +34916,20 @@ __UserInit_function_end:
 	.half	.L34-.L33
 	.byte	3,1,1,9
 	.half	.L35-.L34
-	.byte	3,1,1,9
+	.byte	3,1,1,5,12,9
 	.half	.L36-.L35
-	.byte	3,4,1,5,13,9
+	.byte	3,3,1,5,19,9
 	.half	.L37-.L36
+	.byte	1,5,24,9
+	.half	.L38-.L37
+	.byte	1,5,27,9
+	.half	.L39-.L38
+	.byte	1,5,15,9
+	.half	.L40-.L39
+	.byte	3,1,1,5,13,9
+	.half	.L41-.L40
 	.byte	3,1,1,5,1,7,9
-	.half	.L12-.L37
+	.half	.L12-.L41
 	.byte	3,1,0,1,1
 .L19:
 	.sdecl	'.debug_ranges',debug,cluster('UserInit')
@@ -34927,7 +34945,7 @@ __UserInit_function_end:
 	.word	0,0
 	.sdecl	'.debug_frame',debug
 	.sect	'.debug_frame'
-.L38:
+.L42:
 	.word	48
 	.word	-1
 	.byte	3,0,2,1,27,12,26,0,8,27,8,26,8,28,8,29,8,30,8,31,8,34,8,35,8,32,8,33,8,16,8,17,8,24,8,25,8,36,8,37,8,38
@@ -34935,7 +34953,7 @@ __UserInit_function_end:
 	.sdecl	'.debug_frame',debug,cluster('UserInit')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L38,.L3,.L13-.L3
+	.word	.L42,.L3,.L13-.L3
 
 ; ..\CODE\Src\User_Init.c	    35  }
 ; ..\CODE\Src\User_Init.c	    36  

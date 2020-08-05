@@ -29,7 +29,7 @@ void UserInit(void)
 	CleanPIDValue();
 
 	//≤‚ ‘
-	//gpio_init(P20_8, GPO, 1, PUSHPULL);
+	gpio_init(P21_5, GPO, 1, PUSHPULL);
 	DebugUARTInit();
 	ips114_init();
 }

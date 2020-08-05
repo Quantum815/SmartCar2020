@@ -80,24 +80,24 @@
 
 //------------串口中断参数相关定义------------
 #define	UART0_INT_SERVICE  0	//定义串口0中断服务类型，即中断是由谁响应处理 0:CPU0 1:CPU1 3:DMA  不可设置为其他值
-#define UART0_TX_INT_PRIO  254	//定义串口0发送中断优先级 优先级范围1-255 越大优先级越高 与平时使用的单片机不一样
-#define UART0_RX_INT_PRIO  255	//定义串口0接收中断优先级 优先级范围1-255 越大优先级越高 与平时使用的单片机不一样
-#define UART0_ER_INT_PRIO  253	//定义串口0错误中断优先级 优先级范围1-255 越大优先级越高 与平时使用的单片机不一样
+#define UART0_TX_INT_PRIO  251	//定义串口0发送中断优先级 优先级范围1-255 越大优先级越高 与平时使用的单片机不一样
+#define UART0_RX_INT_PRIO  252	//定义串口0接收中断优先级 优先级范围1-255 越大优先级越高 与平时使用的单片机不一样
+#define UART0_ER_INT_PRIO  250	//定义串口0错误中断优先级 优先级范围1-255 越大优先级越高 与平时使用的单片机不一样
 
 #define	UART1_INT_SERVICE  1    //摄像头
-#define UART1_TX_INT_PRIO  247
-#define UART1_RX_INT_PRIO  248
-#define UART1_ER_INT_PRIO  249
+#define UART1_TX_INT_PRIO  248
+#define UART1_RX_INT_PRIO  249
+#define UART1_ER_INT_PRIO  247
 
 #define	UART2_INT_SERVICE  0    //双车通讯
-#define UART2_TX_INT_PRIO  251
-#define UART2_RX_INT_PRIO  252
-#define UART2_ER_INT_PRIO  250
+#define UART2_TX_INT_PRIO  254
+#define UART2_RX_INT_PRIO  255
+#define UART2_ER_INT_PRIO  253
 
 #define	UART3_INT_SERVICE  0    //调试
-#define UART3_TX_INT_PRIO  244
-#define UART3_RX_INT_PRIO  245
-#define UART3_ER_INT_PRIO  246
+#define UART3_TX_INT_PRIO  245
+#define UART3_RX_INT_PRIO  246
+#define UART3_ER_INT_PRIO  244
 
 
 #endif

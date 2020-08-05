@@ -28,7 +28,7 @@ void TwoCarReadData(void)
 	static uint8 count = 0;
 	while(uart_query(WIRELESS_UART, &TwoCarRxBuff[TwoCarReceiveNum]))
 	{
-		//uart_putstr(WIRELESS_UART, "test");
+		uart_putchar(WIRELESS_UART, 0x00);  //≤‚ ‘
 		TwoCarReceiveNum++;
 		if(TwoCarReceiveNum == 1 && TwoCarRxBuff[0] != 0x01)
 			TwoCarReceiveNum = 0;
@@ -38,11 +38,14 @@ void TwoCarReadData(void)
 				TwoCarReceiveNum = 0;
 			else
 			{
-				//uart_putstr(WIRELESS_UART, "success");
+				uart_putchar(WIRELESS_UART, 0xff);  //≤‚ ‘
 				count++;
 				TwoCarReceiveNum = 0;
-				if(count == 5)
+				if(count == 3)
+				{
 					TwoCarRxFlag = 1;
+					gpio_set(P21_5, 0);  //≤‚ ‘
+				}
 				break;
 			}
 		}
