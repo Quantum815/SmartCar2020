@@ -45,11 +45,12 @@ float PIDValue;
 
 //状态机各种标志位和计数位
 uint8 StartFlag;
-uint8 RoundaboutCount;  //判断环岛和出环岛计数
-uint8 LRoundaboutFlag;  //判断为左环
-uint8 RRoundaboutFlag;  //判断为右环
-uint8 PassingRoundaboutFlag; //判断是否在走圆
-uint8 GoGarageFinishFlag;
+volatile uint8 IntoRoundaboutCount;  //环岛消抖
+volatile uint8 RoundaboutCount;//进圆计数
+volatile uint8 LRoundaboutFlag;  //判断为左环
+volatile uint8 RRoundaboutFlag;  //判断为右环
+volatile uint8 PassingRoundaboutFlag; //判断是否在走圆
+volatile uint8 GoGarageFinishFlag;
 
 #pragma section all restore
 
@@ -98,12 +99,19 @@ void InRoundaboutProcess(void)
 
 	if(LRoundaboutFlag)
 	{
-		if(GetDistance() < 0.3)//0.6
+//		if(GetDistance() < 0.1)
+//		{
+//			FindLine();
+//		}
+//		else
+		if(GetDistance() < 0.4)//0.35 //0.4
 		{
-			FindLineAdjPWM(6, 0, 6);//6 0 8
+//	    	uart_putchar(UART_3,0X02);//状态检测2
+			FindLineAdjPWM(6, -8, 12);//6 -4 6 //6 -8 12
 		}
 		else
 		{
+//	    	uart_putchar(UART_3,0X03);//状态检测3
 			FindLine();
 			PassingRoundaboutFlag = 1;
 		}
@@ -134,27 +142,29 @@ void OutRoundaboutProcess(void)
 
 	if(LRoundaboutFlag)
 	{
-		if(GetDistance() < 0.3)
-		{
-			FindLineAdjPWM(6, 6, 0);
-		}
-		else
-		{
-			PassingRoundaboutFlag = 0;
-			FindLine();
-		}
+//		if(GetDistance() < 0.3)
+//		{
+//			FindLineAdjPWM(6, 6, 0);
+//		}
+//		else
+//		{
+//			PassingRoundaboutFlag = 0;
+//			FindLine();
+//		}
+		FindLine();
 	}
 	else if(RRoundaboutFlag)
 	{
-		if(GetDistance() < 0.3)
-		{
-			FindLineAdjPWM(6, 6, 0);
-		}
-		else
-		{
-			PassingRoundaboutFlag = 0;
-			FindLine();
-		}
+//		if(GetDistance() < 0.3)
+//		{
+//			FindLineAdjPWM(6, 6, 0);
+//		}
+//		else
+//		{
+//			PassingRoundaboutFlag = 0;
+//			FindLine();
+//		}
+		FindLine();
 	}
 }
 
@@ -167,7 +177,7 @@ void TurnLeftGoGarage(void)
 		CleanDistance();
 		CleanDistanceFlag = 1;
 	}
-	GyroYawAngleInit(SetLeftRotationAngle);
+	GyroYawAngleInit(SetLeftRotationAngle);//+左转；-右转
 	GyroPID(GYRO_P, GYRO_I, GYRO_D);
 	if(TotalDistance >= 0.25)
 	{
@@ -192,7 +202,7 @@ void TurnRightGoGarage(void)
 	}
 	GyroYawAngleInit(-SetRightRotationAngle);
 	GyroPID(GYRO_P, GYRO_I, GYRO_D);
-	if(TotalDistance >= 0.25)
+	if(TotalDistance >= 0.1)
 	{
 	    MotorUserHandle(LMotor_F, LeftWheelDeadZone);
 	    MotorUserHandle(RMotor_F, RightWheelDeadZone);
@@ -272,17 +282,19 @@ void FSMRun(void)
 
     if(ReturnFSMState(&CarFSM) == WaitBall)
     {
-    	//if(TwoCarStateJudge())  //测试时注释
+//    	if(TwoCarStateJudge())  //测试时注释
     		FSMEventHandle(&CarFSM, GETBALL);
     }
     else if(ADCValueHandle(2) >= ADCvalueC && (ADCValueHandle(1) >= ADCvalueCL || ADCValueHandle(3) >= ADCvalueCR)\
     && (ADCValueHandle(0) > ADCvalueLL || ADCValueHandle(4) > ADCvalueRR) && ReturnFSMState(&CarFSM) == GoLine && RoundaboutCount==0)//检测进圆
     {
-    	RoundaboutCount++;
-    	if(RoundaboutCount >= 3)//连续检测三次
+    	IntoRoundaboutCount++;
+    	if(IntoRoundaboutCount >= 3)//连续检测三次
     	{
+    		RoundaboutCount=1;
     		if(ADCValueHandle(1) > ADCValueHandle(3))//判断左圆或右圆
 			{
+//    	    	uart_putchar(UART_3,0X01);//状态检测1
 				LRoundaboutFlag = 1;//左圆
 				RRoundaboutFlag = 0;
 			}
@@ -293,20 +305,26 @@ void FSMRun(void)
 			}
 //    		RoundaboutCount = 0;
             FSMEventHandle(&CarFSM, FINDROUNDABOUT);
+//            FSMEventHandle(&CarFSM, RUNSTOP);
     	}
     }
     else if(PassingRoundaboutFlag && ReturnFSMState(&CarFSM) == InRoundabout)//圆内过程
     {
+//    	uart_putchar(UART_3,0X04);//状态检测4
     	FSMEventHandle(&CarFSM, ENDINROUNDABOUT);
     }
     else if(ADCValueHandle(2) >= ADCvalueC && (ADCValueHandle(1) >= ADCvalueCL || ADCValueHandle(3) >= ADCvalueCR)\
-    && (ADCValueHandle(0) > ADCvalueLL || ADCValueHandle(4) > ADCvalueRR) && ReturnFSMState(&CarFSM) == PassRoundabout)//检测出圆
+    && (ADCValueHandle(0) > ADCvalueLL || ADCValueHandle(4) > ADCvalueRR) && ReturnFSMState(&CarFSM) == PassRoundabout && PassingRoundaboutFlag)//检测出圆
     {
+//    	uart_putchar(UART_3,0X05);//状态检测5
     	FSMEventHandle(&CarFSM, OUTROUNDABOUT);
+//    	FSMEventHandle(&CarFSM, RUNSTOP);
     }
-    else if(!PassingRoundaboutFlag && ReturnFSMState(&CarFSM) == OutingRoundabout)
+    else if(PassingRoundaboutFlag && ReturnFSMState(&CarFSM) == OutingRoundabout)
     {
-    	FSMEventHandle(&CarFSM, ENDOUTROUNDABOUT);
+		PassingRoundaboutFlag = 0;
+//    	FSMEventHandle(&CarFSM, ENDOUTROUNDABOUT);
+		FSMEventHandle(&CarFSM, RUNSTOP);
     }
     else if(!InGarageDirection && EnterGarageFlag && ReturnFSMState(&CarFSM) == GoLine)
     {

@@ -43,15 +43,15 @@ void core0_main(void)
 	{
 		DebugReadParameter();  //≤‚ ‘
 //		RunStop();
-//		MotorUserHandle(RMotor_B, 2.3);
-//		MotorUserHandle(LMotor_B, 2.4);
+//		MotorUserHandle(RMotor_B, 0);
+//		MotorUserHandle(LMotor_F, 20);
 //		systick_delay_ms(STM0, 2000);
-//		MotorUserHandle(LMotor_B, 25);
+//		MotorUserHandle(LMotor_B, 20);
 //		systick_delay_ms(STM0, 2000);
 //		MotorUserHandle(LMotor_B, 0);
-//		MotorUserHandle(RMotor_B, 2.3);
+//		MotorUserHandle(RMotor_F, 20);
 //		systick_delay_ms(STM0, 2000);
-//		MotorUserHandle(RMotor_B, 25);
+//		MotorUserHandle(RMotor_B, 20);
 //		systick_delay_ms(STM0, 2000);
 	}
 }

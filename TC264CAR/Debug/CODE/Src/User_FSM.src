@@ -60,42 +60,43 @@ $TC16X
 ; ..\CODE\Src\User_FSM.c	    45  
 ; ..\CODE\Src\User_FSM.c	    46  //状态机各种标志位和计数位
 ; ..\CODE\Src\User_FSM.c	    47  uint8 StartFlag;
-; ..\CODE\Src\User_FSM.c	    48  uint8 RoundaboutCount;  //判断环岛和出环岛计数
-; ..\CODE\Src\User_FSM.c	    49  uint8 LRoundaboutFlag;  //判断为左环
-; ..\CODE\Src\User_FSM.c	    50  uint8 RRoundaboutFlag;  //判断为右环
-; ..\CODE\Src\User_FSM.c	    51  uint8 PassingRoundaboutFlag; //判断是否在走圆
-; ..\CODE\Src\User_FSM.c	    52  uint8 GoGarageFinishFlag;
-; ..\CODE\Src\User_FSM.c	    53  
-; ..\CODE\Src\User_FSM.c	    54  #pragma section all restore
-; ..\CODE\Src\User_FSM.c	    55  
+; ..\CODE\Src\User_FSM.c	    48  volatile uint8 IntoRoundaboutCount;  //环岛消抖
+; ..\CODE\Src\User_FSM.c	    49  volatile uint8 RoundaboutCount;//进圆计数
+; ..\CODE\Src\User_FSM.c	    50  volatile uint8 LRoundaboutFlag;  //判断为左环
+; ..\CODE\Src\User_FSM.c	    51  volatile uint8 RRoundaboutFlag;  //判断为右环
+; ..\CODE\Src\User_FSM.c	    52  volatile uint8 PassingRoundaboutFlag; //判断是否在走圆
+; ..\CODE\Src\User_FSM.c	    53  volatile uint8 GoGarageFinishFlag;
+; ..\CODE\Src\User_FSM.c	    54  
+; ..\CODE\Src\User_FSM.c	    55  #pragma section all restore
 ; ..\CODE\Src\User_FSM.c	    56  
-; ..\CODE\Src\User_FSM.c	    57  //*********************************************************
-; ..\CODE\Src\User_FSM.c	    58  //					事件反应函数
-; ..\CODE\Src\User_FSM.c	    59  void RunStop(void)
+; ..\CODE\Src\User_FSM.c	    57  
+; ..\CODE\Src\User_FSM.c	    58  //*********************************************************
+; ..\CODE\Src\User_FSM.c	    59  //					事件反应函数
+; ..\CODE\Src\User_FSM.c	    60  void RunStop(void)
 ; Function RunStop
-.L78:
+.L79:
 RunStop:	.type	func
 
-; ..\CODE\Src\User_FSM.c	    60  {
-; ..\CODE\Src\User_FSM.c	    61  	MotorUserHandle(LMotor_B, LeftWheelBrakeZone);
+; ..\CODE\Src\User_FSM.c	    61  {
+; ..\CODE\Src\User_FSM.c	    62  	MotorUserHandle(LMotor_B, LeftWheelBrakeZone);
 	mov	d4,#1
-.L262:
+.L271:
 	mov.u	d5,#39322
 	addih	d5,d5,#16409
 	call	MotorUserHandle
-.L263:
+.L272:
 
-; ..\CODE\Src\User_FSM.c	    62  	MotorUserHandle(RMotor_B, RightWheelBrakeZone);
+; ..\CODE\Src\User_FSM.c	    63  	MotorUserHandle(RMotor_B, RightWheelBrakeZone);
 	mov	d4,#3
-.L264:
+.L273:
 	mov.u	d5,#52429
 	addih	d5,d5,#16428
 	j	MotorUserHandle
-.L189:
+.L192:
 	
 __RunStop_function_end:
 	.size	RunStop,__RunStop_function_end-RunStop
-.L109:
+.L110:
 	; End of function
 	
 	.sdecl	'.text.User_FSM.FindLine',code,cluster('FindLine')
@@ -104,166 +105,167 @@ __RunStop_function_end:
 	
 	.global	FindLine
 
-; ..\CODE\Src\User_FSM.c	    63  }
-; ..\CODE\Src\User_FSM.c	    64  
-; ..\CODE\Src\User_FSM.c	    65  void FindLine(void)
+; ..\CODE\Src\User_FSM.c	    64  }
+; ..\CODE\Src\User_FSM.c	    65  
+; ..\CODE\Src\User_FSM.c	    66  void FindLine(void)
 ; Function FindLine
-.L80:
+.L81:
 FindLine:	.type	func
 	sub.a	a10,#8
-.L227:
+.L236:
 
-; ..\CODE\Src\User_FSM.c	    66  {
-; ..\CODE\Src\User_FSM.c	    67  	if(!PassingRoundaboutFlag){
+; ..\CODE\Src\User_FSM.c	    67  {
+; ..\CODE\Src\User_FSM.c	    68  	if(!PassingRoundaboutFlag){
 	movh.a	a15,#@his(PassingRoundaboutFlag)
 	ld.bu	d15,[a15]@los(PassingRoundaboutFlag)
 	jne	d15,#0,.L2
-.L269:
+.L278:
 
-; ..\CODE\Src\User_FSM.c	    68  		LRoundaboutFlag = 0;
+; ..\CODE\Src\User_FSM.c	    69  		LRoundaboutFlag = 0;
 	movh.a	a2,#@his(LRoundaboutFlag)
-.L270:
+.L279:
 	st.b	[a2]@los(LRoundaboutFlag),d15
-.L271:
+.L280:
 
-; ..\CODE\Src\User_FSM.c	    69  		RRoundaboutFlag = 0;
+; ..\CODE\Src\User_FSM.c	    70  		RRoundaboutFlag = 0;
 	movh.a	a2,#@his(RRoundaboutFlag)
-.L272:
+.L281:
 	st.b	[a2]@los(RRoundaboutFlag),d15
-.L273:
+.L282:
 
-; ..\CODE\Src\User_FSM.c	    70  		PassingRoundaboutFlag = 0;
+; ..\CODE\Src\User_FSM.c	    71  		PassingRoundaboutFlag = 0;
 	st.b	[a15]@los(PassingRoundaboutFlag),d15
 .L2:
 
-; ..\CODE\Src\User_FSM.c	    71  	}
-; ..\CODE\Src\User_FSM.c	    72  	PIDValue = GetPIDValue(PIDMidLineFuseNum, MidLineFuseNum*1000, FINDLINE_P, FINDLINE_I, FINDLINE_D);
+; ..\CODE\Src\User_FSM.c	    72  	}
+; ..\CODE\Src\User_FSM.c	    73  	PIDValue = GetPIDValue(PIDMidLineFuseNum, MidLineFuseNum*1000, FINDLINE_P, FINDLINE_I, FINDLINE_D);
 	movh.a	a15,#@his(PIDValue)
-.L274:
-	movh	d15,#17711
+.L283:
+	mov.u	d15,#32768
+	addih	d15,d15,#17723
 	st.w	[a10],d15
-.L275:
+.L284:
 	mov.u	d4,#34028
 	addih	d4,d4,#47511
-.L276:
+.L285:
 	movh.a	a2,#@his(MidLineFuseNum)
 	ld.w	d15,[a2]@los(MidLineFuseNum)
-.L277:
+.L286:
 	movh	d0,#17530
-.L278:
+.L287:
 	mul.f	d5,d15,d0
-.L279:
+.L288:
 	movh	d6,#16688
-.L280:
+.L289:
 	mov.u	d7,#52429
 	addih	d7,d7,#15820
 	call	GetPIDValue
-.L281:
-	st.w	[a15]@los(PIDValue),d2
-.L282:
-
-; ..\CODE\Src\User_FSM.c	    73  	//printf("%f\r\n",PIDValue);
-; ..\CODE\Src\User_FSM.c	    74  	LPWM = LeftWheelDeadZone + LeftNormalSpeed - PIDValue;
-	movh.a	a15,#@his(LPWM)
-.L283:
-	movh	d15,#16704
-.L284:
-	movh.a	a2,#@his(PIDValue)
-	ld.w	d0,[a2]@los(PIDValue)
-.L285:
-	sub.f	d15,d15,d0
-.L286:
-	st.w	[a15]@los(LPWM),d15
-.L287:
-
-; ..\CODE\Src\User_FSM.c	    75  	RPWM = RightWheelDeadZone + RightNormalSpeed + PIDValue;
-	movh.a	a2,#@his(RPWM)
-.L288:
-	mov	d15,#26214
-	addih	d15,d15,#16718
-.L289:
-	add.f	d15,d0,d15
 .L290:
-	st.w	[a2]@los(RPWM),d15
+	st.w	[a15]@los(PIDValue),d2
 .L291:
 
-; ..\CODE\Src\User_FSM.c	    76  
-; ..\CODE\Src\User_FSM.c	    77      if(LPWM >= 50)
-	ld.w	d15,[a15]@los(LPWM)
+; ..\CODE\Src\User_FSM.c	    74  	//printf("%f\r\n",PIDValue);
+; ..\CODE\Src\User_FSM.c	    75  	LPWM = LeftWheelDeadZone + LeftNormalSpeed - PIDValue;
+	movh.a	a15,#@his(LPWM)
 .L292:
-	movh	d0,#16968
+	movh	d15,#16704
 .L293:
+	movh.a	a2,#@his(PIDValue)
+	ld.w	d0,[a2]@los(PIDValue)
+.L294:
+	sub.f	d15,d15,d0
+.L295:
+	st.w	[a15]@los(LPWM),d15
+.L296:
+
+; ..\CODE\Src\User_FSM.c	    76  	RPWM = RightWheelDeadZone + RightNormalSpeed + PIDValue;
+	movh.a	a2,#@his(RPWM)
+.L297:
+	mov	d15,#26214
+	addih	d15,d15,#16718
+.L298:
+	add.f	d15,d0,d15
+.L299:
+	st.w	[a2]@los(RPWM),d15
+.L300:
+
+; ..\CODE\Src\User_FSM.c	    77  
+; ..\CODE\Src\User_FSM.c	    78      if(LPWM >= 50)
+	ld.w	d15,[a15]@los(LPWM)
+.L301:
+	movh	d0,#16968
+.L302:
 	cmp.f	d15,d15,d0
 	and	d15,#6
-.L294:
+.L303:
 	jne	d15,#0,.L4
-.L295:
+.L304:
 
-; ..\CODE\Src\User_FSM.c	    78          LPWM = 50;
-; ..\CODE\Src\User_FSM.c	    79      else if(LPWM <= -50)
+; ..\CODE\Src\User_FSM.c	    79          LPWM = 50;
+; ..\CODE\Src\User_FSM.c	    80      else if(LPWM <= -50)
 	ld.w	d15,[a15]@los(LPWM)
-.L296:
+.L305:
 	movh	d0,#49736
-.L297:
+.L306:
 	cmp.f	d15,d15,d0
 	and	d15,#3
-.L298:
+.L307:
 	jeq	d15,#0,.L5
 .L4:
 
-; ..\CODE\Src\User_FSM.c	    80          LPWM = -50;
+; ..\CODE\Src\User_FSM.c	    81          LPWM = -50;
 	st.w	[a15]@los(LPWM),d0
 .L5:
 
-; ..\CODE\Src\User_FSM.c	    81      if(RPWM >= 50)
+; ..\CODE\Src\User_FSM.c	    82      if(RPWM >= 50)
 	mov.aa	a15,a2
 	ld.w	d15,[a15]@los(RPWM)
-.L299:
+.L308:
 	movh	d0,#16968
-.L300:
+.L309:
 	cmp.f	d15,d15,d0
 	and	d15,#6
-.L301:
+.L310:
 	jne	d15,#0,.L7
-.L302:
+.L311:
 
-; ..\CODE\Src\User_FSM.c	    82          RPWM = 50;
-; ..\CODE\Src\User_FSM.c	    83      else if(RPWM <= -50)
+; ..\CODE\Src\User_FSM.c	    83          RPWM = 50;
+; ..\CODE\Src\User_FSM.c	    84      else if(RPWM <= -50)
 	ld.w	d15,[a15]@los(RPWM)
-.L303:
+.L312:
 	movh	d0,#49736
-.L304:
+.L313:
 	cmp.f	d15,d15,d0
 	and	d15,#3
-.L305:
+.L314:
 	jeq	d15,#0,.L8
 .L7:
 
-; ..\CODE\Src\User_FSM.c	    84          RPWM = -50;
+; ..\CODE\Src\User_FSM.c	    85          RPWM = -50;
 	st.w	[a15]@los(RPWM),d0
 .L8:
 
-; ..\CODE\Src\User_FSM.c	    85      MotorUserHandle(LMotor_F, LPWM);
+; ..\CODE\Src\User_FSM.c	    86      MotorUserHandle(LMotor_F, LPWM);
 	movh.a	a15,#@his(LPWM)
 	ld.w	d5,[a15]@los(LPWM)
-.L306:
+.L315:
 	mov	d4,#0
-.L307:
+.L316:
 	call	MotorUserHandle
-.L308:
+.L317:
 
-; ..\CODE\Src\User_FSM.c	    86      MotorUserHandle(RMotor_F, RPWM);
+; ..\CODE\Src\User_FSM.c	    87      MotorUserHandle(RMotor_F, RPWM);
 	movh.a	a15,#@his(RPWM)
 	ld.w	d5,[a15]@los(RPWM)
-.L309:
+.L318:
 	mov	d4,#2
-.L310:
+.L319:
 	j	MotorUserHandle
-.L190:
+.L193:
 	
 __FindLine_function_end:
 	.size	FindLine,__FindLine_function_end-FindLine
-.L114:
+.L115:
 	; End of function
 	
 	.sdecl	'.text.User_FSM.InRoundaboutProcess',code,cluster('InRoundaboutProcess')
@@ -272,106 +274,136 @@ __FindLine_function_end:
 	
 	.global	InRoundaboutProcess
 
-; ..\CODE\Src\User_FSM.c	    87  }
-; ..\CODE\Src\User_FSM.c	    88  
-; ..\CODE\Src\User_FSM.c	    89  void InRoundaboutProcess(void)
+; ..\CODE\Src\User_FSM.c	    88  }
+; ..\CODE\Src\User_FSM.c	    89  
+; ..\CODE\Src\User_FSM.c	    90  void InRoundaboutProcess(void)
 ; Function InRoundaboutProcess
-.L82:
+.L83:
 InRoundaboutProcess:	.type	func
 
-; ..\CODE\Src\User_FSM.c	    90  {
-; ..\CODE\Src\User_FSM.c	    91  	static uint8 InCleanDistanceFlag = 0;
-; ..\CODE\Src\User_FSM.c	    92  
-; ..\CODE\Src\User_FSM.c	    93  	if(!InCleanDistanceFlag)
+; ..\CODE\Src\User_FSM.c	    91  {
+; ..\CODE\Src\User_FSM.c	    92  	static uint8 InCleanDistanceFlag = 0;
+; ..\CODE\Src\User_FSM.c	    93  
+; ..\CODE\Src\User_FSM.c	    94  	if(!InCleanDistanceFlag)
 	movh.a	a15,#@his(_999001_InCleanDistanceFlag)
 	ld.bu	d15,[a15]@los(_999001_InCleanDistanceFlag)
 	jne	d15,#0,.L9
-.L315:
-
-; ..\CODE\Src\User_FSM.c	    94  	{
-; ..\CODE\Src\User_FSM.c	    95  		CleanDistance();
-	call	CleanDistance
-.L316:
-
-; ..\CODE\Src\User_FSM.c	    96  		InCleanDistanceFlag = 1;
-	movh.a	a15,#@his(_999001_InCleanDistanceFlag)
-.L317:
-	mov	d15,#1
-.L318:
-	st.b	[a15]@los(_999001_InCleanDistanceFlag),d15
-.L9:
-
-; ..\CODE\Src\User_FSM.c	    97  	}
-; ..\CODE\Src\User_FSM.c	    98  
-; ..\CODE\Src\User_FSM.c	    99  	if(LRoundaboutFlag)
-	movh.a	a15,#@his(LRoundaboutFlag)
-	ld.bu	d15,[a15]@los(LRoundaboutFlag)
-.L319:
-	jne	d15,#0,.L10
-.L320:
-
-; ..\CODE\Src\User_FSM.c	   100  	{
-; ..\CODE\Src\User_FSM.c	   101  		if(GetDistance() < 0.3)//0.6
-; ..\CODE\Src\User_FSM.c	   102  		{
-; ..\CODE\Src\User_FSM.c	   103  			FindLineAdjPWM(6, 0, 6);//6 0 8
-; ..\CODE\Src\User_FSM.c	   104  		}
-; ..\CODE\Src\User_FSM.c	   105  		else
-; ..\CODE\Src\User_FSM.c	   106  		{
-; ..\CODE\Src\User_FSM.c	   107  			FindLine();
-; ..\CODE\Src\User_FSM.c	   108  			PassingRoundaboutFlag = 1;
-; ..\CODE\Src\User_FSM.c	   109  		}
-; ..\CODE\Src\User_FSM.c	   110  	}
-; ..\CODE\Src\User_FSM.c	   111  	else if(RRoundaboutFlag)
-	movh.a	a15,#@his(RRoundaboutFlag)
-	ld.bu	d15,[a15]@los(RRoundaboutFlag)
-.L321:
-	jeq	d15,#0,.L11
-.L10:
-
-; ..\CODE\Src\User_FSM.c	   112  	{
-; ..\CODE\Src\User_FSM.c	   113  		if(GetDistance() < 0.3)
-	call	GetDistance
-.L322:
-	mov.u	d15,#39322
-	addih	d15,d15,#16025
-.L323:
-	cmp.f	d15,d2,d15
-	jnz.t	d15:0,.L12
 .L324:
 
-; ..\CODE\Src\User_FSM.c	   114  		{
-; ..\CODE\Src\User_FSM.c	   115  			FindLineAdjPWM(6, 0, 6);
-; ..\CODE\Src\User_FSM.c	   116  		}
-; ..\CODE\Src\User_FSM.c	   117  		else
-; ..\CODE\Src\User_FSM.c	   118  		{
-; ..\CODE\Src\User_FSM.c	   119  			FindLine();
-	call	FindLine
+; ..\CODE\Src\User_FSM.c	    95  	{
+; ..\CODE\Src\User_FSM.c	    96  		CleanDistance();
+	call	CleanDistance
 .L325:
 
-; ..\CODE\Src\User_FSM.c	   120  			PassingRoundaboutFlag = 1;
-	movh.a	a15,#@his(PassingRoundaboutFlag)
+; ..\CODE\Src\User_FSM.c	    97  		InCleanDistanceFlag = 1;
+	movh.a	a15,#@his(_999001_InCleanDistanceFlag)
 .L326:
 	mov	d15,#1
 .L327:
-	st.b	[a15]@los(PassingRoundaboutFlag),d15
+	st.b	[a15]@los(_999001_InCleanDistanceFlag),d15
+.L9:
+
+; ..\CODE\Src\User_FSM.c	    98  	}
+; ..\CODE\Src\User_FSM.c	    99  
+; ..\CODE\Src\User_FSM.c	   100  	if(LRoundaboutFlag)
+	movh.a	a15,#@his(LRoundaboutFlag)
+	ld.bu	d15,[a15]@los(LRoundaboutFlag)
+.L328:
+	jeq	d15,#0,.L10
+.L329:
+
+; ..\CODE\Src\User_FSM.c	   101  	{
+; ..\CODE\Src\User_FSM.c	   102  //		if(GetDistance() < 0.1)
+; ..\CODE\Src\User_FSM.c	   103  //		{
+; ..\CODE\Src\User_FSM.c	   104  //			FindLine();
+; ..\CODE\Src\User_FSM.c	   105  //		}
+; ..\CODE\Src\User_FSM.c	   106  //		else
+; ..\CODE\Src\User_FSM.c	   107  		if(GetDistance() < 0.4)//0.35 //0.4
+	call	GetDistance
+.L330:
+	mov.u	d15,#52429
+	addih	d15,d15,#16076
+.L331:
+	cmp.f	d15,d2,d15
+.L332:
+	jz.t	d15:0,.L11
+.L333:
+
+; ..\CODE\Src\User_FSM.c	   108  		{
+; ..\CODE\Src\User_FSM.c	   109  //	    	uart_putchar(UART_3,0X02);//状态检测2
+; ..\CODE\Src\User_FSM.c	   110  			FindLineAdjPWM(6, -8, 12);//6 -4 6 //6 -8 12
+	movh	d4,#16576
+.L334:
+	movh	d5,#49408
+.L335:
+	movh	d6,#16704
+.L336:
+	j	.L12
+.L10:
+
+; ..\CODE\Src\User_FSM.c	   111  		}
+; ..\CODE\Src\User_FSM.c	   112  		else
+; ..\CODE\Src\User_FSM.c	   113  		{
+; ..\CODE\Src\User_FSM.c	   114  //	    	uart_putchar(UART_3,0X03);//状态检测3
+; ..\CODE\Src\User_FSM.c	   115  			FindLine();
+; ..\CODE\Src\User_FSM.c	   116  			PassingRoundaboutFlag = 1;
+; ..\CODE\Src\User_FSM.c	   117  		}
+; ..\CODE\Src\User_FSM.c	   118  	}
+; ..\CODE\Src\User_FSM.c	   119  	else if(RRoundaboutFlag)
+	movh.a	a15,#@his(RRoundaboutFlag)
+	ld.bu	d15,[a15]@los(RRoundaboutFlag)
+.L337:
+	jeq	d15,#0,.L13
+.L338:
+
+; ..\CODE\Src\User_FSM.c	   120  	{
+; ..\CODE\Src\User_FSM.c	   121  		if(GetDistance() < 0.3)
+	call	GetDistance
+.L339:
+	mov.u	d15,#39322
+	addih	d15,d15,#16025
+.L340:
+	cmp.f	d15,d2,d15
+.L341:
+	jz.t	d15:0,.L14
+.L342:
+
+; ..\CODE\Src\User_FSM.c	   122  		{
+; ..\CODE\Src\User_FSM.c	   123  			FindLineAdjPWM(6, 0, 6);
+	movh	d4,#16576
+.L343:
+	mov	d5,#0
+.L344:
+	mov	d6,d4
+.L12:
+	j	FindLineAdjPWM
+.L14:
 .L11:
 
-; ..\CODE\Src\User_FSM.c	   121  		}
-; ..\CODE\Src\User_FSM.c	   122  	}
-; ..\CODE\Src\User_FSM.c	   123  }
+; ..\CODE\Src\User_FSM.c	   124  		}
+; ..\CODE\Src\User_FSM.c	   125  		else
+; ..\CODE\Src\User_FSM.c	   126  		{
+; ..\CODE\Src\User_FSM.c	   127  			FindLine();
+	call	FindLine
+.L345:
+
+; ..\CODE\Src\User_FSM.c	   128  			PassingRoundaboutFlag = 1;
+	movh.a	a15,#@his(PassingRoundaboutFlag)
+.L346:
+	mov	d15,#1
+.L347:
+	st.b	[a15]@los(PassingRoundaboutFlag),d15
+.L13:
+
+; ..\CODE\Src\User_FSM.c	   129  		}
+; ..\CODE\Src\User_FSM.c	   130  	}
+; ..\CODE\Src\User_FSM.c	   131  }
 	ret
-.L12:
-	movh	d4,#16576
-.L328:
-	mov	d5,#0
-.L329:
-	mov	d6,d4
-	j	FindLineAdjPWM
-.L191:
+.L194:
 	
 __InRoundaboutProcess_function_end:
 	.size	InRoundaboutProcess,__InRoundaboutProcess_function_end-InRoundaboutProcess
-.L119:
+.L120:
 	; End of function
 	
 	.sdecl	'.text.User_FSM.OutRoundaboutProcess',code,cluster('OutRoundaboutProcess')
@@ -380,105 +412,84 @@ __InRoundaboutProcess_function_end:
 	
 	.global	OutRoundaboutProcess
 
-; ..\CODE\Src\User_FSM.c	   124  
-; ..\CODE\Src\User_FSM.c	   125  void OutRoundaboutProcess(void)
+; ..\CODE\Src\User_FSM.c	   132  
+; ..\CODE\Src\User_FSM.c	   133  void OutRoundaboutProcess(void)
 ; Function OutRoundaboutProcess
-.L84:
+.L85:
 OutRoundaboutProcess:	.type	func
 
-; ..\CODE\Src\User_FSM.c	   126  {
-; ..\CODE\Src\User_FSM.c	   127  	static uint8 OutCleanDistanceFlag = 0;
-; ..\CODE\Src\User_FSM.c	   128  
-; ..\CODE\Src\User_FSM.c	   129  	if(!OutCleanDistanceFlag)
+; ..\CODE\Src\User_FSM.c	   134  {
+; ..\CODE\Src\User_FSM.c	   135  	static uint8 OutCleanDistanceFlag = 0;
+; ..\CODE\Src\User_FSM.c	   136  
+; ..\CODE\Src\User_FSM.c	   137  	if(!OutCleanDistanceFlag)
 	movh.a	a15,#@his(_999002_OutCleanDistanceFlag)
 	ld.bu	d15,[a15]@los(_999002_OutCleanDistanceFlag)
-	jne	d15,#0,.L14
-.L334:
+	jne	d15,#0,.L16
+.L352:
 
-; ..\CODE\Src\User_FSM.c	   130  	{
-; ..\CODE\Src\User_FSM.c	   131  		CleanDistance();
+; ..\CODE\Src\User_FSM.c	   138  	{
+; ..\CODE\Src\User_FSM.c	   139  		CleanDistance();
 	call	CleanDistance
-.L335:
+.L353:
 
-; ..\CODE\Src\User_FSM.c	   132  		OutCleanDistanceFlag = 1;
+; ..\CODE\Src\User_FSM.c	   140  		OutCleanDistanceFlag = 1;
 	movh.a	a15,#@his(_999002_OutCleanDistanceFlag)
-.L336:
+.L354:
 	mov	d15,#1
-.L337:
+.L355:
 	st.b	[a15]@los(_999002_OutCleanDistanceFlag),d15
-.L14:
-
-; ..\CODE\Src\User_FSM.c	   133  	}
-; ..\CODE\Src\User_FSM.c	   134  
-; ..\CODE\Src\User_FSM.c	   135  	if(LRoundaboutFlag)
-	movh.a	a15,#@his(LRoundaboutFlag)
-	ld.bu	d15,[a15]@los(LRoundaboutFlag)
-.L338:
-	jne	d15,#0,.L15
-.L339:
-
-; ..\CODE\Src\User_FSM.c	   136  	{
-; ..\CODE\Src\User_FSM.c	   137  		if(GetDistance() < 0.3)
-; ..\CODE\Src\User_FSM.c	   138  		{
-; ..\CODE\Src\User_FSM.c	   139  			FindLineAdjPWM(6, 6, 0);
-; ..\CODE\Src\User_FSM.c	   140  		}
-; ..\CODE\Src\User_FSM.c	   141  		else
-; ..\CODE\Src\User_FSM.c	   142  		{
-; ..\CODE\Src\User_FSM.c	   143  			PassingRoundaboutFlag = 0;
-; ..\CODE\Src\User_FSM.c	   144  			FindLine();
-; ..\CODE\Src\User_FSM.c	   145  		}
-; ..\CODE\Src\User_FSM.c	   146  	}
-; ..\CODE\Src\User_FSM.c	   147  	else if(RRoundaboutFlag)
-	movh.a	a15,#@his(RRoundaboutFlag)
-	ld.bu	d15,[a15]@los(RRoundaboutFlag)
-.L340:
-	jeq	d15,#0,.L16
-.L15:
-
-; ..\CODE\Src\User_FSM.c	   148  	{
-; ..\CODE\Src\User_FSM.c	   149  		if(GetDistance() < 0.3)
-	call	GetDistance
-.L341:
-	mov.u	d15,#39322
-	addih	d15,d15,#16025
-.L342:
-	cmp.f	d15,d2,d15
-	jnz.t	d15:0,.L17
-.L343:
-
-; ..\CODE\Src\User_FSM.c	   150  		{
-; ..\CODE\Src\User_FSM.c	   151  			FindLineAdjPWM(6, 6, 0);
-; ..\CODE\Src\User_FSM.c	   152  		}
-; ..\CODE\Src\User_FSM.c	   153  		else
-; ..\CODE\Src\User_FSM.c	   154  		{
-; ..\CODE\Src\User_FSM.c	   155  			PassingRoundaboutFlag = 0;
-	movh.a	a15,#@his(PassingRoundaboutFlag)
-.L344:
-	mov	d15,#0
-.L345:
-	st.b	[a15]@los(PassingRoundaboutFlag),d15
-.L346:
-
-; ..\CODE\Src\User_FSM.c	   156  			FindLine();
-	j	FindLine
 .L16:
 
-; ..\CODE\Src\User_FSM.c	   157  		}
-; ..\CODE\Src\User_FSM.c	   158  	}
-; ..\CODE\Src\User_FSM.c	   159  }
-	ret
+; ..\CODE\Src\User_FSM.c	   141  	}
+; ..\CODE\Src\User_FSM.c	   142  
+; ..\CODE\Src\User_FSM.c	   143  	if(LRoundaboutFlag)
+	movh.a	a15,#@his(LRoundaboutFlag)
+	ld.bu	d15,[a15]@los(LRoundaboutFlag)
+.L356:
+	jne	d15,#0,.L17
+.L357:
+
+; ..\CODE\Src\User_FSM.c	   144  	{
+; ..\CODE\Src\User_FSM.c	   145  //		if(GetDistance() < 0.3)
+; ..\CODE\Src\User_FSM.c	   146  //		{
+; ..\CODE\Src\User_FSM.c	   147  //			FindLineAdjPWM(6, 6, 0);
+; ..\CODE\Src\User_FSM.c	   148  //		}
+; ..\CODE\Src\User_FSM.c	   149  //		else
+; ..\CODE\Src\User_FSM.c	   150  //		{
+; ..\CODE\Src\User_FSM.c	   151  //			PassingRoundaboutFlag = 0;
+; ..\CODE\Src\User_FSM.c	   152  //			FindLine();
+; ..\CODE\Src\User_FSM.c	   153  //		}
+; ..\CODE\Src\User_FSM.c	   154  		FindLine();
+; ..\CODE\Src\User_FSM.c	   155  	}
+; ..\CODE\Src\User_FSM.c	   156  	else if(RRoundaboutFlag)
+	movh.a	a15,#@his(RRoundaboutFlag)
+	ld.bu	d15,[a15]@los(RRoundaboutFlag)
+.L358:
+	jeq	d15,#0,.L18
 .L17:
-	movh	d4,#16576
-.L347:
-	mov	d5,d4
-.L348:
-	mov	d6,#0
-	j	FindLineAdjPWM
-.L193:
+
+; ..\CODE\Src\User_FSM.c	   157  	{
+; ..\CODE\Src\User_FSM.c	   158  //		if(GetDistance() < 0.3)
+; ..\CODE\Src\User_FSM.c	   159  //		{
+; ..\CODE\Src\User_FSM.c	   160  //			FindLineAdjPWM(6, 6, 0);
+; ..\CODE\Src\User_FSM.c	   161  //		}
+; ..\CODE\Src\User_FSM.c	   162  //		else
+; ..\CODE\Src\User_FSM.c	   163  //		{
+; ..\CODE\Src\User_FSM.c	   164  //			PassingRoundaboutFlag = 0;
+; ..\CODE\Src\User_FSM.c	   165  //			FindLine();
+; ..\CODE\Src\User_FSM.c	   166  //		}
+; ..\CODE\Src\User_FSM.c	   167  		FindLine();
+	j	FindLine
+.L18:
+
+; ..\CODE\Src\User_FSM.c	   168  	}
+; ..\CODE\Src\User_FSM.c	   169  }
+	ret
+.L196:
 	
 __OutRoundaboutProcess_function_end:
 	.size	OutRoundaboutProcess,__OutRoundaboutProcess_function_end-OutRoundaboutProcess
-.L124:
+.L125:
 	; End of function
 	
 	.sdecl	'.text.User_FSM.TurnLeftGoGarage',code,cluster('TurnLeftGoGarage')
@@ -487,113 +498,113 @@ __OutRoundaboutProcess_function_end:
 	
 	.global	TurnLeftGoGarage
 
-; ..\CODE\Src\User_FSM.c	   160  
-; ..\CODE\Src\User_FSM.c	   161  void TurnLeftGoGarage(void)
+; ..\CODE\Src\User_FSM.c	   170  
+; ..\CODE\Src\User_FSM.c	   171  void TurnLeftGoGarage(void)
 ; Function TurnLeftGoGarage
-.L86:
+.L87:
 TurnLeftGoGarage:	.type	func
 
-; ..\CODE\Src\User_FSM.c	   162  {
-; ..\CODE\Src\User_FSM.c	   163  	static uint8 CleanDistanceFlag = 0;
-; ..\CODE\Src\User_FSM.c	   164  
-; ..\CODE\Src\User_FSM.c	   165  	if(!CleanDistanceFlag)
+; ..\CODE\Src\User_FSM.c	   172  {
+; ..\CODE\Src\User_FSM.c	   173  	static uint8 CleanDistanceFlag = 0;
+; ..\CODE\Src\User_FSM.c	   174  
+; ..\CODE\Src\User_FSM.c	   175  	if(!CleanDistanceFlag)
 	movh.a	a15,#@his(_999003_CleanDistanceFlag)
 	ld.bu	d15,[a15]@los(_999003_CleanDistanceFlag)
 	jne	d15,#0,.L19
-.L353:
+.L363:
 
-; ..\CODE\Src\User_FSM.c	   166  	{
-; ..\CODE\Src\User_FSM.c	   167  		CleanDistance();
+; ..\CODE\Src\User_FSM.c	   176  	{
+; ..\CODE\Src\User_FSM.c	   177  		CleanDistance();
 	call	CleanDistance
-.L354:
+.L364:
 
-; ..\CODE\Src\User_FSM.c	   168  		CleanDistanceFlag = 1;
+; ..\CODE\Src\User_FSM.c	   178  		CleanDistanceFlag = 1;
 	movh.a	a15,#@his(_999003_CleanDistanceFlag)
-.L355:
+.L365:
 	mov	d15,#1
-.L356:
+.L366:
 	st.b	[a15]@los(_999003_CleanDistanceFlag),d15
 .L19:
 
-; ..\CODE\Src\User_FSM.c	   169  	}
-; ..\CODE\Src\User_FSM.c	   170  	GyroYawAngleInit(SetLeftRotationAngle);
+; ..\CODE\Src\User_FSM.c	   179  	}
+; ..\CODE\Src\User_FSM.c	   180  	GyroYawAngleInit(SetLeftRotationAngle);//+左转；-右转
 	movh	d4,#17076
 	call	GyroYawAngleInit
-.L357:
+.L367:
 
-; ..\CODE\Src\User_FSM.c	   171  	GyroPID(GYRO_P, GYRO_I, GYRO_D);
+; ..\CODE\Src\User_FSM.c	   181  	GyroPID(GYRO_P, GYRO_I, GYRO_D);
 	movh	d4,#16800
-.L358:
+.L368:
 	mov.u	d5,#52429
 	addih	d5,d5,#15820
-.L359:
+.L369:
 	movh	d6,#17224
 	call	GyroPID
-.L360:
+.L370:
 
-; ..\CODE\Src\User_FSM.c	   172  	if(TotalDistance >= 0.25)
+; ..\CODE\Src\User_FSM.c	   182  	if(TotalDistance >= 0.25)
 	movh.a	a15,#@his(TotalDistance)
 	ld.w	d15,[a15]@los(TotalDistance)
-.L361:
+.L371:
 	movh	d0,#16000
-.L362:
+.L372:
 	cmp.f	d15,d15,d0
 	and	d15,#6
-.L363:
+.L373:
 	jeq	d15,#0,.L20
-.L364:
+.L374:
 
-; ..\CODE\Src\User_FSM.c	   173  	{
-; ..\CODE\Src\User_FSM.c	   174  	    MotorUserHandle(LMotor_F, LeftWheelDeadZone);
+; ..\CODE\Src\User_FSM.c	   183  	{
+; ..\CODE\Src\User_FSM.c	   184  	    MotorUserHandle(LMotor_F, LeftWheelDeadZone);
 	mov	d4,#0
-.L365:
+.L375:
 	movh	d5,#16512
 	call	MotorUserHandle
-.L366:
+.L376:
 
-; ..\CODE\Src\User_FSM.c	   175  	    MotorUserHandle(RMotor_F, RightWheelDeadZone);
+; ..\CODE\Src\User_FSM.c	   185  	    MotorUserHandle(RMotor_F, RightWheelDeadZone);
 	mov	d4,#2
-.L367:
+.L377:
 	mov.u	d5,#52429
 	addih	d5,d5,#16540
 	call	MotorUserHandle
 .L20:
 
-; ..\CODE\Src\User_FSM.c	   176  	}
-; ..\CODE\Src\User_FSM.c	   177  	if(TotalDistance >= 0.7)
+; ..\CODE\Src\User_FSM.c	   186  	}
+; ..\CODE\Src\User_FSM.c	   187  	if(TotalDistance >= 0.7)
 	movh.a	a15,#@his(TotalDistance)
 	ld.w	d15,[a15]@los(TotalDistance)
-.L368:
+.L378:
 	mov	d0,#13107
 	addih	d0,d0,#16179
-.L369:
+.L379:
 	cmp.f	d15,d15,d0
 	and	d15,#6
-.L370:
+.L380:
 	jeq	d15,#0,.L21
-.L371:
+.L381:
 
-; ..\CODE\Src\User_FSM.c	   178  	{
-; ..\CODE\Src\User_FSM.c	   179  		RunStop();
+; ..\CODE\Src\User_FSM.c	   188  	{
+; ..\CODE\Src\User_FSM.c	   189  		RunStop();
 	call	RunStop
-.L372:
+.L382:
 
-; ..\CODE\Src\User_FSM.c	   180  		GoGarageFinishFlag = 1;
+; ..\CODE\Src\User_FSM.c	   190  		GoGarageFinishFlag = 1;
 	movh.a	a15,#@his(GoGarageFinishFlag)
-.L373:
+.L383:
 	mov	d15,#1
-.L374:
+.L384:
 	st.b	[a15]@los(GoGarageFinishFlag),d15
 .L21:
 
-; ..\CODE\Src\User_FSM.c	   181  	}
-; ..\CODE\Src\User_FSM.c	   182  }
+; ..\CODE\Src\User_FSM.c	   191  	}
+; ..\CODE\Src\User_FSM.c	   192  }
 	ret
-.L194:
+.L197:
 	
 __TurnLeftGoGarage_function_end:
 	.size	TurnLeftGoGarage,__TurnLeftGoGarage_function_end-TurnLeftGoGarage
-.L129:
+.L130:
 	; End of function
 	
 	.sdecl	'.text.User_FSM.TurnRightGoGarage',code,cluster('TurnRightGoGarage')
@@ -602,113 +613,114 @@ __TurnLeftGoGarage_function_end:
 	
 	.global	TurnRightGoGarage
 
-; ..\CODE\Src\User_FSM.c	   183  
-; ..\CODE\Src\User_FSM.c	   184  void TurnRightGoGarage(void)
+; ..\CODE\Src\User_FSM.c	   193  
+; ..\CODE\Src\User_FSM.c	   194  void TurnRightGoGarage(void)
 ; Function TurnRightGoGarage
-.L88:
+.L89:
 TurnRightGoGarage:	.type	func
 
-; ..\CODE\Src\User_FSM.c	   185  {
-; ..\CODE\Src\User_FSM.c	   186  	static uint8 CleanDistanceFlag = 0;
-; ..\CODE\Src\User_FSM.c	   187  
-; ..\CODE\Src\User_FSM.c	   188  	if(!CleanDistanceFlag)
+; ..\CODE\Src\User_FSM.c	   195  {
+; ..\CODE\Src\User_FSM.c	   196  	static uint8 CleanDistanceFlag = 0;
+; ..\CODE\Src\User_FSM.c	   197  
+; ..\CODE\Src\User_FSM.c	   198  	if(!CleanDistanceFlag)
 	movh.a	a15,#@his(_999004_CleanDistanceFlag)
 	ld.bu	d15,[a15]@los(_999004_CleanDistanceFlag)
 	jne	d15,#0,.L22
-.L379:
+.L389:
 
-; ..\CODE\Src\User_FSM.c	   189  	{
-; ..\CODE\Src\User_FSM.c	   190  		CleanDistance();
+; ..\CODE\Src\User_FSM.c	   199  	{
+; ..\CODE\Src\User_FSM.c	   200  		CleanDistance();
 	call	CleanDistance
-.L380:
+.L390:
 
-; ..\CODE\Src\User_FSM.c	   191  		CleanDistanceFlag = 1;
+; ..\CODE\Src\User_FSM.c	   201  		CleanDistanceFlag = 1;
 	movh.a	a15,#@his(_999004_CleanDistanceFlag)
-.L381:
+.L391:
 	mov	d15,#1
-.L382:
+.L392:
 	st.b	[a15]@los(_999004_CleanDistanceFlag),d15
 .L22:
 
-; ..\CODE\Src\User_FSM.c	   192  	}
-; ..\CODE\Src\User_FSM.c	   193  	GyroYawAngleInit(-SetRightRotationAngle);
+; ..\CODE\Src\User_FSM.c	   202  	}
+; ..\CODE\Src\User_FSM.c	   203  	GyroYawAngleInit(-SetRightRotationAngle);
 	movh	d4,#49844
 	call	GyroYawAngleInit
-.L383:
+.L393:
 
-; ..\CODE\Src\User_FSM.c	   194  	GyroPID(GYRO_P, GYRO_I, GYRO_D);
+; ..\CODE\Src\User_FSM.c	   204  	GyroPID(GYRO_P, GYRO_I, GYRO_D);
 	movh	d4,#16800
-.L384:
+.L394:
 	mov.u	d5,#52429
 	addih	d5,d5,#15820
-.L385:
+.L395:
 	movh	d6,#17224
 	call	GyroPID
-.L386:
+.L396:
 
-; ..\CODE\Src\User_FSM.c	   195  	if(TotalDistance >= 0.25)
+; ..\CODE\Src\User_FSM.c	   205  	if(TotalDistance >= 0.1)
 	movh.a	a15,#@his(TotalDistance)
 	ld.w	d15,[a15]@los(TotalDistance)
-.L387:
-	movh	d0,#16000
-.L388:
+.L397:
+	mov.u	d0,#52429
+	addih	d0,d0,#15820
+.L398:
 	cmp.f	d15,d15,d0
 	and	d15,#6
-.L389:
+.L399:
 	jeq	d15,#0,.L23
-.L390:
+.L400:
 
-; ..\CODE\Src\User_FSM.c	   196  	{
-; ..\CODE\Src\User_FSM.c	   197  	    MotorUserHandle(LMotor_F, LeftWheelDeadZone);
+; ..\CODE\Src\User_FSM.c	   206  	{
+; ..\CODE\Src\User_FSM.c	   207  	    MotorUserHandle(LMotor_F, LeftWheelDeadZone);
 	mov	d4,#0
-.L391:
+.L401:
 	movh	d5,#16512
 	call	MotorUserHandle
-.L392:
+.L402:
 
-; ..\CODE\Src\User_FSM.c	   198  	    MotorUserHandle(RMotor_F, RightWheelDeadZone);
+; ..\CODE\Src\User_FSM.c	   208  	    MotorUserHandle(RMotor_F, RightWheelDeadZone);
 	mov	d4,#2
-.L393:
+.L403:
 	mov.u	d5,#52429
 	addih	d5,d5,#16540
 	j	MotorUserHandle
 .L23:
 
-; ..\CODE\Src\User_FSM.c	   199  	}
-; ..\CODE\Src\User_FSM.c	   200  	else if(TotalDistance >= 0.7)
+; ..\CODE\Src\User_FSM.c	   209  	}
+; ..\CODE\Src\User_FSM.c	   210  	else if(TotalDistance >= 0.7)
 	movh.a	a15,#@his(TotalDistance)
 	ld.w	d15,[a15]@los(TotalDistance)
-.L394:
+.L404:
 	mov	d0,#13107
 	addih	d0,d0,#16179
-.L395:
+.L405:
 	cmp.f	d15,d15,d0
 	and	d15,#6
-.L396:
+.L406:
 	jeq	d15,#0,.L25
-.L397:
+.L407:
 
-; ..\CODE\Src\User_FSM.c	   201  	{
-; ..\CODE\Src\User_FSM.c	   202  		RunStop();
+; ..\CODE\Src\User_FSM.c	   211  	{
+; ..\CODE\Src\User_FSM.c	   212  		RunStop();
 	call	RunStop
-.L398:
+.L408:
 
-; ..\CODE\Src\User_FSM.c	   203  		GoGarageFinishFlag = 1;
+; ..\CODE\Src\User_FSM.c	   213  		GoGarageFinishFlag = 1;
 	movh.a	a15,#@his(GoGarageFinishFlag)
-.L399:
+.L409:
 	mov	d15,#1
-.L400:
+.L410:
 	st.b	[a15]@los(GoGarageFinishFlag),d15
 .L25:
 
-; ..\CODE\Src\User_FSM.c	   204  	}
-; ..\CODE\Src\User_FSM.c	   205  }
+; ..\CODE\Src\User_FSM.c	   214  	}
+; ..\CODE\Src\User_FSM.c	   215  }
 	ret
-.L195:
+.L198:
 	
 __TurnRightGoGarage_function_end:
 	.size	TurnRightGoGarage,__TurnRightGoGarage_function_end-TurnRightGoGarage
-.L134:
+.L135:
 	; End of function
 	
 	.sdecl	'.text.User_FSM.FSMRegist',code,cluster('FSMRegist')
@@ -717,30 +729,30 @@ __TurnRightGoGarage_function_end:
 	
 	.global	FSMRegist
 
-; ..\CODE\Src\User_FSM.c	   206  //*********************************************************
-; ..\CODE\Src\User_FSM.c	   207  
-; ..\CODE\Src\User_FSM.c	   208  
-; ..\CODE\Src\User_FSM.c	   209  //*********************************************************
-; ..\CODE\Src\User_FSM.c	   210  //					状态机功能函数
-; ..\CODE\Src\User_FSM.c	   211  
-; ..\CODE\Src\User_FSM.c	   212  //函数作用：状态机注册
-; ..\CODE\Src\User_FSM.c	   213  void FSMRegist(FSM_t *fsm, FSMTable_t *fsmtable)
+; ..\CODE\Src\User_FSM.c	   216  //*********************************************************
+; ..\CODE\Src\User_FSM.c	   217  
+; ..\CODE\Src\User_FSM.c	   218  
+; ..\CODE\Src\User_FSM.c	   219  //*********************************************************
+; ..\CODE\Src\User_FSM.c	   220  //					状态机功能函数
+; ..\CODE\Src\User_FSM.c	   221  
+; ..\CODE\Src\User_FSM.c	   222  //函数作用：状态机注册
+; ..\CODE\Src\User_FSM.c	   223  void FSMRegist(FSM_t *fsm, FSMTable_t *fsmtable)
 ; Function FSMRegist
-.L90:
+.L91:
 FSMRegist:	.type	func
 
-; ..\CODE\Src\User_FSM.c	   214  {
-; ..\CODE\Src\User_FSM.c	   215      fsm->FsmTable = fsmtable;
+; ..\CODE\Src\User_FSM.c	   224  {
+; ..\CODE\Src\User_FSM.c	   225      fsm->FsmTable = fsmtable;
 	st.a	[a4]4,a5
-.L405:
+.L415:
 
-; ..\CODE\Src\User_FSM.c	   216  }
+; ..\CODE\Src\User_FSM.c	   226  }
 	ret
-.L196:
+.L199:
 	
 __FSMRegist_function_end:
 	.size	FSMRegist,__FSMRegist_function_end-FSMRegist
-.L139:
+.L140:
 	; End of function
 	
 	.sdecl	'.text.User_FSM.FSMStateTransfer',code,cluster('FSMStateTransfer')
@@ -749,25 +761,25 @@ __FSMRegist_function_end:
 	
 	.global	FSMStateTransfer
 
-; ..\CODE\Src\User_FSM.c	   217  
-; ..\CODE\Src\User_FSM.c	   218  //状态机状态迁移
-; ..\CODE\Src\User_FSM.c	   219  void FSMStateTransfer(FSM_t* fsm, int state)
+; ..\CODE\Src\User_FSM.c	   227  
+; ..\CODE\Src\User_FSM.c	   228  //状态机状态迁移
+; ..\CODE\Src\User_FSM.c	   229  void FSMStateTransfer(FSM_t* fsm, int state)
 ; Function FSMStateTransfer
-.L92:
+.L93:
 FSMStateTransfer:	.type	func
 
-; ..\CODE\Src\User_FSM.c	   220  {
-; ..\CODE\Src\User_FSM.c	   221      fsm->CurState = state;
+; ..\CODE\Src\User_FSM.c	   230  {
+; ..\CODE\Src\User_FSM.c	   231      fsm->CurState = state;
 	st.w	[a4],d4
-.L410:
+.L420:
 
-; ..\CODE\Src\User_FSM.c	   222  }
+; ..\CODE\Src\User_FSM.c	   232  }
 	ret
-.L201:
+.L204:
 	
 __FSMStateTransfer_function_end:
 	.size	FSMStateTransfer,__FSMStateTransfer_function_end-FSMStateTransfer
-.L144:
+.L145:
 	; End of function
 	
 	.sdecl	'.text.User_FSM.FSMEventHandle',code,cluster('FSMEventHandle')
@@ -776,101 +788,101 @@ __FSMStateTransfer_function_end:
 	
 	.global	FSMEventHandle
 
-; ..\CODE\Src\User_FSM.c	   223  
-; ..\CODE\Src\User_FSM.c	   224  //状态机状态执行函数
-; ..\CODE\Src\User_FSM.c	   225  void FSMEventHandle(FSM_t *fsm, int event)
+; ..\CODE\Src\User_FSM.c	   233  
+; ..\CODE\Src\User_FSM.c	   234  //状态机状态执行函数
+; ..\CODE\Src\User_FSM.c	   235  void FSMEventHandle(FSM_t *fsm, int event)
 ; Function FSMEventHandle
-.L94:
+.L95:
 FSMEventHandle:	.type	func
 	mov.aa	a12,a4
-.L228:
+.L237:
 
-; ..\CODE\Src\User_FSM.c	   226  {
-; ..\CODE\Src\User_FSM.c	   227  	FSMTable_t *fsmTable = fsm->FsmTable;
+; ..\CODE\Src\User_FSM.c	   236  {
+; ..\CODE\Src\User_FSM.c	   237  	FSMTable_t *fsmTable = fsm->FsmTable;
 	ld.a	a2,[a12]4
-.L229:
+.L238:
 
-; ..\CODE\Src\User_FSM.c	   228      int curState = fsm->CurState;
+; ..\CODE\Src\User_FSM.c	   238      int curState = fsm->CurState;
 	ld.w	d0,[a12]
-.L231:
+.L240:
 
-; ..\CODE\Src\User_FSM.c	   229      void (*eventAction)() = NULL;  //函数指针初始化为空
-; ..\CODE\Src\User_FSM.c	   230      int nextState = -1;
-; ..\CODE\Src\User_FSM.c	   231      int size = fsm->Size;
+; ..\CODE\Src\User_FSM.c	   239      void (*eventAction)() = NULL;  //函数指针初始化为空
+; ..\CODE\Src\User_FSM.c	   240      int nextState = -1;
+; ..\CODE\Src\User_FSM.c	   241      int size = fsm->Size;
 	ld.w	d1,[a12]8
-.L232:
+.L241:
 
-; ..\CODE\Src\User_FSM.c	   232      //int flag = 0;  //标识条件是否满足
-; ..\CODE\Src\User_FSM.c	   233      int i;
-; ..\CODE\Src\User_FSM.c	   234  
-; ..\CODE\Src\User_FSM.c	   235      //获取当前动作函数
-; ..\CODE\Src\User_FSM.c	   236      for (i=0; i<size; i++)
+; ..\CODE\Src\User_FSM.c	   242      //int flag = 0;  //标识条件是否满足
+; ..\CODE\Src\User_FSM.c	   243      int i;
+; ..\CODE\Src\User_FSM.c	   244  
+; ..\CODE\Src\User_FSM.c	   245      //获取当前动作函数
+; ..\CODE\Src\User_FSM.c	   246      for (i=0; i<size; i++)
 	mov	d2,#0
-.L233:
+.L242:
 	j	.L26
 .L27:
 
-; ..\CODE\Src\User_FSM.c	   237      {
-; ..\CODE\Src\User_FSM.c	   238          //当且仅当当前状态下来个指定的事件，我才执行它
-; ..\CODE\Src\User_FSM.c	   239          if (event == fsmTable[i].Event && curState == fsmTable[i].CurState)
+; ..\CODE\Src\User_FSM.c	   247      {
+; ..\CODE\Src\User_FSM.c	   248          //当且仅当当前状态下来个指定的事件，我才执行它
+; ..\CODE\Src\User_FSM.c	   249          if (event == fsmTable[i].Event && curState == fsmTable[i].CurState)
 	sha	d15,d2,#4
-.L415:
+.L425:
 	addsc.a	a15,a2,d15,#0
-.L416:
+.L426:
 	ld.w	d15,[a15]
-.L417:
+.L427:
 	jne	d15,d4,.L28
-.L418:
+.L428:
 	ld.w	d15,[a15]4
-.L419:
+.L429:
 	jne	d15,d0,.L29
-.L420:
+.L430:
 
-; ..\CODE\Src\User_FSM.c	   240          {
-; ..\CODE\Src\User_FSM.c	   241          	//flag = 1;
-; ..\CODE\Src\User_FSM.c	   242              eventAction = fsmTable[i].EventAction;
+; ..\CODE\Src\User_FSM.c	   250          {
+; ..\CODE\Src\User_FSM.c	   251          	//flag = 1;
+; ..\CODE\Src\User_FSM.c	   252              eventAction = fsmTable[i].EventAction;
 	ld.a	a2,[a15]8
-.L230:
+.L239:
 
-; ..\CODE\Src\User_FSM.c	   243              nextState = fsmTable[i].NextState;
+; ..\CODE\Src\User_FSM.c	   253              nextState = fsmTable[i].NextState;
 	ld.w	d15,[a15]12
-.L234:
+.L243:
 
-; ..\CODE\Src\User_FSM.c	   244          	if(eventAction)
+; ..\CODE\Src\User_FSM.c	   254          	if(eventAction)
 	jz.a	a2,.L30
-.L421:
+.L431:
 
-; ..\CODE\Src\User_FSM.c	   245          		eventAction();
+; ..\CODE\Src\User_FSM.c	   255          		eventAction();
 	calli	a2
 .L30:
 
-; ..\CODE\Src\User_FSM.c	   246          	FSMStateTransfer(fsm, nextState);
+; ..\CODE\Src\User_FSM.c	   256          	FSMStateTransfer(fsm, nextState);
 	mov.aa	a4,a12
-.L235:
+.L244:
 	mov	d4,d15
-.L236:
+.L245:
 	j	FSMStateTransfer
 .L29:
 .L28:
 	add	d2,#1
 .L26:
 	jlt	d2,d1,.L27
-.L422:
+.L432:
 
-; ..\CODE\Src\User_FSM.c	   247              break;
-; ..\CODE\Src\User_FSM.c	   248          }
-; ..\CODE\Src\User_FSM.c	   249      }
-; ..\CODE\Src\User_FSM.c	   250      //if(!flag)
-; ..\CODE\Src\User_FSM.c	   251      //{
-; ..\CODE\Src\User_FSM.c	   252          //printf("No match!\n");
-; ..\CODE\Src\User_FSM.c	   253      //}
-; ..\CODE\Src\User_FSM.c	   254  }
+; ..\CODE\Src\User_FSM.c	   257              break;
+; ..\CODE\Src\User_FSM.c	   258          }
+; ..\CODE\Src\User_FSM.c	   259      }
+; ..\CODE\Src\User_FSM.c	   260      //if(!flag)
+; ..\CODE\Src\User_FSM.c	   261      //{
+; ..\CODE\Src\User_FSM.c	   262          //printf("No match!\n");
+; ..\CODE\Src\User_FSM.c	   263      //}
+; ..\CODE\Src\User_FSM.c	   264  }
 	ret
-.L205:
+.L208:
 	
 __FSMEventHandle_function_end:
 	.size	FSMEventHandle,__FSMEventHandle_function_end-FSMEventHandle
-.L149:
+.L150:
 	; End of function
 	
 	.sdecl	'.text.User_FSM.ReturnFSMState',code,cluster('ReturnFSMState')
@@ -879,24 +891,24 @@ __FSMEventHandle_function_end:
 	
 	.global	ReturnFSMState
 
-; ..\CODE\Src\User_FSM.c	   255  
-; ..\CODE\Src\User_FSM.c	   256  int ReturnFSMState(FSM_t *fsm)
+; ..\CODE\Src\User_FSM.c	   265  
+; ..\CODE\Src\User_FSM.c	   266  int ReturnFSMState(FSM_t *fsm)
 ; Function ReturnFSMState
-.L96:
+.L97:
 ReturnFSMState:	.type	func
 
-; ..\CODE\Src\User_FSM.c	   257  {
-; ..\CODE\Src\User_FSM.c	   258  	return fsm->CurState;
+; ..\CODE\Src\User_FSM.c	   267  {
+; ..\CODE\Src\User_FSM.c	   268  	return fsm->CurState;
 	ld.w	d2,[a4]
-.L427:
+.L437:
 
-; ..\CODE\Src\User_FSM.c	   259  }
+; ..\CODE\Src\User_FSM.c	   269  }
 	ret
-.L215:
+.L218:
 	
 __ReturnFSMState_function_end:
 	.size	ReturnFSMState,__ReturnFSMState_function_end-ReturnFSMState
-.L154:
+.L155:
 	; End of function
 	
 	.sdecl	'.text.User_FSM.FSMRun',code,cluster('FSMRun')
@@ -905,217 +917,233 @@ __ReturnFSMState_function_end:
 	
 	.global	FSMRun
 
-; ..\CODE\Src\User_FSM.c	   260  //********************************************************
-; ..\CODE\Src\User_FSM.c	   261  
-; ..\CODE\Src\User_FSM.c	   262  
-; ..\CODE\Src\User_FSM.c	   263  void FSMRun(void)
+; ..\CODE\Src\User_FSM.c	   270  //********************************************************
+; ..\CODE\Src\User_FSM.c	   271  
+; ..\CODE\Src\User_FSM.c	   272  
+; ..\CODE\Src\User_FSM.c	   273  void FSMRun(void)
 ; Function FSMRun
-.L98:
+.L99:
 FSMRun:	.type	func
 
-; ..\CODE\Src\User_FSM.c	   264  {
-; ..\CODE\Src\User_FSM.c	   265      FSMRegist(&CarFSM, CarTable);
+; ..\CODE\Src\User_FSM.c	   274  {
+; ..\CODE\Src\User_FSM.c	   275      FSMRegist(&CarFSM, CarTable);
 	movh.a	a4,#@his(CarFSM)
 	lea	a4,[a4]@los(CarFSM)
-.L432:
+.L442:
 	movh.a	a5,#@his(CarTable)
 	lea	a5,[a5]@los(CarTable)
 	call	FSMRegist
-.L433:
+.L443:
 
-; ..\CODE\Src\User_FSM.c	   266  	if(!StartFlag)
+; ..\CODE\Src\User_FSM.c	   276  	if(!StartFlag)
 	movh.a	a15,#@his(StartFlag)
 	ld.bu	d15,[a15]@los(StartFlag)
 	jne	d15,#0,.L33
-.L434:
+.L444:
 
-; ..\CODE\Src\User_FSM.c	   267  	{
-; ..\CODE\Src\User_FSM.c	   268  		CarFSM.CurState = WaitBall;
+; ..\CODE\Src\User_FSM.c	   277  	{
+; ..\CODE\Src\User_FSM.c	   278  		CarFSM.CurState = WaitBall;
 	movh.a	a2,#@his(CarFSM)
-.L435:
+.L445:
 	st.w	[a2]@los(CarFSM),d15
-.L436:
+.L446:
 
-; ..\CODE\Src\User_FSM.c	   269  		StartFlag = 1;
+; ..\CODE\Src\User_FSM.c	   279  		StartFlag = 1;
 	mov	d15,#1
-.L437:
+.L447:
 	st.b	[a15]@los(StartFlag),d15
 .L33:
 
-; ..\CODE\Src\User_FSM.c	   270  	}
-; ..\CODE\Src\User_FSM.c	   271      CarFSM.Size = sizeof(CarTable) / sizeof(FSMTable_t);
+; ..\CODE\Src\User_FSM.c	   280  	}
+; ..\CODE\Src\User_FSM.c	   281      CarFSM.Size = sizeof(CarTable) / sizeof(FSMTable_t);
 	movh.a	a15,#@his(CarFSM+8)
-.L438:
+.L448:
 	mov	d15,#23
-.L439:
+.L449:
 	st.w	[a15]@los(CarFSM+8),d15
-.L440:
+.L450:
 
-; ..\CODE\Src\User_FSM.c	   272  
-; ..\CODE\Src\User_FSM.c	   273      if(ReturnFSMState(&CarFSM) == WaitBall)
+; ..\CODE\Src\User_FSM.c	   282  
+; ..\CODE\Src\User_FSM.c	   283      if(ReturnFSMState(&CarFSM) == WaitBall)
 	movh.a	a4,#@his(CarFSM)
 	lea	a4,[a4]@los(CarFSM)
 	call	ReturnFSMState
-.L441:
+.L451:
 	jne	d2,#0,.L34
-.L442:
+.L452:
 
-; ..\CODE\Src\User_FSM.c	   274      {
-; ..\CODE\Src\User_FSM.c	   275      	//if(TwoCarStateJudge())  //测试时注释
-; ..\CODE\Src\User_FSM.c	   276      		FSMEventHandle(&CarFSM, GETBALL);
+; ..\CODE\Src\User_FSM.c	   284      {
+; ..\CODE\Src\User_FSM.c	   285  //    	if(TwoCarStateJudge())  //测试时注释
+; ..\CODE\Src\User_FSM.c	   286      		FSMEventHandle(&CarFSM, GETBALL);
 	mov	d4,#1
-.L443:
+.L453:
 	j	.L35
 .L34:
 
-; ..\CODE\Src\User_FSM.c	   277      }
-; ..\CODE\Src\User_FSM.c	   278      else if(ADCValueHandle(2) >= ADCvalueC && (ADCValueHandle(1) >= ADCvalueCL || ADCValueHandle(3) >= ADCvalueCR)\ 
+; ..\CODE\Src\User_FSM.c	   287      }
+; ..\CODE\Src\User_FSM.c	   288      else if(ADCValueHandle(2) >= ADCvalueC && (ADCValueHandle(1) >= ADCvalueCL || ADCValueHandle(3) >= ADCvalueCR)\ 
 	mov	d4,#2
 	call	ADCValueHandle
-.L444:
+.L454:
 	mov	d15,#2400
-.L445:
+.L455:
 	jlt	d2,d15,.L36
-.L446:
+.L456:
 	mov	d4,#1
 	call	ADCValueHandle
-.L447:
+.L457:
 	mov	d15,#1400
-.L448:
+.L458:
 	jge	d2,d15,.L37
-.L449:
+.L459:
 	mov	d4,#3
 	call	ADCValueHandle
-.L450:
+.L460:
 	jlt	d2,d15,.L38
 .L37:
 
-; ..\CODE\Src\User_FSM.c	   279      && (ADCValueHandle(0) > ADCvalueLL || ADCValueHandle(4) > ADCvalueRR) && ReturnFSMState(&CarFSM) == GoLine && RoundaboutCount==0)//检测进圆
+; ..\CODE\Src\User_FSM.c	   289      && (ADCValueHandle(0) > ADCvalueLL || ADCValueHandle(4) > ADCvalueRR) && ReturnFSMState(&CarFSM) == GoLine && RoundaboutCount==0)//检测进圆
 	mov	d4,#0
 	call	ADCValueHandle
-.L451:
+.L461:
 	mov	d15,#2800
-.L452:
+.L462:
 	jlt	d15,d2,.L39
-.L453:
+.L463:
 	mov	d4,#4
 	call	ADCValueHandle
-.L454:
+.L464:
 	jge	d15,d2,.L40
 .L39:
 	movh.a	a4,#@his(CarFSM)
 	lea	a4,[a4]@los(CarFSM)
 	call	ReturnFSMState
-.L455:
+.L465:
 	jne	d2,#1,.L41
-.L456:
+.L466:
 	movh.a	a15,#@his(RoundaboutCount)
 	ld.bu	d15,[a15]@los(RoundaboutCount)
-.L457:
-	jne	d15,#0,.L42
-.L458:
-
-; ..\CODE\Src\User_FSM.c	   280      {
-; ..\CODE\Src\User_FSM.c	   281      	RoundaboutCount++;
-	add	d15,#1
-	st.b	[a15]@los(RoundaboutCount),d15
-.L459:
-
-; ..\CODE\Src\User_FSM.c	   282      	if(RoundaboutCount >= 3)//连续检测三次
-	mov	d4,#1
-.L460:
-	jlt.u	d4,#3,.L43
-.L461:
-
-; ..\CODE\Src\User_FSM.c	   283      	{
-; ..\CODE\Src\User_FSM.c	   284      		if(ADCValueHandle(1) > ADCValueHandle(3))//判断左圆或右圆
-	call	ADCValueHandle
-.L462:
-	mov	d15,d2
-.L463:
-	mov	d4,#3
-	call	ADCValueHandle
-.L464:
-	jge	d2,d15,.L44
-.L465:
-
-; ..\CODE\Src\User_FSM.c	   285  			{
-; ..\CODE\Src\User_FSM.c	   286  				LRoundaboutFlag = 1;//左圆
-	movh.a	a15,#@his(LRoundaboutFlag)
-.L466:
-	mov	d15,#1
 .L467:
-	st.b	[a15]@los(LRoundaboutFlag),d15
+	jne	d15,#0,.L42
 .L468:
 
-; ..\CODE\Src\User_FSM.c	   287  				RRoundaboutFlag = 0;
-	mov	d15,#0
+; ..\CODE\Src\User_FSM.c	   290      {
+; ..\CODE\Src\User_FSM.c	   291      	IntoRoundaboutCount++;
+	movh.a	a2,#@his(IntoRoundaboutCount)
+	ld.bu	d15,[a2]@los(IntoRoundaboutCount)
 .L469:
+	add	d15,#1
+	st.b	[a2]@los(IntoRoundaboutCount),d15
+.L470:
+
+; ..\CODE\Src\User_FSM.c	   292      	if(IntoRoundaboutCount >= 3)//连续检测三次
+	ld.bu	d15,[a2]@los(IntoRoundaboutCount)
+.L471:
+	jlt.u	d15,#3,.L43
+.L472:
+
+; ..\CODE\Src\User_FSM.c	   293      	{
+; ..\CODE\Src\User_FSM.c	   294      		RoundaboutCount=1;
+	mov	d4,#1
+.L473:
+	st.b	[a15]@los(RoundaboutCount),d4
+.L474:
+
+; ..\CODE\Src\User_FSM.c	   295      		if(ADCValueHandle(1) > ADCValueHandle(3))//判断左圆或右圆
+	call	ADCValueHandle
+.L475:
+	mov	d15,d2
+.L476:
+	mov	d4,#3
+	call	ADCValueHandle
+.L477:
+	jge	d2,d15,.L44
+.L478:
+
+; ..\CODE\Src\User_FSM.c	   296  			{
+; ..\CODE\Src\User_FSM.c	   297  //    	    	uart_putchar(UART_3,0X01);//状态检测1
+; ..\CODE\Src\User_FSM.c	   298  				LRoundaboutFlag = 1;//左圆
+	movh.a	a15,#@his(LRoundaboutFlag)
+.L479:
+	mov	d15,#1
+.L480:
+	st.b	[a15]@los(LRoundaboutFlag),d15
+.L481:
+
+; ..\CODE\Src\User_FSM.c	   299  				RRoundaboutFlag = 0;
+	mov	d15,#0
+.L482:
 	j	.L45
 .L43:
 
-; ..\CODE\Src\User_FSM.c	   288  			}
-; ..\CODE\Src\User_FSM.c	   289  			else
-; ..\CODE\Src\User_FSM.c	   290  			{
-; ..\CODE\Src\User_FSM.c	   291  				LRoundaboutFlag = 0;
-; ..\CODE\Src\User_FSM.c	   292  				RRoundaboutFlag = 1;//右圆
-; ..\CODE\Src\User_FSM.c	   293  			}
-; ..\CODE\Src\User_FSM.c	   294  //    		RoundaboutCount = 0;
-; ..\CODE\Src\User_FSM.c	   295              FSMEventHandle(&CarFSM, FINDROUNDABOUT);
-; ..\CODE\Src\User_FSM.c	   296      	}
-; ..\CODE\Src\User_FSM.c	   297      }
-; ..\CODE\Src\User_FSM.c	   298      else if(PassingRoundaboutFlag && ReturnFSMState(&CarFSM) == InRoundabout)//圆内过程
-; ..\CODE\Src\User_FSM.c	   299      {
-; ..\CODE\Src\User_FSM.c	   300      	FSMEventHandle(&CarFSM, ENDINROUNDABOUT);
-; ..\CODE\Src\User_FSM.c	   301      }
-; ..\CODE\Src\User_FSM.c	   302      else if(ADCValueHandle(2) >= ADCvalueC && (ADCValueHandle(1) >= ADCvalueCL || ADCValueHandle(3) >= ADCvalueCR)\ 
-; ..\CODE\Src\User_FSM.c	   303      && (ADCValueHandle(0) > ADCvalueLL || ADCValueHandle(4) > ADCvalueRR) && ReturnFSMState(&CarFSM) == PassRoundabout)//检测出圆
-; ..\CODE\Src\User_FSM.c	   304      {
-; ..\CODE\Src\User_FSM.c	   305      	FSMEventHandle(&CarFSM, OUTROUNDABOUT);
-; ..\CODE\Src\User_FSM.c	   306      }
-; ..\CODE\Src\User_FSM.c	   307      else if(!PassingRoundaboutFlag && ReturnFSMState(&CarFSM) == OutingRoundabout)
-; ..\CODE\Src\User_FSM.c	   308      {
-; ..\CODE\Src\User_FSM.c	   309      	FSMEventHandle(&CarFSM, ENDOUTROUNDABOUT);
+; ..\CODE\Src\User_FSM.c	   300  			}
+; ..\CODE\Src\User_FSM.c	   301  			else
+; ..\CODE\Src\User_FSM.c	   302  			{
+; ..\CODE\Src\User_FSM.c	   303  				LRoundaboutFlag = 0;
+; ..\CODE\Src\User_FSM.c	   304  				RRoundaboutFlag = 1;//右圆
+; ..\CODE\Src\User_FSM.c	   305  			}
+; ..\CODE\Src\User_FSM.c	   306  //    		RoundaboutCount = 0;
+; ..\CODE\Src\User_FSM.c	   307              FSMEventHandle(&CarFSM, FINDROUNDABOUT);
+; ..\CODE\Src\User_FSM.c	   308  //            FSMEventHandle(&CarFSM, RUNSTOP);
+; ..\CODE\Src\User_FSM.c	   309      	}
 ; ..\CODE\Src\User_FSM.c	   310      }
-; ..\CODE\Src\User_FSM.c	   311      else if(!InGarageDirection && EnterGarageFlag && ReturnFSMState(&CarFSM) == GoLine)
+; ..\CODE\Src\User_FSM.c	   311      else if(PassingRoundaboutFlag && ReturnFSMState(&CarFSM) == InRoundabout)//圆内过程
 ; ..\CODE\Src\User_FSM.c	   312      {
-; ..\CODE\Src\User_FSM.c	   313          MotorUserHandle(LMotor_F, LeftWheelDeadZone+LeftInGarageSpeed);
-; ..\CODE\Src\User_FSM.c	   314          MotorUserHandle(RMotor_F, RightWheelDeadZone+RightInGarageSpeed);
-; ..\CODE\Src\User_FSM.c	   315      	FSMEventHandle(&CarFSM, LEFTFINDZEBRA);
-; ..\CODE\Src\User_FSM.c	   316      }
-; ..\CODE\Src\User_FSM.c	   317      else if(InGarageDirection && EnterGarageFlag && ReturnFSMState(&CarFSM) == GoLine)
+; ..\CODE\Src\User_FSM.c	   313  //    	uart_putchar(UART_3,0X04);//状态检测4
+; ..\CODE\Src\User_FSM.c	   314      	FSMEventHandle(&CarFSM, ENDINROUNDABOUT);
+; ..\CODE\Src\User_FSM.c	   315      }
+; ..\CODE\Src\User_FSM.c	   316      else if(ADCValueHandle(2) >= ADCvalueC && (ADCValueHandle(1) >= ADCvalueCL || ADCValueHandle(3) >= ADCvalueCR)\ 
+; ..\CODE\Src\User_FSM.c	   317      && (ADCValueHandle(0) > ADCvalueLL || ADCValueHandle(4) > ADCvalueRR) && ReturnFSMState(&CarFSM) == PassRoundabout && PassingRoundaboutFlag)//检测出圆
 ; ..\CODE\Src\User_FSM.c	   318      {
-; ..\CODE\Src\User_FSM.c	   319          MotorUserHandle(LMotor_F, LeftWheelDeadZone+LeftInGarageSpeed);
-; ..\CODE\Src\User_FSM.c	   320          MotorUserHandle(RMotor_F, RightWheelDeadZone+RightInGarageSpeed);
-; ..\CODE\Src\User_FSM.c	   321      	FSMEventHandle(&CarFSM, RIGHTFINDZEBRA);
+; ..\CODE\Src\User_FSM.c	   319  //    	uart_putchar(UART_3,0X05);//状态检测5
+; ..\CODE\Src\User_FSM.c	   320      	FSMEventHandle(&CarFSM, OUTROUNDABOUT);
+; ..\CODE\Src\User_FSM.c	   321  //    	FSMEventHandle(&CarFSM, RUNSTOP);
 ; ..\CODE\Src\User_FSM.c	   322      }
-; ..\CODE\Src\User_FSM.c	   323      else if(GoGarageFinishFlag && ReturnFSMState(&CarFSM) == LeftInGarage)
+; ..\CODE\Src\User_FSM.c	   323      else if(PassingRoundaboutFlag && ReturnFSMState(&CarFSM) == OutingRoundabout)
 ; ..\CODE\Src\User_FSM.c	   324      {
-; ..\CODE\Src\User_FSM.c	   325      	FSMEventHandle(&CarFSM, RUNSTOP);
-; ..\CODE\Src\User_FSM.c	   326      }
-; ..\CODE\Src\User_FSM.c	   327      else if(GoGarageFinishFlag && ReturnFSMState(&CarFSM) == RightInGarage)
-; ..\CODE\Src\User_FSM.c	   328      {
-; ..\CODE\Src\User_FSM.c	   329      	FSMEventHandle(&CarFSM, RUNSTOP);
-; ..\CODE\Src\User_FSM.c	   330      }
-; ..\CODE\Src\User_FSM.c	   331      else
-; ..\CODE\Src\User_FSM.c	   332      	FSMEventHandle(&CarFSM, NOEVENT);
-; ..\CODE\Src\User_FSM.c	   333  }
+; ..\CODE\Src\User_FSM.c	   325  		PassingRoundaboutFlag = 0;
+; ..\CODE\Src\User_FSM.c	   326  //    	FSMEventHandle(&CarFSM, ENDOUTROUNDABOUT);
+; ..\CODE\Src\User_FSM.c	   327  		FSMEventHandle(&CarFSM, RUNSTOP);
+; ..\CODE\Src\User_FSM.c	   328      }
+; ..\CODE\Src\User_FSM.c	   329      else if(!InGarageDirection && EnterGarageFlag && ReturnFSMState(&CarFSM) == GoLine)
+; ..\CODE\Src\User_FSM.c	   330      {
+; ..\CODE\Src\User_FSM.c	   331          MotorUserHandle(LMotor_F, LeftWheelDeadZone+LeftInGarageSpeed);
+; ..\CODE\Src\User_FSM.c	   332          MotorUserHandle(RMotor_F, RightWheelDeadZone+RightInGarageSpeed);
+; ..\CODE\Src\User_FSM.c	   333      	FSMEventHandle(&CarFSM, LEFTFINDZEBRA);
+; ..\CODE\Src\User_FSM.c	   334      }
+; ..\CODE\Src\User_FSM.c	   335      else if(InGarageDirection && EnterGarageFlag && ReturnFSMState(&CarFSM) == GoLine)
+; ..\CODE\Src\User_FSM.c	   336      {
+; ..\CODE\Src\User_FSM.c	   337          MotorUserHandle(LMotor_F, LeftWheelDeadZone+LeftInGarageSpeed);
+; ..\CODE\Src\User_FSM.c	   338          MotorUserHandle(RMotor_F, RightWheelDeadZone+RightInGarageSpeed);
+; ..\CODE\Src\User_FSM.c	   339      	FSMEventHandle(&CarFSM, RIGHTFINDZEBRA);
+; ..\CODE\Src\User_FSM.c	   340      }
+; ..\CODE\Src\User_FSM.c	   341      else if(GoGarageFinishFlag && ReturnFSMState(&CarFSM) == LeftInGarage)
+; ..\CODE\Src\User_FSM.c	   342      {
+; ..\CODE\Src\User_FSM.c	   343      	FSMEventHandle(&CarFSM, RUNSTOP);
+; ..\CODE\Src\User_FSM.c	   344      }
+; ..\CODE\Src\User_FSM.c	   345      else if(GoGarageFinishFlag && ReturnFSMState(&CarFSM) == RightInGarage)
+; ..\CODE\Src\User_FSM.c	   346      {
+; ..\CODE\Src\User_FSM.c	   347      	FSMEventHandle(&CarFSM, RUNSTOP);
+; ..\CODE\Src\User_FSM.c	   348      }
+; ..\CODE\Src\User_FSM.c	   349      else
+; ..\CODE\Src\User_FSM.c	   350      	FSMEventHandle(&CarFSM, NOEVENT);
+; ..\CODE\Src\User_FSM.c	   351  }
 	ret
 .L44:
 	movh.a	a15,#@his(LRoundaboutFlag)
-.L470:
+.L483:
 	mov	d15,#0
-.L471:
+.L484:
 	st.b	[a15]@los(LRoundaboutFlag),d15
-.L472:
+.L485:
 	mov	d15,#1
 .L45:
 	movh.a	a15,#@his(RRoundaboutFlag)
-.L473:
+.L486:
 	st.b	[a15]@los(RRoundaboutFlag),d15
-.L474:
+.L487:
 	mov	d4,#2
-.L475:
+.L488:
 	j	.L46
 .L42:
 .L41:
@@ -1125,145 +1153,154 @@ FSMRun:	.type	func
 	movh.a	a15,#@his(PassingRoundaboutFlag)
 	ld.bu	d15,[a15]@los(PassingRoundaboutFlag)
 	jeq	d15,#0,.L47
-.L476:
+.L489:
 	movh.a	a4,#@his(CarFSM)
 	lea	a4,[a4]@los(CarFSM)
 	call	ReturnFSMState
-.L477:
+.L490:
 	jne	d2,#2,.L48
-.L478:
+.L491:
 	mov	d4,#3
-.L479:
+.L492:
 	j	.L49
 .L48:
 .L47:
 	mov	d4,#2
 	call	ADCValueHandle
-.L480:
+.L493:
 	mov	d15,#2400
-.L481:
+.L494:
 	jlt	d2,d15,.L50
-.L482:
+.L495:
 	mov	d4,#1
 	call	ADCValueHandle
-.L483:
+.L496:
 	mov	d15,#1400
-.L484:
+.L497:
 	jge	d2,d15,.L51
-.L485:
+.L498:
 	mov	d4,#3
 	call	ADCValueHandle
-.L486:
+.L499:
 	jlt	d2,d15,.L52
 .L51:
 	mov	d4,#0
 	call	ADCValueHandle
-.L487:
+.L500:
 	mov	d15,#2800
-.L488:
+.L501:
 	jlt	d15,d2,.L53
-.L489:
+.L502:
 	mov	d4,#4
 	call	ADCValueHandle
-.L490:
+.L503:
 	jge	d15,d2,.L54
 .L53:
 	movh.a	a4,#@his(CarFSM)
 	lea	a4,[a4]@los(CarFSM)
 	call	ReturnFSMState
-.L491:
+.L504:
 	jne	d2,#3,.L55
-.L492:
+.L505:
+	movh.a	a15,#@his(PassingRoundaboutFlag)
+	ld.bu	d15,[a15]@los(PassingRoundaboutFlag)
+	jeq	d15,#0,.L56
+.L506:
 	mov	d4,#4
-.L493:
-	j	.L56
+.L507:
+	j	.L57
+.L56:
 .L55:
 .L54:
 .L52:
 .L50:
 	movh.a	a15,#@his(PassingRoundaboutFlag)
 	ld.bu	d15,[a15]@los(PassingRoundaboutFlag)
-	jne	d15,#0,.L57
-.L494:
-	movh.a	a4,#@his(CarFSM)
-	lea	a4,[a4]@los(CarFSM)
-	call	ReturnFSMState
-.L495:
-	jne	d2,#4,.L58
-.L496:
-	mov	d4,#5
-.L497:
-	j	.L59
-.L58:
-.L57:
-	movh.a	a15,#@his(EnterGarageFlag)
-	ld.bu	d15,[a15]@los(EnterGarageFlag)
-	jeq	d15,#0,.L60
-.L498:
-	movh.a	a4,#@his(CarFSM)
-	lea	a4,[a4]@los(CarFSM)
-	call	ReturnFSMState
-.L499:
-	jne	d2,#1,.L61
-.L500:
-	mov	d4,#0
-.L501:
-	movh	d5,#16704
-	call	MotorUserHandle
-.L502:
-	mov	d4,#2
-.L503:
-	mov	d5,#26214
-	addih	d5,d5,#16718
-	call	MotorUserHandle
-.L504:
-	mov	d4,#7
-.L505:
-	j	.L62
-.L61:
-.L60:
-	movh.a	a15,#@his(GoGarageFinishFlag)
-	ld.bu	d15,[a15]@los(GoGarageFinishFlag)
-	jeq	d15,#0,.L63
-.L506:
-	movh.a	a4,#@his(CarFSM)
-	lea	a4,[a4]@los(CarFSM)
-	call	ReturnFSMState
-.L507:
-	jeq	d2,#5,.L64
-.L63:
-	movh.a	a15,#@his(GoGarageFinishFlag)
-	ld.bu	d15,[a15]@los(GoGarageFinishFlag)
-	jeq	d15,#0,.L65
+	jeq	d15,#0,.L58
 .L508:
 	movh.a	a4,#@his(CarFSM)
 	lea	a4,[a4]@los(CarFSM)
 	call	ReturnFSMState
 .L509:
-	jne	d2,#6,.L66
-.L64:
-	mov	d4,#8
+	jne	d2,#4,.L59
 .L510:
-	j	.L67
-.L66:
+	movh.a	a15,#@his(PassingRoundaboutFlag)
+.L511:
+	mov	d15,#0
+.L512:
+	st.b	[a15]@los(PassingRoundaboutFlag),d15
+.L513:
+	j	.L60
+.L59:
+.L58:
+	movh.a	a15,#@his(EnterGarageFlag)
+	ld.bu	d15,[a15]@los(EnterGarageFlag)
+	jeq	d15,#0,.L61
+.L514:
+	movh.a	a4,#@his(CarFSM)
+	lea	a4,[a4]@los(CarFSM)
+	call	ReturnFSMState
+.L515:
+	jne	d2,#1,.L62
+.L516:
+	mov	d4,#0
+.L517:
+	movh	d5,#16704
+	call	MotorUserHandle
+.L518:
+	mov	d4,#2
+.L519:
+	mov	d5,#26214
+	addih	d5,d5,#16718
+	call	MotorUserHandle
+.L520:
+	mov	d4,#7
+.L521:
+	j	.L63
+.L62:
+.L61:
+	movh.a	a15,#@his(GoGarageFinishFlag)
+	ld.bu	d15,[a15]@los(GoGarageFinishFlag)
+	jeq	d15,#0,.L64
+.L522:
+	movh.a	a4,#@his(CarFSM)
+	lea	a4,[a4]@los(CarFSM)
+	call	ReturnFSMState
+.L523:
+	jeq	d2,#5,.L65
+.L64:
+	movh.a	a15,#@his(GoGarageFinishFlag)
+	ld.bu	d15,[a15]@los(GoGarageFinishFlag)
+	jeq	d15,#0,.L66
+.L524:
+	movh.a	a4,#@his(CarFSM)
+	lea	a4,[a4]@los(CarFSM)
+	call	ReturnFSMState
+.L525:
+	jne	d2,#6,.L67
 .L65:
+.L60:
+	mov	d4,#8
+.L526:
+	j	.L68
+.L67:
+.L66:
 	mov	d4,#0
 .L35:
 .L46:
 .L49:
-.L56:
-.L59:
-.L62:
-.L67:
+.L57:
+.L63:
+.L68:
 	movh.a	a4,#@his(CarFSM)
 	lea	a4,[a4]@los(CarFSM)
-.L511:
+.L527:
 	j	FSMEventHandle
-.L217:
+.L220:
 	
 __FSMRun_function_end:
 	.size	FSMRun,__FSMRun_function_end-FSMRun
-.L159:
+.L160:
 	; End of function
 	
 	.sdecl	'.text.User_FSM.FindLineAdjPWM',code,cluster('FindLineAdjPWM')
@@ -1272,192 +1309,192 @@ __FSMRun_function_end:
 	
 	.global	FindLineAdjPWM
 
-; ..\CODE\Src\User_FSM.c	   334  
-; ..\CODE\Src\User_FSM.c	   335  //其他函数
-; ..\CODE\Src\User_FSM.c	   336  void FindLineAdjPWM(double PWM, double LCut, double RCut)
+; ..\CODE\Src\User_FSM.c	   352  
+; ..\CODE\Src\User_FSM.c	   353  //其他函数
+; ..\CODE\Src\User_FSM.c	   354  void FindLineAdjPWM(double PWM, double LCut, double RCut)
 ; Function FindLineAdjPWM
-.L100:
+.L101:
 FindLineAdjPWM:	.type	func
 	sub.a	a10,#8
-.L237:
+.L246:
 	mov	e8,d5,d4
 	mov	d10,d6
-.L241:
+.L250:
 
-; ..\CODE\Src\User_FSM.c	   337  {
-; ..\CODE\Src\User_FSM.c	   338      PIDValue =  GetPIDValue(PIDMidLineFuseNum, 1000 * MidLineFuseNum, 15, 0.1, 2000);
+; ..\CODE\Src\User_FSM.c	   355  {
+; ..\CODE\Src\User_FSM.c	   356      PIDValue =  GetPIDValue(PIDMidLineFuseNum, 1000 * MidLineFuseNum, 15, 0.1, 2000);
 	movh.a	a15,#@his(PIDValue)
-.L516:
+.L532:
 	movh	d15,#17658
 	st.w	[a10],d15
-.L517:
+.L533:
 	mov.u	d4,#34028
-.L239:
+.L248:
 	addih	d4,d4,#47511
-.L518:
+.L534:
 	movh.a	a2,#@his(MidLineFuseNum)
 	ld.w	d15,[a2]@los(MidLineFuseNum)
-.L519:
+.L535:
 	movh	d0,#17530
-.L520:
+.L536:
 	mul.f	d5,d15,d0
-.L238:
+.L247:
 	movh	d6,#16752
-.L240:
+.L249:
 	mov.u	d7,#52429
 	addih	d7,d7,#15820
 	call	GetPIDValue
-.L521:
-	st.w	[a15]@los(PIDValue),d2
-.L522:
-
-; ..\CODE\Src\User_FSM.c	   339      //PIDValue =  GetPIDValue(-0.002763617550954, 1000 * MidLineFuseNum, 41, 0, 3300); //54 0 35000  56.8 0 10500
-; ..\CODE\Src\User_FSM.c	   340      if(PWM >= 0)
-	mov	d15,#0
-.L242:
-	cmp.f	d15,d8,d15
-.L243:
-	and	d15,#6
-.L523:
-	jeq	d15,#0,.L68
-.L524:
-
-; ..\CODE\Src\User_FSM.c	   341      {
-; ..\CODE\Src\User_FSM.c	   342          LPWM = PWM + LeftWheelDeadZone - PIDValue + LCut;
-	movh.a	a15,#@his(LPWM)
-.L525:
-	movh.a	a2,#@his(PIDValue)
-	ld.w	d15,[a2]@los(PIDValue)
-.L244:
-	sub.f	d0,d8,d15
-.L245:
-	movh	d1,#16512
-.L526:
-	add.f	d0,d0,d1
-.L246:
-	add.f	d0,d0,d9
-.L247:
-	st.w	[a15]@los(LPWM),d0
-.L527:
-
-; ..\CODE\Src\User_FSM.c	   343          RPWM = PWM + RightWheelDeadZone +PIDValue + RCut;
-	mov.u	d0,#52429
-	addih	d0,d0,#16540
-.L248:
-	add.f	d0,d8,d0
-.L249:
-	add.f	d15,d0,d15
-.L528:
-	add.f	d15,d15,d10
-.L529:
-	j	.L69
-.L68:
-
-; ..\CODE\Src\User_FSM.c	   344      }
-; ..\CODE\Src\User_FSM.c	   345      else if(PWM < 0)
-	cmp.f	d15,d8,d15
-.L250:
-	jz.t	d15:0,.L70
-.L530:
-
-; ..\CODE\Src\User_FSM.c	   346      {
-; ..\CODE\Src\User_FSM.c	   347          LPWM = PWM + PIDValue;
-	movh.a	a15,#@his(LPWM)
-.L531:
-	movh.a	a2,#@his(PIDValue)
-	ld.w	d15,[a2]@los(PIDValue)
-.L251:
-	add.f	d0,d8,d15
-.L252:
-	st.w	[a15]@los(LPWM),d0
-.L253:
-
-; ..\CODE\Src\User_FSM.c	   348          RPWM = PWM - PIDValue;
-	sub.f	d15,d8,d15
-.L69:
-	movh.a	a15,#@his(RPWM)
-.L532:
-	st.w	[a15]@los(RPWM),d15
-.L70:
-
-; ..\CODE\Src\User_FSM.c	   349      }
-; ..\CODE\Src\User_FSM.c	   350      if(LPWM >= 50)
-	movh.a	a15,#@his(LPWM)
-	ld.w	d15,[a15]@los(LPWM)
-.L533:
-	movh	d0,#16968
-.L534:
-	cmp.f	d15,d15,d0
-	and	d15,#6
-.L535:
-	jne	d15,#0,.L72
-.L536:
-
-; ..\CODE\Src\User_FSM.c	   351          LPWM = 50;
-; ..\CODE\Src\User_FSM.c	   352      else if(LPWM <= -50)
-	ld.w	d15,[a15]@los(LPWM)
 .L537:
-	movh	d0,#49736
+	st.w	[a15]@los(PIDValue),d2
 .L538:
-	cmp.f	d15,d15,d0
-	and	d15,#3
-.L539:
-	jeq	d15,#0,.L73
-.L72:
 
-; ..\CODE\Src\User_FSM.c	   353          LPWM = -50;
-	st.w	[a15]@los(LPWM),d0
-.L73:
-
-; ..\CODE\Src\User_FSM.c	   354      if(RPWM >= 50)
-	movh.a	a15,#@his(RPWM)
-	ld.w	d15,[a15]@los(RPWM)
-.L540:
-	movh	d0,#16968
-.L541:
-	cmp.f	d15,d15,d0
+; ..\CODE\Src\User_FSM.c	   357      //PIDValue =  GetPIDValue(-0.002763617550954, 1000 * MidLineFuseNum, 41, 0, 3300); //54 0 35000  56.8 0 10500
+; ..\CODE\Src\User_FSM.c	   358      if(PWM >= 0)
+	mov	d15,#0
+.L251:
+	cmp.f	d15,d8,d15
+.L252:
 	and	d15,#6
+.L539:
+	jeq	d15,#0,.L69
+.L540:
+
+; ..\CODE\Src\User_FSM.c	   359      {
+; ..\CODE\Src\User_FSM.c	   360          LPWM = PWM + LeftWheelDeadZone - PIDValue + LCut;
+	movh.a	a15,#@his(LPWM)
+.L541:
+	movh.a	a2,#@his(PIDValue)
+	ld.w	d15,[a2]@los(PIDValue)
+.L253:
+	sub.f	d0,d8,d15
+.L254:
+	movh	d1,#16512
 .L542:
-	jne	d15,#0,.L75
+	add.f	d0,d0,d1
+.L255:
+	add.f	d0,d0,d9
+.L256:
+	st.w	[a15]@los(LPWM),d0
 .L543:
 
-; ..\CODE\Src\User_FSM.c	   355          RPWM = 50;
-; ..\CODE\Src\User_FSM.c	   356      else if(RPWM <= -50)
-	ld.w	d15,[a15]@los(RPWM)
+; ..\CODE\Src\User_FSM.c	   361          RPWM = PWM + RightWheelDeadZone +PIDValue + RCut;
+	mov.u	d0,#52429
+	addih	d0,d0,#16540
+.L257:
+	add.f	d0,d8,d0
+.L258:
+	add.f	d15,d0,d15
 .L544:
-	movh	d0,#49736
+	add.f	d15,d15,d10
 .L545:
+	j	.L70
+.L69:
+
+; ..\CODE\Src\User_FSM.c	   362      }
+; ..\CODE\Src\User_FSM.c	   363      else if(PWM < 0)
+	cmp.f	d15,d8,d15
+.L259:
+	jz.t	d15:0,.L71
+.L546:
+
+; ..\CODE\Src\User_FSM.c	   364      {
+; ..\CODE\Src\User_FSM.c	   365          LPWM = PWM + PIDValue;
+	movh.a	a15,#@his(LPWM)
+.L547:
+	movh.a	a2,#@his(PIDValue)
+	ld.w	d15,[a2]@los(PIDValue)
+.L260:
+	add.f	d0,d8,d15
+.L261:
+	st.w	[a15]@los(LPWM),d0
+.L262:
+
+; ..\CODE\Src\User_FSM.c	   366          RPWM = PWM - PIDValue;
+	sub.f	d15,d8,d15
+.L70:
+	movh.a	a15,#@his(RPWM)
+.L548:
+	st.w	[a15]@los(RPWM),d15
+.L71:
+
+; ..\CODE\Src\User_FSM.c	   367      }
+; ..\CODE\Src\User_FSM.c	   368      if(LPWM >= 50)
+	movh.a	a15,#@his(LPWM)
+	ld.w	d15,[a15]@los(LPWM)
+.L549:
+	movh	d0,#16968
+.L550:
+	cmp.f	d15,d15,d0
+	and	d15,#6
+.L551:
+	jne	d15,#0,.L73
+.L552:
+
+; ..\CODE\Src\User_FSM.c	   369          LPWM = 50;
+; ..\CODE\Src\User_FSM.c	   370      else if(LPWM <= -50)
+	ld.w	d15,[a15]@los(LPWM)
+.L553:
+	movh	d0,#49736
+.L554:
 	cmp.f	d15,d15,d0
 	and	d15,#3
-.L546:
-	jeq	d15,#0,.L76
-.L75:
+.L555:
+	jeq	d15,#0,.L74
+.L73:
 
-; ..\CODE\Src\User_FSM.c	   357          RPWM = -50;
-	st.w	[a15]@los(RPWM),d0
+; ..\CODE\Src\User_FSM.c	   371          LPWM = -50;
+	st.w	[a15]@los(LPWM),d0
+.L74:
+
+; ..\CODE\Src\User_FSM.c	   372      if(RPWM >= 50)
+	movh.a	a15,#@his(RPWM)
+	ld.w	d15,[a15]@los(RPWM)
+.L556:
+	movh	d0,#16968
+.L557:
+	cmp.f	d15,d15,d0
+	and	d15,#6
+.L558:
+	jne	d15,#0,.L76
+.L559:
+
+; ..\CODE\Src\User_FSM.c	   373          RPWM = 50;
+; ..\CODE\Src\User_FSM.c	   374      else if(RPWM <= -50)
+	ld.w	d15,[a15]@los(RPWM)
+.L560:
+	movh	d0,#49736
+.L561:
+	cmp.f	d15,d15,d0
+	and	d15,#3
+.L562:
+	jeq	d15,#0,.L77
 .L76:
 
-; ..\CODE\Src\User_FSM.c	   358      MotorUserHandle(LMotor_F, LPWM);
+; ..\CODE\Src\User_FSM.c	   375          RPWM = -50;
+	st.w	[a15]@los(RPWM),d0
+.L77:
+
+; ..\CODE\Src\User_FSM.c	   376      MotorUserHandle(LMotor_F, LPWM);
 	movh.a	a15,#@his(LPWM)
 	ld.w	d5,[a15]@los(LPWM)
-.L547:
+.L563:
 	mov	d4,#0
-.L548:
+.L564:
 	call	MotorUserHandle
-.L549:
+.L565:
 
-; ..\CODE\Src\User_FSM.c	   359      MotorUserHandle(RMotor_F, RPWM);
+; ..\CODE\Src\User_FSM.c	   377      MotorUserHandle(RMotor_F, RPWM);
 	movh.a	a15,#@his(RPWM)
 	ld.w	d5,[a15]@los(RPWM)
-.L550:
+.L566:
 	mov	d4,#2
-.L551:
+.L567:
 	j	MotorUserHandle
-.L218:
+.L221:
 	
 __FindLineAdjPWM_function_end:
 	.size	FindLineAdjPWM,__FindLineAdjPWM_function_end-FindLineAdjPWM
-.L164:
+.L165:
 	; End of function
 	
 	.sdecl	'.data.cpu0_dsram',data,cluster('CarTable')
@@ -1541,6 +1578,12 @@ PIDValue:	.type	object
 StartFlag:	.type	object
 	.size	StartFlag,1
 	.space	1
+	.sdecl	'.bss.cpu0_dsram',data,cluster('IntoRoundaboutCount')
+	.sect	'.bss.cpu0_dsram'
+	.global	IntoRoundaboutCount
+IntoRoundaboutCount:	.type	object
+	.size	IntoRoundaboutCount,1
+	.space	1
 	.sdecl	'.bss.cpu0_dsram',data,cluster('RoundaboutCount')
 	.sect	'.bss.cpu0_dsram'
 	.global	RoundaboutCount
@@ -1602,12 +1645,10 @@ _999004_CleanDistanceFlag:	.type	object
 	.calls	'FindLine','MotorUserHandle'
 	.calls	'InRoundaboutProcess','CleanDistance'
 	.calls	'InRoundaboutProcess','GetDistance'
-	.calls	'InRoundaboutProcess','FindLine'
 	.calls	'InRoundaboutProcess','FindLineAdjPWM'
+	.calls	'InRoundaboutProcess','FindLine'
 	.calls	'OutRoundaboutProcess','CleanDistance'
-	.calls	'OutRoundaboutProcess','GetDistance'
 	.calls	'OutRoundaboutProcess','FindLine'
-	.calls	'OutRoundaboutProcess','FindLineAdjPWM'
 	.calls	'TurnLeftGoGarage','CleanDistance'
 	.calls	'TurnLeftGoGarage','GyroYawAngleInit'
 	.calls	'TurnLeftGoGarage','GyroPID'
@@ -1651,17 +1692,17 @@ _999004_CleanDistanceFlag:	.type	object
 	.calls	'FindLineAdjPWM','',8
 	.sdecl	'.debug_info',debug
 	.sect	'.debug_info'
-.L102:
-	.word	252543
+.L103:
+	.word	252573
 	.half	3
-	.word	.L103
+	.word	.L104
 	.byte	4
-.L101:
+.L102:
 	.byte	1
 	.byte	'..\\CODE\\Src\\User_FSM.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'C:\\Users\\gudam\\Desktop\\SmartCar2020\\TC264CAR\\Debug\\',0,12,1
-	.word	.L104
+	.word	.L105
 	.byte	2,1,1,3
 	.word	136
 	.byte	4
@@ -1670,7 +1711,7 @@ _999004_CleanDistanceFlag:	.type	object
 	.word	139
 	.byte	6,0,7
 	.byte	'__fract',0,4,128,1
-.L219:
+.L222:
 	.byte	7
 	.byte	'float',0,4,4,8
 	.byte	'Ifx__float_to_fract',0,3,1,152,2,18
@@ -1712,7 +1753,7 @@ _999004_CleanDistanceFlag:	.type	object
 	.byte	'value',0,2,143,1,43
 	.word	376
 	.byte	6,0
-.L203:
+.L206:
 	.byte	7
 	.byte	'int',0,4,5,7
 	.byte	'unsigned int',0,4,7,11
@@ -1738,7 +1779,7 @@ _999004_CleanDistanceFlag:	.type	object
 	.byte	'B',0
 	.word	511
 	.byte	4,2,35,0,0
-.L192:
+.L195:
 	.byte	7
 	.byte	'unsigned char',0,1,8,7
 	.byte	'unsigned short int',0,2,7,11
@@ -8142,7 +8183,7 @@ _999004_CleanDistanceFlag:	.type	object
 	.byte	'num',0,27,17,28
 	.word	647
 	.byte	0,37,1
-.L210:
+.L213:
 	.byte	3
 	.word	41031
 	.byte	11
@@ -8159,10 +8200,10 @@ _999004_CleanDistanceFlag:	.type	object
 	.byte	'NextState',0
 	.word	488
 	.byte	4,2,35,12,0
-.L199:
+.L202:
 	.byte	3
 	.word	41038
-.L224:
+.L227:
 	.byte	11
 	.byte	'FSM',0,28,49,16,12,14
 	.byte	'CurState',0
@@ -8174,7 +8215,7 @@ _999004_CleanDistanceFlag:	.type	object
 	.byte	'Size',0
 	.word	488
 	.byte	4,2,35,8,0
-.L197:
+.L200:
 	.byte	3
 	.word	41131
 	.byte	38
@@ -36068,22 +36109,40 @@ _999004_CleanDistanceFlag:	.type	object
 	.byte	1,1,39
 	.byte	'FSMTable_t',0,28,45,2
 	.word	41038
-.L223:
+.L226:
 	.byte	15,240,2
 	.word	41038
 	.byte	16,22,0,39
 	.byte	'FSM_t',0,28,53,2
 	.word	41131
-.L225:
+.L228:
 	.byte	10
 	.word	196
-.L226:
+.L229:
 	.byte	10
 	.word	196
+.L230:
+	.byte	10
+	.word	647
+.L231:
+	.byte	10
+	.word	647
+.L232:
+	.byte	10
+	.word	647
+.L233:
+	.byte	10
+	.word	647
+.L234:
+	.byte	10
+	.word	647
+.L235:
+	.byte	10
+	.word	647
 	.byte	0
 	.sdecl	'.debug_abbrev',debug
 	.sect	'.debug_abbrev'
-.L103:
+.L104:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,16,6,0,0,2,21,0,54,15,39,12,0,0,3,15,0,73,19,0,0,4,46,1,3,8,32,13
 	.byte	58,15,59,15,57,15,54,15,39,12,0,0,5,5,0,3,8,58,15,59,15,57,15,73,19,0,0,6,11,0,0,0,7,36,0,3,8,11,15,62
 	.byte	15,0,0,8,46,1,3,8,32,13,58,15,59,15,57,15,73,19,54,15,39,12,0,0,9,59,0,3,8,0,0,10,53,0,73,19,0,0,11,19
@@ -36100,12 +36159,12 @@ _999004_CleanDistanceFlag:	.type	object
 	.byte	15,73,19,63,12,60,12,0,0,0
 	.sdecl	'.debug_line',debug
 	.sect	'.debug_line'
-.L104:
-	.word	.L255-.L254
-.L254:
+.L105:
+	.word	.L264-.L263
+.L263:
 	.half	3
-	.word	.L257-.L256
-.L256:
+	.word	.L266-.L265
+.L265:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
 	.byte	'C:\\Users\\gudam\\Desktop\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Std',0
 	.byte	'C:\\Users\\gudam\\Desktop\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Scu\\Std',0
@@ -36181,734 +36240,609 @@ _999004_CleanDistanceFlag:	.type	object
 	.byte	'IfxDma_regdef.h',0,3,0,0
 	.byte	'IfxDma.h',0,17,0,0
 	.byte	'C:\\Users\\gudam\\Desktop\\SmartCar2020\\TC264CAR\\CODE\\Inc\\User_Image_Process.h',0,0,0,0,0
-.L257:
-.L255:
+.L266:
+.L264:
 	.sdecl	'.debug_info',debug,cluster('RunStop')
 	.sect	'.debug_info'
-.L105:
+.L106:
 	.word	179
 	.half	3
-	.word	.L106
+	.word	.L107
 	.byte	4,1
 	.byte	'..\\CODE\\Src\\User_FSM.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'C:\\Users\\gudam\\Desktop\\SmartCar2020\\TC264CAR\\Debug\\',0,12,1
-	.word	.L108,.L107
+	.word	.L109,.L108
 	.byte	2
-	.word	.L101
+	.word	.L102
 	.byte	3
-	.byte	'RunStop',0,1,59,6,1,1,1
-	.word	.L78,.L189,.L77
+	.byte	'RunStop',0,1,60,6,1,1,1
+	.word	.L79,.L192,.L78
 	.byte	4
-	.word	.L78,.L189
+	.word	.L79,.L192
 	.byte	0,0
 	.sdecl	'.debug_abbrev',debug,cluster('RunStop')
 	.sect	'.debug_abbrev'
-.L106:
+.L107:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
 	.sdecl	'.debug_line',debug,cluster('RunStop')
 	.sect	'.debug_line'
-.L107:
-	.word	.L259-.L258
-.L258:
+.L108:
+	.word	.L268-.L267
+.L267:
 	.half	3
-	.word	.L261-.L260
-.L260:
+	.word	.L270-.L269
+.L269:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\CODE\\Src\\User_FSM.c',0,0,0,0,0
-.L261:
+.L270:
 	.byte	5,18,7,0,5,2
-	.word	.L78
-	.byte	3,60,1,5,28,9
-	.half	.L262-.L78
+	.word	.L79
+	.byte	3,61,1,5,28,9
+	.half	.L271-.L79
 	.byte	1,5,18,9
-	.half	.L263-.L262
+	.half	.L272-.L271
 	.byte	3,1,1,5,28,9
-	.half	.L264-.L263
+	.half	.L273-.L272
 	.byte	1,5,1,9
-	.half	.L109-.L264
+	.half	.L110-.L273
 	.byte	3,1,0,1,1
-.L259:
+.L268:
 	.sdecl	'.debug_ranges',debug,cluster('RunStop')
 	.sect	'.debug_ranges'
-.L108:
-	.word	-1,.L78,0,.L109-.L78,0,0
+.L109:
+	.word	-1,.L79,0,.L110-.L79,0,0
 	.sdecl	'.debug_info',debug,cluster('FindLine')
 	.sect	'.debug_info'
-.L110:
+.L111:
 	.word	180
 	.half	3
-	.word	.L111
+	.word	.L112
 	.byte	4,1
 	.byte	'..\\CODE\\Src\\User_FSM.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'C:\\Users\\gudam\\Desktop\\SmartCar2020\\TC264CAR\\Debug\\',0,12,1
-	.word	.L113,.L112
+	.word	.L114,.L113
 	.byte	2
-	.word	.L101
+	.word	.L102
 	.byte	3
-	.byte	'FindLine',0,1,65,6,1,1,1
-	.word	.L80,.L190,.L79
+	.byte	'FindLine',0,1,66,6,1,1,1
+	.word	.L81,.L193,.L80
 	.byte	4
-	.word	.L80,.L190
+	.word	.L81,.L193
 	.byte	0,0
 	.sdecl	'.debug_abbrev',debug,cluster('FindLine')
 	.sect	'.debug_abbrev'
-.L111:
+.L112:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
 	.sdecl	'.debug_line',debug,cluster('FindLine')
 	.sect	'.debug_line'
-.L112:
-	.word	.L266-.L265
-.L265:
+.L113:
+	.word	.L275-.L274
+.L274:
 	.half	3
-	.word	.L268-.L267
-.L267:
+	.word	.L277-.L276
+.L276:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\CODE\\Src\\User_FSM.c',0,0,0,0,0
-.L268:
+.L277:
 	.byte	5,6,7,0,5,2
-	.word	.L80
-	.byte	3,192,0,1,9
-	.half	.L227-.L80
+	.word	.L81
+	.byte	3,193,0,1,9
+	.half	.L236-.L81
 	.byte	3,2,1,5,3,9
-	.half	.L269-.L227
+	.half	.L278-.L236
 	.byte	3,1,1,5,19,9
-	.half	.L270-.L269
-	.byte	1,5,3,9
-	.half	.L271-.L270
-	.byte	3,1,1,5,19,9
-	.half	.L272-.L271
-	.byte	1,5,25,9
-	.half	.L273-.L272
-	.byte	3,1,1,5,2,9
-	.half	.L2-.L273
-	.byte	3,2,1,5,89,9
-	.half	.L274-.L2
-	.byte	1,5,25,9
-	.half	.L275-.L274
-	.byte	1,5,44,9
-	.half	.L276-.L275
-	.byte	1,5,59,9
-	.half	.L277-.L276
-	.byte	1,5,58,9
-	.half	.L278-.L277
-	.byte	1,5,65,9
 	.half	.L279-.L278
-	.byte	1,5,77,9
+	.byte	1,5,3,9
 	.half	.L280-.L279
-	.byte	1,5,11,9
+	.byte	3,1,1,5,19,9
 	.half	.L281-.L280
-	.byte	1,5,2,9
+	.byte	1,5,25,9
 	.half	.L282-.L281
-	.byte	3,2,1,5,27,9
-	.half	.L283-.L282
-	.byte	1,5,47,9
+	.byte	3,1,1,5,2,9
+	.half	.L2-.L282
+	.byte	3,2,1,5,89,9
+	.half	.L283-.L2
+	.byte	1,5,25,9
 	.half	.L284-.L283
-	.byte	1,5,45,9
+	.byte	1,5,44,9
 	.half	.L285-.L284
-	.byte	1,5,7,9
+	.byte	1,5,59,9
 	.half	.L286-.L285
-	.byte	1,5,2,9
+	.byte	1,5,58,9
 	.half	.L287-.L286
-	.byte	3,1,1,5,28,9
+	.byte	1,5,65,9
 	.half	.L288-.L287
-	.byte	1,5,49,9
+	.byte	1,5,77,9
 	.half	.L289-.L288
-	.byte	1,5,7,9
+	.byte	1,5,11,9
 	.half	.L290-.L289
-	.byte	1,5,8,9
+	.byte	1,5,2,9
 	.half	.L291-.L290
-	.byte	3,2,1,5,16,9
+	.byte	3,2,1,5,27,9
 	.half	.L292-.L291
-	.byte	1,5,13,9
+	.byte	1,5,47,9
 	.half	.L293-.L292
-	.byte	1,5,5,9
+	.byte	1,5,45,9
 	.half	.L294-.L293
-	.byte	1,5,13,7,9
+	.byte	1,5,7,9
 	.half	.L295-.L294
-	.byte	3,2,1,5,21,9
+	.byte	1,5,2,9
 	.half	.L296-.L295
-	.byte	1,5,18,9
+	.byte	3,1,1,5,28,9
 	.half	.L297-.L296
-	.byte	1,5,10,9
+	.byte	1,5,49,9
 	.half	.L298-.L297
+	.byte	1,5,7,9
+	.half	.L299-.L298
+	.byte	1,5,8,9
+	.half	.L300-.L299
+	.byte	3,2,1,5,16,9
+	.half	.L301-.L300
+	.byte	1,5,13,9
+	.half	.L302-.L301
+	.byte	1,5,5,9
+	.half	.L303-.L302
+	.byte	1,5,13,7,9
+	.half	.L304-.L303
+	.byte	3,2,1,5,21,9
+	.half	.L305-.L304
+	.byte	1,5,18,9
+	.half	.L306-.L305
+	.byte	1,5,10,9
+	.half	.L307-.L306
 	.byte	1,5,14,7,9
-	.half	.L4-.L298
+	.half	.L4-.L307
 	.byte	3,1,1,5,8,9
 	.half	.L5-.L4
 	.byte	3,1,1,5,16,9
-	.half	.L299-.L5
+	.half	.L308-.L5
 	.byte	1,5,13,9
-	.half	.L300-.L299
+	.half	.L309-.L308
 	.byte	1,5,5,9
-	.half	.L301-.L300
+	.half	.L310-.L309
 	.byte	1,5,13,7,9
-	.half	.L302-.L301
+	.half	.L311-.L310
 	.byte	3,2,1,5,21,9
-	.half	.L303-.L302
+	.half	.L312-.L311
 	.byte	1,5,18,9
-	.half	.L304-.L303
+	.half	.L313-.L312
 	.byte	1,5,10,9
-	.half	.L305-.L304
+	.half	.L314-.L313
 	.byte	1,5,14,7,9
-	.half	.L7-.L305
+	.half	.L7-.L314
 	.byte	3,1,1,5,31,9
 	.half	.L8-.L7
 	.byte	3,1,1,5,21,9
-	.half	.L306-.L8
+	.half	.L315-.L8
 	.byte	1,5,31,9
-	.half	.L307-.L306
+	.half	.L316-.L315
 	.byte	1,9
-	.half	.L308-.L307
+	.half	.L317-.L316
 	.byte	3,1,1,5,21,9
-	.half	.L309-.L308
+	.half	.L318-.L317
 	.byte	1,5,31,9
-	.half	.L310-.L309
+	.half	.L319-.L318
 	.byte	1,5,1,7,9
-	.half	.L114-.L310
+	.half	.L115-.L319
 	.byte	3,1,0,1,1
-.L266:
+.L275:
 	.sdecl	'.debug_ranges',debug,cluster('FindLine')
 	.sect	'.debug_ranges'
-.L113:
-	.word	-1,.L80,0,.L114-.L80,0,0
+.L114:
+	.word	-1,.L81,0,.L115-.L81,0,0
 	.sdecl	'.debug_info',debug,cluster('InRoundaboutProcess')
 	.sect	'.debug_info'
-.L115:
+.L116:
 	.word	226
 	.half	3
-	.word	.L116
+	.word	.L117
 	.byte	4,1
 	.byte	'..\\CODE\\Src\\User_FSM.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'C:\\Users\\gudam\\Desktop\\SmartCar2020\\TC264CAR\\Debug\\',0,12,1
-	.word	.L118,.L117
+	.word	.L119,.L118
 	.byte	2
-	.word	.L101
+	.word	.L102
 	.byte	3
-	.byte	'InRoundaboutProcess',0,1,89,6,1,1,1
-	.word	.L82,.L191,.L81
+	.byte	'InRoundaboutProcess',0,1,90,6,1,1,1
+	.word	.L83,.L194,.L82
 	.byte	4
-	.word	.L82,.L191
+	.word	.L83,.L194
 	.byte	5
-	.byte	'InCleanDistanceFlag',0,1,91,15
-	.word	.L192
+	.byte	'InCleanDistanceFlag',0,1,92,15
+	.word	.L195
 	.byte	5,3
 	.word	_999001_InCleanDistanceFlag
 	.byte	0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('InRoundaboutProcess')
 	.sect	'.debug_abbrev'
-.L116:
+.L117:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,1,17,1,18,1,0,0,5,52,0,3,8,58,15,59,15,57,15,73,16,2,9,0,0,0
 	.sdecl	'.debug_line',debug,cluster('InRoundaboutProcess')
 	.sect	'.debug_line'
-.L117:
-	.word	.L312-.L311
-.L311:
+.L118:
+	.word	.L321-.L320
+.L320:
 	.half	3
-	.word	.L314-.L313
-.L313:
+	.word	.L323-.L322
+.L322:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\CODE\\Src\\User_FSM.c',0,0,0,0,0
-.L314:
+.L323:
 	.byte	5,6,7,0,5,2
-	.word	.L82
-	.byte	3,220,0,1,5,16,9
-	.half	.L315-.L82
+	.word	.L83
+	.byte	3,221,0,1,5,16,9
+	.half	.L324-.L83
 	.byte	3,2,1,5,3,9
-	.half	.L316-.L315
-	.byte	3,1,1,5,25,9
-	.half	.L317-.L316
-	.byte	1,5,23,9
-	.half	.L318-.L317
-	.byte	1,5,5,9
-	.half	.L9-.L318
-	.byte	3,3,1,5,2,9
-	.half	.L319-.L9
-	.byte	1,5,10,7,9
-	.half	.L320-.L319
-	.byte	3,12,1,5,7,9
-	.half	.L321-.L320
-	.byte	1,5,17,7,9
-	.half	.L10-.L321
-	.byte	3,2,1,5,22,9
-	.half	.L322-.L10
-	.byte	1,5,3,9
-	.half	.L323-.L322
-	.byte	1,5,12,9
-	.half	.L324-.L323
-	.byte	3,6,1,5,4,9
 	.half	.L325-.L324
-	.byte	3,1,1,5,28,9
+	.byte	3,1,1,5,25,9
 	.half	.L326-.L325
-	.byte	1,5,26,9
+	.byte	1,5,23,9
 	.half	.L327-.L326
-	.byte	1,5,1,9
-	.half	.L11-.L327
-	.byte	3,3,1,5,19,7,9
-	.half	.L12-.L11
-	.byte	3,120,1,5,22,9
-	.half	.L328-.L12
-	.byte	1,5,25,9
+	.byte	1,5,5,9
+	.half	.L9-.L327
+	.byte	3,3,1,5,2,9
+	.half	.L328-.L9
+	.byte	1,5,17,7,9
 	.half	.L329-.L328
+	.byte	3,7,1,5,22,9
+	.half	.L330-.L329
+	.byte	1,5,20,9
+	.half	.L331-.L330
+	.byte	1,5,3,9
+	.half	.L332-.L331
+	.byte	1,5,19,7,9
+	.half	.L333-.L332
+	.byte	3,3,1,5,22,9
+	.half	.L334-.L333
+	.byte	1,5,26,9
+	.half	.L335-.L334
+	.byte	1,5,29,9
+	.half	.L336-.L335
+	.byte	1,5,10,9
+	.half	.L10-.L336
+	.byte	3,9,1,5,7,9
+	.half	.L337-.L10
+	.byte	1,5,17,7,9
+	.half	.L338-.L337
+	.byte	3,2,1,5,22,9
+	.half	.L339-.L338
+	.byte	1,5,20,9
+	.half	.L340-.L339
+	.byte	1,5,3,9
+	.half	.L341-.L340
+	.byte	1,5,19,7,9
+	.half	.L342-.L341
+	.byte	3,2,1,5,22,9
+	.half	.L343-.L342
+	.byte	1,5,25,9
+	.half	.L344-.L343
+	.byte	1,5,12,9
+	.half	.L11-.L344
+	.byte	3,4,1,5,4,9
+	.half	.L345-.L11
+	.byte	3,1,1,5,28,9
+	.half	.L346-.L345
+	.byte	1,5,26,9
+	.half	.L347-.L346
 	.byte	1,5,1,9
-	.half	.L119-.L329
-	.byte	3,8,0,1,1
-.L312:
+	.half	.L13-.L347
+	.byte	3,3,1,7,9
+	.half	.L120-.L13
+	.byte	0,1,1
+.L321:
 	.sdecl	'.debug_ranges',debug,cluster('InRoundaboutProcess')
 	.sect	'.debug_ranges'
-.L118:
-	.word	-1,.L82,0,.L119-.L82,0,0
+.L119:
+	.word	-1,.L83,0,.L120-.L83,0,0
 	.sdecl	'.debug_info',debug,cluster('OutRoundaboutProcess')
 	.sect	'.debug_info'
-.L120:
-	.word	228
+.L121:
+	.word	230
 	.half	3
-	.word	.L121
+	.word	.L122
 	.byte	4,1
 	.byte	'..\\CODE\\Src\\User_FSM.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'C:\\Users\\gudam\\Desktop\\SmartCar2020\\TC264CAR\\Debug\\',0,12,1
-	.word	.L123,.L122
+	.word	.L124,.L123
 	.byte	2
-	.word	.L101
+	.word	.L102
 	.byte	3
-	.byte	'OutRoundaboutProcess',0,1,125,6,1,1,1
-	.word	.L84,.L193,.L83
+	.byte	'OutRoundaboutProcess',0,1,133,1,6,1,1,1
+	.word	.L85,.L196,.L84
 	.byte	4
-	.word	.L84,.L193
+	.word	.L85,.L196
 	.byte	5
-	.byte	'OutCleanDistanceFlag',0,1,127,15
-	.word	.L192
+	.byte	'OutCleanDistanceFlag',0,1,135,1,15
+	.word	.L195
 	.byte	5,3
 	.word	_999002_OutCleanDistanceFlag
 	.byte	0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('OutRoundaboutProcess')
 	.sect	'.debug_abbrev'
-.L121:
+.L122:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,1,17,1,18,1,0,0,5,52,0,3,8,58,15,59,15,57,15,73,16,2,9,0,0,0
 	.sdecl	'.debug_line',debug,cluster('OutRoundaboutProcess')
 	.sect	'.debug_line'
-.L122:
-	.word	.L331-.L330
-.L330:
+.L123:
+	.word	.L349-.L348
+.L348:
 	.half	3
-	.word	.L333-.L332
-.L332:
+	.word	.L351-.L350
+.L350:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\CODE\\Src\\User_FSM.c',0,0,0,0,0
-.L333:
+.L351:
 	.byte	5,6,7,0,5,2
-	.word	.L84
-	.byte	3,128,1,1,5,16,9
-	.half	.L334-.L84
+	.word	.L85
+	.byte	3,136,1,1,5,16,9
+	.half	.L352-.L85
 	.byte	3,2,1,5,3,9
-	.half	.L335-.L334
+	.half	.L353-.L352
 	.byte	3,1,1,5,26,9
-	.half	.L336-.L335
+	.half	.L354-.L353
 	.byte	1,5,24,9
-	.half	.L337-.L336
+	.half	.L355-.L354
 	.byte	1,5,5,9
-	.half	.L14-.L337
+	.half	.L16-.L355
 	.byte	3,3,1,5,2,9
-	.half	.L338-.L14
+	.half	.L356-.L16
 	.byte	1,5,10,7,9
-	.half	.L339-.L338
-	.byte	3,12,1,5,7,9
-	.half	.L340-.L339
-	.byte	1,5,17,7,9
-	.half	.L15-.L340
-	.byte	3,2,1,5,22,9
-	.half	.L341-.L15
-	.byte	1,5,3,9
-	.half	.L342-.L341
-	.byte	1,5,4,9
-	.half	.L343-.L342
-	.byte	3,6,1,5,28,9
-	.half	.L344-.L343
-	.byte	1,5,26,9
-	.half	.L345-.L344
-	.byte	1,5,12,9
-	.half	.L346-.L345
-	.byte	3,1,1,5,1,7,9
-	.half	.L16-.L346
-	.byte	3,3,1,5,19,7,9
-	.half	.L17-.L16
-	.byte	3,120,1,5,22,9
-	.half	.L347-.L17
-	.byte	1,5,25,9
-	.half	.L348-.L347
-	.byte	1,5,1,9
-	.half	.L124-.L348
-	.byte	3,8,0,1,1
-.L331:
+	.half	.L357-.L356
+	.byte	3,13,1,5,7,9
+	.half	.L358-.L357
+	.byte	1,5,11,7,9
+	.half	.L17-.L358
+	.byte	3,11,1,5,1,7,9
+	.half	.L18-.L17
+	.byte	3,2,1,7,9
+	.half	.L125-.L18
+	.byte	0,1,1
+.L349:
 	.sdecl	'.debug_ranges',debug,cluster('OutRoundaboutProcess')
 	.sect	'.debug_ranges'
-.L123:
-	.word	-1,.L84,0,.L124-.L84,0,0
+.L124:
+	.word	-1,.L85,0,.L125-.L85,0,0
 	.sdecl	'.debug_info',debug,cluster('TurnLeftGoGarage')
 	.sect	'.debug_info'
-.L125:
+.L126:
 	.word	223
 	.half	3
-	.word	.L126
+	.word	.L127
 	.byte	4,1
 	.byte	'..\\CODE\\Src\\User_FSM.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'C:\\Users\\gudam\\Desktop\\SmartCar2020\\TC264CAR\\Debug\\',0,12,1
-	.word	.L128,.L127
+	.word	.L129,.L128
 	.byte	2
-	.word	.L101
+	.word	.L102
 	.byte	3
-	.byte	'TurnLeftGoGarage',0,1,161,1,6,1,1,1
-	.word	.L86,.L194,.L85
+	.byte	'TurnLeftGoGarage',0,1,171,1,6,1,1,1
+	.word	.L87,.L197,.L86
 	.byte	4
-	.word	.L86,.L194
+	.word	.L87,.L197
 	.byte	5
-	.byte	'CleanDistanceFlag',0,1,163,1,15
-	.word	.L192
+	.byte	'CleanDistanceFlag',0,1,173,1,15
+	.word	.L195
 	.byte	5,3
 	.word	_999003_CleanDistanceFlag
 	.byte	0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('TurnLeftGoGarage')
 	.sect	'.debug_abbrev'
-.L126:
+.L127:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,1,17,1,18,1,0,0,5,52,0,3,8,58,15,59,15,57,15,73,16,2,9,0,0,0
 	.sdecl	'.debug_line',debug,cluster('TurnLeftGoGarage')
 	.sect	'.debug_line'
-.L127:
-	.word	.L350-.L349
-.L349:
+.L128:
+	.word	.L360-.L359
+.L359:
 	.half	3
-	.word	.L352-.L351
-.L351:
+	.word	.L362-.L361
+.L361:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\CODE\\Src\\User_FSM.c',0,0,0,0,0
-.L352:
+.L362:
 	.byte	5,6,7,0,5,2
-	.word	.L86
-	.byte	3,164,1,1,5,16,9
-	.half	.L353-.L86
+	.word	.L87
+	.byte	3,174,1,1,5,16,9
+	.half	.L363-.L87
 	.byte	3,2,1,5,3,9
-	.half	.L354-.L353
-	.byte	3,1,1,5,23,9
-	.half	.L355-.L354
-	.byte	1,5,21,9
-	.half	.L356-.L355
-	.byte	1,5,19,9
-	.half	.L19-.L356
-	.byte	3,2,1,5,10,9
-	.half	.L357-.L19
-	.byte	3,1,1,5,18,9
-	.half	.L358-.L357
-	.byte	1,5,26,9
-	.half	.L359-.L358
-	.byte	1,5,5,9
-	.half	.L360-.L359
-	.byte	3,1,1,5,22,9
-	.half	.L361-.L360
-	.byte	1,5,19,9
-	.half	.L362-.L361
-	.byte	1,5,2,9
-	.half	.L363-.L362
-	.byte	1,5,22,7,9
 	.half	.L364-.L363
-	.byte	3,2,1,5,32,9
+	.byte	3,1,1,5,23,9
 	.half	.L365-.L364
-	.byte	1,5,22,9
+	.byte	1,5,21,9
 	.half	.L366-.L365
-	.byte	3,1,1,5,32,9
-	.half	.L367-.L366
-	.byte	1,5,5,9
-	.half	.L20-.L367
-	.byte	3,2,1,5,22,9
-	.half	.L368-.L20
 	.byte	1,5,19,9
+	.half	.L19-.L366
+	.byte	3,2,1,5,10,9
+	.half	.L367-.L19
+	.byte	3,1,1,5,18,9
+	.half	.L368-.L367
+	.byte	1,5,26,9
 	.half	.L369-.L368
-	.byte	1,5,2,9
+	.byte	1,5,5,9
 	.half	.L370-.L369
-	.byte	1,5,10,7,9
+	.byte	3,1,1,5,22,9
 	.half	.L371-.L370
-	.byte	3,2,1,5,3,9
+	.byte	1,5,19,9
 	.half	.L372-.L371
-	.byte	3,1,1,5,24,9
+	.byte	1,5,2,9
 	.half	.L373-.L372
-	.byte	1,5,22,9
+	.byte	1,5,22,7,9
 	.half	.L374-.L373
+	.byte	3,2,1,5,32,9
+	.half	.L375-.L374
+	.byte	1,5,22,9
+	.half	.L376-.L375
+	.byte	3,1,1,5,32,9
+	.half	.L377-.L376
+	.byte	1,5,5,9
+	.half	.L20-.L377
+	.byte	3,2,1,5,22,9
+	.half	.L378-.L20
+	.byte	1,5,19,9
+	.half	.L379-.L378
+	.byte	1,5,2,9
+	.half	.L380-.L379
+	.byte	1,5,10,7,9
+	.half	.L381-.L380
+	.byte	3,2,1,5,3,9
+	.half	.L382-.L381
+	.byte	3,1,1,5,24,9
+	.half	.L383-.L382
+	.byte	1,5,22,9
+	.half	.L384-.L383
 	.byte	1,5,1,9
-	.half	.L21-.L374
+	.half	.L21-.L384
 	.byte	3,2,1,7,9
-	.half	.L129-.L21
+	.half	.L130-.L21
 	.byte	0,1,1
-.L350:
+.L360:
 	.sdecl	'.debug_ranges',debug,cluster('TurnLeftGoGarage')
 	.sect	'.debug_ranges'
-.L128:
-	.word	-1,.L86,0,.L129-.L86,0,0
+.L129:
+	.word	-1,.L87,0,.L130-.L87,0,0
 	.sdecl	'.debug_info',debug,cluster('TurnRightGoGarage')
 	.sect	'.debug_info'
-.L130:
+.L131:
 	.word	224
 	.half	3
-	.word	.L131
+	.word	.L132
 	.byte	4,1
 	.byte	'..\\CODE\\Src\\User_FSM.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'C:\\Users\\gudam\\Desktop\\SmartCar2020\\TC264CAR\\Debug\\',0,12,1
-	.word	.L133,.L132
+	.word	.L134,.L133
 	.byte	2
-	.word	.L101
+	.word	.L102
 	.byte	3
-	.byte	'TurnRightGoGarage',0,1,184,1,6,1,1,1
-	.word	.L88,.L195,.L87
+	.byte	'TurnRightGoGarage',0,1,194,1,6,1,1,1
+	.word	.L89,.L198,.L88
 	.byte	4
-	.word	.L88,.L195
+	.word	.L89,.L198
 	.byte	5
-	.byte	'CleanDistanceFlag',0,1,186,1,15
-	.word	.L192
+	.byte	'CleanDistanceFlag',0,1,196,1,15
+	.word	.L195
 	.byte	5,3
 	.word	_999004_CleanDistanceFlag
 	.byte	0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('TurnRightGoGarage')
 	.sect	'.debug_abbrev'
-.L131:
+.L132:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,1,17,1,18,1,0,0,5,52,0,3,8,58,15,59,15,57,15,73,16,2,9,0,0,0
 	.sdecl	'.debug_line',debug,cluster('TurnRightGoGarage')
 	.sect	'.debug_line'
-.L132:
-	.word	.L376-.L375
-.L375:
+.L133:
+	.word	.L386-.L385
+.L385:
 	.half	3
-	.word	.L378-.L377
-.L377:
+	.word	.L388-.L387
+.L387:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\CODE\\Src\\User_FSM.c',0,0,0,0,0
-.L378:
+.L388:
 	.byte	5,6,7,0,5,2
-	.word	.L88
-	.byte	3,187,1,1,5,16,9
-	.half	.L379-.L88
+	.word	.L89
+	.byte	3,197,1,1,5,16,9
+	.half	.L389-.L89
 	.byte	3,2,1,5,3,9
-	.half	.L380-.L379
-	.byte	3,1,1,5,23,9
-	.half	.L381-.L380
-	.byte	1,5,21,9
-	.half	.L382-.L381
-	.byte	1,5,19,9
-	.half	.L22-.L382
-	.byte	3,2,1,5,10,9
-	.half	.L383-.L22
-	.byte	3,1,1,5,18,9
-	.half	.L384-.L383
-	.byte	1,5,26,9
-	.half	.L385-.L384
-	.byte	1,5,5,9
-	.half	.L386-.L385
-	.byte	3,1,1,5,22,9
-	.half	.L387-.L386
-	.byte	1,5,19,9
-	.half	.L388-.L387
-	.byte	1,5,2,9
-	.half	.L389-.L388
-	.byte	1,5,22,7,9
 	.half	.L390-.L389
-	.byte	3,2,1,5,32,9
+	.byte	3,1,1,5,23,9
 	.half	.L391-.L390
-	.byte	1,5,22,9
+	.byte	1,5,21,9
 	.half	.L392-.L391
-	.byte	3,1,1,5,32,9
-	.half	.L393-.L392
-	.byte	1,5,10,9
-	.half	.L23-.L393
-	.byte	3,2,1,5,27,9
-	.half	.L394-.L23
-	.byte	1,5,24,9
+	.byte	1,5,19,9
+	.half	.L22-.L392
+	.byte	3,2,1,5,10,9
+	.half	.L393-.L22
+	.byte	3,1,1,5,18,9
+	.half	.L394-.L393
+	.byte	1,5,26,9
 	.half	.L395-.L394
-	.byte	1,5,7,9
+	.byte	1,5,5,9
 	.half	.L396-.L395
-	.byte	1,5,10,7,9
+	.byte	3,1,1,5,22,9
 	.half	.L397-.L396
-	.byte	3,2,1,5,3,9
+	.byte	1,5,19,9
 	.half	.L398-.L397
-	.byte	3,1,1,5,24,9
+	.byte	1,5,2,9
 	.half	.L399-.L398
-	.byte	1,5,22,9
+	.byte	1,5,22,7,9
 	.half	.L400-.L399
+	.byte	3,2,1,5,32,9
+	.half	.L401-.L400
+	.byte	1,5,22,9
+	.half	.L402-.L401
+	.byte	3,1,1,5,32,9
+	.half	.L403-.L402
+	.byte	1,5,10,9
+	.half	.L23-.L403
+	.byte	3,2,1,5,27,9
+	.half	.L404-.L23
+	.byte	1,5,24,9
+	.half	.L405-.L404
+	.byte	1,5,7,9
+	.half	.L406-.L405
+	.byte	1,5,10,7,9
+	.half	.L407-.L406
+	.byte	3,2,1,5,3,9
+	.half	.L408-.L407
+	.byte	3,1,1,5,24,9
+	.half	.L409-.L408
+	.byte	1,5,22,9
+	.half	.L410-.L409
 	.byte	1,5,1,9
-	.half	.L25-.L400
+	.half	.L25-.L410
 	.byte	3,2,1,7,9
-	.half	.L134-.L25
+	.half	.L135-.L25
 	.byte	0,1,1
-.L376:
+.L386:
 	.sdecl	'.debug_ranges',debug,cluster('TurnRightGoGarage')
 	.sect	'.debug_ranges'
-.L133:
-	.word	-1,.L88,0,.L134-.L88,0,0
+.L134:
+	.word	-1,.L89,0,.L135-.L89,0,0
 	.sdecl	'.debug_info',debug,cluster('FSMRegist')
 	.sect	'.debug_info'
-.L135:
+.L136:
 	.word	221
 	.half	3
-	.word	.L136
+	.word	.L137
 	.byte	4,1
 	.byte	'..\\CODE\\Src\\User_FSM.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'C:\\Users\\gudam\\Desktop\\SmartCar2020\\TC264CAR\\Debug\\',0,12,1
-	.word	.L138,.L137
+	.word	.L139,.L138
 	.byte	2
-	.word	.L101
+	.word	.L102
 	.byte	3
-	.byte	'FSMRegist',0,1,213,1,6,1,1,1
-	.word	.L90,.L196,.L89
+	.byte	'FSMRegist',0,1,223,1,6,1,1,1
+	.word	.L91,.L199,.L90
 	.byte	4
-	.byte	'fsm',0,1,213,1,23
-	.word	.L197,.L198
+	.byte	'fsm',0,1,223,1,23
+	.word	.L200,.L201
 	.byte	4
-	.byte	'fsmtable',0,1,213,1,40
-	.word	.L199,.L200
+	.byte	'fsmtable',0,1,223,1,40
+	.word	.L202,.L203
 	.byte	5
-	.word	.L90,.L196
+	.word	.L91,.L199
 	.byte	0,0
 	.sdecl	'.debug_abbrev',debug,cluster('FSMRegist')
 	.sect	'.debug_abbrev'
-.L136:
+.L137:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
 	.sdecl	'.debug_line',debug,cluster('FSMRegist')
 	.sect	'.debug_line'
-.L137:
-	.word	.L402-.L401
-.L401:
-	.half	3
-	.word	.L404-.L403
-.L403:
-	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
-	.byte	'..\\CODE\\Src\\User_FSM.c',0,0,0,0,0
-.L404:
-	.byte	5,19,7,0,5,2
-	.word	.L90
-	.byte	3,214,1,1,5,1,9
-	.half	.L405-.L90
-	.byte	3,1,1,7,9
-	.half	.L139-.L405
-	.byte	0,1,1
-.L402:
-	.sdecl	'.debug_ranges',debug,cluster('FSMRegist')
-	.sect	'.debug_ranges'
 .L138:
-	.word	-1,.L90,0,.L139-.L90,0,0
-	.sdecl	'.debug_info',debug,cluster('FSMStateTransfer')
-	.sect	'.debug_info'
-.L140:
-	.word	225
-	.half	3
-	.word	.L141
-	.byte	4,1
-	.byte	'..\\CODE\\Src\\User_FSM.c',0
-	.byte	'TASKING VX-toolset for TriCore: C compiler',0
-	.byte	'C:\\Users\\gudam\\Desktop\\SmartCar2020\\TC264CAR\\Debug\\',0,12,1
-	.word	.L143,.L142
-	.byte	2
-	.word	.L101
-	.byte	3
-	.byte	'FSMStateTransfer',0,1,219,1,6,1,1,1
-	.word	.L92,.L201,.L91
-	.byte	4
-	.byte	'fsm',0,1,219,1,30
-	.word	.L197,.L202
-	.byte	4
-	.byte	'state',0,1,219,1,39
-	.word	.L203,.L204
-	.byte	5
-	.word	.L92,.L201
-	.byte	0,0
-	.sdecl	'.debug_abbrev',debug,cluster('FSMStateTransfer')
-	.sect	'.debug_abbrev'
-.L141:
-	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
-	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
-	.sdecl	'.debug_line',debug,cluster('FSMStateTransfer')
-	.sect	'.debug_line'
-.L142:
-	.word	.L407-.L406
-.L406:
-	.half	3
-	.word	.L409-.L408
-.L408:
-	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
-	.byte	'..\\CODE\\Src\\User_FSM.c',0,0,0,0,0
-.L409:
-	.byte	5,19,7,0,5,2
-	.word	.L92
-	.byte	3,220,1,1,5,1,9
-	.half	.L410-.L92
-	.byte	3,1,1,7,9
-	.half	.L144-.L410
-	.byte	0,1,1
-.L407:
-	.sdecl	'.debug_ranges',debug,cluster('FSMStateTransfer')
-	.sect	'.debug_ranges'
-.L143:
-	.word	-1,.L92,0,.L144-.L92,0,0
-	.sdecl	'.debug_info',debug,cluster('FSMEventHandle')
-	.sect	'.debug_info'
-.L145:
-	.word	349
-	.half	3
-	.word	.L146
-	.byte	4,1
-	.byte	'..\\CODE\\Src\\User_FSM.c',0
-	.byte	'TASKING VX-toolset for TriCore: C compiler',0
-	.byte	'C:\\Users\\gudam\\Desktop\\SmartCar2020\\TC264CAR\\Debug\\',0,12,1
-	.word	.L148,.L147
-	.byte	2
-	.word	.L101
-	.byte	3
-	.byte	'FSMEventHandle',0,1,225,1,6,1,1,1
-	.word	.L94,.L205,.L93
-	.byte	4
-	.byte	'fsm',0,1,225,1,28
-	.word	.L197,.L206
-	.byte	4
-	.byte	'event',0,1,225,1,37
-	.word	.L203,.L207
-	.byte	5
-	.word	.L94,.L205
-	.byte	6
-	.byte	'fsmTable',0,1,227,1,14
-	.word	.L199,.L208
-	.byte	6
-	.byte	'curState',0,1,228,1,9
-	.word	.L203,.L209
-	.byte	6
-	.byte	'eventAction',0,1,229,1,12
-	.word	.L210,.L211
-	.byte	6
-	.byte	'nextState',0,1,230,1,9
-	.word	.L203,.L212
-	.byte	6
-	.byte	'size',0,1,231,1,9
-	.word	.L203,.L213
-	.byte	6
-	.byte	'i',0,1,233,1,9
-	.word	.L203,.L214
-	.byte	0,0,0
-	.sdecl	'.debug_abbrev',debug,cluster('FSMEventHandle')
-	.sect	'.debug_abbrev'
-.L146:
-	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
-	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3
-	.byte	8,58,15,59,15,57,15,73,16,2,6,0,0,0
-	.sdecl	'.debug_line',debug,cluster('FSMEventHandle')
-	.sect	'.debug_line'
-.L147:
 	.word	.L412-.L411
 .L411:
 	.half	3
@@ -36917,1006 +36851,1165 @@ _999004_CleanDistanceFlag:	.type	object
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\CODE\\Src\\User_FSM.c',0,0,0,0,0
 .L414:
+	.byte	5,19,7,0,5,2
+	.word	.L91
+	.byte	3,224,1,1,5,1,9
+	.half	.L415-.L91
+	.byte	3,1,1,7,9
+	.half	.L140-.L415
+	.byte	0,1,1
+.L412:
+	.sdecl	'.debug_ranges',debug,cluster('FSMRegist')
+	.sect	'.debug_ranges'
+.L139:
+	.word	-1,.L91,0,.L140-.L91,0,0
+	.sdecl	'.debug_info',debug,cluster('FSMStateTransfer')
+	.sect	'.debug_info'
+.L141:
+	.word	225
+	.half	3
+	.word	.L142
+	.byte	4,1
+	.byte	'..\\CODE\\Src\\User_FSM.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'C:\\Users\\gudam\\Desktop\\SmartCar2020\\TC264CAR\\Debug\\',0,12,1
+	.word	.L144,.L143
+	.byte	2
+	.word	.L102
+	.byte	3
+	.byte	'FSMStateTransfer',0,1,229,1,6,1,1,1
+	.word	.L93,.L204,.L92
+	.byte	4
+	.byte	'fsm',0,1,229,1,30
+	.word	.L200,.L205
+	.byte	4
+	.byte	'state',0,1,229,1,39
+	.word	.L206,.L207
+	.byte	5
+	.word	.L93,.L204
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('FSMStateTransfer')
+	.sect	'.debug_abbrev'
+.L142:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('FSMStateTransfer')
+	.sect	'.debug_line'
+.L143:
+	.word	.L417-.L416
+.L416:
+	.half	3
+	.word	.L419-.L418
+.L418:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'..\\CODE\\Src\\User_FSM.c',0,0,0,0,0
+.L419:
+	.byte	5,19,7,0,5,2
+	.word	.L93
+	.byte	3,230,1,1,5,1,9
+	.half	.L420-.L93
+	.byte	3,1,1,7,9
+	.half	.L145-.L420
+	.byte	0,1,1
+.L417:
+	.sdecl	'.debug_ranges',debug,cluster('FSMStateTransfer')
+	.sect	'.debug_ranges'
+.L144:
+	.word	-1,.L93,0,.L145-.L93,0,0
+	.sdecl	'.debug_info',debug,cluster('FSMEventHandle')
+	.sect	'.debug_info'
+.L146:
+	.word	349
+	.half	3
+	.word	.L147
+	.byte	4,1
+	.byte	'..\\CODE\\Src\\User_FSM.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'C:\\Users\\gudam\\Desktop\\SmartCar2020\\TC264CAR\\Debug\\',0,12,1
+	.word	.L149,.L148
+	.byte	2
+	.word	.L102
+	.byte	3
+	.byte	'FSMEventHandle',0,1,235,1,6,1,1,1
+	.word	.L95,.L208,.L94
+	.byte	4
+	.byte	'fsm',0,1,235,1,28
+	.word	.L200,.L209
+	.byte	4
+	.byte	'event',0,1,235,1,37
+	.word	.L206,.L210
+	.byte	5
+	.word	.L95,.L208
+	.byte	6
+	.byte	'fsmTable',0,1,237,1,14
+	.word	.L202,.L211
+	.byte	6
+	.byte	'curState',0,1,238,1,9
+	.word	.L206,.L212
+	.byte	6
+	.byte	'eventAction',0,1,239,1,12
+	.word	.L213,.L214
+	.byte	6
+	.byte	'nextState',0,1,240,1,9
+	.word	.L206,.L215
+	.byte	6
+	.byte	'size',0,1,241,1,9
+	.word	.L206,.L216
+	.byte	6
+	.byte	'i',0,1,243,1,9
+	.word	.L206,.L217
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('FSMEventHandle')
+	.sect	'.debug_abbrev'
+.L147:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3
+	.byte	8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('FSMEventHandle')
+	.sect	'.debug_line'
+.L148:
+	.word	.L422-.L421
+.L421:
+	.half	3
+	.word	.L424-.L423
+.L423:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'..\\CODE\\Src\\User_FSM.c',0,0,0,0,0
+.L424:
 	.byte	5,6,7,0,5,2
-	.word	.L94
-	.byte	3,224,1,1,5,28,9
-	.half	.L228-.L94
+	.word	.L95
+	.byte	3,234,1,1,5,28,9
+	.half	.L237-.L95
 	.byte	3,2,1,5,23,9
-	.half	.L229-.L228
+	.half	.L238-.L237
 	.byte	3,1,1,5,19,9
-	.half	.L231-.L229
+	.half	.L240-.L238
 	.byte	3,3,1,5,11,9
-	.half	.L232-.L231
+	.half	.L241-.L240
 	.byte	3,5,1,5,21,9
-	.half	.L233-.L232
+	.half	.L242-.L241
 	.byte	1,5,31,9
-	.half	.L27-.L233
+	.half	.L27-.L242
 	.byte	3,3,1,5,30,9
-	.half	.L415-.L27
+	.half	.L425-.L27
 	.byte	1,5,33,9
-	.half	.L416-.L415
+	.half	.L426-.L425
 	.byte	1,5,13,9
-	.half	.L417-.L416
+	.half	.L427-.L426
 	.byte	1,5,66,7,9
-	.half	.L418-.L417
+	.half	.L428-.L427
 	.byte	1,5,52,9
-	.half	.L419-.L418
+	.half	.L429-.L428
 	.byte	1,5,38,7,9
-	.half	.L420-.L419
+	.half	.L430-.L429
 	.byte	3,3,1,5,36,9
-	.half	.L230-.L420
+	.half	.L239-.L430
 	.byte	3,1,1,5,10,9
-	.half	.L234-.L230
+	.half	.L243-.L239
 	.byte	3,1,1,5,22,7,9
-	.half	.L421-.L234
+	.half	.L431-.L243
 	.byte	3,1,1,5,32,9
-	.half	.L30-.L421
+	.half	.L30-.L431
 	.byte	3,1,1,5,24,9
 	.half	.L28-.L30
 	.byte	3,118,1,5,21,9
 	.half	.L26-.L28
 	.byte	1,5,1,7,9
-	.half	.L422-.L26
+	.half	.L432-.L26
 	.byte	3,18,1,7,9
-	.half	.L149-.L422
+	.half	.L150-.L432
 	.byte	0,1,1
-.L412:
+.L422:
 	.sdecl	'.debug_ranges',debug,cluster('FSMEventHandle')
 	.sect	'.debug_ranges'
-.L148:
-	.word	-1,.L94,0,.L149-.L94,0,0
+.L149:
+	.word	-1,.L95,0,.L150-.L95,0,0
 	.sdecl	'.debug_info',debug,cluster('ReturnFSMState')
 	.sect	'.debug_info'
-.L150:
+.L151:
 	.word	208
 	.half	3
-	.word	.L151
+	.word	.L152
 	.byte	4,1
 	.byte	'..\\CODE\\Src\\User_FSM.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'C:\\Users\\gudam\\Desktop\\SmartCar2020\\TC264CAR\\Debug\\',0,12,1
-	.word	.L153,.L152
+	.word	.L154,.L153
 	.byte	2
-	.word	.L101
+	.word	.L102
 	.byte	3
-	.byte	'ReturnFSMState',0,1,128,2,5
-	.word	.L203
+	.byte	'ReturnFSMState',0,1,138,2,5
+	.word	.L206
 	.byte	1,1,1
-	.word	.L96,.L215,.L95
+	.word	.L97,.L218,.L96
 	.byte	4
-	.byte	'fsm',0,1,128,2,27
-	.word	.L197,.L216
+	.byte	'fsm',0,1,138,2,27
+	.word	.L200,.L219
 	.byte	5
-	.word	.L96,.L215
+	.word	.L97,.L218
 	.byte	0,0
 	.sdecl	'.debug_abbrev',debug,cluster('ReturnFSMState')
 	.sect	'.debug_abbrev'
-.L151:
+.L152:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
 	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
 	.sdecl	'.debug_line',debug,cluster('ReturnFSMState')
 	.sect	'.debug_line'
-.L152:
-	.word	.L424-.L423
-.L423:
+.L153:
+	.word	.L434-.L433
+.L433:
 	.half	3
-	.word	.L426-.L425
-.L425:
+	.word	.L436-.L435
+.L435:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\CODE\\Src\\User_FSM.c',0,0,0,0,0
-.L426:
+.L436:
 	.byte	5,12,7,0,5,2
-	.word	.L96
-	.byte	3,129,2,1,5,1,9
-	.half	.L427-.L96
+	.word	.L97
+	.byte	3,139,2,1,5,1,9
+	.half	.L437-.L97
 	.byte	3,1,1,7,9
-	.half	.L154-.L427
+	.half	.L155-.L437
 	.byte	0,1,1
-.L424:
+.L434:
 	.sdecl	'.debug_ranges',debug,cluster('ReturnFSMState')
 	.sect	'.debug_ranges'
-.L153:
-	.word	-1,.L96,0,.L154-.L96,0,0
+.L154:
+	.word	-1,.L97,0,.L155-.L97,0,0
 	.sdecl	'.debug_info',debug,cluster('FSMRun')
 	.sect	'.debug_info'
-.L155:
+.L156:
 	.word	179
 	.half	3
-	.word	.L156
+	.word	.L157
 	.byte	4,1
 	.byte	'..\\CODE\\Src\\User_FSM.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'C:\\Users\\gudam\\Desktop\\SmartCar2020\\TC264CAR\\Debug\\',0,12,1
-	.word	.L158,.L157
+	.word	.L159,.L158
 	.byte	2
-	.word	.L101
+	.word	.L102
 	.byte	3
-	.byte	'FSMRun',0,1,135,2,6,1,1,1
-	.word	.L98,.L217,.L97
+	.byte	'FSMRun',0,1,145,2,6,1,1,1
+	.word	.L99,.L220,.L98
 	.byte	4
-	.word	.L98,.L217
+	.word	.L99,.L220
 	.byte	0,0
 	.sdecl	'.debug_abbrev',debug,cluster('FSMRun')
 	.sect	'.debug_abbrev'
-.L156:
+.L157:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
 	.sdecl	'.debug_line',debug,cluster('FSMRun')
 	.sect	'.debug_line'
-.L157:
-	.word	.L429-.L428
-.L428:
+.L158:
+	.word	.L439-.L438
+.L438:
 	.half	3
-	.word	.L431-.L430
-.L430:
+	.word	.L441-.L440
+.L440:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\CODE\\Src\\User_FSM.c',0,0,0,0,0
-.L431:
+.L441:
 	.byte	5,16,7,0,5,2
-	.word	.L98
-	.byte	3,136,2,1,5,24,9
-	.half	.L432-.L98
+	.word	.L99
+	.byte	3,146,2,1,5,24,9
+	.half	.L442-.L99
 	.byte	1,5,6,9
-	.half	.L433-.L432
-	.byte	3,1,1,5,3,9
-	.half	.L434-.L433
-	.byte	3,2,1,5,19,9
-	.half	.L435-.L434
-	.byte	1,5,15,9
-	.half	.L436-.L435
-	.byte	3,1,1,5,13,9
-	.half	.L437-.L436
-	.byte	1,5,5,9
-	.half	.L33-.L437
-	.byte	3,2,1,5,36,9
-	.half	.L438-.L33
-	.byte	1,5,17,9
-	.half	.L439-.L438
-	.byte	1,5,24,9
-	.half	.L440-.L439
-	.byte	3,2,1,5,5,9
-	.half	.L441-.L440
-	.byte	1,5,31,7,9
-	.half	.L442-.L441
-	.byte	3,3,1,5,39,9
 	.half	.L443-.L442
-	.byte	1,5,28,9
-	.half	.L34-.L443
-	.byte	3,2,1,5,34,9
-	.half	.L444-.L34
-	.byte	1,5,13,9
+	.byte	3,1,1,5,3,9
+	.half	.L444-.L443
+	.byte	3,2,1,5,19,9
 	.half	.L445-.L444
-	.byte	1,5,63,7,9
+	.byte	1,5,15,9
 	.half	.L446-.L445
-	.byte	1,5,69,9
+	.byte	3,1,1,5,13,9
 	.half	.L447-.L446
-	.byte	1,5,48,9
-	.half	.L448-.L447
-	.byte	1,5,98,7,9
+	.byte	1,5,5,9
+	.half	.L33-.L447
+	.byte	3,2,1,5,36,9
+	.half	.L448-.L33
+	.byte	1,5,17,9
 	.half	.L449-.L448
-	.byte	1,5,101,9
+	.byte	1,5,24,9
 	.half	.L450-.L449
-	.byte	1,5,24,7,9
-	.half	.L37-.L450
-	.byte	3,1,1,5,29,9
-	.half	.L451-.L37
-	.byte	1,5,9,9
+	.byte	3,2,1,5,5,9
+	.half	.L451-.L450
+	.byte	1,5,31,7,9
 	.half	.L452-.L451
-	.byte	1,5,58,7,9
+	.byte	3,3,1,5,39,9
 	.half	.L453-.L452
-	.byte	1,5,61,9
-	.half	.L454-.L453
-	.byte	1,5,94,7,9
-	.half	.L39-.L454
-	.byte	1,5,102,9
-	.half	.L455-.L39
-	.byte	1,5,115,7,9
-	.half	.L456-.L455
-	.byte	1,5,130,1,9
-	.half	.L457-.L456
-	.byte	1,5,21,7,9
-	.half	.L458-.L457
-	.byte	3,2,1,5,9,9
-	.half	.L459-.L458
-	.byte	3,1,1,5,6,9
-	.half	.L460-.L459
-	.byte	1,5,25,7,9
-	.half	.L461-.L460
-	.byte	3,2,1,5,28,9
-	.half	.L462-.L461
-	.byte	1,5,45,9
-	.half	.L463-.L462
-	.byte	1,5,7,9
-	.half	.L464-.L463
-	.byte	1,5,5,7,9
-	.half	.L465-.L464
-	.byte	3,2,1,5,23,9
-	.half	.L466-.L465
-	.byte	1,5,21,9
-	.half	.L467-.L466
-	.byte	1,5,23,9
-	.half	.L468-.L467
-	.byte	3,1,1,5,24,9
-	.half	.L469-.L468
-	.byte	3,127,1,5,1,9
-	.half	.L43-.L469
-	.byte	3,47,1,5,5,7,9
-	.half	.L44-.L43
-	.byte	3,86,1,5,23,9
-	.half	.L470-.L44
-	.byte	1,5,21,9
-	.half	.L471-.L470
-	.byte	1,5,23,9
-	.half	.L472-.L471
-	.byte	3,1,1,5,5,9
-	.half	.L45-.L472
-	.byte	1,5,21,9
-	.half	.L473-.L45
-	.byte	1,5,37,9
-	.half	.L474-.L473
-	.byte	3,3,1,5,6,9
-	.half	.L475-.L474
-	.byte	3,115,1,5,13,9
-	.half	.L36-.L475
-	.byte	3,16,1,5,54,9
-	.half	.L476-.L36
-	.byte	1,5,62,9
-	.half	.L477-.L476
-	.byte	1,5,30,7,9
-	.half	.L478-.L477
-	.byte	3,2,1,5,46,9
-	.half	.L479-.L478
 	.byte	1,5,28,9
-	.half	.L47-.L479
+	.half	.L34-.L453
 	.byte	3,2,1,5,34,9
-	.half	.L480-.L47
+	.half	.L454-.L34
 	.byte	1,5,13,9
-	.half	.L481-.L480
+	.half	.L455-.L454
 	.byte	1,5,63,7,9
-	.half	.L482-.L481
+	.half	.L456-.L455
 	.byte	1,5,69,9
-	.half	.L483-.L482
+	.half	.L457-.L456
 	.byte	1,5,48,9
-	.half	.L484-.L483
+	.half	.L458-.L457
 	.byte	1,5,98,7,9
-	.half	.L485-.L484
+	.half	.L459-.L458
 	.byte	1,5,101,9
-	.half	.L486-.L485
+	.half	.L460-.L459
 	.byte	1,5,24,7,9
-	.half	.L51-.L486
+	.half	.L37-.L460
 	.byte	3,1,1,5,29,9
-	.half	.L487-.L51
+	.half	.L461-.L37
 	.byte	1,5,9,9
-	.half	.L488-.L487
+	.half	.L462-.L461
 	.byte	1,5,58,7,9
-	.half	.L489-.L488
+	.half	.L463-.L462
 	.byte	1,5,61,9
-	.half	.L490-.L489
+	.half	.L464-.L463
 	.byte	1,5,94,7,9
-	.half	.L53-.L490
+	.half	.L39-.L464
 	.byte	1,5,102,9
-	.half	.L491-.L53
-	.byte	1,5,30,7,9
-	.half	.L492-.L491
-	.byte	3,2,1,5,44,9
-	.half	.L493-.L492
-	.byte	1,5,14,9
-	.half	.L50-.L493
-	.byte	3,2,1,5,55,9
-	.half	.L494-.L50
-	.byte	1,5,63,9
-	.half	.L495-.L494
-	.byte	1,5,30,7,9
-	.half	.L496-.L495
-	.byte	3,2,1,5,47,9
-	.half	.L497-.L496
-	.byte	1,5,34,9
-	.half	.L57-.L497
-	.byte	3,8,1,5,69,9
-	.half	.L498-.L57
-	.byte	1,5,77,9
-	.half	.L499-.L498
-	.byte	1,5,25,7,9
-	.half	.L500-.L499
-	.byte	3,2,1,5,52,9
-	.half	.L501-.L500
+	.half	.L465-.L39
+	.byte	1,5,115,7,9
+	.half	.L466-.L465
+	.byte	1,5,130,1,9
+	.half	.L467-.L466
+	.byte	1,5,6,7,9
+	.half	.L468-.L467
+	.byte	3,2,1,5,25,9
+	.half	.L469-.L468
+	.byte	1,5,9,9
+	.half	.L470-.L469
+	.byte	3,1,1,5,6,9
+	.half	.L471-.L470
+	.byte	1,5,23,7,9
+	.half	.L472-.L471
+	.byte	3,2,1,5,22,9
+	.half	.L473-.L472
 	.byte	1,5,25,9
-	.half	.L502-.L501
-	.byte	3,1,1,5,53,9
-	.half	.L503-.L502
-	.byte	1,5,30,9
-	.half	.L504-.L503
-	.byte	3,1,1,5,71,9
-	.half	.L505-.L504
-	.byte	3,126,1,5,13,9
-	.half	.L60-.L505
-	.byte	3,4,1,5,51,9
-	.half	.L506-.L60
-	.byte	1,5,59,9
-	.half	.L507-.L506
-	.byte	1,5,13,7,9
-	.half	.L63-.L507
-	.byte	3,4,1,5,51,9
-	.half	.L508-.L63
-	.byte	1,5,59,9
-	.half	.L509-.L508
+	.half	.L474-.L473
+	.byte	3,1,1,5,28,9
+	.half	.L475-.L474
+	.byte	1,5,45,9
+	.half	.L476-.L475
+	.byte	1,5,7,9
+	.half	.L477-.L476
+	.byte	1,5,5,7,9
+	.half	.L478-.L477
+	.byte	3,3,1,5,23,9
+	.half	.L479-.L478
+	.byte	1,5,21,9
+	.half	.L480-.L479
+	.byte	1,5,23,9
+	.half	.L481-.L480
+	.byte	3,1,1,5,24,9
+	.half	.L482-.L481
+	.byte	3,127,1,5,1,9
+	.half	.L43-.L482
+	.byte	3,53,1,5,5,7,9
+	.half	.L44-.L43
+	.byte	3,80,1,5,23,9
+	.half	.L483-.L44
+	.byte	1,5,21,9
+	.half	.L484-.L483
+	.byte	1,5,23,9
+	.half	.L485-.L484
+	.byte	3,1,1,5,5,9
+	.half	.L45-.L485
+	.byte	1,5,21,9
+	.half	.L486-.L45
+	.byte	1,5,37,9
+	.half	.L487-.L486
+	.byte	3,3,1,5,6,9
+	.half	.L488-.L487
+	.byte	3,113,1,5,13,9
+	.half	.L36-.L488
+	.byte	3,19,1,5,54,9
+	.half	.L489-.L36
+	.byte	1,5,62,9
+	.half	.L490-.L489
 	.byte	1,5,30,7,9
-	.half	.L64-.L509
+	.half	.L491-.L490
+	.byte	3,3,1,5,46,9
+	.half	.L492-.L491
+	.byte	1,5,28,9
+	.half	.L47-.L492
+	.byte	3,2,1,5,34,9
+	.half	.L493-.L47
+	.byte	1,5,13,9
+	.half	.L494-.L493
+	.byte	1,5,63,7,9
+	.half	.L495-.L494
+	.byte	1,5,69,9
+	.half	.L496-.L495
+	.byte	1,5,48,9
+	.half	.L497-.L496
+	.byte	1,5,98,7,9
+	.half	.L498-.L497
+	.byte	1,5,101,9
+	.half	.L499-.L498
+	.byte	1,5,24,7,9
+	.half	.L51-.L499
+	.byte	3,1,1,5,29,9
+	.half	.L500-.L51
+	.byte	1,5,9,9
+	.half	.L501-.L500
+	.byte	1,5,58,7,9
+	.half	.L502-.L501
+	.byte	1,5,61,9
+	.half	.L503-.L502
+	.byte	1,5,94,7,9
+	.half	.L53-.L503
+	.byte	1,5,102,9
+	.half	.L504-.L53
+	.byte	1,5,123,7,9
+	.half	.L505-.L504
+	.byte	1,5,30,9
+	.half	.L506-.L505
+	.byte	3,3,1,5,44,9
+	.half	.L507-.L506
+	.byte	1,5,13,9
+	.half	.L50-.L507
+	.byte	3,3,1,5,54,9
+	.half	.L508-.L50
+	.byte	1,5,62,9
+	.half	.L509-.L508
+	.byte	1,5,3,7,9
+	.half	.L510-.L509
+	.byte	3,2,1,5,27,9
+	.half	.L511-.L510
+	.byte	1,5,25,9
+	.half	.L512-.L511
+	.byte	1,5,28,9
+	.half	.L513-.L512
+	.byte	1,5,34,9
+	.half	.L58-.L513
+	.byte	3,10,1,5,69,9
+	.half	.L514-.L58
+	.byte	1,5,77,9
+	.half	.L515-.L514
+	.byte	1,5,25,7,9
+	.half	.L516-.L515
+	.byte	3,2,1,5,52,9
+	.half	.L517-.L516
+	.byte	1,5,25,9
+	.half	.L518-.L517
+	.byte	3,1,1,5,53,9
+	.half	.L519-.L518
+	.byte	1,5,30,9
+	.half	.L520-.L519
+	.byte	3,1,1,5,71,9
+	.half	.L521-.L520
+	.byte	3,126,1,5,13,9
+	.half	.L61-.L521
+	.byte	3,4,1,5,51,9
+	.half	.L522-.L61
+	.byte	1,5,59,9
+	.half	.L523-.L522
+	.byte	1,5,13,7,9
+	.half	.L64-.L523
+	.byte	3,4,1,5,51,9
+	.half	.L524-.L64
+	.byte	1,5,59,9
+	.half	.L525-.L524
+	.byte	1,5,30,7,9
+	.half	.L60-.L525
 	.byte	3,2,1,5,38,9
-	.half	.L510-.L64
+	.half	.L526-.L60
 	.byte	1,5,30,9
-	.half	.L65-.L510
+	.half	.L66-.L526
 	.byte	3,3,1,5,22,9
-	.half	.L67-.L65
+	.half	.L68-.L66
 	.byte	1,5,30,9
-	.half	.L511-.L67
+	.half	.L527-.L68
 	.byte	1,5,1,7,9
-	.half	.L159-.L511
+	.half	.L160-.L527
 	.byte	3,1,0,1,1
-.L429:
+.L439:
 	.sdecl	'.debug_ranges',debug,cluster('FSMRun')
 	.sect	'.debug_ranges'
-.L158:
-	.word	-1,.L98,0,.L159-.L98,0,0
+.L159:
+	.word	-1,.L99,0,.L160-.L99,0,0
 	.sdecl	'.debug_info',debug,cluster('FindLineAdjPWM')
 	.sect	'.debug_info'
-.L160:
+.L161:
 	.word	240
 	.half	3
-	.word	.L161
+	.word	.L162
 	.byte	4,1
 	.byte	'..\\CODE\\Src\\User_FSM.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'C:\\Users\\gudam\\Desktop\\SmartCar2020\\TC264CAR\\Debug\\',0,12,1
-	.word	.L163,.L162
+	.word	.L164,.L163
 	.byte	2
-	.word	.L101
+	.word	.L102
 	.byte	3
-	.byte	'FindLineAdjPWM',0,1,208,2,6,1,1,1
-	.word	.L100,.L218,.L99
+	.byte	'FindLineAdjPWM',0,1,226,2,6,1,1,1
+	.word	.L101,.L221,.L100
 	.byte	4
-	.byte	'PWM',0,1,208,2,28
-	.word	.L219,.L220
+	.byte	'PWM',0,1,226,2,28
+	.word	.L222,.L223
 	.byte	4
-	.byte	'LCut',0,1,208,2,40
-	.word	.L219,.L221
+	.byte	'LCut',0,1,226,2,40
+	.word	.L222,.L224
 	.byte	4
-	.byte	'RCut',0,1,208,2,53
-	.word	.L219,.L222
+	.byte	'RCut',0,1,226,2,53
+	.word	.L222,.L225
 	.byte	5
-	.word	.L100,.L218
+	.word	.L101,.L221
 	.byte	0,0
 	.sdecl	'.debug_abbrev',debug,cluster('FindLineAdjPWM')
 	.sect	'.debug_abbrev'
-.L161:
+.L162:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
 	.sdecl	'.debug_line',debug,cluster('FindLineAdjPWM')
 	.sect	'.debug_line'
-.L162:
-	.word	.L513-.L512
-.L512:
+.L163:
+	.word	.L529-.L528
+.L528:
 	.half	3
-	.word	.L515-.L514
-.L514:
+	.word	.L531-.L530
+.L530:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\CODE\\Src\\User_FSM.c',0,0,0,0,0
-.L515:
+.L531:
 	.byte	5,6,7,0,5,2
-	.word	.L100
-	.byte	3,207,2,1,5,5,9
-	.half	.L241-.L100
+	.word	.L101
+	.byte	3,225,2,1,5,5,9
+	.half	.L250-.L101
 	.byte	3,2,1,5,80,9
-	.half	.L516-.L241
+	.half	.L532-.L250
 	.byte	1,5,29,9
-	.half	.L517-.L516
+	.half	.L533-.L532
 	.byte	1,5,55,9
-	.half	.L518-.L517
-	.byte	1,5,48,9
-	.half	.L519-.L518
-	.byte	1,5,53,9
-	.half	.L520-.L519
-	.byte	1,5,71,9
-	.half	.L238-.L520
-	.byte	1,5,75,9
-	.half	.L240-.L238
-	.byte	1,5,14,9
-	.half	.L521-.L240
-	.byte	1,5,15,9
-	.half	.L522-.L521
-	.byte	3,2,1,5,12,9
-	.half	.L242-.L522
-	.byte	1,5,5,9
-	.half	.L523-.L242
-	.byte	1,5,9,7,9
-	.half	.L524-.L523
-	.byte	3,2,1,5,42,9
-	.half	.L525-.L524
-	.byte	1,5,16,9
-	.half	.L244-.L525
-	.byte	1,5,22,9
-	.half	.L245-.L244
-	.byte	1,5,16,9
-	.half	.L526-.L245
-	.byte	1,5,51,9
-	.half	.L246-.L526
-	.byte	1,5,14,9
-	.half	.L247-.L246
-	.byte	1,5,22,9
-	.half	.L527-.L247
-	.byte	3,1,1,5,20,9
-	.half	.L248-.L527
-	.byte	1,5,41,9
-	.half	.L249-.L248
-	.byte	1,5,51,9
-	.half	.L528-.L249
-	.byte	1,5,57,9
-	.half	.L529-.L528
-	.byte	3,127,1,5,17,9
-	.half	.L68-.L529
-	.byte	3,3,1,5,10,9
-	.half	.L250-.L68
-	.byte	1,5,9,7,9
-	.half	.L530-.L250
-	.byte	3,2,1,5,22,9
-	.half	.L531-.L530
-	.byte	1,5,20,9
-	.half	.L251-.L531
-	.byte	1,5,14,9
-	.half	.L252-.L251
-	.byte	1,5,20,9
-	.half	.L253-.L252
-	.byte	3,1,1,5,9,9
-	.half	.L69-.L253
-	.byte	1,5,14,9
-	.half	.L532-.L69
-	.byte	1,5,8,9
-	.half	.L70-.L532
-	.byte	3,2,1,5,16,9
-	.half	.L533-.L70
-	.byte	1,5,13,9
 	.half	.L534-.L533
-	.byte	1,5,5,9
+	.byte	1,5,48,9
 	.half	.L535-.L534
-	.byte	1,5,13,7,9
+	.byte	1,5,53,9
 	.half	.L536-.L535
-	.byte	3,2,1,5,21,9
-	.half	.L537-.L536
-	.byte	1,5,18,9
+	.byte	1,5,71,9
+	.half	.L247-.L536
+	.byte	1,5,75,9
+	.half	.L249-.L247
+	.byte	1,5,14,9
+	.half	.L537-.L249
+	.byte	1,5,15,9
 	.half	.L538-.L537
-	.byte	1,5,10,9
-	.half	.L539-.L538
-	.byte	1,5,14,7,9
-	.half	.L72-.L539
-	.byte	3,1,1,5,8,9
-	.half	.L73-.L72
-	.byte	3,1,1,5,16,9
-	.half	.L540-.L73
-	.byte	1,5,13,9
-	.half	.L541-.L540
+	.byte	3,2,1,5,12,9
+	.half	.L251-.L538
 	.byte	1,5,5,9
-	.half	.L542-.L541
-	.byte	1,5,13,7,9
-	.half	.L543-.L542
-	.byte	3,2,1,5,21,9
-	.half	.L544-.L543
-	.byte	1,5,18,9
+	.half	.L539-.L251
+	.byte	1,5,9,7,9
+	.half	.L540-.L539
+	.byte	3,2,1,5,42,9
+	.half	.L541-.L540
+	.byte	1,5,16,9
+	.half	.L253-.L541
+	.byte	1,5,22,9
+	.half	.L254-.L253
+	.byte	1,5,16,9
+	.half	.L542-.L254
+	.byte	1,5,51,9
+	.half	.L255-.L542
+	.byte	1,5,14,9
+	.half	.L256-.L255
+	.byte	1,5,22,9
+	.half	.L543-.L256
+	.byte	3,1,1,5,20,9
+	.half	.L257-.L543
+	.byte	1,5,41,9
+	.half	.L258-.L257
+	.byte	1,5,51,9
+	.half	.L544-.L258
+	.byte	1,5,57,9
 	.half	.L545-.L544
-	.byte	1,5,10,9
-	.half	.L546-.L545
-	.byte	1,5,14,7,9
-	.half	.L75-.L546
-	.byte	3,1,1,5,31,9
-	.half	.L76-.L75
-	.byte	3,1,1,5,21,9
-	.half	.L547-.L76
-	.byte	1,5,31,9
-	.half	.L548-.L547
-	.byte	1,9
-	.half	.L549-.L548
-	.byte	3,1,1,5,21,9
+	.byte	3,127,1,5,17,9
+	.half	.L69-.L545
+	.byte	3,3,1,5,10,9
+	.half	.L259-.L69
+	.byte	1,5,9,7,9
+	.half	.L546-.L259
+	.byte	3,2,1,5,22,9
+	.half	.L547-.L546
+	.byte	1,5,20,9
+	.half	.L260-.L547
+	.byte	1,5,14,9
+	.half	.L261-.L260
+	.byte	1,5,20,9
+	.half	.L262-.L261
+	.byte	3,1,1,5,9,9
+	.half	.L70-.L262
+	.byte	1,5,14,9
+	.half	.L548-.L70
+	.byte	1,5,8,9
+	.half	.L71-.L548
+	.byte	3,2,1,5,16,9
+	.half	.L549-.L71
+	.byte	1,5,13,9
 	.half	.L550-.L549
-	.byte	1,5,31,9
+	.byte	1,5,5,9
 	.half	.L551-.L550
+	.byte	1,5,13,7,9
+	.half	.L552-.L551
+	.byte	3,2,1,5,21,9
+	.half	.L553-.L552
+	.byte	1,5,18,9
+	.half	.L554-.L553
+	.byte	1,5,10,9
+	.half	.L555-.L554
+	.byte	1,5,14,7,9
+	.half	.L73-.L555
+	.byte	3,1,1,5,8,9
+	.half	.L74-.L73
+	.byte	3,1,1,5,16,9
+	.half	.L556-.L74
+	.byte	1,5,13,9
+	.half	.L557-.L556
+	.byte	1,5,5,9
+	.half	.L558-.L557
+	.byte	1,5,13,7,9
+	.half	.L559-.L558
+	.byte	3,2,1,5,21,9
+	.half	.L560-.L559
+	.byte	1,5,18,9
+	.half	.L561-.L560
+	.byte	1,5,10,9
+	.half	.L562-.L561
+	.byte	1,5,14,7,9
+	.half	.L76-.L562
+	.byte	3,1,1,5,31,9
+	.half	.L77-.L76
+	.byte	3,1,1,5,21,9
+	.half	.L563-.L77
+	.byte	1,5,31,9
+	.half	.L564-.L563
+	.byte	1,9
+	.half	.L565-.L564
+	.byte	3,1,1,5,21,9
+	.half	.L566-.L565
+	.byte	1,5,31,9
+	.half	.L567-.L566
 	.byte	1,5,1,7,9
-	.half	.L164-.L551
+	.half	.L165-.L567
 	.byte	3,1,0,1,1
-.L513:
+.L529:
 	.sdecl	'.debug_ranges',debug,cluster('FindLineAdjPWM')
 	.sect	'.debug_ranges'
-.L163:
-	.word	-1,.L100,0,.L164-.L100,0,0
+.L164:
+	.word	-1,.L101,0,.L165-.L101,0,0
 	.sdecl	'.debug_info',debug,cluster('MidLineFuseNum')
 	.sect	'.debug_info'
-.L165:
+.L166:
 	.word	164
 	.half	3
-	.word	.L166
+	.word	.L167
 	.byte	4,1
 	.byte	'..\\CODE\\Src\\User_FSM.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'C:\\Users\\gudam\\Desktop\\SmartCar2020\\TC264CAR\\Debug\\',0,12,1,2
-	.word	.L101
+	.word	.L102
 	.byte	3
 	.byte	'MidLineFuseNum',0,29,42,8
-	.word	.L219
+	.word	.L222
 	.byte	1,5,3
 	.word	MidLineFuseNum
 	.byte	0
 	.sdecl	'.debug_abbrev',debug,cluster('MidLineFuseNum')
 	.sect	'.debug_abbrev'
-.L166:
+.L167:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
 	.byte	0,0,0
 	.sdecl	'.debug_info',debug,cluster('CarTable')
 	.sect	'.debug_info'
-.L167:
+.L168:
 	.word	158
 	.half	3
-	.word	.L168
+	.word	.L169
 	.byte	4,1
 	.byte	'..\\CODE\\Src\\User_FSM.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'C:\\Users\\gudam\\Desktop\\SmartCar2020\\TC264CAR\\Debug\\',0,12,1,2
-	.word	.L101
+	.word	.L102
 	.byte	3
 	.byte	'CarTable',0,29,12,12
-	.word	.L223
+	.word	.L226
 	.byte	1,5,3
 	.word	CarTable
 	.byte	0
 	.sdecl	'.debug_abbrev',debug,cluster('CarTable')
 	.sect	'.debug_abbrev'
-.L168:
+.L169:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
 	.byte	0,0,0
 	.sdecl	'.debug_info',debug,cluster('CarFSM')
 	.sect	'.debug_info'
-.L169:
+.L170:
 	.word	156
 	.half	3
-	.word	.L170
+	.word	.L171
 	.byte	4,1
 	.byte	'..\\CODE\\Src\\User_FSM.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'C:\\Users\\gudam\\Desktop\\SmartCar2020\\TC264CAR\\Debug\\',0,12,1,2
-	.word	.L101
+	.word	.L102
 	.byte	3
 	.byte	'CarFSM',0,29,41,7
-	.word	.L224
+	.word	.L227
 	.byte	1,5,3
 	.word	CarFSM
 	.byte	0
 	.sdecl	'.debug_abbrev',debug,cluster('CarFSM')
 	.sect	'.debug_abbrev'
-.L170:
+.L171:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
 	.byte	0,0,0
 	.sdecl	'.debug_info',debug,cluster('LPWM')
 	.sect	'.debug_info'
-.L171:
+.L172:
 	.word	154
 	.half	3
-	.word	.L172
+	.word	.L173
 	.byte	4,1
 	.byte	'..\\CODE\\Src\\User_FSM.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'C:\\Users\\gudam\\Desktop\\SmartCar2020\\TC264CAR\\Debug\\',0,12,1,2
-	.word	.L101
+	.word	.L102
 	.byte	3
 	.byte	'LPWM',0,29,43,16
-	.word	.L225
+	.word	.L228
 	.byte	1,5,3
 	.word	LPWM
 	.byte	0
 	.sdecl	'.debug_abbrev',debug,cluster('LPWM')
 	.sect	'.debug_abbrev'
-.L172:
+.L173:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
 	.byte	0,0,0
 	.sdecl	'.debug_info',debug,cluster('RPWM')
 	.sect	'.debug_info'
-.L173:
+.L174:
 	.word	154
 	.half	3
-	.word	.L174
+	.word	.L175
 	.byte	4,1
 	.byte	'..\\CODE\\Src\\User_FSM.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'C:\\Users\\gudam\\Desktop\\SmartCar2020\\TC264CAR\\Debug\\',0,12,1,2
-	.word	.L101
+	.word	.L102
 	.byte	3
 	.byte	'RPWM',0,29,43,22
-	.word	.L226
+	.word	.L229
 	.byte	1,5,3
 	.word	RPWM
 	.byte	0
 	.sdecl	'.debug_abbrev',debug,cluster('RPWM')
 	.sect	'.debug_abbrev'
-.L174:
+.L175:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
 	.byte	0,0,0
 	.sdecl	'.debug_info',debug,cluster('PIDValue')
 	.sect	'.debug_info'
-.L175:
+.L176:
 	.word	158
 	.half	3
-	.word	.L176
+	.word	.L177
 	.byte	4,1
 	.byte	'..\\CODE\\Src\\User_FSM.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'C:\\Users\\gudam\\Desktop\\SmartCar2020\\TC264CAR\\Debug\\',0,12,1,2
-	.word	.L101
+	.word	.L102
 	.byte	3
 	.byte	'PIDValue',0,29,44,7
-	.word	.L219
+	.word	.L222
 	.byte	1,5,3
 	.word	PIDValue
 	.byte	0
 	.sdecl	'.debug_abbrev',debug,cluster('PIDValue')
 	.sect	'.debug_abbrev'
-.L176:
+.L177:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
 	.byte	0,0,0
 	.sdecl	'.debug_info',debug,cluster('StartFlag')
 	.sect	'.debug_info'
-.L177:
+.L178:
 	.word	159
 	.half	3
-	.word	.L178
+	.word	.L179
 	.byte	4,1
 	.byte	'..\\CODE\\Src\\User_FSM.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'C:\\Users\\gudam\\Desktop\\SmartCar2020\\TC264CAR\\Debug\\',0,12,1,2
-	.word	.L101
+	.word	.L102
 	.byte	3
 	.byte	'StartFlag',0,29,47,7
-	.word	.L192
+	.word	.L195
 	.byte	1,5,3
 	.word	StartFlag
 	.byte	0
 	.sdecl	'.debug_abbrev',debug,cluster('StartFlag')
 	.sect	'.debug_abbrev'
-.L178:
+.L179:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
 	.byte	0,0,0
-	.sdecl	'.debug_info',debug,cluster('RoundaboutCount')
+	.sdecl	'.debug_info',debug,cluster('IntoRoundaboutCount')
 	.sect	'.debug_info'
-.L179:
-	.word	165
+.L180:
+	.word	169
 	.half	3
-	.word	.L180
+	.word	.L181
 	.byte	4,1
 	.byte	'..\\CODE\\Src\\User_FSM.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'C:\\Users\\gudam\\Desktop\\SmartCar2020\\TC264CAR\\Debug\\',0,12,1,2
-	.word	.L101
+	.word	.L102
 	.byte	3
-	.byte	'RoundaboutCount',0,29,48,7
-	.word	.L192
+	.byte	'IntoRoundaboutCount',0,29,48,16
+	.word	.L230
+	.byte	1,5,3
+	.word	IntoRoundaboutCount
+	.byte	0
+	.sdecl	'.debug_abbrev',debug,cluster('IntoRoundaboutCount')
+	.sect	'.debug_abbrev'
+.L181:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
+	.byte	0,0,0
+	.sdecl	'.debug_info',debug,cluster('RoundaboutCount')
+	.sect	'.debug_info'
+.L182:
+	.word	165
+	.half	3
+	.word	.L183
+	.byte	4,1
+	.byte	'..\\CODE\\Src\\User_FSM.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'C:\\Users\\gudam\\Desktop\\SmartCar2020\\TC264CAR\\Debug\\',0,12,1,2
+	.word	.L102
+	.byte	3
+	.byte	'RoundaboutCount',0,29,49,16
+	.word	.L231
 	.byte	1,5,3
 	.word	RoundaboutCount
 	.byte	0
 	.sdecl	'.debug_abbrev',debug,cluster('RoundaboutCount')
 	.sect	'.debug_abbrev'
-.L180:
+.L183:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
 	.byte	0,0,0
 	.sdecl	'.debug_info',debug,cluster('LRoundaboutFlag')
 	.sect	'.debug_info'
-.L181:
+.L184:
 	.word	165
 	.half	3
-	.word	.L182
+	.word	.L185
 	.byte	4,1
 	.byte	'..\\CODE\\Src\\User_FSM.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'C:\\Users\\gudam\\Desktop\\SmartCar2020\\TC264CAR\\Debug\\',0,12,1,2
-	.word	.L101
+	.word	.L102
 	.byte	3
-	.byte	'LRoundaboutFlag',0,29,49,7
-	.word	.L192
+	.byte	'LRoundaboutFlag',0,29,50,16
+	.word	.L232
 	.byte	1,5,3
 	.word	LRoundaboutFlag
 	.byte	0
 	.sdecl	'.debug_abbrev',debug,cluster('LRoundaboutFlag')
 	.sect	'.debug_abbrev'
-.L182:
+.L185:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
 	.byte	0,0,0
 	.sdecl	'.debug_info',debug,cluster('RRoundaboutFlag')
 	.sect	'.debug_info'
-.L183:
+.L186:
 	.word	165
 	.half	3
-	.word	.L184
+	.word	.L187
 	.byte	4,1
 	.byte	'..\\CODE\\Src\\User_FSM.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'C:\\Users\\gudam\\Desktop\\SmartCar2020\\TC264CAR\\Debug\\',0,12,1,2
-	.word	.L101
+	.word	.L102
 	.byte	3
-	.byte	'RRoundaboutFlag',0,29,50,7
-	.word	.L192
+	.byte	'RRoundaboutFlag',0,29,51,16
+	.word	.L233
 	.byte	1,5,3
 	.word	RRoundaboutFlag
 	.byte	0
 	.sdecl	'.debug_abbrev',debug,cluster('RRoundaboutFlag')
 	.sect	'.debug_abbrev'
-.L184:
+.L187:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
 	.byte	0,0,0
 	.sdecl	'.debug_info',debug,cluster('PassingRoundaboutFlag')
 	.sect	'.debug_info'
-.L185:
+.L188:
 	.word	171
 	.half	3
-	.word	.L186
+	.word	.L189
 	.byte	4,1
 	.byte	'..\\CODE\\Src\\User_FSM.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'C:\\Users\\gudam\\Desktop\\SmartCar2020\\TC264CAR\\Debug\\',0,12,1,2
-	.word	.L101
+	.word	.L102
 	.byte	3
-	.byte	'PassingRoundaboutFlag',0,29,51,7
-	.word	.L192
+	.byte	'PassingRoundaboutFlag',0,29,52,16
+	.word	.L234
 	.byte	1,5,3
 	.word	PassingRoundaboutFlag
 	.byte	0
 	.sdecl	'.debug_abbrev',debug,cluster('PassingRoundaboutFlag')
 	.sect	'.debug_abbrev'
-.L186:
+.L189:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
 	.byte	0,0,0
 	.sdecl	'.debug_info',debug,cluster('GoGarageFinishFlag')
 	.sect	'.debug_info'
-.L187:
+.L190:
 	.word	168
 	.half	3
-	.word	.L188
+	.word	.L191
 	.byte	4,1
 	.byte	'..\\CODE\\Src\\User_FSM.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'C:\\Users\\gudam\\Desktop\\SmartCar2020\\TC264CAR\\Debug\\',0,12,1,2
-	.word	.L101
+	.word	.L102
 	.byte	3
-	.byte	'GoGarageFinishFlag',0,29,52,7
-	.word	.L192
+	.byte	'GoGarageFinishFlag',0,29,53,16
+	.word	.L235
 	.byte	1,5,3
 	.word	GoGarageFinishFlag
 	.byte	0
 	.sdecl	'.debug_abbrev',debug,cluster('GoGarageFinishFlag')
 	.sect	'.debug_abbrev'
-.L188:
+.L191:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
 	.byte	0,0,0
 	.sdecl	'.debug_loc',debug,cluster('FSMEventHandle')
 	.sect	'.debug_loc'
-.L93:
-	.word	-1,.L94,0,.L205-.L94
+.L94:
+	.word	-1,.L95,0,.L208-.L95
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L209:
-	.word	-1,.L94,.L231-.L94,.L30-.L94
+.L212:
+	.word	-1,.L95,.L240-.L95,.L30-.L95
 	.half	5
 	.byte	144,32,157,32,0
-	.word	.L28-.L94,.L205-.L94
+	.word	.L28-.L95,.L208-.L95
 	.half	5
 	.byte	144,32,157,32,0
 	.word	0,0
-.L207:
-	.word	-1,.L94,0,.L30-.L94
+.L210:
+	.word	-1,.L95,0,.L30-.L95
 	.half	1
 	.byte	84
-	.word	.L28-.L94,.L205-.L94
+	.word	.L28-.L95,.L208-.L95
 	.half	1
 	.byte	84
-	.word	0,0
-.L211:
-	.word	-1,.L94,.L230-.L94,.L30-.L94
-	.half	1
-	.byte	98
-	.word	0,0
-.L206:
-	.word	-1,.L94,0,.L30-.L94
-	.half	1
-	.byte	100
-	.word	.L228-.L94,.L205-.L94
-	.half	1
-	.byte	108
-	.word	.L235-.L94,.L205-.L94
-	.half	1
-	.byte	100
-	.word	0,0
-.L208:
-	.word	-1,.L94,.L229-.L94,.L230-.L94
-	.half	1
-	.byte	98
-	.word	.L28-.L94,.L205-.L94
-	.half	1
-	.byte	98
 	.word	0,0
 .L214:
-	.word	-1,.L94,.L233-.L94,.L30-.L94
+	.word	-1,.L95,.L239-.L95,.L30-.L95
+	.half	1
+	.byte	98
+	.word	0,0
+.L209:
+	.word	-1,.L95,0,.L30-.L95
+	.half	1
+	.byte	100
+	.word	.L237-.L95,.L208-.L95
+	.half	1
+	.byte	108
+	.word	.L244-.L95,.L208-.L95
+	.half	1
+	.byte	100
+	.word	0,0
+.L211:
+	.word	-1,.L95,.L238-.L95,.L239-.L95
+	.half	1
+	.byte	98
+	.word	.L28-.L95,.L208-.L95
+	.half	1
+	.byte	98
+	.word	0,0
+.L217:
+	.word	-1,.L95,.L242-.L95,.L30-.L95
 	.half	1
 	.byte	82
-	.word	.L28-.L94,.L205-.L94
+	.word	.L28-.L95,.L208-.L95
 	.half	1
 	.byte	82
 	.word	0,0
-.L212:
-	.word	-1,.L94,.L234-.L94,.L28-.L94
+.L215:
+	.word	-1,.L95,.L243-.L95,.L28-.L95
 	.half	1
 	.byte	95
-	.word	.L236-.L94,.L28-.L94
+	.word	.L245-.L95,.L28-.L95
 	.half	1
 	.byte	84
 	.word	0,0
-.L213:
-	.word	-1,.L94,.L232-.L94,.L30-.L94
+.L216:
+	.word	-1,.L95,.L241-.L95,.L30-.L95
 	.half	1
 	.byte	81
-	.word	.L28-.L94,.L205-.L94
+	.word	.L28-.L95,.L208-.L95
 	.half	1
 	.byte	81
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('FSMRegist')
 	.sect	'.debug_loc'
-.L89:
-	.word	-1,.L90,0,.L196-.L90
+.L90:
+	.word	-1,.L91,0,.L199-.L91
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L198:
-	.word	-1,.L90,0,.L196-.L90
+.L201:
+	.word	-1,.L91,0,.L199-.L91
 	.half	1
 	.byte	100
 	.word	0,0
-.L200:
-	.word	-1,.L90,0,.L196-.L90
+.L203:
+	.word	-1,.L91,0,.L199-.L91
 	.half	1
 	.byte	101
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('FSMRun')
 	.sect	'.debug_loc'
-.L97:
-	.word	-1,.L98,0,.L217-.L98
+.L98:
+	.word	-1,.L99,0,.L220-.L99
 	.half	2
 	.byte	138,0
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('FSMStateTransfer')
 	.sect	'.debug_loc'
-.L91:
-	.word	-1,.L92,0,.L201-.L92
+.L92:
+	.word	-1,.L93,0,.L204-.L93
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L202:
-	.word	-1,.L92,0,.L201-.L92
+.L205:
+	.word	-1,.L93,0,.L204-.L93
 	.half	1
 	.byte	100
 	.word	0,0
-.L204:
-	.word	-1,.L92,0,.L201-.L92
+.L207:
+	.word	-1,.L93,0,.L204-.L93
 	.half	1
 	.byte	84
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('FindLine')
 	.sect	'.debug_loc'
-.L79:
-	.word	-1,.L80,0,.L227-.L80
+.L80:
+	.word	-1,.L81,0,.L236-.L81
 	.half	2
 	.byte	138,0
-	.word	.L227-.L80,.L190-.L80
+	.word	.L236-.L81,.L193-.L81
 	.half	2
 	.byte	138,8
-	.word	.L190-.L80,.L190-.L80
+	.word	.L193-.L81,.L193-.L81
 	.half	2
 	.byte	138,0
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('FindLineAdjPWM')
 	.sect	'.debug_loc'
-.L99:
-	.word	-1,.L100,0,.L237-.L100
+.L100:
+	.word	-1,.L101,0,.L246-.L101
 	.half	2
 	.byte	138,0
-	.word	.L237-.L100,.L218-.L100
+	.word	.L246-.L101,.L221-.L101
 	.half	2
 	.byte	138,8
-	.word	.L218-.L100,.L218-.L100
+	.word	.L221-.L101,.L221-.L101
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L221:
-	.word	-1,.L100,0,.L238-.L100
+.L224:
+	.word	-1,.L101,0,.L247-.L101
 	.half	1
 	.byte	85
-	.word	.L246-.L100,.L247-.L100
+	.word	.L255-.L101,.L256-.L101
 	.half	1
 	.byte	89
 	.word	0,0
-.L220:
-	.word	-1,.L100,0,.L239-.L100
+.L223:
+	.word	-1,.L101,0,.L248-.L101
 	.half	1
 	.byte	84
-	.word	.L242-.L100,.L243-.L100
+	.word	.L251-.L101,.L252-.L101
 	.half	1
 	.byte	88
-	.word	.L244-.L100,.L245-.L100
+	.word	.L253-.L101,.L254-.L101
 	.half	1
 	.byte	88
-	.word	.L248-.L100,.L249-.L100
+	.word	.L257-.L101,.L258-.L101
 	.half	1
 	.byte	88
-	.word	.L68-.L100,.L250-.L100
+	.word	.L69-.L101,.L259-.L101
 	.half	1
 	.byte	88
-	.word	.L251-.L100,.L252-.L100
+	.word	.L260-.L101,.L261-.L101
 	.half	1
 	.byte	88
-	.word	.L253-.L100,.L69-.L100
+	.word	.L262-.L101,.L70-.L101
 	.half	1
 	.byte	88
 	.word	0,0
-.L222:
-	.word	-1,.L100,0,.L240-.L100
+.L225:
+	.word	-1,.L101,0,.L249-.L101
 	.half	1
 	.byte	86
-	.word	.L241-.L100,.L218-.L100
+	.word	.L250-.L101,.L221-.L101
 	.half	1
 	.byte	90
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('InRoundaboutProcess')
 	.sect	'.debug_loc'
-.L81:
-	.word	-1,.L82,0,.L191-.L82
+.L82:
+	.word	-1,.L83,0,.L194-.L83
 	.half	2
 	.byte	138,0
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('OutRoundaboutProcess')
 	.sect	'.debug_loc'
-.L83:
-	.word	-1,.L84,0,.L193-.L84
+.L84:
+	.word	-1,.L85,0,.L196-.L85
 	.half	2
 	.byte	138,0
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('ReturnFSMState')
 	.sect	'.debug_loc'
-.L95:
-	.word	-1,.L96,0,.L215-.L96
+.L96:
+	.word	-1,.L97,0,.L218-.L97
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L216:
-	.word	-1,.L96,0,.L215-.L96
+.L219:
+	.word	-1,.L97,0,.L218-.L97
 	.half	1
 	.byte	100
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('RunStop')
 	.sect	'.debug_loc'
-.L77:
-	.word	-1,.L78,0,.L189-.L78
+.L78:
+	.word	-1,.L79,0,.L192-.L79
 	.half	2
 	.byte	138,0
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('TurnLeftGoGarage')
 	.sect	'.debug_loc'
-.L85:
-	.word	-1,.L86,0,.L194-.L86
+.L86:
+	.word	-1,.L87,0,.L197-.L87
 	.half	2
 	.byte	138,0
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('TurnRightGoGarage')
 	.sect	'.debug_loc'
-.L87:
-	.word	-1,.L88,0,.L195-.L88
+.L88:
+	.word	-1,.L89,0,.L198-.L89
 	.half	2
 	.byte	138,0
 	.word	0,0
 	.sdecl	'.debug_frame',debug
 	.sect	'.debug_frame'
-.L552:
+.L568:
 	.word	48
 	.word	-1
 	.byte	3,0,2,1,27,12,26,0,8,27,8,26,8,28,8,29,8,30,8,31,8,34,8,35,8,32,8,33,8,16,8,17,8,24,8,25,8,36,8,37,8,38
@@ -37924,66 +38017,66 @@ _999004_CleanDistanceFlag:	.type	object
 	.sdecl	'.debug_frame',debug,cluster('RunStop')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L552,.L78,.L189-.L78
+	.word	.L568,.L79,.L192-.L79
 	.sdecl	'.debug_frame',debug,cluster('FindLine')
 	.sect	'.debug_frame'
 	.word	36
-	.word	.L552,.L80,.L190-.L80
+	.word	.L568,.L81,.L193-.L81
 	.byte	4
-	.word	(.L227-.L80)/2
+	.word	(.L236-.L81)/2
 	.byte	19,8,22,26,3,19,138,8,4
-	.word	(.L190-.L227)/2
+	.word	(.L193-.L236)/2
 	.byte	19,0,8,26,0,0
 	.sdecl	'.debug_frame',debug,cluster('InRoundaboutProcess')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L552,.L82,.L191-.L82
+	.word	.L568,.L83,.L194-.L83
 	.sdecl	'.debug_frame',debug,cluster('OutRoundaboutProcess')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L552,.L84,.L193-.L84
+	.word	.L568,.L85,.L196-.L85
 	.sdecl	'.debug_frame',debug,cluster('TurnLeftGoGarage')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L552,.L86,.L194-.L86
+	.word	.L568,.L87,.L197-.L87
 	.sdecl	'.debug_frame',debug,cluster('TurnRightGoGarage')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L552,.L88,.L195-.L88
+	.word	.L568,.L89,.L198-.L89
 	.sdecl	'.debug_frame',debug,cluster('FSMRegist')
 	.sect	'.debug_frame'
 	.word	20
-	.word	.L552,.L90,.L196-.L90
+	.word	.L568,.L91,.L199-.L91
 	.byte	8,18,8,19,8,22,8,23
 	.sdecl	'.debug_frame',debug,cluster('FSMStateTransfer')
 	.sect	'.debug_frame'
 	.word	24
-	.word	.L552,.L92,.L201-.L92
+	.word	.L568,.L93,.L204-.L93
 	.byte	8,18,8,19,8,21,8,22,8,23,0,0
 	.sdecl	'.debug_frame',debug,cluster('FSMEventHandle')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L552,.L94,.L205-.L94
+	.word	.L568,.L95,.L208-.L95
 	.sdecl	'.debug_frame',debug,cluster('ReturnFSMState')
 	.sect	'.debug_frame'
 	.word	24
-	.word	.L552,.L96,.L215-.L96
+	.word	.L568,.L97,.L218-.L97
 	.byte	8,18,8,19,8,21,8,22,8,23,0,0
 	.sdecl	'.debug_frame',debug,cluster('FSMRun')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L552,.L98,.L217-.L98
+	.word	.L568,.L99,.L220-.L99
 	.sdecl	'.debug_frame',debug,cluster('FindLineAdjPWM')
 	.sect	'.debug_frame'
 	.word	36
-	.word	.L552,.L100,.L218-.L100
+	.word	.L568,.L101,.L221-.L101
 	.byte	4
-	.word	(.L237-.L100)/2
+	.word	(.L246-.L101)/2
 	.byte	19,8,22,26,3,19,138,8,4
-	.word	(.L218-.L237)/2
+	.word	(.L221-.L246)/2
 	.byte	19,0,8,26,0,0
 
-; ..\CODE\Src\User_FSM.c	   360  }
-; ..\CODE\Src\User_FSM.c	   361  
+; ..\CODE\Src\User_FSM.c	   378  }
+; ..\CODE\Src\User_FSM.c	   379  
 
 	; Module end

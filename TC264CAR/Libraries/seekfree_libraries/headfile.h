@@ -134,9 +134,9 @@
 #define PIDMidLineFuseNum -0.000289
 
 //正常巡线PID
-#define FINDLINE_P 11//10
+#define FINDLINE_P 11//11
 #define FINDLINE_I 0.1//0.1
-#define FINDLINE_D 2800//2500
+#define FINDLINE_D 3000//3000
 
 //入库导航PID
 #define GYRO_P 20//210
@@ -144,9 +144,9 @@
 #define GYRO_D 200//1000
 
 //环岛判别条件
-#define ADCvalueC 2400 //入圆时中心电感值
-#define ADCvalueCL 1400 //入圆时左斜电感值
-#define ADCvalueCR 1400//入圆时右斜电感值
+#define ADCvalueC 2400//2600 //入圆时中心电感值
+#define ADCvalueCL 1400//1800 //入圆时左斜电感值
+#define ADCvalueCR 1400//1800//入圆时右斜电感值
 #define ADCvalueLL 2800//入圆时最左侧电感值
 #define ADCvalueRR 2800// 入圆时最右侧电感值
 
