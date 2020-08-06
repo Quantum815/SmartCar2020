@@ -60,7 +60,7 @@ void TwoCarSendData(uint8 *buff, uint32 len)
 
 uint8 TwoCarStateJudge(void)
 {
-	static uint8 count;
+	static uint8 count = 0;
 	if(TwoCarRxFlag)
 	{
 		count++;

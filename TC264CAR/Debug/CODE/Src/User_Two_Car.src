@@ -258,7 +258,7 @@ __TwoCarSendData_function_end:
 TwoCarStateJudge:	.type	func
 
 ; ..\CODE\Src\User_Two_Car.c	    62  {
-; ..\CODE\Src\User_Two_Car.c	    63  	static uint8 count;
+; ..\CODE\Src\User_Two_Car.c	    63  	static uint8 count = 0;
 ; ..\CODE\Src\User_Two_Car.c	    64  	if(TwoCarRxFlag)
 	movh.a	a15,#@his(TwoCarRxFlag)
 	ld.bu	d15,[a15]@los(TwoCarRxFlag)
@@ -354,8 +354,8 @@ TwoCarRxBuff:	.type	object
 _999001_count:	.type	object
 	.size	_999001_count,1
 	.space	1
-	.sdecl	'.bss.cpu0_psram',data,cluster('_999002_count')
-	.sect	'.bss.cpu0_psram'
+	.sdecl	'.data.cpu0_psram',data,cluster('_999002_count')
+	.sect	'.data.cpu0_psram'
 _999002_count:	.type	object
 	.size	_999002_count,1
 	.space	1
