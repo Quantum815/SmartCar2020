@@ -16,6 +16,7 @@ enum CarState  //×´Ì¬
 {
 	WaitBall,
     GoLine,
+	GoOn,
 	InRoundabout,
 	PassRoundabout,
 	OutingRoundabout,
@@ -28,6 +29,7 @@ enum CarEvent  //ÊÂ¼þ
 {
 	NOEVENT,
 	GETBALL,
+	NOROUNDABOUT,
 	FINDROUNDABOUT,
 	ENDINROUNDABOUT,
 	OUTROUNDABOUT,
@@ -67,5 +69,6 @@ void FSMEventHandle(FSM_t *fsm, int event);
 int ReturnFSMState(FSM_t *fsm);
 void FSMRun(void);
 void FindLineAdjPWM(double PWM, double LCut, double RCut);
+void GoStraight();
 
 #endif /* CODE_INC_USER_FSM_H_ */

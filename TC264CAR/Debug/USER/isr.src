@@ -27090,7 +27090,7 @@ i:	.type	object
 	.byte	'mt9v03x_dma',0,29,108,6,1,1,1,1,35
 	.byte	'ov7725_vsync',0,30,233,1,9,1,1,1,1,35
 	.byte	'ov7725_dma',0,30,234,1,9,1,1,1,1,35
-	.byte	'FSMRun',0,31,68,6,1,1,1,1,35
+	.byte	'FSMRun',0,31,70,6,1,1,1,1,35
 	.byte	'CountDistance',0,32,16,6,1,1,1,1,35
 	.byte	'GyroUARTReadByte',0,33,16,6,1,1,1,1,35
 	.byte	'GyroCalculate',0,33,17,6,1,1,1,1,35
@@ -54972,7 +54972,7 @@ i:	.type	object
 	.byte	'mt9v03x_finish_flag',0,29,97,17
 	.word	649
 	.byte	1,1,11
-	.byte	'FSMTable',0,31,40,16,16,14
+	.byte	'FSMTable',0,31,42,16,16,14
 	.byte	'Event',0
 	.word	490
 	.byte	4,2,35,0,14
@@ -54985,7 +54985,7 @@ i:	.type	object
 	.byte	'NextState',0
 	.word	490
 	.byte	4,2,35,12,0,36
-	.byte	'FSMTable_t',0,31,45,2
+	.byte	'FSMTable_t',0,31,47,2
 	.word	255320
 	.byte	0
 	.sdecl	'.debug_abbrev',debug

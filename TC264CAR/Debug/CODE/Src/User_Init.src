@@ -6827,7 +6827,7 @@ __UserInit_function_end:
 	.byte	0,33
 	.byte	'ips114_init',0,26,111,6,1,1,1,1,33
 	.byte	'DebugUARTInit',0,27,13,6,1,1,1,1,33
-	.byte	'RunStop',0,28,57,6,1,1,1,1,33
+	.byte	'RunStop',0,28,59,6,1,1,1,1,33
 	.byte	'EncoderInit',0,29,15,6,1,1,1,1,33
 	.byte	'CleanDistance',0,29,19,6,1,1,1,1,33
 	.byte	'MotorInit',0,30,23,6,1,1,1,1,33
@@ -34730,7 +34730,7 @@ __UserInit_function_end:
 	.byte	'IfxDma_SleepMode',0,56,151,2,3
 	.word	254280
 	.byte	11
-	.byte	'FSMTable',0,28,40,16,16,14
+	.byte	'FSMTable',0,28,42,16,16,14
 	.byte	'Event',0
 	.word	500
 	.byte	4,2,35,0,14
@@ -34743,7 +34743,7 @@ __UserInit_function_end:
 	.byte	'NextState',0
 	.word	500
 	.byte	4,2,35,12,0,34
-	.byte	'FSMTable_t',0,28,45,2
+	.byte	'FSMTable_t',0,28,47,2
 	.word	254366
 	.byte	0
 	.sdecl	'.debug_abbrev',debug

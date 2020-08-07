@@ -276,25 +276,25 @@ TwoCarStateJudge:	.type	func
 .L130:
 
 ; ..\CODE\Src\User_Two_Car.c	    67  		TwoCarRxFlag = 0;
-	mov	d0,#0
+	mov	d15,#0
 .L131:
-	st.b	[a15]@los(TwoCarRxFlag),d0
+	st.b	[a15]@los(TwoCarRxFlag),d15
 .L132:
 
-; ..\CODE\Src\User_Two_Car.c	    68  		if(count == 5)
-	ld.bu	d15,[a2]@los(_999002_count)
+; ..\CODE\Src\User_Two_Car.c	    68  		if(count >= 5)
+	ld.bu	d0,[a2]@los(_999002_count)
 .L133:
-	jne	d15,#5,.L13
+	jlt.u	d0,#5,.L13
 .L134:
 
 ; ..\CODE\Src\User_Two_Car.c	    69  		{
 ; ..\CODE\Src\User_Two_Car.c	    70  			count = 0;
-	st.b	[a2]@los(_999002_count),d0
+	st.b	[a2]@los(_999002_count),d15
 .L135:
 
 ; ..\CODE\Src\User_Two_Car.c	    71  			return 1;
 	mov	d2,#1
-.L136:
+.L13:
 
 ; ..\CODE\Src\User_Two_Car.c	    72  		}
 ; ..\CODE\Src\User_Two_Car.c	    73  	}
@@ -303,26 +303,25 @@ TwoCarStateJudge:	.type	func
 ; ..\CODE\Src\User_Two_Car.c	    76  		count--;
 ; ..\CODE\Src\User_Two_Car.c	    77  		if(count <= 0)
 ; ..\CODE\Src\User_Two_Car.c	    78  			count = 0;
-; ..\CODE\Src\User_Two_Car.c	    79  	}
-; ..\CODE\Src\User_Two_Car.c	    80  	return 0;
+; ..\CODE\Src\User_Two_Car.c	    79  		return 0;
+; ..\CODE\Src\User_Two_Car.c	    80  	}
 ; ..\CODE\Src\User_Two_Car.c	    81  }
 	ret
 .L12:
 	movh.a	a15,#@his(_999002_count)
 	ld.bu	d15,[a15]@los(_999002_count)
-.L137:
+.L136:
 	add	d15,#-1
 	st.b	[a15]@los(_999002_count),d15
-.L138:
+.L137:
 	ld.bu	d15,[a15]@los(_999002_count)
-.L139:
+.L138:
 	jne	d15,#0,.L15
-.L140:
+.L139:
 	st.b	[a15]@los(_999002_count),d15
 .L15:
-.L13:
 	mov	d2,#0
-.L141:
+.L140:
 	ret
 .L63:
 	
@@ -34954,7 +34953,7 @@ _999002_count:	.type	object
 	.byte	'IfxDma_SleepMode',0,48,151,2,3
 	.word	254073
 	.byte	11
-	.byte	'FSMTable',0,49,40,16,16,14
+	.byte	'FSMTable',0,49,42,16,16,14
 	.byte	'Event',0
 	.word	503
 	.byte	4,2,35,0,14
@@ -34967,7 +34966,7 @@ _999002_count:	.type	object
 	.byte	'NextState',0
 	.word	503
 	.byte	4,2,35,12,0,35
-	.byte	'FSMTable_t',0,49,45,2
+	.byte	'FSMTable_t',0,49,47,2
 	.word	254159
 .L64:
 	.byte	15,2
@@ -35369,23 +35368,23 @@ _999002_count:	.type	object
 	.byte	3,2,1,5,11,9
 	.half	.L135-.L134
 	.byte	3,1,1,5,1,9
-	.half	.L136-.L135
+	.half	.L13-.L135
 	.byte	3,10,1,5,3,7,9
-	.half	.L12-.L136
+	.half	.L12-.L13
 	.byte	3,123,1,5,8,9
-	.half	.L137-.L12
+	.half	.L136-.L12
 	.byte	1,5,6,9
-	.half	.L138-.L137
+	.half	.L137-.L136
 	.byte	3,1,1,5,3,9
-	.half	.L139-.L138
+	.half	.L138-.L137
 	.byte	1,5,10,7,9
-	.half	.L140-.L139
-	.byte	3,1,1,5,9,9
-	.half	.L13-.L140
-	.byte	3,2,1,5,1,9
-	.half	.L141-.L13
-	.byte	3,1,1,7,9
-	.half	.L48-.L141
+	.half	.L139-.L138
+	.byte	3,1,1,9
+	.half	.L15-.L139
+	.byte	3,1,1,5,1,9
+	.half	.L140-.L15
+	.byte	3,2,1,7,9
+	.half	.L48-.L140
 	.byte	0,1,1
 .L124:
 	.sdecl	'.debug_ranges',debug,cluster('TwoCarStateJudge')
@@ -35510,7 +35509,7 @@ _999002_count:	.type	object
 	.word	0,0
 	.sdecl	'.debug_frame',debug
 	.sect	'.debug_frame'
-.L142:
+.L141:
 	.word	48
 	.word	-1
 	.byte	3,0,2,1,27,12,26,0,8,27,8,26,8,28,8,29,8,30,8,31,8,34,8,35,8,32,8,33,8,16,8,17,8,24,8,25,8,36,8,37,8,38
@@ -35518,19 +35517,19 @@ _999002_count:	.type	object
 	.sdecl	'.debug_frame',debug,cluster('TwoCarUARTInit')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L142,.L18,.L55-.L18
+	.word	.L141,.L18,.L55-.L18
 	.sdecl	'.debug_frame',debug,cluster('TwoCarReadData')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L142,.L20,.L56-.L20
+	.word	.L141,.L20,.L56-.L20
 	.sdecl	'.debug_frame',debug,cluster('TwoCarSendData')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L142,.L22,.L58-.L22
+	.word	.L141,.L22,.L58-.L22
 	.sdecl	'.debug_frame',debug,cluster('TwoCarStateJudge')
 	.sect	'.debug_frame'
 	.word	24
-	.word	.L142,.L24,.L63-.L24
+	.word	.L141,.L24,.L63-.L24
 	.byte	8,19,8,20,8,21,8,22,8,23,0,0
 
 ; ..\CODE\Src\User_Two_Car.c	    82  

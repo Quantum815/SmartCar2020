@@ -16,13 +16,15 @@ FSMTable_t CarTable[] =
 	{ NOEVENT,          WaitBall,         RunStop,               WaitBall         },
 	{ GETBALL,          WaitBall,         FindLine,              GoLine           },
 	{ NOEVENT,          GoLine,           FindLine,              GoLine           },
-	{ FINDROUNDABOUT,   GoLine,           InRoundaboutProcess,   InRoundabout     },
-	{ NOEVENT,          InRoundabout,     InRoundaboutProcess,   InRoundabout     },
-	{ ENDINROUNDABOUT,  InRoundabout,     FindLine,              PassRoundabout   },
-	{ NOEVENT,          PassRoundabout,   FindLine,              PassRoundabout   },
-	{ OUTROUNDABOUT,    PassRoundabout,   OutRoundaboutProcess,  OutingRoundabout },
-	{ NOEVENT,          OutingRoundabout, OutRoundaboutProcess,  OutingRoundabout },
-	{ ENDOUTROUNDABOUT, OutingRoundabout, FindLine,              GoLine           },
+	{ NOROUNDABOUT,     GoLine,           GoStraight,               GoOn},
+	{ ENDOUTROUNDABOUT, GoOn,             FindLine,              GoLine           },
+//	{ FINDROUNDABOUT,   GoLine,           InRoundaboutProcess,   InRoundabout     },
+//	{ NOEVENT,          InRoundabout,     InRoundaboutProcess,   InRoundabout     },
+//	{ ENDINROUNDABOUT,  InRoundabout,     FindLine,              PassRoundabout   },
+//	{ NOEVENT,          PassRoundabout,   FindLine,              PassRoundabout   },
+//	{ OUTROUNDABOUT,    PassRoundabout,   OutRoundaboutProcess,  OutingRoundabout },
+//	{ NOEVENT,          OutingRoundabout, OutRoundaboutProcess,  OutingRoundabout },
+//	{ ENDOUTROUNDABOUT, OutingRoundabout, FindLine,              GoLine           },
 	{ LEFTFINDZEBRA,    GoLine,           TurnLeftGoGarage,      LeftInGarage     },
 	{ RIGHTFINDZEBRA,   GoLine,           TurnRightGoGarage,     RightInGarage    },
 	{ NOEVENT,          LeftInGarage,     TurnLeftGoGarage,      LeftInGarage     },
@@ -65,24 +67,24 @@ void RunStop(void)
 
 void FindLine(void)
 {
-	LRoundaboutFlag = 0;
-	RRoundaboutFlag = 0;
-	InRoundaboutFlag = 0;
-	OutRoundaboutFlag = 0;
+//	LRoundaboutFlag = 0;
+//	RRoundaboutFlag = 0;
+//	InRoundaboutFlag = 0;
+//	OutRoundaboutFlag = 0;
 
 	PIDValue = GetPIDValue(PIDMidLineFuseNum, MidLineFuseNum*1000, FINDLINE_P, FINDLINE_I, FINDLINE_D);
 	//printf("%f\r\n",PIDValue);
 	LPWM = LeftWheelDeadZone + LeftNormalSpeed - PIDValue;
 	RPWM = RightWheelDeadZone + RightNormalSpeed + PIDValue;
 
-    if(LPWM >= 50)
-        LPWM = 50;
-    else if(LPWM <= -50)
-        LPWM = -50;
-    if(RPWM >= 50)
-        RPWM = 50;
-    else if(RPWM <= -50)
-        RPWM = -50;
+    if(LPWM >= 35)
+        LPWM = 35;
+    else if(LPWM <= -35)
+        LPWM = -35;
+    if(RPWM >= 35)
+        RPWM = 35;
+    else if(RPWM <= -35)
+        RPWM = -35;
     MotorUserHandle(LMotor_F, LPWM);
     MotorUserHandle(RMotor_F, RPWM);
 }
@@ -276,39 +278,39 @@ void FSMRun(void)
     	//if(TwoCarStateJudge())  //²âÊÔÊ±×¢ÊÍ
     		FSMEventHandle(&CarFSM, GETBALL);
     }
-    else if(ADCValueHandle(2) >= ADCvalueC && (ADCValueHandle(1) >= ADCvalueCL || ADCValueHandle(3) >= ADCvalueCR)\
-    && (ADCValueHandle(0) > ADCvalueLL || ADCValueHandle(4) > ADCvalueRR) && ReturnFSMState(&CarFSM) == GoLine)
-    {
-    	RoundaboutCount++;
-    	if(RoundaboutCount >= 3)
-    	{
-    		if(ADCValueHandle(1) > ADCValueHandle(3))
-			{
-				LRoundaboutFlag = 1;
-				RRoundaboutFlag = 0;
-			}
-			else
-			{
-				LRoundaboutFlag = 0;
-				RRoundaboutFlag = 1;
-			}
-    		RoundaboutCount = 0;
-            FSMEventHandle(&CarFSM, FINDROUNDABOUT);
-    	}
-    }
-    else if(InRoundaboutFlag && ReturnFSMState(&CarFSM) == InRoundabout)
-    {
-    	FSMEventHandle(&CarFSM, ENDINROUNDABOUT);
-    }
-    else if(ADCValueHandle(2) >= ADCvalueC && (ADCValueHandle(1) >= ADCvalueCL || ADCValueHandle(3) >= ADCvalueCR)\
-    && (ADCValueHandle(0) > ADCvalueLL || ADCValueHandle(4) > ADCvalueRR) && ReturnFSMState(&CarFSM) == PassRoundabout)
-    {
-    	FSMEventHandle(&CarFSM, OUTROUNDABOUT);
-    }
-    else if(OutRoundaboutFlag && ReturnFSMState(&CarFSM) == OutingRoundabout)
-    {
-    	FSMEventHandle(&CarFSM, ENDOUTROUNDABOUT);
-    }
+//    else if(ADCValueHandle(2) >= ADCvalueC && (ADCValueHandle(1) >= ADCvalueCL || ADCValueHandle(3) >= ADCvalueCR)\
+//    && (ADCValueHandle(0) > ADCvalueLL || ADCValueHandle(4) > ADCvalueRR) && ReturnFSMState(&CarFSM) == GoLine)
+//    {
+//    	RoundaboutCount++;
+//    	if(RoundaboutCount >= 3)
+//    	{
+//    		if(ADCValueHandle(1) > ADCValueHandle(3))
+//			{
+//				LRoundaboutFlag = 1;
+//				RRoundaboutFlag = 0;
+//			}
+//			else
+//			{
+//				LRoundaboutFlag = 0;
+//				RRoundaboutFlag = 1;
+//			}
+//    		RoundaboutCount = 0;
+//            FSMEventHandle(&CarFSM, FINDROUNDABOUT);
+//    	}
+//    }
+//    else if(InRoundaboutFlag && ReturnFSMState(&CarFSM) == InRoundabout)
+//    {
+//    	FSMEventHandle(&CarFSM, ENDINROUNDABOUT);
+//    }
+//    else if(ADCValueHandle(2) >= ADCvalueC && (ADCValueHandle(1) >= ADCvalueCL || ADCValueHandle(3) >= ADCvalueCR)\
+//    && (ADCValueHandle(0) > ADCvalueLL || ADCValueHandle(4) > ADCvalueRR) && ReturnFSMState(&CarFSM) == PassRoundabout)
+//    {
+//    	FSMEventHandle(&CarFSM, OUTROUNDABOUT);
+//    }
+//    else if(OutRoundaboutFlag && ReturnFSMState(&CarFSM) == OutingRoundabout)
+//    {
+//    	FSMEventHandle(&CarFSM, ENDOUTROUNDABOUT);
+//    }
     else if(!InGarageDirection && EnterGarageFlag && ReturnFSMState(&CarFSM) == GoLine)
     {
         MotorUserHandle(LMotor_F, LeftWheelDeadZone+LeftInGarageSpeed);
@@ -358,5 +360,34 @@ void FindLineAdjPWM(double PWM, double LCut, double RCut)
         RPWM = -50;
     MotorUserHandle(LMotor_F, LPWM);
     MotorUserHandle(RMotor_F, RPWM);
+}
+
+void GoStraight()
+{
+	static uint8 CleanDistanceFlag = 0;
+
+		if(!CleanDistanceFlag)
+		{
+			CleanDistance();
+			CleanDistanceFlag = 1;
+		}
+	if(GetDistance() <= 0.6)
+	{
+		PIDValue = GetPIDValue(PIDMidLineFuseNum, MidLineFuseNum*1000, 5, 0.05, 2500);
+				//printf("%f\r\n",PIDValue);
+				LPWM = LeftWheelDeadZone + 3 - PIDValue;
+				RPWM = RightWheelDeadZone + 3 + PIDValue;
+
+			    if(LPWM >= 20)
+			        LPWM = 20;
+			    else if(LPWM <= -20)
+			        LPWM = -20;
+			    if(RPWM >= 20)
+			        RPWM = 20;
+			    else if(RPWM <= -20)
+			        RPWM = -20;
+			    MotorUserHandle(LMotor_F, LPWM);
+			    MotorUserHandle(RMotor_F, RPWM);
+	}
 }
 

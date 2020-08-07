@@ -115,8 +115,8 @@
 #define RightNormalSpeed 8
 
 //入库车速PWM占空比
-#define LeftInGarageSpeed 8
-#define RightInGarageSpeed 8
+#define LeftInGarageSpeed 7
+#define RightInGarageSpeed 7
 
 //入库摄像头二值化校正值
 #define InGarageAdjustedValue 0
@@ -131,12 +131,12 @@
 #define SetRightRotationAngle 90
 
 //正常巡线PID中线值
-#define PIDMidLineFuseNum -0.000289
+#define PIDMidLineFuseNum 0.000175
 
 //正常巡线PID
-#define FINDLINE_P 110
+#define FINDLINE_P 9
 #define FINDLINE_I 0.1
-#define FINDLINE_D 2800
+#define FINDLINE_D 2900
 
 //入库导航PID
 #define GYRO_P 20//210

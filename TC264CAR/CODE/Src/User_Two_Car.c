@@ -65,7 +65,7 @@ uint8 TwoCarStateJudge(void)
 	{
 		count++;
 		TwoCarRxFlag = 0;
-		if(count == 5)
+		if(count >= 5)
 		{
 			count = 0;
 			return 1;
@@ -76,8 +76,8 @@ uint8 TwoCarStateJudge(void)
 		count--;
 		if(count <= 0)
 			count = 0;
+		return 0;
 	}
-	return 0;
 }
 
 #pragma section all restore
