@@ -13,7 +13,7 @@ FSMTable_t CarTable[] =
 {
 //    µ½À´µÄÊÂ¼þ                   µ±Ç°µÄ×´Ì¬                  ½«ÒªÒªÖ´ÐÐµÄº¯Êý                    ÏÂÒ»¸ö×´Ì¬
 //	    Õý³£Ö´ÐÐ×´Ì¬±í
-	{ NOEVENT,          WaitBall,         RunStop,               WaitBall         },
+	{ NOEVENT,          WaitBall,         WaitRunStop,           WaitBall         },
 	{ GETBALL,          WaitBall,         FindLine,              GoLine           },
 	{ NOEVENT,          GoLine,           FindLine,              GoLine           },
 	{ FINDROUNDABOUT,   GoLine,           InRoundaboutProcess,   InRoundabout     },
@@ -40,6 +40,7 @@ FSMTable_t CarTable[] =
 };
 FSM_t CarFSM;
 double MidLineFuseNum;
+double MidLineFuseRatioNum;
 volatile float LPWM, RPWM;
 float PIDValue;
 
@@ -51,12 +52,37 @@ volatile uint8 LRoundaboutFlag;  //ÅÐ¶ÏÎª×ó»·
 volatile uint8 RRoundaboutFlag;  //ÅÐ¶ÏÎªÓÒ»·
 volatile uint8 PassingRoundaboutFlag; //ÅÐ¶ÏÊÇ·ñÔÚ×ßÔ²
 volatile uint8 GoGarageFinishFlag;
+volatile uint8 KickFlag;
+extern uint8 KickCount;
 
 #pragma section all restore
 
 
 //*********************************************************
 //					ÊÂ¼þ·´Ó¦º¯Êý
+void WaitRunStop(void)
+{
+	static int xxx = 0;
+	if(GetDistance() > 0.02 && !TwoCarRxFlag)
+	{
+		if(!xxx)
+		{
+			KickCount = 0;
+			xxx = 1;
+		}
+		if(KickCount == 4)
+		{
+			KickFlag = 1;
+		}
+		MotorUserHandle(LMotor_B, LeftWheelBrakeZone+6);
+		MotorUserHandle(RMotor_B, RightWheelBrakeZone+6);
+	}
+	else
+	{
+		MotorUserHandle(LMotor_B, LeftWheelBrakeZone);
+		MotorUserHandle(RMotor_B, RightWheelBrakeZone);
+	}
+}
 void RunStop(void)
 {
 	MotorUserHandle(LMotor_B, LeftWheelBrakeZone);
@@ -65,26 +91,46 @@ void RunStop(void)
 
 void FindLine(void)
 {
-	if(!PassingRoundaboutFlag){
+	static uint8 InCleanDistanceFlag = 0;
+
+	if(!PassingRoundaboutFlag)
+	{
 		LRoundaboutFlag = 0;
 		RRoundaboutFlag = 0;
 		PassingRoundaboutFlag = 0;
 	}
-	PIDValue = GetPIDValue(PIDMidLineFuseNum, MidLineFuseNum*1000, FINDLINE_P, FINDLINE_I, FINDLINE_D);
-	//printf("%f\r\n",PIDValue);
-	LPWM = LeftWheelDeadZone + LeftNormalSpeed - PIDValue;
-	RPWM = RightWheelDeadZone + RightNormalSpeed + PIDValue;
+	if(ADCValueHandle(2) >= ADCvalueC && (ADCValueHandle(1) >= ADCvalueCL || ADCValueHandle(3) >= ADCvalueCR)\
+    && (ADCValueHandle(0) > ADCvalueLL || ADCValueHandle(4) > ADCvalueRR))
+	{
+//		RunStop();
+		if(!InCleanDistanceFlag)
+		{
+			CleanDistance();
+			InCleanDistanceFlag = 1;
+		}
+		if(GetDistance() < 0.8)
+		{
+			FindLineRatioAdjPWM(7, 0, 0);
+		}
+	}
+	else
+	{
+		PIDValue = GetPIDValue(PIDMidLineFuseNum, MidLineFuseNum*1000, FINDLINE_P, FINDLINE_I, FINDLINE_D);
+			//printf("%f\r\n",PIDValue);
+			LPWM = LeftWheelDeadZone + LeftNormalSpeed - PIDValue;
+			RPWM = RightWheelDeadZone + RightNormalSpeed + PIDValue;
 
-    if(LPWM >= 50)
-        LPWM = 50;
-    else if(LPWM <= -50)
-        LPWM = -50;
-    if(RPWM >= 50)
-        RPWM = 50;
-    else if(RPWM <= -50)
-        RPWM = -50;
-    MotorUserHandle(LMotor_F, LPWM);
-    MotorUserHandle(RMotor_F, RPWM);
+		    if(LPWM >= 50)
+		        LPWM = 50;
+		    else if(LPWM <= -50)
+		        LPWM = -50;
+		    if(RPWM >= 50)
+		        RPWM = 50;
+		    else if(RPWM <= -50)
+		        RPWM = -50;
+		    MotorUserHandle(LMotor_F, LPWM);
+		    MotorUserHandle(RMotor_F, RPWM);
+	}
 }
 
 void InRoundaboutProcess(void)
@@ -104,10 +150,14 @@ void InRoundaboutProcess(void)
 //			FindLine();
 //		}
 //		else
-		if(GetDistance() < 0.4)//0.35 //0.4
+		if(GetDistance() < 0.3)//0.35 //0.4
+		{
+			FindLineRatioAdjPWM(6, 0, 0);
+		}
+		else if(GetDistance() < 0.5)
 		{
 //	    	uart_putchar(UART_3,0X02);//×´Ì¬¼ì²â2
-			FindLineAdjPWM(6, -8, 12);//6 -4 6 //6 -8 12
+			FindLineAdjPWM(6, 0, 12);//6 -4 6 //6 -8 12
 		}
 		else
 		{
@@ -202,12 +252,12 @@ void TurnRightGoGarage(void)
 	}
 	GyroYawAngleInit(-SetRightRotationAngle);
 	GyroPID(GYRO_P, GYRO_I, GYRO_D);
-	if(TotalDistance >= 0.1)
+	if(TotalDistance >= 0.3)
 	{
 	    MotorUserHandle(LMotor_F, LeftWheelDeadZone);
 	    MotorUserHandle(RMotor_F, RightWheelDeadZone);
 	}
-	else if(TotalDistance >= 0.7)
+	else if(TotalDistance >= 0.5)
 	{
 		RunStop();
 		GoGarageFinishFlag = 1;
@@ -280,58 +330,57 @@ void FSMRun(void)
 	}
     CarFSM.Size = sizeof(CarTable) / sizeof(FSMTable_t);
 
-    if(ReturnFSMState(&CarFSM) == WaitBall)
+    if((KickFlag||TwoCarStateJudge()) && ReturnFSMState(&CarFSM) == WaitBall)
     {
-//    	if(TwoCarStateJudge())  //²âÊÔÊ±×¢ÊÍ
     		FSMEventHandle(&CarFSM, GETBALL);
     }
-    else if(ADCValueHandle(2) >= ADCvalueC && (ADCValueHandle(1) >= ADCvalueCL || ADCValueHandle(3) >= ADCvalueCR)\
-    && (ADCValueHandle(0) > ADCvalueLL || ADCValueHandle(4) > ADCvalueRR) && ReturnFSMState(&CarFSM) == GoLine && RoundaboutCount==0)//¼ì²â½øÔ²
-    {
-    	IntoRoundaboutCount++;
-    	if(IntoRoundaboutCount >= 3)//Á¬Ðø¼ì²âÈý´Î
-    	{
-    		RoundaboutCount=1;
-    		if(ADCValueHandle(1) > ADCValueHandle(3))//ÅÐ¶Ï×óÔ²»òÓÒÔ²
-			{
-//    	    	uart_putchar(UART_3,0X01);//×´Ì¬¼ì²â1
-				LRoundaboutFlag = 1;//×óÔ²
-				RRoundaboutFlag = 0;
-			}
-			else
-			{
-				LRoundaboutFlag = 0;
-				RRoundaboutFlag = 1;//ÓÒÔ²
-			}
-//    		RoundaboutCount = 0;
-            FSMEventHandle(&CarFSM, FINDROUNDABOUT);
-//            FSMEventHandle(&CarFSM, RUNSTOP);
-    	}
-    }
-    else if(PassingRoundaboutFlag && ReturnFSMState(&CarFSM) == InRoundabout)//Ô²ÄÚ¹ý³Ì
-    {
-//    	uart_putchar(UART_3,0X04);//×´Ì¬¼ì²â4
-    	FSMEventHandle(&CarFSM, ENDINROUNDABOUT);
-    }
-    else if(ADCValueHandle(2) >= ADCvalueC && (ADCValueHandle(1) >= ADCvalueCL || ADCValueHandle(3) >= ADCvalueCR)\
-    && (ADCValueHandle(0) > ADCvalueLL || ADCValueHandle(4) > ADCvalueRR) && ReturnFSMState(&CarFSM) == PassRoundabout && PassingRoundaboutFlag)//¼ì²â³öÔ²
-    {
-//    	uart_putchar(UART_3,0X05);//×´Ì¬¼ì²â5
-    	FSMEventHandle(&CarFSM, OUTROUNDABOUT);
-//    	FSMEventHandle(&CarFSM, RUNSTOP);
-    }
-    else if(PassingRoundaboutFlag && ReturnFSMState(&CarFSM) == OutingRoundabout)
-    {
-		PassingRoundaboutFlag = 0;
-//    	FSMEventHandle(&CarFSM, ENDOUTROUNDABOUT);
-		FSMEventHandle(&CarFSM, RUNSTOP);
-    }
-    else if(!InGarageDirection && EnterGarageFlag && ReturnFSMState(&CarFSM) == GoLine)
-    {
-        MotorUserHandle(LMotor_F, LeftWheelDeadZone+LeftInGarageSpeed);
-        MotorUserHandle(RMotor_F, RightWheelDeadZone+RightInGarageSpeed);
-    	FSMEventHandle(&CarFSM, LEFTFINDZEBRA);
-    }
+//    else if(ADCValueHandle(2) >= ADCvalueC && (ADCValueHandle(1) >= ADCvalueCL || ADCValueHandle(3) >= ADCvalueCR)\
+//    && (ADCValueHandle(0) > ADCvalueLL || ADCValueHandle(4) > ADCvalueRR) && ReturnFSMState(&CarFSM) == GoLine && RoundaboutCount==0)//¼ì²â½øÔ²
+//    {
+//    	IntoRoundaboutCount++;
+//    	if(IntoRoundaboutCount >= 3)//Á¬Ðø¼ì²âÈý´Î
+//    	{
+//    		RoundaboutCount=1;
+//    		if(ADCValueHandle(1) > ADCValueHandle(3))//ÅÐ¶Ï×óÔ²»òÓÒÔ²
+//			{
+////    	    	uart_putchar(UART_3,0X01);//×´Ì¬¼ì²â1
+//				LRoundaboutFlag = 1;//×óÔ²
+//				RRoundaboutFlag = 0;
+//			}
+//			else
+//			{
+//				LRoundaboutFlag = 0;
+//				RRoundaboutFlag = 1;//ÓÒÔ²
+//			}
+////    		RoundaboutCount = 0;
+//            FSMEventHandle(&CarFSM, FINDROUNDABOUT);
+////            FSMEventHandle(&CarFSM, RUNSTOP);
+//    	}
+//    }
+//    else if(PassingRoundaboutFlag && ReturnFSMState(&CarFSM) == InRoundabout)//Ô²ÄÚ¹ý³Ì
+//    {
+////    	uart_putchar(UART_3,0X04);//×´Ì¬¼ì²â4
+//    	FSMEventHandle(&CarFSM, ENDINROUNDABOUT);
+//    }
+//    else if(ADCValueHandle(2) >= ADCvalueC && (ADCValueHandle(1) >= ADCvalueCL || ADCValueHandle(3) >= ADCvalueCR)\
+//    && (ADCValueHandle(0) > ADCvalueLL || ADCValueHandle(4) > ADCvalueRR) && ReturnFSMState(&CarFSM) == PassRoundabout && PassingRoundaboutFlag)//¼ì²â³öÔ²
+//    {
+////    	uart_putchar(UART_3,0X05);//×´Ì¬¼ì²â5
+//    	FSMEventHandle(&CarFSM, OUTROUNDABOUT);
+////    	FSMEventHandle(&CarFSM, RUNSTOP);
+//    }
+//    else if(PassingRoundaboutFlag && ReturnFSMState(&CarFSM) == OutingRoundabout)
+//    {
+//		PassingRoundaboutFlag = 0;
+////    	FSMEventHandle(&CarFSM, ENDOUTROUNDABOUT);
+//		FSMEventHandle(&CarFSM, RUNSTOP);
+//    }
+//    else if(!InGarageDirection && EnterGarageFlag && ReturnFSMState(&CarFSM) == GoLine)
+//    {
+//        MotorUserHandle(LMotor_F, LeftWheelDeadZone+LeftInGarageSpeed);
+//        MotorUserHandle(RMotor_F, RightWheelDeadZone+RightInGarageSpeed);
+//    	FSMEventHandle(&CarFSM, LEFTFINDZEBRA);
+//    }
     else if(InGarageDirection && EnterGarageFlag && ReturnFSMState(&CarFSM) == GoLine)
     {
         MotorUserHandle(LMotor_F, LeftWheelDeadZone+LeftInGarageSpeed);
@@ -353,7 +402,33 @@ void FSMRun(void)
 //ÆäËûº¯Êý
 void FindLineAdjPWM(double PWM, double LCut, double RCut)
 {
-    PIDValue =  GetPIDValue(PIDMidLineFuseNum, 1000 * MidLineFuseNum, 15, 0.1, 2000);
+    PIDValue =  GetPIDValue(PIDMidLineFuseNum, 1000 * MidLineFuseNum, 14, 0.1, 2000);
+    //PIDValue =  GetPIDValue(-0.002763617550954, 1000 * MidLineFuseNum, 41, 0, 3300); //54 0 35000  56.8 0 10500
+    if(PWM >= 0)
+    {
+        LPWM = PWM + LeftWheelDeadZone - PIDValue + LCut;
+        RPWM = PWM + RightWheelDeadZone +PIDValue + RCut;
+    }
+    else if(PWM < 0)
+    {
+        LPWM = PWM + PIDValue;
+        RPWM = PWM - PIDValue;
+    }
+    if(LPWM >= 50)
+        LPWM = 50;
+    else if(LPWM <= -50)
+        LPWM = -50;
+    if(RPWM >= 50)
+        RPWM = 50;
+    else if(RPWM <= -50)
+        RPWM = -50;
+    MotorUserHandle(LMotor_F, LPWM);
+    MotorUserHandle(RMotor_F, RPWM);
+}
+
+void FindLineRatioAdjPWM(double PWM, double LCut, double RCut)
+{
+    PIDValue =  GetPIDValue(PIDMidLineFuseNum, 1000 * MidLineFuseRatioNum, 15, 0.1, 2000);
     //PIDValue =  GetPIDValue(-0.002763617550954, 1000 * MidLineFuseNum, 41, 0, 3300); //54 0 35000  56.8 0 10500
     if(PWM >= 0)
     {

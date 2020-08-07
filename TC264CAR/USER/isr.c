@@ -23,6 +23,7 @@
 //在isr.c的中断函数，函数定义的第二个参数固定为0，请不要更改，即使你用CPU1处理中断也不要更改，需要CPU1处理中断只需要在isr_config.h内修改对应的宏定义即可
 
 int i;
+uint8 KickCount;
 
 //PIT中断函数  示例
 IFX_INTERRUPT(cc60_pit_ch0_isr, 0, CCU6_0_CH0_ISR_PRIORITY)  //主程序
@@ -67,6 +68,7 @@ IFX_INTERRUPT(cc61_pit_ch1_isr, 0, CCU6_1_CH1_ISR_PRIORITY)  //LED0
 {
 	enableInterrupts();//开启中断嵌套
 	PIT_CLEAR_FLAG(CCU6_1, PIT_CH1);
+	KickCount++;
 	gpio_toggle(P20_9);
 }
 

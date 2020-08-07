@@ -3,7 +3,7 @@
 ################################################################################
 
 PROJ 	= SmartCar2020TC264
-PRODDIR = C:\Program Files\TASKING\TriCore v6.3r1\ctc
+PRODDIR = D:\Program Files\TASKING\TriCore v6.3r1\ctc
 
 -include "..\makefile.init"
 
@@ -113,7 +113,7 @@ all : "SmartCar2020TC264.elf"
 	@"${PRODDIR}\bin\cctc" -f ".SmartCar2020TC264.elf.opt"
 
 ".SmartCar2020TC264.elf.opt" : .refresh
-	@argfile ".SmartCar2020TC264.elf.opt" -o "SmartCar2020TC264.elf" $(OBJ_FILES) $(EXT_LIBRARIES) $(PCP_FILES)  -Ctc26x --lsl-core=vtc -t -I"C:\Users\gudam\Desktop\SmartCar2020\TC264CAR" -Wl-o"${PROJ}.hex":IHEX:4 --hex-format=s ""C:\Users\gudam\Desktop\SmartCar2020\TC264CAR\Lcf_Tasking_Tricore_Tc.lsl"" -Wl-OtxycL --no-map-file -Wl--map-file="${PROJ}.mapxml":XML -Wl-mcrfiklSmNOduQ -Wl--error-limit=42 -g --fp-model=3 --c++=14 -Wl--dep-file=".SmartCar2020TC264.elf.d" -Wl--make-target="SmartCar2020TC264.elf"
+	@argfile ".SmartCar2020TC264.elf.opt" -o "SmartCar2020TC264.elf" $(OBJ_FILES) $(EXT_LIBRARIES) $(PCP_FILES)  -Ctc26x --lsl-core=vtc -t -I"E:\ProgramData\GithubRepositories\SmartCar2020\TC264CAR" -Wl-o"${PROJ}.hex":IHEX:4 --hex-format=s ""E:\ProgramData\GithubRepositories\SmartCar2020\TC264CAR\Lcf_Tasking_Tricore_Tc.lsl"" -Wl-OtxycL --no-map-file -Wl--map-file="${PROJ}.mapxml":XML -Wl-mcrfiklSmNOduQ -Wl--error-limit=42 -g --fp-model=3 --c++=14 -Wl--dep-file=".SmartCar2020TC264.elf.d" -Wl--make-target="SmartCar2020TC264.elf"
 DEPENDENCY_FILES += ".SmartCar2020TC264.elf.d"
 -include $(DEPENDENCY_FILES)
 

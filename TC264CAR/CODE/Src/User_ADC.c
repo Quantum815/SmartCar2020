@@ -43,12 +43,28 @@ int16 ADCValueHandle(uint8 num)
 void ADCcalculateMidLine(void)
 {
 	float Lsqrt, Rsqrt;
+
 	Lsqrt = sqrt(ADCValueHandle(0));
 	Rsqrt = sqrt(ADCValueHandle(4));
 	if(Lsqrt + Rsqrt == 0)
 		MidLineFuseNum = 0;
 	else
 		MidLineFuseNum = (Lsqrt-Rsqrt)/(ADCValueHandle(0)+ADCValueHandle(4));
+	//printf("%lf\r\n", MidLineFuseNum);
+}
+
+void ADCcalculateRatioMidLine(void)
+{
+	float Lsqrt, Rsqrt;
+
+	Lsqrt = sqrt(ADCValueHandle(0));
+	Rsqrt = sqrt(ADCValueHandle(4));
+	if(Lsqrt + Rsqrt == 0)
+		MidLineFuseRatioNum = 0;
+	else if(fabs(Lsqrt -Rsqrt) > 500)
+		MidLineFuseRatioNum = (Lsqrt-Rsqrt)/(ADCValueHandle(0)+ADCValueHandle(4))/100;
+	else
+		MidLineFuseRatioNum = (Lsqrt-Rsqrt)/(ADCValueHandle(0)+ADCValueHandle(4));
 	//printf("%lf\r\n", MidLineFuseNum);
 }
 

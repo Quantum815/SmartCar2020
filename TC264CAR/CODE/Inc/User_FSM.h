@@ -11,6 +11,7 @@
 #include "headfile.h"
 
 extern double MidLineFuseNum;
+extern double MidLineFuseRatioNum;
 
 enum CarState  //״̬
 {
@@ -54,6 +55,7 @@ typedef struct FSM{
 
 extern FSM_t CarFSM;
 
+void WaitRunStop(void);
 void RunStop(void);
 void FindLine(void);
 void InRoundaboutProcess(void);
@@ -67,5 +69,6 @@ void FSMEventHandle(FSM_t *fsm, int event);
 int ReturnFSMState(FSM_t *fsm);
 void FSMRun(void);
 void FindLineAdjPWM(double PWM, double LCut, double RCut);
+void FindLineRatioAdjPWM(double PWM, double LCut, double RCut);
 
 #endif /* CODE_INC_USER_FSM_H_ */
