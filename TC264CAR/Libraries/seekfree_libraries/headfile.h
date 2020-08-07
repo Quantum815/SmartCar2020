@@ -134,13 +134,13 @@
 #define PIDMidLineFuseNum -0.000343
 
 //正常巡线PID
-#define FINDLINE_P 14//11
-#define FINDLINE_I 0.1//0.1
-#define FINDLINE_D 2200//3000
+#define FINDLINE_P 30//11
+#define FINDLINE_I 0//0.1//0.1
+#define FINDLINE_D 0//2200//3000
 
 //入库导航PID
 #define GYRO_P 30//210
-#define GYRO_I 0.12
+#define GYRO_I 0.1
 #define GYRO_D 600//1000
 
 //环岛判别条件

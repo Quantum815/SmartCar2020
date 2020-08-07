@@ -42,22 +42,23 @@ void core0_main(void)
 	while (TRUE)
 	{
 		DebugReadParameter();  //²âÊÔ
+//		FindLine();
 //		if(GetDistance() > 0.02 && !TwoCarRxFlag)
 //		{
 //			MotorUserHandle(LMotor_B, LeftWheelBrakeZone+20);
 //			MotorUserHandle(RMotor_B, RightWheelBrakeZone+20);
 //		}
 //		RunStop();
-//		MotorUserHandle(RMotor_B, 0);
-//		MotorUserHandle(LMotor_F, 4.2);
-//		systick_delay_ms(STM0, 2000);
-//		MotorUserHandle(LMotor_B, 20);
-//		systick_delay_ms(STM0, 2000);
-//		MotorUserHandle(LMotor_B, 0);
-//		MotorUserHandle(RMotor_F, 4.8);
-//		systick_delay_ms(STM0, 2000);
-//		MotorUserHandle(RMotor_B, 20);
-//		systick_delay_ms(STM0, 2000);
+		MotorUserHandle(RMotor_B, 0);
+		MotorUserHandle(LMotor_F, 4.2);
+		systick_delay_ms(STM0, 2000);
+		MotorUserHandle(LMotor_B, 20);
+		systick_delay_ms(STM0, 2000);
+		MotorUserHandle(LMotor_B, 0);
+		MotorUserHandle(RMotor_F, 4.8);
+		systick_delay_ms(STM0, 2000);
+		MotorUserHandle(RMotor_B, 20);
+		systick_delay_ms(STM0, 2000);
 	}
 }
 

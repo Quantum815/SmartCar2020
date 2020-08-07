@@ -91,46 +91,47 @@ void RunStop(void)
 
 void FindLine(void)
 {
-	static uint8 InCleanDistanceFlag = 0;
+//	static uint8 InCleanDistanceFlag = 0;
 
-	if(!PassingRoundaboutFlag)
-	{
-		LRoundaboutFlag = 0;
-		RRoundaboutFlag = 0;
-		PassingRoundaboutFlag = 0;
-	}
-	if(ADCValueHandle(2) >= ADCvalueC && (ADCValueHandle(1) >= ADCvalueCL || ADCValueHandle(3) >= ADCvalueCR)\
-    && (ADCValueHandle(0) > ADCvalueLL || ADCValueHandle(4) > ADCvalueRR))
-	{
-//		RunStop();
-		if(!InCleanDistanceFlag)
-		{
-			CleanDistance();
-			InCleanDistanceFlag = 1;
-		}
-		if(GetDistance() < 0.8)
-		{
-			FindLineRatioAdjPWM(7, 0, 0);
-		}
-	}
-	else
-	{
-		PIDValue = GetPIDValue(PIDMidLineFuseNum, MidLineFuseNum*1000, FINDLINE_P, FINDLINE_I, FINDLINE_D);
-			//printf("%f\r\n",PIDValue);
-			LPWM = LeftWheelDeadZone + LeftNormalSpeed - PIDValue;
-			RPWM = RightWheelDeadZone + RightNormalSpeed + PIDValue;
+//	if(!PassingRoundaboutFlag)
+//	{
+//		LRoundaboutFlag = 0;
+//		RRoundaboutFlag = 0;
+//		PassingRoundaboutFlag = 0;
+//	}
 
-		    if(LPWM >= 50)
-		        LPWM = 50;
-		    else if(LPWM <= -50)
-		        LPWM = -50;
-		    if(RPWM >= 50)
-		        RPWM = 50;
-		    else if(RPWM <= -50)
-		        RPWM = -50;
-		    MotorUserHandle(LMotor_F, LPWM);
-		    MotorUserHandle(RMotor_F, RPWM);
-	}
+//	if(ADCValueHandle(2) >= ADCvalueC && (ADCValueHandle(1) >= ADCvalueCL || ADCValueHandle(3) >= ADCvalueCR)\
+//    && (ADCValueHandle(0) > ADCvalueLL || ADCValueHandle(4) > ADCvalueRR))
+//	{
+////		RunStop();
+//		if(!InCleanDistanceFlag)
+//		{
+//			CleanDistance();
+//			InCleanDistanceFlag = 1;
+//		}
+//		if(GetDistance() < 0.8)
+//		{
+//			FindLineRatioAdjPWM(7, 0, 0);
+//		}
+//	}
+//	else
+//	{
+	PIDValue = GetPIDValue(PIDMidLineFuseNum, MidLineFuseNum*1000, FINDLINE_P, FINDLINE_I, FINDLINE_D);
+		//printf("%f\r\n",PIDValue);
+		LPWM = LeftWheelDeadZone + LeftNormalSpeed - PIDValue;
+		RPWM = RightWheelDeadZone + RightNormalSpeed + PIDValue;
+
+		if(LPWM >= 50)
+			LPWM = 50;
+		else if(LPWM <= -50)
+			LPWM = -50;
+		if(RPWM >= 50)
+			RPWM = 50;
+		else if(RPWM <= -50)
+			RPWM = -50;
+		MotorUserHandle(LMotor_F, LPWM);
+		MotorUserHandle(RMotor_F, RPWM);
+//	}
 }
 
 void InRoundaboutProcess(void)
@@ -330,7 +331,7 @@ void FSMRun(void)
 	}
     CarFSM.Size = sizeof(CarTable) / sizeof(FSMTable_t);
 
-    if((KickFlag||TwoCarStateJudge()) && ReturnFSMState(&CarFSM) == WaitBall)
+    if(/*(KickFlag||TwoCarStateJudge()) && ¿ÉÓÃ*/ReturnFSMState(&CarFSM) == WaitBall)
     {
     		FSMEventHandle(&CarFSM, GETBALL);
     }
