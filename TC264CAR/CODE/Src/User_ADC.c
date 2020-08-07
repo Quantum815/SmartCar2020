@@ -9,7 +9,7 @@
 
 #pragma section all "cpu0_dsram"
 
-static uint16 ADCValue[5];
+uint16 ADCValue[5];
 
 #pragma section all restore
 
@@ -62,7 +62,7 @@ void ADCcalculateRatioMidLine(void)
 	if(Lsqrt + Rsqrt == 0)
 		MidLineFuseRatioNum = 0;
 	else if(fabs(Lsqrt -Rsqrt) > 500)
-		MidLineFuseRatioNum = (Lsqrt-Rsqrt)/(ADCValueHandle(0)+ADCValueHandle(4))/100;
+		MidLineFuseRatioNum = (Lsqrt-Rsqrt)/(ADCValueHandle(0)+ADCValueHandle(4))/50;
 	else
 		MidLineFuseRatioNum = (Lsqrt-Rsqrt)/(ADCValueHandle(0)+ADCValueHandle(4));
 	//printf("%lf\r\n", MidLineFuseNum);

@@ -10,6 +10,7 @@
 
 #include "headfile.h"
 
+extern uint16 ADCValue[5];
 extern double MidLineFuseNum;
 
 void ADCInit(void);

@@ -111,8 +111,8 @@
 #define RightWheelBrakeZone 2.7
 
 //正常车速PWM占空比
-#define LeftNormalSpeed 7
-#define RightNormalSpeed 7
+#define LeftNormalSpeed 6//8
+#define RightNormalSpeed 6//8
 
 //入库车速PWM占空比
 #define LeftInGarageSpeed 8
@@ -134,21 +134,21 @@
 #define PIDMidLineFuseNum -0.000343
 
 //正常巡线PID
-#define FINDLINE_P 30//11
-#define FINDLINE_I 0//0.1//0.1
-#define FINDLINE_D 0//2200//3000
+#define FINDLINE_P 6//11
+#define FINDLINE_I 0.1//0.1
+#define FINDLINE_D 2000//2200
 
 //入库导航PID
-#define GYRO_P 30//210
+#define GYRO_P 20//210
 #define GYRO_I 0.1
-#define GYRO_D 600//1000
+#define GYRO_D 1000//1000
 
 //环岛判别条件
-#define ADCvalueC 2300 //入圆时中心电感值
-#define ADCvalueCL 1800 //入圆时左斜电感值
-#define ADCvalueCR 1800//入圆时右斜电感值
-#define ADCvalueLL 2800//入圆时最左侧电感值
-#define ADCvalueRR 2800// 入圆时最右侧电感值
+#define ADCvalueC 1900 //入圆时中心电感值
+#define ADCvalueCL 800 //入圆时左斜电感值
+#define ADCvalueCR 800//入圆时右斜电感值
+#define ADCvalueLL 2400//入圆时最左侧电感值
+#define ADCvalueRR 2400// 入圆时最右侧电感值
 
 ////进环岛判别条件
 //#define ADCvalueC_In 2400 //入圆时中心电感值

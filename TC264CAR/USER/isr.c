@@ -32,7 +32,7 @@ IFX_INTERRUPT(cc60_pit_ch0_isr, 0, CCU6_0_CH0_ISR_PRIORITY)  //Ö÷³ÌÐò
 	PIT_CLEAR_FLAG(CCU6_0, PIT_CH0);
 	ADCcalculateMidLine();
 	//RunStop();
-//	FSMRun();
+	FSMRun();
 }
 
 

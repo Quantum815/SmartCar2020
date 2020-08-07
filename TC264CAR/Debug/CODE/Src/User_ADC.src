@@ -24,7 +24,7 @@ $TC16X
 ; ..\CODE\Src\User_ADC.c	     9  
 ; ..\CODE\Src\User_ADC.c	    10  #pragma section all "cpu0_dsram"
 ; ..\CODE\Src\User_ADC.c	    11  
-; ..\CODE\Src\User_ADC.c	    12  static uint16 ADCValue[5];
+; ..\CODE\Src\User_ADC.c	    12  uint16 ADCValue[5];
 ; ..\CODE\Src\User_ADC.c	    13  
 ; ..\CODE\Src\User_ADC.c	    14  #pragma section all restore
 ; ..\CODE\Src\User_ADC.c	    15  
@@ -323,7 +323,7 @@ ADCcalculateRatioMidLine:	.type	func
 
 ; ..\CODE\Src\User_ADC.c	    63  		MidLineFuseRatioNum = 0;
 ; ..\CODE\Src\User_ADC.c	    64  	else if(fabs(Lsqrt -Rsqrt) > 500)
-; ..\CODE\Src\User_ADC.c	    65  		MidLineFuseRatioNum = (Lsqrt-Rsqrt)/(ADCValueHandle(0)+ADCValueHandle(4))/100;
+; ..\CODE\Src\User_ADC.c	    65  		MidLineFuseRatioNum = (Lsqrt-Rsqrt)/(ADCValueHandle(0)+ADCValueHandle(4))/50;
 ; ..\CODE\Src\User_ADC.c	    66  	else
 .L10:
 	movh.a	a15,#@his(MidLineFuseRatioNum)
@@ -374,7 +374,7 @@ ADCcalculateRatioMidLine:	.type	func
 .L166:
 	div.f	d15,d8,d15
 .L167:
-	movh	d0,#17096
+	movh	d0,#16968
 .L168:
 	div.f	d15,d15,d0
 .L8:
@@ -393,6 +393,7 @@ __ADCcalculateRatioMidLine_function_end:
 	
 	.sdecl	'.bss.cpu0_dsram',data,cluster('ADCValue')
 	.sect	'.bss.cpu0_dsram'
+	.global	ADCValue
 	.align	2
 ADCValue:	.type	object
 	.size	ADCValue,10
@@ -34813,7 +34814,7 @@ ADCValue:	.type	object
 	.byte	'MidLineFuseRatioNum',0,48,14,15
 	.word	207
 	.byte	1,1,11
-	.byte	'FSMTable',0,48,41,16,16,14
+	.byte	'FSMTable',0,48,46,16,16,14
 	.byte	'Event',0
 	.word	499
 	.byte	4,2,35,0,14
@@ -34826,7 +34827,7 @@ ADCValue:	.type	object
 	.byte	'NextState',0
 	.word	499
 	.byte	4,2,35,12,0,35
-	.byte	'FSMTable_t',0,48,46,2
+	.byte	'FSMTable_t',0,48,51,2
 	.word	252688
 .L65:
 	.byte	15,10
@@ -35346,7 +35347,7 @@ ADCValue:	.type	object
 	.sdecl	'.debug_info',debug,cluster('ADCValue')
 	.sect	'.debug_info'
 .L50:
-	.word	168
+	.word	169
 	.half	3
 	.word	.L51
 	.byte	4,1
@@ -35355,15 +35356,16 @@ ADCValue:	.type	object
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Debug\\',0,12,1,2
 	.word	.L21
 	.byte	3
-	.byte	'ADCValue',0,25,12,15
+	.byte	'ADCValue',0,25,12,8
 	.word	.L65
-	.byte	5,3
+	.byte	1,5,3
 	.word	ADCValue
 	.byte	0
 	.sdecl	'.debug_abbrev',debug,cluster('ADCValue')
 	.sect	'.debug_abbrev'
 .L51:
-	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,2,9,0,0,0
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
+	.byte	0,0,0
 	.sdecl	'.debug_loc',debug,cluster('ADCInit')
 	.sect	'.debug_loc'
 .L11:

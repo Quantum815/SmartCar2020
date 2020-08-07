@@ -46,7 +46,7 @@ double GetDistance(void)
 
 double GetSpeed(void)
 {
-	return (CurDistance/CalculationTime);
+	return (CurDistance/CalculationTime*1000);
 }
 
 void CleanDistance(void)
