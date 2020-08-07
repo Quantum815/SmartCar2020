@@ -54,6 +54,7 @@ typedef struct FSM{
 
 extern FSM_t CarFSM;
 
+void WaitRunStop(void);
 void RunStop(void);
 void FindLine(void);
 void InRoundaboutProcess(void);

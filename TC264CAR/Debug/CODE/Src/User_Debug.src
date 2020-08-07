@@ -385,7 +385,7 @@ DebugReadParameter:	.type	func
 	call	ips114_showfloat
 .L148:
 
-; ..\CODE\Src\User_Debug.c	    75  	ips114_showfloat(120,4,TotalDistance,4,6);
+; ..\CODE\Src\User_Debug.c	    75  	ips114_showfloat(120,4,TotalDistance[0],4,6);
 	st.b	[a10],d15
 .L149:
 	mov	d4,#120
@@ -393,23 +393,38 @@ DebugReadParameter:	.type	func
 	mov	d5,#4
 .L151:
 	movh.a	a15,#@his(TotalDistance)
-	ld.w	d6,[a15]@los(TotalDistance)
 .L152:
+	ld.w	d6,[a15]@los(TotalDistance)
+.L153:
 	mov	d7,d5
 	call	ips114_showfloat
-.L153:
+.L154:
 
 ; ..\CODE\Src\User_Debug.c	    76  	ips114_showfloat(120,5,Threshold,4,6);
 	st.b	[a10],d15
-.L154:
-	mov	d4,#120
 .L155:
-	mov	d5,#5
+	mov	d4,#120
 .L156:
+	mov	d5,#5
+.L157:
 	movh.a	a15,#@his(Threshold)
 	ld.bu	d15,[a15]@los(Threshold)
 	utof	d6,d15
-.L157:
+.L158:
+	mov	d7,#4
+	call	ips114_showfloat
+.L159:
+
+; ..\CODE\Src\User_Debug.c	    77  	ips114_showfloat(120,6,TotalDistance[1],4,6);
+	mov	d5,#6
+	st.b	[a10],d5
+.L160:
+	mov	d4,#120
+.L161:
+	movh.a	a15,#@his(TotalDistance+4)
+.L162:
+	ld.w	d6,[a15]@los(TotalDistance+4)
+.L163:
 	mov	d7,#4
 	j	ips114_showfloat
 .L44:
@@ -479,7 +494,7 @@ DebugADCValue:	.type	object
 	.sdecl	'.debug_info',debug
 	.sect	'.debug_info'
 .L20:
-	.word	253725
+	.word	253734
 	.half	3
 	.word	.L21
 	.byte	4
@@ -7061,17 +7076,17 @@ DebugADCValue:	.type	object
 	.byte	4,2,35,8,0,3
 	.word	42014
 	.byte	32
-	.byte	'FSMEventHandle',0,27,66,6,1,1,1,1,5
-	.byte	'fsm',0,27,66,28
+	.byte	'FSMEventHandle',0,27,67,6,1,1,1,1,5
+	.byte	'fsm',0,27,67,28
 	.word	42074
 	.byte	5
-	.byte	'event',0,27,66,37
+	.byte	'event',0,27,67,37
 	.word	490
 	.byte	0,33
-	.byte	'ReturnFSMState',0,27,67,5
+	.byte	'ReturnFSMState',0,27,68,5
 	.word	490
 	.byte	1,1,1,1,5
-	.byte	'fsm',0,27,67,27
+	.byte	'fsm',0,27,68,27
 	.word	42074
 	.byte	0,33
 	.byte	'ADCValueHandle',0,28,17,7
@@ -34987,9 +35002,11 @@ DebugADCValue:	.type	object
 	.byte	38
 	.byte	'CarFSM',0,27,55,14
 	.word	42014
-	.byte	1,1,38
-	.byte	'TotalDistance',0,53,13,28
+	.byte	1,1,15,40
 	.word	198
+	.byte	16,9,0,38
+	.byte	'TotalDistance',0,53,13,28
+	.word	253615
 	.byte	1,1,38
 	.byte	'PitchAngle',0,54,13,15
 	.word	198
@@ -35423,7 +35440,7 @@ DebugADCValue:	.type	object
 	.half	.L146-.L145
 	.byte	1,5,34,9
 	.half	.L147-.L146
-	.byte	1,5,41,9
+	.byte	1,5,44,9
 	.half	.L148-.L147
 	.byte	3,1,1,5,19,9
 	.half	.L149-.L148
@@ -35431,20 +35448,32 @@ DebugADCValue:	.type	object
 	.half	.L150-.L149
 	.byte	1,5,25,9
 	.half	.L151-.L150
-	.byte	1,5,39,9
+	.byte	1,5,38,9
 	.half	.L152-.L151
-	.byte	1,5,37,9
+	.byte	1,5,42,9
 	.half	.L153-.L152
-	.byte	3,1,1,5,19,9
+	.byte	1,5,37,9
 	.half	.L154-.L153
-	.byte	1,5,23,9
+	.byte	3,1,1,5,19,9
 	.half	.L155-.L154
-	.byte	1,5,25,9
+	.byte	1,5,23,9
 	.half	.L156-.L155
-	.byte	1,5,35,9
+	.byte	1,5,25,9
 	.half	.L157-.L156
+	.byte	1,5,35,9
+	.half	.L158-.L157
+	.byte	1,5,44,9
+	.half	.L159-.L158
+	.byte	3,1,1,5,19,9
+	.half	.L160-.L159
+	.byte	1,5,25,9
+	.half	.L161-.L160
+	.byte	1,5,38,9
+	.half	.L162-.L161
+	.byte	1,5,42,9
+	.half	.L163-.L162
 	.byte	1,5,1,9
-	.half	.L37-.L157
+	.half	.L37-.L163
 	.byte	3,1,0,1,1
 .L96:
 	.sdecl	'.debug_ranges',debug,cluster('DebugReadParameter')
@@ -35524,7 +35553,7 @@ DebugADCValue:	.type	object
 	.word	0,0
 	.sdecl	'.debug_frame',debug
 	.sect	'.debug_frame'
-.L158:
+.L164:
 	.word	48
 	.word	-1
 	.byte	3,0,2,1,27,12,26,0,8,27,8,26,8,28,8,29,8,30,8,31,8,34,8,35,8,32,8,33,8,16,8,17,8,24,8,25,8,36,8,37,8,38
@@ -35532,21 +35561,21 @@ DebugADCValue:	.type	object
 	.sdecl	'.debug_frame',debug,cluster('DebugUARTInit')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L158,.L14,.L42-.L14
+	.word	.L164,.L14,.L42-.L14
 	.sdecl	'.debug_frame',debug,cluster('DebugSend')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L158,.L16,.L43-.L16
+	.word	.L164,.L16,.L43-.L16
 	.sdecl	'.debug_frame',debug,cluster('DebugReadParameter')
 	.sect	'.debug_frame'
 	.word	36
-	.word	.L158,.L18,.L44-.L18
+	.word	.L164,.L18,.L44-.L18
 	.byte	4
 	.word	(.L47-.L18)/2
 	.byte	19,8,22,26,3,19,138,8,4
 	.word	(.L44-.L47)/2
 	.byte	19,0,8,26,0,0
 
-; ..\CODE\Src\User_Debug.c	    77  }
+; ..\CODE\Src\User_Debug.c	    78  }
 
 	; Module end

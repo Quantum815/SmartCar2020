@@ -13,7 +13,7 @@ FSMTable_t CarTable[] =
 {
 //    到来的事件                   当前的状态                  将要要执行的函数                    下一个状态
 //	    正常执行状态表
-	{ NOEVENT,          WaitBall,         RunStop,               WaitBall         },
+	{ NOEVENT,          WaitBall,         WaitRunStop,           WaitBall         },
 	{ GETBALL,          WaitBall,         FindLine,              GoLine           },
 	{ NOEVENT,          GoLine,           FindLine,              GoLine           },
 	{ FINDROUNDABOUT,   GoLine,           InRoundaboutProcess,   InRoundabout     },
@@ -51,12 +51,27 @@ volatile uint8 LRoundaboutFlag;  //判断为左环
 volatile uint8 RRoundaboutFlag;  //判断为右环
 volatile uint8 PassingRoundaboutFlag; //判断是否在走圆
 volatile uint8 GoGarageFinishFlag;
+volatile uint8 KickFlag;
 
 #pragma section all restore
 
 
 //*********************************************************
 //					事件反应函数
+void WaitRunStop(void)
+{
+	if(GetDistance(0) > 0.02 && !TwoCarRxFlag)
+	{
+		KickFlag = 1;
+		MotorUserHandle(LMotor_B, LeftWheelBrakeZone+9);
+		MotorUserHandle(RMotor_B, RightWheelBrakeZone+9);
+	}
+	else
+	{
+		MotorUserHandle(LMotor_B, LeftWheelBrakeZone);
+		MotorUserHandle(RMotor_B, RightWheelBrakeZone);
+	}
+}
 void RunStop(void)
 {
 	MotorUserHandle(LMotor_B, LeftWheelBrakeZone);
@@ -99,26 +114,26 @@ void InRoundaboutProcess(void)
 
 	if(LRoundaboutFlag)
 	{
-//		if(GetDistance() < 0.1)
+//		if(GetDistance(0) < 0.1)
 //		{
 //			FindLine();
 //		}
 //		else
-		if(GetDistance() < 0.4)//0.35 //0.4
+		if(GetDistance(0) < 0.4)//0.35 //0.4
 		{
-//	    	uart_putchar(UART_3,0X02);//状态检测2
+	    	uart_putchar(UART_3,0X02);//状态检测2
 			FindLineAdjPWM(6, -8, 12);//6 -4 6 //6 -8 12
 		}
 		else
 		{
-//	    	uart_putchar(UART_3,0X03);//状态检测3
+	    	uart_putchar(UART_3,0X03);//状态检测3
 			FindLine();
 			PassingRoundaboutFlag = 1;
 		}
 	}
 	else if(RRoundaboutFlag)
 	{
-		if(GetDistance() < 0.3)
+		if(GetDistance(0) < 0.3)
 		{
 			FindLineAdjPWM(6, 0, 6);
 		}
@@ -142,7 +157,7 @@ void OutRoundaboutProcess(void)
 
 	if(LRoundaboutFlag)
 	{
-//		if(GetDistance() < 0.3)
+//		if(GetDistance(0) < 0.3)
 //		{
 //			FindLineAdjPWM(6, 6, 0);
 //		}
@@ -155,7 +170,7 @@ void OutRoundaboutProcess(void)
 	}
 	else if(RRoundaboutFlag)
 	{
-//		if(GetDistance() < 0.3)
+//		if(GetDistance(0) < 0.3)
 //		{
 //			FindLineAdjPWM(6, 6, 0);
 //		}
@@ -179,12 +194,12 @@ void TurnLeftGoGarage(void)
 	}
 	GyroYawAngleInit(SetLeftRotationAngle);//+左转；-右转
 	GyroPID(GYRO_P, GYRO_I, GYRO_D);
-	if(TotalDistance >= 0.25)
+	if(TotalDistance[0] >= 0.05)//0.05;0.01;原始0.25
 	{
 	    MotorUserHandle(LMotor_F, LeftWheelDeadZone);
-	    MotorUserHandle(RMotor_F, RightWheelDeadZone);
+	    MotorUserHandle(RMotor_F, RightWheelDeadZone+10);//10;10;原始0
 	}
-	if(TotalDistance >= 0.7)
+	if(TotalDistance[0] >= 0.3)//0.5;原始0.7
 	{
 		RunStop();
 		GoGarageFinishFlag = 1;
@@ -202,12 +217,19 @@ void TurnRightGoGarage(void)
 	}
 	GyroYawAngleInit(-SetRightRotationAngle);
 	GyroPID(GYRO_P, GYRO_I, GYRO_D);
-	if(TotalDistance >= 0.1)
+	if(TotalDistance[0] >= 0.05)//0.05;原始0.25
 	{
-	    MotorUserHandle(LMotor_F, LeftWheelDeadZone);
+//    	uart_putchar(UART_3,0X06);//状态检测6
+	    MotorUserHandle(LMotor_F, LeftWheelDeadZone+15);//10;原始0
 	    MotorUserHandle(RMotor_F, RightWheelDeadZone);
 	}
-	else if(TotalDistance >= 0.7)
+	else if(TotalDistance[0] >= 0.2 )//0.5;原始0.7
+	{
+//    	uart_putchar(UART_3,0X07);//状态检测7
+		RunStop();
+		GoGarageFinishFlag = 1;
+	}
+	if(GetDistance(1)>=15.5)
 	{
 		RunStop();
 		GoGarageFinishFlag = 1;
@@ -283,56 +305,57 @@ void FSMRun(void)
     if(ReturnFSMState(&CarFSM) == WaitBall)
     {
 //    	if(TwoCarStateJudge())  //测试时注释
-    		FSMEventHandle(&CarFSM, GETBALL);
+		FSMEventHandle(&CarFSM, GETBALL);
     }
-    else if(ADCValueHandle(2) >= ADCvalueC && (ADCValueHandle(1) >= ADCvalueCL || ADCValueHandle(3) >= ADCvalueCR)\
-    && (ADCValueHandle(0) > ADCvalueLL || ADCValueHandle(4) > ADCvalueRR) && ReturnFSMState(&CarFSM) == GoLine && RoundaboutCount==0)//检测进圆
-    {
-    	IntoRoundaboutCount++;
-    	if(IntoRoundaboutCount >= 3)//连续检测三次
-    	{
-    		RoundaboutCount=1;
-    		if(ADCValueHandle(1) > ADCValueHandle(3))//判断左圆或右圆
-			{
+//    else if(ADCValueHandle(2) >= ADCvalueC && (ADCValueHandle(1) >= ADCvalueCL || ADCValueHandle(3) >= ADCvalueCR)\
+//    && (ADCValueHandle(0) > ADCvalueLL || ADCValueHandle(4) > ADCvalueRR) && ReturnFSMState(&CarFSM) == GoLine && RoundaboutCount==0)//检测进圆
+//    {
+//    	IntoRoundaboutCount++;
+//    	if(IntoRoundaboutCount >= 3)//连续检测三次
+//    	{
+//    		RoundaboutCount=1;
+//    		if(ADCValueHandle(1) > ADCValueHandle(3))//判断左圆或右圆
+//			{
 //    	    	uart_putchar(UART_3,0X01);//状态检测1
-				LRoundaboutFlag = 1;//左圆
-				RRoundaboutFlag = 0;
-			}
-			else
-			{
-				LRoundaboutFlag = 0;
-				RRoundaboutFlag = 1;//右圆
-			}
-//    		RoundaboutCount = 0;
-            FSMEventHandle(&CarFSM, FINDROUNDABOUT);
-//            FSMEventHandle(&CarFSM, RUNSTOP);
-    	}
-    }
-    else if(PassingRoundaboutFlag && ReturnFSMState(&CarFSM) == InRoundabout)//圆内过程
-    {
+//				LRoundaboutFlag = 1;//左圆
+//				RRoundaboutFlag = 0;
+//			}
+//			else
+//			{
+//				LRoundaboutFlag = 0;
+//				RRoundaboutFlag = 1;//右圆
+//			}
+////    		RoundaboutCount = 0;
+//            FSMEventHandle(&CarFSM, FINDROUNDABOUT);
+////            FSMEventHandle(&CarFSM, RUNSTOP);
+//    	}
+//    }
+//    else if(PassingRoundaboutFlag && ReturnFSMState(&CarFSM) == InRoundabout)//圆内过程
+//    {
 //    	uart_putchar(UART_3,0X04);//状态检测4
-    	FSMEventHandle(&CarFSM, ENDINROUNDABOUT);
-    }
-    else if(ADCValueHandle(2) >= ADCvalueC && (ADCValueHandle(1) >= ADCvalueCL || ADCValueHandle(3) >= ADCvalueCR)\
-    && (ADCValueHandle(0) > ADCvalueLL || ADCValueHandle(4) > ADCvalueRR) && ReturnFSMState(&CarFSM) == PassRoundabout && PassingRoundaboutFlag)//检测出圆
-    {
+//    	FSMEventHandle(&CarFSM, ENDINROUNDABOUT);
+//    }
+//    else if(ADCValueHandle(2) >= ADCvalueC && (ADCValueHandle(1) >= ADCvalueCL || ADCValueHandle(3) >= ADCvalueCR)\
+//    && (ADCValueHandle(0) > ADCvalueLL || ADCValueHandle(4) > ADCvalueRR) && ReturnFSMState(&CarFSM) == PassRoundabout && PassingRoundaboutFlag && GetDistance(1)>=10.5)//检测出圆
+//    {
+////    	PassingRoundaboutFlag=0;
 //    	uart_putchar(UART_3,0X05);//状态检测5
-    	FSMEventHandle(&CarFSM, OUTROUNDABOUT);
-//    	FSMEventHandle(&CarFSM, RUNSTOP);
-    }
-    else if(PassingRoundaboutFlag && ReturnFSMState(&CarFSM) == OutingRoundabout)
-    {
-		PassingRoundaboutFlag = 0;
+//    	FSMEventHandle(&CarFSM, OUTROUNDABOUT);
+////    	FSMEventHandle(&CarFSM, RUNSTOP);
+//    }
+//    else if(PassingRoundaboutFlag && ReturnFSMState(&CarFSM) == OutingRoundabout)
+//    {
+//		PassingRoundaboutFlag = 0;
 //    	FSMEventHandle(&CarFSM, ENDOUTROUNDABOUT);
-		FSMEventHandle(&CarFSM, RUNSTOP);
-    }
-    else if(!InGarageDirection && EnterGarageFlag && ReturnFSMState(&CarFSM) == GoLine)
+////		FSMEventHandle(&CarFSM, RUNSTOP);
+//    }
+    else if(!InGarageDirection && EnterGarageFlag && ReturnFSMState(&CarFSM) == GoLine && GetDistance(1)>=9)
     {
         MotorUserHandle(LMotor_F, LeftWheelDeadZone+LeftInGarageSpeed);
         MotorUserHandle(RMotor_F, RightWheelDeadZone+RightInGarageSpeed);
     	FSMEventHandle(&CarFSM, LEFTFINDZEBRA);
     }
-    else if(InGarageDirection && EnterGarageFlag && ReturnFSMState(&CarFSM) == GoLine)
+    else if(InGarageDirection && EnterGarageFlag && ReturnFSMState(&CarFSM) == GoLine && GetDistance(1)>=9)
     {
         MotorUserHandle(LMotor_F, LeftWheelDeadZone+LeftInGarageSpeed);
         MotorUserHandle(RMotor_F, RightWheelDeadZone+RightInGarageSpeed);

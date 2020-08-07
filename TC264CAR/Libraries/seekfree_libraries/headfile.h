@@ -103,16 +103,16 @@
 #define WHEEL_DIAMETER 62
 
 //车轮启动死区PWM占空比
-#define LeftWheelDeadZone 4//4.2
-#define RightWheelDeadZone 4.9//4.1
+#define LeftWheelDeadZone 4//Car1 4.2;Car2 4
+#define RightWheelDeadZone 4.9//Car1 4.1;Car2 4
 
 //车轮刹车死区PWM占空比
-#define LeftWheelBrakeZone 2.4//2.4
-#define RightWheelBrakeZone 2.7//2.3
+#define LeftWheelBrakeZone 2.4//Car1 2.4;Car2 2.4
+#define RightWheelBrakeZone 2.7//Car1 2.3;Car2 2.7
 
 //正常车速PWM占空比
-#define LeftNormalSpeed 8
-#define RightNormalSpeed 8
+#define LeftNormalSpeed 11//8
+#define RightNormalSpeed 11//8
 
 //入库车速PWM占空比
 #define LeftInGarageSpeed 8
@@ -122,7 +122,7 @@
 #define InGarageAdjustedValue 0
 
 //入库方向
-#define InGarageDirection 1  //0为左库，1为右库
+#define InGarageDirection 0  //0为左库，1为右库
 
 //左转入库转弯角度
 #define SetLeftRotationAngle 90
@@ -134,9 +134,9 @@
 #define PIDMidLineFuseNum -0.000289
 
 //正常巡线PID
-#define FINDLINE_P 11//11
-#define FINDLINE_I 0.1//0.1
-#define FINDLINE_D 3000//3000
+#define FINDLINE_P 11//+(2*(GetSpeed()/1.8))//Car1 10;Car2 11
+#define FINDLINE_I 0//Car1 0.1;Car2 0.1
+#define FINDLINE_D 3000//*(GetSpeed()/1.25)//Car1 2800;Car2 3000
 
 //入库导航PID
 #define GYRO_P 20//210

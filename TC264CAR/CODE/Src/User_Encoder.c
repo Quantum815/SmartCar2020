@@ -9,7 +9,7 @@
 
 #pragma section all "cpu0_dsram"
 
-double CurDistance, TotalDistance;
+double CurDistance, TotalDistance[10];
 
 #pragma section all restore
 
@@ -33,15 +33,16 @@ void CountDistance(void)
 	CurLdistance = ((double)encoder0/1024)*((WHEEL_DIAMETER*3.1415)/1000)*(30/68.0);
 	CurRdistance = -((double)encoder1/1024)*((WHEEL_DIAMETER*3.1415)/1000)*(30/68.0);
 	CurDistance = (CurLdistance + CurRdistance) / 2;
-	TotalDistance += CurDistance;
+	for(int i=0;i<10;i++)
+	TotalDistance[i] += CurDistance;
 
 	gpt12_clear(GPT12_T2);
 	gpt12_clear(GPT12_T6);
 }
 
-double GetDistance(void)
+double GetDistance(int i)
 {
-	return TotalDistance;
+	return TotalDistance[i];
 }
 
 double GetSpeed(void)
@@ -51,7 +52,7 @@ double GetSpeed(void)
 
 void CleanDistance(void)
 {
-	TotalDistance = 0;
+	TotalDistance[0] = 0;
 }
 
 #pragma section all restore

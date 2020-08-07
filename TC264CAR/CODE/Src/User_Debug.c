@@ -72,6 +72,7 @@ void DebugReadParameter(void)
 	ips114_showfloat(120,0,PitchAngle,4,6);
 	ips114_showfloat(120,1,RollAngle,4,6);
 	ips114_showfloat(120,2,YawAngle,4,6);
-	ips114_showfloat(120,4,TotalDistance,4,6);
+	ips114_showfloat(120,4,TotalDistance[0],4,6);
 	ips114_showfloat(120,5,Threshold,4,6);
+	ips114_showfloat(120,6,TotalDistance[1],4,6);
 }
