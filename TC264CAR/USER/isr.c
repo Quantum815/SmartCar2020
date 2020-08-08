@@ -62,6 +62,7 @@ IFX_INTERRUPT(cc61_pit_ch0_isr, 0, CCU6_1_CH0_ISR_PRIORITY)  //数据获取
 	UpdateADCValue();
 	CountDistance();
 	GyroCalculate();
+	UpdateCulAngle();
 }
 
 IFX_INTERRUPT(cc61_pit_ch1_isr, 0, CCU6_1_CH1_ISR_PRIORITY)  //LED0

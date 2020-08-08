@@ -19,5 +19,8 @@ void ManageYawAngle(void);
 void GyroYawAngleInit(double RotationAngle);
 double GetGyroError(void);  //ªÒ»°±»¿˝ŒÛ≤Ó
 void GyroPID(double Kp, double Ki, double Kd);
-
+double CulAngle(void);
+void InitCulAngle(void);
+void UpdateCulAngle(void);
+double GetGYROCulError(void);
 #endif /* CODE_INC_USER_GYRO_UART_H_ */

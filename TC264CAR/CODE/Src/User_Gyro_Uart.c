@@ -14,7 +14,7 @@ uint8 GyroAutoCalibration[5] = {0xff, 0xaa, 0x63, 0x00, 0x00};  //陀螺仪自动校准
 uint8 GyroKeepConfiguration[5] = {0xff, 0xaa, 0x00, 0x00, 0x00};  //保持配置
 uint8 GyroRxBuff[11];
 uint8 GyroReceiveNum, GyroRxFlag;
-double PitchAngle, RollAngle, YawAngle, TargetGyroYawAngle;
+double PitchAngle, RollAngle, YawAngle, TargetGyroYawAngle, AngleAdd,LastAngle;
 
 #pragma section all restore
 
@@ -167,6 +167,59 @@ void GyroPID(double Kp, double Ki, double Kd)
 		RPWMDutyOut = -40;
 	MotorUserHandle(LMotor_F, LPWMDutyOut);
 	MotorUserHandle(RMotor_F, RPWMDutyOut);
+}
+
+double CulAngle(void)
+{
+	return AngleAdd;
+}
+void InitCulAngle(void)
+{
+	AngleAdd=0;
+	LastAngle=YawAngle;
+}
+void UpdateCulAngle(void)
+{
+	//float temp;
+	AngleAdd+=fabs(GetGYROCulError());
+	LastAngle=YawAngle;
+}
+double GetGYROCulError()
+{
+	    if (LastAngle < 180)
+    {
+        if (YawAngle > 180)
+        {
+            if (fabs(YawAngle - LastAngle) <= 180)
+            {
+                return (YawAngle - LastAngle);
+            }
+            else
+
+                return (-(LastAngle + 360 - YawAngle));
+        }
+        else
+            return (YawAngle - LastAngle);
+    }
+    else
+    {
+        if (YawAngle < 180)
+        {
+            if (fabs(YawAngle - LastAngle) <= 180)
+            {
+                return (YawAngle - LastAngle);
+            }
+            else
+
+                return ((YawAngle + 360) - LastAngle);
+        }
+        else if (fabs(YawAngle - LastAngle) <= 180)
+        {
+            return (YawAngle - LastAngle);
+        }
+        else
+            return ((YawAngle + 360) - LastAngle);
+    }
 }
 
 #pragma section all restore

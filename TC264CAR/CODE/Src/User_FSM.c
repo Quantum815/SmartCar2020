@@ -23,9 +23,9 @@ FSMTable_t CarTable[] =
 
 	{ FINDROUNDABOUT,   GoLine,           InRoundaboutProcess,   InRoundabout     },
 	{ NOEVENT,          InRoundabout,     InRoundaboutProcess,   InRoundabout     },
-	{ ENDINROUNDABOUT,  InRoundabout,     FindLine,              PassRoundabout   },
-	{ NOEVENT,          PassRoundabout,   FindLine,              PassRoundabout   },
-	{ OUTROUNDABOUT,    PassRoundabout,   OutRoundaboutProcess,  OutingRoundabout },
+	{ ENDINROUNDABOUT,  InRoundabout,     CleanDistance,              PassRoundabout   },
+	{ NOEVENT,          PassRoundabout,   xxxFindLineAdjPWM,       PassRoundabout   },
+	{ OUTROUNDABOUT,    PassRoundabout,   CleanDistance,         OutingRoundabout },
 	{ NOEVENT,          OutingRoundabout, OutRoundaboutProcess,  OutingRoundabout },
 	{ ENDOUTROUNDABOUT, OutingRoundabout, FindLine,              GoLine           },
 	{ LEFTFINDZEBRA,    GoLine,           TurnLeftGoGarage,      LeftInGarage     },
@@ -52,7 +52,6 @@ float PIDValue;
 //状态机各种标志位和计数位
 uint8 StartFlag;
 volatile uint8 IntoRoundaboutCount;  //环岛消抖
-volatile uint8 RoundaboutCount;//进圆计数
 volatile uint8 LRoundaboutFlag;  //判断为左环
 volatile uint8 RRoundaboutFlag;  //判断为右环
 volatile uint8 PassingRoundaboutFlag; //判断是否在走圆
@@ -60,6 +59,7 @@ volatile uint8 GoGarageFinishFlag;
 volatile uint8 KickFlag;
 extern uint8 KickCount;
 volatile uint8 GoOnFlag;
+volatile float OutRAroll;
 
 #pragma section all restore
 
@@ -76,12 +76,12 @@ void WaitRunStop(void)
 			KickCount = 0;
 			xxx = 1;
 		}
-		if(KickCount == 4)
+		if(KickCount == 3)
 		{
 			KickFlag = 1;
 		}
-		MotorUserHandle(LMotor_B, LeftWheelBrakeZone+6);
-		MotorUserHandle(RMotor_B, RightWheelBrakeZone+6);
+		MotorUserHandle(LMotor_B, LeftWheelBrakeZone+20);
+		MotorUserHandle(RMotor_B, RightWheelBrakeZone+20);
 	}
 	else
 	{
@@ -127,14 +127,14 @@ void FindLine(void)
 		LPWM = LeftWheelDeadZone + LeftNormalSpeed - PIDValue;
 		RPWM = RightWheelDeadZone + RightNormalSpeed + PIDValue;
 
-		if(LPWM >= 20)
-			LPWM = 20;
-		else if(LPWM <= -20)
-			LPWM = -20;
-		if(RPWM >= 20)
+		if(LPWM >= 25)
+			LPWM = 25;
+		else if(LPWM <= -25)
+			LPWM = -25;
+		if(RPWM >= 25)
 			RPWM = 20;
-		else if(RPWM <= -20)
-			RPWM = -20;
+		else if(RPWM <= -25)
+			RPWM = -25;
 		MotorUserHandle(LMotor_F, LPWM);
 		MotorUserHandle(RMotor_F, RPWM);
 //	}
@@ -167,89 +167,145 @@ void GoStraight(void)
 
 void InRoundaboutProcess(void)
 {
-	static uint8 InCleanDistanceFlag = 0;
-
-	if(!InCleanDistanceFlag)
+	float DIS ;
+	DIS = fabs(GetDistance());
+	if(DIS > 0 && DIS <= StraightLineInRA)   //0.2 0.4
 	{
-		CleanDistance();
-		InCleanDistanceFlag = 1;
+		FindLineAdjPWM(SpeedStraightInRA, LSpeedStraightInRA, RSpeedStraightInRA);
+	}
+	else if(DIS > StraightLineInRA && DIS <= GYROLineInRA)
+	{
+		GyroPID(InRAGyroKp, InRAGyroKi, InRAGyroKd); //150  800
+	}
+	else if(DIS > GYROLineInRA && DIS < 0.8)
+	{
+		FindLine();
 	}
 
-	if(LRoundaboutFlag)
-	{
-//		if(GetDistance() < 0.1)
+// 原来的代码
+//	static uint8 InCleanDistanceFlag = 0;
+//
+//	if(!InCleanDistanceFlag)
+//	{
+//		CleanDistance();
+//		InCleanDistanceFlag = 1;
+//	}
+//
+//	if(LRoundaboutFlag)
+//	{
+////		if(GetDistance() < 0.1)
+////		{
+////			FindLine();
+////		}
+////		else
+//		if(GetDistance() < 0.3)//0.35 //0.4
 //		{
-//			FindLine();
+//			FindLineAdjPWM(6, 5, 0);
+//		}
+//		else if(GetDistance() < 0.55)
+//		{
+////	    	uart_putchar(UART_3,0X02);//状态检测2
+//			FindLineAdjPWM(6, 0, 12);//6 -4 6 //6 -8 12
+////			RunStop();
+////			while(1);
 //		}
 //		else
-		if(GetDistance() < 0.3)//0.35 //0.4
-		{
-			FindLineAdjPWM(6, 5, 0);
-		}
-		else if(GetDistance() < 0.55)
-		{
-//	    	uart_putchar(UART_3,0X02);//状态检测2
-			FindLineAdjPWM(6, 0, 4);//6 -4 6 //6 -8 12
-//			RunStop();
-//			while(1);
-		}
-		else
-		{
-//	    	uart_putchar(UART_3,0X03);//状态检测3
-			FindLine();
-			PassingRoundaboutFlag = 1;
-		}
-	}
-	else if(RRoundaboutFlag)
-	{
-		if(GetDistance() < 0.3)
-		{
-			FindLineAdjPWM(6, 0, 6);
-		}
-		else
-		{
-			FindLine();
-			PassingRoundaboutFlag = 1;
-		}
-	}
+//		{
+////	    	uart_putchar(UART_3,0X03);//状态检测3
+//			FindLine();
+//			PassingRoundaboutFlag = 1;
+//		}
+//	}
+//	else if(RRoundaboutFlag)
+//	{
+//		if(GetDistance() < 0.3)
+//		{
+//			FindLineAdjPWM(6, 0, 6);
+//		}
+//		else
+//		{
+//			FindLine();
+//			PassingRoundaboutFlag = 1;
+//		}
+//	}
 }
 
 void OutRoundaboutProcess(void)
 {
-	static uint8 OutCleanDistanceFlag = 0;
+	FindLineAdjPWM(6, 2, 0);
 
-	if(!OutCleanDistanceFlag)
-	{
-		CleanDistance();
-		OutCleanDistanceFlag = 1;
-	}
+//	float DIS ;
+//		DIS = fabs(GetDistance());
+//	if(DIS <= 0.7)
+//	{
+//		GyroPID(OutRAGyroKp, OutRAGyroKi, OutRAGyroKd);
+////		FindLineAdjPWM(SpeedDownOutAngle, 12, 0);
+//	}
+//	else if(DIS <= 0.5)
+//	{
+////		FindLineAdjPWM(SpeedDownOutAngle, 8, 0);
+//	}
+//	else if(DIS <= 0.6)
+//	{
+////		FindLineAdjPWM(SpeedDownOutAngle, 4, 0);
+//	}
+////	else if(DIS > 0.1 && DIS <= GYROLineOutRA)
+////	{
+//////		FindLineAdjPWM(6, 10, 0);
+////		GyroPID(OutRAGyroKp, OutRAGyroKi, OutRAGyroKd);
+////	}
+////	else if(DIS > GYROLineOutRA)
+//	else if(DIS > 0.7)
+//	{
+//		//StopRunAndProgram();
+//		FindLineAdjPWM(SpeedDownOutAngle, 0, 0);
+//		//GYROPID(55, 0.1, 95);
+//		//StopRunAndProgram();
+//		//FindLineAdjPWM(15.5, 0, 0);
+//
+//	}
 
-	if(LRoundaboutFlag)
-	{
-//		if(GetDistance() < 0.3)
-//		{
-//			FindLineAdjPWM(6, 6, 0);
-//		}
-//		else
-//		{
-//			PassingRoundaboutFlag = 0;
-//			FindLine();
-//		}
-		FindLine();
-	}
-	else if(RRoundaboutFlag)
-	{
-//		if(GetDistance() < 0.3)
-//		{
-//			FindLineAdjPWM(6, 6, 0);
-//		}
-//		else
-//		{
-//			PassingRoundaboutFlag = 0;
-//			FindLine();
-//		}
-		FindLine();
-	}
+
+//	else
+//	{
+//	FindLineAdjPWM(10, 0, 0);
+//	}
+
+//原来的代码
+//	static uint8 OutCleanDistanceFlag = 0;
+//
+//	if(!OutCleanDistanceFlag)
+//	{
+//		CleanDistance();
+//		OutCleanDistanceFlag = 1;
+//	}
+//
+//	if(LRoundaboutFlag)
+//	{
+////		if(GetDistance() < 0.3)
+////		{
+////			FindLineAdjPWM(6, 6, 0);
+////		}
+////		else
+////		{
+////			PassingRoundaboutFlag = 0;
+////			FindLine();
+////		}
+//		FindLine();
+//	}
+//	else if(RRoundaboutFlag)
+//	{
+////		if(GetDistance() < 0.3)
+////		{
+////			FindLineAdjPWM(6, 6, 0);
+////		}
+////		else
+////		{
+////			PassingRoundaboutFlag = 0;
+////			FindLine();
+////		}
+//		FindLine();
+//	}
 }
 
 void TurnLeftGoGarage(void)
@@ -284,20 +340,21 @@ void TurnRightGoGarage(void)
 		CleanDistance();
 		CleanDistanceFlag = 1;
 	}
-	if(TotalDistance >= 0.6)   //0.6
+
+	if(TotalDistance >= 0.2 && TotalDistance <= 0.35)   //0.15
 	{
-		RunStop();
-		GoGarageFinishFlag = 1;
+		GyroYawAngleInit(-SetRightRotationAngle);
+		GyroPID(GYRO_P, GYRO_I, GYRO_D);
 	}
-	else if(TotalDistance >= 0.35)   //0.35
+	else if(TotalDistance <= 0.7)   //0.35
 	{
 	    MotorUserHandle(LMotor_F, LeftWheelDeadZone);
 	    MotorUserHandle(RMotor_F, RightWheelDeadZone);
 	}
-	else if(TotalDistance >= 0.15)   //0.15
+	else   //0.6
 	{
-		GyroYawAngleInit(-SetRightRotationAngle);
-		GyroPID(GYRO_P, GYRO_I, GYRO_D);
+		RunStop();
+		GoGarageFinishFlag = 1;
 	}
 }
 //*********************************************************
@@ -367,7 +424,7 @@ void FSMRun(void)
 	}
     CarFSM.Size = sizeof(CarTable) / sizeof(FSMTable_t);
 
-    if(/*(KickFlag||TwoCarStateJudge()) && 可用*/ReturnFSMState(&CarFSM) == WaitBall)
+    if((KickFlag||TwoCarStateJudge()) && ReturnFSMState(&CarFSM) == WaitBall)
     {
     		FSMEventHandle(&CarFSM, GETBALL);
     }
@@ -384,15 +441,12 @@ void FSMRun(void)
 //    }
 
 
-    else if(ADCValueHandle(2) >= ADCvalueC && (ADCValueHandle(1) >= ADCvalueCL || ADCValueHandle(3) >= ADCvalueCR)\
-    && (ADCValueHandle(0) > ADCvalueLL || ADCValueHandle(4) > ADCvalueRR) && ReturnFSMState(&CarFSM) == GoLine && RoundaboutCount==0)//检测进圆
+    else if(GetDistance() >= 7.4/*13*/ && ADCValueHandle(2) >= ADCvalueC && (ADCValueHandle(1) >= ADCvalueCL || ADCValueHandle(3) >= ADCvalueCR)\
+    && (ADCValueHandle(0) > ADCvalueLL || ADCValueHandle(4) > ADCvalueRR) && ReturnFSMState(&CarFSM) == GoLine)//检测进圆
     {
-//    	RunStop();
-//    	while(1);
     	IntoRoundaboutCount++;
     	if(IntoRoundaboutCount >= 3)//连续检测三次
     	{
-    		RoundaboutCount=1;
     		if(ADCValueHandle(1) > ADCValueHandle(3))//判断左圆或右圆
 			{
 //    	    	uart_putchar(UART_3,0X01);//状态检测1
@@ -404,26 +458,31 @@ void FSMRun(void)
 				LRoundaboutFlag = 0;
 				RRoundaboutFlag = 1;//右圆
 			}
-//    		RoundaboutCount = 0;
+    		GyroYawAngleInit(InRAngle);
+            CleanDistance();
+            InitCulAngle();
+            OutRAroll = YawAngle;
             FSMEventHandle(&CarFSM, FINDROUNDABOUT);
 //            FSMEventHandle(&CarFSM, RUNSTOP);
     	}
     }
-    else if(PassingRoundaboutFlag && ReturnFSMState(&CarFSM) == InRoundabout)//圆内过程
+    else if(GetDistance() >= 0.8 && ReturnFSMState(&CarFSM) == InRoundabout)//圆内过程
     {
 //    	uart_putchar(UART_3,0X04);//状态检测4
+    	CleanPIDValue();
     	FSMEventHandle(&CarFSM, ENDINROUNDABOUT);
     }
-    else if(ADCValueHandle(2) >= ADCvalueC && (ADCValueHandle(1) >= ADCvalueCL || ADCValueHandle(3) >= ADCvalueCR)\
-    && (ADCValueHandle(0) > ADCvalueLL || ADCValueHandle(4) > ADCvalueRR) && ReturnFSMState(&CarFSM) == PassRoundabout && PassingRoundaboutFlag)//检测出圆
+    else if(CulAngle() >= 360 && ReturnFSMState(&CarFSM) == PassRoundabout)//检测出圆
     {
 //    	uart_putchar(UART_3,0X05);//状态检测5
+    	GyroYawAngleInit(OutRAroll + OutRALeftAngle);
+        CleanPIDValue();
     	FSMEventHandle(&CarFSM, OUTROUNDABOUT);
 //    	FSMEventHandle(&CarFSM, RUNSTOP);
     }
-    else if(PassingRoundaboutFlag && ReturnFSMState(&CarFSM) == OutingRoundabout)
+    else if(GetDistance() > 1 && ReturnFSMState(&CarFSM) == OutingRoundabout)
     {
-		PassingRoundaboutFlag = 0;
+    	CleanPIDValue();
       	FSMEventHandle(&CarFSM, ENDOUTROUNDABOUT);
 //		FSMEventHandle(&CarFSM, RUNSTOP);
     }
@@ -448,13 +507,16 @@ void FSMRun(void)
     	FSMEventHandle(&CarFSM, RUNSTOP);
     }
     else
+    {
+    	IntoRoundaboutCount = 0;
     	FSMEventHandle(&CarFSM, NOEVENT);
+    }
 }
 
 //其他函数
 void FindLineAdjPWM(double PWM, double LCut, double RCut)
 {
-    PIDValue =  GetPIDValue(PIDMidLineFuseNum, 1000 * MidLineFuseNum, 14, 0.1, 2000);
+    PIDValue =  GetPIDValue(PIDMidLineFuseNum, 1000 * MidLineFuseNum, 30, 0, 4500);
     //PIDValue =  GetPIDValue(-0.002763617550954, 1000 * MidLineFuseNum, 41, 0, 3300); //54 0 35000  56.8 0 10500
     if(PWM >= 0)
     {
@@ -466,14 +528,14 @@ void FindLineAdjPWM(double PWM, double LCut, double RCut)
         LPWM = PWM + PIDValue;
         RPWM = PWM - PIDValue;
     }
-    if(LPWM >= 50)
-        LPWM = 50;
-    else if(LPWM <= -50)
-        LPWM = -50;
-    if(RPWM >= 50)
-        RPWM = 50;
-    else if(RPWM <= -50)
-        RPWM = -50;
+    if(LPWM >= 20)
+        LPWM = 20;
+    else if(LPWM <= -20)
+        LPWM = -20;
+    if(RPWM >= 20)
+        RPWM = 20;
+    else if(RPWM <= -20)
+        RPWM = -20;
     MotorUserHandle(LMotor_F, LPWM);
     MotorUserHandle(RMotor_F, RPWM);
 }
@@ -504,3 +566,26 @@ void FindLineRatioAdjPWM(double PWM, double LCut, double RCut)
     MotorUserHandle(RMotor_F, RPWM);
 }
 
+void xxxFindLineAdjPWM()
+{
+	static int fff;
+	if(GetDistance() > 0.3 && !fff)
+	{
+		FindLineAdjPWM(-1, 0, 0);
+		fff = 1;
+	}
+    PIDValue =  GetPIDValue(PIDMidLineFuseNum, 1000 * MidLineFuseNum, 30, 0, 4500);
+    //PIDValue =  GetPIDValue(-0.002763617550954, 1000 * MidLineFuseNum, 41, 0, 3300); //54 0 35000  56.8 0 10500
+        LPWM = 7 + LeftWheelDeadZone - PIDValue + 1.2;
+        RPWM = 7 + RightWheelDeadZone +PIDValue ;
+    if(LPWM >= 20)
+        LPWM = 20;
+    else if(LPWM <= -20)
+        LPWM = -20;
+    if(RPWM >= 20)
+        RPWM = 20;
+    else if(RPWM <= -20)
+        RPWM = -20;
+    MotorUserHandle(LMotor_F, LPWM);
+    MotorUserHandle(RMotor_F, RPWM);
+}

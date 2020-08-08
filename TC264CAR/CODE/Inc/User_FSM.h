@@ -76,5 +76,6 @@ void FSMRun(void);
 void FindLineAdjPWM(double PWM, double LCut, double RCut);
 void FindLineRatioAdjPWM(double PWM, double LCut, double RCut);
 void GoStraight(void);
+void xxxFindLineAdjPWM();
 
 #endif /* CODE_INC_USER_FSM_H_ */

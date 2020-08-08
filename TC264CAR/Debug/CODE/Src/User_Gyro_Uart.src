@@ -29,7 +29,7 @@ $TC16X
 ; ..\CODE\Src\User_Gyro_Uart.c	    14  uint8 GyroKeepConfiguration[5] = {0xff, 0xaa, 0x00, 0x00, 0x00};  //保持配置
 ; ..\CODE\Src\User_Gyro_Uart.c	    15  uint8 GyroRxBuff[11];
 ; ..\CODE\Src\User_Gyro_Uart.c	    16  uint8 GyroReceiveNum, GyroRxFlag;
-; ..\CODE\Src\User_Gyro_Uart.c	    17  double PitchAngle, RollAngle, YawAngle, TargetGyroYawAngle;
+; ..\CODE\Src\User_Gyro_Uart.c	    17  double PitchAngle, RollAngle, YawAngle, TargetGyroYawAngle, AngleAdd,LastAngle;
 ; ..\CODE\Src\User_Gyro_Uart.c	    18  
 ; ..\CODE\Src\User_Gyro_Uart.c	    19  #pragma section all restore
 ; ..\CODE\Src\User_Gyro_Uart.c	    20  
@@ -38,76 +38,76 @@ $TC16X
 ; ..\CODE\Src\User_Gyro_Uart.c	    23  
 ; ..\CODE\Src\User_Gyro_Uart.c	    24  void GyroUARTInit(void)
 ; Function GyroUARTInit
-.L33:
+.L41:
 GyroUARTInit:	.type	func
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    25  {
 ; ..\CODE\Src\User_Gyro_Uart.c	    26  	uart_init(UART_0, 115200, UART0_TX_P14_0, UART0_RX_P14_1);
 	mov	d4,#0
-.L164:
+.L208:
 	mov.u	d5,#49664
 	addih	d5,d5,#1
-.L165:
+.L209:
 	mov	d6,d4
-.L166:
+.L210:
 	mov	d7,#4
 	call	uart_init
-.L167:
+.L211:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    27  	uart_putbuff(UART_0, &GyroUnlockInstruction[0], 5);
 	mov	d4,#0
-.L168:
+.L212:
 	movh.a	a4,#@his(GyroUnlockInstruction)
 	lea	a4,[a4]@los(GyroUnlockInstruction)
-.L169:
+.L213:
 	mov	d5,#5
 	call	uart_putbuff
-.L170:
+.L214:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    28  	systick_delay_ms(STM1, 100);
 	mov	d4,#1
 	mov.u	d5,#57600
 	addih	d5,d5,#1525
 	call	systick_delay
-.L171:
+.L215:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    29  	uart_putbuff(UART_0, &GyroAutoCalibration[0], 5);
 	mov	d4,#0
-.L172:
+.L216:
 	movh.a	a4,#@his(GyroAutoCalibration)
 	lea	a4,[a4]@los(GyroAutoCalibration)
-.L173:
+.L217:
 	mov	d5,#5
 	call	uart_putbuff
-.L174:
+.L218:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    30  	systick_delay_ms(STM1, 100);
 	mov	d4,#1
 	mov.u	d5,#57600
 	addih	d5,d5,#1525
 	call	systick_delay
-.L175:
+.L219:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    31  	uart_putbuff(UART_0, &GyroKeepConfiguration[0], 5);
 	mov	d4,#0
-.L176:
+.L220:
 	movh.a	a4,#@his(GyroKeepConfiguration)
 	lea	a4,[a4]@los(GyroKeepConfiguration)
-.L177:
+.L221:
 	mov	d5,#5
 	call	uart_putbuff
-.L178:
+.L222:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    32  	systick_delay_ms(STM1, 100);
 	mov	d4,#1
 	mov.u	d5,#57600
 	addih	d5,d5,#1525
 	j	systick_delay
-.L105:
+.L145:
 	
 __GyroUARTInit_function_end:
 	.size	GyroUARTInit,__GyroUARTInit_function_end-GyroUARTInit
-.L54:
+.L70:
 	; End of function
 	
 	.sdecl	'.text.cpu0_psram',code,cluster('GyroUARTReadByte')
@@ -120,7 +120,7 @@ __GyroUARTInit_function_end:
 ; ..\CODE\Src\User_Gyro_Uart.c	    34  
 ; ..\CODE\Src\User_Gyro_Uart.c	    35  void GyroUARTReadByte(void)
 ; Function GyroUARTReadByte
-.L35:
+.L43:
 GyroUARTReadByte:	.type	func
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    36  {
@@ -132,27 +132,27 @@ GyroUARTReadByte:	.type	func
 ; ..\CODE\Src\User_Gyro_Uart.c	    39          GyroReceiveNum++;
 	movh.a	a15,#@his(GyroReceiveNum)
 	ld.bu	d15,[a15]@los(GyroReceiveNum)
-.L183:
+.L227:
 	add	d15,#1
 	st.b	[a15]@los(GyroReceiveNum),d15
-.L184:
+.L228:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    40  		if(GyroReceiveNum==1 && GyroRxBuff[0]!=0x55)
 	ld.bu	d15,[a15]@los(GyroReceiveNum)
 	jne	d15,#1,.L4
-.L185:
+.L229:
 	movh.a	a2,#@his(GyroRxBuff)
-.L186:
+.L230:
 	ld.bu	d0,[a2]@los(GyroRxBuff)
-.L187:
+.L231:
 	mov	d15,#85
-.L188:
+.L232:
 	jeq	d15,d0,.L5
-.L189:
+.L233:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    41  			GyroReceiveNum = 0;
 	mov	d15,#0
-.L190:
+.L234:
 	st.b	[a15]@los(GyroReceiveNum),d15
 .L5:
 .L4:
@@ -160,45 +160,45 @@ GyroUARTReadByte:	.type	func
 ; ..\CODE\Src\User_Gyro_Uart.c	    42  		if(GyroReceiveNum==2 && GyroRxBuff[1]!=0x53)
 	ld.bu	d15,[a15]@los(GyroReceiveNum)
 	jne	d15,#2,.L6
-.L191:
+.L235:
 	movh.a	a2,#@his(GyroRxBuff+1)
-.L192:
+.L236:
 	ld.bu	d0,[a2]@los(GyroRxBuff+1)
-.L193:
+.L237:
 	mov	d15,#83
-.L194:
+.L238:
 	jeq	d15,d0,.L7
-.L195:
+.L239:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    43  			GyroReceiveNum = 0;
 	mov	d15,#0
-.L196:
+.L240:
 	st.b	[a15]@los(GyroReceiveNum),d15
 .L7:
 .L6:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    44          if(11 == GyroReceiveNum)
 	ld.bu	d0,[a15]@los(GyroReceiveNum)
-.L197:
+.L241:
 	mov	d15,#11
-.L198:
+.L242:
 	jne	d15,d0,.L8
-.L199:
+.L243:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    45          {
 ; ..\CODE\Src\User_Gyro_Uart.c	    46          	GyroReceiveNum = 0;
 	mov	d15,#0
-.L200:
+.L244:
 	st.b	[a15]@los(GyroReceiveNum),d15
-.L201:
+.L245:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    47              GyroRxFlag = 1;
 	movh.a	a15,#@his(GyroRxFlag)
-.L202:
+.L246:
 	mov	d15,#1
-.L203:
+.L247:
 	st.b	[a15]@los(GyroRxFlag),d15
-.L204:
+.L248:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    48              break;
 ; ..\CODE\Src\User_Gyro_Uart.c	    49          }
@@ -208,24 +208,24 @@ GyroUARTReadByte:	.type	func
 .L8:
 .L2:
 	mov	d4,#0
-.L205:
+.L249:
 	movh.a	a15,#@his(GyroReceiveNum)
 	ld.bu	d15,[a15]@los(GyroReceiveNum)
-.L206:
+.L250:
 	movh.a	a15,#@his(GyroRxBuff)
 	lea	a15,[a15]@los(GyroRxBuff)
-.L207:
+.L251:
 	addsc.a	a4,a15,d15,#0
 	call	uart_query
-.L208:
+.L252:
 	jne	d2,#0,.L3
-.L209:
+.L253:
 	ret
-.L106:
+.L146:
 	
 __GyroUARTReadByte_function_end:
 	.size	GyroUARTReadByte,__GyroUARTReadByte_function_end-GyroUARTReadByte
-.L59:
+.L75:
 	; End of function
 	
 	.sdecl	'.text.cpu0_psram',code,cluster('GyroCalculate')
@@ -236,122 +236,122 @@ __GyroUARTReadByte_function_end:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    52  void GyroCalculate(void)
 ; Function GyroCalculate
-.L37:
+.L45:
 GyroCalculate:	.type	func
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    53  {
 ; ..\CODE\Src\User_Gyro_Uart.c	    54  	uint8 sum = 0;
 	mov	d2,#0
-.L130:
+.L174:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    55      short temp = 0;
 ; ..\CODE\Src\User_Gyro_Uart.c	    56  
 ; ..\CODE\Src\User_Gyro_Uart.c	    57      if(GyroRxFlag == 1)
 	movh.a	a2,#@his(GyroRxFlag)
 	ld.bu	d0,[a2]@los(GyroRxFlag)
-.L214:
+.L258:
 	jne	d0,#1,.L10
-.L215:
+.L259:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    58      {
 ; ..\CODE\Src\User_Gyro_Uart.c	    59  		sum += GyroRxBuff[0];
 	movh.a	a15,#@his(GyroRxBuff)
-.L216:
+.L260:
 	ld.bu	d0,[a15]@los(GyroRxBuff)
-.L217:
+.L261:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    60  		sum += GyroRxBuff[1];
 	movh.a	a15,#@his(GyroRxBuff+1)
-.L218:
+.L262:
 	ld.bu	d1,[a15]@los(GyroRxBuff+1)
-.L219:
+.L263:
 	add	d0,d1
-.L220:
+.L264:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    61  		sum += GyroRxBuff[2];
 	movh.a	a15,#@his(GyroRxBuff+2)
-.L221:
+.L265:
 	ld.bu	d1,[a15]@los(GyroRxBuff+2)
-.L222:
+.L266:
 	add	d0,d1
-.L223:
+.L267:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    62  		sum += GyroRxBuff[3];
 	movh.a	a15,#@his(GyroRxBuff+3)
-.L224:
+.L268:
 	ld.bu	d1,[a15]@los(GyroRxBuff+3)
-.L225:
+.L269:
 	add	d0,d1
-.L226:
+.L270:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    63  		sum += GyroRxBuff[4];
 	movh.a	a15,#@his(GyroRxBuff+4)
-.L227:
+.L271:
 	ld.bu	d1,[a15]@los(GyroRxBuff+4)
-.L228:
+.L272:
 	add	d0,d1
-.L229:
+.L273:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    64  		sum += GyroRxBuff[5];
 	movh.a	a15,#@his(GyroRxBuff+5)
-.L230:
+.L274:
 	ld.bu	d1,[a15]@los(GyroRxBuff+5)
-.L231:
+.L275:
 	add	d0,d1
-.L232:
+.L276:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    65  		sum += GyroRxBuff[6];
 	movh.a	a15,#@his(GyroRxBuff+6)
-.L233:
+.L277:
 	ld.bu	d1,[a15]@los(GyroRxBuff+6)
-.L234:
+.L278:
 	add	d0,d1
-.L235:
+.L279:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    66  		sum += GyroRxBuff[7];
 	movh.a	a15,#@his(GyroRxBuff+7)
-.L236:
+.L280:
 	ld.bu	d1,[a15]@los(GyroRxBuff+7)
-.L237:
+.L281:
 	add	d0,d1
-.L238:
+.L282:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    67  		sum += GyroRxBuff[8];
 	movh.a	a15,#@his(GyroRxBuff+8)
-.L239:
+.L283:
 	ld.bu	d15,[a15]@los(GyroRxBuff+8)
-.L240:
+.L284:
 	add	d0,d15
-.L241:
+.L285:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    68  		sum += GyroRxBuff[9];
 	movh.a	a15,#@his(GyroRxBuff+9)
-.L242:
+.L286:
 	ld.bu	d15,[a15]@los(GyroRxBuff+9)
-.L243:
+.L287:
 	add	d0,d15
-.L244:
+.L288:
 	add	d0,d2
 	extr.u	d0,d0,#0,#8
-.L131:
+.L175:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    69  		if(sum != GyroRxBuff[10])
 	movh.a	a15,#@his(GyroRxBuff+10)
-.L245:
+.L289:
 	ld.bu	d15,[a15]@los(GyroRxBuff+10)
-.L246:
+.L290:
 	jeq	d15,d0,.L11
-.L132:
+.L176:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    70  		{
 ; ..\CODE\Src\User_Gyro_Uart.c	    71  			//printf("RECEIVE ERROR!\n");
 ; ..\CODE\Src\User_Gyro_Uart.c	    72  			GyroRxFlag = 0;
 	st.b	[a2]@los(GyroRxFlag),d2
-.L133:
+.L177:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    73  			GyroReceiveNum = 0;
 	movh.a	a15,#@his(GyroReceiveNum)
-.L134:
+.L178:
 	st.b	[a15]@los(GyroReceiveNum),d2
 .L10:
 
@@ -372,92 +372,92 @@ GyroCalculate:	.type	func
 	ret
 .L11:
 	movh.a	a15,#@his(GyroRxBuff+3)
-.L247:
+.L291:
 	ld.bu	d15,[a15]@los(GyroRxBuff+3)
-.L248:
+.L292:
 	sha	d15,d15,#8
 	extr	d15,d15,#0,#16
-.L249:
+.L293:
 	movh.a	a15,#@his(GyroRxBuff+2)
-.L250:
+.L294:
 	ld.bu	d0,[a15]@los(GyroRxBuff+2)
-.L135:
+.L179:
 	or	d15,d0
-.L251:
+.L295:
 	movh.a	a15,#@his(PitchAngle)
-.L252:
+.L296:
 	itof	d15,d15
-.L136:
+.L180:
 	movh	d1,#14336
-.L253:
+.L297:
 	mul.f	d15,d15,d1
-.L254:
+.L298:
 	movh	d2,#17204
-.L255:
+.L299:
 	mul.f	d15,d15,d2
-.L256:
+.L300:
 	st.w	[a15]@los(PitchAngle),d15
-.L257:
+.L301:
 	movh.a	a15,#@his(GyroRxBuff+5)
-.L258:
+.L302:
 	ld.bu	d15,[a15]@los(GyroRxBuff+5)
-.L259:
+.L303:
 	sha	d15,d15,#8
 	extr	d15,d15,#0,#16
-.L260:
+.L304:
 	movh.a	a15,#@his(GyroRxBuff+4)
-.L261:
+.L305:
 	ld.bu	d0,[a15]@los(GyroRxBuff+4)
-.L137:
+.L181:
 	or	d15,d0
-.L262:
+.L306:
 	movh.a	a15,#@his(RollAngle)
-.L263:
+.L307:
 	itof	d15,d15
-.L138:
+.L182:
 	mul.f	d15,d15,d1
-.L264:
+.L308:
 	mul.f	d15,d15,d2
-.L265:
+.L309:
 	st.w	[a15]@los(RollAngle),d15
-.L266:
+.L310:
 	movh.a	a15,#@his(GyroRxBuff+7)
-.L267:
+.L311:
 	ld.bu	d15,[a15]@los(GyroRxBuff+7)
-.L268:
+.L312:
 	sha	d15,d15,#8
 	extr	d15,d15,#0,#16
-.L269:
+.L313:
 	movh.a	a15,#@his(GyroRxBuff+6)
-.L270:
+.L314:
 	ld.bu	d0,[a15]@los(GyroRxBuff+6)
-.L139:
+.L183:
 	or	d15,d0
-.L271:
+.L315:
 	movh.a	a15,#@his(YawAngle)
-.L272:
+.L316:
 	itof	d15,d15
-.L140:
+.L184:
 	mul.f	d15,d15,d1
-.L273:
+.L317:
 	mul.f	d15,d15,d2
-.L274:
+.L318:
 	st.w	[a15]@los(YawAngle),d15
-.L275:
+.L319:
 	call	ManageYawAngle
-.L276:
+.L320:
 	movh.a	a15,#@his(GyroRxFlag)
-.L277:
+.L321:
 	mov	d15,#0
-.L278:
+.L322:
 	st.b	[a15]@los(GyroRxFlag),d15
-.L279:
+.L323:
 	ret
-.L107:
+.L147:
 	
 __GyroCalculate_function_end:
 	.size	GyroCalculate,__GyroCalculate_function_end-GyroCalculate
-.L64:
+.L80:
 	; End of function
 	
 	.sdecl	'.text.cpu0_psram',code,cluster('ManageYawAngle')
@@ -468,36 +468,36 @@ __GyroCalculate_function_end:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    88  void ManageYawAngle(void)
 ; Function ManageYawAngle
-.L39:
+.L47:
 ManageYawAngle:	.type	func
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    89  {
 ; ..\CODE\Src\User_Gyro_Uart.c	    90      if(YawAngle < 0)
 	movh.a	a15,#@his(YawAngle)
 	ld.w	d0,[a15]@los(YawAngle)
-.L284:
+.L328:
 	mov	d15,#0
-.L285:
+.L329:
 	cmp.f	d15,d0,d15
-.L286:
+.L330:
 	jz.t	d15:0,.L13
-.L287:
+.L331:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    91      	YawAngle = YawAngle + 360;
 	movh	d15,#17332
-.L288:
+.L332:
 	add.f	d15,d0,d15
-.L289:
+.L333:
 	st.w	[a15]@los(YawAngle),d15
 .L13:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    92  }
 	ret
-.L112:
+.L152:
 	
 __ManageYawAngle_function_end:
 	.size	ManageYawAngle,__ManageYawAngle_function_end-ManageYawAngle
-.L69:
+.L85:
 	; End of function
 	
 	.sdecl	'.text.cpu0_psram',code,cluster('GyroYawAngleInit')
@@ -509,48 +509,48 @@ __ManageYawAngle_function_end:
 ; ..\CODE\Src\User_Gyro_Uart.c	    93  
 ; ..\CODE\Src\User_Gyro_Uart.c	    94  void GyroYawAngleInit(double RotationAngle)
 ; Function GyroYawAngleInit
-.L41:
+.L49:
 GyroYawAngleInit:	.type	func
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    95  {
 ; ..\CODE\Src\User_Gyro_Uart.c	    96  	TargetGyroYawAngle = YawAngle + RotationAngle;  //左转正右转负
 	movh.a	a15,#@his(TargetGyroYawAngle)
-.L294:
+.L338:
 	movh.a	a2,#@his(YawAngle)
 	ld.w	d15,[a2]@los(YawAngle)
-.L295:
+.L339:
 	add.f	d0,d15,d4
-.L296:
+.L340:
 	st.w	[a15]@los(TargetGyroYawAngle),d0
-.L297:
+.L341:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    97  	if(TargetGyroYawAngle > 360)
 	movh	d1,#17332
-.L298:
+.L342:
 	cmp.f	d15,d0,d1
-.L299:
+.L343:
 	jz.t	d15:2,.L14
-.L300:
+.L344:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    98  		TargetGyroYawAngle -= 360;
 	sub.f	d15,d0,d1
-.L301:
+.L345:
 	j	.L15
 .L14:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	    99  	else if(TargetGyroYawAngle < 0)
 	ld.w	d0,[a15]@los(TargetGyroYawAngle)
-.L302:
+.L346:
 	mov	d15,#0
-.L303:
+.L347:
 	cmp.f	d15,d0,d15
-.L304:
+.L348:
 	jz.t	d15:0,.L16
-.L305:
+.L349:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	   100  		TargetGyroYawAngle += 360;
 	mov	d15,d1
-.L306:
+.L350:
 	add.f	d15,d0,d15
 .L15:
 	st.w	[a15]@los(TargetGyroYawAngle),d15
@@ -558,11 +558,11 @@ GyroYawAngleInit:	.type	func
 
 ; ..\CODE\Src\User_Gyro_Uart.c	   101  }
 	ret
-.L113:
+.L153:
 	
 __GyroYawAngleInit_function_end:
 	.size	GyroYawAngleInit,__GyroYawAngleInit_function_end-GyroYawAngleInit
-.L74:
+.L90:
 	; End of function
 	
 	.sdecl	'.text.cpu0_psram',code,cluster('GetGyroError')
@@ -574,41 +574,41 @@ __GyroYawAngleInit_function_end:
 ; ..\CODE\Src\User_Gyro_Uart.c	   102  
 ; ..\CODE\Src\User_Gyro_Uart.c	   103  double GetGyroError(void)
 ; Function GetGyroError
-.L43:
+.L51:
 GetGyroError:	.type	func
 
 ; ..\CODE\Src\User_Gyro_Uart.c	   104  {
 ; ..\CODE\Src\User_Gyro_Uart.c	   105      if (TargetGyroYawAngle < 180)
 	movh.a	a15,#@his(TargetGyroYawAngle)
 	ld.w	d0,[a15]@los(TargetGyroYawAngle)
-.L311:
+.L355:
 	movh	d15,#17204
-.L312:
+.L356:
 	cmp.f	d1,d0,d15
-.L313:
+.L357:
 	jz.t	d1:0,.L17
-.L314:
+.L358:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	   106      {
 ; ..\CODE\Src\User_Gyro_Uart.c	   107          if (YawAngle > 180)
 	movh.a	a15,#@his(YawAngle)
 	ld.w	d1,[a15]@los(YawAngle)
-.L315:
+.L359:
 	cmp.f	d2,d1,d15
-.L316:
+.L360:
 	jz.t	d2:2,.L18
-.L317:
+.L361:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	   108          {
 ; ..\CODE\Src\User_Gyro_Uart.c	   109              if (fabs(YawAngle - TargetGyroYawAngle) <= 180)
 	sub.f	d2,d1,d0
 	insert	d2,d2,#0,#31,#1
-.L318:
+.L362:
 	cmp.f	d15,d2,d15
 	and	d15,#3
-.L319:
+.L363:
 	jne	d15,#0,.L19
-.L320:
+.L364:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	   110              {
 ; ..\CODE\Src\User_Gyro_Uart.c	   111                  return (YawAngle - TargetGyroYawAngle);
@@ -617,13 +617,13 @@ GetGyroError:	.type	func
 ; ..\CODE\Src\User_Gyro_Uart.c	   114  
 ; ..\CODE\Src\User_Gyro_Uart.c	   115                  return (-(TargetGyroYawAngle + 360 - YawAngle));
 	sub.f	d15,d0,d1
-.L321:
+.L365:
 	movh	d0,#17332
-.L322:
+.L366:
 	add.f	d15,d15,d0
-.L323:
+.L367:
 	insn.t	d2,d15:31,d15:31
-.L324:
+.L368:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	   116          }
 ; ..\CODE\Src\User_Gyro_Uart.c	   117          else
@@ -657,43 +657,43 @@ GetGyroError:	.type	func
 	ld.w	d0,[a15]@los(TargetGyroYawAngle)
 	sub.f	d15,d15,d0
 	insert	d15,d15,#0,#31,#1
-.L325:
+.L369:
 	movh	d0,#17204
-.L326:
+.L370:
 	cmp.f	d15,d15,d0
 	and	d15,#3
-.L327:
+.L371:
 	jeq	d15,#0,.L21
 .L19:
 .L18:
 	movh.a	a15,#@his(YawAngle)
 	ld.w	d15,[a15]@los(YawAngle)
-.L328:
+.L372:
 	movh.a	a15,#@his(TargetGyroYawAngle)
 	ld.w	d0,[a15]@los(TargetGyroYawAngle)
-.L329:
+.L373:
 	sub.f	d2,d15,d0
-.L330:
+.L374:
 	ret
 .L21:
 	movh.a	a15,#@his(YawAngle)
 	ld.w	d15,[a15]@los(YawAngle)
-.L331:
+.L375:
 	movh.a	a15,#@his(TargetGyroYawAngle)
 	ld.w	d0,[a15]@los(TargetGyroYawAngle)
-.L332:
+.L376:
 	sub.f	d15,d15,d0
-.L333:
+.L377:
 	movh	d0,#17332
-.L334:
+.L378:
 	add.f	d2,d15,d0
-.L335:
+.L379:
 	ret
-.L116:
+.L156:
 	
 __GetGyroError_function_end:
 	.size	GetGyroError,__GetGyroError_function_end-GetGyroError
-.L79:
+.L95:
 	; End of function
 	
 	.sdecl	'.text.cpu0_psram',code,cluster('GyroPID')
@@ -705,91 +705,91 @@ __GetGyroError_function_end:
 ; ..\CODE\Src\User_Gyro_Uart.c	   140  
 ; ..\CODE\Src\User_Gyro_Uart.c	   141  void GyroPID(double Kp, double Ki, double Kd)
 ; Function GyroPID
-.L45:
+.L53:
 GyroPID:	.type	func
 	mov	d15,d4
-.L142:
+.L186:
 	mov	d8,d5
-.L144:
+.L188:
 	mov	d10,d6
-.L146:
+.L190:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	   142  {
 ; ..\CODE\Src\User_Gyro_Uart.c	   143  
 ; ..\CODE\Src\User_Gyro_Uart.c	   144      double error = 0, P = 0, I = 0, D = 0, PIDValue = 0;
 	mov	d9,#0
-.L147:
+.L191:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	   145      double LPWMDutyOut, RPWMDutyOut;
 ; ..\CODE\Src\User_Gyro_Uart.c	   146  	static double previousError = 0;
 ; ..\CODE\Src\User_Gyro_Uart.c	   147  
 ; ..\CODE\Src\User_Gyro_Uart.c	   148      error = GetGyroError();
 	call	GetGyroError
-.L141:
+.L185:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	   149      //printf("%f\n", error);
 ; ..\CODE\Src\User_Gyro_Uart.c	   150      P = error;
 ; ..\CODE\Src\User_Gyro_Uart.c	   151      I += error;
 	add.f	d0,d9,d2
-.L148:
+.L192:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	   152      D = error - previousError;
 	movh.a	a15,#@his(_999001_previousError)
 	ld.w	d1,[a15]@los(_999001_previousError)
-.L340:
+.L384:
 	sub.f	d1,d2,d1
-.L151:
+.L195:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	   153  
 ; ..\CODE\Src\User_Gyro_Uart.c	   154      PIDValue = (Kp * P) + (Ki * I) + (Kd * D);
 	mul.f	d0,d8,d0
-.L150:
+.L194:
 	madd.f	d15,d0,d15,d2
-.L143:
+.L187:
 	madd.f	d15,d15,d10,d1
-.L152:
+.L196:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	   155      previousError = error;
 	st.w	[a15]@los(_999001_previousError),d2
-.L341:
+.L385:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	   156      PIDValue /= 1000;
 	movh	d0,#17530
-.L342:
+.L386:
 	div.f	d15,d15,d0
-.L343:
+.L387:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	   157  
 ; ..\CODE\Src\User_Gyro_Uart.c	   158      LPWMDutyOut = LeftWheelDeadZone + LeftInGarageSpeed + PIDValue;
 	mov	d0,#13107
-	addih	d0,d0,#16707
-.L344:
+	addih	d0,d0,#16691
+.L388:
 	add.f	d5,d15,d0
-.L154:
+.L198:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	   159      RPWMDutyOut = RightWheelDeadZone + RightInGarageSpeed - PIDValue;
-	movh	d0,#16712
-.L345:
+	movh	d0,#16696
+.L389:
 	sub.f	d8,d0,d15
-.L145:
+.L189:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	   160  	if(LPWMDutyOut >= 40)
 	movh	d15,#16928
-.L153:
+.L197:
 	cmp.f	d15,d5,d15
 	and	d15,#6
-.L346:
+.L390:
 	jne	d15,#0,.L24
-.L347:
+.L391:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	   161  		LPWMDutyOut = 40;
 ; ..\CODE\Src\User_Gyro_Uart.c	   162  	else if(LPWMDutyOut <= -40)
 	movh	d0,#49696
-.L348:
+.L392:
 	cmp.f	d15,d0,d5
 	and	d15,#6
 	cmov	d5,d15,d0
-.L349:
+.L393:
 	j	.L27
 .L24:
 	movh	d5,#16928
@@ -798,21 +798,21 @@ GyroPID:	.type	func
 ; ..\CODE\Src\User_Gyro_Uart.c	   163  		LPWMDutyOut = -40;
 ; ..\CODE\Src\User_Gyro_Uart.c	   164  	if(RPWMDutyOut >= 40)
 	movh	d15,#16928
-.L350:
+.L394:
 	cmp.f	d15,d8,d15
 	and	d15,#6
-.L351:
+.L395:
 	jne	d15,#0,.L28
-.L352:
+.L396:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	   165  		RPWMDutyOut = 40;
 ; ..\CODE\Src\User_Gyro_Uart.c	   166  	else if(RPWMDutyOut <= -40)
 	movh	d0,#49696
-.L353:
+.L397:
 	cmp.f	d15,d0,d8
 	and	d15,#6
 	cmov	d8,d15,d0
-.L354:
+.L398:
 	j	.L31
 .L28:
 	movh	d8,#16928
@@ -821,21 +821,260 @@ GyroPID:	.type	func
 ; ..\CODE\Src\User_Gyro_Uart.c	   167  		RPWMDutyOut = -40;
 ; ..\CODE\Src\User_Gyro_Uart.c	   168  	MotorUserHandle(LMotor_F, LPWMDutyOut);
 	mov	d4,#0
-.L355:
+.L399:
 	call	MotorUserHandle
-.L149:
+.L193:
 
 ; ..\CODE\Src\User_Gyro_Uart.c	   169  	MotorUserHandle(RMotor_F, RPWMDutyOut);
 	mov	d4,#2
-.L356:
+.L400:
 	mov	d5,d8
-.L155:
+.L199:
 	j	MotorUserHandle
-.L117:
+.L157:
 	
 __GyroPID_function_end:
 	.size	GyroPID,__GyroPID_function_end-GyroPID
-.L84:
+.L100:
+	; End of function
+	
+	.sdecl	'.text.cpu0_psram',code,cluster('CulAngle')
+	.sect	'.text.cpu0_psram'
+	.align	2
+	
+	.global	CulAngle
+
+; ..\CODE\Src\User_Gyro_Uart.c	   170  }
+; ..\CODE\Src\User_Gyro_Uart.c	   171  
+; ..\CODE\Src\User_Gyro_Uart.c	   172  double CulAngle(void)
+; Function CulAngle
+.L55:
+CulAngle:	.type	func
+
+; ..\CODE\Src\User_Gyro_Uart.c	   173  {
+; ..\CODE\Src\User_Gyro_Uart.c	   174  	return AngleAdd;
+	movh.a	a15,#@his(AngleAdd)
+	ld.w	d2,[a15]@los(AngleAdd)
+.L405:
+
+; ..\CODE\Src\User_Gyro_Uart.c	   175  }
+	ret
+.L168:
+	
+__CulAngle_function_end:
+	.size	CulAngle,__CulAngle_function_end-CulAngle
+.L105:
+	; End of function
+	
+	.sdecl	'.text.cpu0_psram',code,cluster('InitCulAngle')
+	.sect	'.text.cpu0_psram'
+	.align	2
+	
+	.global	InitCulAngle
+
+; ..\CODE\Src\User_Gyro_Uart.c	   176  void InitCulAngle(void)
+; Function InitCulAngle
+.L57:
+InitCulAngle:	.type	func
+
+; ..\CODE\Src\User_Gyro_Uart.c	   177  {
+; ..\CODE\Src\User_Gyro_Uart.c	   178  	AngleAdd=0;
+	movh.a	a15,#@his(AngleAdd)
+.L410:
+	mov	d15,#0
+.L411:
+	st.w	[a15]@los(AngleAdd),d15
+.L412:
+
+; ..\CODE\Src\User_Gyro_Uart.c	   179  	LastAngle=YawAngle;
+	movh.a	a15,#@his(LastAngle)
+.L413:
+	movh.a	a2,#@his(YawAngle)
+	ld.w	d15,[a2]@los(YawAngle)
+.L414:
+	st.w	[a15]@los(LastAngle),d15
+.L415:
+
+; ..\CODE\Src\User_Gyro_Uart.c	   180  }
+	ret
+.L169:
+	
+__InitCulAngle_function_end:
+	.size	InitCulAngle,__InitCulAngle_function_end-InitCulAngle
+.L110:
+	; End of function
+	
+	.sdecl	'.text.cpu0_psram',code,cluster('UpdateCulAngle')
+	.sect	'.text.cpu0_psram'
+	.align	2
+	
+	.global	UpdateCulAngle
+
+; ..\CODE\Src\User_Gyro_Uart.c	   181  void UpdateCulAngle(void)
+; Function UpdateCulAngle
+.L59:
+UpdateCulAngle:	.type	func
+
+; ..\CODE\Src\User_Gyro_Uart.c	   182  {
+; ..\CODE\Src\User_Gyro_Uart.c	   183  	//float temp;
+; ..\CODE\Src\User_Gyro_Uart.c	   184  	AngleAdd+=fabs(GetGYROCulError());
+	call	GetGYROCulError
+.L420:
+	movh.a	a15,#@his(AngleAdd)
+	ld.w	d15,[a15]@los(AngleAdd)
+.L421:
+	insert	d0,d2,#0,#31,#1
+.L422:
+	add.f	d15,d15,d0
+	st.w	[a15]@los(AngleAdd),d15
+.L423:
+
+; ..\CODE\Src\User_Gyro_Uart.c	   185  	LastAngle=YawAngle;
+	movh.a	a15,#@his(LastAngle)
+.L424:
+	movh.a	a2,#@his(YawAngle)
+	ld.w	d15,[a2]@los(YawAngle)
+.L425:
+	st.w	[a15]@los(LastAngle),d15
+.L426:
+
+; ..\CODE\Src\User_Gyro_Uart.c	   186  }
+	ret
+.L170:
+	
+__UpdateCulAngle_function_end:
+	.size	UpdateCulAngle,__UpdateCulAngle_function_end-UpdateCulAngle
+.L115:
+	; End of function
+	
+	.sdecl	'.text.cpu0_psram',code,cluster('GetGYROCulError')
+	.sect	'.text.cpu0_psram'
+	.align	2
+	
+	.global	GetGYROCulError
+
+; ..\CODE\Src\User_Gyro_Uart.c	   187  double GetGYROCulError()
+; Function GetGYROCulError
+.L61:
+GetGYROCulError:	.type	func
+
+; ..\CODE\Src\User_Gyro_Uart.c	   188  {
+; ..\CODE\Src\User_Gyro_Uart.c	   189  	    if (LastAngle < 180)
+	movh.a	a15,#@his(LastAngle)
+	ld.w	d0,[a15]@los(LastAngle)
+.L431:
+	movh	d15,#17204
+.L432:
+	cmp.f	d1,d0,d15
+.L433:
+	jz.t	d1:0,.L33
+.L434:
+
+; ..\CODE\Src\User_Gyro_Uart.c	   190      {
+; ..\CODE\Src\User_Gyro_Uart.c	   191          if (YawAngle > 180)
+	movh.a	a15,#@his(YawAngle)
+	ld.w	d1,[a15]@los(YawAngle)
+.L435:
+	cmp.f	d2,d1,d15
+.L436:
+	jz.t	d2:2,.L34
+.L437:
+
+; ..\CODE\Src\User_Gyro_Uart.c	   192          {
+; ..\CODE\Src\User_Gyro_Uart.c	   193              if (fabs(YawAngle - LastAngle) <= 180)
+	sub.f	d2,d1,d0
+	insert	d2,d2,#0,#31,#1
+.L438:
+	cmp.f	d15,d2,d15
+	and	d15,#3
+.L439:
+	jne	d15,#0,.L35
+.L440:
+
+; ..\CODE\Src\User_Gyro_Uart.c	   194              {
+; ..\CODE\Src\User_Gyro_Uart.c	   195                  return (YawAngle - LastAngle);
+; ..\CODE\Src\User_Gyro_Uart.c	   196              }
+; ..\CODE\Src\User_Gyro_Uart.c	   197              else
+; ..\CODE\Src\User_Gyro_Uart.c	   198  
+; ..\CODE\Src\User_Gyro_Uart.c	   199                  return (-(LastAngle + 360 - YawAngle));
+	sub.f	d15,d0,d1
+.L441:
+	movh	d0,#17332
+.L442:
+	add.f	d15,d15,d0
+.L443:
+	insn.t	d2,d15:31,d15:31
+.L444:
+
+; ..\CODE\Src\User_Gyro_Uart.c	   200          }
+; ..\CODE\Src\User_Gyro_Uart.c	   201          else
+; ..\CODE\Src\User_Gyro_Uart.c	   202              return (YawAngle - LastAngle);
+; ..\CODE\Src\User_Gyro_Uart.c	   203      }
+; ..\CODE\Src\User_Gyro_Uart.c	   204      else
+; ..\CODE\Src\User_Gyro_Uart.c	   205      {
+; ..\CODE\Src\User_Gyro_Uart.c	   206          if (YawAngle < 180)
+; ..\CODE\Src\User_Gyro_Uart.c	   207          {
+; ..\CODE\Src\User_Gyro_Uart.c	   208              if (fabs(YawAngle - LastAngle) <= 180)
+; ..\CODE\Src\User_Gyro_Uart.c	   209              {
+; ..\CODE\Src\User_Gyro_Uart.c	   210                  return (YawAngle - LastAngle);
+; ..\CODE\Src\User_Gyro_Uart.c	   211              }
+; ..\CODE\Src\User_Gyro_Uart.c	   212              else
+; ..\CODE\Src\User_Gyro_Uart.c	   213  
+; ..\CODE\Src\User_Gyro_Uart.c	   214                  return ((YawAngle + 360) - LastAngle);
+; ..\CODE\Src\User_Gyro_Uart.c	   215          }
+; ..\CODE\Src\User_Gyro_Uart.c	   216          else if (fabs(YawAngle - LastAngle) <= 180)
+; ..\CODE\Src\User_Gyro_Uart.c	   217          {
+; ..\CODE\Src\User_Gyro_Uart.c	   218              return (YawAngle - LastAngle);
+; ..\CODE\Src\User_Gyro_Uart.c	   219          }
+; ..\CODE\Src\User_Gyro_Uart.c	   220          else
+; ..\CODE\Src\User_Gyro_Uart.c	   221              return ((YawAngle + 360) - LastAngle);
+; ..\CODE\Src\User_Gyro_Uart.c	   222      }
+; ..\CODE\Src\User_Gyro_Uart.c	   223  }
+	ret
+.L33:
+	movh.a	a15,#@his(YawAngle)
+	ld.w	d15,[a15]@los(YawAngle)
+	movh.a	a15,#@his(LastAngle)
+	ld.w	d0,[a15]@los(LastAngle)
+	sub.f	d15,d15,d0
+	insert	d15,d15,#0,#31,#1
+.L445:
+	movh	d0,#17204
+.L446:
+	cmp.f	d15,d15,d0
+	and	d15,#3
+.L447:
+	jeq	d15,#0,.L37
+.L35:
+.L34:
+	movh.a	a15,#@his(YawAngle)
+	ld.w	d15,[a15]@los(YawAngle)
+.L448:
+	movh.a	a15,#@his(LastAngle)
+	ld.w	d0,[a15]@los(LastAngle)
+.L449:
+	sub.f	d2,d15,d0
+.L450:
+	ret
+.L37:
+	movh.a	a15,#@his(YawAngle)
+	ld.w	d15,[a15]@los(YawAngle)
+.L451:
+	movh.a	a15,#@his(LastAngle)
+	ld.w	d0,[a15]@los(LastAngle)
+.L452:
+	sub.f	d15,d15,d0
+.L453:
+	movh	d0,#17332
+.L454:
+	add.f	d2,d15,d0
+.L455:
+	ret
+.L171:
+	
+__GetGYROCulError_function_end:
+	.size	GetGYROCulError,__GetGYROCulError_function_end-GetGYROCulError
+.L120:
 	; End of function
 	
 	.sdecl	'.data.cpu0_dsram',data,cluster('GyroUnlockInstruction')
@@ -905,6 +1144,20 @@ YawAngle:	.type	object
 TargetGyroYawAngle:	.type	object
 	.size	TargetGyroYawAngle,4
 	.space	4
+	.sdecl	'.bss.cpu0_dsram',data,cluster('AngleAdd')
+	.sect	'.bss.cpu0_dsram'
+	.global	AngleAdd
+	.align	2
+AngleAdd:	.type	object
+	.size	AngleAdd,4
+	.space	4
+	.sdecl	'.bss.cpu0_dsram',data,cluster('LastAngle')
+	.sect	'.bss.cpu0_dsram'
+	.global	LastAngle
+	.align	2
+LastAngle:	.type	object
+	.size	LastAngle,4
+	.space	4
 	.sdecl	'.data.cpu0_psram',data,cluster('_999001_previousError')
 	.sect	'.data.cpu0_psram'
 	.align	2
@@ -918,31 +1171,36 @@ _999001_previousError:	.type	object
 	.calls	'GyroCalculate','ManageYawAngle'
 	.calls	'GyroPID','GetGyroError'
 	.calls	'GyroPID','MotorUserHandle'
+	.calls	'UpdateCulAngle','GetGYROCulError'
 	.calls	'GyroUARTInit','',0
 	.calls	'GyroUARTReadByte','',0
 	.calls	'GyroCalculate','',0
 	.calls	'ManageYawAngle','',0
 	.calls	'GyroYawAngleInit','',0
 	.calls	'GetGyroError','',0
+	.calls	'GyroPID','',0
+	.calls	'CulAngle','',0
+	.calls	'InitCulAngle','',0
+	.calls	'UpdateCulAngle','',0
 	.extern	uart_init
 	.extern	uart_putbuff
 	.extern	uart_query
 	.extern	systick_delay
 	.extern	MotorUserHandle
-	.calls	'GyroPID','',0
+	.calls	'GetGYROCulError','',0
 	.sdecl	'.debug_info',debug
 	.sect	'.debug_info'
-.L47:
+.L63:
 	.word	253348
 	.half	3
-	.word	.L48
+	.word	.L64
 	.byte	4
-.L46:
+.L62:
 	.byte	1
 	.byte	'..\\CODE\\Src\\User_Gyro_Uart.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Debug\\',0,12,1
-	.word	.L49
+	.word	.L65
 	.byte	2,1,1,3
 	.word	153
 	.byte	4
@@ -951,7 +1209,7 @@ _999001_previousError:	.type	object
 	.word	156
 	.byte	6,0,7
 	.byte	'__fract',0,4,128,1
-.L114:
+.L154:
 	.byte	7
 	.byte	'float',0,4,4,8
 	.byte	'Ifx__float_to_fract',0,3,1,152,2,18
@@ -1017,7 +1275,7 @@ _999001_previousError:	.type	object
 	.byte	'B',0
 	.word	528
 	.byte	4,2,35,0,0
-.L108:
+.L148:
 	.byte	7
 	.byte	'unsigned char',0,1,8,7
 	.byte	'unsigned short int',0,2,7,11
@@ -6957,7 +7215,7 @@ _999001_previousError:	.type	object
 	.byte	'alti',0,20,191,18,82
 	.word	38950
 	.byte	6,0
-.L110:
+.L150:
 	.byte	7
 	.byte	'short int',0,2,5,7
 	.byte	'long int',0,4,5,21,22,60,9,12,14
@@ -35389,17 +35647,17 @@ _999001_previousError:	.type	object
 	.byte	35
 	.byte	'Motor_State_t',0,25,19,2
 	.word	41816
-.L128:
+.L172:
 	.byte	15,5
 	.word	664
 	.byte	16,4,0
-.L129:
+.L173:
 	.byte	15,11
 	.word	664
 	.byte	16,10,0,0
 	.sdecl	'.debug_abbrev',debug
 	.sect	'.debug_abbrev'
-.L48:
+.L64:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,16,6,0,0,2,21,0,54,15,39,12,0,0,3,15,0,73,19,0,0,4,46,1,3,8,32,13
 	.byte	58,15,59,15,57,15,54,15,39,12,0,0,5,5,0,3,8,58,15,59,15,57,15,73,19,0,0,6,11,0,0,0,7,36,0,3,8,11,15,62
 	.byte	15,0,0,8,46,1,3,8,32,13,58,15,59,15,57,15,73,19,54,15,39,12,0,0,9,59,0,3,8,0,0,10,53,0,73,19,0,0,11,19
@@ -35414,12 +35672,12 @@ _999001_previousError:	.type	object
 	.byte	0,0,0
 	.sdecl	'.debug_line',debug
 	.sect	'.debug_line'
-.L49:
-	.word	.L157-.L156
-.L156:
+.L65:
+	.word	.L201-.L200
+.L200:
 	.half	3
-	.word	.L159-.L158
-.L158:
+	.word	.L203-.L202
+.L202:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Cpu\\Std',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Libraries\\BaseSw\\iLLD\\TC26B\\Tricore\\Scu\\Std',0
@@ -35493,1149 +35751,1489 @@ _999001_previousError:	.type	object
 	.byte	'IfxDma_regdef.h',0,3,0,0
 	.byte	'IfxDma.h',0,18,0,0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\CODE\\Inc\\User_FSM.h',0,0,0,0,0
-.L159:
-.L157:
+.L203:
+.L201:
 	.sdecl	'.debug_info',debug,cluster('GyroUARTInit')
 	.sect	'.debug_info'
-.L50:
+.L66:
 	.word	201
 	.half	3
-	.word	.L51
+	.word	.L67
 	.byte	4,1
 	.byte	'..\\CODE\\Src\\User_Gyro_Uart.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Debug\\',0,12,1
-	.word	.L53,.L52
+	.word	.L69,.L68
 	.byte	2
-	.word	.L46
+	.word	.L62
 	.byte	3
 	.byte	'GyroUARTInit',0,1,24,6,1,1,1
-	.word	.L33,.L105,.L32
+	.word	.L41,.L145,.L40
 	.byte	4
-	.word	.L33,.L105
+	.word	.L41,.L145
 	.byte	0,0
 	.sdecl	'.debug_abbrev',debug,cluster('GyroUARTInit')
 	.sect	'.debug_abbrev'
-.L51:
+.L67:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
 	.sdecl	'.debug_line',debug,cluster('GyroUARTInit')
 	.sect	'.debug_line'
-.L52:
-	.word	.L161-.L160
-.L160:
+.L68:
+	.word	.L205-.L204
+.L204:
 	.half	3
-	.word	.L163-.L162
-.L162:
+	.word	.L207-.L206
+.L206:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\CODE\\Src\\User_Gyro_Uart.c',0,0,0,0,0
-.L163:
+.L207:
 	.byte	5,12,7,0,5,2
-	.word	.L33
+	.word	.L41
 	.byte	3,25,1,5,20,9
-	.half	.L164-.L33
+	.half	.L208-.L41
 	.byte	1,5,28,9
-	.half	.L165-.L164
+	.half	.L209-.L208
 	.byte	1,5,44,9
-	.half	.L166-.L165
+	.half	.L210-.L209
 	.byte	1,5,15,9
-	.half	.L167-.L166
+	.half	.L211-.L210
 	.byte	3,1,1,5,24,9
-	.half	.L168-.L167
+	.half	.L212-.L211
 	.byte	1,5,50,9
-	.half	.L169-.L168
+	.half	.L213-.L212
 	.byte	1,5,2,9
-	.half	.L170-.L169
+	.half	.L214-.L213
 	.byte	3,1,1,5,15,9
-	.half	.L171-.L170
+	.half	.L215-.L214
 	.byte	3,1,1,5,24,9
-	.half	.L172-.L171
+	.half	.L216-.L215
 	.byte	1,5,48,9
-	.half	.L173-.L172
+	.half	.L217-.L216
 	.byte	1,5,2,9
-	.half	.L174-.L173
+	.half	.L218-.L217
 	.byte	3,1,1,5,15,9
-	.half	.L175-.L174
+	.half	.L219-.L218
 	.byte	3,1,1,5,24,9
-	.half	.L176-.L175
+	.half	.L220-.L219
 	.byte	1,5,50,9
-	.half	.L177-.L176
+	.half	.L221-.L220
 	.byte	1,5,2,9
-	.half	.L178-.L177
+	.half	.L222-.L221
 	.byte	3,1,1,5,1,9
-	.half	.L54-.L178
+	.half	.L70-.L222
 	.byte	3,1,0,1,1
-.L161:
+.L205:
 	.sdecl	'.debug_ranges',debug,cluster('GyroUARTInit')
 	.sect	'.debug_ranges'
-.L53:
-	.word	-1,.L33,0,.L54-.L33,0,0
+.L69:
+	.word	-1,.L41,0,.L70-.L41,0,0
 	.sdecl	'.debug_info',debug,cluster('GyroUARTReadByte')
 	.sect	'.debug_info'
-.L55:
+.L71:
 	.word	205
 	.half	3
-	.word	.L56
+	.word	.L72
 	.byte	4,1
 	.byte	'..\\CODE\\Src\\User_Gyro_Uart.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Debug\\',0,12,1
-	.word	.L58,.L57
+	.word	.L74,.L73
 	.byte	2
-	.word	.L46
+	.word	.L62
 	.byte	3
 	.byte	'GyroUARTReadByte',0,1,35,6,1,1,1
-	.word	.L35,.L106,.L34
+	.word	.L43,.L146,.L42
 	.byte	4
-	.word	.L35,.L106
+	.word	.L43,.L146
 	.byte	0,0
 	.sdecl	'.debug_abbrev',debug,cluster('GyroUARTReadByte')
 	.sect	'.debug_abbrev'
-.L56:
+.L72:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
 	.sdecl	'.debug_line',debug,cluster('GyroUARTReadByte')
 	.sect	'.debug_line'
-.L57:
-	.word	.L180-.L179
-.L179:
+.L73:
+	.word	.L224-.L223
+.L223:
 	.half	3
-	.word	.L182-.L181
-.L181:
+	.word	.L226-.L225
+.L225:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\CODE\\Src\\User_Gyro_Uart.c',0,0,0,0,0
-.L182:
+.L226:
 	.byte	5,55,7,0,5,2
-	.word	.L35
+	.word	.L43
 	.byte	3,36,1,5,9,9
-	.half	.L3-.L35
+	.half	.L3-.L43
 	.byte	3,2,1,5,23,9
-	.half	.L183-.L3
+	.half	.L227-.L3
 	.byte	1,5,6,9
-	.half	.L184-.L183
+	.half	.L228-.L227
 	.byte	3,1,1,5,27,9
-	.half	.L185-.L184
+	.half	.L229-.L228
 	.byte	1,5,37,9
-	.half	.L186-.L185
+	.half	.L230-.L229
 	.byte	1,5,42,9
-	.half	.L187-.L186
+	.half	.L231-.L230
 	.byte	1,5,40,9
-	.half	.L188-.L187
+	.half	.L232-.L231
 	.byte	1,5,21,7,9
-	.half	.L189-.L188
+	.half	.L233-.L232
 	.byte	3,1,1,5,19,9
-	.half	.L190-.L189
+	.half	.L234-.L233
 	.byte	1,5,6,9
-	.half	.L4-.L190
+	.half	.L4-.L234
 	.byte	3,1,1,5,27,9
-	.half	.L191-.L4
+	.half	.L235-.L4
 	.byte	1,5,37,9
-	.half	.L192-.L191
+	.half	.L236-.L235
 	.byte	1,5,42,9
-	.half	.L193-.L192
+	.half	.L237-.L236
 	.byte	1,5,40,9
-	.half	.L194-.L193
+	.half	.L238-.L237
 	.byte	1,5,21,7,9
-	.half	.L195-.L194
+	.half	.L239-.L238
 	.byte	3,1,1,5,19,9
-	.half	.L196-.L195
+	.half	.L240-.L239
 	.byte	1,5,18,9
-	.half	.L6-.L196
+	.half	.L6-.L240
 	.byte	3,1,1,5,12,9
-	.half	.L197-.L6
+	.half	.L241-.L6
 	.byte	1,5,9,9
-	.half	.L198-.L197
+	.half	.L242-.L241
 	.byte	1,5,27,7,9
-	.half	.L199-.L198
+	.half	.L243-.L242
 	.byte	3,2,1,5,25,9
-	.half	.L200-.L199
+	.half	.L244-.L243
 	.byte	1,5,13,9
-	.half	.L201-.L200
+	.half	.L245-.L244
 	.byte	3,1,1,5,26,9
-	.half	.L202-.L201
+	.half	.L246-.L245
 	.byte	1,5,24,9
-	.half	.L203-.L202
+	.half	.L247-.L246
 	.byte	1,5,1,9
-	.half	.L204-.L203
+	.half	.L248-.L247
 	.byte	3,4,1,5,19,7,9
-	.half	.L2-.L204
+	.half	.L2-.L248
 	.byte	3,114,1,5,39,9
-	.half	.L205-.L2
+	.half	.L249-.L2
 	.byte	1,5,28,9
-	.half	.L206-.L205
+	.half	.L250-.L249
 	.byte	1,5,38,9
-	.half	.L207-.L206
+	.half	.L251-.L250
 	.byte	1,5,55,9
-	.half	.L208-.L207
+	.half	.L252-.L251
 	.byte	1,5,1,7,9
-	.half	.L209-.L208
+	.half	.L253-.L252
 	.byte	3,14,1,7,9
-	.half	.L59-.L209
+	.half	.L75-.L253
 	.byte	0,1,1
-.L180:
+.L224:
 	.sdecl	'.debug_ranges',debug,cluster('GyroUARTReadByte')
 	.sect	'.debug_ranges'
-.L58:
-	.word	-1,.L35,0,.L59-.L35,0,0
+.L74:
+	.word	-1,.L43,0,.L75-.L43,0,0
 	.sdecl	'.debug_info',debug,cluster('GyroCalculate')
 	.sect	'.debug_info'
-.L60:
+.L76:
 	.word	236
 	.half	3
-	.word	.L61
+	.word	.L77
 	.byte	4,1
 	.byte	'..\\CODE\\Src\\User_Gyro_Uart.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Debug\\',0,12,1
-	.word	.L63,.L62
+	.word	.L79,.L78
 	.byte	2
-	.word	.L46
+	.word	.L62
 	.byte	3
 	.byte	'GyroCalculate',0,1,52,6,1,1,1
-	.word	.L37,.L107,.L36
+	.word	.L45,.L147,.L44
 	.byte	4
-	.word	.L37,.L107
+	.word	.L45,.L147
 	.byte	5
 	.byte	'sum',0,1,54,8
-	.word	.L108,.L109
+	.word	.L148,.L149
 	.byte	5
 	.byte	'temp',0,1,55,11
-	.word	.L110,.L111
+	.word	.L150,.L151
 	.byte	0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('GyroCalculate')
 	.sect	'.debug_abbrev'
-.L61:
+.L77:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,1,17,1,18,1,0,0,5,52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
 	.sdecl	'.debug_line',debug,cluster('GyroCalculate')
 	.sect	'.debug_line'
-.L62:
-	.word	.L211-.L210
-.L210:
+.L78:
+	.word	.L255-.L254
+.L254:
 	.half	3
-	.word	.L213-.L212
-.L212:
+	.word	.L257-.L256
+.L256:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\CODE\\Src\\User_Gyro_Uart.c',0,0,0,0,0
-.L213:
+.L257:
 	.byte	5,12,7,0,5,2
-	.word	.L37
+	.word	.L45
 	.byte	3,53,1,5,8,9
-	.half	.L130-.L37
+	.half	.L174-.L45
 	.byte	3,3,1,5,5,9
-	.half	.L214-.L130
+	.half	.L258-.L174
 	.byte	1,5,10,7,9
-	.half	.L215-.L214
+	.half	.L259-.L258
 	.byte	3,2,1,5,20,9
-	.half	.L216-.L215
+	.half	.L260-.L259
 	.byte	1,5,10,9
-	.half	.L217-.L216
+	.half	.L261-.L260
 	.byte	3,1,1,5,20,9
-	.half	.L218-.L217
+	.half	.L262-.L261
 	.byte	1,5,7,9
-	.half	.L219-.L218
+	.half	.L263-.L262
 	.byte	1,5,10,9
-	.half	.L220-.L219
+	.half	.L264-.L263
 	.byte	3,1,1,5,20,9
-	.half	.L221-.L220
+	.half	.L265-.L264
 	.byte	1,5,7,9
-	.half	.L222-.L221
+	.half	.L266-.L265
 	.byte	1,5,10,9
-	.half	.L223-.L222
+	.half	.L267-.L266
 	.byte	3,1,1,5,20,9
-	.half	.L224-.L223
+	.half	.L268-.L267
 	.byte	1,5,7,9
-	.half	.L225-.L224
+	.half	.L269-.L268
 	.byte	1,5,10,9
-	.half	.L226-.L225
+	.half	.L270-.L269
 	.byte	3,1,1,5,20,9
-	.half	.L227-.L226
+	.half	.L271-.L270
 	.byte	1,5,7,9
-	.half	.L228-.L227
+	.half	.L272-.L271
 	.byte	1,5,10,9
-	.half	.L229-.L228
+	.half	.L273-.L272
 	.byte	3,1,1,5,20,9
-	.half	.L230-.L229
+	.half	.L274-.L273
 	.byte	1,5,7,9
-	.half	.L231-.L230
+	.half	.L275-.L274
 	.byte	1,5,10,9
-	.half	.L232-.L231
+	.half	.L276-.L275
 	.byte	3,1,1,5,20,9
-	.half	.L233-.L232
+	.half	.L277-.L276
 	.byte	1,5,7,9
-	.half	.L234-.L233
+	.half	.L278-.L277
 	.byte	1,5,10,9
-	.half	.L235-.L234
+	.half	.L279-.L278
 	.byte	3,1,1,5,20,9
-	.half	.L236-.L235
+	.half	.L280-.L279
 	.byte	1,5,7,9
-	.half	.L237-.L236
+	.half	.L281-.L280
 	.byte	1,5,10,9
-	.half	.L238-.L237
+	.half	.L282-.L281
 	.byte	3,1,1,5,20,9
-	.half	.L239-.L238
+	.half	.L283-.L282
 	.byte	1,5,7,9
-	.half	.L240-.L239
+	.half	.L284-.L283
 	.byte	1,5,10,9
-	.half	.L241-.L240
+	.half	.L285-.L284
 	.byte	3,1,1,5,20,9
-	.half	.L242-.L241
+	.half	.L286-.L285
 	.byte	1,5,7,9
-	.half	.L243-.L242
+	.half	.L287-.L286
 	.byte	1,9
-	.half	.L244-.L243
+	.half	.L288-.L287
 	.byte	3,119,1,5,13,9
-	.half	.L131-.L244
+	.half	.L175-.L288
 	.byte	3,10,1,5,23,9
-	.half	.L245-.L131
+	.half	.L289-.L175
 	.byte	1,5,3,9
-	.half	.L246-.L245
+	.half	.L290-.L289
 	.byte	1,5,15,7,9
-	.half	.L132-.L246
+	.half	.L176-.L290
 	.byte	3,3,1,5,4,9
-	.half	.L133-.L132
+	.half	.L177-.L176
 	.byte	3,1,1,5,19,9
-	.half	.L134-.L133
+	.half	.L178-.L177
 	.byte	1,5,1,9
-	.half	.L10-.L134
+	.half	.L10-.L178
 	.byte	3,14,1,5,11,7,9
 	.half	.L11-.L10
 	.byte	3,117,1,5,21,9
-	.half	.L247-.L11
+	.half	.L291-.L11
 	.byte	1,5,25,9
-	.half	.L248-.L247
+	.half	.L292-.L291
 	.byte	1,5,33,9
-	.half	.L249-.L248
+	.half	.L293-.L292
 	.byte	1,5,43,9
-	.half	.L250-.L249
+	.half	.L294-.L293
 	.byte	1,5,31,9
-	.half	.L135-.L250
+	.half	.L179-.L294
 	.byte	1,5,3,9
-	.half	.L251-.L135
+	.half	.L295-.L179
 	.byte	3,1,1,5,16,9
-	.half	.L252-.L251
+	.half	.L296-.L295
 	.byte	1,5,31,9
-	.half	.L136-.L252
+	.half	.L180-.L296
 	.byte	1,5,16,9
-	.half	.L253-.L136
+	.half	.L297-.L180
 	.byte	1,5,47,9
-	.half	.L254-.L253
+	.half	.L298-.L297
 	.byte	1,5,45,9
-	.half	.L255-.L254
+	.half	.L299-.L298
 	.byte	1,5,14,9
-	.half	.L256-.L255
+	.half	.L300-.L299
 	.byte	1,5,11,9
-	.half	.L257-.L256
+	.half	.L301-.L300
 	.byte	3,2,1,5,21,9
-	.half	.L258-.L257
+	.half	.L302-.L301
 	.byte	1,5,25,9
-	.half	.L259-.L258
+	.half	.L303-.L302
 	.byte	1,5,33,9
-	.half	.L260-.L259
+	.half	.L304-.L303
 	.byte	1,5,43,9
-	.half	.L261-.L260
+	.half	.L305-.L304
 	.byte	1,5,31,9
-	.half	.L137-.L261
+	.half	.L181-.L305
 	.byte	1,5,3,9
-	.half	.L262-.L137
+	.half	.L306-.L181
 	.byte	3,1,1,5,15,9
-	.half	.L263-.L262
+	.half	.L307-.L306
 	.byte	1,5,44,9
-	.half	.L264-.L263
+	.half	.L308-.L307
 	.byte	1,5,13,9
-	.half	.L265-.L264
+	.half	.L309-.L308
 	.byte	1,5,11,9
-	.half	.L266-.L265
+	.half	.L310-.L309
 	.byte	3,2,1,5,21,9
-	.half	.L267-.L266
+	.half	.L311-.L310
 	.byte	1,5,25,9
-	.half	.L268-.L267
+	.half	.L312-.L311
 	.byte	1,5,33,9
-	.half	.L269-.L268
+	.half	.L313-.L312
 	.byte	1,5,43,9
-	.half	.L270-.L269
+	.half	.L314-.L313
 	.byte	1,5,31,9
-	.half	.L139-.L270
+	.half	.L183-.L314
 	.byte	1,5,3,9
-	.half	.L271-.L139
+	.half	.L315-.L183
 	.byte	3,1,1,5,14,9
-	.half	.L272-.L271
+	.half	.L316-.L315
 	.byte	1,5,43,9
-	.half	.L273-.L272
+	.half	.L317-.L316
 	.byte	1,5,12,9
-	.half	.L274-.L273
+	.half	.L318-.L317
 	.byte	1,5,17,9
-	.half	.L275-.L274
+	.half	.L319-.L318
 	.byte	3,1,1,5,3,9
-	.half	.L276-.L275
+	.half	.L320-.L319
 	.byte	3,1,1,5,16,9
-	.half	.L277-.L276
+	.half	.L321-.L320
 	.byte	1,5,14,9
-	.half	.L278-.L277
+	.half	.L322-.L321
 	.byte	1,5,1,9
-	.half	.L279-.L278
+	.half	.L323-.L322
 	.byte	3,2,1,7,9
-	.half	.L64-.L279
+	.half	.L80-.L323
 	.byte	0,1,1
-.L211:
+.L255:
 	.sdecl	'.debug_ranges',debug,cluster('GyroCalculate')
 	.sect	'.debug_ranges'
-.L63:
-	.word	-1,.L37,0,.L64-.L37,0,0
+.L79:
+	.word	-1,.L45,0,.L80-.L45,0,0
 	.sdecl	'.debug_info',debug,cluster('ManageYawAngle')
 	.sect	'.debug_info'
-.L65:
+.L81:
 	.word	203
 	.half	3
-	.word	.L66
+	.word	.L82
 	.byte	4,1
 	.byte	'..\\CODE\\Src\\User_Gyro_Uart.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Debug\\',0,12,1
-	.word	.L68,.L67
+	.word	.L84,.L83
 	.byte	2
-	.word	.L46
+	.word	.L62
 	.byte	3
 	.byte	'ManageYawAngle',0,1,88,6,1,1,1
-	.word	.L39,.L112,.L38
+	.word	.L47,.L152,.L46
 	.byte	4
-	.word	.L39,.L112
+	.word	.L47,.L152
 	.byte	0,0
 	.sdecl	'.debug_abbrev',debug,cluster('ManageYawAngle')
 	.sect	'.debug_abbrev'
-.L66:
+.L82:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
 	.sdecl	'.debug_line',debug,cluster('ManageYawAngle')
 	.sect	'.debug_line'
-.L67:
-	.word	.L281-.L280
-.L280:
+.L83:
+	.word	.L325-.L324
+.L324:
 	.half	3
-	.word	.L283-.L282
-.L282:
+	.word	.L327-.L326
+.L326:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\CODE\\Src\\User_Gyro_Uart.c',0,0,0,0,0
-.L283:
+.L327:
 	.byte	5,8,7,0,5,2
-	.word	.L39
+	.word	.L47
 	.byte	3,217,0,1,5,19,9
-	.half	.L284-.L39
+	.half	.L328-.L47
 	.byte	1,5,17,9
-	.half	.L285-.L284
+	.half	.L329-.L328
 	.byte	1,5,5,9
-	.half	.L286-.L285
+	.half	.L330-.L329
 	.byte	1,5,28,7,9
-	.half	.L287-.L286
+	.half	.L331-.L330
 	.byte	3,1,1,5,26,9
-	.half	.L288-.L287
+	.half	.L332-.L331
 	.byte	1,5,15,9
-	.half	.L289-.L288
+	.half	.L333-.L332
 	.byte	1,5,1,9
-	.half	.L13-.L289
+	.half	.L13-.L333
 	.byte	3,1,1,7,9
-	.half	.L69-.L13
+	.half	.L85-.L13
 	.byte	0,1,1
-.L281:
+.L325:
 	.sdecl	'.debug_ranges',debug,cluster('ManageYawAngle')
 	.sect	'.debug_ranges'
-.L68:
-	.word	-1,.L39,0,.L69-.L39,0,0
+.L84:
+	.word	-1,.L47,0,.L85-.L47,0,0
 	.sdecl	'.debug_info',debug,cluster('GyroYawAngleInit')
 	.sect	'.debug_info'
-.L70:
+.L86:
 	.word	231
 	.half	3
-	.word	.L71
+	.word	.L87
 	.byte	4,1
 	.byte	'..\\CODE\\Src\\User_Gyro_Uart.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Debug\\',0,12,1
-	.word	.L73,.L72
+	.word	.L89,.L88
 	.byte	2
-	.word	.L46
+	.word	.L62
 	.byte	3
 	.byte	'GyroYawAngleInit',0,1,94,6,1,1,1
-	.word	.L41,.L113,.L40
+	.word	.L49,.L153,.L48
 	.byte	4
 	.byte	'RotationAngle',0,1,94,30
-	.word	.L114,.L115
+	.word	.L154,.L155
 	.byte	5
-	.word	.L41,.L113
+	.word	.L49,.L153
 	.byte	0,0
 	.sdecl	'.debug_abbrev',debug,cluster('GyroYawAngleInit')
 	.sect	'.debug_abbrev'
-.L71:
+.L87:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
 	.sdecl	'.debug_line',debug,cluster('GyroYawAngleInit')
 	.sect	'.debug_line'
-.L72:
-	.word	.L291-.L290
-.L290:
+.L88:
+	.word	.L335-.L334
+.L334:
 	.half	3
-	.word	.L293-.L292
-.L292:
-	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
-	.byte	'..\\CODE\\Src\\User_Gyro_Uart.c',0,0,0,0,0
-.L293:
-	.byte	5,2,7,0,5,2
-	.word	.L41
-	.byte	3,223,0,1,5,23,9
-	.half	.L294-.L41
-	.byte	1,5,32,9
-	.half	.L295-.L294
-	.byte	1,5,21,9
-	.half	.L296-.L295
-	.byte	1,5,26,9
-	.half	.L297-.L296
-	.byte	3,1,1,5,24,9
-	.half	.L298-.L297
-	.byte	1,5,2,9
-	.half	.L299-.L298
-	.byte	1,5,22,7,9
-	.half	.L300-.L299
-	.byte	3,1,1,5,28,9
-	.half	.L301-.L300
-	.byte	1,5,10,9
-	.half	.L14-.L301
-	.byte	3,1,1,5,31,9
-	.half	.L302-.L14
-	.byte	1,5,29,9
-	.half	.L303-.L302
-	.byte	1,5,7,9
-	.half	.L304-.L303
-	.byte	1,5,25,7,9
-	.half	.L305-.L304
-	.byte	3,1,1,5,22,9
-	.half	.L306-.L305
-	.byte	1,5,1,9
-	.half	.L16-.L306
-	.byte	3,1,1,7,9
-	.half	.L74-.L16
-	.byte	0,1,1
-.L291:
-	.sdecl	'.debug_ranges',debug,cluster('GyroYawAngleInit')
-	.sect	'.debug_ranges'
-.L73:
-	.word	-1,.L41,0,.L74-.L41,0,0
-	.sdecl	'.debug_info',debug,cluster('GetGyroError')
-	.sect	'.debug_info'
-.L75:
-	.word	205
-	.half	3
-	.word	.L76
-	.byte	4,1
-	.byte	'..\\CODE\\Src\\User_Gyro_Uart.c',0
-	.byte	'TASKING VX-toolset for TriCore: C compiler',0
-	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Debug\\',0,12,1
-	.word	.L78,.L77
-	.byte	2
-	.word	.L46
-	.byte	3
-	.byte	'GetGyroError',0,1,103,8
-	.word	.L114
-	.byte	1,1,1
-	.word	.L43,.L116,.L42
-	.byte	4
-	.word	.L43,.L116
-	.byte	0,0
-	.sdecl	'.debug_abbrev',debug,cluster('GetGyroError')
-	.sect	'.debug_abbrev'
-.L76:
-	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
-	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
-	.sdecl	'.debug_line',debug,cluster('GetGyroError')
-	.sect	'.debug_line'
-.L77:
-	.word	.L308-.L307
-.L307:
-	.half	3
-	.word	.L310-.L309
-.L309:
-	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
-	.byte	'..\\CODE\\Src\\User_Gyro_Uart.c',0,0,0,0,0
-.L310:
-	.byte	5,9,7,0,5,2
-	.word	.L43
-	.byte	3,232,0,1,5,30,9
-	.half	.L311-.L43
-	.byte	1,5,28,9
-	.half	.L312-.L311
-	.byte	1,5,5,9
-	.half	.L313-.L312
-	.byte	1,5,13,7,9
-	.half	.L314-.L313
-	.byte	3,2,1,5,22,9
-	.half	.L315-.L314
-	.byte	1,5,9,9
-	.half	.L316-.L315
-	.byte	1,5,17,7,9
-	.half	.L317-.L316
-	.byte	3,2,1,5,53,9
-	.half	.L318-.L317
-	.byte	1,5,13,9
-	.half	.L319-.L318
-	.byte	1,5,27,7,9
-	.half	.L320-.L319
-	.byte	3,6,1,5,48,9
-	.half	.L321-.L320
-	.byte	1,5,27,9
-	.half	.L322-.L321
-	.byte	1,5,25,9
-	.half	.L323-.L322
-	.byte	1,5,1,9
-	.half	.L324-.L323
-	.byte	3,24,1,5,18,7,9
-	.half	.L17-.L324
-	.byte	3,121,1,5,57,9
-	.half	.L325-.L17
-	.byte	1,5,54,9
-	.half	.L326-.L325
-	.byte	1,5,14,9
-	.half	.L327-.L326
-	.byte	1,5,21,7,9
-	.half	.L18-.L327
-	.byte	3,2,1,5,32,9
-	.half	.L328-.L18
-	.byte	1,5,30,9
-	.half	.L329-.L328
-	.byte	1,5,1,9
-	.half	.L330-.L329
-	.byte	3,5,1,5,22,7,9
-	.half	.L21-.L330
-	.byte	3,126,1,5,40,9
-	.half	.L331-.L21
-	.byte	1,5,22,9
-	.half	.L332-.L331
-	.byte	1,5,33,9
-	.half	.L333-.L332
-	.byte	1,5,22,9
-	.half	.L334-.L333
-	.byte	1,5,1,9
-	.half	.L335-.L334
-	.byte	3,2,1,7,9
-	.half	.L79-.L335
-	.byte	0,1,1
-.L308:
-	.sdecl	'.debug_ranges',debug,cluster('GetGyroError')
-	.sect	'.debug_ranges'
-.L78:
-	.word	-1,.L43,0,.L79-.L43,0,0
-	.sdecl	'.debug_info',debug,cluster('GyroPID')
-	.sect	'.debug_info'
-.L80:
-	.word	411
-	.half	3
-	.word	.L81
-	.byte	4,1
-	.byte	'..\\CODE\\Src\\User_Gyro_Uart.c',0
-	.byte	'TASKING VX-toolset for TriCore: C compiler',0
-	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Debug\\',0,12,1
-	.word	.L83,.L82
-	.byte	2
-	.word	.L46
-	.byte	3
-	.byte	'GyroPID',0,1,141,1,6,1,1,1
-	.word	.L45,.L117,.L44
-	.byte	4
-	.byte	'Kp',0,1,141,1,21
-	.word	.L114,.L118
-	.byte	4
-	.byte	'Ki',0,1,141,1,32
-	.word	.L114,.L119
-	.byte	4
-	.byte	'Kd',0,1,141,1,43
-	.word	.L114,.L120
-	.byte	5
-	.word	.L45,.L117
-	.byte	6
-	.byte	'error',0,1,144,1,12
-	.word	.L114,.L121
-	.byte	6
-	.byte	'P',0,1,144,1,23
-	.word	.L114,.L122
-	.byte	6
-	.byte	'I',0,1,144,1,30
-	.word	.L114,.L123
-	.byte	6
-	.byte	'D',0,1,144,1,37
-	.word	.L114,.L124
-	.byte	6
-	.byte	'PIDValue',0,1,144,1,44
-	.word	.L114,.L125
-	.byte	6
-	.byte	'LPWMDutyOut',0,1,145,1,12
-	.word	.L114,.L126
-	.byte	6
-	.byte	'RPWMDutyOut',0,1,145,1,25
-	.word	.L114,.L127
-	.byte	7
-	.byte	'previousError',0,1,146,1,16
-	.word	.L114
-	.byte	5,3
-	.word	_999001_previousError
-	.byte	0,0,0
-	.sdecl	'.debug_abbrev',debug,cluster('GyroPID')
-	.sect	'.debug_abbrev'
-.L81:
-	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
-	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3
-	.byte	8,58,15,59,15,57,15,73,16,2,6,0,0,7,52,0,3,8,58,15,59,15,57,15,73,16,2,9,0,0,0
-	.sdecl	'.debug_line',debug,cluster('GyroPID')
-	.sect	'.debug_line'
-.L82:
 	.word	.L337-.L336
 .L336:
-	.half	3
-	.word	.L339-.L338
-.L338:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\CODE\\Src\\User_Gyro_Uart.c',0,0,0,0,0
-.L339:
-	.byte	5,6,7,0,5,2
-	.word	.L45
-	.byte	3,140,1,1,5,32,9
-	.half	.L146-.L45
-	.byte	3,3,1,5,25,9
-	.half	.L147-.L146
-	.byte	3,4,1,5,7,9
-	.half	.L141-.L147
-	.byte	3,3,1,5,17,9
-	.half	.L148-.L141
-	.byte	3,1,1,5,15,9
-	.half	.L340-.L148
-	.byte	1,5,31,9
-	.half	.L151-.L340
-	.byte	3,2,1,5,25,9
-	.half	.L150-.L151
-	.byte	1,5,36,9
-	.half	.L143-.L150
-	.byte	1,5,19,9
-	.half	.L152-.L143
-	.byte	3,1,1,5,17,9
-	.half	.L341-.L152
-	.byte	3,1,1,5,14,9
-	.half	.L342-.L341
-	.byte	1,5,37,9
-	.half	.L343-.L342
-	.byte	3,2,1,5,59,9
-	.half	.L344-.L343
-	.byte	1,5,38,9
-	.half	.L154-.L344
-	.byte	3,1,1,5,59,9
-	.half	.L345-.L154
-	.byte	1,5,20,9
-	.half	.L145-.L345
-	.byte	3,1,1,5,17,9
-	.half	.L153-.L145
-	.byte	1,5,2,9
-	.half	.L346-.L153
-	.byte	1,5,25,7,9
-	.half	.L347-.L346
-	.byte	3,2,1,5,22,9
-	.half	.L348-.L347
-	.byte	1,5,19,9
-	.half	.L349-.L348
-	.byte	3,127,1,5,17,9
-	.half	.L24-.L349
-	.byte	1,5,20,9
-	.half	.L27-.L24
-	.byte	3,3,1,5,17,9
-	.half	.L350-.L27
-	.byte	1,5,2,9
-	.half	.L351-.L350
-	.byte	1,5,25,7,9
-	.half	.L352-.L351
-	.byte	3,2,1,5,22,9
-	.half	.L353-.L352
-	.byte	1,5,19,9
-	.half	.L354-.L353
-	.byte	3,127,1,5,17,9
-	.half	.L28-.L354
-	.byte	1,5,18,9
-	.half	.L31-.L28
-	.byte	3,3,1,5,28,9
-	.half	.L355-.L31
-	.byte	1,5,18,9
-	.half	.L149-.L355
-	.byte	3,1,1,5,28,9
-	.half	.L356-.L149
-	.byte	1,5,1,9
-	.half	.L84-.L356
-	.byte	3,1,0,1,1
 .L337:
-	.sdecl	'.debug_ranges',debug,cluster('GyroPID')
+	.byte	5,2,7,0,5,2
+	.word	.L49
+	.byte	3,223,0,1,5,23,9
+	.half	.L338-.L49
+	.byte	1,5,32,9
+	.half	.L339-.L338
+	.byte	1,5,21,9
+	.half	.L340-.L339
+	.byte	1,5,26,9
+	.half	.L341-.L340
+	.byte	3,1,1,5,24,9
+	.half	.L342-.L341
+	.byte	1,5,2,9
+	.half	.L343-.L342
+	.byte	1,5,22,7,9
+	.half	.L344-.L343
+	.byte	3,1,1,5,28,9
+	.half	.L345-.L344
+	.byte	1,5,10,9
+	.half	.L14-.L345
+	.byte	3,1,1,5,31,9
+	.half	.L346-.L14
+	.byte	1,5,29,9
+	.half	.L347-.L346
+	.byte	1,5,7,9
+	.half	.L348-.L347
+	.byte	1,5,25,7,9
+	.half	.L349-.L348
+	.byte	3,1,1,5,22,9
+	.half	.L350-.L349
+	.byte	1,5,1,9
+	.half	.L16-.L350
+	.byte	3,1,1,7,9
+	.half	.L90-.L16
+	.byte	0,1,1
+.L335:
+	.sdecl	'.debug_ranges',debug,cluster('GyroYawAngleInit')
 	.sect	'.debug_ranges'
-.L83:
-	.word	-1,.L45,0,.L84-.L45,0,0
-	.sdecl	'.debug_info',debug,cluster('PitchAngle')
-	.sect	'.debug_info'
-.L85:
-	.word	177
-	.half	3
-	.word	.L86
-	.byte	4,1
-	.byte	'..\\CODE\\Src\\User_Gyro_Uart.c',0
-	.byte	'TASKING VX-toolset for TriCore: C compiler',0
-	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Debug\\',0,12,1,2
-	.word	.L46
-	.byte	3
-	.byte	'PitchAngle',0,26,17,8
-	.word	.L114
-	.byte	1,5,3
-	.word	PitchAngle
-	.byte	0
-	.sdecl	'.debug_abbrev',debug,cluster('PitchAngle')
-	.sect	'.debug_abbrev'
-.L86:
-	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
-	.byte	0,0,0
-	.sdecl	'.debug_info',debug,cluster('RollAngle')
-	.sect	'.debug_info'
-.L87:
-	.word	176
-	.half	3
-	.word	.L88
-	.byte	4,1
-	.byte	'..\\CODE\\Src\\User_Gyro_Uart.c',0
-	.byte	'TASKING VX-toolset for TriCore: C compiler',0
-	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Debug\\',0,12,1,2
-	.word	.L46
-	.byte	3
-	.byte	'RollAngle',0,26,17,20
-	.word	.L114
-	.byte	1,5,3
-	.word	RollAngle
-	.byte	0
-	.sdecl	'.debug_abbrev',debug,cluster('RollAngle')
-	.sect	'.debug_abbrev'
-.L88:
-	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
-	.byte	0,0,0
-	.sdecl	'.debug_info',debug,cluster('YawAngle')
-	.sect	'.debug_info'
 .L89:
-	.word	175
-	.half	3
-	.word	.L90
-	.byte	4,1
-	.byte	'..\\CODE\\Src\\User_Gyro_Uart.c',0
-	.byte	'TASKING VX-toolset for TriCore: C compiler',0
-	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Debug\\',0,12,1,2
-	.word	.L46
-	.byte	3
-	.byte	'YawAngle',0,26,17,31
-	.word	.L114
-	.byte	1,5,3
-	.word	YawAngle
-	.byte	0
-	.sdecl	'.debug_abbrev',debug,cluster('YawAngle')
-	.sect	'.debug_abbrev'
-.L90:
-	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
-	.byte	0,0,0
-	.sdecl	'.debug_info',debug,cluster('TargetGyroYawAngle')
+	.word	-1,.L49,0,.L90-.L49,0,0
+	.sdecl	'.debug_info',debug,cluster('GetGyroError')
 	.sect	'.debug_info'
 .L91:
-	.word	185
+	.word	205
 	.half	3
 	.word	.L92
 	.byte	4,1
 	.byte	'..\\CODE\\Src\\User_Gyro_Uart.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
-	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Debug\\',0,12,1,2
-	.word	.L46
+	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Debug\\',0,12,1
+	.word	.L94,.L93
+	.byte	2
+	.word	.L62
 	.byte	3
-	.byte	'TargetGyroYawAngle',0,26,17,41
-	.word	.L114
-	.byte	1,5,3
-	.word	TargetGyroYawAngle
-	.byte	0
-	.sdecl	'.debug_abbrev',debug,cluster('TargetGyroYawAngle')
+	.byte	'GetGyroError',0,1,103,8
+	.word	.L154
+	.byte	1,1,1
+	.word	.L51,.L156,.L50
+	.byte	4
+	.word	.L51,.L156
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('GetGyroError')
 	.sect	'.debug_abbrev'
 .L92:
-	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
-	.byte	0,0,0
-	.sdecl	'.debug_info',debug,cluster('GyroUnlockInstruction')
-	.sect	'.debug_info'
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('GetGyroError')
+	.sect	'.debug_line'
 .L93:
-	.word	188
+	.word	.L352-.L351
+.L351:
 	.half	3
-	.word	.L94
-	.byte	4,1
-	.byte	'..\\CODE\\Src\\User_Gyro_Uart.c',0
-	.byte	'TASKING VX-toolset for TriCore: C compiler',0
-	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Debug\\',0,12,1,2
-	.word	.L46
-	.byte	3
-	.byte	'GyroUnlockInstruction',0,26,12,7
-	.word	.L128
-	.byte	1,5,3
-	.word	GyroUnlockInstruction
-	.byte	0
-	.sdecl	'.debug_abbrev',debug,cluster('GyroUnlockInstruction')
-	.sect	'.debug_abbrev'
+	.word	.L354-.L353
+.L353:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'..\\CODE\\Src\\User_Gyro_Uart.c',0,0,0,0,0
+.L354:
+	.byte	5,9,7,0,5,2
+	.word	.L51
+	.byte	3,232,0,1,5,30,9
+	.half	.L355-.L51
+	.byte	1,5,28,9
+	.half	.L356-.L355
+	.byte	1,5,5,9
+	.half	.L357-.L356
+	.byte	1,5,13,7,9
+	.half	.L358-.L357
+	.byte	3,2,1,5,22,9
+	.half	.L359-.L358
+	.byte	1,5,9,9
+	.half	.L360-.L359
+	.byte	1,5,17,7,9
+	.half	.L361-.L360
+	.byte	3,2,1,5,53,9
+	.half	.L362-.L361
+	.byte	1,5,13,9
+	.half	.L363-.L362
+	.byte	1,5,27,7,9
+	.half	.L364-.L363
+	.byte	3,6,1,5,48,9
+	.half	.L365-.L364
+	.byte	1,5,27,9
+	.half	.L366-.L365
+	.byte	1,5,25,9
+	.half	.L367-.L366
+	.byte	1,5,1,9
+	.half	.L368-.L367
+	.byte	3,24,1,5,18,7,9
+	.half	.L17-.L368
+	.byte	3,121,1,5,57,9
+	.half	.L369-.L17
+	.byte	1,5,54,9
+	.half	.L370-.L369
+	.byte	1,5,14,9
+	.half	.L371-.L370
+	.byte	1,5,21,7,9
+	.half	.L18-.L371
+	.byte	3,2,1,5,32,9
+	.half	.L372-.L18
+	.byte	1,5,30,9
+	.half	.L373-.L372
+	.byte	1,5,1,9
+	.half	.L374-.L373
+	.byte	3,5,1,5,22,7,9
+	.half	.L21-.L374
+	.byte	3,126,1,5,40,9
+	.half	.L375-.L21
+	.byte	1,5,22,9
+	.half	.L376-.L375
+	.byte	1,5,33,9
+	.half	.L377-.L376
+	.byte	1,5,22,9
+	.half	.L378-.L377
+	.byte	1,5,1,9
+	.half	.L379-.L378
+	.byte	3,2,1,7,9
+	.half	.L95-.L379
+	.byte	0,1,1
+.L352:
+	.sdecl	'.debug_ranges',debug,cluster('GetGyroError')
+	.sect	'.debug_ranges'
 .L94:
-	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
-	.byte	0,0,0
-	.sdecl	'.debug_info',debug,cluster('GyroAutoCalibration')
+	.word	-1,.L51,0,.L95-.L51,0,0
+	.sdecl	'.debug_info',debug,cluster('GyroPID')
 	.sect	'.debug_info'
-.L95:
-	.word	186
-	.half	3
-	.word	.L96
-	.byte	4,1
-	.byte	'..\\CODE\\Src\\User_Gyro_Uart.c',0
-	.byte	'TASKING VX-toolset for TriCore: C compiler',0
-	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Debug\\',0,12,1,2
-	.word	.L46
-	.byte	3
-	.byte	'GyroAutoCalibration',0,26,13,7
-	.word	.L128
-	.byte	1,5,3
-	.word	GyroAutoCalibration
-	.byte	0
-	.sdecl	'.debug_abbrev',debug,cluster('GyroAutoCalibration')
-	.sect	'.debug_abbrev'
 .L96:
-	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
+	.word	411
+	.half	3
+	.word	.L97
+	.byte	4,1
+	.byte	'..\\CODE\\Src\\User_Gyro_Uart.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Debug\\',0,12,1
+	.word	.L99,.L98
+	.byte	2
+	.word	.L62
+	.byte	3
+	.byte	'GyroPID',0,1,141,1,6,1,1,1
+	.word	.L53,.L157,.L52
+	.byte	4
+	.byte	'Kp',0,1,141,1,21
+	.word	.L154,.L158
+	.byte	4
+	.byte	'Ki',0,1,141,1,32
+	.word	.L154,.L159
+	.byte	4
+	.byte	'Kd',0,1,141,1,43
+	.word	.L154,.L160
+	.byte	5
+	.word	.L53,.L157
+	.byte	6
+	.byte	'error',0,1,144,1,12
+	.word	.L154,.L161
+	.byte	6
+	.byte	'P',0,1,144,1,23
+	.word	.L154,.L162
+	.byte	6
+	.byte	'I',0,1,144,1,30
+	.word	.L154,.L163
+	.byte	6
+	.byte	'D',0,1,144,1,37
+	.word	.L154,.L164
+	.byte	6
+	.byte	'PIDValue',0,1,144,1,44
+	.word	.L154,.L165
+	.byte	6
+	.byte	'LPWMDutyOut',0,1,145,1,12
+	.word	.L154,.L166
+	.byte	6
+	.byte	'RPWMDutyOut',0,1,145,1,25
+	.word	.L154,.L167
+	.byte	7
+	.byte	'previousError',0,1,146,1,16
+	.word	.L154
+	.byte	5,3
+	.word	_999001_previousError
 	.byte	0,0,0
-	.sdecl	'.debug_info',debug,cluster('GyroKeepConfiguration')
-	.sect	'.debug_info'
+	.sdecl	'.debug_abbrev',debug,cluster('GyroPID')
+	.sect	'.debug_abbrev'
 .L97:
-	.word	188
-	.half	3
-	.word	.L98
-	.byte	4,1
-	.byte	'..\\CODE\\Src\\User_Gyro_Uart.c',0
-	.byte	'TASKING VX-toolset for TriCore: C compiler',0
-	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Debug\\',0,12,1,2
-	.word	.L46
-	.byte	3
-	.byte	'GyroKeepConfiguration',0,26,14,7
-	.word	.L128
-	.byte	1,5,3
-	.word	GyroKeepConfiguration
-	.byte	0
-	.sdecl	'.debug_abbrev',debug,cluster('GyroKeepConfiguration')
-	.sect	'.debug_abbrev'
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3
+	.byte	8,58,15,59,15,57,15,73,16,2,6,0,0,7,52,0,3,8,58,15,59,15,57,15,73,16,2,9,0,0,0
+	.sdecl	'.debug_line',debug,cluster('GyroPID')
+	.sect	'.debug_line'
 .L98:
-	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
-	.byte	0,0,0
-	.sdecl	'.debug_info',debug,cluster('GyroRxBuff')
-	.sect	'.debug_info'
-.L99:
-	.word	177
+	.word	.L381-.L380
+.L380:
 	.half	3
-	.word	.L100
-	.byte	4,1
-	.byte	'..\\CODE\\Src\\User_Gyro_Uart.c',0
-	.byte	'TASKING VX-toolset for TriCore: C compiler',0
-	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Debug\\',0,12,1,2
-	.word	.L46
-	.byte	3
-	.byte	'GyroRxBuff',0,26,15,7
-	.word	.L129
-	.byte	1,5,3
-	.word	GyroRxBuff
-	.byte	0
-	.sdecl	'.debug_abbrev',debug,cluster('GyroRxBuff')
-	.sect	'.debug_abbrev'
-.L100:
-	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
-	.byte	0,0,0
-	.sdecl	'.debug_info',debug,cluster('GyroReceiveNum')
+	.word	.L383-.L382
+.L382:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'..\\CODE\\Src\\User_Gyro_Uart.c',0,0,0,0,0
+.L383:
+	.byte	5,6,7,0,5,2
+	.word	.L53
+	.byte	3,140,1,1,5,32,9
+	.half	.L190-.L53
+	.byte	3,3,1,5,25,9
+	.half	.L191-.L190
+	.byte	3,4,1,5,7,9
+	.half	.L185-.L191
+	.byte	3,3,1,5,17,9
+	.half	.L192-.L185
+	.byte	3,1,1,5,15,9
+	.half	.L384-.L192
+	.byte	1,5,31,9
+	.half	.L195-.L384
+	.byte	3,2,1,5,25,9
+	.half	.L194-.L195
+	.byte	1,5,36,9
+	.half	.L187-.L194
+	.byte	1,5,19,9
+	.half	.L196-.L187
+	.byte	3,1,1,5,17,9
+	.half	.L385-.L196
+	.byte	3,1,1,5,14,9
+	.half	.L386-.L385
+	.byte	1,5,37,9
+	.half	.L387-.L386
+	.byte	3,2,1,5,59,9
+	.half	.L388-.L387
+	.byte	1,5,38,9
+	.half	.L198-.L388
+	.byte	3,1,1,5,59,9
+	.half	.L389-.L198
+	.byte	1,5,20,9
+	.half	.L189-.L389
+	.byte	3,1,1,5,17,9
+	.half	.L197-.L189
+	.byte	1,5,2,9
+	.half	.L390-.L197
+	.byte	1,5,25,7,9
+	.half	.L391-.L390
+	.byte	3,2,1,5,22,9
+	.half	.L392-.L391
+	.byte	1,5,19,9
+	.half	.L393-.L392
+	.byte	3,127,1,5,17,9
+	.half	.L24-.L393
+	.byte	1,5,20,9
+	.half	.L27-.L24
+	.byte	3,3,1,5,17,9
+	.half	.L394-.L27
+	.byte	1,5,2,9
+	.half	.L395-.L394
+	.byte	1,5,25,7,9
+	.half	.L396-.L395
+	.byte	3,2,1,5,22,9
+	.half	.L397-.L396
+	.byte	1,5,19,9
+	.half	.L398-.L397
+	.byte	3,127,1,5,17,9
+	.half	.L28-.L398
+	.byte	1,5,18,9
+	.half	.L31-.L28
+	.byte	3,3,1,5,28,9
+	.half	.L399-.L31
+	.byte	1,5,18,9
+	.half	.L193-.L399
+	.byte	3,1,1,5,28,9
+	.half	.L400-.L193
+	.byte	1,5,1,9
+	.half	.L100-.L400
+	.byte	3,1,0,1,1
+.L381:
+	.sdecl	'.debug_ranges',debug,cluster('GyroPID')
+	.sect	'.debug_ranges'
+.L99:
+	.word	-1,.L53,0,.L100-.L53,0,0
+	.sdecl	'.debug_info',debug,cluster('CulAngle')
 	.sect	'.debug_info'
 .L101:
-	.word	181
+	.word	202
 	.half	3
 	.word	.L102
 	.byte	4,1
 	.byte	'..\\CODE\\Src\\User_Gyro_Uart.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Debug\\',0,12,1
+	.word	.L104,.L103
+	.byte	2
+	.word	.L62
+	.byte	3
+	.byte	'CulAngle',0,1,172,1,8
+	.word	.L154
+	.byte	1,1,1
+	.word	.L55,.L168,.L54
+	.byte	4
+	.word	.L55,.L168
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('CulAngle')
+	.sect	'.debug_abbrev'
+.L102:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('CulAngle')
+	.sect	'.debug_line'
+.L103:
+	.word	.L402-.L401
+.L401:
+	.half	3
+	.word	.L404-.L403
+.L403:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'..\\CODE\\Src\\User_Gyro_Uart.c',0,0,0,0,0
+.L404:
+	.byte	5,9,7,0,5,2
+	.word	.L55
+	.byte	3,173,1,1,5,1,9
+	.half	.L405-.L55
+	.byte	3,1,1,7,9
+	.half	.L105-.L405
+	.byte	0,1,1
+.L402:
+	.sdecl	'.debug_ranges',debug,cluster('CulAngle')
+	.sect	'.debug_ranges'
+.L104:
+	.word	-1,.L55,0,.L105-.L55,0,0
+	.sdecl	'.debug_info',debug,cluster('InitCulAngle')
+	.sect	'.debug_info'
+.L106:
+	.word	202
+	.half	3
+	.word	.L107
+	.byte	4,1
+	.byte	'..\\CODE\\Src\\User_Gyro_Uart.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Debug\\',0,12,1
+	.word	.L109,.L108
+	.byte	2
+	.word	.L62
+	.byte	3
+	.byte	'InitCulAngle',0,1,176,1,6,1,1,1
+	.word	.L57,.L169,.L56
+	.byte	4
+	.word	.L57,.L169
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('InitCulAngle')
+	.sect	'.debug_abbrev'
+.L107:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('InitCulAngle')
+	.sect	'.debug_line'
+.L108:
+	.word	.L407-.L406
+.L406:
+	.half	3
+	.word	.L409-.L408
+.L408:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'..\\CODE\\Src\\User_Gyro_Uart.c',0,0,0,0,0
+.L409:
+	.byte	5,2,7,0,5,2
+	.word	.L57
+	.byte	3,177,1,1,5,11,9
+	.half	.L410-.L57
+	.byte	1,5,10,9
+	.half	.L411-.L410
+	.byte	1,5,2,9
+	.half	.L412-.L411
+	.byte	3,1,1,5,12,9
+	.half	.L413-.L412
+	.byte	1,5,11,9
+	.half	.L414-.L413
+	.byte	1,5,1,9
+	.half	.L415-.L414
+	.byte	3,1,1,7,9
+	.half	.L110-.L415
+	.byte	0,1,1
+.L407:
+	.sdecl	'.debug_ranges',debug,cluster('InitCulAngle')
+	.sect	'.debug_ranges'
+.L109:
+	.word	-1,.L57,0,.L110-.L57,0,0
+	.sdecl	'.debug_info',debug,cluster('UpdateCulAngle')
+	.sect	'.debug_info'
+.L111:
+	.word	204
+	.half	3
+	.word	.L112
+	.byte	4,1
+	.byte	'..\\CODE\\Src\\User_Gyro_Uart.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Debug\\',0,12,1
+	.word	.L114,.L113
+	.byte	2
+	.word	.L62
+	.byte	3
+	.byte	'UpdateCulAngle',0,1,181,1,6,1,1,1
+	.word	.L59,.L170,.L58
+	.byte	4
+	.word	.L59,.L170
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('UpdateCulAngle')
+	.sect	'.debug_abbrev'
+.L112:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('UpdateCulAngle')
+	.sect	'.debug_line'
+.L113:
+	.word	.L417-.L416
+.L416:
+	.half	3
+	.word	.L419-.L418
+.L418:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'..\\CODE\\Src\\User_Gyro_Uart.c',0,0,0,0,0
+.L419:
+	.byte	5,12,7,0,5,2
+	.word	.L59
+	.byte	3,183,1,1,5,2,9
+	.half	.L420-.L59
+	.byte	1,5,12,9
+	.half	.L421-.L420
+	.byte	1,5,10,9
+	.half	.L422-.L421
+	.byte	1,5,2,9
+	.half	.L423-.L422
+	.byte	3,1,1,5,12,9
+	.half	.L424-.L423
+	.byte	1,5,11,9
+	.half	.L425-.L424
+	.byte	1,5,1,9
+	.half	.L426-.L425
+	.byte	3,1,1,7,9
+	.half	.L115-.L426
+	.byte	0,1,1
+.L417:
+	.sdecl	'.debug_ranges',debug,cluster('UpdateCulAngle')
+	.sect	'.debug_ranges'
+.L114:
+	.word	-1,.L59,0,.L115-.L59,0,0
+	.sdecl	'.debug_info',debug,cluster('GetGYROCulError')
+	.sect	'.debug_info'
+.L116:
+	.word	209
+	.half	3
+	.word	.L117
+	.byte	4,1
+	.byte	'..\\CODE\\Src\\User_Gyro_Uart.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Debug\\',0,12,1
+	.word	.L119,.L118
+	.byte	2
+	.word	.L62
+	.byte	3
+	.byte	'GetGYROCulError',0,1,187,1,8
+	.word	.L154
+	.byte	1,1,1
+	.word	.L61,.L171,.L60
+	.byte	4
+	.word	.L61,.L171
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('GetGYROCulError')
+	.sect	'.debug_abbrev'
+.L117:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('GetGYROCulError')
+	.sect	'.debug_line'
+.L118:
+	.word	.L428-.L427
+.L427:
+	.half	3
+	.word	.L430-.L429
+.L429:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'..\\CODE\\Src\\User_Gyro_Uart.c',0,0,0,0,0
+.L430:
+	.byte	5,10,7,0,5,2
+	.word	.L61
+	.byte	3,188,1,1,5,22,9
+	.half	.L431-.L61
+	.byte	1,5,20,9
+	.half	.L432-.L431
+	.byte	1,5,6,9
+	.half	.L433-.L432
+	.byte	1,5,13,7,9
+	.half	.L434-.L433
+	.byte	3,2,1,5,22,9
+	.half	.L435-.L434
+	.byte	1,5,9,9
+	.half	.L436-.L435
+	.byte	1,5,17,7,9
+	.half	.L437-.L436
+	.byte	3,2,1,5,44,9
+	.half	.L438-.L437
+	.byte	1,5,13,9
+	.half	.L439-.L438
+	.byte	1,5,27,7,9
+	.half	.L440-.L439
+	.byte	3,6,1,5,39,9
+	.half	.L441-.L440
+	.byte	1,5,27,9
+	.half	.L442-.L441
+	.byte	1,5,25,9
+	.half	.L443-.L442
+	.byte	1,5,1,9
+	.half	.L444-.L443
+	.byte	3,24,1,5,18,7,9
+	.half	.L33-.L444
+	.byte	3,121,1,5,48,9
+	.half	.L445-.L33
+	.byte	1,5,45,9
+	.half	.L446-.L445
+	.byte	1,5,14,9
+	.half	.L447-.L446
+	.byte	1,5,21,7,9
+	.half	.L34-.L447
+	.byte	3,2,1,5,32,9
+	.half	.L448-.L34
+	.byte	1,5,30,9
+	.half	.L449-.L448
+	.byte	1,5,1,9
+	.half	.L450-.L449
+	.byte	3,5,1,5,22,7,9
+	.half	.L37-.L450
+	.byte	3,126,1,5,40,9
+	.half	.L451-.L37
+	.byte	1,5,22,9
+	.half	.L452-.L451
+	.byte	1,5,33,9
+	.half	.L453-.L452
+	.byte	1,5,22,9
+	.half	.L454-.L453
+	.byte	1,5,1,9
+	.half	.L455-.L454
+	.byte	3,2,1,7,9
+	.half	.L120-.L455
+	.byte	0,1,1
+.L428:
+	.sdecl	'.debug_ranges',debug,cluster('GetGYROCulError')
+	.sect	'.debug_ranges'
+.L119:
+	.word	-1,.L61,0,.L120-.L61,0,0
+	.sdecl	'.debug_info',debug,cluster('PitchAngle')
+	.sect	'.debug_info'
+.L121:
+	.word	177
+	.half	3
+	.word	.L122
+	.byte	4,1
+	.byte	'..\\CODE\\Src\\User_Gyro_Uart.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Debug\\',0,12,1,2
-	.word	.L46
+	.word	.L62
+	.byte	3
+	.byte	'PitchAngle',0,26,17,8
+	.word	.L154
+	.byte	1,5,3
+	.word	PitchAngle
+	.byte	0
+	.sdecl	'.debug_abbrev',debug,cluster('PitchAngle')
+	.sect	'.debug_abbrev'
+.L122:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
+	.byte	0,0,0
+	.sdecl	'.debug_info',debug,cluster('RollAngle')
+	.sect	'.debug_info'
+.L123:
+	.word	176
+	.half	3
+	.word	.L124
+	.byte	4,1
+	.byte	'..\\CODE\\Src\\User_Gyro_Uart.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Debug\\',0,12,1,2
+	.word	.L62
+	.byte	3
+	.byte	'RollAngle',0,26,17,20
+	.word	.L154
+	.byte	1,5,3
+	.word	RollAngle
+	.byte	0
+	.sdecl	'.debug_abbrev',debug,cluster('RollAngle')
+	.sect	'.debug_abbrev'
+.L124:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
+	.byte	0,0,0
+	.sdecl	'.debug_info',debug,cluster('YawAngle')
+	.sect	'.debug_info'
+.L125:
+	.word	175
+	.half	3
+	.word	.L126
+	.byte	4,1
+	.byte	'..\\CODE\\Src\\User_Gyro_Uart.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Debug\\',0,12,1,2
+	.word	.L62
+	.byte	3
+	.byte	'YawAngle',0,26,17,31
+	.word	.L154
+	.byte	1,5,3
+	.word	YawAngle
+	.byte	0
+	.sdecl	'.debug_abbrev',debug,cluster('YawAngle')
+	.sect	'.debug_abbrev'
+.L126:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
+	.byte	0,0,0
+	.sdecl	'.debug_info',debug,cluster('TargetGyroYawAngle')
+	.sect	'.debug_info'
+.L127:
+	.word	185
+	.half	3
+	.word	.L128
+	.byte	4,1
+	.byte	'..\\CODE\\Src\\User_Gyro_Uart.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Debug\\',0,12,1,2
+	.word	.L62
+	.byte	3
+	.byte	'TargetGyroYawAngle',0,26,17,41
+	.word	.L154
+	.byte	1,5,3
+	.word	TargetGyroYawAngle
+	.byte	0
+	.sdecl	'.debug_abbrev',debug,cluster('TargetGyroYawAngle')
+	.sect	'.debug_abbrev'
+.L128:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
+	.byte	0,0,0
+	.sdecl	'.debug_info',debug,cluster('GyroUnlockInstruction')
+	.sect	'.debug_info'
+.L129:
+	.word	188
+	.half	3
+	.word	.L130
+	.byte	4,1
+	.byte	'..\\CODE\\Src\\User_Gyro_Uart.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Debug\\',0,12,1,2
+	.word	.L62
+	.byte	3
+	.byte	'GyroUnlockInstruction',0,26,12,7
+	.word	.L172
+	.byte	1,5,3
+	.word	GyroUnlockInstruction
+	.byte	0
+	.sdecl	'.debug_abbrev',debug,cluster('GyroUnlockInstruction')
+	.sect	'.debug_abbrev'
+.L130:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
+	.byte	0,0,0
+	.sdecl	'.debug_info',debug,cluster('GyroAutoCalibration')
+	.sect	'.debug_info'
+.L131:
+	.word	186
+	.half	3
+	.word	.L132
+	.byte	4,1
+	.byte	'..\\CODE\\Src\\User_Gyro_Uart.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Debug\\',0,12,1,2
+	.word	.L62
+	.byte	3
+	.byte	'GyroAutoCalibration',0,26,13,7
+	.word	.L172
+	.byte	1,5,3
+	.word	GyroAutoCalibration
+	.byte	0
+	.sdecl	'.debug_abbrev',debug,cluster('GyroAutoCalibration')
+	.sect	'.debug_abbrev'
+.L132:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
+	.byte	0,0,0
+	.sdecl	'.debug_info',debug,cluster('GyroKeepConfiguration')
+	.sect	'.debug_info'
+.L133:
+	.word	188
+	.half	3
+	.word	.L134
+	.byte	4,1
+	.byte	'..\\CODE\\Src\\User_Gyro_Uart.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Debug\\',0,12,1,2
+	.word	.L62
+	.byte	3
+	.byte	'GyroKeepConfiguration',0,26,14,7
+	.word	.L172
+	.byte	1,5,3
+	.word	GyroKeepConfiguration
+	.byte	0
+	.sdecl	'.debug_abbrev',debug,cluster('GyroKeepConfiguration')
+	.sect	'.debug_abbrev'
+.L134:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
+	.byte	0,0,0
+	.sdecl	'.debug_info',debug,cluster('GyroRxBuff')
+	.sect	'.debug_info'
+.L135:
+	.word	177
+	.half	3
+	.word	.L136
+	.byte	4,1
+	.byte	'..\\CODE\\Src\\User_Gyro_Uart.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Debug\\',0,12,1,2
+	.word	.L62
+	.byte	3
+	.byte	'GyroRxBuff',0,26,15,7
+	.word	.L173
+	.byte	1,5,3
+	.word	GyroRxBuff
+	.byte	0
+	.sdecl	'.debug_abbrev',debug,cluster('GyroRxBuff')
+	.sect	'.debug_abbrev'
+.L136:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
+	.byte	0,0,0
+	.sdecl	'.debug_info',debug,cluster('GyroReceiveNum')
+	.sect	'.debug_info'
+.L137:
+	.word	181
+	.half	3
+	.word	.L138
+	.byte	4,1
+	.byte	'..\\CODE\\Src\\User_Gyro_Uart.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Debug\\',0,12,1,2
+	.word	.L62
 	.byte	3
 	.byte	'GyroReceiveNum',0,26,16,7
-	.word	.L108
+	.word	.L148
 	.byte	1,5,3
 	.word	GyroReceiveNum
 	.byte	0
 	.sdecl	'.debug_abbrev',debug,cluster('GyroReceiveNum')
 	.sect	'.debug_abbrev'
-.L102:
+.L138:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
 	.byte	0,0,0
 	.sdecl	'.debug_info',debug,cluster('GyroRxFlag')
 	.sect	'.debug_info'
-.L103:
+.L139:
 	.word	177
 	.half	3
-	.word	.L104
+	.word	.L140
 	.byte	4,1
 	.byte	'..\\CODE\\Src\\User_Gyro_Uart.c',0
 	.byte	'TASKING VX-toolset for TriCore: C compiler',0
 	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Debug\\',0,12,1,2
-	.word	.L46
+	.word	.L62
 	.byte	3
 	.byte	'GyroRxFlag',0,26,16,23
-	.word	.L108
+	.word	.L148
 	.byte	1,5,3
 	.word	GyroRxFlag
 	.byte	0
 	.sdecl	'.debug_abbrev',debug,cluster('GyroRxFlag')
 	.sect	'.debug_abbrev'
-.L104:
+.L140:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
 	.byte	0,0,0
+	.sdecl	'.debug_info',debug,cluster('AngleAdd')
+	.sect	'.debug_info'
+.L141:
+	.word	175
+	.half	3
+	.word	.L142
+	.byte	4,1
+	.byte	'..\\CODE\\Src\\User_Gyro_Uart.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Debug\\',0,12,1,2
+	.word	.L62
+	.byte	3
+	.byte	'AngleAdd',0,26,17,61
+	.word	.L154
+	.byte	1,5,3
+	.word	AngleAdd
+	.byte	0
+	.sdecl	'.debug_abbrev',debug,cluster('AngleAdd')
+	.sect	'.debug_abbrev'
+.L142:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
+	.byte	0,0,0
+	.sdecl	'.debug_info',debug,cluster('LastAngle')
+	.sect	'.debug_info'
+.L143:
+	.word	176
+	.half	3
+	.word	.L144
+	.byte	4,1
+	.byte	'..\\CODE\\Src\\User_Gyro_Uart.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'E:\\ProgramData\\GithubRepositories\\SmartCar2020\\TC264CAR\\Debug\\',0,12,1,2
+	.word	.L62
+	.byte	3
+	.byte	'LastAngle',0,26,17,70
+	.word	.L154
+	.byte	1,5,3
+	.word	LastAngle
+	.byte	0
+	.sdecl	'.debug_abbrev',debug,cluster('LastAngle')
+	.sect	'.debug_abbrev'
+.L144:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
+	.byte	0,0,0
+	.sdecl	'.debug_loc',debug,cluster('CulAngle')
+	.sect	'.debug_loc'
+.L54:
+	.word	-1,.L55,0,.L168-.L55
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('GetGYROCulError')
+	.sect	'.debug_loc'
+.L60:
+	.word	-1,.L61,0,.L171-.L61
+	.half	2
+	.byte	138,0
+	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('GetGyroError')
 	.sect	'.debug_loc'
-.L42:
-	.word	-1,.L43,0,.L116-.L43
+.L50:
+	.word	-1,.L51,0,.L156-.L51
 	.half	2
 	.byte	138,0
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('GyroCalculate')
 	.sect	'.debug_loc'
-.L36:
-	.word	-1,.L37,0,.L107-.L37
+.L44:
+	.word	-1,.L45,0,.L147-.L45
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L109:
-	.word	-1,.L37,.L130-.L37,.L131-.L37
+.L149:
+	.word	-1,.L45,.L174-.L45,.L175-.L45
 	.half	1
 	.byte	82
-	.word	.L131-.L37,.L10-.L37
+	.word	.L175-.L45,.L10-.L45
 	.half	5
 	.byte	144,32,157,32,0
-	.word	.L132-.L37,.L133-.L37
+	.word	.L176-.L45,.L177-.L45
 	.half	1
 	.byte	82
-	.word	.L134-.L37,.L10-.L37
+	.word	.L178-.L45,.L10-.L45
 	.half	1
 	.byte	82
-	.word	.L11-.L37,.L135-.L37
+	.word	.L11-.L45,.L179-.L45
 	.half	5
 	.byte	144,32,157,32,0
 	.word	0,0
-.L111:
-	.word	-1,.L37,.L135-.L37,.L136-.L37
+.L151:
+	.word	-1,.L45,.L179-.L45,.L180-.L45
 	.half	1
 	.byte	95
-	.word	.L137-.L37,.L138-.L37
+	.word	.L181-.L45,.L182-.L45
 	.half	1
 	.byte	95
-	.word	.L139-.L37,.L140-.L37
+	.word	.L183-.L45,.L184-.L45
 	.half	1
 	.byte	95
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('GyroPID')
 	.sect	'.debug_loc'
-.L124:
-	.word	-1,.L45,.L151-.L45,.L149-.L45
+.L164:
+	.word	-1,.L53,.L195-.L53,.L193-.L53
 	.half	1
 	.byte	81
 	.word	0,0
-.L44:
-	.word	-1,.L45,0,.L117-.L45
+.L52:
+	.word	-1,.L53,0,.L157-.L53
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L123:
-	.word	-1,.L45,.L147-.L45,.L148-.L45
+.L163:
+	.word	-1,.L53,.L191-.L53,.L192-.L53
 	.half	1
 	.byte	89
-	.word	.L148-.L45,.L150-.L45
+	.word	.L192-.L53,.L194-.L53
 	.half	5
 	.byte	144,32,157,32,0
 	.word	0,0
-.L120:
-	.word	-1,.L45,0,.L141-.L45
+.L160:
+	.word	-1,.L53,0,.L185-.L53
 	.half	1
 	.byte	86
-	.word	.L146-.L45,.L117-.L45
+	.word	.L190-.L53,.L157-.L53
 	.half	1
 	.byte	90
 	.word	0,0
-.L119:
-	.word	-1,.L45,0,.L141-.L45
+.L159:
+	.word	-1,.L53,0,.L185-.L53
 	.half	1
 	.byte	85
-	.word	.L144-.L45,.L145-.L45
+	.word	.L188-.L53,.L189-.L53
 	.half	1
 	.byte	88
 	.word	0,0
-.L118:
-	.word	-1,.L45,0,.L141-.L45
+.L158:
+	.word	-1,.L53,0,.L185-.L53
 	.half	1
 	.byte	84
-	.word	.L142-.L45,.L143-.L45
+	.word	.L186-.L53,.L187-.L53
 	.half	1
 	.byte	95
 	.word	0,0
-.L126:
-	.word	-1,.L45,.L154-.L45,.L149-.L45
+.L166:
+	.word	-1,.L53,.L198-.L53,.L193-.L53
 	.half	1
 	.byte	85
 	.word	0,0
-.L122:
+.L162:
 	.word	0,0
-.L125:
-	.word	-1,.L45,.L152-.L45,.L153-.L45
+.L165:
+	.word	-1,.L53,.L196-.L53,.L197-.L53
 	.half	1
 	.byte	95
 	.word	0,0
-.L127:
-	.word	-1,.L45,.L145-.L45,.L117-.L45
+.L167:
+	.word	-1,.L53,.L189-.L53,.L157-.L53
 	.half	1
 	.byte	88
-	.word	.L155-.L45,.L117-.L45
+	.word	.L199-.L53,.L157-.L53
 	.half	1
 	.byte	85
 	.word	0,0
-.L121:
-	.word	-1,.L45,.L141-.L45,.L149-.L45
+.L161:
+	.word	-1,.L53,.L185-.L53,.L193-.L53
 	.half	1
 	.byte	82
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('GyroUARTInit')
 	.sect	'.debug_loc'
-.L32:
-	.word	-1,.L33,0,.L105-.L33
+.L40:
+	.word	-1,.L41,0,.L145-.L41
 	.half	2
 	.byte	138,0
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('GyroUARTReadByte')
 	.sect	'.debug_loc'
-.L34:
-	.word	-1,.L35,0,.L106-.L35
+.L42:
+	.word	-1,.L43,0,.L146-.L43
 	.half	2
 	.byte	138,0
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('GyroYawAngleInit')
 	.sect	'.debug_loc'
-.L40:
-	.word	-1,.L41,0,.L113-.L41
+.L48:
+	.word	-1,.L49,0,.L153-.L49
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L115:
-	.word	-1,.L41,0,.L113-.L41
+.L155:
+	.word	-1,.L49,0,.L153-.L49
 	.half	1
 	.byte	84
 	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('InitCulAngle')
+	.sect	'.debug_loc'
+.L56:
+	.word	-1,.L57,0,.L169-.L57
+	.half	2
+	.byte	138,0
+	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('ManageYawAngle')
 	.sect	'.debug_loc'
-.L38:
-	.word	-1,.L39,0,.L112-.L39
+.L46:
+	.word	-1,.L47,0,.L152-.L47
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('UpdateCulAngle')
+	.sect	'.debug_loc'
+.L58:
+	.word	-1,.L59,0,.L170-.L59
 	.half	2
 	.byte	138,0
 	.word	0,0
 	.sdecl	'.debug_frame',debug
 	.sect	'.debug_frame'
-.L357:
+.L456:
 	.word	48
 	.word	-1
 	.byte	3,0,2,1,27,12,26,0,8,27,8,26,8,28,8,29,8,30,8,31,8,34,8,35,8,32,8,33,8,16,8,17,8,24,8,25,8,36,8,37,8,38
@@ -36643,37 +37241,55 @@ _999001_previousError:	.type	object
 	.sdecl	'.debug_frame',debug,cluster('GyroUARTInit')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L357,.L33,.L105-.L33
+	.word	.L456,.L41,.L145-.L41
 	.sdecl	'.debug_frame',debug,cluster('GyroUARTReadByte')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L357,.L35,.L106-.L35
+	.word	.L456,.L43,.L146-.L43
 	.sdecl	'.debug_frame',debug,cluster('GyroCalculate')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L357,.L37,.L107-.L37
+	.word	.L456,.L45,.L147-.L45
 	.sdecl	'.debug_frame',debug,cluster('ManageYawAngle')
 	.sect	'.debug_frame'
 	.word	24
-	.word	.L357,.L39,.L112-.L39
+	.word	.L456,.L47,.L152-.L47
 	.byte	8,18,8,19,8,20,8,21,8,22,8,23
 	.sdecl	'.debug_frame',debug,cluster('GyroYawAngleInit')
 	.sect	'.debug_frame'
 	.word	24
-	.word	.L357,.L41,.L113-.L41
+	.word	.L456,.L49,.L153-.L49
 	.byte	8,19,8,20,8,21,8,22,8,23,0,0
 	.sdecl	'.debug_frame',debug,cluster('GetGyroError')
 	.sect	'.debug_frame'
 	.word	24
-	.word	.L357,.L43,.L116-.L43
+	.word	.L456,.L51,.L156-.L51
 	.byte	8,18,8,19,8,20,8,21,8,22,8,23
 	.sdecl	'.debug_frame',debug,cluster('GyroPID')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L357,.L45,.L117-.L45
+	.word	.L456,.L53,.L157-.L53
+	.sdecl	'.debug_frame',debug,cluster('CulAngle')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L456,.L55,.L168-.L55
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('InitCulAngle')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L456,.L57,.L169-.L57
+	.byte	8,19,8,20,8,21,8,22,8,23,0,0
+	.sdecl	'.debug_frame',debug,cluster('UpdateCulAngle')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L456,.L59,.L170-.L59
+	.sdecl	'.debug_frame',debug,cluster('GetGYROCulError')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L456,.L61,.L171-.L61
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
 
-; ..\CODE\Src\User_Gyro_Uart.c	   170  }
-; ..\CODE\Src\User_Gyro_Uart.c	   171  
-; ..\CODE\Src\User_Gyro_Uart.c	   172  #pragma section all restore
+; ..\CODE\Src\User_Gyro_Uart.c	   224  
+; ..\CODE\Src\User_Gyro_Uart.c	   225  #pragma section all restore
 
 	; Module end
