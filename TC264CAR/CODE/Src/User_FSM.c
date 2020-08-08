@@ -63,8 +63,8 @@ void WaitRunStop(void)
 	if(GetDistance(0) > 0.02 && !TwoCarRxFlag)
 	{
 		KickFlag = 1;
-		MotorUserHandle(LMotor_B, LeftWheelBrakeZone+9);
-		MotorUserHandle(RMotor_B, RightWheelBrakeZone+9);
+		MotorUserHandle(LMotor_B, LeftWheelBrakeZone+30);
+		MotorUserHandle(RMotor_B, RightWheelBrakeZone+30);
 	}
 	else
 	{
@@ -80,24 +80,33 @@ void RunStop(void)
 
 void FindLine(void)
 {
-	if(!PassingRoundaboutFlag){
+	if(!PassingRoundaboutFlag)
+	{
 		LRoundaboutFlag = 0;
 		RRoundaboutFlag = 0;
 		PassingRoundaboutFlag = 0;
 	}
+//	PIDValue = GetPIDValue(PIDMidLineFuseNum, MidLineFuseNum*1000, FINDLINE_P, FINDLINE_I, FINDLINE_D);
 	PIDValue = GetPIDValue(PIDMidLineFuseNum, MidLineFuseNum*1000, FINDLINE_P, FINDLINE_I, FINDLINE_D);
 	//printf("%f\r\n",PIDValue);
+//	if((GetDistance(5)>=9 &&GetDistance(5)<=10)||(GetDistance(5)>=4 &&GetDistance(5)<=7.5) || ((GetDistance(5)>=1.5 &&GetDistance(5)<=3)) || (GetDistance(5)>=8 &&GetDistance(5)<=8.5))
+//	{
+//		LPWM = LeftWheelDeadZone + 5 - PIDValue;
+//		RPWM = RightWheelDeadZone + 5 + PIDValue;
+//	}
+//	else
+//	{
 	LPWM = LeftWheelDeadZone + LeftNormalSpeed - PIDValue;
 	RPWM = RightWheelDeadZone + RightNormalSpeed + PIDValue;
-
-    if(LPWM >= 50)
-        LPWM = 50;
-    else if(LPWM <= -50)
-        LPWM = -50;
-    if(RPWM >= 50)
-        RPWM = 50;
-    else if(RPWM <= -50)
-        RPWM = -50;
+//	}
+    if(LPWM >= 40)
+        LPWM = 40;
+    else if(LPWM <= -40)
+        LPWM = -40;
+    if(RPWM >= 40)
+        RPWM = 40;
+    else if(RPWM <= -40)
+        RPWM = -40;
     MotorUserHandle(LMotor_F, LPWM);
     MotorUserHandle(RMotor_F, RPWM);
 }
@@ -194,12 +203,12 @@ void TurnLeftGoGarage(void)
 	}
 	GyroYawAngleInit(SetLeftRotationAngle);//+左转；-右转
 	GyroPID(GYRO_P, GYRO_I, GYRO_D);
-	if(TotalDistance[0] >= 0.05)//0.05;0.01;原始0.25
+	if(TotalDistance[0] >= 0.01)//0.05;0.01;原始0.25
 	{
 	    MotorUserHandle(LMotor_F, LeftWheelDeadZone);
-	    MotorUserHandle(RMotor_F, RightWheelDeadZone+10);//10;10;原始0
+	    MotorUserHandle(RMotor_F, RightWheelDeadZone+15);//10;10;原始0
 	}
-	if(TotalDistance[0] >= 0.3)//0.5;原始0.7
+	if(TotalDistance[0] >= 0.25)//0.35;原始0.7
 	{
 		RunStop();
 		GoGarageFinishFlag = 1;
@@ -302,9 +311,9 @@ void FSMRun(void)
 	}
     CarFSM.Size = sizeof(CarTable) / sizeof(FSMTable_t);
 
-    if(ReturnFSMState(&CarFSM) == WaitBall)
+    if(TwoCarStateJudge() && ReturnFSMState(&CarFSM) == WaitBall)//TwoCarStateJudge() &&
     {
-//    	if(TwoCarStateJudge())  //测试时注释
+//    	if()  //测试时注释
 		FSMEventHandle(&CarFSM, GETBALL);
     }
 //    else if(ADCValueHandle(2) >= ADCvalueC && (ADCValueHandle(1) >= ADCvalueCL || ADCValueHandle(3) >= ADCvalueCR)\

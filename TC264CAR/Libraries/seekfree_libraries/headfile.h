@@ -111,8 +111,8 @@
 #define RightWheelBrakeZone 2.7//Car1 2.3;Car2 2.7
 
 //正常车速PWM占空比
-#define LeftNormalSpeed 11//8
-#define RightNormalSpeed 11//8
+#define LeftNormalSpeed 9//8
+#define RightNormalSpeed 9//8
 
 //入库车速PWM占空比
 #define LeftInGarageSpeed 8
@@ -131,12 +131,12 @@
 #define SetRightRotationAngle 90
 
 //正常巡线PID中线值
-#define PIDMidLineFuseNum -0.000289
+#define PIDMidLineFuseNum -0.001251//-0.000289
 
 //正常巡线PID
-#define FINDLINE_P 11//+(2*(GetSpeed()/1.8))//Car1 10;Car2 11
+#define FINDLINE_P 10//Car1 10;Car2 11
 #define FINDLINE_I 0//Car1 0.1;Car2 0.1
-#define FINDLINE_D 3000//*(GetSpeed()/1.25)//Car1 2800;Car2 3000
+#define FINDLINE_D 3000//Car1 2800;Car2 3000
 
 //入库导航PID
 #define GYRO_P 20//210

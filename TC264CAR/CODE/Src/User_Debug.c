@@ -75,4 +75,5 @@ void DebugReadParameter(void)
 	ips114_showfloat(120,4,TotalDistance[0],4,6);
 	ips114_showfloat(120,5,Threshold,4,6);
 	ips114_showfloat(120,6,TotalDistance[1],4,6);
+	ips114_showfloat(120,7,GetSpeed(),4,6);
 }
