@@ -71,6 +71,10 @@ uint8 TwoCarStateJudge(void)
 			return 1;
 		}
 	}
+	else if(GetSpeed()>0)
+	{
+		return 1;
+	}
 	else
 	{
 		count--;
