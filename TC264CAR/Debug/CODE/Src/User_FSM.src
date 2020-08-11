@@ -124,7 +124,7 @@ WaitRunStop:	.type	func
 .L4:
 
 ; ..\CODE\Src\User_FSM.c	    78  		}
-; ..\CODE\Src\User_FSM.c	    79  		if(KickCount == 3)
+; ..\CODE\Src\User_FSM.c	    79  		if(KickCount == 3)  //函数位置修改aaaaaaaaaaa
 	movh.a	a15,#@his(KickCount)
 	ld.bu	d15,[a15]@los(KickCount)
 .L364:
@@ -158,9 +158,14 @@ WaitRunStop:	.type	func
 .L2:
 
 ; ..\CODE\Src\User_FSM.c	    85  	}
-; ..\CODE\Src\User_FSM.c	    86  	else
-; ..\CODE\Src\User_FSM.c	    87  	{
-; ..\CODE\Src\User_FSM.c	    88  		MotorUserHandle(LMotor_B, LeftWheelBrakeZone);
+; ..\CODE\Src\User_FSM.c	    86  //可修改方案aaaaaaaaaaaa
+; ..\CODE\Src\User_FSM.c	    87  //	if(KickCount == 4)
+; ..\CODE\Src\User_FSM.c	    88  //	{
+; ..\CODE\Src\User_FSM.c	    89  //		KickFlag = 1;
+; ..\CODE\Src\User_FSM.c	    90  //	}
+; ..\CODE\Src\User_FSM.c	    91  	else
+; ..\CODE\Src\User_FSM.c	    92  	{
+; ..\CODE\Src\User_FSM.c	    93  		MotorUserHandle(LMotor_B, LeftWheelBrakeZone);
 	mov	d4,#1
 .L371:
 	mov.u	d5,#39322
@@ -168,7 +173,7 @@ WaitRunStop:	.type	func
 	call	MotorUserHandle
 .L372:
 
-; ..\CODE\Src\User_FSM.c	    89  		MotorUserHandle(RMotor_B, RightWheelBrakeZone);
+; ..\CODE\Src\User_FSM.c	    94  		MotorUserHandle(RMotor_B, RightWheelBrakeZone);
 	mov.u	d5,#52429
 	addih	d5,d5,#16428
 .L6:
@@ -188,15 +193,15 @@ __WaitRunStop_function_end:
 	
 	.global	RunStop
 
-; ..\CODE\Src\User_FSM.c	    90  	}
-; ..\CODE\Src\User_FSM.c	    91  }
-; ..\CODE\Src\User_FSM.c	    92  void RunStop(void)
+; ..\CODE\Src\User_FSM.c	    95  	}
+; ..\CODE\Src\User_FSM.c	    96  }
+; ..\CODE\Src\User_FSM.c	    97  void RunStop(void)
 ; Function RunStop
 .L102:
 RunStop:	.type	func
 
-; ..\CODE\Src\User_FSM.c	    93  {
-; ..\CODE\Src\User_FSM.c	    94  	MotorUserHandle(LMotor_B, LeftWheelBrakeZone);
+; ..\CODE\Src\User_FSM.c	    98  {
+; ..\CODE\Src\User_FSM.c	    99  	MotorUserHandle(LMotor_B, LeftWheelBrakeZone);
 	mov	d4,#1
 .L378:
 	mov.u	d5,#39322
@@ -204,7 +209,7 @@ RunStop:	.type	func
 	call	MotorUserHandle
 .L379:
 
-; ..\CODE\Src\User_FSM.c	    95  	MotorUserHandle(RMotor_B, RightWheelBrakeZone);
+; ..\CODE\Src\User_FSM.c	   100  	MotorUserHandle(RMotor_B, RightWheelBrakeZone);
 	mov	d4,#3
 .L380:
 	mov.u	d5,#52429
@@ -223,42 +228,42 @@ __RunStop_function_end:
 	
 	.global	FindLine
 
-; ..\CODE\Src\User_FSM.c	    96  }
-; ..\CODE\Src\User_FSM.c	    97  
-; ..\CODE\Src\User_FSM.c	    98  void FindLine(void)
+; ..\CODE\Src\User_FSM.c	   101  }
+; ..\CODE\Src\User_FSM.c	   102  
+; ..\CODE\Src\User_FSM.c	   103  void FindLine(void)
 ; Function FindLine
 .L104:
 FindLine:	.type	func
 	sub.a	a10,#8
 .L301:
 
-; ..\CODE\Src\User_FSM.c	    99  {
-; ..\CODE\Src\User_FSM.c	   100  //	static uint8 InCleanDistanceFlag = 0;
-; ..\CODE\Src\User_FSM.c	   101  
-; ..\CODE\Src\User_FSM.c	   102  //	if(!PassingRoundaboutFlag)
-; ..\CODE\Src\User_FSM.c	   103  //	{
-; ..\CODE\Src\User_FSM.c	   104  //		LRoundaboutFlag = 0;
-; ..\CODE\Src\User_FSM.c	   105  //		RRoundaboutFlag = 0;
-; ..\CODE\Src\User_FSM.c	   106  //		PassingRoundaboutFlag = 0;
-; ..\CODE\Src\User_FSM.c	   107  //	}
-; ..\CODE\Src\User_FSM.c	   108  
-; ..\CODE\Src\User_FSM.c	   109  //	if(ADCValueHandle(2) >= ADCvalueC && (ADCValueHandle(1) >= ADCvalueCL || ADCValueHandle(3) >= ADCvalueCR)\ 
-; ..\CODE\Src\User_FSM.c	   110  //    && (ADCValueHandle(0) > ADCvalueLL || ADCValueHandle(4) > ADCvalueRR))
-; ..\CODE\Src\User_FSM.c	   111  //	{
-; ..\CODE\Src\User_FSM.c	   112  ////		RunStop();
-; ..\CODE\Src\User_FSM.c	   113  //		if(!InCleanDistanceFlag)
-; ..\CODE\Src\User_FSM.c	   114  //		{
-; ..\CODE\Src\User_FSM.c	   115  //			CleanDistance();
-; ..\CODE\Src\User_FSM.c	   116  //			InCleanDistanceFlag = 1;
-; ..\CODE\Src\User_FSM.c	   117  //		}
-; ..\CODE\Src\User_FSM.c	   118  //		if(GetDistance() < 0.8)
+; ..\CODE\Src\User_FSM.c	   104  {
+; ..\CODE\Src\User_FSM.c	   105  //	static uint8 InCleanDistanceFlag = 0;
+; ..\CODE\Src\User_FSM.c	   106  
+; ..\CODE\Src\User_FSM.c	   107  //	if(!PassingRoundaboutFlag)
+; ..\CODE\Src\User_FSM.c	   108  //	{
+; ..\CODE\Src\User_FSM.c	   109  //		LRoundaboutFlag = 0;
+; ..\CODE\Src\User_FSM.c	   110  //		RRoundaboutFlag = 0;
+; ..\CODE\Src\User_FSM.c	   111  //		PassingRoundaboutFlag = 0;
+; ..\CODE\Src\User_FSM.c	   112  //	}
+; ..\CODE\Src\User_FSM.c	   113  
+; ..\CODE\Src\User_FSM.c	   114  //	if(ADCValueHandle(2) >= ADCvalueC && (ADCValueHandle(1) >= ADCvalueCL || ADCValueHandle(3) >= ADCvalueCR)\ 
+; ..\CODE\Src\User_FSM.c	   115  //    && (ADCValueHandle(0) > ADCvalueLL || ADCValueHandle(4) > ADCvalueRR))
+; ..\CODE\Src\User_FSM.c	   116  //	{
+; ..\CODE\Src\User_FSM.c	   117  ////		RunStop();
+; ..\CODE\Src\User_FSM.c	   118  //		if(!InCleanDistanceFlag)
 ; ..\CODE\Src\User_FSM.c	   119  //		{
-; ..\CODE\Src\User_FSM.c	   120  //			FindLineRatioAdjPWM(7, 0, 0);
-; ..\CODE\Src\User_FSM.c	   121  //		}
-; ..\CODE\Src\User_FSM.c	   122  //	}
-; ..\CODE\Src\User_FSM.c	   123  //	else
-; ..\CODE\Src\User_FSM.c	   124  //	{
-; ..\CODE\Src\User_FSM.c	   125  	PIDValue = GetPIDValue(PIDMidLineFuseNum, MidLineFuseNum*1000, FINDLINE_P, FINDLINE_I, FINDLINE_D);
+; ..\CODE\Src\User_FSM.c	   120  //			CleanDistance();
+; ..\CODE\Src\User_FSM.c	   121  //			InCleanDistanceFlag = 1;
+; ..\CODE\Src\User_FSM.c	   122  //		}
+; ..\CODE\Src\User_FSM.c	   123  //		if(GetDistance() < 0.8)
+; ..\CODE\Src\User_FSM.c	   124  //		{
+; ..\CODE\Src\User_FSM.c	   125  //			FindLineRatioAdjPWM(7, 0, 0);
+; ..\CODE\Src\User_FSM.c	   126  //		}
+; ..\CODE\Src\User_FSM.c	   127  //	}
+; ..\CODE\Src\User_FSM.c	   128  //	else
+; ..\CODE\Src\User_FSM.c	   129  //	{
+; ..\CODE\Src\User_FSM.c	   130  	PIDValue = GetPIDValue(PIDMidLineFuseNum, MidLineFuseNum*1000, FINDLINE_P, FINDLINE_I, FINDLINE_D);
 	movh.a	a15,#@his(PIDValue)
 .L385:
 	mov.u	d15,#40960
@@ -283,8 +288,8 @@ FindLine:	.type	func
 	st.w	[a15]@los(PIDValue),d2
 .L393:
 
-; ..\CODE\Src\User_FSM.c	   126  		//printf("%f\r\n",PIDValue);
-; ..\CODE\Src\User_FSM.c	   127  		LPWM = LeftWheelDeadZone + LeftNormalSpeed - PIDValue;
+; ..\CODE\Src\User_FSM.c	   131  		//printf("%f\r\n",PIDValue);
+; ..\CODE\Src\User_FSM.c	   132  		LPWM = LeftWheelDeadZone + LeftNormalSpeed - PIDValue;
 	movh.a	a15,#@his(LPWM)
 .L394:
 	mov	d15,#13107
@@ -298,7 +303,7 @@ FindLine:	.type	func
 	st.w	[a15]@los(LPWM),d15
 .L398:
 
-; ..\CODE\Src\User_FSM.c	   128  		RPWM = RightWheelDeadZone + RightNormalSpeed + PIDValue;
+; ..\CODE\Src\User_FSM.c	   133  		RPWM = RightWheelDeadZone + RightNormalSpeed + PIDValue;
 	movh.a	a2,#@his(RPWM)
 .L399:
 	movh	d15,#16696
@@ -308,8 +313,8 @@ FindLine:	.type	func
 	st.w	[a2]@los(RPWM),d15
 .L402:
 
-; ..\CODE\Src\User_FSM.c	   129  
-; ..\CODE\Src\User_FSM.c	   130  		if(LPWM >= 25)
+; ..\CODE\Src\User_FSM.c	   134  
+; ..\CODE\Src\User_FSM.c	   135  		if(LPWM >= 25)
 	ld.w	d15,[a15]@los(LPWM)
 .L403:
 	movh	d0,#16840
@@ -320,8 +325,8 @@ FindLine:	.type	func
 	jne	d15,#0,.L8
 .L406:
 
-; ..\CODE\Src\User_FSM.c	   131  			LPWM = 25;
-; ..\CODE\Src\User_FSM.c	   132  		else if(LPWM <= -25)
+; ..\CODE\Src\User_FSM.c	   136  			LPWM = 25;
+; ..\CODE\Src\User_FSM.c	   137  		else if(LPWM <= -25)
 	ld.w	d15,[a15]@los(LPWM)
 .L407:
 	movh	d0,#49608
@@ -332,11 +337,11 @@ FindLine:	.type	func
 	jeq	d15,#0,.L9
 .L8:
 
-; ..\CODE\Src\User_FSM.c	   133  			LPWM = -25;
+; ..\CODE\Src\User_FSM.c	   138  			LPWM = -25;
 	st.w	[a15]@los(LPWM),d0
 .L9:
 
-; ..\CODE\Src\User_FSM.c	   134  		if(RPWM >= 25)
+; ..\CODE\Src\User_FSM.c	   139  		if(RPWM >= 25)
 	mov.aa	a15,a2
 	ld.w	d15,[a15]@los(RPWM)
 .L410:
@@ -348,7 +353,7 @@ FindLine:	.type	func
 	jeq	d15,#0,.L10
 .L413:
 
-; ..\CODE\Src\User_FSM.c	   135  			RPWM = 20;
+; ..\CODE\Src\User_FSM.c	   140  			RPWM = 20;
 	movh	d15,#16800
 .L414:
 	st.w	[a15]@los(RPWM),d15
@@ -356,7 +361,7 @@ FindLine:	.type	func
 	j	.L11
 .L10:
 
-; ..\CODE\Src\User_FSM.c	   136  		else if(RPWM <= -25)
+; ..\CODE\Src\User_FSM.c	   141  		else if(RPWM <= -25)
 	ld.w	d15,[a15]@los(RPWM)
 .L416:
 	movh	d0,#49608
@@ -367,12 +372,12 @@ FindLine:	.type	func
 	jeq	d15,#0,.L12
 .L419:
 
-; ..\CODE\Src\User_FSM.c	   137  			RPWM = -25;
+; ..\CODE\Src\User_FSM.c	   142  			RPWM = -25;
 	st.w	[a15]@los(RPWM),d0
 .L12:
 .L11:
 
-; ..\CODE\Src\User_FSM.c	   138  		MotorUserHandle(LMotor_F, LPWM);
+; ..\CODE\Src\User_FSM.c	   143  		MotorUserHandle(LMotor_F, LPWM);
 	movh.a	a15,#@his(LPWM)
 	ld.w	d5,[a15]@los(LPWM)
 .L420:
@@ -381,7 +386,7 @@ FindLine:	.type	func
 	call	MotorUserHandle
 .L422:
 
-; ..\CODE\Src\User_FSM.c	   139  		MotorUserHandle(RMotor_F, RPWM);
+; ..\CODE\Src\User_FSM.c	   144  		MotorUserHandle(RMotor_F, RPWM);
 	movh.a	a15,#@his(RPWM)
 	ld.w	d5,[a15]@los(RPWM)
 .L423:
@@ -401,29 +406,29 @@ __FindLine_function_end:
 	
 	.global	GoStraight
 
-; ..\CODE\Src\User_FSM.c	   140  //	}
-; ..\CODE\Src\User_FSM.c	   141  }
-; ..\CODE\Src\User_FSM.c	   142  
-; ..\CODE\Src\User_FSM.c	   143  void GoStraight(void)
+; ..\CODE\Src\User_FSM.c	   145  //	}
+; ..\CODE\Src\User_FSM.c	   146  }
+; ..\CODE\Src\User_FSM.c	   147  
+; ..\CODE\Src\User_FSM.c	   148  void GoStraight(void)
 ; Function GoStraight
 .L106:
 GoStraight:	.type	func
 
-; ..\CODE\Src\User_FSM.c	   144  {
-; ..\CODE\Src\User_FSM.c	   145  	static uint8 InCleanDistanceGoFlag = 0;
-; ..\CODE\Src\User_FSM.c	   146  
-; ..\CODE\Src\User_FSM.c	   147  	if(!InCleanDistanceGoFlag)
+; ..\CODE\Src\User_FSM.c	   149  {
+; ..\CODE\Src\User_FSM.c	   150  	static uint8 InCleanDistanceGoFlag = 0;
+; ..\CODE\Src\User_FSM.c	   151  
+; ..\CODE\Src\User_FSM.c	   152  	if(!InCleanDistanceGoFlag)
 	movh.a	a15,#@his(_999002_InCleanDistanceGoFlag)
 	ld.bu	d15,[a15]@los(_999002_InCleanDistanceGoFlag)
 	jne	d15,#0,.L13
 .L717:
 
-; ..\CODE\Src\User_FSM.c	   148  	{
-; ..\CODE\Src\User_FSM.c	   149  		CleanDistance();
+; ..\CODE\Src\User_FSM.c	   153  	{
+; ..\CODE\Src\User_FSM.c	   154  		CleanDistance();
 	call	CleanDistance
 .L718:
 
-; ..\CODE\Src\User_FSM.c	   150  		InCleanDistanceGoFlag = 1;
+; ..\CODE\Src\User_FSM.c	   155  		InCleanDistanceGoFlag = 1;
 	movh.a	a15,#@his(_999002_InCleanDistanceGoFlag)
 .L719:
 	mov	d15,#1
@@ -431,9 +436,9 @@ GoStraight:	.type	func
 	st.b	[a15]@los(_999002_InCleanDistanceGoFlag),d15
 .L13:
 
-; ..\CODE\Src\User_FSM.c	   151  	}
-; ..\CODE\Src\User_FSM.c	   152  
-; ..\CODE\Src\User_FSM.c	   153  	if(GetDistance() <= 1.2)
+; ..\CODE\Src\User_FSM.c	   156  	}
+; ..\CODE\Src\User_FSM.c	   157  
+; ..\CODE\Src\User_FSM.c	   158  	if(GetDistance() <= 1.2)
 	call	GetDistance
 .L721:
 	mov.u	d15,#39322
@@ -445,16 +450,16 @@ GoStraight:	.type	func
 	jne	d15,#0,.L14
 .L724:
 
-; ..\CODE\Src\User_FSM.c	   154  	{
-; ..\CODE\Src\User_FSM.c	   155  //		RunStop();
-; ..\CODE\Src\User_FSM.c	   156  		FindLine();
-; ..\CODE\Src\User_FSM.c	   157  //		GyroYawAngleInit(0);
-; ..\CODE\Src\User_FSM.c	   158  //		GyroPID(30,0.1,100);
-; ..\CODE\Src\User_FSM.c	   159  //		FindLineAdjPWM(5, 2, 0);
-; ..\CODE\Src\User_FSM.c	   160  	}
-; ..\CODE\Src\User_FSM.c	   161  	else
-; ..\CODE\Src\User_FSM.c	   162  	{
-; ..\CODE\Src\User_FSM.c	   163  		GoOnFlag = 1;
+; ..\CODE\Src\User_FSM.c	   159  	{
+; ..\CODE\Src\User_FSM.c	   160  //		RunStop();
+; ..\CODE\Src\User_FSM.c	   161  		FindLine();
+; ..\CODE\Src\User_FSM.c	   162  //		GyroYawAngleInit(0);
+; ..\CODE\Src\User_FSM.c	   163  //		GyroPID(30,0.1,100);
+; ..\CODE\Src\User_FSM.c	   164  //		FindLineAdjPWM(5, 2, 0);
+; ..\CODE\Src\User_FSM.c	   165  	}
+; ..\CODE\Src\User_FSM.c	   166  	else
+; ..\CODE\Src\User_FSM.c	   167  	{
+; ..\CODE\Src\User_FSM.c	   168  		GoOnFlag = 1;
 	movh.a	a15,#@his(GoOnFlag)
 .L725:
 	mov	d15,#1
@@ -462,9 +467,9 @@ GoStraight:	.type	func
 	st.b	[a15]@los(GoOnFlag),d15
 .L727:
 
-; ..\CODE\Src\User_FSM.c	   164  	}
-; ..\CODE\Src\User_FSM.c	   165  
-; ..\CODE\Src\User_FSM.c	   166  }
+; ..\CODE\Src\User_FSM.c	   169  	}
+; ..\CODE\Src\User_FSM.c	   170  
+; ..\CODE\Src\User_FSM.c	   171  }
 	ret
 .L14:
 	j	FindLine
@@ -481,20 +486,20 @@ __GoStraight_function_end:
 	
 	.global	InRoundaboutProcess
 
-; ..\CODE\Src\User_FSM.c	   167  
-; ..\CODE\Src\User_FSM.c	   168  void InRoundaboutProcess(void)
+; ..\CODE\Src\User_FSM.c	   172  
+; ..\CODE\Src\User_FSM.c	   173  void InRoundaboutProcess(void)
 ; Function InRoundaboutProcess
 .L108:
 InRoundaboutProcess:	.type	func
 
-; ..\CODE\Src\User_FSM.c	   169  {
-; ..\CODE\Src\User_FSM.c	   170  	float DIS ;
-; ..\CODE\Src\User_FSM.c	   171  	DIS = fabs(GetDistance());
+; ..\CODE\Src\User_FSM.c	   174  {
+; ..\CODE\Src\User_FSM.c	   175  	float DIS ;
+; ..\CODE\Src\User_FSM.c	   176  	DIS = fabs(GetDistance());
 	call	GetDistance
 	insert	d0,d2,#0,#31,#1
 .L302:
 
-; ..\CODE\Src\User_FSM.c	   172  	if(DIS > 0 && DIS <= StraightLineInRA)   //0.2 0.4
+; ..\CODE\Src\User_FSM.c	   177  	if(DIS > 0 && DIS <= StraightLineInRA)   //0.2 0.4
 	mov	d5,#0
 .L429:
 	cmp.f	d15,d0,d5
@@ -509,8 +514,8 @@ InRoundaboutProcess:	.type	func
 	jeq	d15,#0,.L17
 .L433:
 
-; ..\CODE\Src\User_FSM.c	   173  	{
-; ..\CODE\Src\User_FSM.c	   174  		FindLineAdjPWM(SpeedStraightInRA, LSpeedStraightInRA, RSpeedStraightInRA);
+; ..\CODE\Src\User_FSM.c	   178  	{
+; ..\CODE\Src\User_FSM.c	   179  		FindLineAdjPWM(SpeedStraightInRA, LSpeedStraightInRA, RSpeedStraightInRA);
 	movh	d4,#16608
 .L434:
 	movh	d6,#16128
@@ -518,8 +523,8 @@ InRoundaboutProcess:	.type	func
 .L17:
 .L16:
 
-; ..\CODE\Src\User_FSM.c	   175  	}
-; ..\CODE\Src\User_FSM.c	   176  	else if(DIS > StraightLineInRA && DIS <= GYROLineInRA)
+; ..\CODE\Src\User_FSM.c	   180  	}
+; ..\CODE\Src\User_FSM.c	   181  	else if(DIS > StraightLineInRA && DIS <= GYROLineInRA)
 	mov	d15,#2621
 	addih	d15,d15,#16087
 .L435:
@@ -535,17 +540,17 @@ InRoundaboutProcess:	.type	func
 	jeq	d15,#0,.L20
 .L439:
 
-; ..\CODE\Src\User_FSM.c	   177  	{
-; ..\CODE\Src\User_FSM.c	   178  		GyroPID(InRAGyroKp, InRAGyroKi, InRAGyroKd); //150  800
-	movh	d4,#17136
+; ..\CODE\Src\User_FSM.c	   182  	{
+; ..\CODE\Src\User_FSM.c	   183  		GyroPID(InRAGyroKp, InRAGyroKi, InRAGyroKd); //150  800
+	movh	d4,#17164
 .L440:
 	movh	d6,#17352
 	j	GyroPID
 .L20:
 .L19:
 
-; ..\CODE\Src\User_FSM.c	   179  	}
-; ..\CODE\Src\User_FSM.c	   180  	else if(DIS > GYROLineInRA && DIS < 0.8)
+; ..\CODE\Src\User_FSM.c	   184  	}
+; ..\CODE\Src\User_FSM.c	   185  	else if(DIS > GYROLineInRA && DIS < 0.8)
 	mov	d15,#13107
 	addih	d15,d15,#16179
 .L441:
@@ -560,61 +565,61 @@ InRoundaboutProcess:	.type	func
 	jz.t	d15:0,.L23
 .L445:
 
-; ..\CODE\Src\User_FSM.c	   181  	{
-; ..\CODE\Src\User_FSM.c	   182  		FindLine();
+; ..\CODE\Src\User_FSM.c	   186  	{
+; ..\CODE\Src\User_FSM.c	   187  		FindLine();
 	j	FindLine
 .L23:
 .L22:
 
-; ..\CODE\Src\User_FSM.c	   183  	}
-; ..\CODE\Src\User_FSM.c	   184  
-; ..\CODE\Src\User_FSM.c	   185  // 原来的代码
-; ..\CODE\Src\User_FSM.c	   186  //	static uint8 InCleanDistanceFlag = 0;
-; ..\CODE\Src\User_FSM.c	   187  //
-; ..\CODE\Src\User_FSM.c	   188  //	if(!InCleanDistanceFlag)
-; ..\CODE\Src\User_FSM.c	   189  //	{
-; ..\CODE\Src\User_FSM.c	   190  //		CleanDistance();
-; ..\CODE\Src\User_FSM.c	   191  //		InCleanDistanceFlag = 1;
-; ..\CODE\Src\User_FSM.c	   192  //	}
-; ..\CODE\Src\User_FSM.c	   193  //
-; ..\CODE\Src\User_FSM.c	   194  //	if(LRoundaboutFlag)
-; ..\CODE\Src\User_FSM.c	   195  //	{
-; ..\CODE\Src\User_FSM.c	   196  ////		if(GetDistance() < 0.1)
-; ..\CODE\Src\User_FSM.c	   197  ////		{
-; ..\CODE\Src\User_FSM.c	   198  ////			FindLine();
-; ..\CODE\Src\User_FSM.c	   199  ////		}
-; ..\CODE\Src\User_FSM.c	   200  ////		else
-; ..\CODE\Src\User_FSM.c	   201  //		if(GetDistance() < 0.3)//0.35 //0.4
-; ..\CODE\Src\User_FSM.c	   202  //		{
-; ..\CODE\Src\User_FSM.c	   203  //			FindLineAdjPWM(6, 5, 0);
-; ..\CODE\Src\User_FSM.c	   204  //		}
-; ..\CODE\Src\User_FSM.c	   205  //		else if(GetDistance() < 0.55)
-; ..\CODE\Src\User_FSM.c	   206  //		{
-; ..\CODE\Src\User_FSM.c	   207  ////	    	uart_putchar(UART_3,0X02);//状态检测2
-; ..\CODE\Src\User_FSM.c	   208  //			FindLineAdjPWM(6, 0, 12);//6 -4 6 //6 -8 12
-; ..\CODE\Src\User_FSM.c	   209  ////			RunStop();
-; ..\CODE\Src\User_FSM.c	   210  ////			while(1);
-; ..\CODE\Src\User_FSM.c	   211  //		}
-; ..\CODE\Src\User_FSM.c	   212  //		else
-; ..\CODE\Src\User_FSM.c	   213  //		{
-; ..\CODE\Src\User_FSM.c	   214  ////	    	uart_putchar(UART_3,0X03);//状态检测3
-; ..\CODE\Src\User_FSM.c	   215  //			FindLine();
-; ..\CODE\Src\User_FSM.c	   216  //			PassingRoundaboutFlag = 1;
-; ..\CODE\Src\User_FSM.c	   217  //		}
-; ..\CODE\Src\User_FSM.c	   218  //	}
-; ..\CODE\Src\User_FSM.c	   219  //	else if(RRoundaboutFlag)
-; ..\CODE\Src\User_FSM.c	   220  //	{
-; ..\CODE\Src\User_FSM.c	   221  //		if(GetDistance() < 0.3)
-; ..\CODE\Src\User_FSM.c	   222  //		{
-; ..\CODE\Src\User_FSM.c	   223  //			FindLineAdjPWM(6, 0, 6);
-; ..\CODE\Src\User_FSM.c	   224  //		}
-; ..\CODE\Src\User_FSM.c	   225  //		else
-; ..\CODE\Src\User_FSM.c	   226  //		{
-; ..\CODE\Src\User_FSM.c	   227  //			FindLine();
-; ..\CODE\Src\User_FSM.c	   228  //			PassingRoundaboutFlag = 1;
+; ..\CODE\Src\User_FSM.c	   188  	}
+; ..\CODE\Src\User_FSM.c	   189  
+; ..\CODE\Src\User_FSM.c	   190  // 原来的代码
+; ..\CODE\Src\User_FSM.c	   191  //	static uint8 InCleanDistanceFlag = 0;
+; ..\CODE\Src\User_FSM.c	   192  //
+; ..\CODE\Src\User_FSM.c	   193  //	if(!InCleanDistanceFlag)
+; ..\CODE\Src\User_FSM.c	   194  //	{
+; ..\CODE\Src\User_FSM.c	   195  //		CleanDistance();
+; ..\CODE\Src\User_FSM.c	   196  //		InCleanDistanceFlag = 1;
+; ..\CODE\Src\User_FSM.c	   197  //	}
+; ..\CODE\Src\User_FSM.c	   198  //
+; ..\CODE\Src\User_FSM.c	   199  //	if(LRoundaboutFlag)
+; ..\CODE\Src\User_FSM.c	   200  //	{
+; ..\CODE\Src\User_FSM.c	   201  ////		if(GetDistance() < 0.1)
+; ..\CODE\Src\User_FSM.c	   202  ////		{
+; ..\CODE\Src\User_FSM.c	   203  ////			FindLine();
+; ..\CODE\Src\User_FSM.c	   204  ////		}
+; ..\CODE\Src\User_FSM.c	   205  ////		else
+; ..\CODE\Src\User_FSM.c	   206  //		if(GetDistance() < 0.3)//0.35 //0.4
+; ..\CODE\Src\User_FSM.c	   207  //		{
+; ..\CODE\Src\User_FSM.c	   208  //			FindLineAdjPWM(6, 5, 0);
+; ..\CODE\Src\User_FSM.c	   209  //		}
+; ..\CODE\Src\User_FSM.c	   210  //		else if(GetDistance() < 0.55)
+; ..\CODE\Src\User_FSM.c	   211  //		{
+; ..\CODE\Src\User_FSM.c	   212  ////	    	uart_putchar(UART_3,0X02);//状态检测2
+; ..\CODE\Src\User_FSM.c	   213  //			FindLineAdjPWM(6, 0, 12);//6 -4 6 //6 -8 12
+; ..\CODE\Src\User_FSM.c	   214  ////			RunStop();
+; ..\CODE\Src\User_FSM.c	   215  ////			while(1);
+; ..\CODE\Src\User_FSM.c	   216  //		}
+; ..\CODE\Src\User_FSM.c	   217  //		else
+; ..\CODE\Src\User_FSM.c	   218  //		{
+; ..\CODE\Src\User_FSM.c	   219  ////	    	uart_putchar(UART_3,0X03);//状态检测3
+; ..\CODE\Src\User_FSM.c	   220  //			FindLine();
+; ..\CODE\Src\User_FSM.c	   221  //			PassingRoundaboutFlag = 1;
+; ..\CODE\Src\User_FSM.c	   222  //		}
+; ..\CODE\Src\User_FSM.c	   223  //	}
+; ..\CODE\Src\User_FSM.c	   224  //	else if(RRoundaboutFlag)
+; ..\CODE\Src\User_FSM.c	   225  //	{
+; ..\CODE\Src\User_FSM.c	   226  //		if(GetDistance() < 0.3)
+; ..\CODE\Src\User_FSM.c	   227  //		{
+; ..\CODE\Src\User_FSM.c	   228  //			FindLineAdjPWM(6, 0, 6);
 ; ..\CODE\Src\User_FSM.c	   229  //		}
-; ..\CODE\Src\User_FSM.c	   230  //	}
-; ..\CODE\Src\User_FSM.c	   231  }
+; ..\CODE\Src\User_FSM.c	   230  //		else
+; ..\CODE\Src\User_FSM.c	   231  //		{
+; ..\CODE\Src\User_FSM.c	   232  //			FindLine();
+; ..\CODE\Src\User_FSM.c	   233  //			PassingRoundaboutFlag = 1;
+; ..\CODE\Src\User_FSM.c	   234  //		}
+; ..\CODE\Src\User_FSM.c	   235  //	}
+; ..\CODE\Src\User_FSM.c	   236  }
 	ret
 .L251:
 	
@@ -629,14 +634,14 @@ __InRoundaboutProcess_function_end:
 	
 	.global	OutRoundaboutProcess
 
-; ..\CODE\Src\User_FSM.c	   232  
-; ..\CODE\Src\User_FSM.c	   233  void OutRoundaboutProcess(void)
+; ..\CODE\Src\User_FSM.c	   237  
+; ..\CODE\Src\User_FSM.c	   238  void OutRoundaboutProcess(void)
 ; Function OutRoundaboutProcess
 .L110:
 OutRoundaboutProcess:	.type	func
 
-; ..\CODE\Src\User_FSM.c	   234  {
-; ..\CODE\Src\User_FSM.c	   235  	FindLineAdjPWM(6, 2, 0);
+; ..\CODE\Src\User_FSM.c	   239  {
+; ..\CODE\Src\User_FSM.c	   240  	FindLineAdjPWM(6, 2, 0);  //第二个数字可修改aaaaaaaaaaaaa
 	movh	d4,#16576
 .L450:
 	movh	d5,#16384
@@ -656,101 +661,101 @@ __OutRoundaboutProcess_function_end:
 	
 	.global	TurnLeftGoGarage
 
-; ..\CODE\Src\User_FSM.c	   236  
-; ..\CODE\Src\User_FSM.c	   237  //	float DIS ;
-; ..\CODE\Src\User_FSM.c	   238  //		DIS = fabs(GetDistance());
-; ..\CODE\Src\User_FSM.c	   239  //	if(DIS <= 0.7)
-; ..\CODE\Src\User_FSM.c	   240  //	{
-; ..\CODE\Src\User_FSM.c	   241  //		GyroPID(OutRAGyroKp, OutRAGyroKi, OutRAGyroKd);
-; ..\CODE\Src\User_FSM.c	   242  ////		FindLineAdjPWM(SpeedDownOutAngle, 12, 0);
-; ..\CODE\Src\User_FSM.c	   243  //	}
-; ..\CODE\Src\User_FSM.c	   244  //	else if(DIS <= 0.5)
+; ..\CODE\Src\User_FSM.c	   241  
+; ..\CODE\Src\User_FSM.c	   242  //	float DIS ;
+; ..\CODE\Src\User_FSM.c	   243  //		DIS = fabs(GetDistance());
+; ..\CODE\Src\User_FSM.c	   244  //	if(DIS <= 0.7)
 ; ..\CODE\Src\User_FSM.c	   245  //	{
-; ..\CODE\Src\User_FSM.c	   246  ////		FindLineAdjPWM(SpeedDownOutAngle, 8, 0);
-; ..\CODE\Src\User_FSM.c	   247  //	}
-; ..\CODE\Src\User_FSM.c	   248  //	else if(DIS <= 0.6)
-; ..\CODE\Src\User_FSM.c	   249  //	{
-; ..\CODE\Src\User_FSM.c	   250  ////		FindLineAdjPWM(SpeedDownOutAngle, 4, 0);
-; ..\CODE\Src\User_FSM.c	   251  //	}
-; ..\CODE\Src\User_FSM.c	   252  ////	else if(DIS > 0.1 && DIS <= GYROLineOutRA)
-; ..\CODE\Src\User_FSM.c	   253  ////	{
-; ..\CODE\Src\User_FSM.c	   254  //////		FindLineAdjPWM(6, 10, 0);
-; ..\CODE\Src\User_FSM.c	   255  ////		GyroPID(OutRAGyroKp, OutRAGyroKi, OutRAGyroKd);
-; ..\CODE\Src\User_FSM.c	   256  ////	}
-; ..\CODE\Src\User_FSM.c	   257  ////	else if(DIS > GYROLineOutRA)
-; ..\CODE\Src\User_FSM.c	   258  //	else if(DIS > 0.7)
-; ..\CODE\Src\User_FSM.c	   259  //	{
-; ..\CODE\Src\User_FSM.c	   260  //		//StopRunAndProgram();
-; ..\CODE\Src\User_FSM.c	   261  //		FindLineAdjPWM(SpeedDownOutAngle, 0, 0);
-; ..\CODE\Src\User_FSM.c	   262  //		//GYROPID(55, 0.1, 95);
-; ..\CODE\Src\User_FSM.c	   263  //		//StopRunAndProgram();
-; ..\CODE\Src\User_FSM.c	   264  //		//FindLineAdjPWM(15.5, 0, 0);
-; ..\CODE\Src\User_FSM.c	   265  //
-; ..\CODE\Src\User_FSM.c	   266  //	}
-; ..\CODE\Src\User_FSM.c	   267  
-; ..\CODE\Src\User_FSM.c	   268  
-; ..\CODE\Src\User_FSM.c	   269  //	else
-; ..\CODE\Src\User_FSM.c	   270  //	{
-; ..\CODE\Src\User_FSM.c	   271  //	FindLineAdjPWM(10, 0, 0);
-; ..\CODE\Src\User_FSM.c	   272  //	}
+; ..\CODE\Src\User_FSM.c	   246  //		GyroPID(OutRAGyroKp, OutRAGyroKi, OutRAGyroKd);
+; ..\CODE\Src\User_FSM.c	   247  ////		FindLineAdjPWM(SpeedDownOutAngle, 12, 0);
+; ..\CODE\Src\User_FSM.c	   248  //	}
+; ..\CODE\Src\User_FSM.c	   249  //	else if(DIS <= 0.5)
+; ..\CODE\Src\User_FSM.c	   250  //	{
+; ..\CODE\Src\User_FSM.c	   251  ////		FindLineAdjPWM(SpeedDownOutAngle, 8, 0);
+; ..\CODE\Src\User_FSM.c	   252  //	}
+; ..\CODE\Src\User_FSM.c	   253  //	else if(DIS <= 0.6)
+; ..\CODE\Src\User_FSM.c	   254  //	{
+; ..\CODE\Src\User_FSM.c	   255  ////		FindLineAdjPWM(SpeedDownOutAngle, 4, 0);
+; ..\CODE\Src\User_FSM.c	   256  //	}
+; ..\CODE\Src\User_FSM.c	   257  ////	else if(DIS > 0.1 && DIS <= GYROLineOutRA)
+; ..\CODE\Src\User_FSM.c	   258  ////	{
+; ..\CODE\Src\User_FSM.c	   259  //////		FindLineAdjPWM(6, 10, 0);
+; ..\CODE\Src\User_FSM.c	   260  ////		GyroPID(OutRAGyroKp, OutRAGyroKi, OutRAGyroKd);
+; ..\CODE\Src\User_FSM.c	   261  ////	}
+; ..\CODE\Src\User_FSM.c	   262  ////	else if(DIS > GYROLineOutRA)
+; ..\CODE\Src\User_FSM.c	   263  //	else if(DIS > 0.7)
+; ..\CODE\Src\User_FSM.c	   264  //	{
+; ..\CODE\Src\User_FSM.c	   265  //		//StopRunAndProgram();
+; ..\CODE\Src\User_FSM.c	   266  //		FindLineAdjPWM(SpeedDownOutAngle, 0, 0);
+; ..\CODE\Src\User_FSM.c	   267  //		//GYROPID(55, 0.1, 95);
+; ..\CODE\Src\User_FSM.c	   268  //		//StopRunAndProgram();
+; ..\CODE\Src\User_FSM.c	   269  //		//FindLineAdjPWM(15.5, 0, 0);
+; ..\CODE\Src\User_FSM.c	   270  //
+; ..\CODE\Src\User_FSM.c	   271  //	}
+; ..\CODE\Src\User_FSM.c	   272  
 ; ..\CODE\Src\User_FSM.c	   273  
-; ..\CODE\Src\User_FSM.c	   274  //原来的代码
-; ..\CODE\Src\User_FSM.c	   275  //	static uint8 OutCleanDistanceFlag = 0;
-; ..\CODE\Src\User_FSM.c	   276  //
-; ..\CODE\Src\User_FSM.c	   277  //	if(!OutCleanDistanceFlag)
-; ..\CODE\Src\User_FSM.c	   278  //	{
-; ..\CODE\Src\User_FSM.c	   279  //		CleanDistance();
-; ..\CODE\Src\User_FSM.c	   280  //		OutCleanDistanceFlag = 1;
-; ..\CODE\Src\User_FSM.c	   281  //	}
-; ..\CODE\Src\User_FSM.c	   282  //
-; ..\CODE\Src\User_FSM.c	   283  //	if(LRoundaboutFlag)
-; ..\CODE\Src\User_FSM.c	   284  //	{
-; ..\CODE\Src\User_FSM.c	   285  ////		if(GetDistance() < 0.3)
-; ..\CODE\Src\User_FSM.c	   286  ////		{
-; ..\CODE\Src\User_FSM.c	   287  ////			FindLineAdjPWM(6, 6, 0);
-; ..\CODE\Src\User_FSM.c	   288  ////		}
-; ..\CODE\Src\User_FSM.c	   289  ////		else
-; ..\CODE\Src\User_FSM.c	   290  ////		{
-; ..\CODE\Src\User_FSM.c	   291  ////			PassingRoundaboutFlag = 0;
-; ..\CODE\Src\User_FSM.c	   292  ////			FindLine();
+; ..\CODE\Src\User_FSM.c	   274  //	else
+; ..\CODE\Src\User_FSM.c	   275  //	{
+; ..\CODE\Src\User_FSM.c	   276  //	FindLineAdjPWM(10, 0, 0);
+; ..\CODE\Src\User_FSM.c	   277  //	}
+; ..\CODE\Src\User_FSM.c	   278  
+; ..\CODE\Src\User_FSM.c	   279  //原来的代码
+; ..\CODE\Src\User_FSM.c	   280  //	static uint8 OutCleanDistanceFlag = 0;
+; ..\CODE\Src\User_FSM.c	   281  //
+; ..\CODE\Src\User_FSM.c	   282  //	if(!OutCleanDistanceFlag)
+; ..\CODE\Src\User_FSM.c	   283  //	{
+; ..\CODE\Src\User_FSM.c	   284  //		CleanDistance();
+; ..\CODE\Src\User_FSM.c	   285  //		OutCleanDistanceFlag = 1;
+; ..\CODE\Src\User_FSM.c	   286  //	}
+; ..\CODE\Src\User_FSM.c	   287  //
+; ..\CODE\Src\User_FSM.c	   288  //	if(LRoundaboutFlag)
+; ..\CODE\Src\User_FSM.c	   289  //	{
+; ..\CODE\Src\User_FSM.c	   290  ////		if(GetDistance() < 0.3)
+; ..\CODE\Src\User_FSM.c	   291  ////		{
+; ..\CODE\Src\User_FSM.c	   292  ////			FindLineAdjPWM(6, 6, 0);
 ; ..\CODE\Src\User_FSM.c	   293  ////		}
-; ..\CODE\Src\User_FSM.c	   294  //		FindLine();
-; ..\CODE\Src\User_FSM.c	   295  //	}
-; ..\CODE\Src\User_FSM.c	   296  //	else if(RRoundaboutFlag)
-; ..\CODE\Src\User_FSM.c	   297  //	{
-; ..\CODE\Src\User_FSM.c	   298  ////		if(GetDistance() < 0.3)
-; ..\CODE\Src\User_FSM.c	   299  ////		{
-; ..\CODE\Src\User_FSM.c	   300  ////			FindLineAdjPWM(6, 6, 0);
-; ..\CODE\Src\User_FSM.c	   301  ////		}
-; ..\CODE\Src\User_FSM.c	   302  ////		else
-; ..\CODE\Src\User_FSM.c	   303  ////		{
-; ..\CODE\Src\User_FSM.c	   304  ////			PassingRoundaboutFlag = 0;
-; ..\CODE\Src\User_FSM.c	   305  ////			FindLine();
+; ..\CODE\Src\User_FSM.c	   294  ////		else
+; ..\CODE\Src\User_FSM.c	   295  ////		{
+; ..\CODE\Src\User_FSM.c	   296  ////			PassingRoundaboutFlag = 0;
+; ..\CODE\Src\User_FSM.c	   297  ////			FindLine();
+; ..\CODE\Src\User_FSM.c	   298  ////		}
+; ..\CODE\Src\User_FSM.c	   299  //		FindLine();
+; ..\CODE\Src\User_FSM.c	   300  //	}
+; ..\CODE\Src\User_FSM.c	   301  //	else if(RRoundaboutFlag)
+; ..\CODE\Src\User_FSM.c	   302  //	{
+; ..\CODE\Src\User_FSM.c	   303  ////		if(GetDistance() < 0.3)
+; ..\CODE\Src\User_FSM.c	   304  ////		{
+; ..\CODE\Src\User_FSM.c	   305  ////			FindLineAdjPWM(6, 6, 0);
 ; ..\CODE\Src\User_FSM.c	   306  ////		}
-; ..\CODE\Src\User_FSM.c	   307  //		FindLine();
-; ..\CODE\Src\User_FSM.c	   308  //	}
-; ..\CODE\Src\User_FSM.c	   309  }
-; ..\CODE\Src\User_FSM.c	   310  
-; ..\CODE\Src\User_FSM.c	   311  void TurnLeftGoGarage(void)
+; ..\CODE\Src\User_FSM.c	   307  ////		else
+; ..\CODE\Src\User_FSM.c	   308  ////		{
+; ..\CODE\Src\User_FSM.c	   309  ////			PassingRoundaboutFlag = 0;
+; ..\CODE\Src\User_FSM.c	   310  ////			FindLine();
+; ..\CODE\Src\User_FSM.c	   311  ////		}
+; ..\CODE\Src\User_FSM.c	   312  //		FindLine();
+; ..\CODE\Src\User_FSM.c	   313  //	}
+; ..\CODE\Src\User_FSM.c	   314  }
+; ..\CODE\Src\User_FSM.c	   315  
+; ..\CODE\Src\User_FSM.c	   316  void TurnLeftGoGarage(void)
 ; Function TurnLeftGoGarage
 .L112:
 TurnLeftGoGarage:	.type	func
 
-; ..\CODE\Src\User_FSM.c	   312  {
-; ..\CODE\Src\User_FSM.c	   313  	static uint8 CleanDistanceFlag = 0;
-; ..\CODE\Src\User_FSM.c	   314  
-; ..\CODE\Src\User_FSM.c	   315  	if(!CleanDistanceFlag)
+; ..\CODE\Src\User_FSM.c	   317  {
+; ..\CODE\Src\User_FSM.c	   318  	static uint8 CleanDistanceFlag = 0;
+; ..\CODE\Src\User_FSM.c	   319  
+; ..\CODE\Src\User_FSM.c	   320  	if(!CleanDistanceFlag)
 	movh.a	a15,#@his(_999003_CleanDistanceFlag)
 	ld.bu	d15,[a15]@los(_999003_CleanDistanceFlag)
 	jne	d15,#0,.L24
 .L456:
 
-; ..\CODE\Src\User_FSM.c	   316  	{
-; ..\CODE\Src\User_FSM.c	   317  		CleanDistance();
+; ..\CODE\Src\User_FSM.c	   321  	{
+; ..\CODE\Src\User_FSM.c	   322  		CleanDistance();
 	call	CleanDistance
 .L457:
 
-; ..\CODE\Src\User_FSM.c	   318  		CleanDistanceFlag = 1;
+; ..\CODE\Src\User_FSM.c	   323  		CleanDistanceFlag = 1;
 	movh.a	a15,#@his(_999003_CleanDistanceFlag)
 .L458:
 	mov	d15,#1
@@ -758,13 +763,13 @@ TurnLeftGoGarage:	.type	func
 	st.b	[a15]@los(_999003_CleanDistanceFlag),d15
 .L24:
 
-; ..\CODE\Src\User_FSM.c	   319  	}
-; ..\CODE\Src\User_FSM.c	   320  	GyroYawAngleInit(SetLeftRotationAngle);//+左转；-右转
+; ..\CODE\Src\User_FSM.c	   324  	}
+; ..\CODE\Src\User_FSM.c	   325  	GyroYawAngleInit(SetLeftRotationAngle);//+左转；-右转
 	movh	d4,#17076
 	call	GyroYawAngleInit
 .L460:
 
-; ..\CODE\Src\User_FSM.c	   321  	GyroPID(GYRO_P, GYRO_I, GYRO_D);
+; ..\CODE\Src\User_FSM.c	   326  	GyroPID(GYRO_P, GYRO_I, GYRO_D);
 	movh	d4,#16988
 .L461:
 	mov.u	d5,#52429
@@ -774,7 +779,7 @@ TurnLeftGoGarage:	.type	func
 	call	GyroPID
 .L463:
 
-; ..\CODE\Src\User_FSM.c	   322  	if(TotalDistance >= 0.25)  //0.25
+; ..\CODE\Src\User_FSM.c	   327  	if(TotalDistance >= 0.25)  //0.25
 	movh.a	a15,#@his(TotalDistance)
 	ld.w	d15,[a15]@los(TotalDistance)
 .L464:
@@ -786,8 +791,8 @@ TurnLeftGoGarage:	.type	func
 	jeq	d15,#0,.L25
 .L467:
 
-; ..\CODE\Src\User_FSM.c	   323  	{
-; ..\CODE\Src\User_FSM.c	   324  	    MotorUserHandle(LMotor_F, LeftWheelDeadZone);
+; ..\CODE\Src\User_FSM.c	   328  	{
+; ..\CODE\Src\User_FSM.c	   329  	    MotorUserHandle(LMotor_F, LeftWheelDeadZone);
 	mov	d4,#0
 .L468:
 	mov	d5,#26214
@@ -795,15 +800,15 @@ TurnLeftGoGarage:	.type	func
 	call	MotorUserHandle
 .L469:
 
-; ..\CODE\Src\User_FSM.c	   325  	    MotorUserHandle(RMotor_F, RightWheelDeadZone);
+; ..\CODE\Src\User_FSM.c	   330  	    MotorUserHandle(RMotor_F, RightWheelDeadZone);
 	mov	d4,#2
 .L470:
 	movh	d5,#16528
 	call	MotorUserHandle
 .L25:
 
-; ..\CODE\Src\User_FSM.c	   326  	}
-; ..\CODE\Src\User_FSM.c	   327  	if(TotalDistance >= 0.7)
+; ..\CODE\Src\User_FSM.c	   331  	}
+; ..\CODE\Src\User_FSM.c	   332  	if(TotalDistance >= 0.7)
 	movh.a	a15,#@his(TotalDistance)
 	ld.w	d15,[a15]@los(TotalDistance)
 .L471:
@@ -816,12 +821,12 @@ TurnLeftGoGarage:	.type	func
 	jeq	d15,#0,.L26
 .L474:
 
-; ..\CODE\Src\User_FSM.c	   328  	{
-; ..\CODE\Src\User_FSM.c	   329  		RunStop();
+; ..\CODE\Src\User_FSM.c	   333  	{
+; ..\CODE\Src\User_FSM.c	   334  		RunStop();
 	call	RunStop
 .L475:
 
-; ..\CODE\Src\User_FSM.c	   330  		GoGarageFinishFlag = 1;
+; ..\CODE\Src\User_FSM.c	   335  		GoGarageFinishFlag = 1;
 	movh.a	a15,#@his(GoGarageFinishFlag)
 .L476:
 	mov	d15,#1
@@ -829,8 +834,8 @@ TurnLeftGoGarage:	.type	func
 	st.b	[a15]@los(GoGarageFinishFlag),d15
 .L26:
 
-; ..\CODE\Src\User_FSM.c	   331  	}
-; ..\CODE\Src\User_FSM.c	   332  }
+; ..\CODE\Src\User_FSM.c	   336  	}
+; ..\CODE\Src\User_FSM.c	   337  }
 	ret
 .L255:
 	
@@ -845,27 +850,27 @@ __TurnLeftGoGarage_function_end:
 	
 	.global	TurnRightGoGarage
 
-; ..\CODE\Src\User_FSM.c	   333  
-; ..\CODE\Src\User_FSM.c	   334  void TurnRightGoGarage(void)
+; ..\CODE\Src\User_FSM.c	   338  
+; ..\CODE\Src\User_FSM.c	   339  void TurnRightGoGarage(void)
 ; Function TurnRightGoGarage
 .L114:
 TurnRightGoGarage:	.type	func
 
-; ..\CODE\Src\User_FSM.c	   335  {
-; ..\CODE\Src\User_FSM.c	   336  	static uint8 CleanDistanceFlag = 0;
-; ..\CODE\Src\User_FSM.c	   337  
-; ..\CODE\Src\User_FSM.c	   338  	if(!CleanDistanceFlag)
+; ..\CODE\Src\User_FSM.c	   340  {
+; ..\CODE\Src\User_FSM.c	   341  	static uint8 CleanDistanceFlag = 0;
+; ..\CODE\Src\User_FSM.c	   342  
+; ..\CODE\Src\User_FSM.c	   343  	if(!CleanDistanceFlag)
 	movh.a	a15,#@his(_999004_CleanDistanceFlag)
 	ld.bu	d15,[a15]@los(_999004_CleanDistanceFlag)
 	jne	d15,#0,.L27
 .L482:
 
-; ..\CODE\Src\User_FSM.c	   339  	{
-; ..\CODE\Src\User_FSM.c	   340  		CleanDistance();
+; ..\CODE\Src\User_FSM.c	   344  	{
+; ..\CODE\Src\User_FSM.c	   345  		CleanDistance();
 	call	CleanDistance
 .L483:
 
-; ..\CODE\Src\User_FSM.c	   341  		CleanDistanceFlag = 1;
+; ..\CODE\Src\User_FSM.c	   346  		CleanDistanceFlag = 1;
 	movh.a	a15,#@his(_999004_CleanDistanceFlag)
 .L484:
 	mov	d15,#1
@@ -873,9 +878,9 @@ TurnRightGoGarage:	.type	func
 	st.b	[a15]@los(_999004_CleanDistanceFlag),d15
 .L27:
 
-; ..\CODE\Src\User_FSM.c	   342  	}
-; ..\CODE\Src\User_FSM.c	   343  
-; ..\CODE\Src\User_FSM.c	   344  	if(TotalDistance >= 0.2 && TotalDistance <= 0.35)   //0.15
+; ..\CODE\Src\User_FSM.c	   347  	}
+; ..\CODE\Src\User_FSM.c	   348  
+; ..\CODE\Src\User_FSM.c	   349  	if(TotalDistance >= 0.2 && TotalDistance <= 0.35)   //0.15  距离可修改aaaaaaaaaaaaaa
 	movh.a	a15,#@his(TotalDistance)
 	ld.w	d0,[a15]@los(TotalDistance)
 .L486:
@@ -895,13 +900,13 @@ TurnRightGoGarage:	.type	func
 	jeq	d15,#0,.L29
 .L491:
 
-; ..\CODE\Src\User_FSM.c	   345  	{
-; ..\CODE\Src\User_FSM.c	   346  		GyroYawAngleInit(-SetRightRotationAngle);
+; ..\CODE\Src\User_FSM.c	   350  	{
+; ..\CODE\Src\User_FSM.c	   351  		GyroYawAngleInit(-SetRightRotationAngle);
 	movh	d4,#49844
 	call	GyroYawAngleInit
 .L492:
 
-; ..\CODE\Src\User_FSM.c	   347  		GyroPID(GYRO_P, GYRO_I, GYRO_D);
+; ..\CODE\Src\User_FSM.c	   352  		GyroPID(GYRO_P, GYRO_I, GYRO_D);
 	movh	d4,#16988
 .L493:
 	mov.u	d5,#52429
@@ -912,8 +917,8 @@ TurnRightGoGarage:	.type	func
 .L29:
 .L28:
 
-; ..\CODE\Src\User_FSM.c	   348  	}
-; ..\CODE\Src\User_FSM.c	   349  	else if(TotalDistance <= 0.7)   //0.35
+; ..\CODE\Src\User_FSM.c	   353  	}
+; ..\CODE\Src\User_FSM.c	   354  	else if(TotalDistance <= 0.7)   //0.35
 	movh.a	a15,#@his(TotalDistance)
 	ld.w	d15,[a15]@los(TotalDistance)
 .L495:
@@ -926,17 +931,17 @@ TurnRightGoGarage:	.type	func
 	jne	d15,#0,.L31
 .L498:
 
-; ..\CODE\Src\User_FSM.c	   350  	{
-; ..\CODE\Src\User_FSM.c	   351  	    MotorUserHandle(LMotor_F, LeftWheelDeadZone);
-; ..\CODE\Src\User_FSM.c	   352  	    MotorUserHandle(RMotor_F, RightWheelDeadZone);
-; ..\CODE\Src\User_FSM.c	   353  	}
-; ..\CODE\Src\User_FSM.c	   354  	else   //0.6
 ; ..\CODE\Src\User_FSM.c	   355  	{
-; ..\CODE\Src\User_FSM.c	   356  		RunStop();
+; ..\CODE\Src\User_FSM.c	   356  	    MotorUserHandle(LMotor_F, LeftWheelDeadZone);
+; ..\CODE\Src\User_FSM.c	   357  	    MotorUserHandle(RMotor_F, RightWheelDeadZone);
+; ..\CODE\Src\User_FSM.c	   358  	}
+; ..\CODE\Src\User_FSM.c	   359  	else   //0.6
+; ..\CODE\Src\User_FSM.c	   360  	{
+; ..\CODE\Src\User_FSM.c	   361  		RunStop();
 	call	RunStop
 .L499:
 
-; ..\CODE\Src\User_FSM.c	   357  		GoGarageFinishFlag = 1;
+; ..\CODE\Src\User_FSM.c	   362  		GoGarageFinishFlag = 1;
 	movh.a	a15,#@his(GoGarageFinishFlag)
 .L500:
 	mov	d15,#1
@@ -944,8 +949,8 @@ TurnRightGoGarage:	.type	func
 	st.b	[a15]@los(GoGarageFinishFlag),d15
 .L502:
 
-; ..\CODE\Src\User_FSM.c	   358  	}
-; ..\CODE\Src\User_FSM.c	   359  }
+; ..\CODE\Src\User_FSM.c	   363  	}
+; ..\CODE\Src\User_FSM.c	   364  }
 	ret
 .L31:
 	mov	d4,#0
@@ -971,24 +976,24 @@ __TurnRightGoGarage_function_end:
 	
 	.global	FSMRegist
 
-; ..\CODE\Src\User_FSM.c	   360  //*********************************************************
-; ..\CODE\Src\User_FSM.c	   361  
-; ..\CODE\Src\User_FSM.c	   362  
-; ..\CODE\Src\User_FSM.c	   363  //*********************************************************
-; ..\CODE\Src\User_FSM.c	   364  //					状态机功能函数
-; ..\CODE\Src\User_FSM.c	   365  
-; ..\CODE\Src\User_FSM.c	   366  //函数作用：状态机注册
-; ..\CODE\Src\User_FSM.c	   367  void FSMRegist(FSM_t *fsm, FSMTable_t *fsmtable)
+; ..\CODE\Src\User_FSM.c	   365  //*********************************************************
+; ..\CODE\Src\User_FSM.c	   366  
+; ..\CODE\Src\User_FSM.c	   367  
+; ..\CODE\Src\User_FSM.c	   368  //*********************************************************
+; ..\CODE\Src\User_FSM.c	   369  //					状态机功能函数
+; ..\CODE\Src\User_FSM.c	   370  
+; ..\CODE\Src\User_FSM.c	   371  //函数作用：状态机注册
+; ..\CODE\Src\User_FSM.c	   372  void FSMRegist(FSM_t *fsm, FSMTable_t *fsmtable)
 ; Function FSMRegist
 .L116:
 FSMRegist:	.type	func
 
-; ..\CODE\Src\User_FSM.c	   368  {
-; ..\CODE\Src\User_FSM.c	   369      fsm->FsmTable = fsmtable;
+; ..\CODE\Src\User_FSM.c	   373  {
+; ..\CODE\Src\User_FSM.c	   374      fsm->FsmTable = fsmtable;
 	st.a	[a4]4,a5
 .L510:
 
-; ..\CODE\Src\User_FSM.c	   370  }
+; ..\CODE\Src\User_FSM.c	   375  }
 	ret
 .L258:
 	
@@ -1003,19 +1008,19 @@ __FSMRegist_function_end:
 	
 	.global	FSMStateTransfer
 
-; ..\CODE\Src\User_FSM.c	   371  
-; ..\CODE\Src\User_FSM.c	   372  //状态机状态迁移
-; ..\CODE\Src\User_FSM.c	   373  void FSMStateTransfer(FSM_t* fsm, int state)
+; ..\CODE\Src\User_FSM.c	   376  
+; ..\CODE\Src\User_FSM.c	   377  //状态机状态迁移
+; ..\CODE\Src\User_FSM.c	   378  void FSMStateTransfer(FSM_t* fsm, int state)
 ; Function FSMStateTransfer
 .L118:
 FSMStateTransfer:	.type	func
 
-; ..\CODE\Src\User_FSM.c	   374  {
-; ..\CODE\Src\User_FSM.c	   375      fsm->CurState = state;
+; ..\CODE\Src\User_FSM.c	   379  {
+; ..\CODE\Src\User_FSM.c	   380      fsm->CurState = state;
 	st.w	[a4],d4
 .L515:
 
-; ..\CODE\Src\User_FSM.c	   376  }
+; ..\CODE\Src\User_FSM.c	   381  }
 	ret
 .L263:
 	
@@ -1030,43 +1035,43 @@ __FSMStateTransfer_function_end:
 	
 	.global	FSMEventHandle
 
-; ..\CODE\Src\User_FSM.c	   377  
-; ..\CODE\Src\User_FSM.c	   378  //状态机状态执行函数
-; ..\CODE\Src\User_FSM.c	   379  void FSMEventHandle(FSM_t *fsm, int event)
+; ..\CODE\Src\User_FSM.c	   382  
+; ..\CODE\Src\User_FSM.c	   383  //状态机状态执行函数
+; ..\CODE\Src\User_FSM.c	   384  void FSMEventHandle(FSM_t *fsm, int event)
 ; Function FSMEventHandle
 .L120:
 FSMEventHandle:	.type	func
 	mov.aa	a12,a4
 .L303:
 
-; ..\CODE\Src\User_FSM.c	   380  {
-; ..\CODE\Src\User_FSM.c	   381  	FSMTable_t *fsmTable = fsm->FsmTable;
+; ..\CODE\Src\User_FSM.c	   385  {
+; ..\CODE\Src\User_FSM.c	   386  	FSMTable_t *fsmTable = fsm->FsmTable;
 	ld.a	a2,[a12]4
 .L304:
 
-; ..\CODE\Src\User_FSM.c	   382      int curState = fsm->CurState;
+; ..\CODE\Src\User_FSM.c	   387      int curState = fsm->CurState;
 	ld.w	d0,[a12]
 .L306:
 
-; ..\CODE\Src\User_FSM.c	   383      void (*eventAction)() = NULL;  //函数指针初始化为空
-; ..\CODE\Src\User_FSM.c	   384      int nextState = -1;
-; ..\CODE\Src\User_FSM.c	   385      int size = fsm->Size;
+; ..\CODE\Src\User_FSM.c	   388      void (*eventAction)() = NULL;  //函数指针初始化为空
+; ..\CODE\Src\User_FSM.c	   389      int nextState = -1;
+; ..\CODE\Src\User_FSM.c	   390      int size = fsm->Size;
 	ld.w	d1,[a12]8
 .L307:
 
-; ..\CODE\Src\User_FSM.c	   386      //int flag = 0;  //标识条件是否满足
-; ..\CODE\Src\User_FSM.c	   387      int i;
-; ..\CODE\Src\User_FSM.c	   388  
-; ..\CODE\Src\User_FSM.c	   389      //获取当前动作函数
-; ..\CODE\Src\User_FSM.c	   390      for (i=0; i<size; i++)
+; ..\CODE\Src\User_FSM.c	   391      //int flag = 0;  //标识条件是否满足
+; ..\CODE\Src\User_FSM.c	   392      int i;
+; ..\CODE\Src\User_FSM.c	   393  
+; ..\CODE\Src\User_FSM.c	   394      //获取当前动作函数
+; ..\CODE\Src\User_FSM.c	   395      for (i=0; i<size; i++)
 	mov	d2,#0
 .L308:
 	j	.L33
 .L34:
 
-; ..\CODE\Src\User_FSM.c	   391      {
-; ..\CODE\Src\User_FSM.c	   392          //当且仅当当前状态下来个指定的事件，我才执行它
-; ..\CODE\Src\User_FSM.c	   393          if (event == fsmTable[i].Event && curState == fsmTable[i].CurState)
+; ..\CODE\Src\User_FSM.c	   396      {
+; ..\CODE\Src\User_FSM.c	   397          //当且仅当当前状态下来个指定的事件，我才执行它
+; ..\CODE\Src\User_FSM.c	   398          if (event == fsmTable[i].Event && curState == fsmTable[i].CurState)
 	sha	d15,d2,#4
 .L520:
 	addsc.a	a15,a2,d15,#0
@@ -1080,25 +1085,25 @@ FSMEventHandle:	.type	func
 	jne	d15,d0,.L36
 .L525:
 
-; ..\CODE\Src\User_FSM.c	   394          {
-; ..\CODE\Src\User_FSM.c	   395          	//flag = 1;
-; ..\CODE\Src\User_FSM.c	   396              eventAction = fsmTable[i].EventAction;
+; ..\CODE\Src\User_FSM.c	   399          {
+; ..\CODE\Src\User_FSM.c	   400          	//flag = 1;
+; ..\CODE\Src\User_FSM.c	   401              eventAction = fsmTable[i].EventAction;
 	ld.a	a2,[a15]8
 .L305:
 
-; ..\CODE\Src\User_FSM.c	   397              nextState = fsmTable[i].NextState;
+; ..\CODE\Src\User_FSM.c	   402              nextState = fsmTable[i].NextState;
 	ld.w	d15,[a15]12
 .L309:
 
-; ..\CODE\Src\User_FSM.c	   398          	if(eventAction)
+; ..\CODE\Src\User_FSM.c	   403          	if(eventAction)
 	jz.a	a2,.L37
 .L526:
 
-; ..\CODE\Src\User_FSM.c	   399          		eventAction();
+; ..\CODE\Src\User_FSM.c	   404          		eventAction();
 	calli	a2
 .L37:
 
-; ..\CODE\Src\User_FSM.c	   400          	FSMStateTransfer(fsm, nextState);
+; ..\CODE\Src\User_FSM.c	   405          	FSMStateTransfer(fsm, nextState);
 	mov.aa	a4,a12
 .L310:
 	mov	d4,d15
@@ -1111,14 +1116,14 @@ FSMEventHandle:	.type	func
 	jlt	d2,d1,.L34
 .L527:
 
-; ..\CODE\Src\User_FSM.c	   401              break;
-; ..\CODE\Src\User_FSM.c	   402          }
-; ..\CODE\Src\User_FSM.c	   403      }
-; ..\CODE\Src\User_FSM.c	   404      //if(!flag)
-; ..\CODE\Src\User_FSM.c	   405      //{
-; ..\CODE\Src\User_FSM.c	   406          //printf("No match!\n");
-; ..\CODE\Src\User_FSM.c	   407      //}
-; ..\CODE\Src\User_FSM.c	   408  }
+; ..\CODE\Src\User_FSM.c	   406              break;
+; ..\CODE\Src\User_FSM.c	   407          }
+; ..\CODE\Src\User_FSM.c	   408      }
+; ..\CODE\Src\User_FSM.c	   409      //if(!flag)
+; ..\CODE\Src\User_FSM.c	   410      //{
+; ..\CODE\Src\User_FSM.c	   411          //printf("No match!\n");
+; ..\CODE\Src\User_FSM.c	   412      //}
+; ..\CODE\Src\User_FSM.c	   413  }
 	ret
 .L266:
 	
@@ -1133,18 +1138,18 @@ __FSMEventHandle_function_end:
 	
 	.global	ReturnFSMState
 
-; ..\CODE\Src\User_FSM.c	   409  
-; ..\CODE\Src\User_FSM.c	   410  int ReturnFSMState(FSM_t *fsm)
+; ..\CODE\Src\User_FSM.c	   414  
+; ..\CODE\Src\User_FSM.c	   415  int ReturnFSMState(FSM_t *fsm)
 ; Function ReturnFSMState
 .L122:
 ReturnFSMState:	.type	func
 
-; ..\CODE\Src\User_FSM.c	   411  {
-; ..\CODE\Src\User_FSM.c	   412  	return fsm->CurState;
+; ..\CODE\Src\User_FSM.c	   416  {
+; ..\CODE\Src\User_FSM.c	   417  	return fsm->CurState;
 	ld.w	d2,[a4]
 .L532:
 
-; ..\CODE\Src\User_FSM.c	   413  }
+; ..\CODE\Src\User_FSM.c	   418  }
 	ret
 .L276:
 	
@@ -1159,16 +1164,16 @@ __ReturnFSMState_function_end:
 	
 	.global	FSMRun
 
-; ..\CODE\Src\User_FSM.c	   414  //********************************************************
-; ..\CODE\Src\User_FSM.c	   415  
-; ..\CODE\Src\User_FSM.c	   416  
-; ..\CODE\Src\User_FSM.c	   417  void FSMRun(void)
+; ..\CODE\Src\User_FSM.c	   419  //********************************************************
+; ..\CODE\Src\User_FSM.c	   420  
+; ..\CODE\Src\User_FSM.c	   421  
+; ..\CODE\Src\User_FSM.c	   422  void FSMRun(void)
 ; Function FSMRun
 .L124:
 FSMRun:	.type	func
 
-; ..\CODE\Src\User_FSM.c	   418  {
-; ..\CODE\Src\User_FSM.c	   419      FSMRegist(&CarFSM, CarTable);
+; ..\CODE\Src\User_FSM.c	   423  {
+; ..\CODE\Src\User_FSM.c	   424      FSMRegist(&CarFSM, CarTable);
 	movh.a	a4,#@his(CarFSM)
 	lea	a4,[a4]@los(CarFSM)
 .L537:
@@ -1177,27 +1182,27 @@ FSMRun:	.type	func
 	call	FSMRegist
 .L538:
 
-; ..\CODE\Src\User_FSM.c	   420  	if(!StartFlag)
+; ..\CODE\Src\User_FSM.c	   425  	if(!StartFlag)
 	movh.a	a15,#@his(StartFlag)
 	ld.bu	d15,[a15]@los(StartFlag)
 	jne	d15,#0,.L40
 .L539:
 
-; ..\CODE\Src\User_FSM.c	   421  	{
-; ..\CODE\Src\User_FSM.c	   422  		CarFSM.CurState = WaitBall;
+; ..\CODE\Src\User_FSM.c	   426  	{
+; ..\CODE\Src\User_FSM.c	   427  		CarFSM.CurState = WaitBall;
 	movh.a	a2,#@his(CarFSM)
 .L540:
 	st.w	[a2]@los(CarFSM),d15
 .L541:
 
-; ..\CODE\Src\User_FSM.c	   423  		StartFlag = 1;
+; ..\CODE\Src\User_FSM.c	   428  		StartFlag = 1;
 	mov	d15,#1
 .L542:
 	st.b	[a15]@los(StartFlag),d15
 .L40:
 
-; ..\CODE\Src\User_FSM.c	   424  	}
-; ..\CODE\Src\User_FSM.c	   425      CarFSM.Size = sizeof(CarTable) / sizeof(FSMTable_t);
+; ..\CODE\Src\User_FSM.c	   429  	}
+; ..\CODE\Src\User_FSM.c	   430      CarFSM.Size = sizeof(CarTable) / sizeof(FSMTable_t);
 	movh.a	a15,#@his(CarFSM+8)
 .L543:
 	mov	d15,#26
@@ -1205,8 +1210,8 @@ FSMRun:	.type	func
 	st.w	[a15]@los(CarFSM+8),d15
 .L545:
 
-; ..\CODE\Src\User_FSM.c	   426  
-; ..\CODE\Src\User_FSM.c	   427      if((KickFlag||TwoCarStateJudge()) && ReturnFSMState(&CarFSM) == WaitBall)
+; ..\CODE\Src\User_FSM.c	   431  
+; ..\CODE\Src\User_FSM.c	   432      if((KickFlag||TwoCarStateJudge()) && ReturnFSMState(&CarFSM) == WaitBall)
 	movh.a	a15,#@his(KickFlag)
 	ld.bu	d15,[a15]@los(KickFlag)
 	jne	d15,#0,.L41
@@ -1221,29 +1226,29 @@ FSMRun:	.type	func
 	jne	d2,#0,.L43
 .L548:
 
-; ..\CODE\Src\User_FSM.c	   428      {
-; ..\CODE\Src\User_FSM.c	   429      		FSMEventHandle(&CarFSM, GETBALL);
+; ..\CODE\Src\User_FSM.c	   433      {
+; ..\CODE\Src\User_FSM.c	   434      		FSMEventHandle(&CarFSM, GETBALL);
 	mov	d4,#1
 .L549:
 	j	.L44
 .L43:
 .L42:
 
-; ..\CODE\Src\User_FSM.c	   430      }
-; ..\CODE\Src\User_FSM.c	   431  
-; ..\CODE\Src\User_FSM.c	   432  
-; ..\CODE\Src\User_FSM.c	   433  //    else if(ADCValueHandle(2) >= ADCvalueC && (ADCValueHandle(1) >= ADCvalueCL || ADCValueHandle(3) >= ADCvalueCR)\ 
-; ..\CODE\Src\User_FSM.c	   434  //    && (ADCValueHandle(0) > ADCvalueLL || ADCValueHandle(4) > ADCvalueRR) && ReturnFSMState(&CarFSM) == GoLine)
-; ..\CODE\Src\User_FSM.c	   435  //    {
-; ..\CODE\Src\User_FSM.c	   436  //    	FSMEventHandle(&CarFSM, NOROUNDABOUT);
-; ..\CODE\Src\User_FSM.c	   437  //    }
-; ..\CODE\Src\User_FSM.c	   438  //    else if(GoOnFlag && ReturnFSMState(&CarFSM) == GoOn)
-; ..\CODE\Src\User_FSM.c	   439  //    {
-; ..\CODE\Src\User_FSM.c	   440  //    	FSMEventHandle(&CarFSM, FINISHROUND);
-; ..\CODE\Src\User_FSM.c	   441  //    }
-; ..\CODE\Src\User_FSM.c	   442  
-; ..\CODE\Src\User_FSM.c	   443  
-; ..\CODE\Src\User_FSM.c	   444      else if(GetDistance() >= 7.4/*13*/ && ADCValueHandle(2) >= ADCvalueC && (ADCValueHandle(1) >= ADCvalueCL || ADCValueHandle(3) >= ADCvalueCR)\ 
+; ..\CODE\Src\User_FSM.c	   435      }
+; ..\CODE\Src\User_FSM.c	   436  
+; ..\CODE\Src\User_FSM.c	   437  
+; ..\CODE\Src\User_FSM.c	   438  //    else if(ADCValueHandle(2) >= ADCvalueC && (ADCValueHandle(1) >= ADCvalueCL || ADCValueHandle(3) >= ADCvalueCR)\ 
+; ..\CODE\Src\User_FSM.c	   439  //    && (ADCValueHandle(0) > ADCvalueLL || ADCValueHandle(4) > ADCvalueRR) && ReturnFSMState(&CarFSM) == GoLine)
+; ..\CODE\Src\User_FSM.c	   440  //    {
+; ..\CODE\Src\User_FSM.c	   441  //    	FSMEventHandle(&CarFSM, NOROUNDABOUT);
+; ..\CODE\Src\User_FSM.c	   442  //    }
+; ..\CODE\Src\User_FSM.c	   443  //    else if(GoOnFlag && ReturnFSMState(&CarFSM) == GoOn)
+; ..\CODE\Src\User_FSM.c	   444  //    {
+; ..\CODE\Src\User_FSM.c	   445  //    	FSMEventHandle(&CarFSM, FINISHROUND);
+; ..\CODE\Src\User_FSM.c	   446  //    }
+; ..\CODE\Src\User_FSM.c	   447  
+; ..\CODE\Src\User_FSM.c	   448  
+; ..\CODE\Src\User_FSM.c	   449      else if(GetDistance() >= 7.4/*13*/ && ADCValueHandle(2) >= ADCvalueC && (ADCValueHandle(1) >= ADCvalueCL || ADCValueHandle(3) >= ADCvalueCR)\ 
 	call	GetDistance
 .L550:
 	mov.u	d15,#52429
@@ -1272,7 +1277,7 @@ FSMRun:	.type	func
 	jlt	d2,d15,.L48
 .L47:
 
-; ..\CODE\Src\User_FSM.c	   445      && (ADCValueHandle(0) > ADCvalueLL || ADCValueHandle(4) > ADCvalueRR) && ReturnFSMState(&CarFSM) == GoLine)//检测进圆
+; ..\CODE\Src\User_FSM.c	   450      && (ADCValueHandle(0) > ADCvalueLL || ADCValueHandle(4) > ADCvalueRR) && ReturnFSMState(&CarFSM) == GoLine)//检测进圆
 	mov	d4,#0
 	call	ADCValueHandle
 .L560:
@@ -1292,8 +1297,8 @@ FSMRun:	.type	func
 	jne	d2,#1,.L51
 .L565:
 
-; ..\CODE\Src\User_FSM.c	   446      {
-; ..\CODE\Src\User_FSM.c	   447      	IntoRoundaboutCount++;
+; ..\CODE\Src\User_FSM.c	   451      {
+; ..\CODE\Src\User_FSM.c	   452      	IntoRoundaboutCount++;
 	movh.a	a15,#@his(IntoRoundaboutCount)
 	ld.bu	d15,[a15]@los(IntoRoundaboutCount)
 .L566:
@@ -1301,14 +1306,14 @@ FSMRun:	.type	func
 	st.b	[a15]@los(IntoRoundaboutCount),d15
 .L567:
 
-; ..\CODE\Src\User_FSM.c	   448      	if(IntoRoundaboutCount >= 3)//连续检测三次
+; ..\CODE\Src\User_FSM.c	   453      	if(IntoRoundaboutCount >= 3)//连续检测三次
 	ld.bu	d15,[a15]@los(IntoRoundaboutCount)
 .L568:
 	jlt.u	d15,#3,.L52
 .L569:
 
-; ..\CODE\Src\User_FSM.c	   449      	{
-; ..\CODE\Src\User_FSM.c	   450      		if(ADCValueHandle(1) > ADCValueHandle(3))//判断左圆或右圆
+; ..\CODE\Src\User_FSM.c	   454      	{
+; ..\CODE\Src\User_FSM.c	   455      		if(ADCValueHandle(1) > ADCValueHandle(3))//判断左圆或右圆
 	mov	d4,#1
 	call	ADCValueHandle
 .L570:
@@ -1320,9 +1325,9 @@ FSMRun:	.type	func
 	jge	d2,d15,.L53
 .L573:
 
-; ..\CODE\Src\User_FSM.c	   451  			{
-; ..\CODE\Src\User_FSM.c	   452  //    	    	uart_putchar(UART_3,0X01);//状态检测1
-; ..\CODE\Src\User_FSM.c	   453  				LRoundaboutFlag = 1;//左圆
+; ..\CODE\Src\User_FSM.c	   456  			{
+; ..\CODE\Src\User_FSM.c	   457  //    	    	uart_putchar(UART_3,0X01);//状态检测1
+; ..\CODE\Src\User_FSM.c	   458  				LRoundaboutFlag = 1;//左圆
 	movh.a	a15,#@his(LRoundaboutFlag)
 .L574:
 	mov	d15,#1
@@ -1330,72 +1335,72 @@ FSMRun:	.type	func
 	st.b	[a15]@los(LRoundaboutFlag),d15
 .L576:
 
-; ..\CODE\Src\User_FSM.c	   454  				RRoundaboutFlag = 0;
+; ..\CODE\Src\User_FSM.c	   459  				RRoundaboutFlag = 0;
 	mov	d15,#0
 .L577:
 	j	.L54
 .L52:
 
-; ..\CODE\Src\User_FSM.c	   455  			}
-; ..\CODE\Src\User_FSM.c	   456  			else
-; ..\CODE\Src\User_FSM.c	   457  			{
-; ..\CODE\Src\User_FSM.c	   458  				LRoundaboutFlag = 0;
-; ..\CODE\Src\User_FSM.c	   459  				RRoundaboutFlag = 1;//右圆
 ; ..\CODE\Src\User_FSM.c	   460  			}
-; ..\CODE\Src\User_FSM.c	   461      		GyroYawAngleInit(InRAngle);
-; ..\CODE\Src\User_FSM.c	   462              CleanDistance();
-; ..\CODE\Src\User_FSM.c	   463              InitCulAngle();
-; ..\CODE\Src\User_FSM.c	   464              OutRAroll = YawAngle;
-; ..\CODE\Src\User_FSM.c	   465              FSMEventHandle(&CarFSM, FINDROUNDABOUT);
-; ..\CODE\Src\User_FSM.c	   466  //            FSMEventHandle(&CarFSM, RUNSTOP);
-; ..\CODE\Src\User_FSM.c	   467      	}
-; ..\CODE\Src\User_FSM.c	   468      }
-; ..\CODE\Src\User_FSM.c	   469      else if(GetDistance() >= 0.8 && ReturnFSMState(&CarFSM) == InRoundabout)//圆内过程
-; ..\CODE\Src\User_FSM.c	   470      {
-; ..\CODE\Src\User_FSM.c	   471  //    	uart_putchar(UART_3,0X04);//状态检测4
-; ..\CODE\Src\User_FSM.c	   472      	CleanPIDValue();
-; ..\CODE\Src\User_FSM.c	   473      	FSMEventHandle(&CarFSM, ENDINROUNDABOUT);
-; ..\CODE\Src\User_FSM.c	   474      }
-; ..\CODE\Src\User_FSM.c	   475      else if(CulAngle() >= 360 && ReturnFSMState(&CarFSM) == PassRoundabout)//检测出圆
-; ..\CODE\Src\User_FSM.c	   476      {
-; ..\CODE\Src\User_FSM.c	   477  //    	uart_putchar(UART_3,0X05);//状态检测5
-; ..\CODE\Src\User_FSM.c	   478      	GyroYawAngleInit(OutRAroll + OutRALeftAngle);
-; ..\CODE\Src\User_FSM.c	   479          CleanPIDValue();
-; ..\CODE\Src\User_FSM.c	   480      	FSMEventHandle(&CarFSM, OUTROUNDABOUT);
-; ..\CODE\Src\User_FSM.c	   481  //    	FSMEventHandle(&CarFSM, RUNSTOP);
-; ..\CODE\Src\User_FSM.c	   482      }
-; ..\CODE\Src\User_FSM.c	   483      else if(GetDistance() > 1 && ReturnFSMState(&CarFSM) == OutingRoundabout)
-; ..\CODE\Src\User_FSM.c	   484      {
-; ..\CODE\Src\User_FSM.c	   485      	CleanPIDValue();
-; ..\CODE\Src\User_FSM.c	   486        	FSMEventHandle(&CarFSM, ENDOUTROUNDABOUT);
-; ..\CODE\Src\User_FSM.c	   487  //		FSMEventHandle(&CarFSM, RUNSTOP);
-; ..\CODE\Src\User_FSM.c	   488      }
-; ..\CODE\Src\User_FSM.c	   489      else if(!InGarageDirection && EnterGarageFlag && ReturnFSMState(&CarFSM) == GoLine)
-; ..\CODE\Src\User_FSM.c	   490      {
-; ..\CODE\Src\User_FSM.c	   491          MotorUserHandle(LMotor_F, LeftWheelDeadZone+LeftInGarageSpeed);
-; ..\CODE\Src\User_FSM.c	   492          MotorUserHandle(RMotor_F, RightWheelDeadZone+RightInGarageSpeed);
-; ..\CODE\Src\User_FSM.c	   493      	FSMEventHandle(&CarFSM, LEFTFINDZEBRA);
-; ..\CODE\Src\User_FSM.c	   494      }
-; ..\CODE\Src\User_FSM.c	   495      else if(InGarageDirection && EnterGarageFlag && ReturnFSMState(&CarFSM) == GoLine)
-; ..\CODE\Src\User_FSM.c	   496      {
-; ..\CODE\Src\User_FSM.c	   497          MotorUserHandle(LMotor_F, LeftWheelDeadZone+LeftInGarageSpeed);
-; ..\CODE\Src\User_FSM.c	   498          MotorUserHandle(RMotor_F, RightWheelDeadZone+RightInGarageSpeed);
-; ..\CODE\Src\User_FSM.c	   499      	FSMEventHandle(&CarFSM, RIGHTFINDZEBRA);
-; ..\CODE\Src\User_FSM.c	   500      }
-; ..\CODE\Src\User_FSM.c	   501      else if(GoGarageFinishFlag && ReturnFSMState(&CarFSM) == LeftInGarage)
-; ..\CODE\Src\User_FSM.c	   502      {
-; ..\CODE\Src\User_FSM.c	   503      	FSMEventHandle(&CarFSM, RUNSTOP);
-; ..\CODE\Src\User_FSM.c	   504      }
-; ..\CODE\Src\User_FSM.c	   505      else if(GoGarageFinishFlag && ReturnFSMState(&CarFSM) == RightInGarage)
-; ..\CODE\Src\User_FSM.c	   506      {
-; ..\CODE\Src\User_FSM.c	   507      	FSMEventHandle(&CarFSM, RUNSTOP);
-; ..\CODE\Src\User_FSM.c	   508      }
-; ..\CODE\Src\User_FSM.c	   509      else
-; ..\CODE\Src\User_FSM.c	   510      {
-; ..\CODE\Src\User_FSM.c	   511      	IntoRoundaboutCount = 0;
-; ..\CODE\Src\User_FSM.c	   512      	FSMEventHandle(&CarFSM, NOEVENT);
+; ..\CODE\Src\User_FSM.c	   461  			else
+; ..\CODE\Src\User_FSM.c	   462  			{
+; ..\CODE\Src\User_FSM.c	   463  				LRoundaboutFlag = 0;
+; ..\CODE\Src\User_FSM.c	   464  				RRoundaboutFlag = 1;//右圆
+; ..\CODE\Src\User_FSM.c	   465  			}
+; ..\CODE\Src\User_FSM.c	   466      		GyroYawAngleInit(InRAngle);
+; ..\CODE\Src\User_FSM.c	   467              CleanDistance();
+; ..\CODE\Src\User_FSM.c	   468              InitCulAngle();
+; ..\CODE\Src\User_FSM.c	   469              OutRAroll = YawAngle;
+; ..\CODE\Src\User_FSM.c	   470              FSMEventHandle(&CarFSM, FINDROUNDABOUT);
+; ..\CODE\Src\User_FSM.c	   471  //            FSMEventHandle(&CarFSM, RUNSTOP);
+; ..\CODE\Src\User_FSM.c	   472      	}
+; ..\CODE\Src\User_FSM.c	   473      }
+; ..\CODE\Src\User_FSM.c	   474      else if(GetDistance() >= 0.8 && ReturnFSMState(&CarFSM) == InRoundabout)//圆内过程
+; ..\CODE\Src\User_FSM.c	   475      {
+; ..\CODE\Src\User_FSM.c	   476  //    	uart_putchar(UART_3,0X04);//状态检测4
+; ..\CODE\Src\User_FSM.c	   477      	CleanPIDValue();
+; ..\CODE\Src\User_FSM.c	   478      	FSMEventHandle(&CarFSM, ENDINROUNDABOUT);
+; ..\CODE\Src\User_FSM.c	   479      }
+; ..\CODE\Src\User_FSM.c	   480      else if(CulAngle() >= 360 && ReturnFSMState(&CarFSM) == PassRoundabout)//检测出圆
+; ..\CODE\Src\User_FSM.c	   481      {
+; ..\CODE\Src\User_FSM.c	   482  //    	uart_putchar(UART_3,0X05);//状态检测5
+; ..\CODE\Src\User_FSM.c	   483      	GyroYawAngleInit(OutRAroll + OutRALeftAngle);
+; ..\CODE\Src\User_FSM.c	   484          CleanPIDValue();
+; ..\CODE\Src\User_FSM.c	   485      	FSMEventHandle(&CarFSM, OUTROUNDABOUT);
+; ..\CODE\Src\User_FSM.c	   486  //    	FSMEventHandle(&CarFSM, RUNSTOP);
+; ..\CODE\Src\User_FSM.c	   487      }
+; ..\CODE\Src\User_FSM.c	   488      else if(GetDistance() > 1 && ReturnFSMState(&CarFSM) == OutingRoundabout)
+; ..\CODE\Src\User_FSM.c	   489      {
+; ..\CODE\Src\User_FSM.c	   490      	CleanPIDValue();
+; ..\CODE\Src\User_FSM.c	   491        	FSMEventHandle(&CarFSM, ENDOUTROUNDABOUT);
+; ..\CODE\Src\User_FSM.c	   492  //		FSMEventHandle(&CarFSM, RUNSTOP);
+; ..\CODE\Src\User_FSM.c	   493      }
+; ..\CODE\Src\User_FSM.c	   494      else if(!InGarageDirection && EnterGarageFlag && ReturnFSMState(&CarFSM) == GoLine)
+; ..\CODE\Src\User_FSM.c	   495      {
+; ..\CODE\Src\User_FSM.c	   496          MotorUserHandle(LMotor_F, LeftWheelDeadZone+LeftInGarageSpeed);
+; ..\CODE\Src\User_FSM.c	   497          MotorUserHandle(RMotor_F, RightWheelDeadZone+RightInGarageSpeed);
+; ..\CODE\Src\User_FSM.c	   498      	FSMEventHandle(&CarFSM, LEFTFINDZEBRA);
+; ..\CODE\Src\User_FSM.c	   499      }
+; ..\CODE\Src\User_FSM.c	   500      else if(InGarageDirection && EnterGarageFlag && ReturnFSMState(&CarFSM) == GoLine)
+; ..\CODE\Src\User_FSM.c	   501      {
+; ..\CODE\Src\User_FSM.c	   502          MotorUserHandle(LMotor_F, LeftWheelDeadZone+LeftInGarageSpeed);
+; ..\CODE\Src\User_FSM.c	   503          MotorUserHandle(RMotor_F, RightWheelDeadZone+RightInGarageSpeed);
+; ..\CODE\Src\User_FSM.c	   504      	FSMEventHandle(&CarFSM, RIGHTFINDZEBRA);
+; ..\CODE\Src\User_FSM.c	   505      }
+; ..\CODE\Src\User_FSM.c	   506      else if(GoGarageFinishFlag && ReturnFSMState(&CarFSM) == LeftInGarage)
+; ..\CODE\Src\User_FSM.c	   507      {
+; ..\CODE\Src\User_FSM.c	   508      	FSMEventHandle(&CarFSM, RUNSTOP);
+; ..\CODE\Src\User_FSM.c	   509      }
+; ..\CODE\Src\User_FSM.c	   510      else if(GoGarageFinishFlag && ReturnFSMState(&CarFSM) == RightInGarage)
+; ..\CODE\Src\User_FSM.c	   511      {
+; ..\CODE\Src\User_FSM.c	   512      	FSMEventHandle(&CarFSM, RUNSTOP);
 ; ..\CODE\Src\User_FSM.c	   513      }
-; ..\CODE\Src\User_FSM.c	   514  }
+; ..\CODE\Src\User_FSM.c	   514      else
+; ..\CODE\Src\User_FSM.c	   515      {
+; ..\CODE\Src\User_FSM.c	   516      	IntoRoundaboutCount = 0;
+; ..\CODE\Src\User_FSM.c	   517      	FSMEventHandle(&CarFSM, NOEVENT);
+; ..\CODE\Src\User_FSM.c	   518      }
+; ..\CODE\Src\User_FSM.c	   519  }
 	ret
 .L53:
 	movh.a	a15,#@his(LRoundaboutFlag)
@@ -1586,9 +1591,9 @@ __FSMRun_function_end:
 	
 	.global	FindLineAdjPWM
 
-; ..\CODE\Src\User_FSM.c	   515  
-; ..\CODE\Src\User_FSM.c	   516  //其他函数
-; ..\CODE\Src\User_FSM.c	   517  void FindLineAdjPWM(double PWM, double LCut, double RCut)
+; ..\CODE\Src\User_FSM.c	   520  
+; ..\CODE\Src\User_FSM.c	   521  //其他函数
+; ..\CODE\Src\User_FSM.c	   522  void FindLineAdjPWM(double PWM, double LCut, double RCut)
 ; Function FindLineAdjPWM
 .L126:
 FindLineAdjPWM:	.type	func
@@ -1598,8 +1603,8 @@ FindLineAdjPWM:	.type	func
 	mov	d10,d6
 .L316:
 
-; ..\CODE\Src\User_FSM.c	   518  {
-; ..\CODE\Src\User_FSM.c	   519      PIDValue =  GetPIDValue(PIDMidLineFuseNum, 1000 * MidLineFuseNum, 30, 0, 4500);
+; ..\CODE\Src\User_FSM.c	   523  {
+; ..\CODE\Src\User_FSM.c	   524      PIDValue =  GetPIDValue(PIDMidLineFuseNum, 1000 * MidLineFuseNum, 30, 0, 4500);
 	movh.a	a15,#@his(PIDValue)
 .L637:
 	mov.u	d15,#40960
@@ -1625,8 +1630,8 @@ FindLineAdjPWM:	.type	func
 	st.w	[a15]@los(PIDValue),d2
 .L643:
 
-; ..\CODE\Src\User_FSM.c	   520      //PIDValue =  GetPIDValue(-0.002763617550954, 1000 * MidLineFuseNum, 41, 0, 3300); //54 0 35000  56.8 0 10500
-; ..\CODE\Src\User_FSM.c	   521      if(PWM >= 0)
+; ..\CODE\Src\User_FSM.c	   525      //PIDValue =  GetPIDValue(-0.002763617550954, 1000 * MidLineFuseNum, 41, 0, 3300); //54 0 35000  56.8 0 10500
+; ..\CODE\Src\User_FSM.c	   526      if(PWM >= 0)
 	mov	d15,#0
 .L317:
 	cmp.f	d15,d8,d15
@@ -1636,8 +1641,8 @@ FindLineAdjPWM:	.type	func
 	jeq	d15,#0,.L73
 .L645:
 
-; ..\CODE\Src\User_FSM.c	   522      {
-; ..\CODE\Src\User_FSM.c	   523          LPWM = PWM + LeftWheelDeadZone - PIDValue + LCut;
+; ..\CODE\Src\User_FSM.c	   527      {
+; ..\CODE\Src\User_FSM.c	   528          LPWM = PWM + LeftWheelDeadZone - PIDValue + LCut;
 	movh.a	a15,#@his(LPWM)
 .L646:
 	movh.a	a2,#@his(PIDValue)
@@ -1655,7 +1660,7 @@ FindLineAdjPWM:	.type	func
 	st.w	[a15]@los(LPWM),d0
 .L648:
 
-; ..\CODE\Src\User_FSM.c	   524          RPWM = PWM + RightWheelDeadZone +PIDValue + RCut;
+; ..\CODE\Src\User_FSM.c	   529          RPWM = PWM + RightWheelDeadZone +PIDValue + RCut;
 	movh	d0,#16528
 .L323:
 	add.f	d0,d8,d0
@@ -1667,15 +1672,15 @@ FindLineAdjPWM:	.type	func
 	j	.L74
 .L73:
 
-; ..\CODE\Src\User_FSM.c	   525      }
-; ..\CODE\Src\User_FSM.c	   526      else if(PWM < 0)
+; ..\CODE\Src\User_FSM.c	   530      }
+; ..\CODE\Src\User_FSM.c	   531      else if(PWM < 0)
 	cmp.f	d15,d8,d15
 .L325:
 	jz.t	d15:0,.L75
 .L651:
 
-; ..\CODE\Src\User_FSM.c	   527      {
-; ..\CODE\Src\User_FSM.c	   528          LPWM = PWM + PIDValue;
+; ..\CODE\Src\User_FSM.c	   532      {
+; ..\CODE\Src\User_FSM.c	   533          LPWM = PWM + PIDValue;
 	movh.a	a15,#@his(LPWM)
 .L652:
 	movh.a	a2,#@his(PIDValue)
@@ -1686,7 +1691,7 @@ FindLineAdjPWM:	.type	func
 	st.w	[a15]@los(LPWM),d0
 .L328:
 
-; ..\CODE\Src\User_FSM.c	   529          RPWM = PWM - PIDValue;
+; ..\CODE\Src\User_FSM.c	   534          RPWM = PWM - PIDValue;
 	sub.f	d15,d8,d15
 .L74:
 	movh.a	a15,#@his(RPWM)
@@ -1694,8 +1699,8 @@ FindLineAdjPWM:	.type	func
 	st.w	[a15]@los(RPWM),d15
 .L75:
 
-; ..\CODE\Src\User_FSM.c	   530      }
-; ..\CODE\Src\User_FSM.c	   531      if(LPWM >= 20)
+; ..\CODE\Src\User_FSM.c	   535      }
+; ..\CODE\Src\User_FSM.c	   536      if(LPWM >= 20)
 	movh.a	a15,#@his(LPWM)
 	ld.w	d15,[a15]@los(LPWM)
 .L654:
@@ -1707,8 +1712,8 @@ FindLineAdjPWM:	.type	func
 	jne	d15,#0,.L77
 .L657:
 
-; ..\CODE\Src\User_FSM.c	   532          LPWM = 20;
-; ..\CODE\Src\User_FSM.c	   533      else if(LPWM <= -20)
+; ..\CODE\Src\User_FSM.c	   537          LPWM = 20;
+; ..\CODE\Src\User_FSM.c	   538      else if(LPWM <= -20)
 	ld.w	d15,[a15]@los(LPWM)
 .L658:
 	movh	d0,#49568
@@ -1719,11 +1724,11 @@ FindLineAdjPWM:	.type	func
 	jeq	d15,#0,.L78
 .L77:
 
-; ..\CODE\Src\User_FSM.c	   534          LPWM = -20;
+; ..\CODE\Src\User_FSM.c	   539          LPWM = -20;
 	st.w	[a15]@los(LPWM),d0
 .L78:
 
-; ..\CODE\Src\User_FSM.c	   535      if(RPWM >= 20)
+; ..\CODE\Src\User_FSM.c	   540      if(RPWM >= 20)
 	movh.a	a15,#@his(RPWM)
 	ld.w	d15,[a15]@los(RPWM)
 .L661:
@@ -1735,8 +1740,8 @@ FindLineAdjPWM:	.type	func
 	jne	d15,#0,.L80
 .L664:
 
-; ..\CODE\Src\User_FSM.c	   536          RPWM = 20;
-; ..\CODE\Src\User_FSM.c	   537      else if(RPWM <= -20)
+; ..\CODE\Src\User_FSM.c	   541          RPWM = 20;
+; ..\CODE\Src\User_FSM.c	   542      else if(RPWM <= -20)
 	ld.w	d15,[a15]@los(RPWM)
 .L665:
 	movh	d0,#49568
@@ -1747,11 +1752,11 @@ FindLineAdjPWM:	.type	func
 	jeq	d15,#0,.L81
 .L80:
 
-; ..\CODE\Src\User_FSM.c	   538          RPWM = -20;
+; ..\CODE\Src\User_FSM.c	   543          RPWM = -20;
 	st.w	[a15]@los(RPWM),d0
 .L81:
 
-; ..\CODE\Src\User_FSM.c	   539      MotorUserHandle(LMotor_F, LPWM);
+; ..\CODE\Src\User_FSM.c	   544      MotorUserHandle(LMotor_F, LPWM);
 	movh.a	a15,#@his(LPWM)
 	ld.w	d5,[a15]@los(LPWM)
 .L668:
@@ -1760,7 +1765,7 @@ FindLineAdjPWM:	.type	func
 	call	MotorUserHandle
 .L670:
 
-; ..\CODE\Src\User_FSM.c	   540      MotorUserHandle(RMotor_F, RPWM);
+; ..\CODE\Src\User_FSM.c	   545      MotorUserHandle(RMotor_F, RPWM);
 	movh.a	a15,#@his(RPWM)
 	ld.w	d5,[a15]@los(RPWM)
 .L671:
@@ -1780,9 +1785,9 @@ __FindLineAdjPWM_function_end:
 	
 	.global	FindLineRatioAdjPWM
 
-; ..\CODE\Src\User_FSM.c	   541  }
-; ..\CODE\Src\User_FSM.c	   542  
-; ..\CODE\Src\User_FSM.c	   543  void FindLineRatioAdjPWM(double PWM, double LCut, double RCut)
+; ..\CODE\Src\User_FSM.c	   546  }
+; ..\CODE\Src\User_FSM.c	   547  
+; ..\CODE\Src\User_FSM.c	   548  void FindLineRatioAdjPWM(double PWM, double LCut, double RCut)
 ; Function FindLineRatioAdjPWM
 .L128:
 FindLineRatioAdjPWM:	.type	func
@@ -1792,8 +1797,8 @@ FindLineRatioAdjPWM:	.type	func
 	mov	d10,d6
 .L333:
 
-; ..\CODE\Src\User_FSM.c	   544  {
-; ..\CODE\Src\User_FSM.c	   545      PIDValue =  GetPIDValue(PIDMidLineFuseNum, 1000 * MidLineFuseRatioNum, 6, 0.1, 2000);
+; ..\CODE\Src\User_FSM.c	   549  {
+; ..\CODE\Src\User_FSM.c	   550      PIDValue =  GetPIDValue(PIDMidLineFuseNum, 1000 * MidLineFuseRatioNum, 6, 0.1, 2000);
 	movh.a	a15,#@his(PIDValue)
 .L677:
 	movh	d15,#17658
@@ -1819,8 +1824,8 @@ FindLineRatioAdjPWM:	.type	func
 	st.w	[a15]@los(PIDValue),d2
 .L683:
 
-; ..\CODE\Src\User_FSM.c	   546      //PIDValue =  GetPIDValue(-0.002763617550954, 1000 * MidLineFuseNum, 41, 0, 3300); //54 0 35000  56.8 0 10500
-; ..\CODE\Src\User_FSM.c	   547      if(PWM >= 0)
+; ..\CODE\Src\User_FSM.c	   551      //PIDValue =  GetPIDValue(-0.002763617550954, 1000 * MidLineFuseNum, 41, 0, 3300); //54 0 35000  56.8 0 10500
+; ..\CODE\Src\User_FSM.c	   552      if(PWM >= 0)
 	mov	d15,#0
 .L334:
 	cmp.f	d15,d8,d15
@@ -1830,8 +1835,8 @@ FindLineRatioAdjPWM:	.type	func
 	jeq	d15,#0,.L82
 .L685:
 
-; ..\CODE\Src\User_FSM.c	   548      {
-; ..\CODE\Src\User_FSM.c	   549          LPWM = PWM + LeftWheelDeadZone - PIDValue + LCut;
+; ..\CODE\Src\User_FSM.c	   553      {
+; ..\CODE\Src\User_FSM.c	   554          LPWM = PWM + LeftWheelDeadZone - PIDValue + LCut;
 	movh.a	a15,#@his(LPWM)
 .L686:
 	movh.a	a2,#@his(PIDValue)
@@ -1849,7 +1854,7 @@ FindLineRatioAdjPWM:	.type	func
 	st.w	[a15]@los(LPWM),d0
 .L688:
 
-; ..\CODE\Src\User_FSM.c	   550          RPWM = PWM + RightWheelDeadZone +PIDValue + RCut;
+; ..\CODE\Src\User_FSM.c	   555          RPWM = PWM + RightWheelDeadZone +PIDValue + RCut;
 	movh	d0,#16528
 .L340:
 	add.f	d0,d8,d0
@@ -1861,15 +1866,15 @@ FindLineRatioAdjPWM:	.type	func
 	j	.L83
 .L82:
 
-; ..\CODE\Src\User_FSM.c	   551      }
-; ..\CODE\Src\User_FSM.c	   552      else if(PWM < 0)
+; ..\CODE\Src\User_FSM.c	   556      }
+; ..\CODE\Src\User_FSM.c	   557      else if(PWM < 0)
 	cmp.f	d15,d8,d15
 .L342:
 	jz.t	d15:0,.L84
 .L691:
 
-; ..\CODE\Src\User_FSM.c	   553      {
-; ..\CODE\Src\User_FSM.c	   554          LPWM = PWM + PIDValue;
+; ..\CODE\Src\User_FSM.c	   558      {
+; ..\CODE\Src\User_FSM.c	   559          LPWM = PWM + PIDValue;
 	movh.a	a15,#@his(LPWM)
 .L692:
 	movh.a	a2,#@his(PIDValue)
@@ -1880,7 +1885,7 @@ FindLineRatioAdjPWM:	.type	func
 	st.w	[a15]@los(LPWM),d0
 .L345:
 
-; ..\CODE\Src\User_FSM.c	   555          RPWM = PWM - PIDValue;
+; ..\CODE\Src\User_FSM.c	   560          RPWM = PWM - PIDValue;
 	sub.f	d15,d8,d15
 .L83:
 	movh.a	a15,#@his(RPWM)
@@ -1888,8 +1893,8 @@ FindLineRatioAdjPWM:	.type	func
 	st.w	[a15]@los(RPWM),d15
 .L84:
 
-; ..\CODE\Src\User_FSM.c	   556      }
-; ..\CODE\Src\User_FSM.c	   557      if(LPWM >= 50)
+; ..\CODE\Src\User_FSM.c	   561      }
+; ..\CODE\Src\User_FSM.c	   562      if(LPWM >= 50)
 	movh.a	a15,#@his(LPWM)
 	ld.w	d15,[a15]@los(LPWM)
 .L694:
@@ -1901,8 +1906,8 @@ FindLineRatioAdjPWM:	.type	func
 	jne	d15,#0,.L86
 .L697:
 
-; ..\CODE\Src\User_FSM.c	   558          LPWM = 50;
-; ..\CODE\Src\User_FSM.c	   559      else if(LPWM <= -50)
+; ..\CODE\Src\User_FSM.c	   563          LPWM = 50;
+; ..\CODE\Src\User_FSM.c	   564      else if(LPWM <= -50)
 	ld.w	d15,[a15]@los(LPWM)
 .L698:
 	movh	d0,#49736
@@ -1913,11 +1918,11 @@ FindLineRatioAdjPWM:	.type	func
 	jeq	d15,#0,.L87
 .L86:
 
-; ..\CODE\Src\User_FSM.c	   560          LPWM = -50;
+; ..\CODE\Src\User_FSM.c	   565          LPWM = -50;
 	st.w	[a15]@los(LPWM),d0
 .L87:
 
-; ..\CODE\Src\User_FSM.c	   561      if(RPWM >= 50)
+; ..\CODE\Src\User_FSM.c	   566      if(RPWM >= 50)
 	movh.a	a15,#@his(RPWM)
 	ld.w	d15,[a15]@los(RPWM)
 .L701:
@@ -1929,8 +1934,8 @@ FindLineRatioAdjPWM:	.type	func
 	jne	d15,#0,.L89
 .L704:
 
-; ..\CODE\Src\User_FSM.c	   562          RPWM = 50;
-; ..\CODE\Src\User_FSM.c	   563      else if(RPWM <= -50)
+; ..\CODE\Src\User_FSM.c	   567          RPWM = 50;
+; ..\CODE\Src\User_FSM.c	   568      else if(RPWM <= -50)
 	ld.w	d15,[a15]@los(RPWM)
 .L705:
 	movh	d0,#49736
@@ -1941,11 +1946,11 @@ FindLineRatioAdjPWM:	.type	func
 	jeq	d15,#0,.L90
 .L89:
 
-; ..\CODE\Src\User_FSM.c	   564          RPWM = -50;
+; ..\CODE\Src\User_FSM.c	   569          RPWM = -50;
 	st.w	[a15]@los(RPWM),d0
 .L90:
 
-; ..\CODE\Src\User_FSM.c	   565      MotorUserHandle(LMotor_F, LPWM);
+; ..\CODE\Src\User_FSM.c	   570      MotorUserHandle(LMotor_F, LPWM);
 	movh.a	a15,#@his(LPWM)
 	ld.w	d5,[a15]@los(LPWM)
 .L708:
@@ -1954,7 +1959,7 @@ FindLineRatioAdjPWM:	.type	func
 	call	MotorUserHandle
 .L710:
 
-; ..\CODE\Src\User_FSM.c	   566      MotorUserHandle(RMotor_F, RPWM);
+; ..\CODE\Src\User_FSM.c	   571      MotorUserHandle(RMotor_F, RPWM);
 	movh.a	a15,#@his(RPWM)
 	ld.w	d5,[a15]@los(RPWM)
 .L711:
@@ -1974,18 +1979,19 @@ __FindLineRatioAdjPWM_function_end:
 	
 	.global	xxxFindLineAdjPWM
 
-; ..\CODE\Src\User_FSM.c	   567  }
-; ..\CODE\Src\User_FSM.c	   568  
-; ..\CODE\Src\User_FSM.c	   569  void xxxFindLineAdjPWM()
+; ..\CODE\Src\User_FSM.c	   572  }
+; ..\CODE\Src\User_FSM.c	   573  
+; ..\CODE\Src\User_FSM.c	   574  void xxxFindLineAdjPWM()   //可修改方案aaaaaaaaaaaaaa
 ; Function xxxFindLineAdjPWM
 .L130:
 xxxFindLineAdjPWM:	.type	func
 	sub.a	a10,#8
 .L346:
 
-; ..\CODE\Src\User_FSM.c	   570  {
-; ..\CODE\Src\User_FSM.c	   571  	static int fff;
-; ..\CODE\Src\User_FSM.c	   572  	if(GetDistance() > 0.3 && !fff)
+; ..\CODE\Src\User_FSM.c	   575  {
+; ..\CODE\Src\User_FSM.c	   576  	static int fff;
+; ..\CODE\Src\User_FSM.c	   577  //	static int fff = 0;  bug修复aaaaaaaaaaaa
+; ..\CODE\Src\User_FSM.c	   578  	if(GetDistance() > 0.3 && !fff)
 	call	GetDistance
 .L732:
 	mov.u	d15,#39322
@@ -2000,8 +2006,8 @@ xxxFindLineAdjPWM:	.type	func
 	jne	d15,#0,.L92
 .L736:
 
-; ..\CODE\Src\User_FSM.c	   573  	{
-; ..\CODE\Src\User_FSM.c	   574  		FindLineAdjPWM(-1, 0, 0);
+; ..\CODE\Src\User_FSM.c	   579  	{
+; ..\CODE\Src\User_FSM.c	   580  		FindLineAdjPWM(-1, 0, 0);  //第一个值可修改aaaaaaaaaaaaaa
 	movh	d4,#49024
 .L737:
 	mov	d5,#0
@@ -2010,7 +2016,7 @@ xxxFindLineAdjPWM:	.type	func
 	call	FindLineAdjPWM
 .L739:
 
-; ..\CODE\Src\User_FSM.c	   575  		fff = 1;
+; ..\CODE\Src\User_FSM.c	   581  		fff = 1;
 	movh.a	a15,#@his(_999005_fff)
 .L740:
 	mov	d15,#1
@@ -2019,8 +2025,8 @@ xxxFindLineAdjPWM:	.type	func
 .L92:
 .L91:
 
-; ..\CODE\Src\User_FSM.c	   576  	}
-; ..\CODE\Src\User_FSM.c	   577      PIDValue =  GetPIDValue(PIDMidLineFuseNum, 1000 * MidLineFuseNum, 30, 0, 4500);
+; ..\CODE\Src\User_FSM.c	   582  	}
+; ..\CODE\Src\User_FSM.c	   583      PIDValue =  GetPIDValue(PIDMidLineFuseNum, 1000 * MidLineFuseNum, 30, 0, 4500);
 	movh.a	a15,#@his(PIDValue)
 .L742:
 	mov.u	d15,#40960
@@ -2045,8 +2051,8 @@ xxxFindLineAdjPWM:	.type	func
 	st.w	[a15]@los(PIDValue),d2
 .L750:
 
-; ..\CODE\Src\User_FSM.c	   578      //PIDValue =  GetPIDValue(-0.002763617550954, 1000 * MidLineFuseNum, 41, 0, 3300); //54 0 35000  56.8 0 10500
-; ..\CODE\Src\User_FSM.c	   579          LPWM = 7 + LeftWheelDeadZone - PIDValue + 1.2;
+; ..\CODE\Src\User_FSM.c	   584      //PIDValue =  GetPIDValue(-0.002763617550954, 1000 * MidLineFuseNum, 41, 0, 3300); //54 0 35000  56.8 0 10500
+; ..\CODE\Src\User_FSM.c	   585          LPWM = 7 + LeftWheelDeadZone - PIDValue + 1.2;
 	movh.a	a15,#@his(LPWM)
 .L751:
 	mov	d15,#13107
@@ -2065,7 +2071,7 @@ xxxFindLineAdjPWM:	.type	func
 	st.w	[a15]@los(LPWM),d15
 .L757:
 
-; ..\CODE\Src\User_FSM.c	   580          RPWM = 7 + RightWheelDeadZone +PIDValue ;
+; ..\CODE\Src\User_FSM.c	   586          RPWM = 7 + RightWheelDeadZone +PIDValue ;
 	movh.a	a2,#@his(RPWM)
 .L758:
 	movh	d15,#16696
@@ -2075,7 +2081,7 @@ xxxFindLineAdjPWM:	.type	func
 	st.w	[a2]@los(RPWM),d15
 .L761:
 
-; ..\CODE\Src\User_FSM.c	   581      if(LPWM >= 20)
+; ..\CODE\Src\User_FSM.c	   587      if(LPWM >= 20)
 	ld.w	d15,[a15]@los(LPWM)
 .L762:
 	movh	d0,#16800
@@ -2086,8 +2092,8 @@ xxxFindLineAdjPWM:	.type	func
 	jne	d15,#0,.L94
 .L765:
 
-; ..\CODE\Src\User_FSM.c	   582          LPWM = 20;
-; ..\CODE\Src\User_FSM.c	   583      else if(LPWM <= -20)
+; ..\CODE\Src\User_FSM.c	   588          LPWM = 20;
+; ..\CODE\Src\User_FSM.c	   589      else if(LPWM <= -20)
 	ld.w	d15,[a15]@los(LPWM)
 .L766:
 	movh	d0,#49568
@@ -2098,11 +2104,11 @@ xxxFindLineAdjPWM:	.type	func
 	jeq	d15,#0,.L95
 .L94:
 
-; ..\CODE\Src\User_FSM.c	   584          LPWM = -20;
+; ..\CODE\Src\User_FSM.c	   590          LPWM = -20;
 	st.w	[a15]@los(LPWM),d0
 .L95:
 
-; ..\CODE\Src\User_FSM.c	   585      if(RPWM >= 20)
+; ..\CODE\Src\User_FSM.c	   591      if(RPWM >= 20)
 	mov.aa	a15,a2
 	ld.w	d15,[a15]@los(RPWM)
 .L769:
@@ -2114,8 +2120,8 @@ xxxFindLineAdjPWM:	.type	func
 	jne	d15,#0,.L97
 .L772:
 
-; ..\CODE\Src\User_FSM.c	   586          RPWM = 20;
-; ..\CODE\Src\User_FSM.c	   587      else if(RPWM <= -20)
+; ..\CODE\Src\User_FSM.c	   592          RPWM = 20;
+; ..\CODE\Src\User_FSM.c	   593      else if(RPWM <= -20)
 	ld.w	d15,[a15]@los(RPWM)
 .L773:
 	movh	d0,#49568
@@ -2126,11 +2132,11 @@ xxxFindLineAdjPWM:	.type	func
 	jeq	d15,#0,.L98
 .L97:
 
-; ..\CODE\Src\User_FSM.c	   588          RPWM = -20;
+; ..\CODE\Src\User_FSM.c	   594          RPWM = -20;
 	st.w	[a15]@los(RPWM),d0
 .L98:
 
-; ..\CODE\Src\User_FSM.c	   589      MotorUserHandle(LMotor_F, LPWM);
+; ..\CODE\Src\User_FSM.c	   595      MotorUserHandle(LMotor_F, LPWM);
 	movh.a	a15,#@his(LPWM)
 	ld.w	d5,[a15]@los(LPWM)
 .L776:
@@ -2139,7 +2145,7 @@ xxxFindLineAdjPWM:	.type	func
 	call	MotorUserHandle
 .L778:
 
-; ..\CODE\Src\User_FSM.c	   590      MotorUserHandle(RMotor_F, RPWM);
+; ..\CODE\Src\User_FSM.c	   596      MotorUserHandle(RMotor_F, RPWM);
 	movh.a	a15,#@his(RPWM)
 	ld.w	d5,[a15]@los(RPWM)
 .L779:
@@ -37073,7 +37079,7 @@ _999005_fff:	.type	object
 	.half	.L370-.L369
 	.byte	3,127,1,5,19,9
 	.half	.L2-.L370
-	.byte	3,5,1,5,29,9
+	.byte	3,10,1,5,29,9
 	.half	.L371-.L2
 	.byte	1,9
 	.half	.L372-.L371
@@ -37103,7 +37109,7 @@ _999005_fff:	.type	object
 	.byte	2
 	.word	.L131
 	.byte	3
-	.byte	'RunStop',0,1,92,6,1,1,1
+	.byte	'RunStop',0,1,97,6,1,1,1
 	.word	.L102,.L249,.L101
 	.byte	4
 	.word	.L102,.L249
@@ -37126,7 +37132,7 @@ _999005_fff:	.type	object
 .L377:
 	.byte	5,18,7,0,5,2
 	.word	.L102
-	.byte	3,221,0,1,5,28,9
+	.byte	3,226,0,1,5,28,9
 	.half	.L378-.L102
 	.byte	1,5,18,9
 	.half	.L379-.L378
@@ -37154,7 +37160,7 @@ _999005_fff:	.type	object
 	.byte	2
 	.word	.L131
 	.byte	3
-	.byte	'FindLine',0,1,98,6,1,1,1
+	.byte	'FindLine',0,1,103,6,1,1,1
 	.word	.L104,.L250,.L103
 	.byte	4
 	.word	.L104,.L250
@@ -37177,7 +37183,7 @@ _999005_fff:	.type	object
 .L384:
 	.byte	5,6,7,0,5,2
 	.word	.L104
-	.byte	3,225,0,1,5,2,9
+	.byte	3,230,0,1,5,2,9
 	.half	.L301-.L104
 	.byte	3,27,1,5,89,9
 	.half	.L385-.L301
@@ -37289,12 +37295,12 @@ _999005_fff:	.type	object
 	.byte	2
 	.word	.L131
 	.byte	3
-	.byte	'InRoundaboutProcess',0,1,168,1,6,1,1,1
+	.byte	'InRoundaboutProcess',0,1,173,1,6,1,1,1
 	.word	.L108,.L251,.L107
 	.byte	4
 	.word	.L108,.L251
 	.byte	5
-	.byte	'DIS',0,1,170,1,8
+	.byte	'DIS',0,1,175,1,8
 	.word	.L252,.L253
 	.byte	0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('InRoundaboutProcess')
@@ -37315,7 +37321,7 @@ _999005_fff:	.type	object
 .L428:
 	.byte	5,8,7,0,5,2
 	.word	.L108
-	.byte	3,170,1,1,5,11,9
+	.byte	3,175,1,1,5,11,9
 	.half	.L302-.L108
 	.byte	3,1,1,5,9,9
 	.half	.L429-.L302
@@ -37379,7 +37385,7 @@ _999005_fff:	.type	object
 	.byte	2
 	.word	.L131
 	.byte	3
-	.byte	'OutRoundaboutProcess',0,1,233,1,6,1,1,1
+	.byte	'OutRoundaboutProcess',0,1,238,1,6,1,1,1
 	.word	.L110,.L254,.L109
 	.byte	4
 	.word	.L110,.L254
@@ -37402,7 +37408,7 @@ _999005_fff:	.type	object
 .L449:
 	.byte	5,17,7,0,5,2
 	.word	.L110
-	.byte	3,234,1,1,5,20,9
+	.byte	3,239,1,1,5,20,9
 	.half	.L450-.L110
 	.byte	1,5,23,9
 	.half	.L451-.L450
@@ -37428,12 +37434,12 @@ _999005_fff:	.type	object
 	.byte	2
 	.word	.L131
 	.byte	3
-	.byte	'TurnLeftGoGarage',0,1,183,2,6,1,1,1
+	.byte	'TurnLeftGoGarage',0,1,188,2,6,1,1,1
 	.word	.L112,.L255,.L111
 	.byte	4
 	.word	.L112,.L255
 	.byte	5
-	.byte	'CleanDistanceFlag',0,1,185,2,15
+	.byte	'CleanDistanceFlag',0,1,190,2,15
 	.word	.L256
 	.byte	5,3
 	.word	_999003_CleanDistanceFlag
@@ -37456,7 +37462,7 @@ _999005_fff:	.type	object
 .L455:
 	.byte	5,6,7,0,5,2
 	.word	.L112
-	.byte	3,186,2,1,5,16,9
+	.byte	3,191,2,1,5,16,9
 	.half	.L456-.L112
 	.byte	3,2,1,5,3,9
 	.half	.L457-.L456
@@ -37528,12 +37534,12 @@ _999005_fff:	.type	object
 	.byte	2
 	.word	.L131
 	.byte	3
-	.byte	'TurnRightGoGarage',0,1,206,2,6,1,1,1
+	.byte	'TurnRightGoGarage',0,1,211,2,6,1,1,1
 	.word	.L114,.L257,.L113
 	.byte	4
 	.word	.L114,.L257
 	.byte	5
-	.byte	'CleanDistanceFlag',0,1,208,2,15
+	.byte	'CleanDistanceFlag',0,1,213,2,15
 	.word	.L256
 	.byte	5,3
 	.word	_999004_CleanDistanceFlag
@@ -37556,7 +37562,7 @@ _999005_fff:	.type	object
 .L481:
 	.byte	5,6,7,0,5,2
 	.word	.L114
-	.byte	3,209,2,1,5,16,9
+	.byte	3,214,2,1,5,16,9
 	.half	.L482-.L114
 	.byte	3,2,1,5,3,9
 	.half	.L483-.L482
@@ -37632,13 +37638,13 @@ _999005_fff:	.type	object
 	.byte	2
 	.word	.L131
 	.byte	3
-	.byte	'FSMRegist',0,1,239,2,6,1,1,1
+	.byte	'FSMRegist',0,1,244,2,6,1,1,1
 	.word	.L116,.L258,.L115
 	.byte	4
-	.byte	'fsm',0,1,239,2,23
+	.byte	'fsm',0,1,244,2,23
 	.word	.L259,.L260
 	.byte	4
-	.byte	'fsmtable',0,1,239,2,40
+	.byte	'fsmtable',0,1,244,2,40
 	.word	.L261,.L262
 	.byte	5
 	.word	.L116,.L258
@@ -37661,7 +37667,7 @@ _999005_fff:	.type	object
 .L509:
 	.byte	5,19,7,0,5,2
 	.word	.L116
-	.byte	3,240,2,1,5,1,9
+	.byte	3,245,2,1,5,1,9
 	.half	.L510-.L116
 	.byte	3,1,1,7,9
 	.half	.L174-.L510
@@ -37685,13 +37691,13 @@ _999005_fff:	.type	object
 	.byte	2
 	.word	.L131
 	.byte	3
-	.byte	'FSMStateTransfer',0,1,245,2,6,1,1,1
+	.byte	'FSMStateTransfer',0,1,250,2,6,1,1,1
 	.word	.L118,.L263,.L117
 	.byte	4
-	.byte	'fsm',0,1,245,2,30
+	.byte	'fsm',0,1,250,2,30
 	.word	.L259,.L264
 	.byte	4
-	.byte	'state',0,1,245,2,39
+	.byte	'state',0,1,250,2,39
 	.word	.L248,.L265
 	.byte	5
 	.word	.L118,.L263
@@ -37714,7 +37720,7 @@ _999005_fff:	.type	object
 .L514:
 	.byte	5,19,7,0,5,2
 	.word	.L118
-	.byte	3,246,2,1,5,1,9
+	.byte	3,251,2,1,5,1,9
 	.half	.L515-.L118
 	.byte	3,1,1,7,9
 	.half	.L179-.L515
@@ -37738,33 +37744,33 @@ _999005_fff:	.type	object
 	.byte	2
 	.word	.L131
 	.byte	3
-	.byte	'FSMEventHandle',0,1,251,2,6,1,1,1
+	.byte	'FSMEventHandle',0,1,128,3,6,1,1,1
 	.word	.L120,.L266,.L119
 	.byte	4
-	.byte	'fsm',0,1,251,2,28
+	.byte	'fsm',0,1,128,3,28
 	.word	.L259,.L267
 	.byte	4
-	.byte	'event',0,1,251,2,37
+	.byte	'event',0,1,128,3,37
 	.word	.L248,.L268
 	.byte	5
 	.word	.L120,.L266
 	.byte	6
-	.byte	'fsmTable',0,1,253,2,14
+	.byte	'fsmTable',0,1,130,3,14
 	.word	.L261,.L269
 	.byte	6
-	.byte	'curState',0,1,254,2,9
+	.byte	'curState',0,1,131,3,9
 	.word	.L248,.L270
 	.byte	6
-	.byte	'eventAction',0,1,255,2,12
+	.byte	'eventAction',0,1,132,3,12
 	.word	.L271,.L272
 	.byte	6
-	.byte	'nextState',0,1,128,3,9
+	.byte	'nextState',0,1,133,3,9
 	.word	.L248,.L273
 	.byte	6
-	.byte	'size',0,1,129,3,9
+	.byte	'size',0,1,134,3,9
 	.word	.L248,.L274
 	.byte	6
-	.byte	'i',0,1,131,3,9
+	.byte	'i',0,1,136,3,9
 	.word	.L248,.L275
 	.byte	0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('FSMEventHandle')
@@ -37786,7 +37792,7 @@ _999005_fff:	.type	object
 .L519:
 	.byte	5,6,7,0,5,2
 	.word	.L120
-	.byte	3,250,2,1,5,28,9
+	.byte	3,255,2,1,5,28,9
 	.half	.L303-.L120
 	.byte	3,2,1,5,23,9
 	.half	.L304-.L303
@@ -37846,12 +37852,12 @@ _999005_fff:	.type	object
 	.byte	2
 	.word	.L131
 	.byte	3
-	.byte	'ReturnFSMState',0,1,154,3,5
+	.byte	'ReturnFSMState',0,1,159,3,5
 	.word	.L248
 	.byte	1,1,1
 	.word	.L122,.L276,.L121
 	.byte	4
-	.byte	'fsm',0,1,154,3,27
+	.byte	'fsm',0,1,159,3,27
 	.word	.L259,.L277
 	.byte	5
 	.word	.L122,.L276
@@ -37874,7 +37880,7 @@ _999005_fff:	.type	object
 .L531:
 	.byte	5,12,7,0,5,2
 	.word	.L122
-	.byte	3,155,3,1,5,1,9
+	.byte	3,160,3,1,5,1,9
 	.half	.L532-.L122
 	.byte	3,1,1,7,9
 	.half	.L189-.L532
@@ -37898,7 +37904,7 @@ _999005_fff:	.type	object
 	.byte	2
 	.word	.L131
 	.byte	3
-	.byte	'FSMRun',0,1,161,3,6,1,1,1
+	.byte	'FSMRun',0,1,166,3,6,1,1,1
 	.word	.L124,.L278,.L123
 	.byte	4
 	.word	.L124,.L278
@@ -37921,7 +37927,7 @@ _999005_fff:	.type	object
 .L536:
 	.byte	5,16,7,0,5,2
 	.word	.L124
-	.byte	3,162,3,1,5,24,9
+	.byte	3,167,3,1,5,24,9
 	.half	.L537-.L124
 	.byte	1,5,6,9
 	.half	.L538-.L537
@@ -38169,16 +38175,16 @@ _999005_fff:	.type	object
 	.byte	2
 	.word	.L131
 	.byte	3
-	.byte	'FindLineAdjPWM',0,1,133,4,6,1,1,1
+	.byte	'FindLineAdjPWM',0,1,138,4,6,1,1,1
 	.word	.L126,.L279,.L125
 	.byte	4
-	.byte	'PWM',0,1,133,4,28
+	.byte	'PWM',0,1,138,4,28
 	.word	.L252,.L280
 	.byte	4
-	.byte	'LCut',0,1,133,4,40
+	.byte	'LCut',0,1,138,4,40
 	.word	.L252,.L281
 	.byte	4
-	.byte	'RCut',0,1,133,4,53
+	.byte	'RCut',0,1,138,4,53
 	.word	.L252,.L282
 	.byte	5
 	.word	.L126,.L279
@@ -38201,7 +38207,7 @@ _999005_fff:	.type	object
 .L636:
 	.byte	5,6,7,0,5,2
 	.word	.L126
-	.byte	3,132,4,1,5,5,9
+	.byte	3,137,4,1,5,5,9
 	.half	.L316-.L126
 	.byte	3,2,1,5,78,9
 	.half	.L637-.L316
@@ -38337,16 +38343,16 @@ _999005_fff:	.type	object
 	.byte	2
 	.word	.L131
 	.byte	3
-	.byte	'FindLineRatioAdjPWM',0,1,159,4,6,1,1,1
+	.byte	'FindLineRatioAdjPWM',0,1,164,4,6,1,1,1
 	.word	.L128,.L283,.L127
 	.byte	4
-	.byte	'PWM',0,1,159,4,33
+	.byte	'PWM',0,1,164,4,33
 	.word	.L252,.L284
 	.byte	4
-	.byte	'LCut',0,1,159,4,45
+	.byte	'LCut',0,1,164,4,45
 	.word	.L252,.L285
 	.byte	4
-	.byte	'RCut',0,1,159,4,58
+	.byte	'RCut',0,1,164,4,58
 	.word	.L252,.L286
 	.byte	5
 	.word	.L128,.L283
@@ -38369,7 +38375,7 @@ _999005_fff:	.type	object
 .L676:
 	.byte	5,6,7,0,5,2
 	.word	.L128
-	.byte	3,158,4,1,5,5,9
+	.byte	3,163,4,1,5,5,9
 	.half	.L333-.L128
 	.byte	3,2,1,5,84,9
 	.half	.L677-.L333
@@ -38505,12 +38511,12 @@ _999005_fff:	.type	object
 	.byte	2
 	.word	.L131
 	.byte	3
-	.byte	'GoStraight',0,1,143,1,6,1,1,1
+	.byte	'GoStraight',0,1,148,1,6,1,1,1
 	.word	.L106,.L287,.L105
 	.byte	4
 	.word	.L106,.L287
 	.byte	5
-	.byte	'InCleanDistanceGoFlag',0,1,145,1,15
+	.byte	'InCleanDistanceGoFlag',0,1,150,1,15
 	.word	.L256
 	.byte	5,3
 	.word	_999002_InCleanDistanceGoFlag
@@ -38533,7 +38539,7 @@ _999005_fff:	.type	object
 .L716:
 	.byte	5,6,7,0,5,2
 	.word	.L106
-	.byte	3,146,1,1,5,16,9
+	.byte	3,151,1,1,5,16,9
 	.half	.L717-.L106
 	.byte	3,2,1,5,3,9
 	.half	.L718-.L717
@@ -38581,12 +38587,12 @@ _999005_fff:	.type	object
 	.byte	2
 	.word	.L131
 	.byte	3
-	.byte	'xxxFindLineAdjPWM',0,1,185,4,6,1,1
+	.byte	'xxxFindLineAdjPWM',0,1,190,4,6,1,1
 	.word	.L130,.L288,.L129
 	.byte	4
 	.word	.L130,.L288
 	.byte	5
-	.byte	'fff',0,1,187,4,13
+	.byte	'fff',0,1,192,4,13
 	.word	.L248
 	.byte	5,3
 	.word	_999005_fff
@@ -38609,9 +38615,9 @@ _999005_fff:	.type	object
 .L731:
 	.byte	5,6,7,0,5,2
 	.word	.L130
-	.byte	3,184,4,1,5,16,9
+	.byte	3,189,4,1,5,16,9
 	.half	.L346-.L130
-	.byte	3,3,1,5,21,9
+	.byte	3,4,1,5,21,9
 	.half	.L732-.L346
 	.byte	1,5,19,9
 	.half	.L733-.L732
@@ -38721,7 +38727,7 @@ _999005_fff:	.type	object
 	.half	.L780-.L779
 	.byte	1,5,1,7,9
 	.half	.L214-.L780
-	.byte	3,1,0,1,1
+	.byte	3,28,0,1,1
 .L729:
 	.sdecl	'.debug_ranges',debug,cluster('xxxFindLineAdjPWM')
 	.sect	'.debug_ranges'
@@ -39482,6 +39488,33 @@ _999005_fff:	.type	object
 	.word	(.L288-.L346)/2
 	.byte	19,0,8,26,0,0
 
-; ..\CODE\Src\User_FSM.c	   591  }
+; ..\CODE\Src\User_FSM.c	   597  
+; ..\CODE\Src\User_FSM.c	   598  //场上可修改代码aaaaaaaaaaaaaaaa
+; ..\CODE\Src\User_FSM.c	   599  //	static int fff = 0;
+; ..\CODE\Src\User_FSM.c	   600  //	float DIS;
+; ..\CODE\Src\User_FSM.c	   601  //	DIS = fabs(GetDistance());
+; ..\CODE\Src\User_FSM.c	   602  //	if(DIS < 0.3 || DIS > 0.5)
+; ..\CODE\Src\User_FSM.c	   603  //	{
+; ..\CODE\Src\User_FSM.c	   604  //	    PIDValue =  GetPIDValue(PIDMidLineFuseNum, 1000 * MidLineFuseNum, 30, 0, 4500);
+; ..\CODE\Src\User_FSM.c	   605  //	    //PIDValue =  GetPIDValue(-0.002763617550954, 1000 * MidLineFuseNum, 41, 0, 3300); //54 0 35000  56.8 0 10500
+; ..\CODE\Src\User_FSM.c	   606  //	        LPWM = 7 + LeftWheelDeadZone - PIDValue + 1.2;
+; ..\CODE\Src\User_FSM.c	   607  //	        RPWM = 7 + RightWheelDeadZone +PIDValue ;
+; ..\CODE\Src\User_FSM.c	   608  //	    if(LPWM >= 20)
+; ..\CODE\Src\User_FSM.c	   609  //	        LPWM = 20;
+; ..\CODE\Src\User_FSM.c	   610  //	    else if(LPWM <= -20)
+; ..\CODE\Src\User_FSM.c	   611  //	        LPWM = -20;
+; ..\CODE\Src\User_FSM.c	   612  //	    if(RPWM >= 20)
+; ..\CODE\Src\User_FSM.c	   613  //	        RPWM = 20;
+; ..\CODE\Src\User_FSM.c	   614  //	    else if(RPWM <= -20)
+; ..\CODE\Src\User_FSM.c	   615  //	        RPWM = -20;
+; ..\CODE\Src\User_FSM.c	   616  //	    MotorUserHandle(LMotor_F, LPWM);
+; ..\CODE\Src\User_FSM.c	   617  //	    MotorUserHandle(RMotor_F, RPWM);
+; ..\CODE\Src\User_FSM.c	   618  //	}
+; ..\CODE\Src\User_FSM.c	   619  //	else
+; ..\CODE\Src\User_FSM.c	   620  //	{
+; ..\CODE\Src\User_FSM.c	   621  //		FindLineAdjPWM(-4, 0, 0);
+; ..\CODE\Src\User_FSM.c	   622  //		fff = 1;
+; ..\CODE\Src\User_FSM.c	   623  //	}
+; ..\CODE\Src\User_FSM.c	   624  }
 
 	; Module end

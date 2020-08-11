@@ -167,14 +167,14 @@
 //入圆相关参数
 #define InRAngle 16 //入左圆角度
 #define SpeedDownInAngle -13 //入圆减速pwm
-#define StraightLineInRA 0.42 //入圆时直行距离 这个值必须大于0.2且小于GYROLineInRA
-#define SpeedStraightInRA 7 //入圆时直行时的基础速度
+#define StraightLineInRA 0.42 //入圆时直行距离 这个值必须大于0.2且小于GYROLineInRA  //入圆直行距离可修改aaaaaaaaaaa
+#define SpeedStraightInRA 7 //入圆时直行时的基础速度  可以改慢aaaaaaaaaaaaaaaa
 #define LSpeedStraightInRA 0 //入左圆时差速
-#define RSpeedStraightInRA 0.5//2
-#define GYROLineInRA 0.7 //入圆时陀螺仪走的距离 这个值必须小于0.8
+#define RSpeedStraightInRA 0.5//2  //直行差速，入不了圆改大aaaaaaaaaaaaa
+#define GYROLineInRA 0.7 //入圆时陀螺仪走的距离 这个值必须小于0.8  可以修改aaaaaaaaaaa
 
 /*入圆时转向PID参数*/
-#define InRAGyroKp 120
+#define InRAGyroKp 140  //若入不了圆，可将此值改大aaaaaaaaaaaaa
 #define InRAGyroKi 0
 #define InRAGyroKd 400
 

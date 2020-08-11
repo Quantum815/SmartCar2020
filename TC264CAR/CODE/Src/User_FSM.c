@@ -76,13 +76,18 @@ void WaitRunStop(void)
 			KickCount = 0;
 			xxx = 1;
 		}
-		if(KickCount == 3)
+		if(KickCount == 3)  //函数位置修改aaaaaaaaaaa
 		{
 			KickFlag = 1;
 		}
 		MotorUserHandle(LMotor_B, LeftWheelBrakeZone+20);
 		MotorUserHandle(RMotor_B, RightWheelBrakeZone+20);
 	}
+//可修改方案aaaaaaaaaaaa
+//	if(KickCount == 4)
+//	{
+//		KickFlag = 1;
+//	}
 	else
 	{
 		MotorUserHandle(LMotor_B, LeftWheelBrakeZone);
@@ -232,7 +237,7 @@ void InRoundaboutProcess(void)
 
 void OutRoundaboutProcess(void)
 {
-	FindLineAdjPWM(6, 2, 0);
+	FindLineAdjPWM(6, 2, 0);  //第二个数字可修改aaaaaaaaaaaaa
 
 //	float DIS ;
 //		DIS = fabs(GetDistance());
@@ -341,7 +346,7 @@ void TurnRightGoGarage(void)
 		CleanDistanceFlag = 1;
 	}
 
-	if(TotalDistance >= 0.2 && TotalDistance <= 0.35)   //0.15
+	if(TotalDistance >= 0.2 && TotalDistance <= 0.35)   //0.15  距离可修改aaaaaaaaaaaaaa
 	{
 		GyroYawAngleInit(-SetRightRotationAngle);
 		GyroPID(GYRO_P, GYRO_I, GYRO_D);
@@ -566,12 +571,13 @@ void FindLineRatioAdjPWM(double PWM, double LCut, double RCut)
     MotorUserHandle(RMotor_F, RPWM);
 }
 
-void xxxFindLineAdjPWM()
+void xxxFindLineAdjPWM()   //可修改方案aaaaaaaaaaaaaa
 {
 	static int fff;
+//	static int fff = 0;  bug修复aaaaaaaaaaaa
 	if(GetDistance() > 0.3 && !fff)
 	{
-		FindLineAdjPWM(-1, 0, 0);
+		FindLineAdjPWM(-1, 0, 0);  //第一个值可修改aaaaaaaaaaaaaa
 		fff = 1;
 	}
     PIDValue =  GetPIDValue(PIDMidLineFuseNum, 1000 * MidLineFuseNum, 30, 0, 4500);
@@ -588,4 +594,31 @@ void xxxFindLineAdjPWM()
         RPWM = -20;
     MotorUserHandle(LMotor_F, LPWM);
     MotorUserHandle(RMotor_F, RPWM);
+
+//场上可修改代码aaaaaaaaaaaaaaaa
+//	static int fff = 0;
+//	float DIS;
+//	DIS = fabs(GetDistance());
+//	if(DIS < 0.3 || DIS > 0.5)
+//	{
+//	    PIDValue =  GetPIDValue(PIDMidLineFuseNum, 1000 * MidLineFuseNum, 30, 0, 4500);
+//	    //PIDValue =  GetPIDValue(-0.002763617550954, 1000 * MidLineFuseNum, 41, 0, 3300); //54 0 35000  56.8 0 10500
+//	        LPWM = 7 + LeftWheelDeadZone - PIDValue + 1.2;
+//	        RPWM = 7 + RightWheelDeadZone +PIDValue ;
+//	    if(LPWM >= 20)
+//	        LPWM = 20;
+//	    else if(LPWM <= -20)
+//	        LPWM = -20;
+//	    if(RPWM >= 20)
+//	        RPWM = 20;
+//	    else if(RPWM <= -20)
+//	        RPWM = -20;
+//	    MotorUserHandle(LMotor_F, LPWM);
+//	    MotorUserHandle(RMotor_F, RPWM);
+//	}
+//	else
+//	{
+//		FindLineAdjPWM(-4, 0, 0);
+//		fff = 1;
+//	}
 }
