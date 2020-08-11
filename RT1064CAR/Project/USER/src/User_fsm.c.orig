@@ -1,8 +1,14 @@
 #include "User_fsm.h"
-volatile float LPWM, RPWM, PIDValue, tt, LRAFlag, RRAFlag, OutRAroll, PassAR = 0, CntAR = 0, CarFlag = 0, ARFuseNum,CloseSingal=0;
+#if AntiWay ==0
+#define OutGarageAngle 90
+#else
+#define OutGarageAngle -90
+#endif
+volatile float LPWM, RPWM, PIDValue, tt, LRAFlag, RRAFlag, OutRAroll, PassAR = 0, CntAR = 0, CarFlag = 0, ARFuseNum, CloseSingal = 0;
+float LastLaserDistant;
 uint8 OneIN = 0;
-float LeftDeadZone = 16.5;
-float RightDeadZone = 16.5;
+float LeftDeadZone = 22.5;
+float RightDeadZone = 22.5;
 uint8 TenSingal, CarSingal, StartSingal, RoundaboutSingal;
 FSM_t Car_Fsm;
 FsmTable_t Car_Table[] =
@@ -14,13 +20,13 @@ FsmTable_t Car_Table[] =
     { NOTHING,  GoLine,    FindLine,  GoLine},
     { TENCROSS, GoLine, PassCross, GoLine},
     { FINDCAR,  GoLine, CleanDistant, SendBall},
-		{	NOTHING,SendBall,StopToSendBall,SendBall},
+    {	NOTHING, SendBall, StopToSendBall, SendBall},
     { FLASEFINDCAR, SendBall, BackLine, GoLine},
     { NOTHING, OutGarage, GoOutGarage, OutGarage},
     { GOOUT,   OutGarage, FindLine,   GoLine},
-		{GOBRIDGE,GoLine,FindLine,FindBridge},
-		{NOTHING,FindBridge,FindLine,FindBridge},
-		{CROSSBRIDGE,FindBridge,PassBridge,GoLine},
+    {GOBRIDGE, GoLine, CleanDistant, FindBridge},
+    {NOTHING, FindBridge, FindLine, FindBridge},
+    {CROSSBRIDGE, FindBridge, PassBridge, GoLine},
     {FindRoundabout, GoLine, InRoundaboutProcess, InRoundabout},
     {NOTHING, InRoundabout, InRoundaboutProcess, InRoundabout},
     {ENDINROUNDABOUT, InRoundabout, CleanDistant, PassRoundabout},
@@ -52,7 +58,7 @@ void FSM_StateTransfer(FSM_t* Pfsm, int State)
 
 void LogicThing(void)
 {
-//		//static uint8 TenSingal;
+    static uint8 LenthSingal;
     FSM_Regist(&Car_Fsm, Car_Table);
     if(StartSingal == 0)
     {
@@ -61,14 +67,14 @@ void LogicThing(void)
     }
     Car_Fsm.Size = sizeof(Car_Table) / sizeof(FsmTable_t);
     //&& (ADCvalue(1) >= 500 || ADCvalue(3) >= 500)
-    if((ADCvalue(2) >= 2500 && (ADCvalue(1) >= 2500 || ADCvalue(3) >= 2500)   && (ADCvalue(0) > 2400 || ADCvalue(4) > 2400)) && ReturnFSMState(&Car_Fsm) == GoLine)
+    if((ADCvalue(2) >= ADCvalueC && (ADCvalue(1) >= ADCvalueCL || ADCvalue(3) >= ADCvalueCR)   && (ADCvalue(0) > ADCvalueLL || ADCvalue(4) > ADCvalueRR)) && ReturnFSMState(&Car_Fsm) == GoLine)
         //	if(ADCvalue(2)>=3000)
     {
 
         RoundaboutSingal++;
         if(RoundaboutSingal >= 3)
         {
-            ips114_showfloat(100,4,233,4,4);
+            ips114_showfloat(100, 4, 233, 4, 4);
             //StopRunAndProgram();
             //PRINTF("%d\r\n",CntAR);
             //PRINTF("FIND AR\r\n");
@@ -104,12 +110,12 @@ void LogicThing(void)
     //else if(CulAngle() >= 420 && ReturnFSMState(&Car_Fsm) == PassRoundabout)
     else if(CulAngle() >= 360 && ReturnFSMState(&Car_Fsm) == PassRoundabout)
     {
-			 //StopRunAndProgram();
+        //StopRunAndProgram();
         //StopRunAndProgram();
         //PRINTF("Begin Out\r\n");
 //				if(PassAR==1)
         //_NowGyroYawAngle = OutRAroll + 20 ;
-			InitGYRORollAngle(OutRAroll - 30);
+        InitGYRORollAngle(OutRAroll - OutRALeftAngle);
         ClearValue();
         FSM_EventHandle(&Car_Fsm, OutRoundabout);
         PassAR = 1;
@@ -123,6 +129,7 @@ void LogicThing(void)
         FSM_EventHandle(&Car_Fsm, ENDOUTROUNDABOUT);
     }
     else
+        //else if(ReturnFSMState(&Car_Fsm) == OutingRoundabout || ReturnFSMState(&Car_Fsm) == PassRoundabout || ReturnFSMState(&Car_Fsm) == InRoundabout)
     {
 
         //PRINTF("NOTHING\r\n");
@@ -146,54 +153,68 @@ void LogicThing(void)
             //CleanDistant();
         }
     }
-    if(GetLaserDistant() <= 1 && ReturnFSMState(&Car_Fsm) == GoLine)
-		{
-			CarFlag++;
-			if(CarFlag >= 5){
-			if(CloseSingal==0)
+    if(GetLaserDistant() <= 1.2 && ReturnFSMState(&Car_Fsm) == GoLine )
+    {
+			if(CarFlag<3)
 			{
-				FSM_EventHandle(&Car_Fsm,GOBRIDGE);
-				CloseSingal++;
+        if(LastLaserDistant <= GetLaserDistant())
+        {
+            LenthSingal++;
+            if(LenthSingal >= 2)
+            {
+                LenthSingal = 0;
+                CarFlag++;
+            }
+        }
+        else
+        {
+            LenthSingal = 0;
+        }
 			}
-			else
-			{
-				FSM_EventHandle(&Car_Fsm, FINDCAR);
-			}
-			}
-			else
-			{
-				FSM_EventHandle(&Car_Fsm, NOTHING);
-			}
-		}
-		
-		else
-		{
-			FSM_EventHandle(&Car_Fsm, NOTHING);
-		}
-		if(ReturnFSMState(&Car_Fsm)==FindBridge&&GetDistant()<=2)
-		{
-			FSM_EventHandle(&Car_Fsm, NOTHING);
-		}
-		else if(ReturnFSMState(&Car_Fsm)==FindBridge&&GetDistant()>=2)
-		{
-			FSM_EventHandle(&Car_Fsm, CROSSBRIDGE);
-		}
-		if(ReturnFSMState(&Car_Fsm)==SendBall)
-		{
-			FSM_EventHandle(&Car_Fsm, NOTHING);
-		}
-//    {
-//        CarFlag++;
-//        if(CarFlag >= 5)
-//        {
-//            FSM_EventHandle(&Car_Fsm, FINDCAR);
-//        }
-//    }
-//    else
-//    {
-//        CarFlag = 0;
-//        FSM_EventHandle(&Car_Fsm, NOTHING);
-//    }
+        else if(CarFlag >= 3)
+        {
+            if(CloseSingal == 0)
+            {
+
+                //StopRunAndProgram();
+                FSM_EventHandle(&Car_Fsm, GOBRIDGE);
+                CloseSingal++;
+                CarFlag = 0;
+            }
+            else
+            {
+                //StopRunAndProgram();
+                FSM_EventHandle(&Car_Fsm, FINDCAR);
+            }
+
+        }
+        else
+        {   //CarFlag=0;
+            //FSM_EventHandle(&Car_Fsm, NOTHING);
+        }
+        LastLaserDistant = GetLaserDistant();
+    }
+    else
+    {
+        CarFlag = 0;
+    }
+
+
+    if(ReturnFSMState(&Car_Fsm) == FindBridge && GetDistant() <= 3.2)
+    {
+        //FSM_EventHandle(&Car_Fsm, NOTHING);
+    }
+    else if(ReturnFSMState(&Car_Fsm) == FindBridge && GetDistant() > 3.2)
+    {
+        //StopRunAndProgram();
+        FSM_EventHandle(&Car_Fsm, CROSSBRIDGE);
+
+    }
+    if(ReturnFSMState(&Car_Fsm) == SendBall)
+    {
+        //FSM_EventHandle(&Car_Fsm, NOTHING);
+    }
+
     //FSM_EventHandle(&Car_Fsm, NOTHING);
 }
 
@@ -262,21 +283,21 @@ void FindLine(void)
 {
     static float LLPWM, LRPWM;
     float test;
-    PIDValue =  GetPid(-0.002763617550954, 1000 * MidLineFuseNum, FidLP, FidLI, FidLD); //54 0 35000  56.8 0 10500
+    PIDValue =  GetPid(FuseMidLine, 1000 * MidLineFuseNum, FidLP, FidLI, FidLD); //54 0 35000  56.8 0 10500
 //    if(TenSingal>=5)   (GetSpeed()/1.3)*
 //		PIDValue = 0-PIDValue;
     LPWM = LeftDeadZone - PIDValue;
     RPWM = RightDeadZone + PIDValue;
 
 
-    if(LPWM >= 30)
-        LPWM = 30;
-    else if(LPWM <= -30)
-        LPWM = -30;
-    if(RPWM >= 30)
-        RPWM = 30;
-    else if(RPWM <= -30)
-        RPWM = -30;
+    if(LPWM >= 70)
+        LPWM = 70;
+    else if(LPWM <= -70)
+        LPWM = -70;
+    if(RPWM >= 70)
+        RPWM = 70;
+    else if(RPWM <= -70)
+        RPWM = -70;
     MotorUserHandle(LMotor_F, LPWM);
     MotorUserHandle(RMotor_F, RPWM);
 
@@ -299,46 +320,69 @@ void PassCross(void)
 }
 void StopToSendBall(void)
 {
-	float DIS;
-        PRINTF("Send Ball");
-			DIS=GetDistant();
-        if(DIS <= 0.1)
+    static int time;
+    float DIS;
+    //PRINTF("Send Ball");
+    DIS = GetDistant();
+    if(time == 0)
+    {
+        if(GetSpeed() >= 0.5)
         {
-            FindLineAdjPWM(-10,0,0);
-            FindLineAdjPWM(-10,0,0);
+            FindLineAdjPWM(-30, 0, 0);
+            FindLineAdjPWM(-30, 0, 0);
         }
-        else if(DIS>0.1&&DIS <= 0.5)
+        else
         {
-            FindLineAdjPWM(10,0,0);
-            FindLineAdjPWM(10,0,0);
+            //StopRunAndProgram();
+            time++;
         }
-        else if(DIS > 0.5 && DIS <=0.9)
+    }
+    else if(time >= 1)
+    {
+        if(Pitch_value < -160)
         {
-            FindLineAdjPWM(8.5, 0,0);
-            FindLineAdjPWM(8.5, 0,0);
+            if((fabs(GetLaserDistant() - 0.1)) > 0.05)
+            {
+                FindLineAdjBasePWM(LaserDistantPID(7000, 1, 100000, 0.1));
+                CleanDistant();
+            }
+            else
+            {
+                if(GetDistant() <= 0.05)
+                {
+                    FindLineAdjBasePWM(5);
+                }
+                else if(GetDistant() >= 0.05)
+                {
+                    GiveBall();
+                    StopRunAndProgram();
+                }
+                else
+                {
+                    FindLineAdjBasePWM(5);
+                }
+            }
         }
-        else if(DIS > 0.9 && DIS <=1.5)
+        else
         {
-            FindLineAdjPWM(5,0,0);
-            FindLineAdjPWM(5,0,0);
+            FindLineAdjBasePWM(5);
         }
-				else if(DIS > 1.5 && DIS <=1.9)
-				{
-					  FindLineAdjPWM(4,0,0);
-            FindLineAdjPWM(4,0,0);
-				}
-				else if(DIS > 1.9 && DIS <=1.9)
-				{
-						FindLineAdjPWM(0,0,0);
-            FindLineAdjPWM(0,0,0);
-						gpio_set(D13,0);
-					gpio_set(D14,0);
-					gpio_set(D15,0);
-					StopRunAndProgram();
-				}
-    
+    }
 
 
+}
+void GiveBall(void)
+{
+    uint8 chr[2] = {0x01, 0xff};
+    gpio_set(D13, 1);
+    gpio_set(D14, 1);
+    gpio_set(D15, 1);
+    while(1)
+    {
+        uart_putbuff(USART_1, chr, 2);
+        MotorUserHandle(LMotor_F, 0);
+        MotorUserHandle(RMotor_F, 0);
+    }
 }
 void BackLine(void)
 {
@@ -348,29 +392,30 @@ void GoOutGarage(void)
 {
     static float cut, cnt = 0;
     cut = GetDistant();
-    if(cut <= 0.12)
+    if(cut <= StraightLineOutGarage)
     {
-        GYROPID(25, 0.1, 98);
+        GYROPID(OutGarageGyroKpStraightLineKP, OutGarageGyroKpStraightLineKI, OutGarageGyroKpStraightLineKD);
     }
-    else if(cut > 0.12 && cut <= 0.5)
+    else if(cut > StraightLineOutGarage && cut <= 0.5)
     {
         if(cnt == 0)
         {
-            InitGYRORollAngle(-90);
+            InitGYRORollAngle(OutGarageAngle);
             cnt++;
         }
-        GYROPID(55, 0.1, 95);
+        GYROPID(OutGarageGyroKpCStraightLineKP, OutGarageGyroKpCStraightLineKI, OutGarageGyroKpCStraightLineKD);
     }
 }
 void InRoundaboutProcess(void)
 {
-    static uint8 abc = 0,temp1=0;
+    static uint8 abc = 0, temp1 = 0;
     float DIS ;
-	DIS= fabs(GetDistant());
+    DIS = fabs(GetDistant());
     //FindLineAR();
-    if(DIS <= 0.1) //0.2
+    if(GetSpeed()>=0.5 && temp1==0) //0.2
     {
-				FindLineAdjPWM(SpeedDownInAngle,0,0);
+        FindLineAdjPWM(SpeedDownInAngle, 0, 0);
+			temp1=1;
         //FindLineAdjPWM(8.5,0, 0);
         //FindLineAR(15.5,0,0);
         //FindLineAdjPWM(10);
@@ -385,44 +430,47 @@ void InRoundaboutProcess(void)
 //				{
 //					FindLineAdjPWM(15.5,0,1.8);
 //				}
-    else if(DIS > 0.1 && DIS <= StraightLineInRA)   //0.2 0.4
+		if(temp1==1)
+		{
+    if(DIS > 0 && DIS <= StraightLineInRA)   //0.2 0.4
     {
-			FindLineAdjPWM(SpeedStraightInRA,CSpeedStraightInRA,0);
+        FindLineAdjPWM(SpeedStraightInRA, LSpeedStraightInRA, RSpeedStraightInRA);
         //FindLineAdjPWM(15.5, 0, 3.5);
         //StopRunAndProgram();
 //            MotorUserHandle(LMotor_F, 10);
 //            MotorUserHandle(RMotor_F, 0);
         //PRINTF("2");
 
-            //GYROPID(195, 0, 800);  //150  800
+        //GYROPID(195, 0, 800);  //150  800
     }//45 0.1 95
 
-		else if(DIS > StraightLineInRA && DIS <= GYROLineInRA)
-		{
-			GYROPID(RAGyroKp, RAGyroKi, RAGyroKd);  //150  800
-		}
-		else if(DIS > GYROLineInRA && DIS < 0.8)
-		{
-			FindLine();
-		}
+    else if(DIS > StraightLineInRA && DIS <= GYROLineInRA)
+    {
+        GYROPID(InRAGyroKp, InRAGyroKi, InRAGyroKd); //150  800
+    }
+    else if(DIS > GYROLineInRA && DIS < 0.8)
+    {
+        FindLine();
+    }
+	}
 //    }
 }
 void OutRoundaboutProcess(void)
 {
-	float DIS ;
-	DIS= fabs(GetDistant());
-	if(DIS <= 0.1)
-	{
-		FindLineAdjPWM(-15,0,0);
-	}
-    else if(DIS <= 0.6)
-			GYROPID(205, 0, 800);
-        //FindLineAdjPWM(15.5, 0.5, 0);
-    //FindLine();
-    else if(DIS >= 0.6 && DIS <= 0.6)
+    float DIS ;
+    DIS = fabs(GetDistant());
+    if(DIS <= 0.1)
     {
-			//StopRunAndProgram();
-			FindLine();
+        FindLineAdjPWM(SpeedDownOutAngle, 0, 0);
+    }
+    else if(DIS < 0.1 && DIS <= GYROLineOutRA)
+        GYROPID(OutRAGyroKp, OutRAGyroKi, OutRAGyroKd);
+    //FindLineAdjPWM(15.5, 0.5, 0);
+    //FindLine();
+    else if(DIS > GYROLineOutRA && DIS <= 0.6)
+    {
+        //StopRunAndProgram();
+        FindLine();
         //GYROPID(55, 0.1, 95);
         //StopRunAndProgram();
         //FindLineAdjPWM(15.5, 0, 0);
@@ -430,7 +478,7 @@ void OutRoundaboutProcess(void)
     }
     else
     {
-			FindLine();
+        FindLine();
         //FindLineAdjPWM(15.5, 0, 0.3);
     }
 //        if(GetDistant() <= 0.2)
@@ -481,7 +529,7 @@ void FindLineAdjPWM(float PWM, float Lcut, float Rcut)
 {
     static float LLPWM, LRPWM;
     float test;
-    PIDValue =  GetPid(-0.002763617550954, 1000 * MidLineFuseNum, 10, 0, 2000);
+    PIDValue =  GetPid(FuseMidLine, 1000 * MidLineFuseNum, 10, 0, 2000);
     //PIDValue =  GetPid(-0.002763617550954, 1000 * MidLineFuseNum, 41, 0, 3300); //54 0 35000  56.8 0 10500
     if(PWM >= 0)
     {
@@ -506,5 +554,34 @@ void FindLineAdjPWM(float PWM, float Lcut, float Rcut)
 }
 void PassBridge(void)
 {
-	FindLine();
+    FindLine();
+    //StopRunAndProgram();
+}
+void FindLineAdjBasePWM(float PWM)
+{
+    static float LLPWM, LRPWM;
+    float test;
+    PIDValue =  GetPid(FuseMidLine, 1000 * MidLineFuseNum, 10, 0, 2000);
+
+    //PIDValue =  GetPid(-0.002763617550954, 1000 * MidLineFuseNum, 41, 0, 3300); //54 0 35000  56.8 0 10500
+    if(PWM >= 0)
+    {
+        LPWM = PWM - PIDValue ;
+        RPWM = PWM + PIDValue ;
+    }
+    else if(PWM < 0)
+    {
+        LPWM = PWM + PIDValue;
+        RPWM = PWM - PIDValue;
+    }
+    if(LPWM >= 20)
+        LPWM = 20;
+    else if(LPWM <= -20)
+        LPWM = -20;
+    if(RPWM >= 20)
+        RPWM = 20;
+    else if(RPWM <= -20)
+        RPWM = -20;
+    MotorUserHandle(LMotor_F, LPWM);
+    MotorUserHandle(RMotor_F, RPWM);
 }

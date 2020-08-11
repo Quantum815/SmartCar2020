@@ -8,13 +8,13 @@ void ADCreadData(void)
 		adc_value[2] = adc_convert(ADC_1, ADC1_CH5_B16);
 		adc_value[3] = adc_convert(ADC_1, ADC1_CH6_B17);
 		adc_value[4] = adc_convert(ADC_1, ADC1_CH10_B21);
-		for(int i=0;i<=4;i++)
-	{
-		PRINTF("%d     ",adc_value[i]);
-		//ips114_showfloat(100,0,adc_value[i],4,4);
-    
-	}
-	PRINTF("\r\n");
+//		for(int i=0;i<=4;i++)
+//	{
+//		PRINTF("%d     ",adc_value[i]);
+//		//ips114_showfloat(100,0,adc_value[i],4,4);
+//    
+//	}
+//	PRINTF("\r\n");
 	//systick_delay_ms(10);
 }
 ////////在这里定义相关的debug命令////////////
@@ -82,15 +82,15 @@ void StopRunAndProgram(void)
 {
 	MotorUserHandle(LMotor_F,0);
 	MotorUserHandle(RMotor_F,0);
-	while(1);
+while(1);
 }
 void ShowNUMinDisplay(void)
 {
-	
-			ips114_showfloat(0,0,ADCvalue(0),4,4);
-			ips114_showfloat(0,1,ADCvalue(1),4,4);
-			ips114_showfloat(0,2,ADCvalue(2),4,4);
-			ips114_showfloat(0,3,ADCvalue(3),4,4);
-			ips114_showfloat(0,4,ADCvalue(4),4,4);
-			systick_delay_ms(100);
+			ips114_showfloat(0,0,ADCvalue(0),4,6);
+			ips114_showfloat(0,1,ADCvalue(1),4,6);
+			ips114_showfloat(0,2,ADCvalue(2),4,6);
+			ips114_showfloat(0,3,ADCvalue(3),4,6);
+			ips114_showfloat(0,4,ADCvalue(4),4,6);
+			ips114_showfloat(0,5,MidLineFuseNum,4,6);
+			//systick_delay_ms(100);
 }

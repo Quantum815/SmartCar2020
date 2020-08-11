@@ -16,7 +16,7 @@ void UserInit(void)
 	ADCinit();
 	pit_init();
 	pit_interrupt_ms(PIT_CH1,10); //用led显示系统板存活
-	pit_interrupt_ms(PIT_CH0,10);  //主进程
+	pit_interrupt_ms(PIT_CH0,5);  //主进程
 	pit_interrupt_ms(PIT_CH2,5);  //计算距离
 	
 	//PIT CH3 已经被超声波测距使用
@@ -25,17 +25,17 @@ void UserInit(void)
 	BOARD_InitDebugConsole();
 	//DebugUARTInit();
 	TwoCarUart();
-	//TFminiUartInit();
-	VL53L1UartInit();
+	TFminiUartInit();
+	//VL53L1UartInit();
 	EnCodeInit();
 	MotorInit();
 	GyroInit();
 	ips114_init();
 
 	SetMotorPWM(LMotor_F, 1);
-	SetMotorPWM(LMotor_B, 1);
+	SetMotorPWM(LMotor_B, 0);
 	SetMotorPWM(RMotor_F, 1);
-	SetMotorPWM(RMotor_B, 1);
+	SetMotorPWM(RMotor_B, 0);
 	CleanDistant();
 	InitGYRORollAngle(0);
 	NVIC_SetPriority(PIT_IRQn,1);

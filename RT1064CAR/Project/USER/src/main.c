@@ -28,7 +28,7 @@ int main(void)
 {
 	float_t Lsqrt, Rsqrt, t1, t2,MidLineFuseNum1,PIDValue1,OneIN=0;
 	
-    uint8 chr[2] = {0x01,0xff};
+    
     DisableGlobalIRQ();
     board_init();
     UserInit();
@@ -39,20 +39,59 @@ int main(void)
 		CleanDistant();
 	//_NowGyroYawAngle = 90;
     //gpio_init(B9,GPO,0,GPIO_PIN_CONFIG);
+//			int i = 0;
     while (1)
 
     {
+						//测试
+//通讯测试
+//		uart_putchar(USART_8,0x01);
+//		uart_putchar(USART_8,0xff);
+//		systick_delay_ms(1000);
+//		    uint8 chr[2] = {0x01, 0xff};
+//			if(i == 0)
+//		for(i=0; i<20; i++)
+//		{
+//			uart_putbuff(USART_8, chr, 2);
+//		}
+		
+//屏蔽距离测试
+//		if(GetDistant(1) < 8)
+//			FindLine();
+//		else
+//			StopRunAndProgram();
+		
+//		MotorUserHandle(RMotor_B, 0);
+//	MotorUserHandle(LMotor_F, 20);
+//		systick_delay_ms(2000);
+//	MotorUserHandle(LMotor_B, 20);
+//		systick_delay_ms(2000);
+//		MotorUserHandle(LMotor_B, 0);
+//	MotorUserHandle(RMotor_F, 20);
+//		systick_delay_ms(2000);
+//	MotorUserHandle(RMotor_B, 20);
+//		systick_delay_ms(2000);
+		
+			//uart_putbuff(USART_1, chr, 2);
 			//ADCreadData();
 //			PRINTF("%f,%f",GYROerror,roll_value);
-			ips114_showfloat(100,0,GYROerror,4,4);
-			ips114_showfloat(100,1,roll_value,4,4);
+			//ADCreadData();
+//			PRINTF("GYROerror=%f,roll_value=%f,LaserDistant=%f,SPEED=%f\r\n",GYROerror,roll_value,GetLaserDistant(),GetSpeed());
+			ips114_showfloat(110,0,GYROerror,4,6);
+			ips114_showfloat(110,1,Pitch_value,4,6);
+			ips114_showfloat(110,2,yaw_value,4,6);
+			ips114_showfloat(110,3,roll_value,4,6);
+			ips114_showfloat(110,4,Distant[0],4,6);
+			ips114_showfloat(110,5,Distant[1],4,6);
+			ips114_showfloat(110,6,GetLaserDistant(),4,6);
+		ShowNUMinDisplay();
 //			DIS=GetDistant();
 //			//FindLineAR();
 //        if(DIS < 0)
 //        {
 //					//FindLineAR(15.5,0,0);
 //					//FindLineAdjPWM(10);
-//            //MotorUserHandle(LMotor_F, -20);
+            ///MotorUserHandle(LMotor_B, 20);
 //            //MotorUserHandle(RMotor_F, -20);
 //            //GYROPID(35, 0.1, 98);
 //            //PRINTF("1");
@@ -219,7 +258,6 @@ int main(void)
 			//ips114_showint16(160,1,RTIME);
 			//GyroErrorCheck();
 //        #ifdef SHOWNUM
-ShowNUMinDisplay();
 //        #endif
 			//FindLine();
 			//cut=CulAngle();

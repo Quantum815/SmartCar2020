@@ -20,6 +20,7 @@
 #include "headfile.h"
 #include "isr.h"
 //int IsrCount=0;
+uint32_t TwoCarCount;
 
 //超声波测距相关变量
 long SuperSonic_HighTime = 0;
@@ -50,6 +51,8 @@ void PIT_IRQHandler(void)
 			//ips114_showfloat(100,1,roll_value,4,4);
 				//ADCreadData();
         LogicThing();
+			
+			//FindLineAdjBasePWM(SpeedPID(7000,1,100000,0.8));
 			//FindLineAdjPWM(-10);
 			//8FindLineAR();
 			//FindLineAR(10,0,0);
@@ -59,8 +62,9 @@ void PIT_IRQHandler(void)
     {
 				
         PIT_FLAG_CLEAR(PIT_CH1);
+		TwoCarCount++;
 				CT++;
-				//UpDateLaserDistant();
+				UpDateLaserDistant();
 				if(CT==100)
 				{
 					RTIME++;

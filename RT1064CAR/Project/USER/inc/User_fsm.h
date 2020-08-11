@@ -68,4 +68,6 @@ AT_ITCM_SECTION_INIT(void ADCulMidLine(void));
 AT_ITCM_SECTION_INIT(void ADCulARLine(void));
 AT_ITCM_SECTION_INIT(void FindLineAR(float PWM,float Lcut,float Rcut));
 AT_ITCM_SECTION_INIT(void FindLineAdjPWM(float PWM,float Lcut,float Rcut));
+AT_ITCM_SECTION_INIT(void GiveBall(void));
+AT_ITCM_SECTION_INIT(void FindLineAdjBasePWM(float PWM));
 #endif

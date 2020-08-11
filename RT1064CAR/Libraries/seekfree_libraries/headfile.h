@@ -105,34 +105,35 @@ extern int RTIME;
 //******************需要调整的参数**********************//
 
 //FindLine函数的pid参数
-#define FidLP 25
-#define FidLI 0.2
-#define FidLD 4000
-#define FuseMidLine -0.002763617550954
+#define FidLP 26//37+(2*GetSpeed()/1.8)
+#define FidLI 0.05//0.2
+#define FidLD 8100//6800*(GetSpeed()/1.25)
+#define FuseMidLine 0.000093
 //出库相关参数
-#define AntiWay 0 //出库方向 0左 1右
-#define StraightLineOutGarage 0.12 //出库前直行距离
+#define AntiWay 1 //出库方向 0左 1右
+#define StraightLineOutGarage 0.06 //出库前直行距离
 //出库直行陀螺仪pid
 #define OutGarageGyroKpStraightLineKP 25
 #define OutGarageGyroKpStraightLineKI 0.1
 #define OutGarageGyroKpStraightLineKD 98
 //出库转弯陀螺仪pid
-#define OutGarageGyroKpCStraightLineKP 50
+#define OutGarageGyroKpCStraightLineKP 30//50
 #define OutGarageGyroKpCStraightLineKI 0.1
-#define OutGarageGyroKpCStraightLineKD 95
+#define OutGarageGyroKpCStraightLineKD 90//95
 //环岛判别条件
-#define ADCvalueC 2500 //入圆时中心电感值
-#define ADCvalueCL 2500 //入圆时左斜电感值
-#define ADCvalueCR 2500//入圆时右斜电感值
-#define ADCvalueLL 2400//入圆时最左侧电感值
-#define ADCvalueRR 2400// 入圆时最右侧电感值
+#define ADCvalueC 2800//2500 //入圆时中心电感值
+#define ADCvalueCL 2800//2500 //入圆时左斜电感值
+#define ADCvalueCR 2800//2500//入圆时右斜电感值
+#define ADCvalueLL 2800//2500//入圆时最左侧电感值
+#define ADCvalueRR 2800//2500// 入圆时最右侧电感值
 //入圆相关参数
-#define InRAngle 10 //入左圆角度
-#define SpeedDownInAngle -13 //入圆减速pwm
+#define InRAngle -10 //入左圆角度
+#define SpeedDownInAngle -20 //入圆减速pwm
 #define StraightLineInRA 0.2 //入圆时直行距离 这个值必须大于0.2且小于GYROLineInRA
-#define SpeedStraightInRA 8.5 //入圆时直行时的基础速度
-#define CSpeedStraightInRA 1.5 //入左圆时差速
-#define GYROLineInRA 0.4 //入圆时陀螺仪走的距离 这个值必须小于0.8
+#define SpeedStraightInRA 10.5 //入圆时直行时的基础速度
+#define LSpeedStraightInRA 1 //入左圆时差速
+#define RSpeedStraightInRA 0
+#define GYROLineInRA 0.8 //入圆时陀螺仪走的距离 这个值必须小于0.8
 /*入圆时转向PID参数*/
 #define InRAGyroKp 105
 #define InRAGyroKi 0

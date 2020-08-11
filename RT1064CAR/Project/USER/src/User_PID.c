@@ -10,7 +10,7 @@ float GetPid(float middle,float value,float kP,float kI,float kD)
 //	float32_t KPV,KDV,TEMP;
 //	
 //	ErrorValue = value - middle;
-//	//IntegralerrValue += ErrorValue;
+
 //	
 //	OldValue = PidValue;
 //	TEMP=(ErrorValue - Errored);
@@ -35,6 +35,7 @@ float GetPid(float middle,float value,float kP,float kI,float kD)
 //	
 	ErrorValue = value - middle;
 	IntegralerrValue += ErrorValue;
+//	IntegralerrValue += ErrorValue;
 //	if(ErrorValue>=4.5)
 //	{
 //		LeftDeadZone=10.8;
@@ -55,10 +56,10 @@ float GetPid(float middle,float value,float kP,float kI,float kD)
 	Errored = ErrorValue;
 	//ips114_showfloat(20,20,cutdif,3,5);
 	PidValue = 0.1*OldValue + 0.9*PidValue;	                       //低通滤波
-	if(PidValue>1900)
-		PidValue=1900;
-	else if (PidValue<-1900)
-		PidValue=-1900;
+	if(PidValue>3000)
+		PidValue=3000;
+	else if (PidValue<-3000)
+		PidValue=-3000;
 	return PidValue/100;
 }
 void ClearValue(void)
