@@ -111,8 +111,8 @@
 #define RightWheelBrakeZone 2.7//Car1 2.3;Car2 2.7
 
 //正常车速PWM占空比
-#define LeftNormalSpeed 8//8
-#define RightNormalSpeed 8//8
+#define LeftNormalSpeed 9//8
+#define RightNormalSpeed 9//8
 
 //入库车速PWM占空比
 #define LeftInGarageSpeed 8
@@ -144,11 +144,11 @@
 #define GYRO_D 200//1000
 
 //环岛判别条件
-#define ADCvalueC 2400//2600 //入圆时中心电感值
-#define ADCvalueCL 1400//1800 //入圆时左斜电感值
-#define ADCvalueCR 1300//1800//入圆时右斜电感值
-#define ADCvalueLL 2800//入圆时最左侧电感值
-#define ADCvalueRR 2800// 入圆时最右侧电感值
+#define ADCvalueC 2300//2600 //入圆时中心电感值
+#define ADCvalueCL 1300//1800 //入圆时左斜电感值
+#define ADCvalueCR 1200//1800//入圆时右斜电感值
+#define ADCvalueLL 2500//入圆时最左侧电感值
+#define ADCvalueRR 2500// 入圆时最右侧电感值
 
 ////进环岛判别条件
 //#define ADCvalueC_In 2400 //入圆时中心电感值

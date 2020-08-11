@@ -88,16 +88,16 @@ void FindLine(void)
 	}
 	PIDValue = GetPIDValue(PIDMidLineFuseNum, MidLineFuseNum*1000, FINDLINE_P, FINDLINE_I, FINDLINE_D);
 	//printf("%f\r\n",PIDValue);
-//	if((GetDistance(5)>=9 &&GetDistance(5)<=10)||(GetDistance(5)>=4 &&GetDistance(5)<=7.5) || ((GetDistance(5)>=1.5 &&GetDistance(5)<=3)) || (GetDistance(5)>=8 &&GetDistance(5)<=8.5))
-//	{
-//		LPWM = LeftWheelDeadZone + 5 - PIDValue;
-//		RPWM = RightWheelDeadZone + 5 + PIDValue;
-//	}
-//	else
-//	{
+	if((GetDistance(5)>=4 &&GetDistance(5)<=10)||((GetDistance(5)>=2 &&GetDistance(5)<=3)))
+	{
+		LPWM = LeftWheelDeadZone + 3 - PIDValue;
+		RPWM = RightWheelDeadZone + 3 + PIDValue;
+	}
+	else
+	{
 	LPWM = LeftWheelDeadZone + LeftNormalSpeed - PIDValue;
 	RPWM = RightWheelDeadZone + RightNormalSpeed + PIDValue;
-//	}
+	}
     if(LPWM >= 40)
         LPWM = 40;
     else if(LPWM <= -40)
@@ -127,15 +127,17 @@ void InRoundaboutProcess(void)
 //			FindLine();
 //		}
 //		else
-		if(GetDistance(0) < 0.4)//0.35 //0.4
+		if(GetDistance(0) < 0.2)//0.35 //0.4
 		{
 	    	uart_putchar(UART_3,0X02);//×´Ì¬¼ì²â2
-			FindLineAdjPWM(6, -8, 13);//6 -4 6 //6 -8 12
+			FindLineAdjPWM(6, -5, 10.5);//6 -4 6 //6 -8 12
 		}
 		else
 		{
+//			RunStop();
 	    	uart_putchar(UART_3,0X03);//×´Ì¬¼ì²â3
-			FindLine();
+//	    	FindLineAdjPWM(4, 0, 0);
+	    	FindLine();
 			PassingRoundaboutFlag = 1;
 		}
 	}
@@ -165,16 +167,16 @@ void OutRoundaboutProcess(void)
 
 	if(LRoundaboutFlag)
 	{
-//		if(GetDistance(0) < 0.3)
-//		{
-//			FindLineAdjPWM(6, 6, 0);
-//		}
-//		else
-//		{
+		if(GetDistance(0) < 0.2)
+		{
+			FindLineAdjPWM(6, 6, 0);
+		}
+		else
+		{
 //			PassingRoundaboutFlag = 0;
-//			FindLine();
-//		}
-		FindLine();
+			FindLine();
+		}
+//		FindLine();
 	}
 	else if(RRoundaboutFlag)
 	{
@@ -315,48 +317,53 @@ void FSMRun(void)
 //    	if()  //²âÊÔÊ±×¢ÊÍ
 		FSMEventHandle(&CarFSM, GETBALL);
     }
-    else if(ADCValueHandle(2) >= ADCvalueC && ADCValueHandle(3) >= ADCvalueCR && \
-    		(ADCValueHandle(0) > ADCvalueLL || ADCValueHandle(4) > ADCvalueRR) && ReturnFSMState(&CarFSM) == GoLine && RoundaboutCount==0)//¼ì²â½øÔ² (ADCValueHandle(1) >= ADCvalueCL ||
-    {
-    	IntoRoundaboutCount++;
-    	if(IntoRoundaboutCount >= 3)//Á¬Ðø¼ì²âÈý´Î
-    	{
-    		RoundaboutCount=1;
-    		if(ADCValueHandle(1) > ADCValueHandle(3))//ÅÐ¶Ï×óÔ²»òÓÒÔ²
-			{
-    	    	uart_putchar(UART_3,0X01);//×´Ì¬¼ì²â1
-				LRoundaboutFlag = 1;//×óÔ²
-				RRoundaboutFlag = 0;
-			}
-			else
-			{
-				LRoundaboutFlag = 0;
-				RRoundaboutFlag = 1;//ÓÒÔ²
-			}
-//    		RoundaboutCount = 0;
-            FSMEventHandle(&CarFSM, FINDROUNDABOUT);
-//            FSMEventHandle(&CarFSM, RUNSTOP);
-    	}
-    }
-    else if(PassingRoundaboutFlag && ReturnFSMState(&CarFSM) == InRoundabout)//Ô²ÄÚ¹ý³Ì
-    {
-    	uart_putchar(UART_3,0X04);//×´Ì¬¼ì²â4
-    	FSMEventHandle(&CarFSM, ENDINROUNDABOUT);
-    }
-    else if(ADCValueHandle(2) >= ADCvalueC && (ADCValueHandle(1) >= ADCvalueCL || ADCValueHandle(3) >= ADCvalueCR)\
-    && (ADCValueHandle(0) > ADCvalueLL || ADCValueHandle(4) > ADCvalueRR) && ReturnFSMState(&CarFSM) == PassRoundabout && PassingRoundaboutFlag && GetDistance(1)>=10.5)//¼ì²â³öÔ²
-    {
-//    	PassingRoundaboutFlag=0;
-    	uart_putchar(UART_3,0X05);//×´Ì¬¼ì²â5
-    	FSMEventHandle(&CarFSM, OUTROUNDABOUT);
-//    	FSMEventHandle(&CarFSM, RUNSTOP);
-    }
-    else if(PassingRoundaboutFlag && ReturnFSMState(&CarFSM) == OutingRoundabout)
-    {
-		PassingRoundaboutFlag = 0;
-    	FSMEventHandle(&CarFSM, ENDOUTROUNDABOUT);
-//		FSMEventHandle(&CarFSM, RUNSTOP);
-    }
+//    else if(GetDistance(5)>=5.65||ADCValueHandle(2) >= ADCvalueC && ADCValueHandle(3) >= ADCvalueCR && \
+//    		(ADCValueHandle(0) > ADCvalueLL || ADCValueHandle(4) > ADCvalueRR) && ReturnFSMState(&CarFSM) == GoLine && RoundaboutCount==0)//¼ì²â½øÔ² (ADCValueHandle(1) >= ADCvalueCL ||
+//    else if(ADCValueHandle(2) >= ADCvalueC && ReturnFSMState(&CarFSM) == GoLine && RoundaboutCount==0)//¼ì²â½øÔ² (ADCValueHandle(1) >= ADCvalueCL ||
+//    {
+//    	IntoRoundaboutCount++;
+//    	if(IntoRoundaboutCount >= 3)//Á¬Ðø¼ì²âÈý´Î
+//    	{
+//    		RoundaboutCount=1;
+//    		if(ADCValueHandle(1) > ADCValueHandle(3))//ÅÐ¶Ï×óÔ²»òÓÒÔ²
+//			{
+//    	    	uart_putchar(UART_3,0X01);//×´Ì¬¼ì²â1
+//				LRoundaboutFlag = 1;//×óÔ²
+//				RRoundaboutFlag = 0;
+//			}
+//			else
+//			{
+//				LRoundaboutFlag = 1;//×óÔ²
+//				RRoundaboutFlag = 0;
+//			}
+////    		RoundaboutCount = 0;
+//            FSMEventHandle(&CarFSM, FINDROUNDABOUT);
+////            FSMEventHandle(&CarFSM, RUNSTOP);
+//    	}
+//    }
+//    else if(PassingRoundaboutFlag && ReturnFSMState(&CarFSM) == InRoundabout)//Ô²ÄÚ¹ý³Ì
+//    {
+//    	uart_putchar(UART_3,0X04);//×´Ì¬¼ì²â4
+//    	FSMEventHandle(&CarFSM, ENDINROUNDABOUT);
+////		FSMEventHandle(&CarFSM, RUNSTOP);
+//
+//    }
+////    else if(ADCValueHandle(2) >= ADCvalueC && (ADCValueHandle(1) >= ADCvalueCL || ADCValueHandle(3) >= ADCvalueCR)\
+////    && (ADCValueHandle(0) > ADCvalueLL || ADCValueHandle(4) > ADCvalueRR) && ReturnFSMState(&CarFSM) == PassRoundabout && PassingRoundaboutFlag && GetDistance(1)>=10.5)//¼ì²â³öÔ²
+////    {
+//    else if(ADCValueHandle(2) >= ADCvalueC && ReturnFSMState(&CarFSM) == PassRoundabout && PassingRoundaboutFlag && GetDistance(1)>=10.5)//¼ì²â³öÔ²
+//    {
+////    	PassingRoundaboutFlag=0;
+//    	uart_putchar(UART_3,0X05);//×´Ì¬¼ì²â5
+//    	FSMEventHandle(&CarFSM, OUTROUNDABOUT);
+////    	FSMEventHandle(&CarFSM, RUNSTOP);
+//    }
+//    else if(PassingRoundaboutFlag && ReturnFSMState(&CarFSM) == OutingRoundabout)
+//    {
+//		PassingRoundaboutFlag = 0;
+//    	FSMEventHandle(&CarFSM, ENDOUTROUNDABOUT);
+////		FSMEventHandle(&CarFSM, RUNSTOP);
+//    }
     else if(!InGarageDirection && EnterGarageFlag && ReturnFSMState(&CarFSM) == GoLine && GetDistance(1)>=9)
     {
         MotorUserHandle(LMotor_F, LeftWheelDeadZone+LeftInGarageSpeed);
